@@ -86,106 +86,88 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 289531402;
-			PBXWorkspaceStateSaveDate = 289531402;
+			PBXPerProjectTemplateStateSaveDate = 289531700;
+			PBXWorkspaceStateSaveDate = 289531700;
 		};
 		perUserProjectItems = {
-			CA8453681141E60200B56C4F = CA8453681141E60200B56C4F /* PBXTextBookmark */;
-			CA8453691141E60200B56C4F = CA8453691141E60200B56C4F /* PBXTextBookmark */;
-			CA8453781141E64100B56C4F /* PBXTextBookmark */ = CA8453781141E64100B56C4F /* PBXTextBookmark */;
-			CA8453791141E64100B56C4F /* PBXTextBookmark */ = CA8453791141E64100B56C4F /* PBXTextBookmark */;
-			CA8453821141E65200B56C4F /* PBXTextBookmark */ = CA8453821141E65200B56C4F /* PBXTextBookmark */;
-			CA8453831141E65200B56C4F /* PBXTextBookmark */ = CA8453831141E65200B56C4F /* PBXTextBookmark */;
-			CA904F751141DE4B0062B89F = CA904F751141DE4B0062B89F /* PBXTextBookmark */;
-			CAB20A161141C34500AD36AD = CAB20A161141C34500AD36AD /* PBXTextBookmark */;
-			CAB20A171141C34500AD36AD = CAB20A171141C34500AD36AD /* PBXTextBookmark */;
-			CAB20A181141C34500AD36AD = CAB20A181141C34500AD36AD /* PBXTextBookmark */;
-			CAB20A191141C34500AD36AD = CAB20A191141C34500AD36AD /* PBXTextBookmark */;
-			CAB20A1A1141C34500AD36AD = CAB20A1A1141C34500AD36AD /* PBXTextBookmark */;
-			CAB20A1B1141C34500AD36AD = CAB20A1B1141C34500AD36AD /* PBXTextBookmark */;
-			CAB20A1C1141C34500AD36AD = CAB20A1C1141C34500AD36AD /* PBXTextBookmark */;
-			CAB20A1E1141C34500AD36AD = CAB20A1E1141C34500AD36AD /* PBXTextBookmark */;
-			CAB20A1F1141C34500AD36AD = CAB20A1F1141C34500AD36AD /* PBXTextBookmark */;
-			CAB20A221141C34500AD36AD = CAB20A221141C34500AD36AD /* PBXTextBookmark */;
-			CAB20A231141C34500AD36AD = CAB20A231141C34500AD36AD /* PBXTextBookmark */;
-			CAB20A241141C34500AD36AD = CAB20A241141C34500AD36AD /* PBXTextBookmark */;
-			CAB20A251141C34500AD36AD = CAB20A251141C34500AD36AD /* PBXTextBookmark */;
-			CAB20A2E1141C34500AD36AD = CAB20A2E1141C34500AD36AD /* PBXTextBookmark */;
-			CAB20A301141C34500AD36AD = CAB20A301141C34500AD36AD /* PBXTextBookmark */;
+			CA8453841141E70400B56C4F = CA8453841141E70400B56C4F /* PBXTextBookmark */;
+			CA8453851141E70400B56C4F = CA8453851141E70400B56C4F /* PBXTextBookmark */;
+			CA8453871141E70400B56C4F = CA8453871141E70400B56C4F /* PBXTextBookmark */;
+			CA8453881141E70400B56C4F = CA8453881141E70400B56C4F /* PBXTextBookmark */;
+			CA8453911141E74800B56C4F /* PBXTextBookmark */ = CA8453911141E74800B56C4F /* PBXTextBookmark */;
 		};
 		sourceControlManager = CAB209D91141B74D00AD36AD /* Source Control */;
 		userBuildSettings = {
 			OBJROOT = /Users/Brandon/Documents/Development/SVN/Crescendo_build;
 		};
 	};
-	CA8453681141E60200B56C4F /* PBXTextBookmark */ = {
+	CA8453841141E70400B56C4F /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 1D3623240D0F684500981E51 /* CrescendoAppDelegate.h */;
 		name = "CrescendoAppDelegate.h: 1";
+		rLen = 0;
+		rLoc = 8;
+		rType = 0;
+		vrLen = 491;
+		vrLoc = 0;
+	};
+	CA8453851141E70400B56C4F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CA8453861141E70400B56C4F /* Brandon.pbxuser */;
+		name = "Brandon.pbxuser: 1";
 		rLen = 0;
 		rLoc = 0;
 		rType = 0;
-		vrLen = 485;
+		vrLen = 1205;
 		vrLoc = 0;
 	};
-	CA8453691141E60200B56C4F /* PBXTextBookmark */ = {
+	CA8453861141E70400B56C4F /* Brandon.pbxuser */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = text;
+		name = Brandon.pbxuser;
+		path = /Users/Brandon/Documents/Development/SVN/Crescendo/Crescendo.xcodeproj/Brandon.pbxuser;
+		sourceTree = "<absolute>";
+	};
+	CA8453871141E70400B56C4F /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 1D3623240D0F684500981E51 /* CrescendoAppDelegate.h */;
 		name = "CrescendoAppDelegate.h: 1";
+		rLen = 0;
+		rLoc = 8;
+		rType = 0;
+		vrLen = 491;
+		vrLoc = 0;
+	};
+	CA8453881141E70400B56C4F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CA8453891141E70400B56C4F /* Brandon.pbxuser */;
+		name = "Brandon.pbxuser: 1";
 		rLen = 0;
 		rLoc = 0;
 		rType = 0;
-		vrLen = 485;
+		vrLen = 1205;
 		vrLoc = 0;
 	};
-	CA8453781141E64100B56C4F /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623240D0F684500981E51 /* CrescendoAppDelegate.h */;
-		name = "CrescendoAppDelegate.h: 1";
-		rLen = 0;
-		rLoc = 8;
-		rType = 0;
-		vrLen = 491;
-		vrLoc = 0;
+	CA8453891141E70400B56C4F /* Brandon.pbxuser */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = text;
+		name = Brandon.pbxuser;
+		path = /Users/Brandon/Documents/Development/SVN/Crescendo/Crescendo.xcodeproj/Brandon.pbxuser;
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {633, 3318}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1205}";
+		};
 	};
-	CA8453791141E64100B56C4F /* PBXTextBookmark */ = {
+	CA8453911141E74800B56C4F /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = 1D3623240D0F684500981E51 /* CrescendoAppDelegate.h */;
-		name = "CrescendoAppDelegate.h: 1";
+		fRef = CA8453891141E70400B56C4F /* Brandon.pbxuser */;
+		name = "Brandon.pbxuser: 1";
 		rLen = 0;
-		rLoc = 8;
+		rLoc = 0;
 		rType = 0;
-		vrLen = 491;
-		vrLoc = 0;
-	};
-	CA8453821141E65200B56C4F /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623240D0F684500981E51 /* CrescendoAppDelegate.h */;
-		name = "CrescendoAppDelegate.h: 1";
-		rLen = 0;
-		rLoc = 8;
-		rType = 0;
-		vrLen = 491;
-		vrLoc = 0;
-	};
-	CA8453831141E65200B56C4F /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623240D0F684500981E51 /* CrescendoAppDelegate.h */;
-		name = "CrescendoAppDelegate.h: 1";
-		rLen = 0;
-		rLoc = 8;
-		rType = 0;
-		vrLen = 491;
-		vrLoc = 0;
-	};
-	CA904F751141DE4B0062B89F /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
-		name = "CrescendoViewController.h: 20";
-		rLen = 0;
-		rLoc = 528;
-		rType = 0;
-		vrLen = 594;
+		vrLen = 1205;
 		vrLoc = 0;
 	};
 	CAB209D01141B72D00AD36AD /* Crescendo */ = {
@@ -219,7 +201,7 @@
 		fallbackIsa = XCSourceControlManager;
 		isSCMEnabled = 0;
 		scmConfiguration = {
-			repositoryName = Capstone;
+			repositoryName = "Capstone Trunk";
 		};
 	};
 	CAB209DA1141B74D00AD36AD /* Code sense */ = {
@@ -267,155 +249,5 @@
 			sepNavSelRange = "{282, 0}";
 			sepNavVisRange = "{0, 941}";
 		};
-	};
-	CAB20A161141C34500AD36AD /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = CAB209DD1141B81300AD36AD /* TrainingViewController.m */;
-		name = "TrainingViewController.m: 15";
-		rLen = 46;
-		rLoc = 246;
-		rType = 0;
-		vrLen = 1129;
-		vrLoc = 0;
-	};
-	CAB20A171141C34500AD36AD /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = CAB209E21141B84200AD36AD /* GamemodeViewController.m */;
-		name = "GamemodeViewController.m: 15";
-		rLen = 0;
-		rLoc = 292;
-		rType = 0;
-		vrLen = 953;
-		vrLoc = 0;
-	};
-	CAB20A181141C34500AD36AD /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = CAB209E51141B85F00AD36AD /* HelpViewController.m */;
-		name = "HelpViewController.m: 15";
-		rLen = 0;
-		rLoc = 280;
-		rType = 0;
-		vrLen = 941;
-		vrLoc = 0;
-	};
-	CAB20A191141C34500AD36AD /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = CAB209E41141B85F00AD36AD /* HelpViewController.h */;
-		name = "HelpViewController.h: 16";
-		rLen = 0;
-		rLoc = 243;
-		rType = 0;
-		vrLen = 250;
-		vrLoc = 0;
-	};
-	CAB20A1A1141C34500AD36AD /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = CAB209E11141B84200AD36AD /* GamemodeViewController.h */;
-		name = "GamemodeViewController.h: 16";
-		rLen = 20;
-		rLoc = 231;
-		rType = 0;
-		vrLen = 258;
-		vrLoc = 0;
-	};
-	CAB20A1B1141C34500AD36AD /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = CAB209DC1141B81300AD36AD /* TrainingViewController.h */;
-		name = "TrainingViewController.h: 16";
-		rLen = 20;
-		rLoc = 231;
-		rType = 0;
-		vrLen = 258;
-		vrLoc = 0;
-	};
-	CAB20A1C1141C34500AD36AD /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
-		name = "CrescendoViewController.m: 14";
-		rLen = 0;
-		rLoc = 326;
-		rType = 0;
-		vrLen = 1076;
-		vrLoc = 0;
-	};
-	CAB20A1E1141C34500AD36AD /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = CAB209DC1141B81300AD36AD /* TrainingViewController.h */;
-		name = "TrainingViewController.h: 1";
-		rLen = 0;
-		rLoc = 0;
-		rType = 0;
-		vrLen = 236;
-		vrLoc = 0;
-	};
-	CAB20A1F1141C34500AD36AD /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = CAB209DD1141B81300AD36AD /* TrainingViewController.m */;
-		name = "TrainingViewController.m: 1";
-		rLen = 0;
-		rLoc = 0;
-		rType = 0;
-		vrLen = 614;
-		vrLoc = 0;
-	};
-	CAB20A221141C34500AD36AD /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = CAB209E11141B84200AD36AD /* GamemodeViewController.h */;
-		name = "GamemodeViewController.h: 1";
-		rLen = 0;
-		rLoc = 0;
-		rType = 0;
-		vrLen = 236;
-		vrLoc = 0;
-	};
-	CAB20A231141C34500AD36AD /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = CAB209E41141B85F00AD36AD /* HelpViewController.h */;
-		name = "HelpViewController.h: 1";
-		rLen = 0;
-		rLoc = 0;
-		rType = 0;
-		vrLen = 228;
-		vrLoc = 0;
-	};
-	CAB20A241141C34500AD36AD /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
-		name = "CrescendoViewController.h: 20";
-		rLen = 88;
-		rLoc = 498;
-		rType = 0;
-		vrLen = 593;
-		vrLoc = 0;
-	};
-	CAB20A251141C34500AD36AD /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
-		name = "CrescendoViewController.m: 14";
-		rLen = 0;
-		rLoc = 326;
-		rType = 0;
-		vrLen = 1076;
-		vrLoc = 0;
-	};
-	CAB20A2E1141C34500AD36AD /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = CAB209E21141B84200AD36AD /* GamemodeViewController.m */;
-		name = "GamemodeViewController.m: 16";
-		rLen = 0;
-		rLoc = 294;
-		rType = 0;
-		vrLen = 953;
-		vrLoc = 0;
-	};
-	CAB20A301141C34500AD36AD /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = CAB209E51141B85F00AD36AD /* HelpViewController.m */;
-		name = "HelpViewController.m: 16";
-		rLen = 0;
-		rLoc = 282;
-		rType = 0;
-		vrLen = 941;
-		vrLoc = 0;
 	};
 }
