@@ -234,9 +234,10 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				OBJROOT = /Users/Brandon/Documents/Development/SVN/Crescendo_build;
 				PREBINDING = NO;
 				SDKROOT = iphoneos3.1.3;
-				SYMROOT = /Users/Brandon/Documents/Development/Local/Crescendo_build;
+				SYMROOT = /Users/Brandon/Documents/Development/SVN/Crescendo_build;
 			};
 			name = Debug;
 		};
