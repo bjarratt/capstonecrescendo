@@ -1,5 +1,7 @@
 package logging;
 
+import java.io.File;
+
 /**
  * <code>LogManager</code>
  * Encapsulates the log file for the server.  It is responsible for reading and writing
@@ -22,13 +24,21 @@ final public class LogManager
 		return instance;
 	}
 	
+	
+	
 	/* Implement read/write and other utility methods here */
 	
 	// Keep constructor private
-	private LogManager() {}
+	private LogManager() 
+	{
+		
+	}
 	
 	// The LogManager will need to be available from program start up; therefore,
 	// we do not use lazy creation.  This method also withstands a multithreaded 
 	// environment.
 	private static LogManager instance = new LogManager();
+	
+	// 
+	private File log = null;
 }
