@@ -1,0 +1,178 @@
+// !$*UTF8*$!
+{
+	CA5747A011436B5E00FC81E6 /* ecologylabXML */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 1;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = ecologylabXML;
+		sourceDirectories = (
+		);
+	};
+	CA5747A111436B5E00FC81E6 /* ChatClientTutorial */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 1;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = ChatClientTutorial;
+		sourceDirectories = (
+		);
+	};
+	CA5747BA11436B9100FC81E6 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+		};
+	};
+	CA5747BB11436B9100FC81E6 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	CA5747C511436C6700FC81E6 /* Crescendo */ = {
+		activeExec = 0;
+		executables = (
+			CA5747C711436C6700FC81E6 /* Crescendo */,
+		);
+	};
+	CA5747C711436C6700FC81E6 /* Crescendo */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 1;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = Crescendo;
+		sourceDirectories = (
+		);
+	};
+	CA57480511436D9900FC81E6 /* Crescendo_Prefix.pch */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {552, 253}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 187}";
+		};
+	};
+	EDCACE9B1135CEE10076CCCC /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = CA5747C711436C6700FC81E6 /* Crescendo */;
+		activeTarget = CA5747C511436C6700FC81E6 /* Crescendo */;
+		addToTargets = (
+			CA5747C511436C6700FC81E6 /* Crescendo */,
+		);
+		codeSenseManager = CA5747BB11436B9100FC81E6 /* Code sense */;
+		executables = (
+			CA5747A011436B5E00FC81E6 /* ecologylabXML */,
+			CA5747A111436B5E00FC81E6 /* ChatClientTutorial */,
+			CA5747C711436C6700FC81E6 /* Crescendo */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					341,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					301,
+					60,
+					20,
+					48.16259765625,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 289631070;
+			PBXWorkspaceStateSaveDate = 289631070;
+		};
+		sourceControlManager = CA5747BA11436B9100FC81E6 /* Source Control */;
+		userBuildSettings = {
+			OBJROOT = /Users/Brandon/Documents/Development/SVN/OODSS_build;
+			SYMROOT = /Users/Brandon/Documents/Development/SVN/OODSS_build;
+		};
+	};
+	EDCAD2081135D8870076CCCC /* ecologylabXML */ = {
+		activeExec = 0;
+		executables = (
+			CA5747A011436B5E00FC81E6 /* ecologylabXML */,
+		);
+	};
+	EDE4A5BC1135E182005517C6 /* ChatClientTutorial */ = {
+		activeExec = 0;
+		executables = (
+			CA5747A111436B5E00FC81E6 /* ChatClientTutorial */,
+		);
+	};
+	EDE4A5E71135E4A4005517C6 /* ecologylabXMLLib */ = {
+		activeExec = 0;
+	};
+}
