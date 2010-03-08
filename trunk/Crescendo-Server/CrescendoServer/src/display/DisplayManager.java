@@ -15,9 +15,6 @@ public class DisplayManager
 {
 	public DisplayManager()
 	{
-		mainFrame.setLayout(new GridLayout(3,3));
-		mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		initializeComponents();
 	}
 	
 	public void Run()
@@ -29,8 +26,7 @@ public class DisplayManager
 	{
 		mainFrame.setMinimumSize(new Dimension(600, 400));
 		mainFrame.setLocationByPlatform(true);
-		mainFrame.getContentPane().add(new JButton("Button"));
 	}
 	
-	private JFrame mainFrame = new JFrame();
+	private ServerDisplay mainFrame = new ServerDisplay();
 }
