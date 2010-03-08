@@ -28,7 +28,7 @@
   /*
    * Initialize the client with the ChatTranslations scope.
    */
-  self.client = [[XMLClient alloc] initWithHostAddress:@"shady.cse.tamu.edu" andPort:2108 
+  self.client = [[XMLClient alloc] initWithHostAddress:@"192.168.11.5" andPort:2108 
                                          andTranslationScope:scope];
 
   /*

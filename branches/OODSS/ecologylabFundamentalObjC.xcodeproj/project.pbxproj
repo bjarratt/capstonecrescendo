@@ -19,6 +19,15 @@
 		CA5747E611436D0600FC81E6 /* GamemodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5747DF11436D0600FC81E6 /* GamemodeViewController.m */; };
 		CA5747E711436D0600FC81E6 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5747E111436D0600FC81E6 /* HelpViewController.m */; };
 		CA57480E11436DB400FC81E6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CA57480D11436DB400FC81E6 /* main.m */; };
+		CA9DD6531144C5CA0068420A /* ChatRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE4A6E51135F2F9005517C6 /* ChatRequest.m */; };
+		CA9DD67B1144CB190068420A /* ChatTranslations.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE4A79F1135FE10005517C6 /* ChatTranslations.m */; };
+		CA9DD6801144CC450068420A /* AppConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE4A5B31135E09E005517C6 /* AppConfig.m */; };
+		CA9DD68C1144CE6B0068420A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA9DD68B1144CE6B0068420A /* CFNetwork.framework */; };
+		CA9DD68E1144CE730068420A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA9DD68D1144CE730068420A /* UIKit.framework */; };
+		CA9DD6901144CE7D0068420A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA9DD68F1144CE7D0068420A /* CoreGraphics.framework */; };
+		CA9DD6921144CE870068420A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA9DD6911144CE870068420A /* Foundation.framework */; };
+		CA9DD7261144D67B0068420A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CA57480D11436DB400FC81E6 /* main.m */; };
+		CA9DD7B51144E0BE0068420A /* ChatUpdateDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE4A880113606B3005517C6 /* ChatUpdateDelegate.m */; };
 		EDE4A4811135D8EB005517C6 /* BItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEDB1135CF040076CCCC /* BItem.m */; };
 		EDE4A4821135D8EB005517C6 /* BooleanType.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACF071135CF040076CCCC /* BooleanType.m */; };
 		EDE4A4831135D8EB005517C6 /* Channel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEE21135CF040076CCCC /* Channel.m */; };
@@ -160,7 +169,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = EDCACE9B1135CEE10076CCCC /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = EDE4A5E71135E4A4005517C6 /* ecologylabXMLLib */;
+			remoteGlobalIDString = EDE4A5E71135E4A4005517C6;
 			remoteInfo = ecologylabXMLLib;
 		};
 		EDE4A61D1135E516005517C6 /* PBXContainerItemProxy */ = {
@@ -192,6 +201,10 @@
 		CA5747E211436D0600FC81E6 /* TrainingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingViewController.h; sourceTree = "<group>"; };
 		CA57480511436D9900FC81E6 /* Crescendo_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Crescendo_Prefix.pch; sourceTree = "<group>"; };
 		CA57480D11436DB400FC81E6 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CA9DD68B1144CE6B0068420A /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		CA9DD68D1144CE730068420A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CA9DD68F1144CE7D0068420A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CA9DD6911144CE870068420A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EDCACEA71135CF040076CCCC /* GameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameData.h; sourceTree = "<group>"; };
 		EDCACEA81135CF040076CCCC /* GameData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameData.m; sourceTree = "<group>"; };
 		EDCACEAB1135CF040076CCCC /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
@@ -356,6 +369,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA5747CE11436C9500FC81E6 /* libecologylabXMLLib.a in Frameworks */,
+				CA9DD68C1144CE6B0068420A /* CFNetwork.framework in Frameworks */,
+				CA9DD68E1144CE730068420A /* UIKit.framework in Frameworks */,
+				CA9DD6901144CE7D0068420A /* CoreGraphics.framework in Frameworks */,
+				CA9DD6921144CE870068420A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +411,8 @@
 		CA5747BD11436BFF00FC81E6 /* Crescendo */ = {
 			isa = PBXGroup;
 			children = (
+				CA9DD5FF1144BF350068420A /* OODSS */,
+				CA5747E211436D0600FC81E6 /* TrainingViewController.h */,
 				CA5747D911436D0600FC81E6 /* TrainingViewController.m */,
 				CA5747DA11436D0600FC81E6 /* CrescendoAppDelegate.h */,
 				CA5747DB11436D0600FC81E6 /* CrescendoAppDelegate.m */,
@@ -403,7 +422,6 @@
 				CA5747DF11436D0600FC81E6 /* GamemodeViewController.m */,
 				CA5747E011436D0600FC81E6 /* HelpViewController.h */,
 				CA5747E111436D0600FC81E6 /* HelpViewController.m */,
-				CA5747E211436D0600FC81E6 /* TrainingViewController.h */,
 			);
 			name = Crescendo;
 			sourceTree = "<group>";
@@ -418,6 +436,20 @@
 				CA5747CF11436CB600FC81E6 /* TrainingViewController.xib */,
 			);
 			name = CrescendoResource;
+			sourceTree = "<group>";
+		};
+		CA9DD5FF1144BF350068420A /* OODSS */ = {
+			isa = PBXGroup;
+			children = (
+				EDE4A6E41135F2F9005517C6 /* ChatRequest.h */,
+				EDE4A6E51135F2F9005517C6 /* ChatRequest.m */,
+				EDE4A6E61135F2F9005517C6 /* ChatUpdate.h */,
+				EDE4A6E71135F2F9005517C6 /* ChatUpdate.m */,
+				EDE4A6DC1135EF5E005517C6 /* ChatTranslations.xml */,
+				EDE4A79E1135FE10005517C6 /* ChatTranslations.h */,
+				EDE4A79F1135FE10005517C6 /* ChatTranslations.m */,
+			);
+			name = OODSS;
 			sourceTree = "<group>";
 		};
 		EDCACE991135CEE10076CCCC = {
@@ -436,6 +468,10 @@
 				EDE4A5DB1135E422005517C6 /* CoreGraphics.framework */,
 				EDE4A5DD1135E42F005517C6 /* CFNetwork.framework */,
 				CA5747C811436C6700FC81E6 /* Crescendo-Info.plist */,
+				CA9DD68B1144CE6B0068420A /* CFNetwork.framework */,
+				CA9DD68D1144CE730068420A /* UIKit.framework */,
+				CA9DD68F1144CE7D0068420A /* CoreGraphics.framework */,
+				CA9DD6911144CE870068420A /* Foundation.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -817,13 +853,6 @@
 		EDE4A6DB1135EF3F005517C6 /* Messages */ = {
 			isa = PBXGroup;
 			children = (
-				EDE4A6E41135F2F9005517C6 /* ChatRequest.h */,
-				EDE4A6E51135F2F9005517C6 /* ChatRequest.m */,
-				EDE4A6E61135F2F9005517C6 /* ChatUpdate.h */,
-				EDE4A6E71135F2F9005517C6 /* ChatUpdate.m */,
-				EDE4A6DC1135EF5E005517C6 /* ChatTranslations.xml */,
-				EDE4A79E1135FE10005517C6 /* ChatTranslations.h */,
-				EDE4A79F1135FE10005517C6 /* ChatTranslations.m */,
 			);
 			name = Messages;
 			sourceTree = "<group>";
@@ -986,6 +1015,10 @@
 				CA5747E611436D0600FC81E6 /* GamemodeViewController.m in Sources */,
 				CA5747E711436D0600FC81E6 /* HelpViewController.m in Sources */,
 				CA57480E11436DB400FC81E6 /* main.m in Sources */,
+				CA9DD6531144C5CA0068420A /* ChatRequest.m in Sources */,
+				CA9DD67B1144CB190068420A /* ChatTranslations.m in Sources */,
+				CA9DD6801144CC450068420A /* AppConfig.m in Sources */,
+				CA9DD7B51144E0BE0068420A /* ChatUpdateDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1060,6 +1093,7 @@
 				EDE4A6E91135F2F9005517C6 /* ChatUpdate.m in Sources */,
 				EDE4A7A01135FE10005517C6 /* ChatTranslations.m in Sources */,
 				EDE4A881113606B3005517C6 /* ChatUpdateDelegate.m in Sources */,
+				CA9DD7261144D67B0068420A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

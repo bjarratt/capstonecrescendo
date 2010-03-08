@@ -10,12 +10,17 @@
 #import "TrainingViewController.h"
 #import "GamemodeViewController.h"
 #import "HelpViewController.h"
+#import "ChatUpdateDelegate.h"
+#import "XMLClient.h"
 
-@interface CrescendoViewController : UIViewController {
+@interface CrescendoViewController : UIViewController <ChatUpdateDelegate> {
 	IBOutlet TrainingViewController *trainingViewController;
 	IBOutlet GamemodeViewController *gamemodeViewController;
 	IBOutlet HelpViewController *helpViewController;
+	XMLClient *client;
 }
+
+@property (nonatomic, retain) XMLClient* client;
 
 - (IBAction) goToTrainingView;
 - (IBAction) goToGamemodeView;

@@ -7,10 +7,36 @@
 //
 
 #import "CrescendoViewController.h"
+#import "AppConfig.h"
+#import "ChatRequest.h"
 
 @implementation CrescendoViewController
 
+@synthesize client;
+
+/*
+ * ChatUpdateDelegate method.
+ */
+- (void) recievedChatUpdate:(ChatUpdate*)update {
+}
+
 - (IBAction) goToTrainingView {
+	NSString* inputText = @"training view";
+	
+    /*
+     * Initialize ChatRequest and set message to content's of the text field.
+     */
+    ChatRequest* request = [[ChatRequest alloc] init];
+    [request setMessage:inputText];
+    
+    /*
+     * Setup the client to send the message a little later in
+     * the run loop.
+     */
+    [client performSelector:@selector(sendMessage:) withObject: request];
+    
+    [request release];
+	
 	[self presentModalViewController:trainingViewController animated:YES];
 }
 - (IBAction) goToGamemodeView {

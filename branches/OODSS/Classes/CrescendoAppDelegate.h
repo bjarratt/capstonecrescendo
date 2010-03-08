@@ -7,16 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XMLClient.h"
+#import "ChatTranslations.h"
 
 @class CrescendoViewController;
 
-@interface CrescendoAppDelegate : NSObject <UIApplicationDelegate> {
+@interface CrescendoAppDelegate : NSObject <UIApplicationDelegate, XMLClientDelegate> {
     UIWindow *window;
     CrescendoViewController *viewController;
+	XMLClient* client;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet CrescendoViewController *viewController;
+@property(nonatomic, retain) XMLClient *client;
 
 @end
 
