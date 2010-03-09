@@ -1,0 +1,18 @@
+<translation_scope name="init_connection_request">
+	<class_descriptor described_class="ecologylab.services.messages.InitConnectionRequest"
+		tag_name="init_connection_request">
+		<field_descriptor field="timeStamp" tag_name="time_stamp"
+			type="1" scalar_type="LongType"></field_descriptor>
+		<field_descriptor field="uid" tag_name="uid" type="1"
+			scalar_type="LongType"></field_descriptor>
+		<field_descriptor field="sessionId" tag_name="session_id"
+			type="1" scalar_type="StringType"></field_descriptor>
+	</class_descriptor>
+	<class_descriptor described_class="ecologylab.services.messages.RequestMessage"
+		tag_name="request_message">
+		<field_descriptor field="timeStamp" tag_name="time_stamp"
+			type="1" scalar_type="LongType"></field_descriptor>
+		<field_descriptor field="uid" tag_name="uid" type="1"
+			scalar_type="LongType"></field_descriptor>
+	</class_descriptor>
+</translation_scope>

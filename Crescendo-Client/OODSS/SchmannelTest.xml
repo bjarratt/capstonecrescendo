@@ -1,0 +1,19 @@
+<schmannel>
+	<schm_items>
+		<item>
+			<title>t2ec</title>
+		</item>
+		<item>
+			<title>t3ec</title>
+		</item>
+		<schm_item>
+			<title>cf</title>
+		</schm_item>
+	</schm_items>
+	<b_item>
+		<title>nested</title>
+	</b_item>
+	<b_item>
+		<title>nested234</title>
+	</b_item>
+</schmannel>
