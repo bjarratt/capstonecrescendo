@@ -1,0 +1,248 @@
+// !$*UTF8*$!
+{
+	3ECD61DC11470985005BB5EF /* Crescendo */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = Crescendo;
+		sourceDirectories = (
+		);
+	};
+	3ECD61DD11470985005BB5EF /* ecologylabXML */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 1;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = ecologylabXML;
+		sourceDirectories = (
+		);
+	};
+	3ECD61DE11470985005BB5EF /* ChatClientTutorial */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 1;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = ChatClientTutorial;
+		sourceDirectories = (
+		);
+	};
+	3ECD61EB114709A4005BB5EF /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryName = "Crescendo-OODSS";
+		};
+	};
+	3ECD61EC114709A4005BB5EF /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	3ECD620511470A54005BB5EF /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = EDE4A6DC1135EF5E005517C6 /* ChatTranslations.xml */;
+	};
+	3ECD621111470A5A005BB5EF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EDE4A6DC1135EF5E005517C6 /* ChatTranslations.xml */;
+		name = "ChatTranslations.xml: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 760;
+		vrLoc = 0;
+	};
+	3ECD622811470CCD005BB5EF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EDE4A6DC1135EF5E005517C6 /* ChatTranslations.xml */;
+		name = "ChatTranslations.xml: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1335;
+		vrLoc = 0;
+	};
+	3ECD622911470CCD005BB5EF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EDE4A79E1135FE10005517C6 /* ChatTranslations.h */;
+		name = "ChatTranslations.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 313;
+		vrLoc = 0;
+	};
+	3ECD622A11470CCD005BB5EF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EDE4A6DC1135EF5E005517C6 /* ChatTranslations.xml */;
+		name = "ChatTranslations.xml: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1335;
+		vrLoc = 0;
+	};
+	3ECD622B11470CCD005BB5EF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EDE4A79E1135FE10005517C6 /* ChatTranslations.h */;
+		name = "ChatTranslations.h: 7";
+		rLen = 0;
+		rLoc = 168;
+		rType = 0;
+		vrLen = 314;
+		vrLoc = 0;
+	};
+	CA5747C511436C6700FC81E6 /* Crescendo */ = {
+		activeExec = 0;
+		executables = (
+			3ECD61DC11470985005BB5EF /* Crescendo */,
+		);
+	};
+	EDCACE9B1135CEE10076CCCC /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 3ECD61DC11470985005BB5EF /* Crescendo */;
+		activeTarget = CA5747C511436C6700FC81E6 /* Crescendo */;
+		codeSenseManager = 3ECD61EC114709A4005BB5EF /* Code sense */;
+		executables = (
+			3ECD61DC11470985005BB5EF /* Crescendo */,
+			3ECD61DD11470985005BB5EF /* ecologylabXML */,
+			3ECD61DE11470985005BB5EF /* ChatClientTutorial */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					611,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.XCSCMDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					20,
+					587,
+					20,
+					48.16259765625,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_SCM_ColumnID,
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 289868862;
+			PBXWorkspaceStateSaveDate = 289868862;
+		};
+		perUserProjectItems = {
+			3ECD620511470A54005BB5EF = 3ECD620511470A54005BB5EF /* PBXBookmark */;
+			3ECD621111470A5A005BB5EF = 3ECD621111470A5A005BB5EF /* PBXTextBookmark */;
+			3ECD622811470CCD005BB5EF /* PBXTextBookmark */ = 3ECD622811470CCD005BB5EF /* PBXTextBookmark */;
+			3ECD622911470CCD005BB5EF /* PBXTextBookmark */ = 3ECD622911470CCD005BB5EF /* PBXTextBookmark */;
+			3ECD622A11470CCD005BB5EF /* PBXTextBookmark */ = 3ECD622A11470CCD005BB5EF /* PBXTextBookmark */;
+			3ECD622B11470CCD005BB5EF /* PBXTextBookmark */ = 3ECD622B11470CCD005BB5EF /* PBXTextBookmark */;
+		};
+		sourceControlManager = 3ECD61EB114709A4005BB5EF /* Source Control */;
+		userBuildSettings = {
+			OBJROOT = "/Users/seniorcapstone/Documents/XCode Workspace/Local/OODSS_build";
+			SYMROOT = "/Users/seniorcapstone/Documents/XCode Workspace/Local/OODSS_build";
+		};
+	};
+	EDCAD2081135D8870076CCCC /* ecologylabXML */ = {
+		activeExec = 0;
+		executables = (
+			3ECD61DD11470985005BB5EF /* ecologylabXML */,
+		);
+	};
+	EDE4A5BC1135E182005517C6 /* ChatClientTutorial */ = {
+		activeExec = 0;
+		executables = (
+			3ECD61DE11470985005BB5EF /* ChatClientTutorial */,
+		);
+	};
+	EDE4A5E71135E4A4005517C6 /* ecologylabXMLLib */ = {
+		activeExec = 0;
+	};
+	EDE4A6DC1135EF5E005517C6 /* ChatTranslations.xml */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {789, 1610}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1335}";
+		};
+	};
+	EDE4A79E1135FE10005517C6 /* ChatTranslations.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {789, 449}}";
+			sepNavSelRange = "{168, 0}";
+			sepNavVisRange = "{0, 314}";
+		};
+	};
+}
