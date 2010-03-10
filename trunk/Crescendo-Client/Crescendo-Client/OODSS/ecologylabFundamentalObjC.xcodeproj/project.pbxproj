@@ -1,0 +1,1539 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1F9647AD11477FC90037BA93 /* A5.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F96478D11477FC90037BA93 /* A5.png */; };
+		1F9647AE11477FC90037BA93 /* ASharp5.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F96478E11477FC90037BA93 /* ASharp5.png */; };
+		1F9647AF11477FC90037BA93 /* B5.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F96478F11477FC90037BA93 /* B5.png */; };
+		1F9647B011477FC90037BA93 /* C6.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F96479011477FC90037BA93 /* C6.png */; };
+		1F9647B111477FC90037BA93 /* CSharp6.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F96479111477FC90037BA93 /* CSharp6.png */; };
+		1F9647B211477FC90037BA93 /* D6.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F96479211477FC90037BA93 /* D6.png */; };
+		1F9647B311477FC90037BA93 /* DSharp6.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F96479311477FC90037BA93 /* DSharp6.png */; };
+		1F9647B411477FC90037BA93 /* E5.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F96479411477FC90037BA93 /* E5.png */; };
+		1F9647B511477FC90037BA93 /* E6.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F96479511477FC90037BA93 /* E6.png */; };
+		1F9647B611477FC90037BA93 /* eighthnote.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F96479611477FC90037BA93 /* eighthnote.png */; };
+		1F9647B711477FC90037BA93 /* F5.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F96479711477FC90037BA93 /* F5.png */; };
+		1F9647B811477FC90037BA93 /* F6.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F96479811477FC90037BA93 /* F6.png */; };
+		1F9647B911477FC90037BA93 /* FSharp5.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F96479911477FC90037BA93 /* FSharp5.png */; };
+		1F9647BA11477FC90037BA93 /* FSharp6.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F96479A11477FC90037BA93 /* FSharp6.png */; };
+		1F9647BB11477FC90037BA93 /* G5.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F96479B11477FC90037BA93 /* G5.png */; };
+		1F9647BC11477FC90037BA93 /* GSharp5.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F96479C11477FC90037BA93 /* GSharp5.png */; };
+		1F9647BD11477FC90037BA93 /* halfnote.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F96479D11477FC90037BA93 /* halfnote.png */; };
+		1F9647BE11477FC90037BA93 /* quarternote.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F96479E11477FC90037BA93 /* quarternote.png */; };
+		1F9647BF11477FC90037BA93 /* wholenote.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F96479F11477FC90037BA93 /* wholenote.png */; };
+		1F9647C011477FC90037BA93 /* background_horizontal.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F9647A111477FC90037BA93 /* background_horizontal.png */; };
+		1F9647C111477FC90037BA93 /* background_vertical.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F9647A211477FC90037BA93 /* background_vertical.png */; };
+		1F9647C711477FC90037BA93 /* main_menu_layout.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F9647A811477FC90037BA93 /* main_menu_layout.png */; };
+		1F9647C911477FC90037BA93 /* menu_button_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F9647AA11477FC90037BA93 /* menu_button_up.png */; };
+		1F9647CE1147825A0037BA93 /* help_button_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F9647CD1147825A0037BA93 /* help_button_up.png */; };
+		3ECD620311470A51005BB5EF /* ChatTranslations.xml in Resources */ = {isa = PBXBuildFile; fileRef = EDE4A6DC1135EF5E005517C6 /* ChatTranslations.xml */; };
+		CA5747CE11436C9500FC81E6 /* libecologylabXMLLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EDE4A5E81135E4A4005517C6 /* libecologylabXMLLib.a */; };
+		CA5747D011436CB600FC81E6 /* TrainingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5747CF11436CB600FC81E6 /* TrainingViewController.xib */; };
+		CA5747D511436CF300FC81E6 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5747D111436CF300FC81E6 /* MainWindow.xib */; };
+		CA5747D611436CF300FC81E6 /* HelpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5747D211436CF300FC81E6 /* HelpViewController.xib */; };
+		CA5747D711436CF300FC81E6 /* GamemodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5747D311436CF300FC81E6 /* GamemodeViewController.xib */; };
+		CA5747D811436CF300FC81E6 /* CrescendoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5747D411436CF300FC81E6 /* CrescendoViewController.xib */; };
+		CA5747E311436D0600FC81E6 /* TrainingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5747D911436D0600FC81E6 /* TrainingViewController.m */; };
+		CA5747E411436D0600FC81E6 /* CrescendoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5747DB11436D0600FC81E6 /* CrescendoAppDelegate.m */; };
+		CA5747E511436D0600FC81E6 /* CrescendoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5747DD11436D0600FC81E6 /* CrescendoViewController.m */; };
+		CA5747E611436D0600FC81E6 /* GamemodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5747DF11436D0600FC81E6 /* GamemodeViewController.m */; };
+		CA5747E711436D0600FC81E6 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5747E111436D0600FC81E6 /* HelpViewController.m */; };
+		CA57480E11436DB400FC81E6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CA57480D11436DB400FC81E6 /* main.m */; };
+		CA9DD6531144C5CA0068420A /* ChatRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE4A6E51135F2F9005517C6 /* ChatRequest.m */; };
+		CA9DD67B1144CB190068420A /* ChatTranslations.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE4A79F1135FE10005517C6 /* ChatTranslations.m */; };
+		CA9DD6801144CC450068420A /* AppConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE4A5B31135E09E005517C6 /* AppConfig.m */; };
+		CA9DD68C1144CE6B0068420A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA9DD68B1144CE6B0068420A /* CFNetwork.framework */; };
+		CA9DD68E1144CE730068420A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA9DD68D1144CE730068420A /* UIKit.framework */; };
+		CA9DD6901144CE7D0068420A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA9DD68F1144CE7D0068420A /* CoreGraphics.framework */; };
+		CA9DD6921144CE870068420A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA9DD6911144CE870068420A /* Foundation.framework */; };
+		CA9DD7261144D67B0068420A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CA57480D11436DB400FC81E6 /* main.m */; };
+		CA9DD7B51144E0BE0068420A /* ChatUpdateDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE4A880113606B3005517C6 /* ChatUpdateDelegate.m */; };
+		EDE4A4811135D8EB005517C6 /* BItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEDB1135CF040076CCCC /* BItem.m */; };
+		EDE4A4821135D8EB005517C6 /* BooleanType.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACF071135CF040076CCCC /* BooleanType.m */; };
+		EDE4A4831135D8EB005517C6 /* Channel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEE21135CF040076CCCC /* Channel.m */; };
+		EDE4A4841135D8EB005517C6 /* ClassDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACF101135CF040076CCCC /* ClassDescriptor.m */; };
+		EDE4A4851135D8EB005517C6 /* ClassType.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEF71135CF040076CCCC /* ClassType.m */; };
+		EDE4A4861135D8EB005517C6 /* Connection.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEBC1135CF040076CCCC /* Connection.m */; };
+		EDE4A4871135D8EB005517C6 /* DefaultServicesTranslations.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEC61135CF040076CCCC /* DefaultServicesTranslations.m */; };
+		EDE4A4881135D8EB005517C6 /* DictionaryList.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEE91135CF040076CCCC /* DictionaryList.m */; };
+		EDE4A4891135D8EB005517C6 /* DisconnectRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACECE1135CF040076CCCC /* DisconnectRequest.m */; };
+		EDE4A48A1135D8EB005517C6 /* DoubleType.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACF091135CF040076CCCC /* DoubleType.m */; };
+		EDE4A48B1135D8EB005517C6 /* ecologylabxml.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACF1A1135CF040076CCCC /* ecologylabxml.m */; };
+		EDE4A48C1135D8EB005517C6 /* ecologylabXMLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACF201135CF040076CCCC /* ecologylabXMLAppDelegate.m */; };
+		EDE4A48D1135D8EB005517C6 /* ecologylabXMLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACF221135CF040076CCCC /* ecologylabXMLViewController.m */; };
+		EDE4A48E1135D8EB005517C6 /* ElementState.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACF141135CF040076CCCC /* ElementState.m */; };
+		EDE4A48F1135D8EB005517C6 /* ElementStateSAXHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACF1E1135CF040076CCCC /* ElementStateSAXHandler.m */; };
+		EDE4A4901135D8EB005517C6 /* Entity.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEAC1135CF040076CCCC /* Entity.m */; };
+		EDE4A4911135D8EB005517C6 /* ErrorResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACED01135CF040076CCCC /* ErrorResponse.m */; };
+		EDE4A4921135D8EB005517C6 /* FieldDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACF121135CF040076CCCC /* FieldDescriptor.m */; };
+		EDE4A4931135D8EB005517C6 /* FieldType.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEF91135CF040076CCCC /* FieldType.m */; };
+		EDE4A4941135D8EB005517C6 /* FloatType.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACF011135CF040076CCCC /* FloatType.m */; };
+		EDE4A4951135D8EB005517C6 /* GameData.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEA81135CF040076CCCC /* GameData.m */; };
+		EDE4A4961135D8EB005517C6 /* HistoryEchoRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACED81135CF040076CCCC /* HistoryEchoRequest.m */; };
+		EDE4A4971135D8EB005517C6 /* HistoryEchoResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACED61135CF040076CCCC /* HistoryEchoResponse.m */; };
+		EDE4A4981135D8EB005517C6 /* InitConnectionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACECC1135CF040076CCCC /* InitConnectionRequest.m */; };
+		EDE4A4991135D8EB005517C6 /* InitConnectionResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACECA1135CF040076CCCC /* InitConnectionResponse.m */; };
+		EDE4A49A1135D8EB005517C6 /* IntType.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACF051135CF040076CCCC /* IntType.m */; };
+		EDE4A49B1135D8EB005517C6 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEE41135CF040076CCCC /* Item.m */; };
+		EDE4A49C1135D8EB005517C6 /* LongType.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACF031135CF040076CCCC /* LongType.m */; };
+		EDE4A49D1135D8EB005517C6 /* NetworkConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEC21135CF040076CCCC /* NetworkConstants.m */; };
+		EDE4A49E1135D8EB005517C6 /* OrbitingThreat.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEB01135CF040076CCCC /* OrbitingThreat.m */; };
+		EDE4A49F1135D8EB005517C6 /* ParsedURL.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEEF1135CF040076CCCC /* ParsedURL.m */; };
+		EDE4A4A01135D8EB005517C6 /* ParsedURLType.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEF31135CF040076CCCC /* ParsedURLType.m */; };
+		EDE4A4A11135D8EB005517C6 /* PatrollingThreat.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEB21135CF040076CCCC /* PatrollingThreat.m */; };
+		EDE4A4A21135D8EB005517C6 /* ReferenceType.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEFD1135CF040076CCCC /* ReferenceType.m */; };
+		EDE4A4A31135D8EB005517C6 /* ReferenceTypeType.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEFB1135CF040076CCCC /* ReferenceTypeType.m */; };
+		EDE4A4A41135D8EB005517C6 /* RepellableThreat.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEB41135CF040076CCCC /* RepellableThreat.m */; };
+		EDE4A4A51135D8EB005517C6 /* RequestMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACED21135CF040076CCCC /* RequestMessage.m */; };
+		EDE4A4A61135D8EB005517C6 /* ResponseMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACED41135CF040076CCCC /* ResponseMessage.m */; };
+		EDE4A4A71135D8EB005517C6 /* RssState.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEE61135CF040076CCCC /* RssState.m */; };
+		EDE4A4A81135D8EB005517C6 /* ScalarType.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACF0B1135CF040076CCCC /* ScalarType.m */; };
+		EDE4A4A91135D8EB005517C6 /* Schmannel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEDD1135CF040076CCCC /* Schmannel.m */; };
+		EDE4A4AA1135D8EB005517C6 /* SchmItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEDF1135CF040076CCCC /* SchmItem.m */; };
+		EDE4A4AB1135D8EB005517C6 /* Scope.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEEB1135CF040076CCCC /* Scope.m */; };
+		EDE4A4AC1135D8EB005517C6 /* ServiceMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEC81135CF040076CCCC /* ServiceMessage.m */; };
+		EDE4A4AD1135D8EB005517C6 /* SingleSeekerThreat.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEB61135CF040076CCCC /* SingleSeekerThreat.m */; };
+		EDE4A4AE1135D8EB005517C6 /* StringType.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEF51135CF040076CCCC /* StringType.m */; };
+		EDE4A4AF1135D8EB005517C6 /* Threat.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEB81135CF040076CCCC /* Threat.m */; };
+		EDE4A4B01135D8EB005517C6 /* TranslationScope.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACF181135CF040076CCCC /* TranslationScope.m */; };
+		EDE4A4B11135D8EB005517C6 /* XMLClient.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEBF1135CF040076CCCC /* XMLClient.m */; };
+		EDE4A4B21135D8EB005517C6 /* XMLTools.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACF161135CF040076CCCC /* XMLTools.m */; };
+		EDE4A4B41135D8F5005517C6 /* gamedata_translationScope.xml in Resources */ = {isa = PBXBuildFile; fileRef = EDCACF251135CF270076CCCC /* gamedata_translationScope.xml */; };
+		EDE4A4B51135D8F5005517C6 /* GameData.xml in Resources */ = {isa = PBXBuildFile; fileRef = EDCACF261135CF270076CCCC /* GameData.xml */; };
+		EDE4A4B61135D8F5005517C6 /* SchmannelTest.xml in Resources */ = {isa = PBXBuildFile; fileRef = EDCACF271135CF270076CCCC /* SchmannelTest.xml */; };
+		EDE4A4B71135D8F5005517C6 /* InitConnectionRequest.xml in Resources */ = {isa = PBXBuildFile; fileRef = EDCACF281135CF270076CCCC /* InitConnectionRequest.xml */; };
+		EDE4A4B81135D8F5005517C6 /* Schmannel.xml in Resources */ = {isa = PBXBuildFile; fileRef = EDCACF291135CF270076CCCC /* Schmannel.xml */; };
+		EDE4A4B91135D8F5005517C6 /* test.xml in Resources */ = {isa = PBXBuildFile; fileRef = EDCACF2A1135CF270076CCCC /* test.xml */; };
+		EDE4A4BA1135D8F5005517C6 /* RssTranslationScope.xml in Resources */ = {isa = PBXBuildFile; fileRef = EDCACF2B1135CF270076CCCC /* RssTranslationScope.xml */; };
+		EDE4A4BB1135D8F5005517C6 /* ecologylabXMLViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDCACF2C1135CF270076CCCC /* ecologylabXMLViewController.xib */; };
+		EDE4A4BD1135D8F5005517C6 /* ecologylabXML-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDCACF2E1135CF270076CCCC /* ecologylabXML-Info.plist */; };
+		EDE4A54B1135D907005517C6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDCAD1261135D81F0076CCCC /* CoreGraphics.framework */; };
+		EDE4A54C1135D907005517C6 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDCAD1291135D8240076CCCC /* CoreFoundation.framework */; };
+		EDE4A54D1135D907005517C6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDCAD12B1135D82B0076CCCC /* UIKit.framework */; };
+		EDE4A5A31135DE6E005517C6 /* ChatClientInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDE4A5A21135DE6E005517C6 /* ChatClientInfo.plist */; };
+		EDE4A5B41135E09E005517C6 /* UITextView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE4A5B01135E09E005517C6 /* UITextView+Utils.m */; };
+		EDE4A5D21135E3B9005517C6 /* ChatAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE4A5A91135E08A005517C6 /* ChatAppDelegate.m */; };
+		EDE4A5D31135E3B9005517C6 /* ChatRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE4A5AC1135E08A005517C6 /* ChatRoomViewController.m */; };
+		EDE4A5D41135E3B9005517C6 /* UITextView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE4A5B01135E09E005517C6 /* UITextView+Utils.m */; };
+		EDE4A5D51135E3B9005517C6 /* AppConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE4A5B31135E09E005517C6 /* AppConfig.m */; };
+		EDE4A5D81135E40C005517C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDE4A5D71135E40C005517C6 /* Foundation.framework */; };
+		EDE4A5DA1135E418005517C6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDE4A5D91135E418005517C6 /* UIKit.framework */; };
+		EDE4A5DC1135E422005517C6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDE4A5DB1135E422005517C6 /* CoreGraphics.framework */; };
+		EDE4A5DE1135E42F005517C6 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDE4A5DD1135E42F005517C6 /* CFNetwork.framework */; };
+		EDE4A5E01135E44C005517C6 /* ChatRoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDE4A5A01135DA09005517C6 /* ChatRoomViewController.xib */; };
+		EDE4A5EB1135E4E4005517C6 /* BItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEDB1135CF040076CCCC /* BItem.m */; };
+		EDE4A5EC1135E4E4005517C6 /* BooleanType.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACF071135CF040076CCCC /* BooleanType.m */; };
+		EDE4A5ED1135E4E4005517C6 /* Channel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEE21135CF040076CCCC /* Channel.m */; };
+		EDE4A5EE1135E4E4005517C6 /* ClassDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACF101135CF040076CCCC /* ClassDescriptor.m */; };
+		EDE4A5EF1135E4E4005517C6 /* ClassType.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEF71135CF040076CCCC /* ClassType.m */; };
+		EDE4A5F01135E4E4005517C6 /* Connection.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEBC1135CF040076CCCC /* Connection.m */; };
+		EDE4A5F11135E4E4005517C6 /* DefaultServicesTranslations.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEC61135CF040076CCCC /* DefaultServicesTranslations.m */; };
+		EDE4A5F21135E4E4005517C6 /* DictionaryList.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEE91135CF040076CCCC /* DictionaryList.m */; };
+		EDE4A5F31135E4E4005517C6 /* DisconnectRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACECE1135CF040076CCCC /* DisconnectRequest.m */; };
+		EDE4A5F41135E4E4005517C6 /* DoubleType.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACF091135CF040076CCCC /* DoubleType.m */; };
+		EDE4A5F51135E4E4005517C6 /* ecologylabxml.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACF1A1135CF040076CCCC /* ecologylabxml.m */; };
+		EDE4A5F61135E4E4005517C6 /* ecologylabXMLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACF201135CF040076CCCC /* ecologylabXMLAppDelegate.m */; };
+		EDE4A5F71135E4E4005517C6 /* ecologylabXMLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACF221135CF040076CCCC /* ecologylabXMLViewController.m */; };
+		EDE4A5F81135E4E4005517C6 /* ElementState.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACF141135CF040076CCCC /* ElementState.m */; };
+		EDE4A5F91135E4E4005517C6 /* ElementStateSAXHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACF1E1135CF040076CCCC /* ElementStateSAXHandler.m */; };
+		EDE4A5FA1135E4E4005517C6 /* Entity.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEAC1135CF040076CCCC /* Entity.m */; };
+		EDE4A5FB1135E4E4005517C6 /* ErrorResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACED01135CF040076CCCC /* ErrorResponse.m */; };
+		EDE4A5FC1135E4E4005517C6 /* FieldDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACF121135CF040076CCCC /* FieldDescriptor.m */; };
+		EDE4A5FD1135E4E4005517C6 /* FieldType.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEF91135CF040076CCCC /* FieldType.m */; };
+		EDE4A5FE1135E4E4005517C6 /* FloatType.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACF011135CF040076CCCC /* FloatType.m */; };
+		EDE4A5FF1135E4E4005517C6 /* GameData.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEA81135CF040076CCCC /* GameData.m */; };
+		EDE4A6001135E4E4005517C6 /* HistoryEchoRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACED81135CF040076CCCC /* HistoryEchoRequest.m */; };
+		EDE4A6011135E4E4005517C6 /* HistoryEchoResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACED61135CF040076CCCC /* HistoryEchoResponse.m */; };
+		EDE4A6021135E4E4005517C6 /* InitConnectionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACECC1135CF040076CCCC /* InitConnectionRequest.m */; };
+		EDE4A6031135E4E4005517C6 /* InitConnectionResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACECA1135CF040076CCCC /* InitConnectionResponse.m */; };
+		EDE4A6041135E4E4005517C6 /* IntType.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACF051135CF040076CCCC /* IntType.m */; };
+		EDE4A6051135E4E4005517C6 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEE41135CF040076CCCC /* Item.m */; };
+		EDE4A6061135E4E4005517C6 /* LongType.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACF031135CF040076CCCC /* LongType.m */; };
+		EDE4A6071135E4E4005517C6 /* NetworkConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEC21135CF040076CCCC /* NetworkConstants.m */; };
+		EDE4A6081135E4E4005517C6 /* OrbitingThreat.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEB01135CF040076CCCC /* OrbitingThreat.m */; };
+		EDE4A6091135E4E4005517C6 /* ParsedURL.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEEF1135CF040076CCCC /* ParsedURL.m */; };
+		EDE4A60A1135E4E4005517C6 /* ParsedURLType.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEF31135CF040076CCCC /* ParsedURLType.m */; };
+		EDE4A60B1135E4E4005517C6 /* PatrollingThreat.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEB21135CF040076CCCC /* PatrollingThreat.m */; };
+		EDE4A60C1135E4E4005517C6 /* ReferenceType.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEFD1135CF040076CCCC /* ReferenceType.m */; };
+		EDE4A60D1135E4E4005517C6 /* ReferenceTypeType.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEFB1135CF040076CCCC /* ReferenceTypeType.m */; };
+		EDE4A60E1135E4E4005517C6 /* RepellableThreat.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEB41135CF040076CCCC /* RepellableThreat.m */; };
+		EDE4A60F1135E4E4005517C6 /* RequestMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACED21135CF040076CCCC /* RequestMessage.m */; };
+		EDE4A6101135E4E4005517C6 /* ResponseMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACED41135CF040076CCCC /* ResponseMessage.m */; };
+		EDE4A6111135E4E4005517C6 /* RssState.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEE61135CF040076CCCC /* RssState.m */; };
+		EDE4A6121135E4E4005517C6 /* ScalarType.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACF0B1135CF040076CCCC /* ScalarType.m */; };
+		EDE4A6131135E4E4005517C6 /* Schmannel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEDD1135CF040076CCCC /* Schmannel.m */; };
+		EDE4A6141135E4E4005517C6 /* SchmItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEDF1135CF040076CCCC /* SchmItem.m */; };
+		EDE4A6151135E4E4005517C6 /* Scope.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEEB1135CF040076CCCC /* Scope.m */; };
+		EDE4A6161135E4E4005517C6 /* ServiceMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEC81135CF040076CCCC /* ServiceMessage.m */; };
+		EDE4A6171135E4E4005517C6 /* SingleSeekerThreat.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEB61135CF040076CCCC /* SingleSeekerThreat.m */; };
+		EDE4A6181135E4E4005517C6 /* StringType.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEF51135CF040076CCCC /* StringType.m */; };
+		EDE4A6191135E4E4005517C6 /* Threat.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEB81135CF040076CCCC /* Threat.m */; };
+		EDE4A61A1135E4E4005517C6 /* TranslationScope.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACF181135CF040076CCCC /* TranslationScope.m */; };
+		EDE4A61B1135E4E4005517C6 /* XMLClient.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACEBF1135CF040076CCCC /* XMLClient.m */; };
+		EDE4A61C1135E4E4005517C6 /* XMLTools.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCACF161135CF040076CCCC /* XMLTools.m */; };
+		EDE4A6271135E67A005517C6 /* libecologylabXMLLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EDE4A5E81135E4A4005517C6 /* libecologylabXMLLib.a */; };
+		EDE4A6DD1135EF5E005517C6 /* ChatTranslations.xml in Resources */ = {isa = PBXBuildFile; fileRef = EDE4A6DC1135EF5E005517C6 /* ChatTranslations.xml */; };
+		EDE4A6E81135F2F9005517C6 /* ChatRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE4A6E51135F2F9005517C6 /* ChatRequest.m */; };
+		EDE4A6E91135F2F9005517C6 /* ChatUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE4A6E71135F2F9005517C6 /* ChatUpdate.m */; };
+		EDE4A7911135FD92005517C6 /* DefaultServicesTranslations.xml in Resources */ = {isa = PBXBuildFile; fileRef = EDCACEC41135CF040076CCCC /* DefaultServicesTranslations.xml */; };
+		EDE4A7A01135FE10005517C6 /* ChatTranslations.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE4A79F1135FE10005517C6 /* ChatTranslations.m */; };
+		EDE4A881113606B3005517C6 /* ChatUpdateDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE4A880113606B3005517C6 /* ChatUpdateDelegate.m */; };
+		EDE4AAC5113653B0005517C6 /* OkResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE4A6DF1135F2DF005517C6 /* OkResponse.m */; };
+		EDE4AAC6113653B0005517C6 /* UpdateMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE4A6E11135F2DF005517C6 /* UpdateMessage.m */; };
+		EDE4AAED1136561F005517C6 /* UpdateMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE4A6E11135F2DF005517C6 /* UpdateMessage.m */; };
+		EDE4AB2C1137301A005517C6 /* ChatMainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDE4AB2911372FE7005517C6 /* ChatMainWindow.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CA5747CC11436C9000FC81E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EDCACE9B1135CEE10076CCCC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EDE4A5E71135E4A4005517C6;
+			remoteInfo = ecologylabXMLLib;
+		};
+		EDE4A61D1135E516005517C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EDCACE9B1135CEE10076CCCC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EDE4A5E71135E4A4005517C6;
+			remoteInfo = ecologylabXMLLib;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1F96478D11477FC90037BA93 /* A5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = A5.png; sourceTree = "<group>"; };
+		1F96478E11477FC90037BA93 /* ASharp5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ASharp5.png; sourceTree = "<group>"; };
+		1F96478F11477FC90037BA93 /* B5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = B5.png; sourceTree = "<group>"; };
+		1F96479011477FC90037BA93 /* C6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = C6.png; sourceTree = "<group>"; };
+		1F96479111477FC90037BA93 /* CSharp6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CSharp6.png; sourceTree = "<group>"; };
+		1F96479211477FC90037BA93 /* D6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = D6.png; sourceTree = "<group>"; };
+		1F96479311477FC90037BA93 /* DSharp6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DSharp6.png; sourceTree = "<group>"; };
+		1F96479411477FC90037BA93 /* E5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = E5.png; sourceTree = "<group>"; };
+		1F96479511477FC90037BA93 /* E6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = E6.png; sourceTree = "<group>"; };
+		1F96479611477FC90037BA93 /* eighthnote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eighthnote.png; sourceTree = "<group>"; };
+		1F96479711477FC90037BA93 /* F5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = F5.png; sourceTree = "<group>"; };
+		1F96479811477FC90037BA93 /* F6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = F6.png; sourceTree = "<group>"; };
+		1F96479911477FC90037BA93 /* FSharp5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FSharp5.png; sourceTree = "<group>"; };
+		1F96479A11477FC90037BA93 /* FSharp6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FSharp6.png; sourceTree = "<group>"; };
+		1F96479B11477FC90037BA93 /* G5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = G5.png; sourceTree = "<group>"; };
+		1F96479C11477FC90037BA93 /* GSharp5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GSharp5.png; sourceTree = "<group>"; };
+		1F96479D11477FC90037BA93 /* halfnote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = halfnote.png; sourceTree = "<group>"; };
+		1F96479E11477FC90037BA93 /* quarternote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quarternote.png; sourceTree = "<group>"; };
+		1F96479F11477FC90037BA93 /* wholenote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wholenote.png; sourceTree = "<group>"; };
+		1F9647A111477FC90037BA93 /* background_horizontal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_horizontal.png; sourceTree = "<group>"; };
+		1F9647A211477FC90037BA93 /* background_vertical.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_vertical.png; sourceTree = "<group>"; };
+		1F9647A811477FC90037BA93 /* main_menu_layout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_menu_layout.png; sourceTree = "<group>"; };
+		1F9647AA11477FC90037BA93 /* menu_button_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_button_up.png; sourceTree = "<group>"; };
+		1F9647CD1147825A0037BA93 /* help_button_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = help_button_up.png; sourceTree = "<group>"; };
+		CA5747C611436C6700FC81E6 /* Crescendo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crescendo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA5747C811436C6700FC81E6 /* Crescendo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Crescendo-Info.plist"; sourceTree = "<group>"; };
+		CA5747CF11436CB600FC81E6 /* TrainingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrainingViewController.xib; sourceTree = "<group>"; };
+		CA5747D111436CF300FC81E6 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		CA5747D211436CF300FC81E6 /* HelpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelpViewController.xib; sourceTree = "<group>"; };
+		CA5747D311436CF300FC81E6 /* GamemodeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GamemodeViewController.xib; sourceTree = "<group>"; };
+		CA5747D411436CF300FC81E6 /* CrescendoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CrescendoViewController.xib; sourceTree = "<group>"; };
+		CA5747D911436D0600FC81E6 /* TrainingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingViewController.m; sourceTree = "<group>"; };
+		CA5747DA11436D0600FC81E6 /* CrescendoAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrescendoAppDelegate.h; sourceTree = "<group>"; };
+		CA5747DB11436D0600FC81E6 /* CrescendoAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrescendoAppDelegate.m; sourceTree = "<group>"; };
+		CA5747DC11436D0600FC81E6 /* CrescendoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrescendoViewController.h; sourceTree = "<group>"; };
+		CA5747DD11436D0600FC81E6 /* CrescendoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrescendoViewController.m; sourceTree = "<group>"; };
+		CA5747DE11436D0600FC81E6 /* GamemodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamemodeViewController.h; sourceTree = "<group>"; };
+		CA5747DF11436D0600FC81E6 /* GamemodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamemodeViewController.m; sourceTree = "<group>"; };
+		CA5747E011436D0600FC81E6 /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
+		CA5747E111436D0600FC81E6 /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
+		CA5747E211436D0600FC81E6 /* TrainingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingViewController.h; sourceTree = "<group>"; };
+		CA57480511436D9900FC81E6 /* Crescendo_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Crescendo_Prefix.pch; sourceTree = "<group>"; };
+		CA57480D11436DB400FC81E6 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CA9DD68B1144CE6B0068420A /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		CA9DD68D1144CE730068420A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CA9DD68F1144CE7D0068420A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CA9DD6911144CE870068420A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EDCACEA71135CF040076CCCC /* GameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameData.h; sourceTree = "<group>"; };
+		EDCACEA81135CF040076CCCC /* GameData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameData.m; sourceTree = "<group>"; };
+		EDCACEAB1135CF040076CCCC /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
+		EDCACEAC1135CF040076CCCC /* Entity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entity.m; sourceTree = "<group>"; };
+		EDCACEAF1135CF040076CCCC /* OrbitingThreat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrbitingThreat.h; sourceTree = "<group>"; };
+		EDCACEB01135CF040076CCCC /* OrbitingThreat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrbitingThreat.m; sourceTree = "<group>"; };
+		EDCACEB11135CF040076CCCC /* PatrollingThreat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatrollingThreat.h; sourceTree = "<group>"; };
+		EDCACEB21135CF040076CCCC /* PatrollingThreat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatrollingThreat.m; sourceTree = "<group>"; };
+		EDCACEB31135CF040076CCCC /* RepellableThreat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepellableThreat.h; sourceTree = "<group>"; };
+		EDCACEB41135CF040076CCCC /* RepellableThreat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepellableThreat.m; sourceTree = "<group>"; };
+		EDCACEB51135CF040076CCCC /* SingleSeekerThreat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleSeekerThreat.h; sourceTree = "<group>"; };
+		EDCACEB61135CF040076CCCC /* SingleSeekerThreat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleSeekerThreat.m; sourceTree = "<group>"; };
+		EDCACEB71135CF040076CCCC /* Threat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Threat.h; sourceTree = "<group>"; };
+		EDCACEB81135CF040076CCCC /* Threat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Threat.m; sourceTree = "<group>"; };
+		EDCACEBB1135CF040076CCCC /* Connection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Connection.h; sourceTree = "<group>"; };
+		EDCACEBC1135CF040076CCCC /* Connection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Connection.m; sourceTree = "<group>"; };
+		EDCACEBD1135CF040076CCCC /* ConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionDelegate.h; sourceTree = "<group>"; };
+		EDCACEBE1135CF040076CCCC /* XMLClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLClient.h; sourceTree = "<group>"; };
+		EDCACEBF1135CF040076CCCC /* XMLClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLClient.m; sourceTree = "<group>"; };
+		EDCACEC01135CF040076CCCC /* XMLClientDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLClientDelegate.h; sourceTree = "<group>"; };
+		EDCACEC11135CF040076CCCC /* NetworkConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkConstants.h; sourceTree = "<group>"; };
+		EDCACEC21135CF040076CCCC /* NetworkConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkConstants.m; sourceTree = "<group>"; };
+		EDCACEC41135CF040076CCCC /* DefaultServicesTranslations.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = DefaultServicesTranslations.xml; sourceTree = "<group>"; };
+		EDCACEC51135CF040076CCCC /* DefaultServicesTranslations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultServicesTranslations.h; sourceTree = "<group>"; };
+		EDCACEC61135CF040076CCCC /* DefaultServicesTranslations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultServicesTranslations.m; sourceTree = "<group>"; };
+		EDCACEC71135CF040076CCCC /* ServiceMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceMessage.h; sourceTree = "<group>"; };
+		EDCACEC81135CF040076CCCC /* ServiceMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceMessage.m; sourceTree = "<group>"; };
+		EDCACEC91135CF040076CCCC /* InitConnectionResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitConnectionResponse.h; sourceTree = "<group>"; };
+		EDCACECA1135CF040076CCCC /* InitConnectionResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitConnectionResponse.m; sourceTree = "<group>"; };
+		EDCACECB1135CF040076CCCC /* InitConnectionRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitConnectionRequest.h; sourceTree = "<group>"; };
+		EDCACECC1135CF040076CCCC /* InitConnectionRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitConnectionRequest.m; sourceTree = "<group>"; };
+		EDCACECD1135CF040076CCCC /* DisconnectRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisconnectRequest.h; sourceTree = "<group>"; };
+		EDCACECE1135CF040076CCCC /* DisconnectRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisconnectRequest.m; sourceTree = "<group>"; };
+		EDCACECF1135CF040076CCCC /* ErrorResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorResponse.h; sourceTree = "<group>"; };
+		EDCACED01135CF040076CCCC /* ErrorResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorResponse.m; sourceTree = "<group>"; };
+		EDCACED11135CF040076CCCC /* RequestMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestMessage.h; sourceTree = "<group>"; };
+		EDCACED21135CF040076CCCC /* RequestMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestMessage.m; sourceTree = "<group>"; };
+		EDCACED31135CF040076CCCC /* ResponseMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseMessage.h; sourceTree = "<group>"; };
+		EDCACED41135CF040076CCCC /* ResponseMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseMessage.m; sourceTree = "<group>"; };
+		EDCACED51135CF040076CCCC /* HistoryEchoResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryEchoResponse.h; sourceTree = "<group>"; };
+		EDCACED61135CF040076CCCC /* HistoryEchoResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryEchoResponse.m; sourceTree = "<group>"; };
+		EDCACED71135CF040076CCCC /* HistoryEchoRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryEchoRequest.h; sourceTree = "<group>"; };
+		EDCACED81135CF040076CCCC /* HistoryEchoRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryEchoRequest.m; sourceTree = "<group>"; };
+		EDCACEDA1135CF040076CCCC /* BItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BItem.h; sourceTree = "<group>"; };
+		EDCACEDB1135CF040076CCCC /* BItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BItem.m; sourceTree = "<group>"; };
+		EDCACEDC1135CF040076CCCC /* Schmannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Schmannel.h; sourceTree = "<group>"; };
+		EDCACEDD1135CF040076CCCC /* Schmannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Schmannel.m; sourceTree = "<group>"; };
+		EDCACEDE1135CF040076CCCC /* SchmItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchmItem.h; sourceTree = "<group>"; };
+		EDCACEDF1135CF040076CCCC /* SchmItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchmItem.m; sourceTree = "<group>"; };
+		EDCACEE11135CF040076CCCC /* Channel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Channel.h; sourceTree = "<group>"; };
+		EDCACEE21135CF040076CCCC /* Channel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Channel.m; sourceTree = "<group>"; };
+		EDCACEE31135CF040076CCCC /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		EDCACEE41135CF040076CCCC /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
+		EDCACEE51135CF040076CCCC /* RssState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RssState.h; sourceTree = "<group>"; };
+		EDCACEE61135CF040076CCCC /* RssState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RssState.m; sourceTree = "<group>"; };
+		EDCACEE81135CF040076CCCC /* DictionaryList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictionaryList.h; sourceTree = "<group>"; };
+		EDCACEE91135CF040076CCCC /* DictionaryList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictionaryList.m; sourceTree = "<group>"; };
+		EDCACEEA1135CF040076CCCC /* Scope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scope.h; sourceTree = "<group>"; };
+		EDCACEEB1135CF040076CCCC /* Scope.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Scope.m; sourceTree = "<group>"; };
+		EDCACEEE1135CF040076CCCC /* ParsedURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParsedURL.h; sourceTree = "<group>"; };
+		EDCACEEF1135CF040076CCCC /* ParsedURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParsedURL.m; sourceTree = "<group>"; };
+		EDCACEF21135CF040076CCCC /* ParsedURLType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParsedURLType.h; sourceTree = "<group>"; };
+		EDCACEF31135CF040076CCCC /* ParsedURLType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParsedURLType.m; sourceTree = "<group>"; };
+		EDCACEF41135CF040076CCCC /* StringType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringType.h; sourceTree = "<group>"; };
+		EDCACEF51135CF040076CCCC /* StringType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringType.m; sourceTree = "<group>"; };
+		EDCACEF61135CF040076CCCC /* ClassType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassType.h; sourceTree = "<group>"; };
+		EDCACEF71135CF040076CCCC /* ClassType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassType.m; sourceTree = "<group>"; };
+		EDCACEF81135CF040076CCCC /* FieldType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldType.h; sourceTree = "<group>"; };
+		EDCACEF91135CF040076CCCC /* FieldType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldType.m; sourceTree = "<group>"; };
+		EDCACEFA1135CF040076CCCC /* ReferenceTypeType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReferenceTypeType.h; sourceTree = "<group>"; };
+		EDCACEFB1135CF040076CCCC /* ReferenceTypeType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReferenceTypeType.m; sourceTree = "<group>"; };
+		EDCACEFC1135CF040076CCCC /* ReferenceType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReferenceType.h; sourceTree = "<group>"; };
+		EDCACEFD1135CF040076CCCC /* ReferenceType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReferenceType.m; sourceTree = "<group>"; };
+		EDCACF001135CF040076CCCC /* FloatType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloatType.h; sourceTree = "<group>"; };
+		EDCACF011135CF040076CCCC /* FloatType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloatType.m; sourceTree = "<group>"; };
+		EDCACF021135CF040076CCCC /* LongType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LongType.h; sourceTree = "<group>"; };
+		EDCACF031135CF040076CCCC /* LongType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LongType.m; sourceTree = "<group>"; };
+		EDCACF041135CF040076CCCC /* IntType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntType.h; sourceTree = "<group>"; };
+		EDCACF051135CF040076CCCC /* IntType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntType.m; sourceTree = "<group>"; };
+		EDCACF061135CF040076CCCC /* BooleanType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BooleanType.h; sourceTree = "<group>"; };
+		EDCACF071135CF040076CCCC /* BooleanType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BooleanType.m; sourceTree = "<group>"; };
+		EDCACF081135CF040076CCCC /* DoubleType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoubleType.h; sourceTree = "<group>"; };
+		EDCACF091135CF040076CCCC /* DoubleType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoubleType.m; sourceTree = "<group>"; };
+		EDCACF0A1135CF040076CCCC /* ScalarType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScalarType.h; sourceTree = "<group>"; };
+		EDCACF0B1135CF040076CCCC /* ScalarType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScalarType.m; sourceTree = "<group>"; };
+		EDCACF0C1135CF040076CCCC /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
+		EDCACF0D1135CF040076CCCC /* Type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Type.h; sourceTree = "<group>"; };
+		EDCACF0F1135CF040076CCCC /* ClassDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassDescriptor.h; sourceTree = "<group>"; };
+		EDCACF101135CF040076CCCC /* ClassDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassDescriptor.m; sourceTree = "<group>"; };
+		EDCACF111135CF040076CCCC /* FieldDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldDescriptor.h; sourceTree = "<group>"; };
+		EDCACF121135CF040076CCCC /* FieldDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldDescriptor.m; sourceTree = "<group>"; };
+		EDCACF131135CF040076CCCC /* ElementState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElementState.h; sourceTree = "<group>"; };
+		EDCACF141135CF040076CCCC /* ElementState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElementState.m; sourceTree = "<group>"; };
+		EDCACF151135CF040076CCCC /* XMLTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLTools.h; sourceTree = "<group>"; };
+		EDCACF161135CF040076CCCC /* XMLTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLTools.m; sourceTree = "<group>"; };
+		EDCACF171135CF040076CCCC /* TranslationScope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TranslationScope.h; sourceTree = "<group>"; };
+		EDCACF181135CF040076CCCC /* TranslationScope.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TranslationScope.m; sourceTree = "<group>"; };
+		EDCACF191135CF040076CCCC /* ecologylabxml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ecologylabxml.h; sourceTree = "<group>"; };
+		EDCACF1A1135CF040076CCCC /* ecologylabxml.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ecologylabxml.m; sourceTree = "<group>"; };
+		EDCACF1B1135CF040076CCCC /* bsConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bsConstants.h; sourceTree = "<group>"; };
+		EDCACF1C1135CF040076CCCC /* fTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fTypes.h; sourceTree = "<group>"; };
+		EDCACF1D1135CF040076CCCC /* ElementStateSAXHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElementStateSAXHandler.h; sourceTree = "<group>"; };
+		EDCACF1E1135CF040076CCCC /* ElementStateSAXHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElementStateSAXHandler.m; sourceTree = "<group>"; };
+		EDCACF1F1135CF040076CCCC /* ecologylabXMLAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ecologylabXMLAppDelegate.h; sourceTree = "<group>"; };
+		EDCACF201135CF040076CCCC /* ecologylabXMLAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ecologylabXMLAppDelegate.m; sourceTree = "<group>"; };
+		EDCACF211135CF040076CCCC /* ecologylabXMLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ecologylabXMLViewController.h; sourceTree = "<group>"; };
+		EDCACF221135CF040076CCCC /* ecologylabXMLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ecologylabXMLViewController.m; sourceTree = "<group>"; };
+		EDCACF231135CF040076CCCC /* ecologylabXML.hdoc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ecologylabXML.hdoc; sourceTree = "<group>"; };
+		EDCACF251135CF270076CCCC /* gamedata_translationScope.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = gamedata_translationScope.xml; sourceTree = "<group>"; };
+		EDCACF261135CF270076CCCC /* GameData.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GameData.xml; sourceTree = "<group>"; };
+		EDCACF271135CF270076CCCC /* SchmannelTest.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SchmannelTest.xml; sourceTree = "<group>"; };
+		EDCACF281135CF270076CCCC /* InitConnectionRequest.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = InitConnectionRequest.xml; sourceTree = "<group>"; };
+		EDCACF291135CF270076CCCC /* Schmannel.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Schmannel.xml; sourceTree = "<group>"; };
+		EDCACF2A1135CF270076CCCC /* test.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = test.xml; sourceTree = "<group>"; };
+		EDCACF2B1135CF270076CCCC /* RssTranslationScope.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = RssTranslationScope.xml; sourceTree = "<group>"; };
+		EDCACF2C1135CF270076CCCC /* ecologylabXMLViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ecologylabXMLViewController.xib; sourceTree = "<group>"; };
+		EDCACF2E1135CF270076CCCC /* ecologylabXML-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ecologylabXML-Info.plist"; sourceTree = "<group>"; };
+		EDCACFBC1135CF880076CCCC /* ecologyXMLTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ecologyXMLTest-Info.plist"; sourceTree = "<group>"; };
+		EDCACFC11135CF9F0076CCCC /* ecologylabXML_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ecologylabXML_Prefix.pch; sourceTree = "<group>"; };
+		EDCACFC61135CFE90076CCCC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EDCAD1261135D81F0076CCCC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		EDCAD1291135D8240076CCCC /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		EDCAD12B1135D82B0076CCCC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		EDCAD2091135D8870076CCCC /* ecologylabXML.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ecologylabXML.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDE4A5A01135DA09005517C6 /* ChatRoomViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatRoomViewController.xib; sourceTree = "<group>"; };
+		EDE4A5A21135DE6E005517C6 /* ChatClientInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ChatClientInfo.plist; sourceTree = "<group>"; };
+		EDE4A5A81135E08A005517C6 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		EDE4A5A91135E08A005517C6 /* ChatAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatAppDelegate.m; sourceTree = "<group>"; };
+		EDE4A5AA1135E08A005517C6 /* ChatAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatAppDelegate.h; sourceTree = "<group>"; };
+		EDE4A5AB1135E08A005517C6 /* ChatRoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatRoomViewController.h; sourceTree = "<group>"; };
+		EDE4A5AC1135E08A005517C6 /* ChatRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatRoomViewController.m; sourceTree = "<group>"; };
+		EDE4A5B01135E09E005517C6 /* UITextView+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Utils.m"; sourceTree = "<group>"; };
+		EDE4A5B11135E09E005517C6 /* UITextView+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+Utils.h"; sourceTree = "<group>"; };
+		EDE4A5B21135E09E005517C6 /* AppConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConfig.h; sourceTree = "<group>"; };
+		EDE4A5B31135E09E005517C6 /* AppConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppConfig.m; sourceTree = "<group>"; };
+		EDE4A5BD1135E182005517C6 /* ChatClientTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatClientTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDE4A5BF1135E182005517C6 /* ChatClientTutorial-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ChatClientTutorial-Info.plist"; sourceTree = "<group>"; };
+		EDE4A5D71135E40C005517C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EDE4A5D91135E418005517C6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		EDE4A5DB1135E422005517C6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		EDE4A5DD1135E42F005517C6 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		EDE4A5E81135E4A4005517C6 /* libecologylabXMLLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libecologylabXMLLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDE4A6DC1135EF5E005517C6 /* ChatTranslations.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ChatTranslations.xml; sourceTree = "<group>"; };
+		EDE4A6DE1135F2DF005517C6 /* OkResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OkResponse.h; sourceTree = "<group>"; };
+		EDE4A6DF1135F2DF005517C6 /* OkResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OkResponse.m; sourceTree = "<group>"; };
+		EDE4A6E01135F2DF005517C6 /* UpdateMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateMessage.h; sourceTree = "<group>"; };
+		EDE4A6E11135F2DF005517C6 /* UpdateMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateMessage.m; sourceTree = "<group>"; };
+		EDE4A6E41135F2F9005517C6 /* ChatRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatRequest.h; sourceTree = "<group>"; };
+		EDE4A6E51135F2F9005517C6 /* ChatRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatRequest.m; sourceTree = "<group>"; };
+		EDE4A6E61135F2F9005517C6 /* ChatUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatUpdate.h; sourceTree = "<group>"; };
+		EDE4A6E71135F2F9005517C6 /* ChatUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatUpdate.m; sourceTree = "<group>"; };
+		EDE4A79E1135FE10005517C6 /* ChatTranslations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatTranslations.h; sourceTree = "<group>"; };
+		EDE4A79F1135FE10005517C6 /* ChatTranslations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatTranslations.m; sourceTree = "<group>"; };
+		EDE4A87F113606B3005517C6 /* ChatUpdateDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatUpdateDelegate.h; sourceTree = "<group>"; };
+		EDE4A880113606B3005517C6 /* ChatUpdateDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatUpdateDelegate.m; sourceTree = "<group>"; };
+		EDE4AB2911372FE7005517C6 /* ChatMainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatMainWindow.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CA5747C411436C6700FC81E6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA5747CE11436C9500FC81E6 /* libecologylabXMLLib.a in Frameworks */,
+				CA9DD68C1144CE6B0068420A /* CFNetwork.framework in Frameworks */,
+				CA9DD68E1144CE730068420A /* UIKit.framework in Frameworks */,
+				CA9DD6901144CE7D0068420A /* CoreGraphics.framework in Frameworks */,
+				CA9DD6921144CE870068420A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDCAD2071135D8870076CCCC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDE4A54B1135D907005517C6 /* CoreGraphics.framework in Frameworks */,
+				EDE4A54C1135D907005517C6 /* CoreFoundation.framework in Frameworks */,
+				EDE4A54D1135D907005517C6 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDE4A5BB1135E182005517C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDE4A5D81135E40C005517C6 /* Foundation.framework in Frameworks */,
+				EDE4A5DA1135E418005517C6 /* UIKit.framework in Frameworks */,
+				EDE4A5DC1135E422005517C6 /* CoreGraphics.framework in Frameworks */,
+				EDE4A5DE1135E42F005517C6 /* CFNetwork.framework in Frameworks */,
+				EDE4A6271135E67A005517C6 /* libecologylabXMLLib.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDE4A5E61135E4A4005517C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1F96478B11477FC90037BA93 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				1F96478C11477FC90037BA93 /* cards */,
+				1F9647A011477FC90037BA93 /* menu */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		1F96478C11477FC90037BA93 /* cards */ = {
+			isa = PBXGroup;
+			children = (
+				1F96478D11477FC90037BA93 /* A5.png */,
+				1F96478E11477FC90037BA93 /* ASharp5.png */,
+				1F96478F11477FC90037BA93 /* B5.png */,
+				1F96479011477FC90037BA93 /* C6.png */,
+				1F96479111477FC90037BA93 /* CSharp6.png */,
+				1F96479211477FC90037BA93 /* D6.png */,
+				1F96479311477FC90037BA93 /* DSharp6.png */,
+				1F96479411477FC90037BA93 /* E5.png */,
+				1F96479511477FC90037BA93 /* E6.png */,
+				1F96479611477FC90037BA93 /* eighthnote.png */,
+				1F96479711477FC90037BA93 /* F5.png */,
+				1F96479811477FC90037BA93 /* F6.png */,
+				1F96479911477FC90037BA93 /* FSharp5.png */,
+				1F96479A11477FC90037BA93 /* FSharp6.png */,
+				1F96479B11477FC90037BA93 /* G5.png */,
+				1F96479C11477FC90037BA93 /* GSharp5.png */,
+				1F96479D11477FC90037BA93 /* halfnote.png */,
+				1F96479E11477FC90037BA93 /* quarternote.png */,
+				1F96479F11477FC90037BA93 /* wholenote.png */,
+			);
+			path = cards;
+			sourceTree = "<group>";
+		};
+		1F9647A011477FC90037BA93 /* menu */ = {
+			isa = PBXGroup;
+			children = (
+				1F9647CD1147825A0037BA93 /* help_button_up.png */,
+				1F9647A111477FC90037BA93 /* background_horizontal.png */,
+				1F9647A211477FC90037BA93 /* background_vertical.png */,
+				1F9647A811477FC90037BA93 /* main_menu_layout.png */,
+				1F9647AA11477FC90037BA93 /* menu_button_up.png */,
+			);
+			path = menu;
+			sourceTree = "<group>";
+		};
+		CA5747BD11436BFF00FC81E6 /* Crescendo */ = {
+			isa = PBXGroup;
+			children = (
+				CA9DD5FF1144BF350068420A /* OODSS */,
+				CA5747E211436D0600FC81E6 /* TrainingViewController.h */,
+				CA5747D911436D0600FC81E6 /* TrainingViewController.m */,
+				CA5747DA11436D0600FC81E6 /* CrescendoAppDelegate.h */,
+				CA5747DB11436D0600FC81E6 /* CrescendoAppDelegate.m */,
+				CA5747DC11436D0600FC81E6 /* CrescendoViewController.h */,
+				CA5747DD11436D0600FC81E6 /* CrescendoViewController.m */,
+				CA5747DE11436D0600FC81E6 /* GamemodeViewController.h */,
+				CA5747DF11436D0600FC81E6 /* GamemodeViewController.m */,
+				CA5747E011436D0600FC81E6 /* HelpViewController.h */,
+				CA5747E111436D0600FC81E6 /* HelpViewController.m */,
+			);
+			name = Crescendo;
+			sourceTree = "<group>";
+		};
+		CA5747C111436C3500FC81E6 /* CrescendoResource */ = {
+			isa = PBXGroup;
+			children = (
+				1F96478B11477FC90037BA93 /* images */,
+				CA5747D111436CF300FC81E6 /* MainWindow.xib */,
+				CA5747D211436CF300FC81E6 /* HelpViewController.xib */,
+				CA5747D311436CF300FC81E6 /* GamemodeViewController.xib */,
+				CA5747D411436CF300FC81E6 /* CrescendoViewController.xib */,
+				CA5747CF11436CB600FC81E6 /* TrainingViewController.xib */,
+			);
+			name = CrescendoResource;
+			sourceTree = "<group>";
+		};
+		CA9DD5FF1144BF350068420A /* OODSS */ = {
+			isa = PBXGroup;
+			children = (
+				EDE4A6E41135F2F9005517C6 /* ChatRequest.h */,
+				EDE4A6E51135F2F9005517C6 /* ChatRequest.m */,
+				EDE4A6E61135F2F9005517C6 /* ChatUpdate.h */,
+				EDE4A6E71135F2F9005517C6 /* ChatUpdate.m */,
+				EDE4A6DC1135EF5E005517C6 /* ChatTranslations.xml */,
+				EDE4A79E1135FE10005517C6 /* ChatTranslations.h */,
+				EDE4A79F1135FE10005517C6 /* ChatTranslations.m */,
+			);
+			name = OODSS;
+			sourceTree = "<group>";
+		};
+		EDCACE991135CEE10076CCCC = {
+			isa = PBXGroup;
+			children = (
+				EDCACEA31135CF040076CCCC /* Classes */,
+				EDCACF241135CF270076CCCC /* Resources */,
+				EDCACF2F1135CF560076CCCC /* Frameworks */,
+				EDCACFBA1135CF880076CCCC /* Products */,
+				EDCACFBC1135CF880076CCCC /* ecologyXMLTest-Info.plist */,
+				EDCACFC01135CF9F0076CCCC /* Other Sources */,
+				EDCACFC61135CFE90076CCCC /* Foundation.framework */,
+				EDE4A5BF1135E182005517C6 /* ChatClientTutorial-Info.plist */,
+				EDE4A5D71135E40C005517C6 /* Foundation.framework */,
+				EDE4A5D91135E418005517C6 /* UIKit.framework */,
+				EDE4A5DB1135E422005517C6 /* CoreGraphics.framework */,
+				EDE4A5DD1135E42F005517C6 /* CFNetwork.framework */,
+				CA5747C811436C6700FC81E6 /* Crescendo-Info.plist */,
+				CA9DD68B1144CE6B0068420A /* CFNetwork.framework */,
+				CA9DD68D1144CE730068420A /* UIKit.framework */,
+				CA9DD68F1144CE7D0068420A /* CoreGraphics.framework */,
+				CA9DD6911144CE870068420A /* Foundation.framework */,
+			);
+			sourceTree = "<group>";
+		};
+		EDCACEA31135CF040076CCCC /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				EDE4A5A61135DF0B005517C6 /* Applications */,
+				EDCACF1F1135CF040076CCCC /* ecologylabXMLAppDelegate.h */,
+				EDCACF201135CF040076CCCC /* ecologylabXMLAppDelegate.m */,
+				EDCACF211135CF040076CCCC /* ecologylabXMLViewController.h */,
+				EDCACF221135CF040076CCCC /* ecologylabXMLViewController.m */,
+				EDCACF231135CF040076CCCC /* ecologylabXML.hdoc */,
+				EDCACF0E1135CF040076CCCC /* TranslationSemantics */,
+				EDCACEEC1135CF040076CCCC /* Types */,
+				EDCACEE71135CF040076CCCC /* Collections */,
+				EDCACEA41135CF040076CCCC /* Library */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		EDCACEA41135CF040076CCCC /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				EDCACEE01135CF040076CCCC /* Rss */,
+				EDCACED91135CF040076CCCC /* Schmannel */,
+				EDCACEB91135CF040076CCCC /* Services */,
+				EDCACEA51135CF040076CCCC /* Rouge */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		EDCACEA51135CF040076CCCC /* Rouge */ = {
+			isa = PBXGroup;
+			children = (
+				EDCACEAD1135CF040076CCCC /* Entity */,
+				EDCACEA91135CF040076CCCC /* Game2d */,
+				EDCACEA61135CF040076CCCC /* GameData */,
+			);
+			name = Rouge;
+			sourceTree = "<group>";
+		};
+		EDCACEA61135CF040076CCCC /* GameData */ = {
+			isa = PBXGroup;
+			children = (
+				EDCACEA71135CF040076CCCC /* GameData.h */,
+				EDCACEA81135CF040076CCCC /* GameData.m */,
+			);
+			name = GameData;
+			sourceTree = "<group>";
+		};
+		EDCACEA91135CF040076CCCC /* Game2d */ = {
+			isa = PBXGroup;
+			children = (
+				EDCACEAA1135CF040076CCCC /* Entity */,
+			);
+			name = Game2d;
+			sourceTree = "<group>";
+		};
+		EDCACEAA1135CF040076CCCC /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				EDCACEAB1135CF040076CCCC /* Entity.h */,
+				EDCACEAC1135CF040076CCCC /* Entity.m */,
+			);
+			name = Entity;
+			sourceTree = "<group>";
+		};
+		EDCACEAD1135CF040076CCCC /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				EDCACEAE1135CF040076CCCC /* Threat */,
+			);
+			name = Entity;
+			sourceTree = "<group>";
+		};
+		EDCACEAE1135CF040076CCCC /* Threat */ = {
+			isa = PBXGroup;
+			children = (
+				EDCACEAF1135CF040076CCCC /* OrbitingThreat.h */,
+				EDCACEB01135CF040076CCCC /* OrbitingThreat.m */,
+				EDCACEB11135CF040076CCCC /* PatrollingThreat.h */,
+				EDCACEB21135CF040076CCCC /* PatrollingThreat.m */,
+				EDCACEB31135CF040076CCCC /* RepellableThreat.h */,
+				EDCACEB41135CF040076CCCC /* RepellableThreat.m */,
+				EDCACEB51135CF040076CCCC /* SingleSeekerThreat.h */,
+				EDCACEB61135CF040076CCCC /* SingleSeekerThreat.m */,
+				EDCACEB71135CF040076CCCC /* Threat.h */,
+				EDCACEB81135CF040076CCCC /* Threat.m */,
+			);
+			name = Threat;
+			sourceTree = "<group>";
+		};
+		EDCACEB91135CF040076CCCC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EDCACEC31135CF040076CCCC /* Messages */,
+				EDCACEBA1135CF040076CCCC /* Networking */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		EDCACEBA1135CF040076CCCC /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				EDCACEBB1135CF040076CCCC /* Connection.h */,
+				EDCACEBC1135CF040076CCCC /* Connection.m */,
+				EDCACEBD1135CF040076CCCC /* ConnectionDelegate.h */,
+				EDCACEBE1135CF040076CCCC /* XMLClient.h */,
+				EDCACEBF1135CF040076CCCC /* XMLClient.m */,
+				EDCACEC01135CF040076CCCC /* XMLClientDelegate.h */,
+				EDCACEC11135CF040076CCCC /* NetworkConstants.h */,
+				EDCACEC21135CF040076CCCC /* NetworkConstants.m */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		EDCACEC31135CF040076CCCC /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				EDCACEC41135CF040076CCCC /* DefaultServicesTranslations.xml */,
+				EDE4A6DE1135F2DF005517C6 /* OkResponse.h */,
+				EDE4A6DF1135F2DF005517C6 /* OkResponse.m */,
+				EDE4A6E01135F2DF005517C6 /* UpdateMessage.h */,
+				EDE4A6E11135F2DF005517C6 /* UpdateMessage.m */,
+				EDCACEC51135CF040076CCCC /* DefaultServicesTranslations.h */,
+				EDCACEC61135CF040076CCCC /* DefaultServicesTranslations.m */,
+				EDCACEC71135CF040076CCCC /* ServiceMessage.h */,
+				EDCACEC81135CF040076CCCC /* ServiceMessage.m */,
+				EDCACEC91135CF040076CCCC /* InitConnectionResponse.h */,
+				EDCACECA1135CF040076CCCC /* InitConnectionResponse.m */,
+				EDCACECB1135CF040076CCCC /* InitConnectionRequest.h */,
+				EDCACECC1135CF040076CCCC /* InitConnectionRequest.m */,
+				EDCACECD1135CF040076CCCC /* DisconnectRequest.h */,
+				EDCACECE1135CF040076CCCC /* DisconnectRequest.m */,
+				EDCACECF1135CF040076CCCC /* ErrorResponse.h */,
+				EDCACED01135CF040076CCCC /* ErrorResponse.m */,
+				EDCACED11135CF040076CCCC /* RequestMessage.h */,
+				EDCACED21135CF040076CCCC /* RequestMessage.m */,
+				EDCACED31135CF040076CCCC /* ResponseMessage.h */,
+				EDCACED41135CF040076CCCC /* ResponseMessage.m */,
+				EDCACED51135CF040076CCCC /* HistoryEchoResponse.h */,
+				EDCACED61135CF040076CCCC /* HistoryEchoResponse.m */,
+				EDCACED71135CF040076CCCC /* HistoryEchoRequest.h */,
+				EDCACED81135CF040076CCCC /* HistoryEchoRequest.m */,
+			);
+			name = Messages;
+			sourceTree = "<group>";
+		};
+		EDCACED91135CF040076CCCC /* Schmannel */ = {
+			isa = PBXGroup;
+			children = (
+				EDCACEDA1135CF040076CCCC /* BItem.h */,
+				EDCACEDB1135CF040076CCCC /* BItem.m */,
+				EDCACEDC1135CF040076CCCC /* Schmannel.h */,
+				EDCACEDD1135CF040076CCCC /* Schmannel.m */,
+				EDCACEDE1135CF040076CCCC /* SchmItem.h */,
+				EDCACEDF1135CF040076CCCC /* SchmItem.m */,
+			);
+			name = Schmannel;
+			sourceTree = "<group>";
+		};
+		EDCACEE01135CF040076CCCC /* Rss */ = {
+			isa = PBXGroup;
+			children = (
+				EDCACEE11135CF040076CCCC /* Channel.h */,
+				EDCACEE21135CF040076CCCC /* Channel.m */,
+				EDCACEE31135CF040076CCCC /* Item.h */,
+				EDCACEE41135CF040076CCCC /* Item.m */,
+				EDCACEE51135CF040076CCCC /* RssState.h */,
+				EDCACEE61135CF040076CCCC /* RssState.m */,
+			);
+			name = Rss;
+			sourceTree = "<group>";
+		};
+		EDCACEE71135CF040076CCCC /* Collections */ = {
+			isa = PBXGroup;
+			children = (
+				EDCACEE81135CF040076CCCC /* DictionaryList.h */,
+				EDCACEE91135CF040076CCCC /* DictionaryList.m */,
+				EDCACEEA1135CF040076CCCC /* Scope.h */,
+				EDCACEEB1135CF040076CCCC /* Scope.m */,
+			);
+			name = Collections;
+			sourceTree = "<group>";
+		};
+		EDCACEEC1135CF040076CCCC /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				EDCACF0C1135CF040076CCCC /* types.h */,
+				EDCACF0D1135CF040076CCCC /* Type.h */,
+				EDCACEFE1135CF040076CCCC /* Scalar */,
+				EDCACEF01135CF040076CCCC /* Reference */,
+				EDCACEED1135CF040076CCCC /* Custom */,
+			);
+			name = Types;
+			sourceTree = "<group>";
+		};
+		EDCACEED1135CF040076CCCC /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				EDCACEEE1135CF040076CCCC /* ParsedURL.h */,
+				EDCACEEF1135CF040076CCCC /* ParsedURL.m */,
+			);
+			name = Custom;
+			sourceTree = "<group>";
+		};
+		EDCACEF01135CF040076CCCC /* Reference */ = {
+			isa = PBXGroup;
+			children = (
+				EDCACEFC1135CF040076CCCC /* ReferenceType.h */,
+				EDCACEFD1135CF040076CCCC /* ReferenceType.m */,
+				EDCACEF11135CF040076CCCC /* Types */,
+			);
+			name = Reference;
+			sourceTree = "<group>";
+		};
+		EDCACEF11135CF040076CCCC /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				EDCACEF21135CF040076CCCC /* ParsedURLType.h */,
+				EDCACEF31135CF040076CCCC /* ParsedURLType.m */,
+				EDCACEF41135CF040076CCCC /* StringType.h */,
+				EDCACEF51135CF040076CCCC /* StringType.m */,
+				EDCACEF61135CF040076CCCC /* ClassType.h */,
+				EDCACEF71135CF040076CCCC /* ClassType.m */,
+				EDCACEF81135CF040076CCCC /* FieldType.h */,
+				EDCACEF91135CF040076CCCC /* FieldType.m */,
+				EDCACEFA1135CF040076CCCC /* ReferenceTypeType.h */,
+				EDCACEFB1135CF040076CCCC /* ReferenceTypeType.m */,
+			);
+			name = Types;
+			sourceTree = "<group>";
+		};
+		EDCACEFE1135CF040076CCCC /* Scalar */ = {
+			isa = PBXGroup;
+			children = (
+				EDCACF0A1135CF040076CCCC /* ScalarType.h */,
+				EDCACF0B1135CF040076CCCC /* ScalarType.m */,
+				EDCACEFF1135CF040076CCCC /* Types */,
+			);
+			name = Scalar;
+			sourceTree = "<group>";
+		};
+		EDCACEFF1135CF040076CCCC /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				EDCACF001135CF040076CCCC /* FloatType.h */,
+				EDCACF011135CF040076CCCC /* FloatType.m */,
+				EDCACF021135CF040076CCCC /* LongType.h */,
+				EDCACF031135CF040076CCCC /* LongType.m */,
+				EDCACF041135CF040076CCCC /* IntType.h */,
+				EDCACF051135CF040076CCCC /* IntType.m */,
+				EDCACF061135CF040076CCCC /* BooleanType.h */,
+				EDCACF071135CF040076CCCC /* BooleanType.m */,
+				EDCACF081135CF040076CCCC /* DoubleType.h */,
+				EDCACF091135CF040076CCCC /* DoubleType.m */,
+			);
+			name = Types;
+			sourceTree = "<group>";
+		};
+		EDCACF0E1135CF040076CCCC /* TranslationSemantics */ = {
+			isa = PBXGroup;
+			children = (
+				EDCACF0F1135CF040076CCCC /* ClassDescriptor.h */,
+				EDCACF101135CF040076CCCC /* ClassDescriptor.m */,
+				EDCACF111135CF040076CCCC /* FieldDescriptor.h */,
+				EDCACF121135CF040076CCCC /* FieldDescriptor.m */,
+				EDCACF131135CF040076CCCC /* ElementState.h */,
+				EDCACF141135CF040076CCCC /* ElementState.m */,
+				EDCACF151135CF040076CCCC /* XMLTools.h */,
+				EDCACF161135CF040076CCCC /* XMLTools.m */,
+				EDCACF171135CF040076CCCC /* TranslationScope.h */,
+				EDCACF181135CF040076CCCC /* TranslationScope.m */,
+				EDCACF191135CF040076CCCC /* ecologylabxml.h */,
+				EDCACF1A1135CF040076CCCC /* ecologylabxml.m */,
+				EDCACF1B1135CF040076CCCC /* bsConstants.h */,
+				EDCACF1C1135CF040076CCCC /* fTypes.h */,
+				EDCACF1D1135CF040076CCCC /* ElementStateSAXHandler.h */,
+				EDCACF1E1135CF040076CCCC /* ElementStateSAXHandler.m */,
+			);
+			name = TranslationSemantics;
+			sourceTree = "<group>";
+		};
+		EDCACF241135CF270076CCCC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CA5747C111436C3500FC81E6 /* CrescendoResource */,
+				EDE4A5981135D9D3005517C6 /* ChatTutorialResources */,
+				EDCACF251135CF270076CCCC /* gamedata_translationScope.xml */,
+				EDCACF261135CF270076CCCC /* GameData.xml */,
+				EDCACF271135CF270076CCCC /* SchmannelTest.xml */,
+				EDCACF281135CF270076CCCC /* InitConnectionRequest.xml */,
+				EDCACF291135CF270076CCCC /* Schmannel.xml */,
+				EDCACF2A1135CF270076CCCC /* test.xml */,
+				EDCACF2B1135CF270076CCCC /* RssTranslationScope.xml */,
+				EDCACF2E1135CF270076CCCC /* ecologylabXML-Info.plist */,
+				EDCACF2C1135CF270076CCCC /* ecologylabXMLViewController.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		EDCACF2F1135CF560076CCCC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EDCAD1261135D81F0076CCCC /* CoreGraphics.framework */,
+				EDCAD1291135D8240076CCCC /* CoreFoundation.framework */,
+				EDCAD12B1135D82B0076CCCC /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EDCACFBA1135CF880076CCCC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EDCAD2091135D8870076CCCC /* ecologylabXML.app */,
+				EDE4A5BD1135E182005517C6 /* ChatClientTutorial.app */,
+				EDE4A5E81135E4A4005517C6 /* libecologylabXMLLib.a */,
+				CA5747C611436C6700FC81E6 /* Crescendo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EDCACFC01135CF9F0076CCCC /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				CA57480511436D9900FC81E6 /* Crescendo_Prefix.pch */,
+				EDCACFC11135CF9F0076CCCC /* ecologylabXML_Prefix.pch */,
+				CA57480D11436DB400FC81E6 /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		EDE4A5981135D9D3005517C6 /* ChatTutorialResources */ = {
+			isa = PBXGroup;
+			children = (
+				EDE4A5A21135DE6E005517C6 /* ChatClientInfo.plist */,
+				EDE4AB2911372FE7005517C6 /* ChatMainWindow.xib */,
+				EDE4A5A01135DA09005517C6 /* ChatRoomViewController.xib */,
+			);
+			name = ChatTutorialResources;
+			sourceTree = "<group>";
+		};
+		EDE4A5A61135DF0B005517C6 /* Applications */ = {
+			isa = PBXGroup;
+			children = (
+				CA5747BD11436BFF00FC81E6 /* Crescendo */,
+				EDE4A5A71135DF63005517C6 /* ChatClientTutorial */,
+			);
+			name = Applications;
+			sourceTree = "<group>";
+		};
+		EDE4A5A71135DF63005517C6 /* ChatClientTutorial */ = {
+			isa = PBXGroup;
+			children = (
+				EDE4A6DB1135EF3F005517C6 /* Messages */,
+				EDE4A5A81135E08A005517C6 /* ChatViewController.h */,
+				EDE4A5A91135E08A005517C6 /* ChatAppDelegate.m */,
+				EDE4A5AA1135E08A005517C6 /* ChatAppDelegate.h */,
+				EDE4A5AB1135E08A005517C6 /* ChatRoomViewController.h */,
+				EDE4A5AC1135E08A005517C6 /* ChatRoomViewController.m */,
+				EDE4A87F113606B3005517C6 /* ChatUpdateDelegate.h */,
+				EDE4A880113606B3005517C6 /* ChatUpdateDelegate.m */,
+				EDE4A5AF1135E09E005517C6 /* Misc */,
+			);
+			name = ChatClientTutorial;
+			sourceTree = "<group>";
+		};
+		EDE4A5AF1135E09E005517C6 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				EDE4A5B01135E09E005517C6 /* UITextView+Utils.m */,
+				EDE4A5B11135E09E005517C6 /* UITextView+Utils.h */,
+				EDE4A5B21135E09E005517C6 /* AppConfig.h */,
+				EDE4A5B31135E09E005517C6 /* AppConfig.m */,
+			);
+			name = Misc;
+			sourceTree = "<group>";
+		};
+		EDE4A6DB1135EF3F005517C6 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Messages;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		EDE4A5E41135E4A4005517C6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		CA5747C511436C6700FC81E6 /* Crescendo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA5747CB11436C6800FC81E6 /* Build configuration list for PBXNativeTarget "Crescendo" */;
+			buildPhases = (
+				CA5747C211436C6700FC81E6 /* Resources */,
+				CA5747C311436C6700FC81E6 /* Sources */,
+				CA5747C411436C6700FC81E6 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CA5747CD11436C9000FC81E6 /* PBXTargetDependency */,
+			);
+			name = Crescendo;
+			productName = Crescendo;
+			productReference = CA5747C611436C6700FC81E6 /* Crescendo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EDCAD2081135D8870076CCCC /* ecologylabXML */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDCAD20D1135D8BA0076CCCC /* Build configuration list for PBXNativeTarget "ecologylabXML" */;
+			buildPhases = (
+				EDCAD2051135D8870076CCCC /* Resources */,
+				EDCAD2061135D8870076CCCC /* Sources */,
+				EDCAD2071135D8870076CCCC /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ecologylabXML;
+			productName = ecologylabXML;
+			productReference = EDCAD2091135D8870076CCCC /* ecologylabXML.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EDE4A5BC1135E182005517C6 /* ChatClientTutorial */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDE4A5C21135E183005517C6 /* Build configuration list for PBXNativeTarget "ChatClientTutorial" */;
+			buildPhases = (
+				EDE4A5B91135E182005517C6 /* Resources */,
+				EDE4A5BA1135E182005517C6 /* Sources */,
+				EDE4A5BB1135E182005517C6 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EDE4A61E1135E516005517C6 /* PBXTargetDependency */,
+			);
+			name = ChatClientTutorial;
+			productName = ChatClientTutorial;
+			productReference = EDE4A5BD1135E182005517C6 /* ChatClientTutorial.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EDE4A5E71135E4A4005517C6 /* ecologylabXMLLib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDE4A61F1135E535005517C6 /* Build configuration list for PBXNativeTarget "ecologylabXMLLib" */;
+			buildPhases = (
+				EDE4A5E41135E4A4005517C6 /* Headers */,
+				EDE4A5E51135E4A4005517C6 /* Sources */,
+				EDE4A5E61135E4A4005517C6 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ecologylabXMLLib;
+			productName = Untitled;
+			productReference = EDE4A5E81135E4A4005517C6 /* libecologylabXMLLib.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EDCACE9B1135CEE10076CCCC /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = EDCACE9E1135CEE10076CCCC /* Build configuration list for PBXProject "ecologylabFundamentalObjC" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 0;
+			mainGroup = EDCACE991135CEE10076CCCC;
+			productRefGroup = EDCACFBA1135CF880076CCCC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CA5747C511436C6700FC81E6 /* Crescendo */,
+				EDCAD2081135D8870076CCCC /* ecologylabXML */,
+				EDE4A5BC1135E182005517C6 /* ChatClientTutorial */,
+				EDE4A5E71135E4A4005517C6 /* ecologylabXMLLib */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CA5747C211436C6700FC81E6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA5747D011436CB600FC81E6 /* TrainingViewController.xib in Resources */,
+				CA5747D511436CF300FC81E6 /* MainWindow.xib in Resources */,
+				CA5747D611436CF300FC81E6 /* HelpViewController.xib in Resources */,
+				CA5747D711436CF300FC81E6 /* GamemodeViewController.xib in Resources */,
+				CA5747D811436CF300FC81E6 /* CrescendoViewController.xib in Resources */,
+				3ECD620311470A51005BB5EF /* ChatTranslations.xml in Resources */,
+				1F9647AD11477FC90037BA93 /* A5.png in Resources */,
+				1F9647AE11477FC90037BA93 /* ASharp5.png in Resources */,
+				1F9647AF11477FC90037BA93 /* B5.png in Resources */,
+				1F9647B011477FC90037BA93 /* C6.png in Resources */,
+				1F9647B111477FC90037BA93 /* CSharp6.png in Resources */,
+				1F9647B211477FC90037BA93 /* D6.png in Resources */,
+				1F9647B311477FC90037BA93 /* DSharp6.png in Resources */,
+				1F9647B411477FC90037BA93 /* E5.png in Resources */,
+				1F9647B511477FC90037BA93 /* E6.png in Resources */,
+				1F9647B611477FC90037BA93 /* eighthnote.png in Resources */,
+				1F9647B711477FC90037BA93 /* F5.png in Resources */,
+				1F9647B811477FC90037BA93 /* F6.png in Resources */,
+				1F9647B911477FC90037BA93 /* FSharp5.png in Resources */,
+				1F9647BA11477FC90037BA93 /* FSharp6.png in Resources */,
+				1F9647BB11477FC90037BA93 /* G5.png in Resources */,
+				1F9647BC11477FC90037BA93 /* GSharp5.png in Resources */,
+				1F9647BD11477FC90037BA93 /* halfnote.png in Resources */,
+				1F9647BE11477FC90037BA93 /* quarternote.png in Resources */,
+				1F9647BF11477FC90037BA93 /* wholenote.png in Resources */,
+				1F9647C011477FC90037BA93 /* background_horizontal.png in Resources */,
+				1F9647C111477FC90037BA93 /* background_vertical.png in Resources */,
+				1F9647C711477FC90037BA93 /* main_menu_layout.png in Resources */,
+				1F9647C911477FC90037BA93 /* menu_button_up.png in Resources */,
+				1F9647CE1147825A0037BA93 /* help_button_up.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDCAD2051135D8870076CCCC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDE4A4B41135D8F5005517C6 /* gamedata_translationScope.xml in Resources */,
+				EDE4A4B51135D8F5005517C6 /* GameData.xml in Resources */,
+				EDE4A4B61135D8F5005517C6 /* SchmannelTest.xml in Resources */,
+				EDE4A4B71135D8F5005517C6 /* InitConnectionRequest.xml in Resources */,
+				EDE4A4B81135D8F5005517C6 /* Schmannel.xml in Resources */,
+				EDE4A4B91135D8F5005517C6 /* test.xml in Resources */,
+				EDE4A4BA1135D8F5005517C6 /* RssTranslationScope.xml in Resources */,
+				EDE4A4BB1135D8F5005517C6 /* ecologylabXMLViewController.xib in Resources */,
+				EDE4A4BD1135D8F5005517C6 /* ecologylabXML-Info.plist in Resources */,
+				EDE4A5A31135DE6E005517C6 /* ChatClientInfo.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDE4A5B91135E182005517C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDE4A5E01135E44C005517C6 /* ChatRoomViewController.xib in Resources */,
+				EDE4A7911135FD92005517C6 /* DefaultServicesTranslations.xml in Resources */,
+				EDE4A6DD1135EF5E005517C6 /* ChatTranslations.xml in Resources */,
+				EDE4AB2C1137301A005517C6 /* ChatMainWindow.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CA5747C311436C6700FC81E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA5747E311436D0600FC81E6 /* TrainingViewController.m in Sources */,
+				CA5747E411436D0600FC81E6 /* CrescendoAppDelegate.m in Sources */,
+				CA5747E511436D0600FC81E6 /* CrescendoViewController.m in Sources */,
+				CA5747E611436D0600FC81E6 /* GamemodeViewController.m in Sources */,
+				CA5747E711436D0600FC81E6 /* HelpViewController.m in Sources */,
+				CA57480E11436DB400FC81E6 /* main.m in Sources */,
+				CA9DD6531144C5CA0068420A /* ChatRequest.m in Sources */,
+				CA9DD67B1144CB190068420A /* ChatTranslations.m in Sources */,
+				CA9DD6801144CC450068420A /* AppConfig.m in Sources */,
+				CA9DD7B51144E0BE0068420A /* ChatUpdateDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDCAD2061135D8870076CCCC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDE4A4811135D8EB005517C6 /* BItem.m in Sources */,
+				EDE4A4821135D8EB005517C6 /* BooleanType.m in Sources */,
+				EDE4A4831135D8EB005517C6 /* Channel.m in Sources */,
+				EDE4A4841135D8EB005517C6 /* ClassDescriptor.m in Sources */,
+				EDE4A4851135D8EB005517C6 /* ClassType.m in Sources */,
+				EDE4A4861135D8EB005517C6 /* Connection.m in Sources */,
+				EDE4A4871135D8EB005517C6 /* DefaultServicesTranslations.m in Sources */,
+				EDE4A4881135D8EB005517C6 /* DictionaryList.m in Sources */,
+				EDE4A4891135D8EB005517C6 /* DisconnectRequest.m in Sources */,
+				EDE4A48A1135D8EB005517C6 /* DoubleType.m in Sources */,
+				EDE4A48B1135D8EB005517C6 /* ecologylabxml.m in Sources */,
+				EDE4A48C1135D8EB005517C6 /* ecologylabXMLAppDelegate.m in Sources */,
+				EDE4A48D1135D8EB005517C6 /* ecologylabXMLViewController.m in Sources */,
+				EDE4A48E1135D8EB005517C6 /* ElementState.m in Sources */,
+				EDE4A48F1135D8EB005517C6 /* ElementStateSAXHandler.m in Sources */,
+				EDE4A4901135D8EB005517C6 /* Entity.m in Sources */,
+				EDE4A4911135D8EB005517C6 /* ErrorResponse.m in Sources */,
+				EDE4A4921135D8EB005517C6 /* FieldDescriptor.m in Sources */,
+				EDE4A4931135D8EB005517C6 /* FieldType.m in Sources */,
+				EDE4A4941135D8EB005517C6 /* FloatType.m in Sources */,
+				EDE4A4951135D8EB005517C6 /* GameData.m in Sources */,
+				EDE4A4961135D8EB005517C6 /* HistoryEchoRequest.m in Sources */,
+				EDE4A4971135D8EB005517C6 /* HistoryEchoResponse.m in Sources */,
+				EDE4A4981135D8EB005517C6 /* InitConnectionRequest.m in Sources */,
+				EDE4AAED1136561F005517C6 /* UpdateMessage.m in Sources */,
+				EDE4A4991135D8EB005517C6 /* InitConnectionResponse.m in Sources */,
+				EDE4A49A1135D8EB005517C6 /* IntType.m in Sources */,
+				EDE4A49B1135D8EB005517C6 /* Item.m in Sources */,
+				EDE4A49C1135D8EB005517C6 /* LongType.m in Sources */,
+				EDE4A49D1135D8EB005517C6 /* NetworkConstants.m in Sources */,
+				EDE4A49E1135D8EB005517C6 /* OrbitingThreat.m in Sources */,
+				EDE4A49F1135D8EB005517C6 /* ParsedURL.m in Sources */,
+				EDE4A4A01135D8EB005517C6 /* ParsedURLType.m in Sources */,
+				EDE4A4A11135D8EB005517C6 /* PatrollingThreat.m in Sources */,
+				EDE4A4A21135D8EB005517C6 /* ReferenceType.m in Sources */,
+				EDE4A4A31135D8EB005517C6 /* ReferenceTypeType.m in Sources */,
+				EDE4A4A41135D8EB005517C6 /* RepellableThreat.m in Sources */,
+				EDE4A4A51135D8EB005517C6 /* RequestMessage.m in Sources */,
+				EDE4A4A61135D8EB005517C6 /* ResponseMessage.m in Sources */,
+				EDE4A4A71135D8EB005517C6 /* RssState.m in Sources */,
+				EDE4A4A81135D8EB005517C6 /* ScalarType.m in Sources */,
+				EDE4A4A91135D8EB005517C6 /* Schmannel.m in Sources */,
+				EDE4A4AA1135D8EB005517C6 /* SchmItem.m in Sources */,
+				EDE4A4AB1135D8EB005517C6 /* Scope.m in Sources */,
+				EDE4A4AC1135D8EB005517C6 /* ServiceMessage.m in Sources */,
+				EDE4A4AD1135D8EB005517C6 /* SingleSeekerThreat.m in Sources */,
+				EDE4A4AE1135D8EB005517C6 /* StringType.m in Sources */,
+				EDE4A4AF1135D8EB005517C6 /* Threat.m in Sources */,
+				EDE4A4B01135D8EB005517C6 /* TranslationScope.m in Sources */,
+				EDE4A4B11135D8EB005517C6 /* XMLClient.m in Sources */,
+				EDE4A4B21135D8EB005517C6 /* XMLTools.m in Sources */,
+				EDE4A5B41135E09E005517C6 /* UITextView+Utils.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDE4A5BA1135E182005517C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDE4A5D21135E3B9005517C6 /* ChatAppDelegate.m in Sources */,
+				EDE4A5D31135E3B9005517C6 /* ChatRoomViewController.m in Sources */,
+				EDE4A5D41135E3B9005517C6 /* UITextView+Utils.m in Sources */,
+				EDE4A5D51135E3B9005517C6 /* AppConfig.m in Sources */,
+				EDE4A6E81135F2F9005517C6 /* ChatRequest.m in Sources */,
+				EDE4A6E91135F2F9005517C6 /* ChatUpdate.m in Sources */,
+				EDE4A7A01135FE10005517C6 /* ChatTranslations.m in Sources */,
+				EDE4A881113606B3005517C6 /* ChatUpdateDelegate.m in Sources */,
+				CA9DD7261144D67B0068420A /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDE4A5E51135E4A4005517C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDE4AAC5113653B0005517C6 /* OkResponse.m in Sources */,
+				EDE4AAC6113653B0005517C6 /* UpdateMessage.m in Sources */,
+				EDE4A5EB1135E4E4005517C6 /* BItem.m in Sources */,
+				EDE4A5EC1135E4E4005517C6 /* BooleanType.m in Sources */,
+				EDE4A5ED1135E4E4005517C6 /* Channel.m in Sources */,
+				EDE4A5EE1135E4E4005517C6 /* ClassDescriptor.m in Sources */,
+				EDE4A5EF1135E4E4005517C6 /* ClassType.m in Sources */,
+				EDE4A5F01135E4E4005517C6 /* Connection.m in Sources */,
+				EDE4A5F11135E4E4005517C6 /* DefaultServicesTranslations.m in Sources */,
+				EDE4A5F21135E4E4005517C6 /* DictionaryList.m in Sources */,
+				EDE4A5F31135E4E4005517C6 /* DisconnectRequest.m in Sources */,
+				EDE4A5F41135E4E4005517C6 /* DoubleType.m in Sources */,
+				EDE4A5F51135E4E4005517C6 /* ecologylabxml.m in Sources */,
+				EDE4A5F61135E4E4005517C6 /* ecologylabXMLAppDelegate.m in Sources */,
+				EDE4A5F71135E4E4005517C6 /* ecologylabXMLViewController.m in Sources */,
+				EDE4A5F81135E4E4005517C6 /* ElementState.m in Sources */,
+				EDE4A5F91135E4E4005517C6 /* ElementStateSAXHandler.m in Sources */,
+				EDE4A5FA1135E4E4005517C6 /* Entity.m in Sources */,
+				EDE4A5FB1135E4E4005517C6 /* ErrorResponse.m in Sources */,
+				EDE4A5FC1135E4E4005517C6 /* FieldDescriptor.m in Sources */,
+				EDE4A5FD1135E4E4005517C6 /* FieldType.m in Sources */,
+				EDE4A5FE1135E4E4005517C6 /* FloatType.m in Sources */,
+				EDE4A5FF1135E4E4005517C6 /* GameData.m in Sources */,
+				EDE4A6001135E4E4005517C6 /* HistoryEchoRequest.m in Sources */,
+				EDE4A6011135E4E4005517C6 /* HistoryEchoResponse.m in Sources */,
+				EDE4A6021135E4E4005517C6 /* InitConnectionRequest.m in Sources */,
+				EDE4A6031135E4E4005517C6 /* InitConnectionResponse.m in Sources */,
+				EDE4A6041135E4E4005517C6 /* IntType.m in Sources */,
+				EDE4A6051135E4E4005517C6 /* Item.m in Sources */,
+				EDE4A6061135E4E4005517C6 /* LongType.m in Sources */,
+				EDE4A6071135E4E4005517C6 /* NetworkConstants.m in Sources */,
+				EDE4A6081135E4E4005517C6 /* OrbitingThreat.m in Sources */,
+				EDE4A6091135E4E4005517C6 /* ParsedURL.m in Sources */,
+				EDE4A60A1135E4E4005517C6 /* ParsedURLType.m in Sources */,
+				EDE4A60B1135E4E4005517C6 /* PatrollingThreat.m in Sources */,
+				EDE4A60C1135E4E4005517C6 /* ReferenceType.m in Sources */,
+				EDE4A60D1135E4E4005517C6 /* ReferenceTypeType.m in Sources */,
+				EDE4A60E1135E4E4005517C6 /* RepellableThreat.m in Sources */,
+				EDE4A60F1135E4E4005517C6 /* RequestMessage.m in Sources */,
+				EDE4A6101135E4E4005517C6 /* ResponseMessage.m in Sources */,
+				EDE4A6111135E4E4005517C6 /* RssState.m in Sources */,
+				EDE4A6121135E4E4005517C6 /* ScalarType.m in Sources */,
+				EDE4A6131135E4E4005517C6 /* Schmannel.m in Sources */,
+				EDE4A6141135E4E4005517C6 /* SchmItem.m in Sources */,
+				EDE4A6151135E4E4005517C6 /* Scope.m in Sources */,
+				EDE4A6161135E4E4005517C6 /* ServiceMessage.m in Sources */,
+				EDE4A6171135E4E4005517C6 /* SingleSeekerThreat.m in Sources */,
+				EDE4A6181135E4E4005517C6 /* StringType.m in Sources */,
+				EDE4A6191135E4E4005517C6 /* Threat.m in Sources */,
+				EDE4A61A1135E4E4005517C6 /* TranslationScope.m in Sources */,
+				EDE4A61B1135E4E4005517C6 /* XMLClient.m in Sources */,
+				EDE4A61C1135E4E4005517C6 /* XMLTools.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CA5747CD11436C9000FC81E6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EDE4A5E71135E4A4005517C6 /* ecologylabXMLLib */;
+			targetProxy = CA5747CC11436C9000FC81E6 /* PBXContainerItemProxy */;
+		};
+		EDE4A61E1135E516005517C6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EDE4A5E71135E4A4005517C6 /* ecologylabXMLLib */;
+			targetProxy = EDE4A61D1135E516005517C6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		CA5747C911436C6800FC81E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				INFOPLIST_FILE = "Crescendo-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = Crescendo;
+				SDKROOT = iphoneos3.1.3;
+			};
+			name = Debug;
+		};
+		CA5747CA11436C6800FC81E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				INFOPLIST_FILE = "Crescendo-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = Crescendo;
+				SDKROOT = iphoneos3.1.3;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		EDCACE9C1135CEE10076CCCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				SDKROOT = iphonesimulator3.1.2;
+			};
+			name = Debug;
+		};
+		EDCACE9D1135CEE10076CCCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				SDKROOT = iphonesimulator3.1.2;
+			};
+			name = Release;
+		};
+		EDCAD20B1135D8870076CCCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				INFOPLIST_FILE = "ecologylabXML-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = ecologylabXML;
+				SDKROOT = iphoneos3.1.2;
+			};
+			name = Debug;
+		};
+		EDCAD20C1135D8870076CCCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				INFOPLIST_FILE = "ecologylabXML-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = ecologylabXML;
+				SDKROOT = iphoneos3.1.2;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		EDE4A5C01135E183005517C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				INFOPLIST_FILE = ChatClientInfo.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = ChatClientTutorial;
+				SDKROOT = iphoneos3.1.2;
+			};
+			name = Debug;
+		};
+		EDE4A5C11135E183005517C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				INFOPLIST_FILE = "ChatClientTutorial-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = ChatClientTutorial;
+				SDKROOT = iphoneos3.1.2;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		EDE4A5E91135E4A4005517C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PREBINDING = NO;
+				PRODUCT_NAME = ecologylabXMLLib;
+			};
+			name = Debug;
+		};
+		EDE4A5EA1135E4A4005517C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PREBINDING = NO;
+				PRODUCT_NAME = Untitled;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CA5747CB11436C6800FC81E6 /* Build configuration list for PBXNativeTarget "Crescendo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA5747C911436C6800FC81E6 /* Debug */,
+				CA5747CA11436C6800FC81E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDCACE9E1135CEE10076CCCC /* Build configuration list for PBXProject "ecologylabFundamentalObjC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDCACE9C1135CEE10076CCCC /* Debug */,
+				EDCACE9D1135CEE10076CCCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDCAD20D1135D8BA0076CCCC /* Build configuration list for PBXNativeTarget "ecologylabXML" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDCAD20B1135D8870076CCCC /* Debug */,
+				EDCAD20C1135D8870076CCCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDE4A5C21135E183005517C6 /* Build configuration list for PBXNativeTarget "ChatClientTutorial" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDE4A5C01135E183005517C6 /* Debug */,
+				EDE4A5C11135E183005517C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDE4A61F1135E535005517C6 /* Build configuration list for PBXNativeTarget "ecologylabXMLLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDE4A5E91135E4A4005517C6 /* Debug */,
+				EDE4A5EA1135E4A4005517C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EDCACE9B1135CEE10076CCCC /* Project object */;
+}
