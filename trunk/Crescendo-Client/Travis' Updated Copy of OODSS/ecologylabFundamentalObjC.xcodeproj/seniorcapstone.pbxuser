@@ -1,25 +1,5 @@
 // !$*UTF8*$!
 {
-	3E32686F11484D320042770C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = CA5747E211436D0600FC81E6 /* TrainingViewController.h */;
-		name = "TrainingViewController.h: 6";
-		rLen = 0;
-		rLoc = 87;
-		rType = 0;
-		vrLen = 348;
-		vrLoc = 0;
-	};
-	3E32687011484D320042770C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = CA5747D911436D0600FC81E6 /* TrainingViewController.m */;
-		name = "TrainingViewController.m: 6";
-		rLen = 0;
-		rLoc = 87;
-		rType = 0;
-		vrLen = 1432;
-		vrLoc = 0;
-	};
 	3E32687111484D320042770C /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = CA5747E211436D0600FC81E6 /* TrainingViewController.h */;
@@ -30,7 +10,34 @@
 		vrLen = 348;
 		vrLoc = 0;
 	};
-	3E32687211484D320042770C /* PBXTextBookmark */ = {
+	3E32688011484ED30042770C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E32688111484ED30042770C /* seniorcapstone.pbxuser */;
+		name = "seniorcapstone.pbxuser: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 828;
+		vrLoc = 0;
+	};
+	3E32688111484ED30042770C /* seniorcapstone.pbxuser */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = text;
+		name = seniorcapstone.pbxuser;
+		path = "/Users/seniorcapstone/Documents/XCode Workspace/SVN/Travis' Updated Copy of OODSS/ecologylabFundamentalObjC.xcodeproj/seniorcapstone.pbxuser";
+		sourceTree = "<absolute>";
+	};
+	3E32688211484ED30042770C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CA5747D911436D0600FC81E6 /* TrainingViewController.m */;
+		name = "TrainingViewController.m: 13";
+		rLen = 0;
+		rLoc = 222;
+		rType = 0;
+		vrLen = 949;
+		vrLoc = 181;
+	};
+	3E32688311484ED30042770C /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = CA5747D911436D0600FC81E6 /* TrainingViewController.m */;
 		name = "TrainingViewController.m: 13";
@@ -39,6 +46,23 @@
 		rType = 0;
 		vrLen = 983;
 		vrLoc = 181;
+	};
+	3E32688411484ED30042770C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E32688511484ED30042770C /* seniorcapstone.pbxuser */;
+		name = "seniorcapstone.pbxuser: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 828;
+		vrLoc = 0;
+	};
+	3E32688511484ED30042770C /* seniorcapstone.pbxuser */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = text;
+		name = seniorcapstone.pbxuser;
+		path = "/Users/seniorcapstone/Documents/XCode Workspace/SVN/Travis' Updated Copy of OODSS/ecologylabFundamentalObjC.xcodeproj/seniorcapstone.pbxuser";
+		sourceTree = "<absolute>";
 	};
 	3E8EDF1B11484B7B00335C0A /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -50,19 +74,156 @@
 		vrLen = 2337;
 		vrLoc = 0;
 	};
-	3E8EDF1C11484B7B00335C0A /* PBXBookmark */ = {
-		isa = PBXBookmark;
-		fRef = CA5747E211436D0600FC81E6 /* TrainingViewController.h */;
-	};
-	3E8EDF1D11484B7B00335C0A /* PBXTextBookmark */ = {
+	3EB613D3114871E70022733C /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = CA5747E211436D0600FC81E6 /* TrainingViewController.h */;
-		name = "TrainingViewController.h: 6";
+		name = "TrainingViewController.h: 22";
 		rLen = 0;
-		rLoc = 87;
+		rLoc = 348;
 		rType = 0;
 		vrLen = 348;
 		vrLoc = 0;
+	};
+	3EB613D4114871E70022733C /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = EDE4A5BF1135E182005517C6 /* ChatClientTutorial-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/seniorcapstone/Documents/XCode Workspace/SVN/Travis' Updated Copy of OODSS/ChatClientTutorial-Info.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	3EB613D5114871E70022733C /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = CA5747C811436C6700FC81E6 /* Crescendo-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleIdentifier,
+		);
+		name = "/Users/seniorcapstone/Documents/XCode Workspace/SVN/Travis' Updated Copy of OODSS/Crescendo-Info.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	3EB613D6114871E70022733C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CA5747E211436D0600FC81E6 /* TrainingViewController.h */;
+		name = "TrainingViewController.h: 22";
+		rLen = 0;
+		rLoc = 348;
+		rType = 0;
+		vrLen = 348;
+		vrLoc = 0;
+	};
+	3EB613D7114871E70022733C /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = CA5747C811436C6700FC81E6 /* Crescendo-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/seniorcapstone/Documents/XCode Workspace/SVN/Travis' Updated Copy of OODSS/Crescendo-Info.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	3EB613D8114871E70022733C /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = EDE4A5BF1135E182005517C6 /* ChatClientTutorial-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/seniorcapstone/Documents/XCode Workspace/SVN/Travis' Updated Copy of OODSS/ChatClientTutorial-Info.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	3EB613D9114871E70022733C /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = CA5747C811436C6700FC81E6 /* Crescendo-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/seniorcapstone/Documents/XCode Workspace/SVN/Travis' Updated Copy of OODSS/Crescendo-Info.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	3EB613DA114871E70022733C /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = EDE4A5BF1135E182005517C6 /* ChatClientTutorial-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/seniorcapstone/Documents/XCode Workspace/SVN/Travis' Updated Copy of OODSS/ChatClientTutorial-Info.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	3EB613DB114871E70022733C /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = CA5747C811436C6700FC81E6 /* Crescendo-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleIdentifier,
+		);
+		name = "/Users/seniorcapstone/Documents/XCode Workspace/SVN/Travis' Updated Copy of OODSS/Crescendo-Info.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	3EB613DC114871E70022733C /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = EDE4A5BF1135E182005517C6 /* ChatClientTutorial-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/seniorcapstone/Documents/XCode Workspace/SVN/Travis' Updated Copy of OODSS/ChatClientTutorial-Info.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	3EB613DD114871E70022733C /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = CA5747C811436C6700FC81E6 /* Crescendo-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/seniorcapstone/Documents/XCode Workspace/SVN/Travis' Updated Copy of OODSS/Crescendo-Info.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	3EB613E3114872DD0022733C /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = CA5747C811436C6700FC81E6 /* Crescendo-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/seniorcapstone/Documents/XCode Workspace/SVN/Travis' Updated Copy of OODSS/Crescendo-Info.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	3EB613E4114872DD0022733C /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 3EB613D0114871350022733C /* appicon.png */;
+	};
+	3EB613E5114872DD0022733C /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = CA5747C811436C6700FC81E6 /* Crescendo-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/seniorcapstone/Documents/XCode Workspace/SVN/Travis' Updated Copy of OODSS/Crescendo-Info.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	3EB613E6114872DD0022733C /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 3EB613D0114871350022733C /* appicon.png */;
 	};
 	3ECD61DC11470985005BB5EF /* Crescendo */ = {
 		isa = PBXExecutable;
@@ -159,15 +320,15 @@
 	};
 	CA5747D911436D0600FC81E6 /* TrainingViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {984, 868}}";
+			sepNavIntBoundsRect = "{{0, 0}, {984, 784}}";
 			sepNavSelRange = "{222, 0}";
-			sepNavVisRange = "{181, 983}";
+			sepNavVisRange = "{181, 949}";
 		};
 	};
 	CA5747E211436D0600FC81E6 /* TrainingViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1575, 762}}";
-			sepNavSelRange = "{87, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {370, 454}}";
+			sepNavSelRange = "{348, 0}";
 			sepNavVisRange = "{0, 348}";
 		};
 	};
@@ -190,7 +351,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					192,
+					1397,
 					20,
 					48,
 					43,
@@ -213,7 +374,7 @@
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
 					20,
-					168,
+					1373,
 					20,
 					48,
 					43,
@@ -231,17 +392,31 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 289950612;
-			PBXWorkspaceStateSaveDate = 289950612;
+			PBXPerProjectTemplateStateSaveDate = 289960653;
+			PBXWorkspaceStateSaveDate = 289960653;
 		};
 		perUserProjectItems = {
-			3E32686F11484D320042770C /* PBXTextBookmark */ = 3E32686F11484D320042770C /* PBXTextBookmark */;
-			3E32687011484D320042770C /* PBXTextBookmark */ = 3E32687011484D320042770C /* PBXTextBookmark */;
-			3E32687111484D320042770C /* PBXTextBookmark */ = 3E32687111484D320042770C /* PBXTextBookmark */;
-			3E32687211484D320042770C /* PBXTextBookmark */ = 3E32687211484D320042770C /* PBXTextBookmark */;
+			3E32687111484D320042770C = 3E32687111484D320042770C /* PBXTextBookmark */;
+			3E32688011484ED30042770C = 3E32688011484ED30042770C /* PBXTextBookmark */;
+			3E32688211484ED30042770C = 3E32688211484ED30042770C /* PBXTextBookmark */;
+			3E32688311484ED30042770C = 3E32688311484ED30042770C /* PBXTextBookmark */;
+			3E32688411484ED30042770C = 3E32688411484ED30042770C /* PBXTextBookmark */;
 			3E8EDF1B11484B7B00335C0A = 3E8EDF1B11484B7B00335C0A /* PBXTextBookmark */;
-			3E8EDF1C11484B7B00335C0A = 3E8EDF1C11484B7B00335C0A /* PBXBookmark */;
-			3E8EDF1D11484B7B00335C0A = 3E8EDF1D11484B7B00335C0A /* PBXTextBookmark */;
+			3EB613D3114871E70022733C = 3EB613D3114871E70022733C /* PBXTextBookmark */;
+			3EB613D4114871E70022733C = 3EB613D4114871E70022733C /* PlistBookmark */;
+			3EB613D5114871E70022733C = 3EB613D5114871E70022733C /* PlistBookmark */;
+			3EB613D6114871E70022733C = 3EB613D6114871E70022733C /* PBXTextBookmark */;
+			3EB613D7114871E70022733C = 3EB613D7114871E70022733C /* PlistBookmark */;
+			3EB613D8114871E70022733C = 3EB613D8114871E70022733C /* PlistBookmark */;
+			3EB613D9114871E70022733C = 3EB613D9114871E70022733C /* PlistBookmark */;
+			3EB613DA114871E70022733C = 3EB613DA114871E70022733C /* PlistBookmark */;
+			3EB613DB114871E70022733C = 3EB613DB114871E70022733C /* PlistBookmark */;
+			3EB613DC114871E70022733C = 3EB613DC114871E70022733C /* PlistBookmark */;
+			3EB613DD114871E70022733C = 3EB613DD114871E70022733C /* PlistBookmark */;
+			3EB613E3114872DD0022733C /* PlistBookmark */ = 3EB613E3114872DD0022733C /* PlistBookmark */;
+			3EB613E4114872DD0022733C /* PBXBookmark */ = 3EB613E4114872DD0022733C /* PBXBookmark */;
+			3EB613E5114872DD0022733C /* PlistBookmark */ = 3EB613E5114872DD0022733C /* PlistBookmark */;
+			3EB613E6114872DD0022733C /* PBXBookmark */ = 3EB613E6114872DD0022733C /* PBXBookmark */;
 		};
 		sourceControlManager = 3ECD61EB114709A4005BB5EF /* Source Control */;
 		userBuildSettings = {
