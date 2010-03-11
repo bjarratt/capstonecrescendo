@@ -6,6 +6,7 @@ import display.DisplayManager;
 
 import logging.LogManager;
 
+
 public class EntryPoint {
 
 	/**

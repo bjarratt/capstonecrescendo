@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="C:/Users/Zach/Documents/Files/School/Spring 2010/CSCE 482/Crescendo/CrescendoServer/jfugue-4.0.3-with-musicxml.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/ecologylabFundamental"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
