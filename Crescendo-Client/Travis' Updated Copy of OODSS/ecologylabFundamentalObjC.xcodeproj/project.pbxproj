@@ -31,6 +31,7 @@
 		3E32686A11484CE50042770C /* help_button_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E32685211484CE50042770C /* help_button_up.png */; };
 		3E32686B11484CE50042770C /* main_menu_layout.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E32685311484CE50042770C /* main_menu_layout.png */; };
 		3E32686C11484CE50042770C /* menu_button_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E32685411484CE50042770C /* menu_button_up.png */; };
+		3EB613D1114871350022733C /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EB613D0114871350022733C /* appicon.png */; };
 		3ECD620311470A51005BB5EF /* ChatTranslations.xml in Resources */ = {isa = PBXBuildFile; fileRef = EDE4A6DC1135EF5E005517C6 /* ChatTranslations.xml */; };
 		CA5747CE11436C9500FC81E6 /* libecologylabXMLLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EDE4A5E81135E4A4005517C6 /* libecologylabXMLLib.a */; };
 		CA5747D011436CB600FC81E6 /* TrainingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5747CF11436CB600FC81E6 /* TrainingViewController.xib */; };
@@ -231,6 +232,7 @@
 		3E32685211484CE50042770C /* help_button_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = help_button_up.png; sourceTree = "<group>"; };
 		3E32685311484CE50042770C /* main_menu_layout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_menu_layout.png; sourceTree = "<group>"; };
 		3E32685411484CE50042770C /* menu_button_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_button_up.png; sourceTree = "<group>"; };
+		3EB613D0114871350022733C /* appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicon.png; sourceTree = "<group>"; };
 		CA5747C611436C6700FC81E6 /* Crescendo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crescendo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA5747C811436C6700FC81E6 /* Crescendo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Crescendo-Info.plist"; sourceTree = "<group>"; };
 		CA5747CF11436CB600FC81E6 /* TrainingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrainingViewController.xib; sourceTree = "<group>"; };
@@ -460,6 +462,7 @@
 		3E32683A11484CE50042770C /* images */ = {
 			isa = PBXGroup;
 			children = (
+				3EB613D0114871350022733C /* appicon.png */,
 				3E32683B11484CE50042770C /* cards */,
 				3E32684F11484CE50042770C /* menu */,
 			);
@@ -1093,6 +1096,7 @@
 				3E32686A11484CE50042770C /* help_button_up.png in Resources */,
 				3E32686B11484CE50042770C /* main_menu_layout.png in Resources */,
 				3E32686C11484CE50042770C /* menu_button_up.png in Resources */,
+				3EB613D1114871350022733C /* appicon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
