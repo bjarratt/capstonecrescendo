@@ -1,0 +1,113 @@
+<translation_scope name="ChatTranslations">
+	<class_descriptor described_class="class ecologylab.tutorials.oodss.chat.ChatRequest"
+		tag_name="chat_request">
+		<field_descriptor
+			field="timeStamp"
+			tag_name="time_stamp" type="1" scalar_type="LongType"></field_descriptor>
+		<field_descriptor
+			field="uid"
+			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
+		<field_descriptor
+			field="message"
+			tag_name="message" type="1" scalar_type="StringType"></field_descriptor>
+	</class_descriptor>
+	<class_descriptor
+		described_class="class ecologylab.services.messages.DisconnectRequest"
+		tag_name="disconnect_request">
+		<field_descriptor
+			field="timeStamp"
+			tag_name="time_stamp" type="1" scalar_type="LongType"></field_descriptor>
+		<field_descriptor
+			field="uid"
+			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
+	</class_descriptor>
+	<class_descriptor described_class="class ecologylab.services.messages.ServiceMessage"
+		tag_name="service_message">
+		<field_descriptor
+			field="timeStamp"
+			tag_name="time_stamp" type="1" scalar_type="LongType"></field_descriptor>
+		<field_descriptor
+			field="uid"
+			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
+	</class_descriptor>
+	<class_descriptor described_class="class ecologylab.services.messages.ResponseMessage"
+		tag_name="response_message">
+		<field_descriptor
+			field="timeStamp"
+			tag_name="time_stamp" type="1" scalar_type="LongType"></field_descriptor>
+		<field_descriptor
+			field="uid"
+			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
+	</class_descriptor>
+	<class_descriptor
+		described_class="class ecologylab.services.messages.InitConnectionResponse"
+		tag_name="init_connection_response">
+		<field_descriptor
+			field="timeStamp"
+			tag_name="time_stamp" type="1" scalar_type="LongType"></field_descriptor>
+		<field_descriptor
+			field="uid"
+			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
+		<field_descriptor
+			field="sessionId"
+			tag_name="session_id" type="1" scalar_type="StringType"></field_descriptor>
+	</class_descriptor>
+	<class_descriptor described_class="class ecologylab.services.messages.OkResponse"
+		tag_name="ok_response">
+		<field_descriptor
+			field="timeStamp"
+			tag_name="time_stamp" type="1" scalar_type="LongType"></field_descriptor>
+		<field_descriptor
+			field="uid"
+			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
+	</class_descriptor>
+	<class_descriptor described_class="class ecologylab.services.messages.UpdateMessage"
+		tag_name="update_message">
+		<field_descriptor
+			field="timeStamp"
+			tag_name="time_stamp" type="1" scalar_type="LongType"></field_descriptor>
+		<field_descriptor
+			field="uid"
+			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
+	</class_descriptor>
+	<class_descriptor
+		described_class="class ecologylab.services.messages.InitConnectionRequest"
+		tag_name="init_connection_request">
+		<field_descriptor
+			field="timeStamp"
+			tag_name="time_stamp" type="1" scalar_type="LongType"></field_descriptor>
+		<field_descriptor
+			field="uid"
+			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
+		<field_descriptor
+			field="sessionId"
+			tag_name="session_id" type="1" scalar_type="StringType"></field_descriptor>
+	</class_descriptor>
+	<class_descriptor described_class="class ecologylab.tutorials.oodss.chat.ChatUpdate"
+		tag_name="chat_update">
+		<field_descriptor
+			field="timeStamp"
+			tag_name="time_stamp" type="1" scalar_type="LongType"></field_descriptor>
+		<field_descriptor
+			field="uid"
+			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
+		<field_descriptor
+			field="message"
+			tag_name="message" type="1" scalar_type="StringType"></field_descriptor>
+		<field_descriptor
+			field="host"
+			tag_name="host" type="1" scalar_type="StringType"></field_descriptor>
+		<field_descriptor
+			field="port"
+			tag_name="port" type="1" scalar_type="IntType"></field_descriptor>
+	</class_descriptor>
+	<class_descriptor described_class="class ecologylab.services.messages.RequestMessage"
+		tag_name="request_message">
+		<field_descriptor
+			field="timeStamp"
+			tag_name="time_stamp" type="1" scalar_type="LongType"></field_descriptor>
+		<field_descriptor
+			field="uid"
+			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
+	</class_descriptor>
+</translation_scope>
