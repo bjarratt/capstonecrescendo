@@ -14,8 +14,5 @@
 }
 
 - (IBAction) goBack;
-- (IBAction) goToKeepTheBeat;
-- (IBAction) gotoNoteLengths;
-- (IBAction) goToNotePitches;
 
 @end
