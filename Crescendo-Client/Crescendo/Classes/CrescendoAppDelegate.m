@@ -55,9 +55,10 @@
 }
 
 
-- (void)dealloc {
+- (void) dealloc {
     [viewController release];
     [window release];
+	[client release];
     [super dealloc];
 }
 

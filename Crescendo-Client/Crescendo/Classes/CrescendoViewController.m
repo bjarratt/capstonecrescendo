@@ -92,7 +92,10 @@
 }
 
 
-- (void)dealloc {
+- (void) dealloc {
+	[trainingViewController release];
+	[gamemodeViewController release];
+	[helpViewController release];
     [super dealloc];
 }
 
