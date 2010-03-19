@@ -10,7 +10,5 @@
 
 
 @interface MyScrollView : UIScrollView {
-
 }
-
 @end

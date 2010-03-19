@@ -2,10 +2,15 @@
 #import <Foundation/Foundation.h>
 #import "MyScrollView.h"
 
-@interface TrainingView : UIView {
+@interface TrainingView : UIView <UIScrollViewDelegate> {
     IBOutlet UIView *myHolderView;
-    IBOutlet MyScrollView *myPitchScrollView;
-	IBOutlet MyScrollView *myLengthScrollView;
+    IBOutlet UIScrollView *myPitchScrollView;
+	IBOutlet UIScrollView *myLengthScrollView;
+	int pitchPage;
+	int lengthPage;
 }
-- (IBAction)gotoScrollView;
+- (void) scrollViewDidEndDragging: (UIScrollView *) scrollView willDecelerate: (BOOL) decelerate;
+- (void) scrollViewDidEndDecelerating: (UIScrollView *) scrollView;
+- (void) determineScrollViewPage: (UIScrollView *) scrollView;
+- (IBAction) gotoScrollView;
 @end
