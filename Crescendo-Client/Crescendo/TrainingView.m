@@ -2,8 +2,8 @@
 
 @implementation TrainingView
 - (IBAction)gotoScrollView {
-    myLengthScrollView.contentSize = CGSizeMake(740, 200);
-	myPitchScrollView.contentSize = CGSizeMake(2250, 200);
+    myLengthScrollView.contentSize = CGSizeMake(885, 200);
+	myPitchScrollView.contentSize = CGSizeMake(2395, 200);
 	[self addSubview:myHolderView];
 }
 @end
