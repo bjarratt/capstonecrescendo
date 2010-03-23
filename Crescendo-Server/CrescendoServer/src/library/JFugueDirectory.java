@@ -1,3 +1,4 @@
+package library;
 
 import org.jfugue.*;
 import java.util.*;
