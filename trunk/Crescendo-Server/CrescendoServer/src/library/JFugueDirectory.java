@@ -1,6 +1,4 @@
 
-package library;
-
 import org.jfugue.*;
 import java.util.*;
 
@@ -35,28 +33,34 @@ public class JFugueDirectory {
 	 */
 	public JFugueDirectory()
 	{
-		pitches.put("lowDSharp", "D#5");
-		pitches.put("lowE", "E5");
-		pitches.put("lowESharp", "E#5");
-		pitches.put("lowF", "F5");
-		pitches.put("FSharp", "F#5");
-		pitches.put("G", "G5");
-		pitches.put("GSharp", "G#5");
-		pitches.put("A", "A5");
-		pitches.put("ASharp", "A#5");
-		pitches.put("B", "B5");
-		pitches.put("C", "C6");
-		pitches.put("CSharp", "C#6");
-		pitches.put("D", "D6");
-		pitches.put("highDSharp", "D65");
-		pitches.put("highE", "E6");
-		pitches.put("highESharp", "E#6");
-		pitches.put("highF", "F6");
+		pitches.put("D5", "D5");
+		pitches.put("DSharp5", "D#5");
+		pitches.put("E5", "E5");
+		pitches.put("ESharp5", "E#5");
+		pitches.put("F5", "F5");
+		pitches.put("FSharp5", "F#5");
+		pitches.put("G5", "G5");
+		pitches.put("GSharp5", "G#5");
+		pitches.put("A5", "A5");
+		pitches.put("ASharp5", "A#5");
+		pitches.put("B5", "B5");
+		pitches.put("C6", "C6");
+		pitches.put("CSharp6", "C#6");
+		pitches.put("D6", "D6");
+		pitches.put("DSharp6", "D65");
+		pitches.put("E6", "E6");
+		pitches.put("ESharp6", "E#6");
+		pitches.put("F6", "F6");
 		
-		lengths.put("eightnote", "i");
+		//A rest is also specified in pitches
+		pitches.put("rest", "R");
+		
+		lengths.put("eighthnote", "i");
 		lengths.put("quarternote", "q");
 		lengths.put("halfnote", "h");
 		lengths.put("wholenote", "w");
+		
+		
 	}
 	
 	/**
@@ -72,8 +76,8 @@ public class JFugueDirectory {
 		String foundLength;
 		String foundPitch;
 		this.serverMessage = request;
+		
 		//begin parsing the string
-		//TODO: standardize message format
 		String[] tokens = serverMessage.split("/");
 		for(int i = 0; i < tokens.length; i++)
 		{

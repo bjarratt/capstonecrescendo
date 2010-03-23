@@ -1,5 +1,6 @@
 package library;
 
-public class LibraryManager {
+public class LibraryManager 
+{
 
 }
