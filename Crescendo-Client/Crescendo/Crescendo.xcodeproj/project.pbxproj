@@ -164,8 +164,7 @@
 		3E55658B114EE2440089B12F /* AppConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E55658A114EE2440089B12F /* AppConfig.m */; };
 		3E55658F114EE2790089B12F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E55658E114EE2790089B12F /* CFNetwork.framework */; };
 		3E55664A114EE34E0089B12F /* libecologylabXMLLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E5563E2114EDE1E0089B12F /* libecologylabXMLLib.a */; };
-		CA5A8E5611511670001EB600 /* TrainingView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5A8E5411511670001EB600 /* TrainingView.m */; };
-		CAA0D4021152062F0050FA0F /* MyScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA0D4011152062F0050FA0F /* MyScrollView.m */; };
+		CA5A8E5611511670001EB600 /* ComposeView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5A8E5411511670001EB600 /* ComposeView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -351,10 +350,8 @@
 		3E55658A114EE2440089B12F /* AppConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppConfig.m; sourceTree = "<group>"; };
 		3E55658E114EE2790089B12F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* Crescendo-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Crescendo-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
-		CA5A8E5411511670001EB600 /* TrainingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TrainingView.m; path = ../TrainingView.m; sourceTree = "<group>"; };
-		CA5A8E5511511670001EB600 /* TrainingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TrainingView.h; path = ../TrainingView.h; sourceTree = "<group>"; };
-		CAA0D4001152062F0050FA0F /* MyScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyScrollView.h; sourceTree = "<group>"; };
-		CAA0D4011152062F0050FA0F /* MyScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyScrollView.m; sourceTree = "<group>"; };
+		CA5A8E5411511670001EB600 /* ComposeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComposeView.m; path = ../ComposeView.m; sourceTree = "<group>"; };
+		CA5A8E5511511670001EB600 /* ComposeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComposeView.h; path = ../ComposeView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -383,20 +380,11 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				CAA0D3FF115206140050FA0F /* UI */,
-				3E556358114ED7D40089B12F /* OODSS */,
 				3E556350114ED77F0089B12F /* CrescendoAppDelegate.h */,
 				3E556351114ED7800089B12F /* CrescendoAppDelegate.m */,
-				28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */,
-				28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */,
-				3E556352114ED7B00089B12F /* GamemodeViewController.h */,
-				3E556353114ED7B00089B12F /* GamemodeViewController.m */,
-				3E556355114ED7C90089B12F /* HelpViewController.h */,
-				3E556356114ED7CA0089B12F /* HelpViewController.m */,
-				CA5A8E5511511670001EB600 /* TrainingView.h */,
-				CA5A8E5411511670001EB600 /* TrainingView.m */,
-				3E55634C114ED6F70089B12F /* TrainingViewController.h */,
-				3E55634D114ED6F70089B12F /* TrainingViewController.m */,
+				CA9D9D6C1159A7920097EF8A /* Crescendo Controllers */,
+				CA9D9D8C1159A96C0097EF8A /* Crescendo Views */,
+				3E556358114ED7D40089B12F /* OODSS */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -643,13 +631,52 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		CAA0D3FF115206140050FA0F /* UI */ = {
+		CA9D9D6C1159A7920097EF8A /* Crescendo Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				CAA0D4001152062F0050FA0F /* MyScrollView.h */,
-				CAA0D4011152062F0050FA0F /* MyScrollView.m */,
+				28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */,
+				28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */,
+				CA9D9D6D1159A7C90097EF8A /* Gamemode */,
+				CA9D9D6F1159A7F20097EF8A /* Help */,
+				CA9D9D6E1159A7DD0097EF8A /* Training */,
 			);
-			name = UI;
+			name = "Crescendo Controllers";
+			sourceTree = "<group>";
+		};
+		CA9D9D6D1159A7C90097EF8A /* Gamemode */ = {
+			isa = PBXGroup;
+			children = (
+				3E556352114ED7B00089B12F /* GamemodeViewController.h */,
+				3E556353114ED7B00089B12F /* GamemodeViewController.m */,
+			);
+			name = Gamemode;
+			sourceTree = "<group>";
+		};
+		CA9D9D6E1159A7DD0097EF8A /* Training */ = {
+			isa = PBXGroup;
+			children = (
+				3E55634C114ED6F70089B12F /* TrainingViewController.h */,
+				3E55634D114ED6F70089B12F /* TrainingViewController.m */,
+			);
+			name = Training;
+			sourceTree = "<group>";
+		};
+		CA9D9D6F1159A7F20097EF8A /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				3E556355114ED7C90089B12F /* HelpViewController.h */,
+				3E556356114ED7CA0089B12F /* HelpViewController.m */,
+			);
+			name = Help;
+			sourceTree = "<group>";
+		};
+		CA9D9D8C1159A96C0097EF8A /* Crescendo Views */ = {
+			isa = PBXGroup;
+			children = (
+				CA5A8E5511511670001EB600 /* ComposeView.h */,
+				CA5A8E5411511670001EB600 /* ComposeView.m */,
+			);
+			name = "Crescendo Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -833,8 +860,7 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				3E55634E114ED6F70089B12F /* TrainingViewController.m in Sources */,
 				3E55658B114EE2440089B12F /* AppConfig.m in Sources */,
-				CA5A8E5611511670001EB600 /* TrainingView.m in Sources */,
-				CAA0D4021152062F0050FA0F /* MyScrollView.m in Sources */,
+				CA5A8E5611511670001EB600 /* ComposeView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
