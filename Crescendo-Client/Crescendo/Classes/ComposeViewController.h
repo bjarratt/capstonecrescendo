@@ -12,18 +12,20 @@
 	IBOutlet UIView *myHolderView;
 	IBOutlet UILabel *buildLabel;
 	UIScrollView *myLengthScrollView;
-	IBOutlet UIScrollView *myPitchScrollView;
+	UIScrollView *myPitchScrollView;
 	
 	UIImage lengthImages[1];
 	
-	int lengthPage;
-	int pitchPage;
+	NSString *noteLength;
+	NSString *notePitch;
 }
 
-@property (nonatomic, retain) UILabel *buildLabel;
-@property (nonatomic, retain) UIView *myHolderView;
+@property (nonatomic, retain) IBOutlet UILabel *buildLabel;
+@property (nonatomic, retain) IBOutlet UIView *myHolderView;
 @property (nonatomic, retain) UIScrollView *myPitchScrollView;
 @property (nonatomic, retain) UIScrollView *myLengthScrollView;
+@property (nonatomic, retain) NSString *noteLength;
+@property (nonatomic, retain) NSString *notePitch;
 
 - (void) scrollViewDidEndDragging: (UIScrollView *) scrollView willDecelerate: (BOOL) decelerate;
 - (void) scrollViewDidEndDecelerating: (UIScrollView *) scrollView;
