@@ -18,42 +18,41 @@
 @synthesize helpViewController;
 @synthesize trainingViewController;
 
-/*
- * ChatUpdateDelegate method.
- */
-- (void) recievedChatUpdate:(ChatUpdate*)update {
+#pragma mark ChatUpdateDelegate Method
+
+- (void) recievedChatUpdate: (ChatUpdate*) update {
 }
 
 #pragma mark Interface Methods
 
+- (IBAction) goToComposeView {
+	[self presentModalViewController:composeViewController animated:YES];
+}
+
+- (IBAction) goToGamemodeView {
+	[self presentModalViewController:gamemodeViewController animated:YES];
+}
+
+- (IBAction) goToHelpView {
+	[self presentModalViewController:helpViewController	animated:YES];
+}
+
 - (IBAction) goToTrainingView {
 	NSString* inputText = @"training view";
 	
-    /*
-     * Initialize ChatRequest and set message to content's of the text field.
-     */
+    // Initialize ChatRequest and set message to content's of the text field.
     ChatRequest* request = [[ChatRequest alloc] init];
     [request setMessage:inputText];
     
-    /*
-     * Setup the client to send the message a little later in
-     * the run loop.
-     */
+    // Setup the client to send the message a little later in the run loop.
     [client performSelector:@selector(sendMessage:) withObject: request];
     
     [request release];
 	
 	[self presentModalViewController:trainingViewController animated:YES];
 }
-- (IBAction) goToGamemodeView {
-	[self presentModalViewController:gamemodeViewController animated:YES];
-}
-- (IBAction) goToComposeView {
-	[self presentModalViewController:composeViewController animated:YES];
-}
-- (IBAction) goToHelpView {
-	[self presentModalViewController:helpViewController	animated:YES];
-}
+
+#pragma mark Initialize View Methods
 
 /*
  // The designated initializer. Override to perform setup that is required before the view is loaded.
@@ -79,6 +78,7 @@
  }
  */
 
+#pragma mark Autorotate Orientation Override
 
 /*
  // Override to allow orientations other than the default portrait orientation.
@@ -87,6 +87,8 @@
  return (interfaceOrientation == UIInterfaceOrientationPortrait);
  }
  */
+
+#pragma mark Unload Controller
 
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.
@@ -102,9 +104,10 @@
 
 
 - (void) dealloc {
-	[trainingViewController release];
+	[composeViewController release];
 	[gamemodeViewController release];
 	[helpViewController release];
+	[trainingViewController release];
     [super dealloc];
 }
 
