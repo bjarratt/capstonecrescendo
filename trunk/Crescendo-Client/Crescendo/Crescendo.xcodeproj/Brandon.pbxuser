@@ -336,6 +336,13 @@
 			CA04C1CC115B6F9B00F28F86 /* PBXTextBookmark */ = CA04C1CC115B6F9B00F28F86 /* PBXTextBookmark */;
 			CA04C1CF115B6FBE00F28F86 /* PBXTextBookmark */ = CA04C1CF115B6FBE00F28F86 /* PBXTextBookmark */;
 			CA04C1D1115B704700F28F86 /* PBXTextBookmark */ = CA04C1D1115B704700F28F86 /* PBXTextBookmark */;
+			CA04C1D4115B713D00F28F86 /* PBXTextBookmark */ = CA04C1D4115B713D00F28F86 /* PBXTextBookmark */;
+			CA04C1D5115B737C00F28F86 /* PBXTextBookmark */ = CA04C1D5115B737C00F28F86 /* PBXTextBookmark */;
+			CA04C1D8115B742900F28F86 /* PBXTextBookmark */ = CA04C1D8115B742900F28F86 /* PBXTextBookmark */;
+			CA04C1D9115B742900F28F86 /* PBXTextBookmark */ = CA04C1D9115B742900F28F86 /* PBXTextBookmark */;
+			CA04C1DA115B742900F28F86 /* PBXTextBookmark */ = CA04C1DA115B742900F28F86 /* PBXTextBookmark */;
+			CA04C1DB115B742900F28F86 /* PBXTextBookmark */ = CA04C1DB115B742900F28F86 /* PBXTextBookmark */;
+			CA04C1DC115B742900F28F86 /* PBXTextBookmark */ = CA04C1DC115B742900F28F86 /* PBXTextBookmark */;
 		};
 		sourceControlManager = CA31FE5F115990770051998F /* Source Control */;
 		userBuildSettings = {
@@ -405,18 +412,18 @@
 	};
 	CA0208D7115B28C60023D8FB /* ComposeViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {943, 608}}";
-			sepNavSelRange = "{452, 0}";
-			sepNavVisRange = "{0, 1086}";
+			sepNavIntBoundsRect = "{{0, 0}, {943, 631}}";
+			sepNavSelRange = "{1055, 0}";
+			sepNavVisRange = "{0, 1083}";
 			sepNavWindowFrame = "{{15, 465}, {750, 558}}";
 		};
 	};
 	CA0208D8115B28C60023D8FB /* ComposeViewController.m */ = {
 		uiCtxt = {
-			sepNavFolds = "{\n    c =     (\n                {\n            r = \"{522, 156}\";\n            s = 0;\n        },\n                {\n            r = \"{749, 45}\";\n            s = 0;\n        },\n                {\n            r = \"{2370, 49}\";\n            s = 0;\n        }\n    );\n    r = \"{0, 10209}\";\n    s = 0;\n}";
-			sepNavIntBoundsRect = "{{0, 0}, {984, 5040}}";
-			sepNavSelRange = "{2434, 0}";
-			sepNavVisRange = "{7235, 1619}";
+			sepNavFolds = "{\n    c =     (\n                {\n            r = \"{522, 156}\";\n            s = 0;\n        },\n                {\n            r = \"{749, 45}\";\n            s = 0;\n        },\n                {\n            r = \"{2366, 49}\";\n            s = 0;\n        }\n    );\n    r = \"{0, 10205}\";\n    s = 0;\n}";
+			sepNavIntBoundsRect = "{{0, 0}, {984, 5152}}";
+			sepNavSelRange = "{2011, 0}";
+			sepNavVisRange = "{1871, 836}";
 			sepNavWindowFrame = "{{38, 444}, {750, 558}}";
 		};
 	};
@@ -1141,7 +1148,7 @@
 		comments = "error: property 'lengthPage' with 'retain' attribute must be of object type";
 		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
 		rLen = 1;
-		rLoc = 36;
+		rLoc = 37;
 		rType = 1;
 	};
 	CA04C0DC115B4E6300F28F86 /* PBXTextBookmark */ = {
@@ -1149,7 +1156,7 @@
 		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
 		name = "ComposeViewController.h: 34";
 		rLen = 5;
-		rLoc = 1081;
+		rLoc = 1078;
 		rType = 0;
 		vrLen = 547;
 		vrLoc = 488;
@@ -1239,7 +1246,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 184";
 		rLen = 0;
-		rLoc = 10047;
+		rLoc = 10043;
 		rType = 0;
 		vrLen = 993;
 		vrLoc = 3009;
@@ -1319,7 +1326,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 167";
 		rLen = 30;
-		rLoc = 9698;
+		rLoc = 9694;
 		rType = 0;
 		vrLen = 1050;
 		vrLoc = 2639;
@@ -1379,7 +1386,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 157";
 		rLen = 0;
-		rLoc = 9400;
+		rLoc = 9396;
 		rType = 0;
 		vrLen = 1094;
 		vrLoc = 2647;
@@ -1389,7 +1396,7 @@
 		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
 		name = "ComposeViewController.h: 23";
 		rLen = 0;
-		rLoc = 1058;
+		rLoc = 1055;
 		rType = 0;
 		vrLen = 712;
 		vrLoc = 0;
@@ -1399,7 +1406,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 154";
 		rLen = 0;
-		rLoc = 9355;
+		rLoc = 9351;
 		rType = 0;
 		vrLen = 978;
 		vrLoc = 2738;
@@ -1508,8 +1515,8 @@
 		isa = PBXTextBookmark;
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 123";
-		rLen = 30;
-		rLoc = 2211;
+		rLen = 0;
+		rLoc = 2210;
 		rType = 0;
 		vrLen = 2520;
 		vrLoc = 48;
@@ -1569,7 +1576,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 133";
 		rLen = 36;
-		rLoc = 2422;
+		rLoc = 2418;
 		rType = 0;
 		vrLen = 2767;
 		vrLoc = 381;
@@ -1619,7 +1626,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 162";
 		rLen = 44;
-		rLoc = 9356;
+		rLoc = 9352;
 		rType = 0;
 		vrLen = 1391;
 		vrLoc = 2436;
@@ -1689,7 +1696,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 192";
 		rLen = 0;
-		rLoc = 10179;
+		rLoc = 10175;
 		rType = 0;
 		vrLen = 934;
 		vrLoc = 3032;
@@ -1709,7 +1716,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 184";
 		rLen = 0;
-		rLoc = 10047;
+		rLoc = 10043;
 		rType = 0;
 		vrLen = 987;
 		vrLoc = 3015;
@@ -1739,7 +1746,7 @@
 		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
 		name = "ComposeViewController.h: 32";
 		rLen = 5;
-		rLoc = 1081;
+		rLoc = 1078;
 		rType = 0;
 		vrLen = 508;
 		vrLoc = 436;
@@ -1749,7 +1756,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 153";
 		rLen = 1;
-		rLoc = 9239;
+		rLoc = 9235;
 		rType = 0;
 		vrLen = 2406;
 		vrLoc = 750;
@@ -1769,7 +1776,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 153";
 		rLen = 1;
-		rLoc = 9239;
+		rLoc = 9235;
 		rType = 0;
 		vrLen = 2406;
 		vrLoc = 750;
@@ -1809,7 +1816,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 170";
 		rLen = 30;
-		rLoc = 9698;
+		rLoc = 9694;
 		rType = 0;
 		vrLen = 973;
 		vrLoc = 2987;
@@ -1899,7 +1906,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 131";
 		rLen = 36;
-		rLoc = 2422;
+		rLoc = 2418;
 		rType = 0;
 		vrLen = 1392;
 		vrLoc = 1982;
@@ -1919,7 +1926,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 160";
 		rLen = 44;
-		rLoc = 9356;
+		rLoc = 9352;
 		rType = 0;
 		vrLen = 1297;
 		vrLoc = 2606;
@@ -1939,7 +1946,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 170";
 		rLen = 30;
-		rLoc = 9698;
+		rLoc = 9694;
 		rType = 0;
 		vrLen = 973;
 		vrLoc = 2987;
@@ -2049,7 +2056,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 173";
 		rLen = 0;
-		rLoc = 9777;
+		rLoc = 9773;
 		rType = 0;
 		vrLen = 973;
 		vrLoc = 2987;
@@ -2079,7 +2086,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 173";
 		rLen = 0;
-		rLoc = 9777;
+		rLoc = 9773;
 		rType = 0;
 		vrLen = 973;
 		vrLoc = 2987;
@@ -2149,7 +2156,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 152";
 		rLen = 0;
-		rLoc = 4633;
+		rLoc = 4629;
 		rType = 0;
 		vrLen = 2665;
 		vrLoc = 786;
@@ -2159,7 +2166,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 139";
 		rLen = 0;
-		rLoc = 4588;
+		rLoc = 4584;
 		rType = 0;
 		vrLen = 2689;
 		vrLoc = 786;
@@ -2179,7 +2186,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 139";
 		rLen = 0;
-		rLoc = 4588;
+		rLoc = 4584;
 		rType = 0;
 		vrLen = 2672;
 		vrLoc = 786;
@@ -2189,7 +2196,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 139";
 		rLen = 0;
-		rLoc = 4588;
+		rLoc = 4584;
 		rType = 0;
 		vrLen = 2689;
 		vrLoc = 786;
@@ -2209,7 +2216,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 139";
 		rLen = 0;
-		rLoc = 4588;
+		rLoc = 4584;
 		rType = 0;
 		vrLen = 2672;
 		vrLoc = 786;
@@ -2229,7 +2236,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 154";
 		rLen = 0;
-		rLoc = 4633;
+		rLoc = 4629;
 		rType = 0;
 		vrLen = 2429;
 		vrLoc = 750;
@@ -2239,7 +2246,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 156";
 		rLen = 0;
-		rLoc = 3759;
+		rLoc = 3755;
 		rType = 0;
 		vrLen = 1569;
 		vrLoc = 2348;
@@ -2249,7 +2256,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 141";
 		rLen = 0;
-		rLoc = 3073;
+		rLoc = 3069;
 		rType = 0;
 		vrLen = 1569;
 		vrLoc = 2348;
@@ -2259,7 +2266,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 141";
 		rLen = 0;
-		rLoc = 3073;
+		rLoc = 3069;
 		rType = 0;
 		vrLen = 2742;
 		vrLoc = 786;
@@ -2269,7 +2276,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 153";
 		rLen = 0;
-		rLoc = 3609;
+		rLoc = 3605;
 		rType = 0;
 		vrLen = 1558;
 		vrLoc = 2496;
@@ -2279,7 +2286,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 153";
 		rLen = 0;
-		rLoc = 3609;
+		rLoc = 3605;
 		rType = 0;
 		vrLen = 1558;
 		vrLoc = 2496;
@@ -2289,7 +2296,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 145";
 		rLen = 0;
-		rLoc = 3245;
+		rLoc = 3241;
 		rType = 0;
 		vrLen = 1792;
 		vrLoc = 2496;
@@ -2299,7 +2306,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 185";
 		rLen = 0;
-		rLoc = 4633;
+		rLoc = 4629;
 		rType = 0;
 		vrLen = 1632;
 		vrLoc = 2496;
@@ -2309,7 +2316,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 146";
 		rLen = 0;
-		rLoc = 3245;
+		rLoc = 3241;
 		rType = 0;
 		vrLen = 1751;
 		vrLoc = 2232;
@@ -2347,7 +2354,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 137";
 		rLen = 0;
-		rLoc = 2817;
+		rLoc = 2813;
 		rType = 0;
 		vrLen = 248;
 		vrLoc = 2193;
@@ -2377,7 +2384,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 200";
 		rLen = 0;
-		rLoc = 8848;
+		rLoc = 8844;
 		rType = 0;
 		vrLen = 2483;
 		vrLoc = 376;
@@ -2417,7 +2424,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 304";
 		rLen = 0;
-		rLoc = 8849;
+		rLoc = 8845;
 		rType = 0;
 		vrLen = 1312;
 		vrLoc = 4079;
@@ -2427,7 +2434,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 223";
 		rLen = 0;
-		rLoc = 5584;
+		rLoc = 5580;
 		rType = 0;
 		vrLen = 1309;
 		vrLoc = 4141;
@@ -2437,7 +2444,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 308";
 		rLen = 0;
-		rLoc = 8717;
+		rLoc = 8713;
 		rType = 0;
 		vrLen = 1486;
 		vrLoc = 6758;
@@ -2497,7 +2504,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 308";
 		rLen = 0;
-		rLoc = 8717;
+		rLoc = 8713;
 		rType = 0;
 		vrLen = 1486;
 		vrLoc = 6758;
@@ -2607,7 +2614,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 308";
 		rLen = 0;
-		rLoc = 8717;
+		rLoc = 8713;
 		rType = 0;
 		vrLen = 1486;
 		vrLoc = 6758;
@@ -2637,7 +2644,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 311";
 		rLen = 0;
-		rLoc = 8793;
+		rLoc = 8789;
 		rType = 0;
 		vrLen = 1642;
 		vrLoc = 7231;
@@ -2647,7 +2654,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 313";
 		rLen = 0;
-		rLoc = 8846;
+		rLoc = 8842;
 		rType = 0;
 		vrLen = 1652;
 		vrLoc = 7206;
@@ -2673,7 +2680,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 198";
 		rLen = 10;
-		rLoc = 4742;
+		rLoc = 4738;
 		rType = 0;
 		vrLen = 1453;
 		vrLoc = 4252;
@@ -2699,7 +2706,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 207";
 		rLen = 0;
-		rLoc = 5056;
+		rLoc = 5052;
 		rType = 0;
 		vrLen = 1439;
 		vrLoc = 4252;
@@ -2866,7 +2873,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 169";
 		rLen = 0;
-		rLoc = 3763;
+		rLoc = 3759;
 		rType = 0;
 		vrLen = 1506;
 		vrLoc = 2291;
@@ -2926,7 +2933,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 140";
 		rLen = 0;
-		rLoc = 2817;
+		rLoc = 2813;
 		rType = 0;
 		vrLen = 1637;
 		vrLoc = 2459;
@@ -2936,10 +2943,80 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 142";
 		rLen = 0;
-		rLoc = 2681;
+		rLoc = 2677;
 		rType = 0;
 		vrLen = 1619;
 		vrLoc = 7482;
+	};
+	CA04C1D4115B713D00F28F86 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
+		name = "ComposeViewController.m: 347";
+		rLen = 0;
+		rLoc = 9623;
+		rType = 0;
+		vrLen = 1363;
+		vrLoc = 8567;
+	};
+	CA04C1D5115B737C00F28F86 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
+		name = "ComposeViewController.m: 338";
+		rLen = 0;
+		rLoc = 9347;
+		rType = 0;
+		vrLen = 1378;
+		vrLoc = 8567;
+	};
+	CA04C1D8115B742900F28F86 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
+		name = "ComposeViewController.h: 35";
+		rLen = 0;
+		rLoc = 1055;
+		rType = 0;
+		vrLen = 1083;
+		vrLoc = 0;
+	};
+	CA04C1D9115B742900F28F86 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
+		name = "ComposeViewController.m: 338";
+		rLen = 0;
+		rLoc = 9347;
+		rType = 0;
+		vrLen = 1378;
+		vrLoc = 8567;
+	};
+	CA04C1DA115B742900F28F86 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
+		name = "ComposeViewController.m: 338";
+		rLen = 0;
+		rLoc = 9347;
+		rType = 0;
+		vrLen = 1378;
+		vrLoc = 8567;
+	};
+	CA04C1DB115B742900F28F86 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
+		name = "ComposeViewController.h: 35";
+		rLen = 0;
+		rLoc = 1055;
+		rType = 0;
+		vrLen = 1083;
+		vrLoc = 0;
+	};
+	CA04C1DC115B742900F28F86 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
+		name = "ComposeViewController.m: 124";
+		rLen = 0;
+		rLoc = 2210;
+		rType = 0;
+		vrLen = 884;
+		vrLoc = 2070;
 	};
 	CA31FE48115990450051998F /* Crescendo */ = {
 		isa = PBXExecutable;

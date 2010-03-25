@@ -31,7 +31,8 @@
 - (void) scrollViewDidEndDecelerating: (UIScrollView *) scrollView;
 - (void) determineScrollViewPage: (UIScrollView *) scrollView;
 
-- (IBAction) build;
+- (void) build;
+
 - (IBAction) goBack;
 
 @end
