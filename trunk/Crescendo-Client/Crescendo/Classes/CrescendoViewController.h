@@ -25,10 +25,10 @@
 }
 
 @property (nonatomic, retain) XMLClient *client;
-@property (nonatomic, retain) ComposeViewController *composeViewController;
-@property (nonatomic, retain) GamemodeViewController *gamemodeViewController;
-@property (nonatomic, retain) HelpViewController *helpViewController;
-@property (nonatomic, retain) TrainingViewController *trainingViewController;
+@property (nonatomic, retain) IBOutlet ComposeViewController *composeViewController;
+@property (nonatomic, retain) IBOutlet GamemodeViewController *gamemodeViewController;
+@property (nonatomic, retain) IBOutlet HelpViewController *helpViewController;
+@property (nonatomic, retain) IBOutlet TrainingViewController *trainingViewController;
 
 - (IBAction) goToComposeView;
 - (IBAction) goToGamemodeView;
