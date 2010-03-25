@@ -42,6 +42,9 @@
 - (IBAction) goToGamemodeView {
 	[self presentModalViewController:gamemodeViewController animated:YES];
 }
+- (IBAction) goToComposeView {
+	[self presentModalViewController:composeViewController animated:YES];
+}
 - (IBAction) goToHelpView {
 	[self presentModalViewController:helpViewController	animated:YES];
 }
