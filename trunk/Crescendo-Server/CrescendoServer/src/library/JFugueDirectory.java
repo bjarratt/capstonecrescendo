@@ -48,7 +48,7 @@ public class JFugueDirectory {
 		pitches.put("C6", "C6");
 		pitches.put("CSharp6", "C#6");
 		pitches.put("D6", "D6");
-		pitches.put("DSharp6", "D65");
+		pitches.put("DSharp6", "D#6");
 		pitches.put("E6", "E6");
 		pitches.put("ESharp6", "E#6");
 		pitches.put("F6", "F6");
