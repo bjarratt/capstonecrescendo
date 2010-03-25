@@ -10,17 +10,20 @@
 
 @interface ComposeViewController : UIViewController <UIScrollViewDelegate> {
 	IBOutlet UIView *myHolderView;
-    IBOutlet UIScrollView *myPitchScrollView;
-	IBOutlet UIScrollView *myLengthScrollView;
 	IBOutlet UILabel *buildLabel;
-	int pitchPage;
+	UIScrollView *myLengthScrollView;
+	IBOutlet UIScrollView *myPitchScrollView;
+	
+	UIImage lengthImages[1];
+	
 	int lengthPage;
+	int pitchPage;
 }
 
+@property (nonatomic, retain) UILabel *buildLabel;
 @property (nonatomic, retain) UIView *myHolderView;
 @property (nonatomic, retain) UIScrollView *myPitchScrollView;
 @property (nonatomic, retain) UIScrollView *myLengthScrollView;
-@property (nonatomic, retain) UILabel *buildLabel;
 
 - (void) scrollViewDidEndDragging: (UIScrollView *) scrollView willDecelerate: (BOOL) decelerate;
 - (void) scrollViewDidEndDecelerating: (UIScrollView *) scrollView;

@@ -135,9 +135,61 @@
     [super viewDidLoad];
 	pitchPage = 1;
 	lengthPage = 1;
-    myLengthScrollView.contentSize = CGSizeMake(885, 200);
+	
+	/*
+	 * Note Length Scrollview
+	 */
+	float xCoord = 76;
+	myLengthScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 65, 320, 200)];
+    myLengthScrollView.delegate = self;
+	myLengthScrollView.contentSize = CGSizeMake(xCoord + 168*4 + 76, 200);
+	myLengthScrollView.scrollEnabled = YES;
+	myLengthScrollView.canCancelContentTouches = NO;
+	[myLengthScrollView setUserInteractionEnabled:YES];
+	
+	/*
+	 * Note Lengths
+	 */
+	UIImageView *lenWholenote = [[UIImageView alloc] initWithFrame: CGRectMake(xCoord, 0, 160, 160)];
+	[lenWholenote setImage:[UIImage imageNamed: @"wholenote.png"]];
+	lenWholenote.opaque = YES;
+	[myLengthScrollView addSubview:lenWholenote];
+	[lenWholenote release];
+	
+	xCoord += 168;
+	UIImageView *lenHalfnote = [[UIImageView alloc] initWithFrame: CGRectMake(xCoord, 0, 160, 160)];
+	[lenHalfnote setImage:[UIImage imageNamed: @"halfnote.png"]];
+	lenHalfnote.opaque = YES;
+	[myLengthScrollView addSubview:lenHalfnote];
+	[lenHalfnote release];
+	
+	xCoord += 168;
+	UIImageView *lenQuarternote = [[UIImageView alloc] initWithFrame: CGRectMake(xCoord, 0, 160, 160)];
+	[lenQuarternote setImage:[UIImage imageNamed: @"quarternote.png"]];
+	lenQuarternote.opaque = YES;
+	[myLengthScrollView addSubview:lenQuarternote];
+	[lenQuarternote release];
+	
+	xCoord += 168;
+	UIImageView *lenEighthnote = [[UIImageView alloc] initWithFrame: CGRectMake(xCoord, 0, 160, 160)];
+	[lenEighthnote setImage:[UIImage imageNamed: @"eighthnote.png"]];
+	lenEighthnote.opaque = YES;
+	[myLengthScrollView addSubview:lenEighthnote];
+	[lenEighthnote release];
+	
+	/*
+	xCoord += 168;
+	UIImageView * = [[UIImageView alloc] initWithFrame: imageRect];
+	[ setImage:[UIImage imageNamed: @".png"]];
+	.opaque = YES;
+	[myLengthScrollView addSubview:];
+	[ release];
+	*/
+	
+
+	[self.view addSubview:myLengthScrollView];
+	
 	myPitchScrollView.contentSize = CGSizeMake(2715, 200);
-	[myLengthScrollView setDelegate:self];
 	[myPitchScrollView setDelegate:self];
 }
 

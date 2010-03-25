@@ -36,75 +36,6 @@
 				<int key="NSvFlags">292</int>
 				<object class="NSMutableArray" key="NSSubviews">
 					<bool key="EncodedWithXMLCoder">YES</bool>
-					<object class="IBUIScrollView" id="464557652">
-						<reference key="NSNextResponder" ref="312233562"/>
-						<int key="NSvFlags">274</int>
-						<object class="NSMutableArray" key="NSSubviews">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<object class="IBUIImageView" id="113121023">
-								<reference key="NSNextResponder" ref="464557652"/>
-								<int key="NSvFlags">274</int>
-								<string key="NSFrame">{{69, 20}, {169, 160}}</string>
-								<reference key="NSSuperview" ref="464557652"/>
-								<bool key="IBUIOpaque">NO</bool>
-								<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
-								<int key="IBUIContentMode">4</int>
-								<bool key="IBUIUserInteractionEnabled">NO</bool>
-								<object class="NSCustomResource" key="IBUIImage">
-									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">wholenote.png</string>
-								</object>
-							</object>
-							<object class="IBUIImageView" id="947516242">
-								<reference key="NSNextResponder" ref="464557652"/>
-								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{246, 20}, {160, 160}}</string>
-								<reference key="NSSuperview" ref="464557652"/>
-								<bool key="IBUIOpaque">NO</bool>
-								<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
-								<int key="IBUIContentMode">4</int>
-								<bool key="IBUIUserInteractionEnabled">NO</bool>
-								<object class="NSCustomResource" key="IBUIImage">
-									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">halfnote.png</string>
-								</object>
-							</object>
-							<object class="IBUIImageView" id="972374438">
-								<reference key="NSNextResponder" ref="464557652"/>
-								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{414, 20}, {160, 160}}</string>
-								<reference key="NSSuperview" ref="464557652"/>
-								<bool key="IBUIOpaque">NO</bool>
-								<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
-								<int key="IBUIContentMode">4</int>
-								<bool key="IBUIUserInteractionEnabled">NO</bool>
-								<object class="NSCustomResource" key="IBUIImage">
-									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">quarternote.png</string>
-								</object>
-							</object>
-							<object class="IBUIImageView" id="47566778">
-								<reference key="NSNextResponder" ref="464557652"/>
-								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{582, 20}, {160, 160}}</string>
-								<reference key="NSSuperview" ref="464557652"/>
-								<bool key="IBUIOpaque">NO</bool>
-								<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
-								<int key="IBUIContentMode">4</int>
-								<bool key="IBUIUserInteractionEnabled">NO</bool>
-								<object class="NSCustomResource" key="IBUIImage">
-									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">eighthnote.png</string>
-								</object>
-							</object>
-						</object>
-						<string key="NSFrame">{{0, 52}, {320, 200}}</string>
-						<reference key="NSSuperview" ref="312233562"/>
-						<bool key="IBUIClipsSubviews">YES</bool>
-						<bool key="IBUIShowsHorizontalScrollIndicator">NO</bool>
-						<bool key="IBUIShowsVerticalScrollIndicator">NO</bool>
-						<bool key="IBUIBouncesZoom">NO</bool>
-					</object>
 					<object class="IBUIScrollView" id="776197159">
 						<reference key="NSNextResponder" ref="312233562"/>
 						<int key="NSvFlags">274</int>
@@ -420,14 +351,6 @@
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">myLengthScrollView</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="464557652"/>
-					</object>
-					<int key="connectionID">39</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">myPitchScrollView</string>
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="776197159"/>
@@ -507,7 +430,6 @@
 							<reference ref="502442188"/>
 							<reference ref="274278518"/>
 							<reference ref="1044833526"/>
-							<reference ref="464557652"/>
 							<reference ref="776197159"/>
 						</object>
 						<reference key="parent" ref="888708158"/>
@@ -526,18 +448,6 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">17</int>
 						<reference key="object" ref="1044833526"/>
-						<reference key="parent" ref="312233562"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">18</int>
-						<reference key="object" ref="464557652"/>
-						<object class="NSMutableArray" key="children">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="113121023"/>
-							<reference ref="947516242"/>
-							<reference ref="972374438"/>
-							<reference ref="47566778"/>
-						</object>
 						<reference key="parent" ref="312233562"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -638,26 +548,6 @@
 						<reference key="object" ref="56177156"/>
 						<reference key="parent" ref="776197159"/>
 					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">35</int>
-						<reference key="object" ref="113121023"/>
-						<reference key="parent" ref="464557652"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">36</int>
-						<reference key="object" ref="947516242"/>
-						<reference key="parent" ref="464557652"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">37</int>
-						<reference key="object" ref="972374438"/>
-						<reference key="parent" ref="464557652"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">38</int>
-						<reference key="object" ref="47566778"/>
-						<reference key="parent" ref="464557652"/>
-					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -671,7 +561,6 @@
 					<string>15.IBPluginDependency</string>
 					<string>16.IBPluginDependency</string>
 					<string>17.IBPluginDependency</string>
-					<string>18.IBPluginDependency</string>
 					<string>19.IBPluginDependency</string>
 					<string>20.IBPluginDependency</string>
 					<string>21.IBPluginDependency</string>
@@ -688,21 +577,12 @@
 					<string>32.IBPluginDependency</string>
 					<string>33.IBPluginDependency</string>
 					<string>34.IBPluginDependency</string>
-					<string>35.IBPluginDependency</string>
-					<string>36.IBPluginDependency</string>
-					<string>37.IBPluginDependency</string>
-					<string>38.IBPluginDependency</string>
 				</object>
 				<object class="NSMutableArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>ComposeViewController</string>
 					<string>UIResponder</string>
-					<string>{{35, 23}, {320, 480}}</string>
-					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+					<string>{{99, 165}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -745,7 +625,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">45</int>
+			<int key="maxID">46</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -772,14 +652,12 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>buildLabel</string>
 							<string>myHolderView</string>
-							<string>myLengthScrollView</string>
 							<string>myPitchScrollView</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>UILabel</string>
 							<string>UIView</string>
-							<string>UIScrollView</string>
 							<string>UIScrollView</string>
 						</object>
 					</object>
