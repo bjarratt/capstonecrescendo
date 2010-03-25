@@ -7,31 +7,33 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TrainingViewController.h"
-#import "GamemodeViewController.h"
-#import "ComposeViewController.h"
-#import "HelpViewController.h"
+
 #import "ChatUpdateDelegate.h"
 #import "XMLClient.h"
 
+#import "ComposeViewController.h"
+#import "GamemodeViewController.h"
+#import "HelpViewController.h"
+#import "TrainingViewController.h"
+
 @interface CrescendoViewController : UIViewController <ChatUpdateDelegate> {
-	IBOutlet TrainingViewController *trainingViewController;
-	IBOutlet GamemodeViewController *gamemodeViewController;
-	IBOutlet ComposeViewController *composeViewController;
-	IBOutlet HelpViewController *helpViewController;
 	XMLClient *client;
+	IBOutlet ComposeViewController *composeViewController;
+	IBOutlet GamemodeViewController *gamemodeViewController;
+	IBOutlet HelpViewController *helpViewController;
+	IBOutlet TrainingViewController *trainingViewController;
 }
 
-@property (nonatomic, retain) XMLClient* client;
-@property (nonatomic, retain) TrainingViewController *trainingViewController;
-@property (nonatomic, retain) GamemodeViewController *gamemodeViewController;
+@property (nonatomic, retain) XMLClient *client;
 @property (nonatomic, retain) ComposeViewController *composeViewController;
+@property (nonatomic, retain) GamemodeViewController *gamemodeViewController;
 @property (nonatomic, retain) HelpViewController *helpViewController;
+@property (nonatomic, retain) TrainingViewController *trainingViewController;
 
-- (IBAction) goToTrainingView;
-- (IBAction) goToGamemodeView;
 - (IBAction) goToComposeView;
+- (IBAction) goToGamemodeView;
 - (IBAction) goToHelpView;
+- (IBAction) goToTrainingView;
 
 @end
 
