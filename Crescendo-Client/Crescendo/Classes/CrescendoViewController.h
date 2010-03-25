@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "TrainingViewController.h"
 #import "GamemodeViewController.h"
+#import "ComposeViewController.h"
 #import "HelpViewController.h"
 #import "ChatUpdateDelegate.h"
 #import "XMLClient.h"
@@ -16,6 +17,7 @@
 @interface CrescendoViewController : UIViewController <ChatUpdateDelegate> {
 	IBOutlet TrainingViewController *trainingViewController;
 	IBOutlet GamemodeViewController *gamemodeViewController;
+	IBOutlet ComposeViewController *composeViewController;
 	IBOutlet HelpViewController *helpViewController;
 	XMLClient *client;
 }
@@ -24,6 +26,7 @@
 
 - (IBAction) goToTrainingView;
 - (IBAction) goToGamemodeView;
+- (IBAction) goToComposeView;
 - (IBAction) goToHelpView;
 
 @end
