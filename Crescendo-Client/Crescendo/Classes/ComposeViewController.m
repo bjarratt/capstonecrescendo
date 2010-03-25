@@ -124,7 +124,7 @@
 
 #pragma mark Interface Methods
 
-- (IBAction) build {
+- (void) build {
 	buildLabel.text = [NSString stringWithFormat:@"%@ / %@", noteLength, notePitch];
 }
 
