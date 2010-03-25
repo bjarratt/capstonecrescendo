@@ -13,12 +13,18 @@
 @implementation CrescendoViewController
 
 @synthesize client;
+@synthesize composeViewController;
+@synthesize gamemodeViewController;
+@synthesize helpViewController;
+@synthesize trainingViewController;
 
 /*
  * ChatUpdateDelegate method.
  */
 - (void) recievedChatUpdate:(ChatUpdate*)update {
 }
+
+#pragma mark Interface Methods
 
 - (IBAction) goToTrainingView {
 	NSString* inputText = @"training view";

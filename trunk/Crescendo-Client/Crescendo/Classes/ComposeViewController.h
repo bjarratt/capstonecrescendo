@@ -16,13 +16,17 @@
 	int pitchPage;
 	int lengthPage;
 }
+
+@property (nonatomic, retain) UIView *myHolderView;
+@property (nonatomic, retain) UIScrollView *myPitchScrollView;
+@property (nonatomic, retain) UIScrollView *myLengthScrollView;
+@property (nonatomic, retain) UILabel *buildLabel;
+
 - (void) scrollViewDidEndDragging: (UIScrollView *) scrollView willDecelerate: (BOOL) decelerate;
 - (void) scrollViewDidEndDecelerating: (UIScrollView *) scrollView;
 - (void) determineScrollViewPage: (UIScrollView *) scrollView;
 
 - (IBAction) build;
-
-- (void) goToComposeView;
 - (IBAction) goBack;
 
 @end
