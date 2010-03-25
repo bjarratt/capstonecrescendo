@@ -11,9 +11,13 @@
 
 @implementation HelpViewController
 
+#pragma mark Interface Methods
+
 - (IBAction) goBack {
 	[self dismissModalViewControllerAnimated:YES];
 }
+
+#pragma mark Initialize View Methods
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -38,6 +42,8 @@
 }
 */
 
+#pragma mark Autorotate Orientation Override
+
 /*
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -45,6 +51,8 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 */
+
+#pragma mark Unload Controller
 
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.

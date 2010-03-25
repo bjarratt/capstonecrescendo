@@ -11,6 +11,11 @@
 
 @implementation ComposeViewController
 
+@synthesize myHolderView;
+@synthesize myLengthScrollView;
+@synthesize myPitchScrollView;
+@synthesize buildLabel;
+
 #pragma mark UIScrollViewDelegate Methods
 
 - (void) scrollViewDidEndDragging: (UIScrollView *) scrollView willDecelerate: (BOOL) decelerate {
@@ -113,16 +118,27 @@
 	}
 }
 
-#pragma mark Build note
+#pragma mark Interface Methods
 
 - (IBAction) build {
 	buildLabel.text = [NSString stringWithFormat:@"%d / %d", lengthPage, pitchPage];
 }
 
-#pragma mark Interface Methods
-
 - (IBAction) goBack {
 	[self dismissModalViewControllerAnimated:YES];
+}
+
+#pragma mark Initialize View Methods
+
+// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+- (void)viewDidLoad {
+    [super viewDidLoad];
+	pitchPage = 1;
+	lengthPage = 1;
+    myLengthScrollView.contentSize = CGSizeMake(885, 200);
+	myPitchScrollView.contentSize = CGSizeMake(2715, 200);
+	[myLengthScrollView setDelegate:self];
+	[myPitchScrollView setDelegate:self];
 }
 
 /*
@@ -141,20 +157,7 @@
 }
 */
 
-#pragma mark Initialize View
-
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad {
-    [super viewDidLoad];
-	pitchPage = 1;
-	lengthPage = 1;
-    myLengthScrollView.contentSize = CGSizeMake(885, 200);
-	myPitchScrollView.contentSize = CGSizeMake(2715, 200);
-	[myLengthScrollView setDelegate:self];
-	[myPitchScrollView setDelegate:self];
-}
-
-
+#pragma mark Autorotate Orientation Override
 
 /*
 // Override to allow orientations other than the default portrait orientation.
@@ -164,7 +167,7 @@
 }
 */
 
-#pragma mark Unload View
+#pragma mark Unload Controller
 
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.
@@ -176,11 +179,16 @@
 - (void)viewDidUnload {
 	// Release any retained subviews of the main view.
 	// e.g. self.myOutlet = nil;
+	myHolderView = nil;
 }
 
 
 - (void)dealloc {
     [super dealloc];
+	[myPitchScrollView release];
+	[myLengthScrollView release];
+	[myHolderView release];
+	[buildLabel release];
 }
 
 
