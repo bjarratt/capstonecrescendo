@@ -370,6 +370,8 @@
 	[myLengthScrollView release];
 	[myHolderView release];
 	[buildLabel release];
+	[noteLength release];
+	[notePitch release];
 }
 
 

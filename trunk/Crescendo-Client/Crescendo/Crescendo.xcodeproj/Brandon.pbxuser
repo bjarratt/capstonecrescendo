@@ -343,6 +343,19 @@
 			CA04C1DA115B742900F28F86 /* PBXTextBookmark */ = CA04C1DA115B742900F28F86 /* PBXTextBookmark */;
 			CA04C1DB115B742900F28F86 /* PBXTextBookmark */ = CA04C1DB115B742900F28F86 /* PBXTextBookmark */;
 			CA04C1DC115B742900F28F86 /* PBXTextBookmark */ = CA04C1DC115B742900F28F86 /* PBXTextBookmark */;
+			CA04C1DE115B754200F28F86 /* PBXTextBookmark */ = CA04C1DE115B754200F28F86 /* PBXTextBookmark */;
+			CA04C1DF115B754200F28F86 /* PBXTextBookmark */ = CA04C1DF115B754200F28F86 /* PBXTextBookmark */;
+			CA04C1E0115B754200F28F86 /* PBXTextBookmark */ = CA04C1E0115B754200F28F86 /* PBXTextBookmark */;
+			CA04C1E1115B754200F28F86 /* PBXTextBookmark */ = CA04C1E1115B754200F28F86 /* PBXTextBookmark */;
+			CA04C1E2115B754200F28F86 /* PBXTextBookmark */ = CA04C1E2115B754200F28F86 /* PBXTextBookmark */;
+			CA04C1E3115B754200F28F86 /* PBXTextBookmark */ = CA04C1E3115B754200F28F86 /* PBXTextBookmark */;
+			CA04C1E4115B754200F28F86 /* PBXTextBookmark */ = CA04C1E4115B754200F28F86 /* PBXTextBookmark */;
+			CA04C1E5115B754200F28F86 /* PBXTextBookmark */ = CA04C1E5115B754200F28F86 /* PBXTextBookmark */;
+			CA04C1E6115B754200F28F86 /* PBXTextBookmark */ = CA04C1E6115B754200F28F86 /* PBXTextBookmark */;
+			CA04C1E7115B754200F28F86 /* PBXTextBookmark */ = CA04C1E7115B754200F28F86 /* PBXTextBookmark */;
+			CA04C1E8115B754200F28F86 /* PBXTextBookmark */ = CA04C1E8115B754200F28F86 /* PBXTextBookmark */;
+			CA04C1E9115B754200F28F86 /* PBXTextBookmark */ = CA04C1E9115B754200F28F86 /* PBXTextBookmark */;
+			CA04C1EA115B754200F28F86 /* PBXTextBookmark */ = CA04C1EA115B754200F28F86 /* PBXTextBookmark */;
 		};
 		sourceControlManager = CA31FE5F115990770051998F /* Source Control */;
 		userBuildSettings = {
@@ -420,10 +433,10 @@
 	};
 	CA0208D8115B28C60023D8FB /* ComposeViewController.m */ = {
 		uiCtxt = {
-			sepNavFolds = "{\n    c =     (\n                {\n            r = \"{522, 156}\";\n            s = 0;\n        },\n                {\n            r = \"{749, 45}\";\n            s = 0;\n        },\n                {\n            r = \"{2366, 49}\";\n            s = 0;\n        }\n    );\n    r = \"{0, 10205}\";\n    s = 0;\n}";
-			sepNavIntBoundsRect = "{{0, 0}, {984, 5152}}";
-			sepNavSelRange = "{2011, 0}";
-			sepNavVisRange = "{1871, 836}";
+			sepNavFolds = "{\n    c =     (\n                {\n            r = \"{522, 156}\";\n            s = 0;\n        },\n                {\n            r = \"{749, 45}\";\n            s = 0;\n        },\n                {\n            r = \"{2366, 49}\";\n            s = 0;\n        }\n    );\n    r = \"{0, 10250}\";\n    s = 0;\n}";
+			sepNavIntBoundsRect = "{{0, 0}, {984, 5656}}";
+			sepNavSelRange = "{9993, 0}";
+			sepNavVisRange = "{8960, 1034}";
 			sepNavWindowFrame = "{{38, 444}, {750, 558}}";
 		};
 	};
@@ -3017,6 +3030,136 @@
 		rType = 0;
 		vrLen = 884;
 		vrLoc = 2070;
+	};
+	CA04C1DE115B754200F28F86 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
+		name = "CrescendoViewController.m: 26";
+		rLen = 0;
+		rLoc = 526;
+		rType = 0;
+		vrLen = 1118;
+		vrLoc = 0;
+	};
+	CA04C1DF115B754200F28F86 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
+		name = "CrescendoViewController.h: 31";
+		rLen = 0;
+		rLoc = 1023;
+		rType = 0;
+		vrLen = 1198;
+		vrLoc = 0;
+	};
+	CA04C1E0115B754200F28F86 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
+		name = "ComposeViewController.h: 35";
+		rLen = 0;
+		rLoc = 1055;
+		rType = 0;
+		vrLen = 1083;
+		vrLoc = 0;
+	};
+	CA04C1E1115B754200F28F86 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
+		name = "ComposeViewController.m: 124";
+		rLen = 0;
+		rLoc = 2210;
+		rType = 0;
+		vrLen = 975;
+		vrLoc = 9230;
+	};
+	CA04C1E2115B754200F28F86 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
+		name = "ComposeViewController.m: 124";
+		rLen = 0;
+		rLoc = 2210;
+		rType = 0;
+		vrLen = 1226;
+		vrLoc = 0;
+	};
+	CA04C1E3115B754200F28F86 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
+		name = "CrescendoViewController.m: 26";
+		rLen = 0;
+		rLoc = 526;
+		rType = 0;
+		vrLen = 1118;
+		vrLoc = 0;
+	};
+	CA04C1E4115B754200F28F86 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
+		name = "CrescendoViewController.h: 31";
+		rLen = 0;
+		rLoc = 1023;
+		rType = 0;
+		vrLen = 1198;
+		vrLoc = 0;
+	};
+	CA04C1E5115B754200F28F86 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
+		name = "ComposeViewController.h: 35";
+		rLen = 0;
+		rLoc = 1055;
+		rType = 0;
+		vrLen = 1083;
+		vrLoc = 0;
+	};
+	CA04C1E6115B754200F28F86 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
+		name = "ComposeViewController.m: 124";
+		rLen = 0;
+		rLoc = 2210;
+		rType = 0;
+		vrLen = 975;
+		vrLoc = 9230;
+	};
+	CA04C1E7115B754200F28F86 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
+		name = "ComposeViewController.h: 35";
+		rLen = 0;
+		rLoc = 1055;
+		rType = 0;
+		vrLen = 1083;
+		vrLoc = 0;
+	};
+	CA04C1E8115B754200F28F86 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
+		name = "ComposeViewController.m: 124";
+		rLen = 0;
+		rLoc = 2210;
+		rType = 0;
+		vrLen = 975;
+		vrLoc = 9230;
+	};
+	CA04C1E9115B754200F28F86 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
+		name = "ComposeViewController.h: 35";
+		rLen = 0;
+		rLoc = 1055;
+		rType = 0;
+		vrLen = 1083;
+		vrLoc = 0;
+	};
+	CA04C1EA115B754200F28F86 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
+		name = "ComposeViewController.m: 374";
+		rLen = 0;
+		rLoc = 10240;
+		rType = 0;
+		vrLen = 1034;
+		vrLoc = 9207;
 	};
 	CA31FE48115990450051998F /* Crescendo */ = {
 		isa = PBXExecutable;
