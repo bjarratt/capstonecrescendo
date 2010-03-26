@@ -20,7 +20,7 @@
 @synthesize noteLength;
 @synthesize notePitch;
 
-#pragma mark UIViewController Events
+#pragma mark Rotation
 
 - (void) willRotateToInterfaceOrientation: (UIInterfaceOrientation) toInterfaceOrientation duration:(NSTimeInterval) duration {
 	if (toInterfaceOrientation == UIInterfaceOrientationPortrait) {
@@ -39,7 +39,7 @@
 	return YES;
 }
 
-#pragma mark UIScrollViewDelegate Methods
+#pragma mark ScrollView 
 
 - (void) scrollViewDidEndDragging: (UIScrollView *) scrollView
 				   willDecelerate: (BOOL) decelerate {
@@ -53,8 +53,6 @@
 - (void) scrollViewDidEndDecelerating: (UIScrollView *) scrollView {
 	[self determineScrollViewPage:scrollView];
 }
-
-#pragma mark Helper Methods
 
 - (void) determineScrollViewPage: (UIScrollView *) scrollView {
 	float page = scrollView.contentOffset.y / scrollView.contentSize.height;
@@ -154,6 +152,8 @@
 - (void) updateBuildLabel {
 	buildLabel.text = [NSString stringWithFormat:@"%@ / %@", noteLength, notePitch];
 }
+
+#pragma mark Draw Methods
 
 - (void) drawPortraitView {
 	/*
@@ -422,6 +422,7 @@
 	[myLengthScrollView release];
 	[myPitchScrollView release];
 	[buildLabel release];
+	[backButton release];
 	[lengthImages release];
 	[pitchImages release];
 	[noteLength release];
