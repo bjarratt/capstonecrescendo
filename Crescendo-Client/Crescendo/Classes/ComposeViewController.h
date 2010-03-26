@@ -9,30 +9,36 @@
 #import <UIKit/UIKit.h>
 
 @interface ComposeViewController : UIViewController <UIScrollViewDelegate> {
-	IBOutlet UIView *myHolderView;
-	IBOutlet UILabel *buildLabel;
 	UIScrollView *myLengthScrollView;
 	UIScrollView *myPitchScrollView;
+	IBOutlet UILabel *buildLabel;
+	IBOutlet UIButton *backButton;
 	
-	UIImage lengthImages[1];
+	NSArray *lengthImages;
+	NSArray *pitchImages;
 	
 	NSString *noteLength;
 	NSString *notePitch;
 }
 
-@property (nonatomic, retain) IBOutlet UILabel *buildLabel;
-@property (nonatomic, retain) IBOutlet UIView *myHolderView;
-@property (nonatomic, retain) UIScrollView *myPitchScrollView;
 @property (nonatomic, retain) UIScrollView *myLengthScrollView;
+@property (nonatomic, retain) UIScrollView *myPitchScrollView;
+@property (nonatomic, retain) IBOutlet UILabel *buildLabel;
+@property (nonatomic, retain) IBOutlet UIButton *backButton;
+@property (nonatomic, retain) NSArray *lengthImages;
+@property (nonatomic, retain) NSArray *pitchImages;
 @property (nonatomic, retain) NSString *noteLength;
 @property (nonatomic, retain) NSString *notePitch;
 
 - (void) scrollViewDidEndDragging: (UIScrollView *) scrollView willDecelerate: (BOOL) decelerate;
 - (void) scrollViewDidEndDecelerating: (UIScrollView *) scrollView;
+
 - (void) determineScrollViewPage: (UIScrollView *) scrollView;
+- (void) rotateImage: (UIImageView *) imageView;
 
 - (void) build;
-
 - (IBAction) goBack;
+- (void) drawPortraitView;
+- (void) drawPortraitLandscapeLeftView;
 
 @end
