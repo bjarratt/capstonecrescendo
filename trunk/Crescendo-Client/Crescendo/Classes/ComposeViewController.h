@@ -34,10 +34,9 @@
 - (void) scrollViewDidEndDecelerating: (UIScrollView *) scrollView;
 
 - (void) determineScrollViewPage: (UIScrollView *) scrollView;
-- (void) rotateImage: (UIImageView *) imageView;
 
-- (void) build;
 - (IBAction) goBack;
+- (void) updateBuildLabel;
 - (void) drawPortraitView;
 - (void) drawPortraitLandscapeLeftView;
 
