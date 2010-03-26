@@ -7,7 +7,8 @@
 //
 
 #import <stdio.h>
-#import <objc/objc-runtime.h>
+#import <objc/runtime.h>
+#import	<objc/message.h>
 #import <Foundation/Foundation.h>
 
 @class FieldDescriptor;
