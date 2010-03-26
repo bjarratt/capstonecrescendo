@@ -20,6 +20,22 @@
 @synthesize noteLength;
 @synthesize notePitch;
 
+#pragma mark Shake
+
+- (BOOL) canBecomeFirstResponder {
+	return YES;
+}
+
+- (void) motionBegan: (UIEventSubtype) motion withEvent: (UIEvent *) event {
+	
+}
+
+- (void) motionEnded: (UIEventSubtype) motion withEvent: (UIEvent *) event {
+	if (event.type == UIEventSubtypeMotionShake) {
+		
+	}
+}
+
 #pragma mark Rotation
 
 - (void) willRotateToInterfaceOrientation: (UIInterfaceOrientation) toInterfaceOrientation duration:(NSTimeInterval) duration {
@@ -385,6 +401,7 @@
 	/******************
 	 * User Interface *
 	 ******************/
+	[self becomeFirstResponder];
 	[self drawPortraitView];
 }
 
