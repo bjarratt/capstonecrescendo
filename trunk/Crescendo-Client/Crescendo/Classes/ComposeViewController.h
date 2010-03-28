@@ -19,6 +19,8 @@
 	
 	NSString *noteLength;
 	NSString *notePitch;
+	int previousNoteLengthPage;
+	int previousNotePitchPage;
 }
 
 @property (nonatomic, retain) UIScrollView *myLengthScrollView;
@@ -29,6 +31,8 @@
 @property (nonatomic, retain) NSArray *pitchImages;
 @property (nonatomic, retain) NSString *noteLength;
 @property (nonatomic, retain) NSString *notePitch;
+@property (readwrite, assign) int previousNoteLengthPage;
+@property (readwrite, assign) int previousNotePitchPage;
 
 - (void) scrollViewDidEndDragging: (UIScrollView *) scrollView willDecelerate: (BOOL) decelerate;
 - (void) scrollViewDidEndDecelerating: (UIScrollView *) scrollView;
@@ -37,6 +41,10 @@
 
 - (IBAction) goBack;
 - (void) updateBuildLabel;
+- (void) drawWholenotePitches;
+- (void) drawHalfnotePitches;
+- (void) drawQuarternotePitches;
+- (void) drawEighthnotePitches;
 - (void) drawPortraitView;
 - (void) drawPortraitLandscapeLeftView;
 
