@@ -41,7 +41,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					765,
+					686,
 					20,
 					48,
 					43,
@@ -60,11 +60,11 @@
 			};
 			PBXConfiguration.PBXFileTableDataSource3.XCSCMDataSource = {
 				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
-				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_SCM_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
 					20,
-					741,
+					662,
 					20,
 					48,
 					43,
@@ -320,7 +320,7 @@
 	};
 	CA0208D7115B28C60023D8FB /* ComposeViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {943, 631}}";
+			sepNavIntBoundsRect = "{{0, 0}, {864, 626}}";
 			sepNavSelRange = "{365, 0}";
 			sepNavVisRange = "{0, 1287}";
 			sepNavWindowFrame = "{{15, 465}, {750, 558}}";
@@ -328,9 +328,9 @@
 	};
 	CA0208D8115B28C60023D8FB /* ComposeViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {943, 6804}}";
-			sepNavSelRange = "{4505, 0}";
-			sepNavVisRange = "{3672, 1719}";
+			sepNavIntBoundsRect = "{{0, 0}, {984, 8148}}";
+			sepNavSelRange = "{12365, 9}";
+			sepNavVisRange = "{12200, 1750}";
 			sepNavWindowFrame = "{{38, 444}, {750, 558}}";
 		};
 	};
@@ -611,7 +611,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 213";
 		rLen = 0;
-		rLoc = 4505;
+		rLoc = 4984;
 		rType = 0;
 		vrLen = 1719;
 		vrLoc = 3672;
@@ -635,7 +635,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 213";
 		rLen = 0;
-		rLoc = 4505;
+		rLoc = 4984;
 		rType = 0;
 		vrLen = 1719;
 		vrLoc = 3672;
@@ -647,6 +647,11 @@
 	CA8A33CD115EDC3700D2E693 /* PBXBookmark */ = {
 		isa = PBXBookmark;
 		fRef = 3E5563A9114EDCA60089B12F /* menu_button_up.png */;
+	};
+	CA8A33E6115EDC8000D2E693 /* B5_eighth_selected.png */ = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{15, 465}, {750, 558}}";
+		};
 	};
 	CA98E0EB115C795A007A6C98 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
