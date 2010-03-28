@@ -41,11 +41,11 @@
 
 - (IBAction) goBack;
 - (void) updateBuildLabel;
+- (void) drawPortraitView;
+- (void) drawPortraitLandscapeSideView;
 - (void) drawWholenotePitches;
 - (void) drawHalfnotePitches;
 - (void) drawQuarternotePitches;
 - (void) drawEighthnotePitches;
-- (void) drawPortraitView;
-- (void) drawPortraitLandscapeLeftView;
 
 @end

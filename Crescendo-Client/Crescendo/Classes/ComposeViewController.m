@@ -50,7 +50,7 @@
 		[self drawPortraitView];
 	}
 	else if (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || toInterfaceOrientation == UIInterfaceOrientationLandscapeRight) {
-		[self drawPortraitLandscapeLeftView];
+		[self drawPortraitLandscapeSideView];
 	}
 	else {
 		buildLabel.hidden = YES;
@@ -227,7 +227,6 @@
 			notePitchPage = 0;
 		}
 		
-		// Highlight selected note pitch
 		if (previousNotePitchPage != notePitchPage) {
 			// Highlight selected note pitch
 			UIImageView *selectedView = [pitchImages objectAtIndex:notePitchPage];
@@ -267,6 +266,52 @@
 	[myPitchScrollView removeFromSuperview];
 	backButton.hidden = NO;
 	buildLabel.hidden = YES;
+}
+
+- (void) drawPortraitLandscapeSideView {
+	/*
+	 * Properties
+	 */
+	[myLengthScrollView removeFromSuperview];
+	[myPitchScrollView removeFromSuperview];
+	backButton.hidden = YES;
+	buildLabel.hidden = NO;
+	
+	float yCoord = 0;
+	
+	/*
+	 * Note Length Scrollview
+	 */
+	yCoord = 76;
+	myLengthScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(20, 0, 200, 320)];
+    myLengthScrollView.delegate = self;
+	myLengthScrollView.contentSize = CGSizeMake(200, yCoord + 168*4 + yCoord);
+	myLengthScrollView.scrollEnabled = YES;
+	myLengthScrollView.canCancelContentTouches = NO;
+	myLengthScrollView.showsVerticalScrollIndicator = NO;
+	myLengthScrollView.showsHorizontalScrollIndicator = NO;
+	[myLengthScrollView setUserInteractionEnabled:YES];
+	
+	[self drawNoteLengths];
+	
+	[self.view addSubview:myLengthScrollView];
+	
+	/*
+	 * Note Pitch Scrollview
+	 */
+	yCoord = 76;
+	myPitchScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(300, 0, 200, 320)];
+    myPitchScrollView.delegate = self;
+	myPitchScrollView.contentSize = CGSizeMake(200, yCoord + 168*15 + yCoord);
+	myPitchScrollView.scrollEnabled = YES;
+	myPitchScrollView.canCancelContentTouches = NO;
+	myPitchScrollView.showsVerticalScrollIndicator = NO;
+	myPitchScrollView.showsHorizontalScrollIndicator = NO;
+	[myPitchScrollView setUserInteractionEnabled:YES];
+	
+	[self drawWholenotePitches];
+	
+	[self.view addSubview:myPitchScrollView];
 }
 
 - (void) drawNoteLengths {
@@ -909,52 +954,6 @@
 	[pitEighthFSharp5 release];
 	[pitEighthE5 release];
 	*/
-}
-
-- (void) drawPortraitLandscapeLeftView {
-	/*
-	 * Properties
-	 */
-	[myLengthScrollView removeFromSuperview];
-	[myPitchScrollView removeFromSuperview];
-	backButton.hidden = YES;
-	buildLabel.hidden = NO;
-	
-	float yCoord = 0;
-	
-	/*
-	 * Note Length Scrollview
-	 */
-	yCoord = 76;
-	myLengthScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(20, 0, 200, 320)];
-    myLengthScrollView.delegate = self;
-	myLengthScrollView.contentSize = CGSizeMake(200, yCoord + 168*4 + yCoord);
-	myLengthScrollView.scrollEnabled = YES;
-	myLengthScrollView.canCancelContentTouches = NO;
-	myLengthScrollView.showsVerticalScrollIndicator = NO;
-	myLengthScrollView.showsHorizontalScrollIndicator = NO;
-	[myLengthScrollView setUserInteractionEnabled:YES];
-	
-	[self drawNoteLengths];
-	
-	[self.view addSubview:myLengthScrollView];
-	
-	/*
-	 * Note Pitch Scrollview
-	 */
-	yCoord = 76;
-	myPitchScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(300, 0, 200, 320)];
-    myPitchScrollView.delegate = self;
-	myPitchScrollView.contentSize = CGSizeMake(200, yCoord + 168*15 + yCoord);
-	myPitchScrollView.scrollEnabled = YES;
-	myPitchScrollView.canCancelContentTouches = NO;
-	myPitchScrollView.showsVerticalScrollIndicator = NO;
-	myPitchScrollView.showsHorizontalScrollIndicator = NO;
-	[myPitchScrollView setUserInteractionEnabled:YES];
-	
-	[self drawWholenotePitches];
-		
-	[self.view addSubview:myPitchScrollView];
 }
 
 #pragma mark Initialize View Methods
