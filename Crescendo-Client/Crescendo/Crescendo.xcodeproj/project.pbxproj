@@ -861,10 +861,10 @@
 		CA8A33AD115EDB2D00D2E693 /* Pitch */ = {
 			isa = PBXGroup;
 			children = (
-				CA8A33AE115EDB3E00D2E693 /* Eighth */,
-				CA8A33B0115EDB5A00D2E693 /* Quarter */,
-				CA8A33AF115EDB4E00D2E693 /* Half */,
 				CA8A33B1115EDB6400D2E693 /* Whole */,
+				CA8A33AF115EDB4E00D2E693 /* Half */,
+				CA8A33B0115EDB5A00D2E693 /* Quarter */,
+				CA8A33AE115EDB3E00D2E693 /* Eighth */,
 			);
 			name = Pitch;
 			sourceTree = "<group>";
