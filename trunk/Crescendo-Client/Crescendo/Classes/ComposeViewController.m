@@ -28,11 +28,14 @@
 	return YES;
 }
 
-- (void) motionBegan: (UIEventSubtype) motion withEvent: (UIEvent *) event {
+- (void) motionBegan: (UIEventSubtype) motion 
+		   withEvent: (UIEvent *) event {
 	
 }
 
-- (void) motionEnded: (UIEventSubtype) motion withEvent: (UIEvent *) event {
+- (void) motionEnded: (UIEventSubtype) motion 
+		   withEvent: (UIEvent *) event {
+	
 	if (event.type == UIEventSubtypeMotionShake) {
 		
 	}
@@ -40,11 +43,13 @@
 
 #pragma mark Rotation
 
-- (void) willRotateToInterfaceOrientation: (UIInterfaceOrientation) toInterfaceOrientation duration:(NSTimeInterval) duration {
+- (void) willRotateToInterfaceOrientation: (UIInterfaceOrientation) toInterfaceOrientation 
+								 duration:(NSTimeInterval) duration {
+	
 	if (toInterfaceOrientation == UIInterfaceOrientationPortrait) {
 		[self drawPortraitView];
 	}
-	else if (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) {
+	else if (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || toInterfaceOrientation == UIInterfaceOrientationLandscapeRight) {
 		[self drawPortraitLandscapeLeftView];
 	}
 	else {
@@ -224,9 +229,15 @@
 		
 		// Highlight selected note pitch
 		if (previousNotePitchPage != notePitchPage) {
+			// Highlight selected note pitch
 			UIImageView *selectedView = [pitchImages objectAtIndex:notePitchPage];
 			selectedView.highlighted = YES;
 			//[selectedView release];
+			
+			// Unhighlight previous selected note pitch
+			UIImageView *previousView = [pitchImages objectAtIndex:previousNotePitchPage];
+			previousView.highlighted = NO;
+			//[previousView release];
 		}
 		
 		previousNotePitchPage = notePitchPage;
@@ -963,6 +974,7 @@
 	 * User Interface *
 	 ******************/
 	[self becomeFirstResponder];
+	
 	[self drawPortraitView];
 }
 
@@ -982,20 +994,20 @@
 
 #pragma mark Unload Controller
 
-- (void)didReceiveMemoryWarning {
+- (void) didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
 	
 	// Release any cached data, images, etc that aren't in use.
 }
 
-- (void)viewDidUnload {
+- (void) viewDidUnload {
 	// Release any retained subviews of the main view.
 	// e.g. self.myOutlet = nil;
 }
 
 
-- (void)dealloc {
+- (void) dealloc {
     [super dealloc];
 	[myLengthScrollView release];
 	[myPitchScrollView release];
