@@ -16,16 +16,5 @@ public class EntryPoint {
 	{
 		// OODSS Connection Example
 		connectionManager = new ConnectionManager();
-		
-		/*
-		// LogManager Example
-		LogManager.getInstance().writeLogEntry(LogStrings.SERVER, LogStrings.SERVER_STARTED);
-		
-		DisplayManager display = new DisplayManager();
-		
-		display.Run();
-		
-		LogManager.getInstance().writeLogEntry(LogStrings.SERVER, LogStrings.SERVER_SHUTDOWN);
-		*/
 	}
 }
