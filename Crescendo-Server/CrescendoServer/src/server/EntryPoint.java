@@ -3,8 +3,6 @@ package server;
 import java.io.IOException;
 import network.ConnectionManager;
 import display.DisplayManager;
-import logging.LogManager;
-import logging.constants.*;
 
 
 public class EntryPoint {
