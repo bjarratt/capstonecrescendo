@@ -43,6 +43,7 @@
 - (void) updateBuildLabel;
 - (void) drawPortraitView;
 - (void) drawPortraitLandscapeSideView;
+- (void) drawNoteLengths;
 - (void) drawWholenotePitches;
 - (void) drawHalfnotePitches;
 - (void) drawQuarternotePitches;
