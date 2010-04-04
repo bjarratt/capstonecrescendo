@@ -253,7 +253,7 @@
 }
 
 - (void) updateBuildLabel {
-	buildLabel.text = [NSString stringWithFormat:@"%@ / %@", noteLength, notePitch];
+	//buildLabel.text = [NSString stringWithFormat:@"%@ / %@", noteLength, notePitch];
 }
 
 #pragma mark Draw Methods
@@ -270,6 +270,14 @@
 
 - (void) drawPortraitLandscapeSideView {
 	/*
+	 * Initialize Variables
+	 */
+	noteLength = @"wholenote";
+	notePitch = @"F6";
+	previousNoteLengthPage = 1;
+	previousNotePitchPage = 1;	
+	
+	/*
 	 * Properties
 	 */
 	[myLengthScrollView removeFromSuperview];
@@ -278,6 +286,23 @@
 	buildLabel.hidden = NO;
 	
 	float yCoord = 0;
+	
+	/*
+	 * Note Pitch Scrollview
+	 */
+	yCoord = 76;
+	myPitchScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(300, 0, 200, 320)];
+    myPitchScrollView.delegate = self;
+	myPitchScrollView.contentSize = CGSizeMake(200, yCoord + 168*15 + yCoord);
+	myPitchScrollView.scrollEnabled = YES;
+	myPitchScrollView.canCancelContentTouches = NO;
+	myPitchScrollView.showsVerticalScrollIndicator = NO;
+	myPitchScrollView.showsHorizontalScrollIndicator = NO;
+	[myPitchScrollView setUserInteractionEnabled:YES];
+	
+	//[self drawWholenotePitches];
+	
+	[self.view addSubview:myPitchScrollView];	
 	
 	/*
 	 * Note Length Scrollview
@@ -295,28 +320,11 @@
 	[self drawNoteLengths];
 	
 	[self.view addSubview:myLengthScrollView];
-	
-	/*
-	 * Note Pitch Scrollview
-	 */
-	yCoord = 76;
-	myPitchScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(300, 0, 200, 320)];
-    myPitchScrollView.delegate = self;
-	myPitchScrollView.contentSize = CGSizeMake(200, yCoord + 168*15 + yCoord);
-	myPitchScrollView.scrollEnabled = YES;
-	myPitchScrollView.canCancelContentTouches = NO;
-	myPitchScrollView.showsVerticalScrollIndicator = NO;
-	myPitchScrollView.showsHorizontalScrollIndicator = NO;
-	[myPitchScrollView setUserInteractionEnabled:YES];
-	
-	[self drawWholenotePitches];
-	
-	[self.view addSubview:myPitchScrollView];
 }
 
 - (void) drawNoteLengths {
 	float yCoord = 0;
-	
+
 	/*
 	 * Note Lengths
 	 */
@@ -325,7 +333,6 @@
 	[lenWholenote setImage:[UIImage imageNamed: @"wholenote.png"]];
 	[lenWholenote setHighlightedImage:[UIImage imageNamed:@"wholenote_selected.png"]];
 	lenWholenote.opaque = YES;
-	lenWholenote.highlighted = YES;
 	[myLengthScrollView addSubview:lenWholenote];
 	
 	yCoord += 168;
@@ -362,6 +369,8 @@
 	[lenQuarternote release];
 	[lenEighthnote release];
 	*/
+	
+	[self determineScrollViewPage:myLengthScrollView];
 }
 
 - (void) drawWholenotePitches {
@@ -374,7 +383,6 @@
 	[pitWholeF6 setImage:[UIImage imageNamed: @"F6_whole.png"]];
 	[pitWholeF6 setHighlightedImage:[UIImage imageNamed:@"F6_whole_selected.png"]];
 	pitWholeF6.opaque = YES;
-	pitWholeF6.highlighted = YES;
 	[myPitchScrollView addSubview:pitWholeF6];
 	
 	yCoord += 168;
@@ -510,6 +518,8 @@
 	[pitWholeFSharp5 release];
 	[pitWholeE5 release];
 	*/
+	
+	[self determineScrollViewPage:myPitchScrollView];
 }
 
 - (void) drawHalfnotePitches {
@@ -522,7 +532,6 @@
 	[pitHalfF6 setImage:[UIImage imageNamed: @"F6_half.png"]];
 	[pitHalfF6 setHighlightedImage:[UIImage imageNamed:@"F6_half_selected.png"]];
 	pitHalfF6.opaque = YES;
-	pitHalfF6.highlighted = YES;
 	[myPitchScrollView addSubview:pitHalfF6];
 	
 	yCoord += 168;
@@ -658,6 +667,8 @@
 	[pitHalfFSharp5 release];
 	[pitHalfE5 release];
 	*/
+	
+	[self determineScrollViewPage:myPitchScrollView];
 }
 
 - (void) drawQuarternotePitches {
@@ -670,7 +681,6 @@
 	[pitQuarterF6 setImage:[UIImage imageNamed: @"F6_quarter.png"]];
 	[pitQuarterF6 setHighlightedImage:[UIImage imageNamed:@"F6_quarter_selected.png"]];
 	pitQuarterF6.opaque = YES;
-	pitQuarterF6.highlighted = YES;
 	[myPitchScrollView addSubview:pitQuarterF6];
 	
 	yCoord += 168;
@@ -806,6 +816,8 @@
 	[pitQuarterFSharp5 release];
 	[pitQuarterE5 release];
 	*/
+	
+	[self determineScrollViewPage:myPitchScrollView];
 }
 
 - (void) drawEighthnotePitches {
@@ -818,7 +830,6 @@
 	[pitEighthF6 setImage:[UIImage imageNamed: @"F6_eighth.png"]];
 	[pitEighthF6 setHighlightedImage:[UIImage imageNamed:@"F6_eighth_selected.png"]];
 	pitEighthF6.opaque = YES;
-	pitEighthF6.highlighted = YES;
 	[myPitchScrollView addSubview:pitEighthF6];
 	
 	yCoord += 168;
@@ -954,6 +965,8 @@
 	[pitEighthFSharp5 release];
 	[pitEighthE5 release];
 	*/
+	
+	[self determineScrollViewPage:myPitchScrollView];
 }
 
 #pragma mark Initialize View Methods
@@ -961,14 +974,6 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-	/************************
-	 * Initialize Variables *
-	 ************************/
-	noteLength = @"wholenote";
-	notePitch = @"F6";
-	previousNoteLengthPage = 0;
-	previousNotePitchPage = 0;
-	
 	/******************
 	 * User Interface *
 	 ******************/
