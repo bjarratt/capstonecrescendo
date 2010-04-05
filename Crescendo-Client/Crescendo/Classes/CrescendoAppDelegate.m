@@ -33,9 +33,9 @@
 	viewController.client = self.client;
 	
 	/*
-	 * Set up the chatRoomViewController as the CHAT_UPDATE_DELEGATE in the application scope.
+	 * Set up the chatRoomViewController as the CONNECTION_UPDATE_DELEGATE in the application scope.
 	 */
-	[self.client.scope setObject:[NSValue valueWithPointer:(viewController)] forKey:SERVER_UPDATE_DELEGATE];
+	[self.client.scope setObject:[NSValue valueWithPointer:(viewController)] forKey:CONNECTION_UPDATE_DELEGATE];
 	
 	// Connect the client to the server.
 	[self.client connect];	

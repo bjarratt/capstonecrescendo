@@ -1,34 +1,4 @@
 <translation_scope name="ServerTranslations">
-	<class_descriptor described_class="class network.OODSS.ServerRequest"
-		tag_name="server_request">
-		<field_descriptor
-			field="timeStamp"
-			tag_name="time_stamp" type="1" scalar_type="LongType"></field_descriptor>
-		<field_descriptor
-			field="uid"
-			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
-		<field_descriptor
-			field="message"
-			tag_name="message" type="1" scalar_type="StringType"></field_descriptor>
-	</class_descriptor>
-	<class_descriptor described_class="class network.OODSS.ServerUpdate"
-		tag_name="server_update">
-		<field_descriptor
-			field="timeStamp"
-			tag_name="time_stamp" type="1" scalar_type="LongType"></field_descriptor>
-		<field_descriptor
-			field="uid"
-			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
-		<field_descriptor
-			field="message"
-			tag_name="message" type="1" scalar_type="StringType"></field_descriptor>
-		<field_descriptor
-			field="host"
-			tag_name="host" type="1" scalar_type="StringType"></field_descriptor>
-		<field_descriptor
-			field="port"
-			tag_name="port" type="1" scalar_type="IntType"></field_descriptor>
-	</class_descriptor>
 	<class_descriptor described_class="class network.OODSS.ConnectionRequest"
 		tag_name="connection_request">
 		<field_descriptor
@@ -48,7 +18,7 @@
 			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
 		<field_descriptor
 			field="playerNumber"
-			tag_name="playerNumber" type="1" scalar_type="StringType"></field_descriptor>
+			tag_name="player_number" type="1" scalar_type="StringType"></field_descriptor>
 	</class_descriptor>
 	<class_descriptor
 		described_class="class ecologylab.services.messages.DisconnectRequest"

@@ -8,7 +8,7 @@
 
 #import "CrescendoViewController.h"
 #import "AppConfig.h"
-#import "ServerRequest.h"
+//#import "ServerRequest.h"
 #import "ConnectionRequest.h"
 
 @implementation CrescendoViewController
@@ -22,9 +22,9 @@
 
 #pragma mark ChatUpdateDelegate Method
 
-- (void) recievedServerUpdate: (ServerUpdate*) update {
+//- (void) recievedServerUpdate: (ServerUpdate*) update {
 	//self.playerId = [NSString stringWithString: update.message];
-}
+//}
 
 #pragma mark ConnectionUpdateDelegate Method
 
@@ -49,7 +49,7 @@
 }
 
 - (IBAction) goToTrainingView {
-	NSString* inputText = @"training view";
+	/*NSString* inputText = @"training view";
 	
     // Initialize ChatRequest and set message to content's of the text field.
 	ServerRequest* request = [[ServerRequest alloc] init];
@@ -58,7 +58,7 @@
     // Setup the client to send the message a little later in the run loop.
     [client performSelector:@selector(sendMessage:) withObject: request];
     
-    [request release];
+    [request release];*/
 	
 	[self presentModalViewController:trainingViewController animated:YES];
 }
