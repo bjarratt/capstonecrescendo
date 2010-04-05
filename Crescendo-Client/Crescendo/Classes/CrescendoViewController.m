@@ -13,6 +13,7 @@
 @implementation CrescendoViewController
 
 @synthesize client;
+@synthesize playerId;
 @synthesize composeViewController;
 @synthesize gamemodeViewController;
 @synthesize helpViewController;
@@ -21,11 +22,13 @@
 #pragma mark ChatUpdateDelegate Method
 
 - (void) recievedChatUpdate: (ServerUpdate*) update {
+	
 }
 
 #pragma mark Interface Methods
 
 - (IBAction) goToComposeView {
+	composeViewController.client = self.client;
 	[self presentModalViewController:composeViewController animated:YES];
 }
 
