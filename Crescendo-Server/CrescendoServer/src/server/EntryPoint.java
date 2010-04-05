@@ -2,7 +2,7 @@ package server;
 
 import java.io.IOException;
 import network.ConnectionManager;
-import display.DisplayManager;
+//import display.DisplayManager;
 
 
 public class EntryPoint {
