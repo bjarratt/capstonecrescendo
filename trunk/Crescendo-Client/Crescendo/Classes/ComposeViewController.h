@@ -8,9 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+#import "ServerUpdateDelegate.h"
+#import "XMLClient.h"
+
 @interface ComposeViewController : UIViewController <UIScrollViewDelegate> {
+	XMLClient *client;
 	UIScrollView *myLengthScrollView;
 	UIScrollView *myPitchScrollView;
+	UIButton *buildButton;
 	IBOutlet UILabel *buildLabel;
 	IBOutlet UIButton *backButton;
 	
@@ -23,8 +28,10 @@
 	int previousNotePitchPage;
 }
 
+@property (nonatomic, retain) XMLClient *client;
 @property (nonatomic, retain) UIScrollView *myLengthScrollView;
 @property (nonatomic, retain) UIScrollView *myPitchScrollView;
+@property (nonatomic, retain) UIButton *buildButton;
 @property (nonatomic, retain) IBOutlet UILabel *buildLabel;
 @property (nonatomic, retain) IBOutlet UIButton *backButton;
 @property (nonatomic, retain) NSArray *lengthImages;
@@ -38,6 +45,8 @@
 - (void) scrollViewDidEndDecelerating: (UIScrollView *) scrollView;
 
 - (void) determineScrollViewPage: (UIScrollView *) scrollView;
+
+- (void) sendNoteToServer;
 
 - (IBAction) goBack;
 - (void) updateBuildLabel;

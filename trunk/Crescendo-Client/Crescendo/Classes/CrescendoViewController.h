@@ -18,6 +18,7 @@
 
 @interface CrescendoViewController : UIViewController <ServerUpdateDelegate> {
 	XMLClient *client;
+	NSString *playerId;
 	IBOutlet ComposeViewController *composeViewController;
 	IBOutlet GamemodeViewController *gamemodeViewController;
 	IBOutlet HelpViewController *helpViewController;
@@ -25,6 +26,7 @@
 }
 
 @property (nonatomic, retain) XMLClient *client;
+@property (nonatomic, retain) NSString *playerId;
 @property (nonatomic, retain) IBOutlet ComposeViewController *composeViewController;
 @property (nonatomic, retain) IBOutlet GamemodeViewController *gamemodeViewController;
 @property (nonatomic, retain) IBOutlet HelpViewController *helpViewController;

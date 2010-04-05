@@ -7,12 +7,15 @@
 //
 
 #import "ComposeViewController.h"
+#import "ServerRequest.h"
 
 
 @implementation ComposeViewController
 
+@synthesize client;
 @synthesize myLengthScrollView;
 @synthesize myPitchScrollView;
+@synthesize buildButton;
 @synthesize buildLabel;
 @synthesize backButton;
 @synthesize lengthImages;
@@ -30,14 +33,13 @@
 
 - (void) motionBegan: (UIEventSubtype) motion 
 		   withEvent: (UIEvent *) event {
-	
 }
 
 - (void) motionEnded: (UIEventSubtype) motion 
 		   withEvent: (UIEvent *) event {
 	
 	if (event.type == UIEventSubtypeMotionShake) {
-		
+		[self sendNoteToServer];
 	}
 }
 
@@ -46,15 +48,11 @@
 - (void) willRotateToInterfaceOrientation: (UIInterfaceOrientation) toInterfaceOrientation 
 								 duration:(NSTimeInterval) duration {
 	
-	if (toInterfaceOrientation == UIInterfaceOrientationPortrait) {
-		[self drawPortraitView];
-	}
-	else if (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || toInterfaceOrientation == UIInterfaceOrientationLandscapeRight) {
+	if (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || toInterfaceOrientation == UIInterfaceOrientationLandscapeRight) {
 		[self drawPortraitLandscapeSideView];
 	}
 	else {
-		buildLabel.hidden = YES;
-		backButton.hidden = YES;
+		[self drawPortraitView];
 	}
 }
 
@@ -246,6 +244,24 @@
 	[self updateBuildLabel];
 }
 
+#pragma mark OODSS Methods
+
+- (void) sendNoteToServer: (id) sender {
+	/*
+	 *	Send notelength/notepitch to public display
+	 */
+	NSString* inputText = buildLabel.text;
+	
+    // Initialize ChatRequest and set message to content's of the text field.
+	ServerRequest* request = [[ServerRequest alloc] init];
+    [request setMessage:inputText];
+    
+    // Setup the client to send the message a little later in the run loop.
+    [client performSelector:@selector(sendMessage:) withObject: request];
+    
+    [request release];
+}
+
 #pragma mark Interface Methods
 
 - (IBAction) goBack {
@@ -253,7 +269,7 @@
 }
 
 - (void) updateBuildLabel {
-	//buildLabel.text = [NSString stringWithFormat:@"%@ / %@", noteLength, notePitch];
+	buildLabel.text = [NSString stringWithFormat:@"%@_%@", noteLength, notePitch];
 }
 
 #pragma mark Draw Methods
@@ -264,6 +280,7 @@
 	 */
 	[myLengthScrollView removeFromSuperview];
 	[myPitchScrollView removeFromSuperview];
+	[buildButton removeFromSuperview];
 	backButton.hidden = NO;
 	buildLabel.hidden = YES;
 }
@@ -282,10 +299,20 @@
 	 */
 	[myLengthScrollView removeFromSuperview];
 	[myPitchScrollView removeFromSuperview];
+	[buildButton removeFromSuperview];
 	backButton.hidden = YES;
 	buildLabel.hidden = NO;
 	
 	float yCoord = 0;
+	
+	/*
+	 * Build Button
+	 */
+	buildButton = [UIButton buttonWithType: UIButtonTypeRoundedRect];
+	buildButton.frame = CGRectMake(204, 160, 70, 37);
+	[buildButton setTitle: @"Build" forState: UIControlStateNormal];
+	[buildButton addTarget:self	action:@selector(sendNoteToServer:) forControlEvents:UIControlEventTouchUpInside];
+	[self.view addSubview:buildButton];
 	
 	/*
 	 * Note Pitch Scrollview
