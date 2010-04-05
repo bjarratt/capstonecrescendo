@@ -15,6 +15,6 @@ public class EntryPoint {
 	public static void main(String[] args) 
 	{
 		// OODSS Connection Example
-		connectionManager = new ConnectionManager();
+		ConnectionManager.getInstance().initServer();
 	}
 }
