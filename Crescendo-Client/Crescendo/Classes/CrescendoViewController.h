@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import "ChatUpdateDelegate.h"
+#import "ServerUpdateDelegate.h"
 #import "XMLClient.h"
 
 #import "ComposeViewController.h"
@@ -16,7 +16,7 @@
 #import "HelpViewController.h"
 #import "TrainingViewController.h"
 
-@interface CrescendoViewController : UIViewController <ChatUpdateDelegate> {
+@interface CrescendoViewController : UIViewController <ServerUpdateDelegate> {
 	XMLClient *client;
 	IBOutlet ComposeViewController *composeViewController;
 	IBOutlet GamemodeViewController *gamemodeViewController;

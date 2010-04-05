@@ -3,17 +3,17 @@
 //  Created by William Hamilton on 2/24/10.
 //  Copyright 2010 Texas A&M University. All rights reserved.
 //
-#import "ChatUpdate.h"
-#import "ChatUpdateDelegate.h"
+#import "ServerUpdate.h"
+#import "ServerUpdateDelegate.h"
 
-@implementation ChatUpdate
+@implementation ServerUpdate
 
 @synthesize message;
 @synthesize host;
 @synthesize port;
 
 + (void) initialize {
-	[ChatUpdate class];
+	[ServerUpdate class];
 }
 
 - (void) setPortWithReference: (int *) p_port {
@@ -25,13 +25,13 @@
   /*
    * Get reference to the CHAT_UPDATE_DELEGATE out of the application scope. 
    */
-  NSValue* updateDelegatePtr = (NSValue*)[scope objectForKey:CHAT_UPDATE_DELEGATE];
-  id<ChatUpdateDelegate> updateDelegate = (id<ChatUpdateDelegate>)[updateDelegatePtr pointerValue];
+  NSValue* updateDelegatePtr = (NSValue*)[scope objectForKey:SERVER_UPDATE_DELEGATE];
+  id<ServerUpdateDelegate> updateDelegate = (id<ServerUpdateDelegate>)[updateDelegatePtr pointerValue];
   
   /*
    * updateDelegate may be nil but we can send a selector to nil
    */
-  [updateDelegate recievedChatUpdate:self];
+  [updateDelegate recievedServerUpdate:self];
 }
 
 @end

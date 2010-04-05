@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "DefaultServicesTranslations.h"
 
-@interface ChatTranslations : DefaultServicesTranslations
+@interface ServerTranslations : DefaultServicesTranslations
 {
 
 }

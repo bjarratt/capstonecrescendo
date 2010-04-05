@@ -3,14 +3,14 @@
 //  Created by William Hamilton on 2/24/10.
 //  Copyright 2010 Texas A&M University. All rights reserved.
 //
-#import "ChatRequest.h"
+#import "ServerRequest.h"
 
-@implementation ChatRequest
+@implementation ServerRequest
 
 @synthesize message;
 
 + (void) initialize {
-	[ChatRequest class];
+	[ServerRequest class];
 }
 
 

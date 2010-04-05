@@ -6,9 +6,9 @@
 //  Copyright 2010 Texas A&M University. All rights reserved.
 //
 
-#import "ChatTranslations.h"
+#import "ServerTranslations.h"
 
-@implementation ChatTranslations
+@implementation ServerTranslations
 
 static TranslationScope* theScope;
 
@@ -23,7 +23,7 @@ static TranslationScope* theScope;
     /*
      * Initiate translation scope with xml file resource.
      */
-    NSString *path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent: @"ChatTranslations.xml"];
+    NSString *path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent: @"ServerTranslations.xml"];
     theScope = [[[TranslationScope alloc] initWithXMLFilePath: path] retain];
   }
   

@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ChatUpdate.h"
+#import "ServerUpdate.h"
 
-extern NSString * const CHAT_UPDATE_DELEGATE;
+extern NSString * const SERVER_UPDATE_DELEGATE;
 
-@protocol ChatUpdateDelegate
-  - (void) recievedChatUpdate:(ChatUpdate*)update;
+@protocol ServerUpdateDelegate
+  - (void) recievedServerUpdate:(ServerUpdate*)update;
 @end

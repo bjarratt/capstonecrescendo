@@ -6,6 +6,6 @@
 //  Copyright 2010 Texas A&M University. All rights reserved.
 //
 
-#import "ChatUpdateDelegate.h"
+#import "ServerUpdateDelegate.h"
 
-NSString * const CHAT_UPDATE_DELEGATE = @"CHAT-UPDATE-DELEGATE";
+NSString * const SERVER_UPDATE_DELEGATE = @"SERVER-UPDATE-DELEGATE";

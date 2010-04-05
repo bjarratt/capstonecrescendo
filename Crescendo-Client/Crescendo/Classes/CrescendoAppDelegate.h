@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "XMLClient.h"
-#import "ChatTranslations.h"
+#import "ServerTranslations.h"
 
 @class CrescendoViewController;
 

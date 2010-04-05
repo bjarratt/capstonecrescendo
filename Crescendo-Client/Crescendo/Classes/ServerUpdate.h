@@ -6,7 +6,7 @@
 #import <Foundation/Foundation.h>
 #import "UpdateMessage.h"
 
-@interface ChatUpdate : UpdateMessage
+@interface ServerUpdate : UpdateMessage
 {
 	NSString *message;
 	NSString *host;
