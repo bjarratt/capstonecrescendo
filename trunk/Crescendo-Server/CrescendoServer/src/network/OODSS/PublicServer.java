@@ -22,6 +22,7 @@ public class PublicServer {
 	private static final int	idleTimeout	= -1;
 	private static final int	MTU			= 40000;
 	
+	@SuppressWarnings("unchecked")
 	public PublicServer() throws IOException {
 		// Get base translations with static accessor
 		TranslationScope publicServerTranslations = ServerTranslations.get();
@@ -42,4 +43,8 @@ public class PublicServer {
 		Server.start();
 	}
 	
+	public static void main(String[] args) throws IOException
+	{
+		new PublicServer();
+	}
 }
