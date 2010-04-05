@@ -13,6 +13,7 @@
 
 @interface ComposeViewController : UIViewController <UIScrollViewDelegate> {
 	XMLClient *client;
+	NSString *playerId;
 	UIScrollView *myLengthScrollView;
 	UIScrollView *myPitchScrollView;
 	UIButton *buildButton;
@@ -29,6 +30,7 @@
 }
 
 @property (nonatomic, retain) XMLClient *client;
+@property (nonatomic, retain) NSString *playerId;
 @property (nonatomic, retain) UIScrollView *myLengthScrollView;
 @property (nonatomic, retain) UIScrollView *myPitchScrollView;
 @property (nonatomic, retain) UIButton *buildButton;
@@ -46,7 +48,7 @@
 
 - (void) determineScrollViewPage: (UIScrollView *) scrollView;
 
-- (void) sendNoteToServer;
+- (void) sendNoteToServer: (id) sender;
 
 - (IBAction) goBack;
 - (void) updateBuildLabel;

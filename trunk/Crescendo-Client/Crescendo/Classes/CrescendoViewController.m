@@ -21,14 +21,15 @@
 
 #pragma mark ChatUpdateDelegate Method
 
-- (void) recievedChatUpdate: (ServerUpdate*) update {
-	
+- (void) recievedServerUpdate: (ServerUpdate*) update {
+	self.playerId = [NSString stringWithString: update.message];
 }
 
 #pragma mark Interface Methods
 
 - (IBAction) goToComposeView {
 	composeViewController.client = self.client;
+	composeViewController.playerId = self.playerId;
 	[self presentModalViewController:composeViewController animated:YES];
 }
 
