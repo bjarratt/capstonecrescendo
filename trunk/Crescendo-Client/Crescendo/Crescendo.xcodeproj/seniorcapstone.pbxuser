@@ -9,16 +9,16 @@
 	28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1523, 588}}";
-			sepNavSelRange = "{786, 0}";
-			sepNavVisRange = "{84, 1189}";
+			sepNavSelRange = "{152, 0}";
+			sepNavVisRange = "{0, 1245}";
 			sepNavWindowFrame = "{{38, 134}, {1075, 1018}}";
 		};
 	};
 	28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1523, 1694}}";
-			sepNavSelRange = "{773, 0}";
-			sepNavVisRange = "{0, 951}";
+			sepNavIntBoundsRect = "{{0, 0}, {633, 1736}}";
+			sepNavSelRange = "{620, 0}";
+			sepNavVisRange = "{242, 612}";
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
@@ -687,6 +687,200 @@
 			3E1A5B0F1169A6A300D80702 /* PBXTextBookmark */ = 3E1A5B0F1169A6A300D80702 /* PBXTextBookmark */;
 			3E1A5B101169A6A300D80702 /* PBXTextBookmark */ = 3E1A5B101169A6A300D80702 /* PBXTextBookmark */;
 			3E1A5B111169A6A300D80702 /* PBXTextBookmark */ = 3E1A5B111169A6A300D80702 /* PBXTextBookmark */;
+			3E1A5B1E1169ACA800D80702 /* PBXTextBookmark */ = 3E1A5B1E1169ACA800D80702 /* PBXTextBookmark */;
+			3E1A5B1F1169ACA800D80702 /* PBXTextBookmark */ = 3E1A5B1F1169ACA800D80702 /* PBXTextBookmark */;
+			3E1A5B201169ACA800D80702 /* PBXTextBookmark */ = 3E1A5B201169ACA800D80702 /* PBXTextBookmark */;
+			3E1A5B211169ACA800D80702 /* PBXTextBookmark */ = 3E1A5B211169ACA800D80702 /* PBXTextBookmark */;
+			3E1A5B231169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B231169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B241169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B241169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B251169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B251169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B261169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B261169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B271169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B271169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B281169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B281169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B291169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B291169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B2A1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B2A1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B2B1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B2B1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B2C1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B2C1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B2D1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B2D1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B2E1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B2E1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B2F1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B2F1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B301169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B301169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B311169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B311169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B321169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B321169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B331169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B331169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B341169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B341169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B351169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B351169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B361169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B361169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B371169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B371169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B381169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B381169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B391169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B391169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B3A1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B3A1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B3B1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B3B1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B3C1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B3C1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B3D1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B3D1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B3E1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B3E1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B3F1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B3F1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B401169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B401169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B411169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B411169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B421169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B421169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B431169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B431169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B441169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B441169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B451169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B451169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B461169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B461169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B471169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B471169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B481169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B481169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B491169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B491169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B4A1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B4A1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B4B1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B4B1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B4C1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B4C1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B4D1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B4D1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B4E1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B4E1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B4F1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B4F1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B501169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B501169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B511169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B511169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B521169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B521169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B531169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B531169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B541169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B541169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B551169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B551169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B561169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B561169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B571169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B571169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B581169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B581169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B591169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B591169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B5A1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B5A1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B5B1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B5B1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B5C1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B5C1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B5D1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B5D1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B5E1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B5E1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B5F1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B5F1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B601169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B601169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B611169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B611169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B621169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B621169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B631169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B631169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B641169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B641169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B651169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B651169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B661169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B661169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B671169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B671169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B681169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B681169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B691169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B691169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B6A1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B6A1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B6B1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B6B1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B6C1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B6C1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B6D1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B6D1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B6E1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B6E1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B6F1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B6F1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B701169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B701169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B711169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B711169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B721169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B721169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B731169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B731169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B741169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B741169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B751169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B751169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B761169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B761169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B771169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B771169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B781169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B781169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B791169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B791169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B7A1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B7A1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B7B1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B7B1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B7C1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B7C1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B7D1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B7D1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B7E1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B7E1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B7F1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B7F1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B801169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B801169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B811169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B811169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B821169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B821169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B831169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B831169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B841169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B841169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B851169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B851169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B861169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B861169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B871169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B871169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B881169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B881169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B891169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B891169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B8A1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B8A1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B8B1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B8B1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B8C1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B8C1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B8D1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B8D1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B8E1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B8E1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B8F1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B8F1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B901169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B901169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B911169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B911169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B921169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B921169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B931169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B931169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B941169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B941169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B951169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B951169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B961169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B961169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B971169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B971169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B981169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B981169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B991169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B991169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B9A1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B9A1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B9B1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B9B1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B9C1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B9C1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B9D1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B9D1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B9E1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B9E1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5B9F1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5B9F1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BA01169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BA01169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BA11169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BA11169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BA21169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BA21169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BA31169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BA31169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BA41169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BA41169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BA51169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BA51169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BA61169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BA61169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BA71169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BA71169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BA81169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BA81169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BA91169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BA91169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BAA1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BAA1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BAB1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BAB1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BAC1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BAC1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BAD1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BAD1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BAE1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BAE1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BAF1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BAF1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BB01169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BB01169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BB11169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BB11169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BB21169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BB21169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BB31169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BB31169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BB41169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BB41169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BB51169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BB51169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BB61169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BB61169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BB71169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BB71169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BB81169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BB81169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BB91169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BB91169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BBA1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BBA1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BBB1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BBB1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BBC1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BBC1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BBD1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BBD1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BBE1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BBE1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BBF1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BBF1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BC01169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BC01169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BC11169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BC11169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BC21169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BC21169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BC31169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BC31169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BC41169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BC41169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BC51169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BC51169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BC61169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BC61169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BC71169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BC71169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BC81169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BC81169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BC91169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BC91169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BCA1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BCA1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BCB1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BCB1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BCC1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BCC1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BCD1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BCD1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BCE1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BCE1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BCF1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BCF1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BD01169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BD01169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BD11169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BD11169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BD21169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BD21169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BD31169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BD31169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BD41169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BD41169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BD51169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BD51169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BD61169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BD61169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BD71169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BD71169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BD81169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BD81169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BD91169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BD91169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BDA1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BDA1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BDB1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BDB1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BDC1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BDC1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BDD1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BDD1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BDE1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BDE1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BDF1169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BDF1169ACB100D80702 /* PBXTextBookmark */;
+			3E1A5BE01169ACB100D80702 /* PBXTextBookmark */ = 3E1A5BE01169ACB100D80702 /* PBXTextBookmark */;
 			3E556473114EDF2B0089B12F = 3E556473114EDF2B0089B12F /* PBXTextBookmark */;
 			3E556474114EDF2B0089B12F = 3E556474114EDF2B0089B12F /* PBXTextBookmark */;
 			3E556475114EDF2B0089B12F = 3E556475114EDF2B0089B12F /* PBXTextBookmark */;
@@ -841,7 +1035,7 @@
 		fRef = 3E556350114ED77F0089B12F /* CrescendoAppDelegate.h */;
 		name = "CrescendoAppDelegate.h: 11";
 		rLen = 31;
-		rLoc = 190;
+		rLoc = 200;
 		rType = 0;
 		vrLen = 543;
 		vrLoc = 81;
@@ -851,7 +1045,7 @@
 		fRef = 3E556350114ED77F0089B12F /* CrescendoAppDelegate.h */;
 		name = "CrescendoAppDelegate.h: 11";
 		rLen = 0;
-		rLoc = 205;
+		rLoc = 215;
 		rType = 0;
 		vrLen = 545;
 		vrLoc = 81;
@@ -861,7 +1055,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 21";
 		rLen = 0;
-		rLoc = 480;
+		rLoc = 490;
 		rType = 0;
 		vrLen = 557;
 		vrLoc = 213;
@@ -871,7 +1065,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 19";
 		rLen = 0;
-		rLoc = 425;
+		rLoc = 435;
 		rType = 0;
 		vrLen = 879;
 		vrLoc = 227;
@@ -889,7 +1083,7 @@
 		fRef = 3E556350114ED77F0089B12F /* CrescendoAppDelegate.h */;
 		name = "CrescendoAppDelegate.h: 11";
 		rLen = 0;
-		rLoc = 205;
+		rLoc = 215;
 		rType = 0;
 		vrLen = 545;
 		vrLoc = 81;
@@ -899,7 +1093,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 11";
 		rLen = 0;
-		rLoc = 187;
+		rLoc = 197;
 		rType = 0;
 		vrLen = 462;
 		vrLoc = 0;
@@ -909,7 +1103,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 21";
 		rLen = 0;
-		rLoc = 480;
+		rLoc = 490;
 		rType = 0;
 		vrLen = 557;
 		vrLoc = 213;
@@ -919,7 +1113,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 19";
 		rLen = 0;
-		rLoc = 425;
+		rLoc = 435;
 		rType = 0;
 		vrLen = 879;
 		vrLoc = 227;
@@ -929,7 +1123,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 44";
 		rLen = 56;
-		rLoc = 1206;
+		rLoc = 1216;
 		rType = 0;
 		vrLen = 608;
 		vrLoc = 667;
@@ -947,7 +1141,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 114";
 		rLen = 5;
-		rLoc = 3033;
+		rLoc = 3043;
 		rType = 0;
 		vrLen = 359;
 		vrLoc = 2501;
@@ -1057,7 +1251,7 @@
 		fRef = 3E556350114ED77F0089B12F /* CrescendoAppDelegate.h */;
 		name = "CrescendoAppDelegate.h: 11";
 		rLen = 0;
-		rLoc = 205;
+		rLoc = 215;
 		rType = 0;
 		vrLen = 626;
 		vrLoc = 0;
@@ -1067,7 +1261,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 8";
 		rLen = 0;
-		rLoc = 146;
+		rLoc = 156;
 		rType = 0;
 		vrLen = 1202;
 		vrLoc = 0;
@@ -1077,7 +1271,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 114";
 		rLen = 5;
-		rLoc = 3033;
+		rLoc = 3043;
 		rType = 0;
 		vrLen = 1434;
 		vrLoc = 562;
@@ -1387,7 +1581,7 @@
 		fRef = 3E556350114ED77F0089B12F /* CrescendoAppDelegate.h */;
 		name = "CrescendoAppDelegate.h: 11";
 		rLen = 0;
-		rLoc = 205;
+		rLoc = 215;
 		rType = 0;
 		vrLen = 626;
 		vrLoc = 0;
@@ -1397,7 +1591,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 114";
 		rLen = 5;
-		rLoc = 3033;
+		rLoc = 3043;
 		rType = 0;
 		vrLen = 1036;
 		vrLoc = 1824;
@@ -1407,7 +1601,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 8";
 		rLen = 0;
-		rLoc = 146;
+		rLoc = 156;
 		rType = 0;
 		vrLen = 1202;
 		vrLoc = 0;
@@ -1417,7 +1611,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 114";
 		rLen = 5;
-		rLoc = 3033;
+		rLoc = 3043;
 		rType = 0;
 		vrLen = 1376;
 		vrLoc = 147;
@@ -1427,7 +1621,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 8";
 		rLen = 0;
-		rLoc = 146;
+		rLoc = 156;
 		rType = 0;
 		vrLen = 1202;
 		vrLoc = 0;
@@ -1437,7 +1631,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 114";
 		rLen = 5;
-		rLoc = 3033;
+		rLoc = 3043;
 		rType = 0;
 		vrLen = 1376;
 		vrLoc = 147;
@@ -1447,7 +1641,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 8";
 		rLen = 0;
-		rLoc = 146;
+		rLoc = 156;
 		rType = 0;
 		vrLen = 1202;
 		vrLoc = 0;
@@ -1457,7 +1651,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 114";
 		rLen = 5;
-		rLoc = 3033;
+		rLoc = 3043;
 		rType = 0;
 		vrLen = 1376;
 		vrLoc = 147;
@@ -1467,7 +1661,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 8";
 		rLen = 0;
-		rLoc = 146;
+		rLoc = 156;
 		rType = 0;
 		vrLen = 1202;
 		vrLoc = 0;
@@ -1477,7 +1671,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 114";
 		rLen = 5;
-		rLoc = 3033;
+		rLoc = 3043;
 		rType = 0;
 		vrLen = 1376;
 		vrLoc = 147;
@@ -1487,7 +1681,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 8";
 		rLen = 0;
-		rLoc = 146;
+		rLoc = 156;
 		rType = 0;
 		vrLen = 1202;
 		vrLoc = 0;
@@ -1497,7 +1691,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 114";
 		rLen = 5;
-		rLoc = 3033;
+		rLoc = 3043;
 		rType = 0;
 		vrLen = 1434;
 		vrLoc = 562;
@@ -1517,7 +1711,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 24";
 		rLen = 0;
-		rLoc = 670;
+		rLoc = 680;
 		rType = 0;
 		vrLen = 1301;
 		vrLoc = 140;
@@ -1527,7 +1721,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 114";
 		rLen = 5;
-		rLoc = 3033;
+		rLoc = 3043;
 		rType = 0;
 		vrLen = 1434;
 		vrLoc = 562;
@@ -1537,7 +1731,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 8";
 		rLen = 0;
-		rLoc = 146;
+		rLoc = 156;
 		rType = 0;
 		vrLen = 1202;
 		vrLoc = 0;
@@ -1547,7 +1741,7 @@
 		fRef = 3E556350114ED77F0089B12F /* CrescendoAppDelegate.h */;
 		name = "CrescendoAppDelegate.h: 11";
 		rLen = 0;
-		rLoc = 205;
+		rLoc = 215;
 		rType = 0;
 		vrLen = 626;
 		vrLoc = 0;
@@ -1557,7 +1751,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 24";
 		rLen = 0;
-		rLoc = 670;
+		rLoc = 680;
 		rType = 0;
 		vrLen = 1377;
 		vrLoc = 0;
@@ -1567,7 +1761,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 24";
 		rLen = 0;
-		rLoc = 670;
+		rLoc = 680;
 		rType = 0;
 		vrLen = 1377;
 		vrLoc = 0;
@@ -1577,7 +1771,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 8";
 		rLen = 0;
-		rLoc = 146;
+		rLoc = 156;
 		rType = 0;
 		vrLen = 1202;
 		vrLoc = 0;
@@ -1587,7 +1781,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 114";
 		rLen = 5;
-		rLoc = 3033;
+		rLoc = 3043;
 		rType = 0;
 		vrLen = 1434;
 		vrLoc = 562;
@@ -1597,7 +1791,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 8";
 		rLen = 0;
-		rLoc = 146;
+		rLoc = 156;
 		rType = 0;
 		vrLen = 1202;
 		vrLoc = 0;
@@ -1607,7 +1801,7 @@
 		fRef = 3E556350114ED77F0089B12F /* CrescendoAppDelegate.h */;
 		name = "CrescendoAppDelegate.h: 11";
 		rLen = 0;
-		rLoc = 205;
+		rLoc = 215;
 		rType = 0;
 		vrLen = 626;
 		vrLoc = 0;
@@ -1617,7 +1811,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 58";
 		rLen = 0;
-		rLoc = 1525;
+		rLoc = 1535;
 		rType = 0;
 		vrLen = 1195;
 		vrLoc = 765;
@@ -1627,7 +1821,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 58";
 		rLen = 0;
-		rLoc = 1525;
+		rLoc = 1535;
 		rType = 0;
 		vrLen = 1195;
 		vrLoc = 765;
@@ -1637,7 +1831,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 8";
 		rLen = 0;
-		rLoc = 146;
+		rLoc = 156;
 		rType = 0;
 		vrLen = 1202;
 		vrLoc = 0;
@@ -1647,7 +1841,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 44";
 		rLen = 0;
-		rLoc = 1207;
+		rLoc = 1217;
 		rType = 0;
 		vrLen = 1405;
 		vrLoc = 328;
@@ -1697,7 +1891,7 @@
 		fRef = 3E556350114ED77F0089B12F /* CrescendoAppDelegate.h */;
 		name = "CrescendoAppDelegate.h: 11";
 		rLen = 0;
-		rLoc = 205;
+		rLoc = 215;
 		rType = 0;
 		vrLen = 626;
 		vrLoc = 0;
@@ -1707,7 +1901,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 58";
 		rLen = 0;
-		rLoc = 1525;
+		rLoc = 1535;
 		rType = 0;
 		vrLen = 1377;
 		vrLoc = 0;
@@ -1717,7 +1911,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 58";
 		rLen = 0;
-		rLoc = 1525;
+		rLoc = 1535;
 		rType = 0;
 		vrLen = 1377;
 		vrLoc = 0;
@@ -1727,7 +1921,7 @@
 		fRef = 3E556350114ED77F0089B12F /* CrescendoAppDelegate.h */;
 		name = "CrescendoAppDelegate.h: 11";
 		rLen = 0;
-		rLoc = 205;
+		rLoc = 215;
 		rType = 0;
 		vrLen = 626;
 		vrLoc = 0;
@@ -1737,7 +1931,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 58";
 		rLen = 0;
-		rLoc = 1525;
+		rLoc = 1535;
 		rType = 0;
 		vrLen = 1377;
 		vrLoc = 0;
@@ -1747,7 +1941,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 8";
 		rLen = 0;
-		rLoc = 146;
+		rLoc = 156;
 		rType = 0;
 		vrLen = 1202;
 		vrLoc = 0;
@@ -1757,7 +1951,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 44";
 		rLen = 0;
-		rLoc = 1207;
+		rLoc = 1217;
 		rType = 0;
 		vrLen = 1405;
 		vrLoc = 328;
@@ -1807,7 +2001,7 @@
 		fRef = 3E556350114ED77F0089B12F /* CrescendoAppDelegate.h */;
 		name = "CrescendoAppDelegate.h: 11";
 		rLen = 0;
-		rLoc = 205;
+		rLoc = 215;
 		rType = 0;
 		vrLen = 626;
 		vrLoc = 0;
@@ -1817,7 +2011,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 58";
 		rLen = 0;
-		rLoc = 1525;
+		rLoc = 1535;
 		rType = 0;
 		vrLen = 1353;
 		vrLoc = 47;
@@ -1894,7 +2088,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 58";
 		rLen = 0;
-		rLoc = 1525;
+		rLoc = 1535;
 		rType = 0;
 		vrLen = 1353;
 		vrLoc = 47;
@@ -2074,7 +2268,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 42";
 		rLen = 0;
-		rLoc = 1237;
+		rLoc = 1247;
 		rType = 0;
 		vrLen = 1195;
 		vrLoc = 765;
@@ -2084,7 +2278,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 42";
 		rLen = 0;
-		rLoc = 1237;
+		rLoc = 1247;
 		rType = 0;
 		vrLen = 1195;
 		vrLoc = 765;
@@ -2094,7 +2288,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 42";
 		rLen = 0;
-		rLoc = 1237;
+		rLoc = 1247;
 		rType = 0;
 		vrLen = 1195;
 		vrLoc = 765;
@@ -2124,7 +2318,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 42";
 		rLen = 0;
-		rLoc = 1237;
+		rLoc = 1247;
 		rType = 0;
 		vrLen = 1195;
 		vrLoc = 765;
@@ -2154,7 +2348,7 @@
 		fRef = 3E556361114ED8CF0089B12F /* ServerTranslations.xml */;
 		name = "ServerTranslations.xml: 87";
 		rLen = 0;
-		rLoc = 3396;
+		rLoc = 5126;
 		rType = 0;
 		vrLen = 1872;
 		vrLoc = 0;
@@ -2164,7 +2358,7 @@
 		fRef = 3E556361114ED8CF0089B12F /* ServerTranslations.xml */;
 		name = "ServerTranslations.xml: 87";
 		rLen = 0;
-		rLoc = 3396;
+		rLoc = 5126;
 		rType = 0;
 		vrLen = 1872;
 		vrLoc = 0;
@@ -2181,7 +2375,7 @@
 		fRef = 3E556361114ED8CF0089B12F /* ServerTranslations.xml */;
 		name = "ServerTranslations.xml: 87";
 		rLen = 0;
-		rLoc = 3396;
+		rLoc = 5126;
 		rType = 0;
 		vrLen = 1872;
 		vrLoc = 0;
@@ -2191,7 +2385,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 39";
 		rLen = 0;
-		rLoc = 1149;
+		rLoc = 1159;
 		rType = 0;
 		vrLen = 1190;
 		vrLoc = 765;
@@ -2201,7 +2395,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 39";
 		rLen = 0;
-		rLoc = 1149;
+		rLoc = 1159;
 		rType = 0;
 		vrLen = 1190;
 		vrLoc = 765;
@@ -2211,7 +2405,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 39";
 		rLen = 0;
-		rLoc = 1149;
+		rLoc = 1159;
 		rType = 0;
 		vrLen = 1190;
 		vrLoc = 765;
@@ -2221,7 +2415,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 39";
 		rLen = 0;
-		rLoc = 1149;
+		rLoc = 1159;
 		rType = 0;
 		vrLen = 1190;
 		vrLoc = 765;
@@ -2231,7 +2425,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 8";
 		rLen = 0;
-		rLoc = 146;
+		rLoc = 156;
 		rType = 0;
 		vrLen = 1202;
 		vrLoc = 0;
@@ -2241,7 +2435,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 44";
 		rLen = 0;
-		rLoc = 1207;
+		rLoc = 1217;
 		rType = 0;
 		vrLen = 1301;
 		vrLoc = 0;
@@ -2251,7 +2445,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 24";
 		rLen = 13;
-		rLoc = 657;
+		rLoc = 667;
 		rType = 0;
 		vrLen = 1377;
 		vrLoc = 0;
@@ -2261,7 +2455,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 24";
 		rLen = 13;
-		rLoc = 657;
+		rLoc = 667;
 		rType = 0;
 		vrLen = 1377;
 		vrLoc = 0;
@@ -2271,7 +2465,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 8";
 		rLen = 0;
-		rLoc = 146;
+		rLoc = 156;
 		rType = 0;
 		vrLen = 1202;
 		vrLoc = 0;
@@ -2281,7 +2475,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 44";
 		rLen = 0;
-		rLoc = 1207;
+		rLoc = 1217;
 		rType = 0;
 		vrLen = 1301;
 		vrLoc = 0;
@@ -2291,7 +2485,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 24";
 		rLen = 0;
-		rLoc = 670;
+		rLoc = 680;
 		rType = 0;
 		vrLen = 1334;
 		vrLoc = 0;
@@ -2301,7 +2495,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 24";
 		rLen = 0;
-		rLoc = 670;
+		rLoc = 680;
 		rType = 0;
 		vrLen = 1334;
 		vrLoc = 0;
@@ -2311,7 +2505,7 @@
 		fRef = 3E556361114ED8CF0089B12F /* ServerTranslations.xml */;
 		name = "ServerTranslations.xml: 87";
 		rLen = 0;
-		rLoc = 3396;
+		rLoc = 5126;
 		rType = 0;
 		vrLen = 1872;
 		vrLoc = 0;
@@ -2321,7 +2515,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 24";
 		rLen = 0;
-		rLoc = 670;
+		rLoc = 680;
 		rType = 0;
 		vrLen = 1334;
 		vrLoc = 0;
@@ -2331,7 +2525,7 @@
 		fRef = 3E556361114ED8CF0089B12F /* ServerTranslations.xml */;
 		name = "ServerTranslations.xml: 86";
 		rLen = 0;
-		rLoc = 3363;
+		rLoc = 5126;
 		rType = 0;
 		vrLen = 1910;
 		vrLoc = 2207;
@@ -2341,7 +2535,7 @@
 		fRef = 3E556361114ED8CF0089B12F /* ServerTranslations.xml */;
 		name = "ServerTranslations.xml: 86";
 		rLen = 0;
-		rLoc = 3363;
+		rLoc = 5126;
 		rType = 0;
 		vrLen = 1910;
 		vrLoc = 2207;
@@ -2351,7 +2545,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 24";
 		rLen = 0;
-		rLoc = 670;
+		rLoc = 680;
 		rType = 0;
 		vrLen = 1375;
 		vrLoc = 0;
@@ -2361,7 +2555,7 @@
 		fRef = 3E556361114ED8CF0089B12F /* ServerTranslations.xml */;
 		name = "ServerTranslations.xml: 86";
 		rLen = 0;
-		rLoc = 3363;
+		rLoc = 5126;
 		rType = 0;
 		vrLen = 1910;
 		vrLoc = 2207;
@@ -2371,7 +2565,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 25";
 		rLen = 0;
-		rLoc = 670;
+		rLoc = 680;
 		rType = 0;
 		vrLen = 1324;
 		vrLoc = 0;
@@ -2391,7 +2585,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 26";
 		rLen = 0;
-		rLoc = 670;
+		rLoc = 680;
 		rType = 0;
 		vrLen = 1362;
 		vrLoc = 321;
@@ -2401,7 +2595,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 11";
 		rLen = 54;
-		rLoc = 172;
+		rLoc = 182;
 		rType = 0;
 		vrLen = 1202;
 		vrLoc = 0;
@@ -2411,7 +2605,7 @@
 		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
 		name = "ComposeViewController.h: 12";
 		rLen = 0;
-		rLoc = 224;
+		rLoc = 234;
 		rType = 0;
 		vrLen = 1578;
 		vrLoc = 0;
@@ -2421,7 +2615,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 11";
 		rLen = 25;
-		rLoc = 205;
+		rLoc = 215;
 		rType = 0;
 		vrLen = 1300;
 		vrLoc = 3;
@@ -2451,7 +2645,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 10";
 		rLen = 0;
-		rLoc = 204;
+		rLoc = 214;
 		rType = 0;
 		vrLen = 1879;
 		vrLoc = 0;
@@ -2461,7 +2655,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 26";
 		rLen = 0;
-		rLoc = 670;
+		rLoc = 680;
 		rType = 0;
 		vrLen = 1323;
 		vrLoc = 0;
@@ -2471,7 +2665,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 44";
 		rLen = 0;
-		rLoc = 1207;
+		rLoc = 1217;
 		rType = 0;
 		vrLen = 1301;
 		vrLoc = 0;
@@ -2491,7 +2685,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 44";
 		rLen = 0;
-		rLoc = 1207;
+		rLoc = 1217;
 		rType = 0;
 		vrLen = 1301;
 		vrLoc = 0;
@@ -2501,7 +2695,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 26";
 		rLen = 0;
-		rLoc = 670;
+		rLoc = 680;
 		rType = 0;
 		vrLen = 1362;
 		vrLoc = 321;
@@ -2511,7 +2705,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 8";
 		rLen = 0;
-		rLoc = 146;
+		rLoc = 156;
 		rType = 0;
 		vrLen = 1202;
 		vrLoc = 0;
@@ -2521,7 +2715,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 41";
 		rLen = 468;
-		rLoc = 1086;
+		rLoc = 1096;
 		rType = 0;
 		vrLen = 1474;
 		vrLoc = 205;
@@ -2531,7 +2725,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 261";
 		rLen = 0;
-		rLoc = 6173;
+		rLoc = 6183;
 		rType = 0;
 		vrLen = 29090;
 		vrLoc = 5289;
@@ -2551,7 +2745,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 8";
 		rLen = 0;
-		rLoc = 146;
+		rLoc = 156;
 		rType = 0;
 		vrLen = 1202;
 		vrLoc = 0;
@@ -2561,7 +2755,7 @@
 		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
 		name = "ComposeViewController.h: 12";
 		rLen = 0;
-		rLoc = 343;
+		rLoc = 353;
 		rType = 0;
 		vrLen = 1593;
 		vrLoc = 0;
@@ -2571,7 +2765,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 8";
 		rLen = 0;
-		rLoc = 146;
+		rLoc = 156;
 		rType = 0;
 		vrLen = 1202;
 		vrLoc = 0;
@@ -2581,7 +2775,7 @@
 		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
 		name = "ComposeViewController.h: 12";
 		rLen = 0;
-		rLoc = 343;
+		rLoc = 353;
 		rType = 0;
 		vrLen = 1593;
 		vrLoc = 0;
@@ -2591,7 +2785,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 27";
 		rLen = 48;
-		rLoc = 709;
+		rLoc = 719;
 		rType = 0;
 		vrLen = 1202;
 		vrLoc = 0;
@@ -2601,7 +2795,7 @@
 		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
 		name = "ComposeViewController.h: 27";
 		rLen = 0;
-		rLoc = 754;
+		rLoc = 764;
 		rType = 0;
 		vrLen = 1609;
 		vrLoc = 0;
@@ -2611,7 +2805,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 14";
 		rLen = 0;
-		rLoc = 287;
+		rLoc = 297;
 		rType = 0;
 		vrLen = 1917;
 		vrLoc = 0;
@@ -2621,7 +2815,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 11";
 		rLen = 25;
-		rLoc = 205;
+		rLoc = 215;
 		rType = 0;
 		vrLen = 1300;
 		vrLoc = 3;
@@ -2631,7 +2825,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 9";
 		rLen = 0;
-		rLoc = 204;
+		rLoc = 214;
 		rType = 0;
 		vrLen = 1917;
 		vrLoc = 0;
@@ -2641,7 +2835,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 11";
 		rLen = 25;
-		rLoc = 205;
+		rLoc = 215;
 		rType = 0;
 		vrLen = 1300;
 		vrLoc = 3;
@@ -2651,7 +2845,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 11";
 		rLen = 54;
-		rLoc = 172;
+		rLoc = 182;
 		rType = 0;
 		vrLen = 1202;
 		vrLoc = 0;
@@ -2661,7 +2855,7 @@
 		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
 		name = "ComposeViewController.h: 8";
 		rLen = 0;
-		rLoc = 144;
+		rLoc = 154;
 		rType = 0;
 		vrLen = 1609;
 		vrLoc = 0;
@@ -2671,7 +2865,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 11";
 		rLen = 54;
-		rLoc = 172;
+		rLoc = 182;
 		rType = 0;
 		vrLen = 1202;
 		vrLoc = 0;
@@ -2681,7 +2875,7 @@
 		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
 		name = "ComposeViewController.h: 12";
 		rLen = 0;
-		rLoc = 224;
+		rLoc = 234;
 		rType = 0;
 		vrLen = 1578;
 		vrLoc = 0;
@@ -2691,7 +2885,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 11";
 		rLen = 25;
-		rLoc = 205;
+		rLoc = 215;
 		rType = 0;
 		vrLen = 1300;
 		vrLoc = 3;
@@ -2701,7 +2895,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 10";
 		rLen = 0;
-		rLoc = 204;
+		rLoc = 214;
 		rType = 0;
 		vrLen = 1879;
 		vrLoc = 0;
@@ -2731,7 +2925,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 258";
 		rLen = 0;
-		rLoc = 6148;
+		rLoc = 6158;
 		rType = 0;
 		vrLen = 29172;
 		vrLoc = 5139;
@@ -2741,7 +2935,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 258";
 		rLen = 0;
-		rLoc = 6148;
+		rLoc = 6158;
 		rType = 0;
 		vrLen = 29172;
 		vrLoc = 5139;
@@ -2751,7 +2945,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 258";
 		rLen = 0;
-		rLoc = 6148;
+		rLoc = 6158;
 		rType = 0;
 		vrLen = 29554;
 		vrLoc = 5388;
@@ -2761,7 +2955,7 @@
 		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
 		name = "ComposeViewController.h: 12";
 		rLen = 0;
-		rLoc = 224;
+		rLoc = 234;
 		rType = 0;
 		vrLen = 1592;
 		vrLoc = 144;
@@ -2771,7 +2965,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 11";
 		rLen = 25;
-		rLoc = 205;
+		rLoc = 215;
 		rType = 0;
 		vrLen = 1273;
 		vrLoc = 146;
@@ -2781,7 +2975,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 11";
 		rLen = 54;
-		rLoc = 172;
+		rLoc = 182;
 		rType = 0;
 		vrLen = 1202;
 		vrLoc = 0;
@@ -2791,7 +2985,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 258";
 		rLen = 0;
-		rLoc = 6148;
+		rLoc = 6158;
 		rType = 0;
 		vrLen = 29554;
 		vrLoc = 5388;
@@ -2801,7 +2995,7 @@
 		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
 		name = "ComposeViewController.h: 12";
 		rLen = 0;
-		rLoc = 224;
+		rLoc = 234;
 		rType = 0;
 		vrLen = 1592;
 		vrLoc = 144;
@@ -2811,7 +3005,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 11";
 		rLen = 25;
-		rLoc = 205;
+		rLoc = 215;
 		rType = 0;
 		vrLen = 1273;
 		vrLoc = 146;
@@ -2821,7 +3015,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 11";
 		rLen = 54;
-		rLoc = 172;
+		rLoc = 182;
 		rType = 0;
 		vrLen = 1202;
 		vrLoc = 0;
@@ -2831,7 +3025,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 26";
 		rLen = 0;
-		rLoc = 670;
+		rLoc = 680;
 		rType = 0;
 		vrLen = 1357;
 		vrLoc = 214;
@@ -2841,7 +3035,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 26";
 		rLen = 0;
-		rLoc = 670;
+		rLoc = 680;
 		rType = 0;
 		vrLen = 1366;
 		vrLoc = 30;
@@ -2851,7 +3045,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 41";
 		rLen = 39;
-		rLoc = 1086;
+		rLoc = 1096;
 		rType = 0;
 		vrLen = 1331;
 		vrLoc = 84;
@@ -2861,7 +3055,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 262";
 		rLen = 0;
-		rLoc = 6173;
+		rLoc = 6183;
 		rType = 0;
 		vrLen = 22746;
 		vrLoc = 5306;
@@ -2871,7 +3065,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 26";
 		rLen = 0;
-		rLoc = 670;
+		rLoc = 680;
 		rType = 0;
 		vrLen = 1366;
 		vrLoc = 30;
@@ -2881,7 +3075,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 11";
 		rLen = 25;
-		rLoc = 205;
+		rLoc = 215;
 		rType = 0;
 		vrLen = 1269;
 		vrLoc = 146;
@@ -2891,7 +3085,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 258";
 		rLen = 0;
-		rLoc = 6148;
+		rLoc = 6158;
 		rType = 0;
 		vrLen = 29231;
 		vrLoc = 5388;
@@ -2901,7 +3095,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 41";
 		rLen = 39;
-		rLoc = 1086;
+		rLoc = 1096;
 		rType = 0;
 		vrLen = 1272;
 		vrLoc = 143;
@@ -2911,7 +3105,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 262";
 		rLen = 0;
-		rLoc = 6173;
+		rLoc = 6183;
 		rType = 0;
 		vrLen = 22747;
 		vrLoc = 5306;
@@ -2921,7 +3115,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 41";
 		rLen = 39;
-		rLoc = 1086;
+		rLoc = 1096;
 		rType = 0;
 		vrLen = 1331;
 		vrLoc = 84;
@@ -2931,7 +3125,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 262";
 		rLen = 0;
-		rLoc = 6173;
+		rLoc = 6183;
 		rType = 0;
 		vrLen = 22746;
 		vrLoc = 5306;
@@ -2941,7 +3135,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 41";
 		rLen = 39;
-		rLoc = 1086;
+		rLoc = 1096;
 		rType = 0;
 		vrLen = 1331;
 		vrLoc = 84;
@@ -2951,7 +3145,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 262";
 		rLen = 0;
-		rLoc = 6173;
+		rLoc = 6183;
 		rType = 0;
 		vrLen = 22746;
 		vrLoc = 5306;
@@ -2961,7 +3155,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 41";
 		rLen = 39;
-		rLoc = 1086;
+		rLoc = 1096;
 		rType = 0;
 		vrLen = 1331;
 		vrLoc = 84;
@@ -2971,7 +3165,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 263";
 		rLen = 0;
-		rLoc = 6173;
+		rLoc = 6183;
 		rType = 0;
 		vrLen = 16341;
 		vrLoc = 5306;
@@ -2981,7 +3175,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 263";
 		rLen = 0;
-		rLoc = 6173;
+		rLoc = 6183;
 		rType = 0;
 		vrLen = 28993;
 		vrLoc = 5306;
@@ -2991,7 +3185,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 41";
 		rLen = 39;
-		rLoc = 1086;
+		rLoc = 1096;
 		rType = 0;
 		vrLen = 1016;
 		vrLoc = 1842;
@@ -3001,7 +3195,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 263";
 		rLen = 0;
-		rLoc = 6173;
+		rLoc = 6183;
 		rType = 0;
 		vrLen = 28993;
 		vrLoc = 5306;
@@ -3011,7 +3205,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 41";
 		rLen = 39;
-		rLoc = 1086;
+		rLoc = 1096;
 		rType = 0;
 		vrLen = 1016;
 		vrLoc = 1842;
@@ -3021,7 +3215,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 26";
 		rLen = 0;
-		rLoc = 670;
+		rLoc = 680;
 		rType = 0;
 		vrLen = 1195;
 		vrLoc = 803;
@@ -3031,7 +3225,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 26";
 		rLen = 0;
-		rLoc = 670;
+		rLoc = 680;
 		rType = 0;
 		vrLen = 1195;
 		vrLoc = 803;
@@ -3041,7 +3235,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 26";
 		rLen = 0;
-		rLoc = 670;
+		rLoc = 680;
 		rType = 0;
 		vrLen = 993;
 		vrLoc = 1000;
@@ -3051,7 +3245,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 26";
 		rLen = 0;
-		rLoc = 670;
+		rLoc = 680;
 		rType = 0;
 		vrLen = 993;
 		vrLoc = 1000;
@@ -3061,7 +3255,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 263";
 		rLen = 0;
-		rLoc = 6173;
+		rLoc = 6183;
 		rType = 0;
 		vrLen = 10411;
 		vrLoc = 5306;
@@ -3071,7 +3265,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 263";
 		rLen = 0;
-		rLoc = 6173;
+		rLoc = 6183;
 		rType = 0;
 		vrLen = 4494;
 		vrLoc = 5143;
@@ -3081,7 +3275,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 263";
 		rLen = 0;
-		rLoc = 6173;
+		rLoc = 6183;
 		rType = 0;
 		vrLen = 2721;
 		vrLoc = 5139;
@@ -3091,7 +3285,7 @@
 		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
 		name = "ComposeViewController.h: 12";
 		rLen = 0;
-		rLoc = 224;
+		rLoc = 234;
 		rType = 0;
 		vrLen = 1367;
 		vrLoc = 144;
@@ -3101,7 +3295,7 @@
 		fRef = 3E556350114ED77F0089B12F /* CrescendoAppDelegate.h */;
 		name = "CrescendoAppDelegate.h: 11";
 		rLen = 0;
-		rLoc = 205;
+		rLoc = 215;
 		rType = 0;
 		vrLen = 626;
 		vrLoc = 0;
@@ -3111,7 +3305,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 26";
 		rLen = 0;
-		rLoc = 670;
+		rLoc = 680;
 		rType = 0;
 		vrLen = 1214;
 		vrLoc = 30;
@@ -3121,7 +3315,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 16";
 		rLen = 0;
-		rLoc = 316;
+		rLoc = 326;
 		rType = 0;
 		vrLen = 1202;
 		vrLoc = 0;
@@ -3131,7 +3325,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 28";
 		rLen = 0;
-		rLoc = 772;
+		rLoc = 782;
 		rType = 0;
 		vrLen = 1130;
 		vrLoc = 143;
@@ -3141,7 +3335,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 263";
 		rLen = 0;
-		rLoc = 6173;
+		rLoc = 6183;
 		rType = 0;
 		vrLen = 2721;
 		vrLoc = 5139;
@@ -3151,7 +3345,7 @@
 		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
 		name = "ComposeViewController.h: 12";
 		rLen = 0;
-		rLoc = 224;
+		rLoc = 234;
 		rType = 0;
 		vrLen = 1367;
 		vrLoc = 144;
@@ -3161,7 +3355,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 41";
 		rLen = 39;
-		rLoc = 1086;
+		rLoc = 1096;
 		rType = 0;
 		vrLen = 987;
 		vrLoc = 1842;
@@ -3171,7 +3365,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 16";
 		rLen = 0;
-		rLoc = 316;
+		rLoc = 326;
 		rType = 0;
 		vrLen = 1202;
 		vrLoc = 0;
@@ -3181,7 +3375,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 26";
 		rLen = 0;
-		rLoc = 670;
+		rLoc = 680;
 		rType = 0;
 		vrLen = 1159;
 		vrLoc = 320;
@@ -3191,7 +3385,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 16";
 		rLen = 0;
-		rLoc = 316;
+		rLoc = 326;
 		rType = 0;
 		vrLen = 1202;
 		vrLoc = 0;
@@ -3201,7 +3395,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 41";
 		rLen = 39;
-		rLoc = 1086;
+		rLoc = 1096;
 		rType = 0;
 		vrLen = 1170;
 		vrLoc = 205;
@@ -3211,7 +3405,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 26";
 		rLen = 0;
-		rLoc = 670;
+		rLoc = 680;
 		rType = 0;
 		vrLen = 1259;
 		vrLoc = 30;
@@ -3221,7 +3415,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 28";
 		rLen = 0;
-		rLoc = 772;
+		rLoc = 782;
 		rType = 0;
 		vrLen = 1130;
 		vrLoc = 143;
@@ -3231,7 +3425,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 16";
 		rLen = 0;
-		rLoc = 316;
+		rLoc = 326;
 		rType = 0;
 		vrLen = 1202;
 		vrLoc = 0;
@@ -3241,7 +3435,7 @@
 		fRef = 3E556350114ED77F0089B12F /* CrescendoAppDelegate.h */;
 		name = "CrescendoAppDelegate.h: 11";
 		rLen = 0;
-		rLoc = 205;
+		rLoc = 215;
 		rType = 0;
 		vrLen = 626;
 		vrLoc = 0;
@@ -3251,7 +3445,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 26";
 		rLen = 0;
-		rLoc = 670;
+		rLoc = 680;
 		rType = 0;
 		vrLen = 1214;
 		vrLoc = 30;
@@ -3261,7 +3455,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 16";
 		rLen = 0;
-		rLoc = 316;
+		rLoc = 326;
 		rType = 0;
 		vrLen = 1202;
 		vrLoc = 0;
@@ -3271,7 +3465,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 29";
 		rLen = 0;
-		rLoc = 772;
+		rLoc = 782;
 		rType = 0;
 		vrLen = 1175;
 		vrLoc = 143;
@@ -3281,7 +3475,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 29";
 		rLen = 0;
-		rLoc = 772;
+		rLoc = 782;
 		rType = 0;
 		vrLen = 1025;
 		vrLoc = 143;
@@ -3291,7 +3485,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 29";
 		rLen = 0;
-		rLoc = 772;
+		rLoc = 782;
 		rType = 0;
 		vrLen = 1025;
 		vrLoc = 143;
@@ -3301,7 +3495,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 263";
 		rLen = 0;
-		rLoc = 6173;
+		rLoc = 6183;
 		rType = 0;
 		vrLen = 975;
 		vrLoc = 5139;
@@ -3311,7 +3505,7 @@
 		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
 		name = "ComposeViewController.h: 12";
 		rLen = 0;
-		rLoc = 224;
+		rLoc = 234;
 		rType = 0;
 		vrLen = 1397;
 		vrLoc = 141;
@@ -3321,7 +3515,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 263";
 		rLen = 0;
-		rLoc = 6173;
+		rLoc = 6183;
 		rType = 0;
 		vrLen = 1114;
 		vrLoc = 2345;
@@ -3331,7 +3525,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 263";
 		rLen = 0;
-		rLoc = 6173;
+		rLoc = 6183;
 		rType = 0;
 		vrLen = 1114;
 		vrLoc = 2345;
@@ -3341,7 +3535,7 @@
 		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
 		name = "ComposeViewController.h: 12";
 		rLen = 0;
-		rLoc = 224;
+		rLoc = 234;
 		rType = 0;
 		vrLen = 1397;
 		vrLoc = 141;
@@ -3351,7 +3545,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 389";
 		rLen = 0;
-		rLoc = 10088;
+		rLoc = 10098;
 		rType = 0;
 		vrLen = 7496;
 		vrLoc = 8232;
@@ -3361,7 +3555,7 @@
 		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
 		name = "ComposeViewController.h: 47";
 		rLen = 0;
-		rLoc = 1650;
+		rLoc = 1660;
 		rType = 0;
 		vrLen = 1455;
 		vrLoc = 303;
@@ -3371,7 +3565,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 267";
 		rLen = 0;
-		rLoc = 5959;
+		rLoc = 5969;
 		rType = 0;
 		vrLen = 1122;
 		vrLoc = 5075;
@@ -3381,7 +3575,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 263";
 		rLen = 0;
-		rLoc = 6175;
+		rLoc = 6185;
 		rType = 0;
 		vrLen = 2635;
 		vrLoc = 5342;
@@ -3391,7 +3585,7 @@
 		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
 		name = "ComposeViewController.h: 12";
 		rLen = 0;
-		rLoc = 224;
+		rLoc = 234;
 		rType = 0;
 		vrLen = 1413;
 		vrLoc = 323;
@@ -3401,7 +3595,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 263";
 		rLen = 0;
-		rLoc = 6175;
+		rLoc = 6185;
 		rType = 0;
 		vrLen = 2635;
 		vrLoc = 5342;
@@ -3411,7 +3605,7 @@
 		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
 		name = "ComposeViewController.h: 47";
 		rLen = 0;
-		rLoc = 1650;
+		rLoc = 1660;
 		rType = 0;
 		vrLen = 1456;
 		vrLoc = 303;
@@ -3421,7 +3615,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 267";
 		rLen = 0;
-		rLoc = 5959;
+		rLoc = 5969;
 		rType = 0;
 		vrLen = 1122;
 		vrLoc = 5075;
@@ -3431,7 +3625,7 @@
 		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
 		name = "ComposeViewController.h: 47";
 		rLen = 0;
-		rLoc = 1650;
+		rLoc = 1660;
 		rType = 0;
 		vrLen = 1455;
 		vrLoc = 303;
@@ -3441,7 +3635,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 43";
 		rLen = 0;
-		rLoc = 916;
+		rLoc = 926;
 		rType = 0;
 		vrLen = 1419;
 		vrLoc = 206;
@@ -3451,7 +3645,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 43";
 		rLen = 0;
-		rLoc = 916;
+		rLoc = 926;
 		rType = 0;
 		vrLen = 1419;
 		vrLoc = 206;
@@ -3461,7 +3655,7 @@
 		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
 		name = "ComposeViewController.h: 47";
 		rLen = 0;
-		rLoc = 1650;
+		rLoc = 1660;
 		rType = 0;
 		vrLen = 1232;
 		vrLoc = 0;
@@ -3471,7 +3665,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 69";
 		rLen = 0;
-		rLoc = 1717;
+		rLoc = 1727;
 		rType = 0;
 		vrLen = 1242;
 		vrLoc = 0;
@@ -3481,7 +3675,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 16";
 		rLen = 0;
-		rLoc = 316;
+		rLoc = 326;
 		rType = 0;
 		vrLen = 1202;
 		vrLoc = 0;
@@ -3491,7 +3685,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 29";
 		rLen = 0;
-		rLoc = 772;
+		rLoc = 782;
 		rType = 0;
 		vrLen = 950;
 		vrLoc = 0;
@@ -3501,7 +3695,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 42";
 		rLen = 1;
-		rLoc = 915;
+		rLoc = 925;
 		rType = 0;
 		vrLen = 1239;
 		vrLoc = 141;
@@ -3511,7 +3705,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 43";
 		rLen = 0;
-		rLoc = 916;
+		rLoc = 926;
 		rType = 0;
 		vrLen = 1419;
 		vrLoc = 206;
@@ -3521,7 +3715,7 @@
 		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
 		name = "ComposeViewController.h: 47";
 		rLen = 0;
-		rLoc = 1650;
+		rLoc = 1660;
 		rType = 0;
 		vrLen = 1232;
 		vrLoc = 0;
@@ -3531,7 +3725,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 16";
 		rLen = 0;
-		rLoc = 316;
+		rLoc = 326;
 		rType = 0;
 		vrLen = 1202;
 		vrLoc = 0;
@@ -3541,7 +3735,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 26";
 		rLen = 0;
-		rLoc = 670;
+		rLoc = 680;
 		rType = 0;
 		vrLen = 1289;
 		vrLoc = 30;
@@ -3551,7 +3745,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 29";
 		rLen = 0;
-		rLoc = 772;
+		rLoc = 782;
 		rType = 0;
 		vrLen = 1008;
 		vrLoc = 1895;
@@ -3561,7 +3755,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 43";
 		rLen = 0;
-		rLoc = 916;
+		rLoc = 926;
 		rType = 0;
 		vrLen = 1511;
 		vrLoc = 703;
@@ -3571,7 +3765,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 16";
 		rLen = 0;
-		rLoc = 316;
+		rLoc = 326;
 		rType = 0;
 		vrLen = 1202;
 		vrLoc = 0;
@@ -3581,7 +3775,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 29";
 		rLen = 0;
-		rLoc = 772;
+		rLoc = 782;
 		rType = 0;
 		vrLen = 1008;
 		vrLoc = 1895;
@@ -3591,7 +3785,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 43";
 		rLen = 0;
-		rLoc = 916;
+		rLoc = 926;
 		rType = 0;
 		vrLen = 1511;
 		vrLoc = 703;
@@ -3601,7 +3795,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 69";
 		rLen = 0;
-		rLoc = 1717;
+		rLoc = 1727;
 		rType = 0;
 		vrLen = 1242;
 		vrLoc = 0;
@@ -3611,7 +3805,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 42";
 		rLen = 1;
-		rLoc = 915;
+		rLoc = 925;
 		rType = 0;
 		vrLen = 1239;
 		vrLoc = 141;
@@ -3621,7 +3815,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 16";
 		rLen = 0;
-		rLoc = 316;
+		rLoc = 326;
 		rType = 0;
 		vrLen = 1202;
 		vrLoc = 0;
@@ -3631,7 +3825,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 29";
 		rLen = 0;
-		rLoc = 772;
+		rLoc = 782;
 		rType = 0;
 		vrLen = 950;
 		vrLoc = 0;
@@ -3641,7 +3835,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 50";
 		rLen = 0;
-		rLoc = 1083;
+		rLoc = 1093;
 		rType = 0;
 		vrLen = 28917;
 		vrLoc = 5366;
@@ -3651,7 +3845,7 @@
 		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
 		name = "ComposeViewController.h: 34";
 		rLen = 0;
-		rLoc = 934;
+		rLoc = 944;
 		rType = 0;
 		vrLen = 1512;
 		vrLoc = 323;
@@ -3677,7 +3871,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 316";
 		rLen = 10;
-		rLoc = 6819;
+		rLoc = 6829;
 		rType = 0;
 		vrLen = 1362;
 		vrLoc = 6316;
@@ -3687,7 +3881,7 @@
 		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
 		name = "ComposeViewController.h: 34";
 		rLen = 0;
-		rLoc = 934;
+		rLoc = 944;
 		rType = 0;
 		vrLen = 1512;
 		vrLoc = 323;
@@ -3713,7 +3907,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 311";
 		rLen = 0;
-		rLoc = 7191;
+		rLoc = 7201;
 		rType = 0;
 		vrLen = 1219;
 		vrLoc = 6458;
@@ -3723,7 +3917,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 312";
 		rLen = 0;
-		rLoc = 7191;
+		rLoc = 7201;
 		rType = 0;
 		vrLen = 1255;
 		vrLoc = 6458;
@@ -3733,7 +3927,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 311";
 		rLen = 0;
-		rLoc = 7041;
+		rLoc = 7051;
 		rType = 0;
 		vrLen = 1117;
 		vrLoc = 6458;
@@ -3743,7 +3937,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 311";
 		rLen = 0;
-		rLoc = 7040;
+		rLoc = 7050;
 		rType = 0;
 		vrLen = 1143;
 		vrLoc = 6458;
@@ -3753,7 +3947,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 313";
 		rLen = 0;
-		rLoc = 7191;
+		rLoc = 7201;
 		rType = 0;
 		vrLen = 1200;
 		vrLoc = 6458;
@@ -3763,7 +3957,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 249";
 		rLen = 0;
-		rLoc = 5454;
+		rLoc = 5464;
 		rType = 0;
 		vrLen = 1071;
 		vrLoc = 5059;
@@ -3773,7 +3967,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 311";
 		rLen = 0;
-		rLoc = 6926;
+		rLoc = 6936;
 		rType = 0;
 		vrLen = 1328;
 		vrLoc = 6500;
@@ -3783,7 +3977,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 313";
 		rLen = 0;
-		rLoc = 7042;
+		rLoc = 7052;
 		rType = 0;
 		vrLen = 1277;
 		vrLoc = 6500;
@@ -3793,7 +3987,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 313";
 		rLen = 0;
-		rLoc = 7042;
+		rLoc = 7052;
 		rType = 0;
 		vrLen = 1277;
 		vrLoc = 6500;
@@ -3833,7 +4027,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 313";
 		rLen = 0;
-		rLoc = 7042;
+		rLoc = 7052;
 		rType = 0;
 		vrLen = 1277;
 		vrLoc = 6500;
@@ -3859,7 +4053,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 313";
 		rLen = 0;
-		rLoc = 7042;
+		rLoc = 7052;
 		rType = 0;
 		vrLen = 1365;
 		vrLoc = 7551;
@@ -3885,7 +4079,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 359";
 		rLen = 0;
-		rLoc = 8452;
+		rLoc = 8462;
 		rType = 0;
 		vrLen = 1320;
 		vrLoc = 9726;
@@ -3911,7 +4105,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 273";
 		rLen = 0;
-		rLoc = 6173;
+		rLoc = 6183;
 		rType = 0;
 		vrLen = 1167;
 		vrLoc = 5433;
@@ -3921,7 +4115,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 273";
 		rLen = 0;
-		rLoc = 6173;
+		rLoc = 6183;
 		rType = 0;
 		vrLen = 19722;
 		vrLoc = 15692;
@@ -3931,7 +4125,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 115";
 		rLen = 5;
-		rLoc = 3033;
+		rLoc = 3043;
 		rType = 0;
 		vrLen = 478;
 		vrLoc = 2419;
@@ -3941,7 +4135,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 272";
 		rLen = 0;
-		rLoc = 6173;
+		rLoc = 6183;
 		rType = 0;
 		vrLen = 1171;
 		vrLoc = 5303;
@@ -3951,7 +4145,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 272";
 		rLen = 0;
-		rLoc = 6173;
+		rLoc = 6183;
 		rType = 0;
 		vrLen = 1171;
 		vrLoc = 5303;
@@ -3961,7 +4155,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 272";
 		rLen = 0;
-		rLoc = 6173;
+		rLoc = 6183;
 		rType = 0;
 		vrLen = 1171;
 		vrLoc = 5303;
@@ -3971,7 +4165,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 26";
 		rLen = 0;
-		rLoc = 670;
+		rLoc = 680;
 		rType = 0;
 		vrLen = 1244;
 		vrLoc = 0;
@@ -3981,7 +4175,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 26";
 		rLen = 0;
-		rLoc = 670;
+		rLoc = 680;
 		rType = 0;
 		vrLen = 1244;
 		vrLoc = 0;
@@ -3991,7 +4185,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 26";
 		rLen = 0;
-		rLoc = 670;
+		rLoc = 680;
 		rType = 0;
 		vrLen = 1244;
 		vrLoc = 0;
@@ -4001,7 +4195,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 283";
 		rLen = 0;
-		rLoc = 6376;
+		rLoc = 6386;
 		rType = 0;
 		vrLen = 1326;
 		vrLoc = 6461;
@@ -4011,7 +4205,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 314";
 		rLen = 0;
-		rLoc = 7042;
+		rLoc = 7052;
 		rType = 0;
 		vrLen = 1432;
 		vrLoc = 6650;
@@ -4021,7 +4215,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 314";
 		rLen = 0;
-		rLoc = 7042;
+		rLoc = 7052;
 		rType = 0;
 		vrLen = 1352;
 		vrLoc = 6433;
@@ -4031,7 +4225,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 26";
 		rLen = 0;
-		rLoc = 670;
+		rLoc = 680;
 		rType = 0;
 		vrLen = 1242;
 		vrLoc = 0;
@@ -4041,7 +4235,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 315";
 		rLen = 0;
-		rLoc = 7162;
+		rLoc = 7172;
 		rType = 0;
 		vrLen = 4912;
 		vrLoc = 1417;
@@ -4051,7 +4245,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 29";
 		rLen = 0;
-		rLoc = 807;
+		rLoc = 817;
 		rType = 0;
 		vrLen = 1273;
 		vrLoc = 0;
@@ -4061,7 +4255,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 16";
 		rLen = 0;
-		rLoc = 314;
+		rLoc = 324;
 		rType = 0;
 		vrLen = 974;
 		vrLoc = 0;
@@ -4071,7 +4265,7 @@
 		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
 		name = "ComposeViewController.h: 34";
 		rLen = 0;
-		rLoc = 934;
+		rLoc = 944;
 		rType = 0;
 		vrLen = 1480;
 		vrLoc = 323;
@@ -4081,7 +4275,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 314";
 		rLen = 0;
-		rLoc = 7042;
+		rLoc = 7052;
 		rType = 0;
 		vrLen = 1358;
 		vrLoc = 6433;
@@ -4091,7 +4285,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 26";
 		rLen = 0;
-		rLoc = 670;
+		rLoc = 680;
 		rType = 0;
 		vrLen = 1242;
 		vrLoc = 0;
@@ -4101,7 +4295,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 29";
 		rLen = 0;
-		rLoc = 772;
+		rLoc = 782;
 		rType = 0;
 		vrLen = 993;
 		vrLoc = 0;
@@ -4111,7 +4305,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 16";
 		rLen = 0;
-		rLoc = 316;
+		rLoc = 326;
 		rType = 0;
 		vrLen = 1202;
 		vrLoc = 0;
@@ -4121,7 +4315,7 @@
 		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
 		name = "ComposeViewController.h: 34";
 		rLen = 0;
-		rLoc = 934;
+		rLoc = 944;
 		rType = 0;
 		vrLen = 1480;
 		vrLoc = 323;
@@ -4131,7 +4325,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 315";
 		rLen = 0;
-		rLoc = 7162;
+		rLoc = 7172;
 		rType = 0;
 		vrLen = 4912;
 		vrLoc = 1417;
@@ -4141,7 +4335,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 24";
 		rLen = 0;
-		rLoc = 612;
+		rLoc = 622;
 		rType = 0;
 		vrLen = 993;
 		vrLoc = 0;
@@ -4151,7 +4345,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 29";
 		rLen = 0;
-		rLoc = 807;
+		rLoc = 817;
 		rType = 0;
 		vrLen = 1273;
 		vrLoc = 0;
@@ -4161,7 +4355,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 16";
 		rLen = 0;
-		rLoc = 314;
+		rLoc = 324;
 		rType = 0;
 		vrLen = 974;
 		vrLoc = 0;
@@ -4171,7 +4365,7 @@
 		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
 		name = "ComposeViewController.h: 34";
 		rLen = 0;
-		rLoc = 934;
+		rLoc = 944;
 		rType = 0;
 		vrLen = 1293;
 		vrLoc = 323;
@@ -4189,7 +4383,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 25";
 		rLen = 62;
-		rLoc = 551;
+		rLoc = 561;
 		rType = 0;
 		vrLen = 508;
 		vrLoc = 293;
@@ -4207,7 +4401,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 25";
 		rLen = 62;
-		rLoc = 551;
+		rLoc = 561;
 		rType = 0;
 		vrLen = 511;
 		vrLoc = 293;
@@ -4217,7 +4411,7 @@
 		fRef = 3E556350114ED77F0089B12F /* CrescendoAppDelegate.h */;
 		name = "CrescendoAppDelegate.h: 11";
 		rLen = 0;
-		rLoc = 205;
+		rLoc = 215;
 		rType = 0;
 		vrLen = 626;
 		vrLoc = 0;
@@ -4227,7 +4421,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 26";
 		rLen = 0;
-		rLoc = 670;
+		rLoc = 680;
 		rType = 0;
 		vrLen = 945;
 		vrLoc = 688;
@@ -4257,7 +4451,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 29";
 		rLen = 0;
-		rLoc = 798;
+		rLoc = 808;
 		rType = 0;
 		vrLen = 1225;
 		vrLoc = 47;
@@ -4267,7 +4461,7 @@
 		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
 		name = "ComposeViewController.h: 33";
 		rLen = 0;
-		rLoc = 745;
+		rLoc = 755;
 		rType = 0;
 		vrLen = 1308;
 		vrLoc = 169;
@@ -4277,7 +4471,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 254";
 		rLen = 0;
-		rLoc = 5601;
+		rLoc = 5611;
 		rType = 0;
 		vrLen = 4777;
 		vrLoc = 1397;
@@ -4287,7 +4481,7 @@
 		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
 		name = "ComposeViewController.h: 34";
 		rLen = 0;
-		rLoc = 934;
+		rLoc = 944;
 		rType = 0;
 		vrLen = 1293;
 		vrLoc = 323;
@@ -4297,7 +4491,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 29";
 		rLen = 0;
-		rLoc = 807;
+		rLoc = 817;
 		rType = 0;
 		vrLen = 1235;
 		vrLoc = 0;
@@ -4307,7 +4501,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 16";
 		rLen = 0;
-		rLoc = 314;
+		rLoc = 324;
 		rType = 0;
 		vrLen = 842;
 		vrLoc = 0;
@@ -4317,7 +4511,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 29";
 		rLen = 0;
-		rLoc = 798;
+		rLoc = 808;
 		rType = 0;
 		vrLen = 1233;
 		vrLoc = 0;
@@ -4327,7 +4521,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 25";
 		rLen = 0;
-		rLoc = 612;
+		rLoc = 622;
 		rType = 0;
 		vrLen = 879;
 		vrLoc = 0;
@@ -4347,7 +4541,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 29";
 		rLen = 0;
-		rLoc = 798;
+		rLoc = 808;
 		rType = 0;
 		vrLen = 1187;
 		vrLoc = 84;
@@ -4357,7 +4551,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 32";
 		rLen = 0;
-		rLoc = 772;
+		rLoc = 782;
 		rType = 0;
 		vrLen = 1035;
 		vrLoc = 272;
@@ -4367,7 +4561,7 @@
 		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
 		name = "ComposeViewController.h: 33";
 		rLen = 0;
-		rLoc = 754;
+		rLoc = 764;
 		rType = 0;
 		vrLen = 1374;
 		vrLoc = 169;
@@ -4377,7 +4571,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 254";
 		rLen = 0;
-		rLoc = 5585;
+		rLoc = 5595;
 		rType = 0;
 		vrLen = 4740;
 		vrLoc = 1397;
@@ -4387,7 +4581,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 32";
 		rLen = 0;
-		rLoc = 772;
+		rLoc = 782;
 		rType = 0;
 		vrLen = 959;
 		vrLoc = 272;
@@ -4397,7 +4591,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 26";
 		rLen = 0;
-		rLoc = 670;
+		rLoc = 680;
 		rType = 0;
 		vrLen = 864;
 		vrLoc = 0;
@@ -4407,7 +4601,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 29";
 		rLen = 0;
-		rLoc = 798;
+		rLoc = 808;
 		rType = 0;
 		vrLen = 1224;
 		vrLoc = 47;
@@ -4417,7 +4611,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 26";
 		rLen = 0;
-		rLoc = 670;
+		rLoc = 680;
 		rType = 0;
 		vrLen = 864;
 		vrLoc = 0;
@@ -4427,7 +4621,7 @@
 		fRef = 3E556350114ED77F0089B12F /* CrescendoAppDelegate.h */;
 		name = "CrescendoAppDelegate.h: 11";
 		rLen = 0;
-		rLoc = 205;
+		rLoc = 215;
 		rType = 0;
 		vrLen = 626;
 		vrLoc = 0;
@@ -4437,7 +4631,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 26";
 		rLen = 0;
-		rLoc = 670;
+		rLoc = 680;
 		rType = 0;
 		vrLen = 864;
 		vrLoc = 0;
@@ -4447,7 +4641,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 29";
 		rLen = 0;
-		rLoc = 798;
+		rLoc = 808;
 		rType = 0;
 		vrLen = 1187;
 		vrLoc = 84;
@@ -4457,7 +4651,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 26";
 		rLen = 0;
-		rLoc = 670;
+		rLoc = 680;
 		rType = 0;
 		vrLen = 864;
 		vrLoc = 0;
@@ -4467,7 +4661,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 21";
 		rLen = 0;
-		rLoc = 474;
+		rLoc = 484;
 		rType = 0;
 		vrLen = 1221;
 		vrLoc = 50;
@@ -4497,7 +4691,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 21";
 		rLen = 0;
-		rLoc = 474;
+		rLoc = 484;
 		rType = 0;
 		vrLen = 1224;
 		vrLoc = 47;
@@ -4507,7 +4701,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 32";
 		rLen = 0;
-		rLoc = 772;
+		rLoc = 782;
 		rType = 0;
 		vrLen = 916;
 		vrLoc = 315;
@@ -4517,7 +4711,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 26";
 		rLen = 0;
-		rLoc = 670;
+		rLoc = 680;
 		rType = 0;
 		vrLen = 1065;
 		vrLoc = 47;
@@ -4547,7 +4741,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 254";
 		rLen = 0;
-		rLoc = 5585;
+		rLoc = 5595;
 		rType = 0;
 		vrLen = 4657;
 		vrLoc = 1397;
@@ -4557,7 +4751,7 @@
 		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
 		name = "ComposeViewController.h: 33";
 		rLen = 0;
-		rLoc = 754;
+		rLoc = 764;
 		rType = 0;
 		vrLen = 1306;
 		vrLoc = 169;
@@ -4567,7 +4761,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 21";
 		rLen = 0;
-		rLoc = 474;
+		rLoc = 484;
 		rType = 0;
 		vrLen = 1223;
 		vrLoc = 47;
@@ -4577,7 +4771,7 @@
 		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
 		name = "ComposeViewController.h: 33";
 		rLen = 0;
-		rLoc = 754;
+		rLoc = 764;
 		rType = 0;
 		vrLen = 1306;
 		vrLoc = 169;
@@ -4587,7 +4781,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 21";
 		rLen = 0;
-		rLoc = 474;
+		rLoc = 484;
 		rType = 0;
 		vrLen = 1223;
 		vrLoc = 47;
@@ -4597,7 +4791,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 26";
 		rLen = 0;
-		rLoc = 670;
+		rLoc = 680;
 		rType = 0;
 		vrLen = 945;
 		vrLoc = 688;
@@ -4607,7 +4801,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 21";
 		rLen = 0;
-		rLoc = 474;
+		rLoc = 484;
 		rType = 0;
 		vrLen = 1223;
 		vrLoc = 47;
@@ -4617,7 +4811,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 32";
 		rLen = 0;
-		rLoc = 772;
+		rLoc = 782;
 		rType = 0;
 		vrLen = 834;
 		vrLoc = 147;
@@ -4667,7 +4861,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 21";
 		rLen = 0;
-		rLoc = 474;
+		rLoc = 484;
 		rType = 0;
 		vrLen = 1223;
 		vrLoc = 47;
@@ -4677,7 +4871,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 32";
 		rLen = 0;
-		rLoc = 772;
+		rLoc = 782;
 		rType = 0;
 		vrLen = 833;
 		vrLoc = 147;
@@ -4687,7 +4881,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 21";
 		rLen = 0;
-		rLoc = 474;
+		rLoc = 484;
 		rType = 0;
 		vrLen = 1223;
 		vrLoc = 47;
@@ -4697,7 +4891,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 32";
 		rLen = 0;
-		rLoc = 772;
+		rLoc = 782;
 		rType = 0;
 		vrLen = 798;
 		vrLoc = 183;
@@ -4727,7 +4921,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 29";
 		rLen = 0;
-		rLoc = 798;
+		rLoc = 808;
 		rType = 0;
 		vrLen = 1225;
 		vrLoc = 47;
@@ -4737,7 +4931,7 @@
 		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
 		name = "ComposeViewController.h: 33";
 		rLen = 0;
-		rLoc = 745;
+		rLoc = 755;
 		rType = 0;
 		vrLen = 1308;
 		vrLoc = 169;
@@ -4747,7 +4941,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 254";
 		rLen = 0;
-		rLoc = 5585;
+		rLoc = 5595;
 		rType = 0;
 		vrLen = 4657;
 		vrLoc = 1397;
@@ -4757,7 +4951,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 25";
 		rLen = 0;
-		rLoc = 611;
+		rLoc = 621;
 		rType = 0;
 		vrLen = 947;
 		vrLoc = 272;
@@ -4767,7 +4961,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 254";
 		rLen = 0;
-		rLoc = 5601;
+		rLoc = 5611;
 		rType = 0;
 		vrLen = 4777;
 		vrLoc = 1397;
@@ -4777,7 +4971,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 25";
 		rLen = 0;
-		rLoc = 610;
+		rLoc = 620;
 		rType = 0;
 		vrLen = 807;
 		vrLoc = 272;
@@ -4847,7 +5041,7 @@
 		fRef = 3E556350114ED77F0089B12F /* CrescendoAppDelegate.h */;
 		name = "CrescendoAppDelegate.h: 11";
 		rLen = 0;
-		rLoc = 205;
+		rLoc = 215;
 		rType = 0;
 		vrLen = 626;
 		vrLoc = 0;
@@ -4857,7 +5051,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 38";
 		rLen = 0;
-		rLoc = 1090;
+		rLoc = 1100;
 		rType = 0;
 		vrLen = 1003;
 		vrLoc = 0;
@@ -4867,7 +5061,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 29";
 		rLen = 0;
-		rLoc = 786;
+		rLoc = 796;
 		rType = 0;
 		vrLen = 1189;
 		vrLoc = 84;
@@ -4877,7 +5071,7 @@
 		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
 		name = "ComposeViewController.h: 51";
 		rLen = 0;
-		rLoc = 1649;
+		rLoc = 1659;
 		rType = 0;
 		vrLen = 1123;
 		vrLoc = 141;
@@ -4887,7 +5081,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 16";
 		rLen = 0;
-		rLoc = 266;
+		rLoc = 276;
 		rType = 0;
 		vrLen = 751;
 		vrLoc = 0;
@@ -4904,7 +5098,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 25";
 		rLen = 0;
-		rLoc = 610;
+		rLoc = 620;
 		rType = 0;
 		vrLen = 982;
 		vrLoc = 272;
@@ -4914,7 +5108,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 26";
 		rLen = 0;
-		rLoc = 670;
+		rLoc = 680;
 		rType = 0;
 		vrLen = 1110;
 		vrLoc = 0;
@@ -4924,7 +5118,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 25";
 		rLen = 0;
-		rLoc = 610;
+		rLoc = 620;
 		rType = 0;
 		vrLen = 982;
 		vrLoc = 272;
@@ -4934,7 +5128,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 29";
 		rLen = 0;
-		rLoc = 798;
+		rLoc = 808;
 		rType = 0;
 		vrLen = 1225;
 		vrLoc = 47;
@@ -4944,7 +5138,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 25";
 		rLen = 0;
-		rLoc = 610;
+		rLoc = 620;
 		rType = 0;
 		vrLen = 1120;
 		vrLoc = 386;
@@ -4954,7 +5148,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 26";
 		rLen = 0;
-		rLoc = 670;
+		rLoc = 680;
 		rType = 0;
 		vrLen = 1116;
 		vrLoc = 321;
@@ -4964,7 +5158,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 29";
 		rLen = 0;
-		rLoc = 798;
+		rLoc = 808;
 		rType = 0;
 		vrLen = 1225;
 		vrLoc = 47;
@@ -4974,7 +5168,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 25";
 		rLen = 0;
-		rLoc = 610;
+		rLoc = 620;
 		rType = 0;
 		vrLen = 890;
 		vrLoc = 146;
@@ -4984,7 +5178,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 29";
 		rLen = 0;
-		rLoc = 798;
+		rLoc = 808;
 		rType = 0;
 		vrLen = 1225;
 		vrLoc = 47;
@@ -4994,7 +5188,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 26";
 		rLen = 0;
-		rLoc = 670;
+		rLoc = 680;
 		rType = 0;
 		vrLen = 1161;
 		vrLoc = 81;
@@ -5014,7 +5208,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 36";
 		rLen = 0;
-		rLoc = 977;
+		rLoc = 987;
 		rType = 0;
 		vrLen = 1147;
 		vrLoc = 177;
@@ -5024,7 +5218,7 @@
 		fRef = 3E556350114ED77F0089B12F /* CrescendoAppDelegate.h */;
 		name = "CrescendoAppDelegate.h: 11";
 		rLen = 0;
-		rLoc = 205;
+		rLoc = 215;
 		rType = 0;
 		vrLen = 626;
 		vrLoc = 0;
@@ -5034,7 +5228,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 38";
 		rLen = 0;
-		rLoc = 1090;
+		rLoc = 1100;
 		rType = 0;
 		vrLen = 1137;
 		vrLoc = 177;
@@ -5044,7 +5238,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 25";
 		rLen = 0;
-		rLoc = 610;
+		rLoc = 620;
 		rType = 0;
 		vrLen = 858;
 		vrLoc = 146;
@@ -5054,7 +5248,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 38";
 		rLen = 0;
-		rLoc = 1090;
+		rLoc = 1100;
 		rType = 0;
 		vrLen = 998;
 		vrLoc = 0;
@@ -5114,7 +5308,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 38";
 		rLen = 0;
-		rLoc = 1090;
+		rLoc = 1100;
 		rType = 0;
 		vrLen = 709;
 		vrLoc = 1282;
@@ -5124,7 +5318,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 29";
 		rLen = 0;
-		rLoc = 798;
+		rLoc = 808;
 		rType = 0;
 		vrLen = 1220;
 		vrLoc = 47;
@@ -5134,7 +5328,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 25";
 		rLen = 0;
-		rLoc = 610;
+		rLoc = 620;
 		rType = 0;
 		vrLen = 889;
 		vrLoc = 147;
@@ -5144,7 +5338,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 29";
 		rLen = 0;
-		rLoc = 798;
+		rLoc = 808;
 		rType = 0;
 		vrLen = 1220;
 		vrLoc = 47;
@@ -5154,7 +5348,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 25";
 		rLen = 0;
-		rLoc = 610;
+		rLoc = 620;
 		rType = 0;
 		vrLen = 1131;
 		vrLoc = 722;
@@ -5174,7 +5368,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 24";
 		rLen = 0;
-		rLoc = 518;
+		rLoc = 528;
 		rType = 0;
 		vrLen = 983;
 		vrLoc = 273;
@@ -5194,7 +5388,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 32";
 		rLen = 0;
-		rLoc = 772;
+		rLoc = 782;
 		rType = 0;
 		vrLen = 1108;
 		vrLoc = 350;
@@ -5204,7 +5398,7 @@
 		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
 		name = "ComposeViewController.h: 33";
 		rLen = 0;
-		rLoc = 733;
+		rLoc = 743;
 		rType = 0;
 		vrLen = 1309;
 		vrLoc = 169;
@@ -5214,7 +5408,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 32";
 		rLen = 0;
-		rLoc = 772;
+		rLoc = 782;
 		rType = 0;
 		vrLen = 1166;
 		vrLoc = 315;
@@ -5224,7 +5418,7 @@
 		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
 		name = "ComposeViewController.h: 33";
 		rLen = 0;
-		rLoc = 733;
+		rLoc = 743;
 		rType = 0;
 		vrLen = 1309;
 		vrLoc = 169;
@@ -5234,7 +5428,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 32";
 		rLen = 0;
-		rLoc = 771;
+		rLoc = 781;
 		rType = 0;
 		vrLen = 1172;
 		vrLoc = 315;
@@ -5244,7 +5438,7 @@
 		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
 		name = "ComposeViewController.h: 33";
 		rLen = 0;
-		rLoc = 733;
+		rLoc = 743;
 		rType = 0;
 		vrLen = 1309;
 		vrLoc = 169;
@@ -5254,7 +5448,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 254";
 		rLen = 0;
-		rLoc = 5601;
+		rLoc = 5611;
 		rType = 0;
 		vrLen = 1083;
 		vrLoc = 35066;
@@ -5264,7 +5458,7 @@
 		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
 		name = "ComposeViewController.h: 51";
 		rLen = 0;
-		rLoc = 1649;
+		rLoc = 1659;
 		rType = 0;
 		vrLen = 1369;
 		vrLoc = 551;
@@ -5274,7 +5468,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 254";
 		rLen = 0;
-		rLoc = 5601;
+		rLoc = 5611;
 		rType = 0;
 		vrLen = 29110;
 		vrLoc = 5959;
@@ -5284,7 +5478,7 @@
 		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
 		name = "ComposeViewController.h: 51";
 		rLen = 0;
-		rLoc = 1649;
+		rLoc = 1659;
 		rType = 0;
 		vrLen = 1386;
 		vrLoc = 225;
@@ -5294,7 +5488,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 32";
 		rLen = 0;
-		rLoc = 771;
+		rLoc = 781;
 		rType = 0;
 		vrLen = 1172;
 		vrLoc = 315;
@@ -5304,7 +5498,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 29";
 		rLen = 0;
-		rLoc = 798;
+		rLoc = 808;
 		rType = 0;
 		vrLen = 1234;
 		vrLoc = 33;
@@ -5314,7 +5508,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 32";
 		rLen = 0;
-		rLoc = 771;
+		rLoc = 781;
 		rType = 0;
 		vrLen = 908;
 		vrLoc = 0;
@@ -5324,7 +5518,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 15";
 		rLen = 0;
-		rLoc = 246;
+		rLoc = 256;
 		rType = 0;
 		vrLen = 751;
 		vrLoc = 0;
@@ -5334,7 +5528,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 32";
 		rLen = 0;
-		rLoc = 724;
+		rLoc = 734;
 		rType = 0;
 		vrLen = 908;
 		vrLoc = 0;
@@ -5344,7 +5538,7 @@
 		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
 		name = "ComposeViewController.h: 51";
 		rLen = 0;
-		rLoc = 1649;
+		rLoc = 1659;
 		rType = 0;
 		vrLen = 1384;
 		vrLoc = 226;
@@ -5354,7 +5548,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 32";
 		rLen = 0;
-		rLoc = 724;
+		rLoc = 734;
 		rType = 0;
 		vrLen = 980;
 		vrLoc = 0;
@@ -5364,7 +5558,7 @@
 		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
 		name = "ComposeViewController.h: 51";
 		rLen = 0;
-		rLoc = 1649;
+		rLoc = 1659;
 		rType = 0;
 		vrLen = 1386;
 		vrLoc = 225;
@@ -5374,7 +5568,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 29";
 		rLen = 0;
-		rLoc = 798;
+		rLoc = 808;
 		rType = 0;
 		vrLen = 1239;
 		vrLoc = 33;
@@ -5384,7 +5578,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 32";
 		rLen = 0;
-		rLoc = 724;
+		rLoc = 734;
 		rType = 0;
 		vrLen = 980;
 		vrLoc = 0;
@@ -5394,7 +5588,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 15";
 		rLen = 0;
-		rLoc = 246;
+		rLoc = 256;
 		rType = 0;
 		vrLen = 798;
 		vrLoc = 0;
@@ -5404,7 +5598,7 @@
 		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
 		name = "ComposeViewController.h: 51";
 		rLen = 0;
-		rLoc = 1649;
+		rLoc = 1659;
 		rType = 0;
 		vrLen = 1370;
 		vrLoc = 549;
@@ -5414,7 +5608,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 15";
 		rLen = 0;
-		rLoc = 246;
+		rLoc = 256;
 		rType = 0;
 		vrLen = 798;
 		vrLoc = 0;
@@ -5424,7 +5618,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 32";
 		rLen = 0;
-		rLoc = 724;
+		rLoc = 734;
 		rType = 0;
 		vrLen = 980;
 		vrLoc = 0;
@@ -5434,7 +5628,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 29";
 		rLen = 0;
-		rLoc = 798;
+		rLoc = 808;
 		rType = 0;
 		vrLen = 1226;
 		vrLoc = 47;
@@ -5444,7 +5638,7 @@
 		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
 		name = "ComposeViewController.h: 51";
 		rLen = 0;
-		rLoc = 1649;
+		rLoc = 1659;
 		rType = 0;
 		vrLen = 1356;
 		vrLoc = 344;
@@ -5454,7 +5648,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 32";
 		rLen = 0;
-		rLoc = 771;
+		rLoc = 781;
 		rType = 0;
 		vrLen = 907;
 		vrLoc = 146;
@@ -5464,7 +5658,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 15";
 		rLen = 0;
-		rLoc = 246;
+		rLoc = 256;
 		rType = 0;
 		vrLen = 751;
 		vrLoc = 0;
@@ -5474,7 +5668,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 32";
 		rLen = 0;
-		rLoc = 724;
+		rLoc = 734;
 		rType = 0;
 		vrLen = 907;
 		vrLoc = 146;
@@ -5484,7 +5678,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 16";
 		rLen = 0;
-		rLoc = 266;
+		rLoc = 276;
 		rType = 0;
 		vrLen = 751;
 		vrLoc = 0;
@@ -5494,7 +5688,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 31";
 		rLen = 0;
-		rLoc = 679;
+		rLoc = 689;
 		rType = 0;
 		vrLen = 879;
 		vrLoc = 0;
@@ -5504,7 +5698,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 15";
 		rLen = 0;
-		rLoc = 246;
+		rLoc = 256;
 		rType = 0;
 		vrLen = 751;
 		vrLoc = 0;
@@ -5514,7 +5708,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 32";
 		rLen = 0;
-		rLoc = 724;
+		rLoc = 734;
 		rType = 0;
 		vrLen = 879;
 		vrLoc = 0;
@@ -5524,7 +5718,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 16";
 		rLen = 0;
-		rLoc = 266;
+		rLoc = 276;
 		rType = 0;
 		vrLen = 798;
 		vrLoc = 0;
@@ -5534,7 +5728,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 29";
 		rLen = 0;
-		rLoc = 798;
+		rLoc = 808;
 		rType = 0;
 		vrLen = 1225;
 		vrLoc = 47;
@@ -5544,7 +5738,7 @@
 		fRef = 3E556350114ED77F0089B12F /* CrescendoAppDelegate.h */;
 		name = "CrescendoAppDelegate.h: 11";
 		rLen = 0;
-		rLoc = 205;
+		rLoc = 215;
 		rType = 0;
 		vrLen = 626;
 		vrLoc = 0;
@@ -5554,7 +5748,7 @@
 		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 38";
 		rLen = 0;
-		rLoc = 1090;
+		rLoc = 1100;
 		rType = 0;
 		vrLen = 1003;
 		vrLoc = 0;
@@ -5564,7 +5758,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 29";
 		rLen = 0;
-		rLoc = 798;
+		rLoc = 808;
 		rType = 0;
 		vrLen = 1189;
 		vrLoc = 84;
@@ -5574,7 +5768,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 32";
 		rLen = 0;
-		rLoc = 724;
+		rLoc = 734;
 		rType = 0;
 		vrLen = 1166;
 		vrLoc = 315;
@@ -5584,7 +5778,7 @@
 		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
 		name = "ComposeViewController.h: 51";
 		rLen = 0;
-		rLoc = 1649;
+		rLoc = 1659;
 		rType = 0;
 		vrLen = 1321;
 		vrLoc = 379;
@@ -5594,7 +5788,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 43";
 		rLen = 0;
-		rLoc = 888;
+		rLoc = 898;
 		rType = 0;
 		vrLen = 893;
 		vrLoc = 522;
@@ -5604,7 +5798,7 @@
 		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
 		name = "ComposeViewController.h: 51";
 		rLen = 0;
-		rLoc = 1649;
+		rLoc = 1659;
 		rType = 0;
 		vrLen = 1178;
 		vrLoc = 144;
@@ -5614,7 +5808,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 29";
 		rLen = 0;
-		rLoc = 786;
+		rLoc = 796;
 		rType = 0;
 		vrLen = 1189;
 		vrLoc = 84;
@@ -5624,7 +5818,7 @@
 		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
 		name = "ComposeViewController.h: 51";
 		rLen = 0;
-		rLoc = 1649;
+		rLoc = 1659;
 		rType = 0;
 		vrLen = 1123;
 		vrLoc = 141;
@@ -5634,7 +5828,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 31";
 		rLen = 0;
-		rLoc = 679;
+		rLoc = 689;
 		rType = 0;
 		vrLen = 879;
 		vrLoc = 0;
@@ -5644,7 +5838,7 @@
 		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 16";
 		rLen = 0;
-		rLoc = 266;
+		rLoc = 276;
 		rType = 0;
 		vrLen = 751;
 		vrLoc = 0;
@@ -5654,9 +5848,1989 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 33";
 		rLen = 0;
-		rLoc = 773;
+		rLoc = 783;
 		rType = 0;
 		vrLen = 951;
+		vrLoc = 0;
+	};
+	3E1A5B121169A90700D80702 /* ConnectionRequest.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1523, 514}}";
+			sepNavSelRange = "{146, 0}";
+			sepNavVisRange = "{0, 349}";
+		};
+	};
+	3E1A5B131169A90700D80702 /* ConnectionRequest.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1523, 514}}";
+			sepNavSelRange = "{146, 0}";
+			sepNavVisRange = "{0, 297}";
+		};
+	};
+	3E1A5B151169AA6B00D80702 /* ConnectionUpdate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1523, 514}}";
+			sepNavSelRange = "{43, 102}";
+			sepNavVisRange = "{0, 518}";
+		};
+	};
+	3E1A5B161169AA6B00D80702 /* ConnectionUpdate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {690, 574}}";
+			sepNavSelRange = "{343, 0}";
+			sepNavVisRange = "{149, 280}";
+		};
+	};
+	3E1A5B181169AAC900D80702 /* ConnectionUpdateDelegate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1523, 514}}";
+			sepNavSelRange = "{153, 0}";
+			sepNavVisRange = "{0, 378}";
+		};
+	};
+	3E1A5B191169AAC900D80702 /* ConnectionUpdateDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1523, 514}}";
+			sepNavSelRange = "{195, 0}";
+			sepNavVisRange = "{0, 273}";
+		};
+	};
+	3E1A5B1E1169ACA800D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
+		name = "CrescendoViewController.m: 25";
+		rLen = 0;
+		rLoc = 620;
+		rType = 0;
+		vrLen = 612;
+		vrLoc = 242;
+	};
+	3E1A5B1F1169ACA800D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "error: 'ServerUpdate' undeclared (first use in this function)";
+		fRef = 3E1A5B161169AA6B00D80702 /* ConnectionUpdate.m */;
+		rLen = 1;
+		rLoc = 18;
+		rType = 1;
+	};
+	3E1A5B201169ACA800D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
+		name = "CrescendoViewController.m: 25";
+		rLen = 0;
+		rLoc = 620;
+		rType = 0;
+		vrLen = 612;
+		vrLoc = 242;
+	};
+	3E1A5B211169ACA800D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B161169AA6B00D80702 /* ConnectionUpdate.m */;
+		name = "ConnectionUpdate.m: 19";
+		rLen = 0;
+		rLoc = 343;
+		rType = 0;
+		vrLen = 280;
+		vrLoc = 149;
+	};
+	3E1A5B231169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556420114EDE750089B12F /* RequestMessage.m */;
+		name = "RequestMessage.m: 12";
+		rLen = 31;
+		rLoc = 175;
+		rType = 0;
+		vrLen = 321;
+		vrLoc = 0;
+	};
+	3E1A5B241169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556368114ED8E40089B12F /* ServerRequest.m */;
+		name = "ServerRequest.m: 15";
+		rLen = 0;
+		rLoc = 270;
+		rType = 0;
+		vrLen = 278;
+		vrLoc = 0;
+	};
+	3E1A5B251169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556367114ED8E40089B12F /* ServerRequest.h */;
+		name = "ServerRequest.h: 7";
+		rLen = 26;
+		rLoc = 176;
+		rType = 0;
+		vrLen = 337;
+		vrLoc = 0;
+	};
+	3E1A5B261169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556362114ED8CF0089B12F /* ServerUpdate.h */;
+		name = "ServerUpdate.h: 7";
+		rLen = 25;
+		rLoc = 176;
+		rType = 0;
+		vrLen = 508;
+		vrLoc = 0;
+	};
+	3E1A5B271169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556363114ED8CF0089B12F /* ServerUpdate.m */;
+		name = "ServerUpdate.m: 11";
+		rLen = 619;
+		rLoc = 231;
+		rType = 0;
+		vrLen = 857;
+		vrLoc = 0;
+	};
+	3E1A5B281169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556391114EDBA70089B12F /* ServerUpdateDelegate.h */;
+		name = "ServerUpdateDelegate.h: 10";
+		rLen = 165;
+		rLoc = 205;
+		rType = 0;
+		vrLen = 371;
+		vrLoc = 0;
+	};
+	3E1A5B291169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B131169A90700D80702 /* ConnectionRequest.m */;
+		name = "ConnectionRequest.m: 6";
+		rLen = 0;
+		rLoc = 146;
+		rType = 0;
+		vrLen = 297;
+		vrLoc = 0;
+	};
+	3E1A5B2A1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B151169AA6B00D80702 /* ConnectionUpdate.h */;
+		name = "ConnectionUpdate.h: 5";
+		rLen = 102;
+		rLoc = 43;
+		rType = 0;
+		vrLen = 518;
+		vrLoc = 0;
+	};
+	3E1A5B2B1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B161169AA6B00D80702 /* ConnectionUpdate.m */;
+		name = "ConnectionUpdate.m: 6";
+		rLen = 0;
+		rLoc = 145;
+		rType = 0;
+		vrLen = 875;
+		vrLoc = 0;
+	};
+	3E1A5B2C1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B181169AAC900D80702 /* ConnectionUpdateDelegate.h */;
+		name = "ConnectionUpdateDelegate.h: 6";
+		rLen = 0;
+		rLoc = 153;
+		rType = 0;
+		vrLen = 378;
+		vrLoc = 0;
+	};
+	3E1A5B2D1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E55635F114ED8CF0089B12F /* ServerTranslations.h */;
+		name = "ServerTranslations.h: 12";
+		rLen = 0;
+		rLoc = 262;
+		rType = 0;
+		vrLen = 316;
+		vrLoc = 0;
+	};
+	3E1A5B2E1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556360114ED8CF0089B12F /* ServerTranslations.m */;
+		name = "ServerTranslations.m: 9";
+		rLen = 0;
+		rLoc = 184;
+		rType = 0;
+		vrLen = 707;
+		vrLoc = 0;
+	};
+	3E1A5B2F1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556361114ED8CF0089B12F /* ServerTranslations.xml */;
+		name = "ServerTranslations.xml: 17";
+		rLen = 0;
+		rLoc = 2468;
+		rType = 0;
+		vrLen = 1472;
+		vrLoc = 0;
+	};
+	3E1A5B301169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B191169AAC900D80702 /* ConnectionUpdateDelegate.m */;
+		name = "ConnectionUpdateDelegate.m: 10";
+		rLen = 0;
+		rLoc = 195;
+		rType = 0;
+		vrLen = 273;
+		vrLoc = 0;
+	};
+	3E1A5B311169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B121169A90700D80702 /* ConnectionRequest.h */;
+		name = "ConnectionRequest.h: 6";
+		rLen = 0;
+		rLoc = 146;
+		rType = 0;
+		vrLen = 349;
+		vrLoc = 0;
+	};
+	3E1A5B321169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556392114EDBA70089B12F /* ServerUpdateDelegate.m */;
+		name = "ServerUpdateDelegate.m: 6";
+		rLen = 57;
+		rLoc = 109;
+		rType = 0;
+		vrLen = 274;
+		vrLoc = 0;
+	};
+	3E1A5B331169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E55634D114ED6F70089B12F /* TrainingViewController.m */;
+		name = "TrainingViewController.m: 6";
+		rLen = 0;
+		rLoc = 151;
+		rType = 0;
+		vrLen = 913;
+		vrLoc = 0;
+	};
+	3E1A5B341169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E55634C114ED6F70089B12F /* TrainingViewController.h */;
+		name = "TrainingViewController.h: 6";
+		rLen = 0;
+		rLoc = 151;
+		rType = 0;
+		vrLen = 268;
+		vrLoc = 0;
+	};
+	3E1A5B351169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556356114ED7CA0089B12F /* HelpViewController.m */;
+		name = "HelpViewController.m: 6";
+		rLen = 0;
+		rLoc = 147;
+		rType = 0;
+		vrLen = 868;
+		vrLoc = 0;
+	};
+	3E1A5B361169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556355114ED7C90089B12F /* HelpViewController.h */;
+		name = "HelpViewController.h: 6";
+		rLen = 0;
+		rLoc = 147;
+		rType = 0;
+		vrLen = 260;
+		vrLoc = 0;
+	};
+	3E1A5B371169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556353114ED7B00089B12F /* GamemodeViewController.m */;
+		name = "GamemodeViewController.m: 6";
+		rLen = 0;
+		rLoc = 151;
+		rType = 0;
+		vrLen = 880;
+		vrLoc = 0;
+	};
+	3E1A5B381169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556352114ED7B00089B12F /* GamemodeViewController.h */;
+		name = "GamemodeViewController.h: 6";
+		rLen = 0;
+		rLoc = 151;
+		rType = 0;
+		vrLen = 268;
+		vrLoc = 0;
+	};
+	3E1A5B391169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
+		name = "ComposeViewController.m: 6";
+		rLen = 0;
+		rLoc = 150;
+		rType = 0;
+		vrLen = 808;
+		vrLoc = 0;
+	};
+	3E1A5B3A1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
+		name = "ComposeViewController.h: 6";
+		rLen = 0;
+		rLoc = 150;
+		rType = 0;
+		vrLen = 1005;
+		vrLoc = 0;
+	};
+	3E1A5B3B1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
+		name = "CrescendoViewController.m: 6";
+		rLen = 0;
+		rLoc = 152;
+		rType = 0;
+		vrLen = 961;
+		vrLoc = 0;
+	};
+	3E1A5B3C1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
+		name = "CrescendoViewController.h: 6";
+		rLen = 0;
+		rLoc = 152;
+		rType = 0;
+		vrLen = 1245;
+		vrLoc = 0;
+	};
+	3E1A5B3D1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
+		name = "CrescendoAppDelegate.m: 6";
+		rLen = 0;
+		rLoc = 149;
+		rType = 0;
+		vrLen = 1013;
+		vrLoc = 0;
+	};
+	3E1A5B3E1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556350114ED77F0089B12F /* CrescendoAppDelegate.h */;
+		name = "CrescendoAppDelegate.h: 11";
+		rLen = 0;
+		rLoc = 215;
+		rType = 0;
+		vrLen = 626;
+		vrLoc = 0;
+	};
+	3E1A5B3F1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
+		name = "CrescendoViewController.m: 33";
+		rLen = 0;
+		rLoc = 783;
+		rType = 0;
+		vrLen = 951;
+		vrLoc = 0;
+	};
+	3E1A5B401169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556361114ED8CF0089B12F /* ServerTranslations.xml */;
+		name = "ServerTranslations.xml: 17";
+		rLen = 0;
+		rLoc = 2468;
+		rType = 0;
+		vrLen = 1472;
+		vrLoc = 0;
+	};
+	3E1A5B411169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B121169A90700D80702 /* ConnectionRequest.h */;
+		name = "ConnectionRequest.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 236;
+		vrLoc = 0;
+	};
+	3E1A5B421169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556367114ED8E40089B12F /* ServerRequest.h */;
+		name = "ServerRequest.h: 7";
+		rLen = 14;
+		rLoc = 185;
+		rType = 0;
+		vrLen = 337;
+		vrLoc = 0;
+	};
+	3E1A5B431169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556420114EDE750089B12F /* RequestMessage.m */;
+		name = "RequestMessage.m: 12";
+		rLen = 31;
+		rLoc = 175;
+		rType = 0;
+		vrLen = 321;
+		vrLoc = 0;
+	};
+	3E1A5B441169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B121169A90700D80702 /* ConnectionRequest.h */;
+		name = "ConnectionRequest.h: 12";
+		rLen = 0;
+		rLoc = 258;
+		rType = 0;
+		vrLen = 242;
+		vrLoc = 0;
+	};
+	3E1A5B451169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556367114ED8E40089B12F /* ServerRequest.h */;
+		name = "ServerRequest.h: 11";
+		rLen = 18;
+		rLoc = 249;
+		rType = 0;
+		vrLen = 337;
+		vrLoc = 0;
+	};
+	3E1A5B461169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556362114ED8CF0089B12F /* ServerUpdate.h */;
+		name = "ServerUpdate.h: 9";
+		rLen = 0;
+		rLoc = 220;
+		rType = 0;
+		vrLen = 508;
+		vrLoc = 0;
+	};
+	3E1A5B471169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556368114ED8E40089B12F /* ServerRequest.m */;
+		name = "ServerRequest.m: 10";
+		rLen = 0;
+		rLoc = 200;
+		rType = 0;
+		vrLen = 278;
+		vrLoc = 0;
+	};
+	3E1A5B481169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556367114ED8E40089B12F /* ServerRequest.h */;
+		name = "ServerRequest.h: 11";
+		rLen = 18;
+		rLoc = 249;
+		rType = 0;
+		vrLen = 337;
+		vrLoc = 0;
+	};
+	3E1A5B491169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
+		name = "ComposeViewController.m: 16";
+		rLen = 0;
+		rLoc = 276;
+		rType = 0;
+		vrLen = 8435;
+		vrLoc = 1706;
+	};
+	3E1A5B4A1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B121169A90700D80702 /* ConnectionRequest.h */;
+		name = "ConnectionRequest.h: 12";
+		rLen = 0;
+		rLoc = 258;
+		rType = 0;
+		vrLen = 242;
+		vrLoc = 0;
+	};
+	3E1A5B4B1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556367114ED8E40089B12F /* ServerRequest.h */;
+		name = "ServerRequest.h: 11";
+		rLen = 18;
+		rLoc = 249;
+		rType = 0;
+		vrLen = 337;
+		vrLoc = 0;
+	};
+	3E1A5B4C1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B121169A90700D80702 /* ConnectionRequest.h */;
+		name = "ConnectionRequest.h: 13";
+		rLen = 0;
+		rLoc = 280;
+		rType = 0;
+		vrLen = 261;
+		vrLoc = 0;
+	};
+	3E1A5B4D1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556367114ED8E40089B12F /* ServerRequest.h */;
+		name = "ServerRequest.h: 14";
+		rLen = 58;
+		rLoc = 271;
+		rType = 0;
+		vrLen = 337;
+		vrLoc = 0;
+	};
+	3E1A5B4E1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B121169A90700D80702 /* ConnectionRequest.h */;
+		name = "ConnectionRequest.h: 16";
+		rLen = 0;
+		rLoc = 342;
+		rType = 0;
+		vrLen = 321;
+		vrLoc = 0;
+	};
+	3E1A5B4F1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556367114ED8E40089B12F /* ServerRequest.h */;
+		name = "ServerRequest.h: 14";
+		rLen = 58;
+		rLoc = 271;
+		rType = 0;
+		vrLen = 337;
+		vrLoc = 0;
+	};
+	3E1A5B501169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B121169A90700D80702 /* ConnectionRequest.h */;
+		name = "ConnectionRequest.h: 16";
+		rLen = 0;
+		rLoc = 342;
+		rType = 0;
+		vrLen = 321;
+		vrLoc = 0;
+	};
+	3E1A5B511169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556367114ED8E40089B12F /* ServerRequest.h */;
+		name = "ServerRequest.h: 14";
+		rLen = 58;
+		rLoc = 271;
+		rType = 0;
+		vrLen = 337;
+		vrLoc = 0;
+	};
+	3E1A5B521169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B121169A90700D80702 /* ConnectionRequest.h */;
+		name = "ConnectionRequest.h: 12";
+		rLen = 1;
+		rLoc = 258;
+		rType = 0;
+		vrLen = 321;
+		vrLoc = 0;
+	};
+	3E1A5B531169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B131169A90700D80702 /* ConnectionRequest.m */;
+		name = "ConnectionRequest.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 221;
+		vrLoc = 0;
+	};
+	3E1A5B541169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556362114ED8CF0089B12F /* ServerUpdate.h */;
+		name = "ServerUpdate.h: 9";
+		rLen = 273;
+		rLoc = 227;
+		rType = 0;
+		vrLen = 508;
+		vrLoc = 0;
+	};
+	3E1A5B551169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B131169A90700D80702 /* ConnectionRequest.m */;
+		name = "ConnectionRequest.m: 5";
+		rLen = 0;
+		rLoc = 73;
+		rType = 0;
+		vrLen = 493;
+		vrLoc = 0;
+	};
+	3E1A5B561169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E55635F114ED8CF0089B12F /* ServerTranslations.h */;
+		name = "ServerTranslations.h: 12";
+		rLen = 0;
+		rLoc = 262;
+		rType = 0;
+		vrLen = 316;
+		vrLoc = 0;
+	};
+	3E1A5B571169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B121169A90700D80702 /* ConnectionRequest.h */;
+		name = "ConnectionRequest.h: 5";
+		rLen = 0;
+		rLoc = 73;
+		rType = 0;
+		vrLen = 320;
+		vrLoc = 0;
+	};
+	3E1A5B581169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
+		name = "ComposeViewController.m: 16";
+		rLen = 0;
+		rLoc = 276;
+		rType = 0;
+		vrLen = 798;
+		vrLoc = 0;
+	};
+	3E1A5B591169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B121169A90700D80702 /* ConnectionRequest.h */;
+		name = "ConnectionRequest.h: 5";
+		rLen = 0;
+		rLoc = 73;
+		rType = 0;
+		vrLen = 320;
+		vrLoc = 0;
+	};
+	3E1A5B5A1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
+		name = "ComposeViewController.m: 16";
+		rLen = 0;
+		rLoc = 276;
+		rType = 0;
+		vrLen = 798;
+		vrLoc = 0;
+	};
+	3E1A5B5B1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B121169A90700D80702 /* ConnectionRequest.h */;
+		name = "ConnectionRequest.h: 5";
+		rLen = 0;
+		rLoc = 73;
+		rType = 0;
+		vrLen = 320;
+		vrLoc = 0;
+	};
+	3E1A5B5C1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B131169A90700D80702 /* ConnectionRequest.m */;
+		name = "ConnectionRequest.m: 19";
+		rLen = 0;
+		rLoc = 218;
+		rType = 0;
+		vrLen = 493;
+		vrLoc = 0;
+	};
+	3E1A5B5D1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B121169A90700D80702 /* ConnectionRequest.h */;
+		name = "ConnectionRequest.h: 18";
+		rLen = 0;
+		rLoc = 348;
+		rType = 0;
+		vrLen = 320;
+		vrLoc = 0;
+	};
+	3E1A5B5E1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B131169A90700D80702 /* ConnectionRequest.m */;
+		name = "ConnectionRequest.m: 19";
+		rLen = 0;
+		rLoc = 218;
+		rType = 0;
+		vrLen = 493;
+		vrLoc = 0;
+	};
+	3E1A5B5F1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556368114ED8E40089B12F /* ServerRequest.m */;
+		name = "ServerRequest.m: 10";
+		rLen = 69;
+		rLoc = 200;
+		rType = 0;
+		vrLen = 278;
+		vrLoc = 0;
+	};
+	3E1A5B601169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B131169A90700D80702 /* ConnectionRequest.m */;
+		name = "ConnectionRequest.m: 19";
+		rLen = 0;
+		rLoc = 218;
+		rType = 0;
+		vrLen = 493;
+		vrLoc = 0;
+	};
+	3E1A5B611169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B121169A90700D80702 /* ConnectionRequest.h */;
+		name = "ConnectionRequest.h: 18";
+		rLen = 0;
+		rLoc = 348;
+		rType = 0;
+		vrLen = 320;
+		vrLoc = 0;
+	};
+	3E1A5B621169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556367114ED8E40089B12F /* ServerRequest.h */;
+		name = "ServerRequest.h: 14";
+		rLen = 58;
+		rLoc = 271;
+		rType = 0;
+		vrLen = 337;
+		vrLoc = 0;
+	};
+	3E1A5B631169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B121169A90700D80702 /* ConnectionRequest.h */;
+		name = "ConnectionRequest.h: 18";
+		rLen = 0;
+		rLoc = 348;
+		rType = 0;
+		vrLen = 320;
+		vrLoc = 0;
+	};
+	3E1A5B641169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556367114ED8E40089B12F /* ServerRequest.h */;
+		name = "ServerRequest.h: 7";
+		rLen = 26;
+		rLoc = 176;
+		rType = 0;
+		vrLen = 337;
+		vrLoc = 0;
+	};
+	3E1A5B651169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B121169A90700D80702 /* ConnectionRequest.h */;
+		name = "ConnectionRequest.h: 10";
+		rLen = 0;
+		rLoc = 211;
+		rType = 0;
+		vrLen = 346;
+		vrLoc = 0;
+	};
+	3E1A5B661169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556367114ED8E40089B12F /* ServerRequest.h */;
+		name = "ServerRequest.h: 7";
+		rLen = 26;
+		rLoc = 176;
+		rType = 0;
+		vrLen = 337;
+		vrLoc = 0;
+	};
+	3E1A5B671169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B121169A90700D80702 /* ConnectionRequest.h */;
+		name = "ConnectionRequest.h: 10";
+		rLen = 0;
+		rLoc = 211;
+		rType = 0;
+		vrLen = 346;
+		vrLoc = 0;
+	};
+	3E1A5B681169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B131169A90700D80702 /* ConnectionRequest.m */;
+		name = "ConnectionRequest.m: 19";
+		rLen = 0;
+		rLoc = 218;
+		rType = 0;
+		vrLen = 493;
+		vrLoc = 0;
+	};
+	3E1A5B691169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556368114ED8E40089B12F /* ServerRequest.m */;
+		name = "ServerRequest.m: 10";
+		rLen = 69;
+		rLoc = 200;
+		rType = 0;
+		vrLen = 278;
+		vrLoc = 0;
+	};
+	3E1A5B6A1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B131169A90700D80702 /* ConnectionRequest.m */;
+		name = "ConnectionRequest.m: 21";
+		rLen = 0;
+		rLoc = 291;
+		rType = 0;
+		vrLen = 357;
+		vrLoc = 0;
+	};
+	3E1A5B6B1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556368114ED8E40089B12F /* ServerRequest.m */;
+		name = "ServerRequest.m: 10";
+		rLen = 69;
+		rLoc = 200;
+		rType = 0;
+		vrLen = 278;
+		vrLoc = 0;
+	};
+	3E1A5B6C1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B131169A90700D80702 /* ConnectionRequest.m */;
+		name = "ConnectionRequest.m: 13";
+		rLen = 0;
+		rLoc = 217;
+		rType = 0;
+		vrLen = 290;
+		vrLoc = 0;
+	};
+	3E1A5B6D1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
+		name = "CrescendoViewController.m: 33";
+		rLen = 0;
+		rLoc = 783;
+		rType = 0;
+		vrLen = 951;
+		vrLoc = 0;
+	};
+	3E1A5B6E1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B131169A90700D80702 /* ConnectionRequest.m */;
+		name = "ConnectionRequest.m: 13";
+		rLen = 0;
+		rLoc = 217;
+		rType = 0;
+		vrLen = 290;
+		vrLoc = 0;
+	};
+	3E1A5B6F1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556368114ED8E40089B12F /* ServerRequest.m */;
+		name = "ServerRequest.m: 10";
+		rLen = 69;
+		rLoc = 200;
+		rType = 0;
+		vrLen = 278;
+		vrLoc = 0;
+	};
+	3E1A5B701169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
+		name = "ComposeViewController.m: 16";
+		rLen = 0;
+		rLoc = 276;
+		rType = 0;
+		vrLen = 798;
+		vrLoc = 0;
+	};
+	3E1A5B711169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B131169A90700D80702 /* ConnectionRequest.m */;
+		name = "ConnectionRequest.m: 13";
+		rLen = 0;
+		rLoc = 217;
+		rType = 0;
+		vrLen = 290;
+		vrLoc = 0;
+	};
+	3E1A5B721169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556368114ED8E40089B12F /* ServerRequest.m */;
+		name = "ServerRequest.m: 10";
+		rLen = 69;
+		rLoc = 200;
+		rType = 0;
+		vrLen = 278;
+		vrLoc = 0;
+	};
+	3E1A5B731169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B131169A90700D80702 /* ConnectionRequest.m */;
+		name = "ConnectionRequest.m: 17";
+		rLen = 0;
+		rLoc = 281;
+		rType = 0;
+		vrLen = 294;
+		vrLoc = 0;
+	};
+	3E1A5B741169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556368114ED8E40089B12F /* ServerRequest.m */;
+		name = "ServerRequest.m: 10";
+		rLen = 69;
+		rLoc = 200;
+		rType = 0;
+		vrLen = 278;
+		vrLoc = 0;
+	};
+	3E1A5B751169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B131169A90700D80702 /* ConnectionRequest.m */;
+		name = "ConnectionRequest.m: 17";
+		rLen = 0;
+		rLoc = 281;
+		rType = 0;
+		vrLen = 294;
+		vrLoc = 0;
+	};
+	3E1A5B761169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556368114ED8E40089B12F /* ServerRequest.m */;
+		name = "ServerRequest.m: 10";
+		rLen = 69;
+		rLoc = 200;
+		rType = 0;
+		vrLen = 278;
+		vrLoc = 0;
+	};
+	3E1A5B771169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556361114ED8CF0089B12F /* ServerTranslations.xml */;
+		name = "ServerTranslations.xml: 17";
+		rLen = 0;
+		rLoc = 2468;
+		rType = 0;
+		vrLen = 1472;
+		vrLoc = 0;
+	};
+	3E1A5B781169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556391114EDBA70089B12F /* ServerUpdateDelegate.h */;
+		name = "ServerUpdateDelegate.h: 12";
+		rLen = 0;
+		rLoc = 261;
+		rType = 0;
+		vrLen = 371;
+		vrLoc = 0;
+	};
+	3E1A5B791169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556392114EDBA70089B12F /* ServerUpdateDelegate.m */;
+		name = "ServerUpdateDelegate.m: 9";
+		rLen = 0;
+		rLoc = 186;
+		rType = 0;
+		vrLen = 274;
+		vrLoc = 0;
+	};
+	3E1A5B7A1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556363114ED8CF0089B12F /* ServerUpdate.m */;
+		name = "ServerUpdate.m: 11";
+		rLen = 0;
+		rLoc = 231;
+		rType = 0;
+		vrLen = 825;
+		vrLoc = 33;
+	};
+	3E1A5B7B1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556362114ED8CF0089B12F /* ServerUpdate.h */;
+		name = "ServerUpdate.h: 15";
+		rLen = 0;
+		rLoc = 295;
+		rType = 0;
+		vrLen = 508;
+		vrLoc = 0;
+	};
+	3E1A5B7C1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556363114ED8CF0089B12F /* ServerUpdate.m */;
+		name = "ServerUpdate.m: 11";
+		rLen = 0;
+		rLoc = 231;
+		rType = 0;
+		vrLen = 858;
+		vrLoc = 0;
+	};
+	3E1A5B7D1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556391114EDBA70089B12F /* ServerUpdateDelegate.h */;
+		name = "ServerUpdateDelegate.h: 12";
+		rLen = 0;
+		rLoc = 261;
+		rType = 0;
+		vrLen = 371;
+		vrLoc = 0;
+	};
+	3E1A5B7E1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556392114EDBA70089B12F /* ServerUpdateDelegate.m */;
+		name = "ServerUpdateDelegate.m: 9";
+		rLen = 0;
+		rLoc = 186;
+		rType = 0;
+		vrLen = 274;
+		vrLoc = 0;
+	};
+	3E1A5B7F1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B151169AA6B00D80702 /* ConnectionUpdate.h */;
+		name = "ConnectionUpdate.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 234;
+		vrLoc = 0;
+	};
+	3E1A5B801169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556362114ED8CF0089B12F /* ServerUpdate.h */;
+		name = "ServerUpdate.h: 9";
+		rLen = 274;
+		rLoc = 226;
+		rType = 0;
+		vrLen = 508;
+		vrLoc = 0;
+	};
+	3E1A5B811169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B151169AA6B00D80702 /* ConnectionUpdate.h */;
+		name = "ConnectionUpdate.h: 5";
+		rLen = 0;
+		rLoc = 72;
+		rType = 0;
+		vrLen = 490;
+		vrLoc = 0;
+	};
+	3E1A5B821169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556362114ED8CF0089B12F /* ServerUpdate.h */;
+		name = "ServerUpdate.h: 9";
+		rLen = 274;
+		rLoc = 226;
+		rType = 0;
+		vrLen = 508;
+		vrLoc = 0;
+	};
+	3E1A5B831169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B151169AA6B00D80702 /* ConnectionUpdate.h */;
+		name = "ConnectionUpdate.h: 5";
+		rLen = 0;
+		rLoc = 72;
+		rType = 0;
+		vrLen = 490;
+		vrLoc = 0;
+	};
+	3E1A5B841169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556362114ED8CF0089B12F /* ServerUpdate.h */;
+		name = "ServerUpdate.h: 7";
+		rLen = 25;
+		rLoc = 176;
+		rType = 0;
+		vrLen = 508;
+		vrLoc = 0;
+	};
+	3E1A5B851169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B151169AA6B00D80702 /* ConnectionUpdate.h */;
+		name = "ConnectionUpdate.h: 10";
+		rLen = 0;
+		rLoc = 209;
+		rType = 0;
+		vrLen = 515;
+		vrLoc = 0;
+	};
+	3E1A5B861169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556363114ED8CF0089B12F /* ServerUpdate.m */;
+		name = "ServerUpdate.m: 11";
+		rLen = 619;
+		rLoc = 231;
+		rType = 0;
+		vrLen = 825;
+		vrLoc = 33;
+	};
+	3E1A5B871169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B161169AA6B00D80702 /* ConnectionUpdate.m */;
+		name = "ConnectionUpdate.m: 38";
+		rLen = 0;
+		rLoc = 880;
+		rType = 0;
+		vrLen = 786;
+		vrLoc = 43;
+	};
+	3E1A5B881169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556363114ED8CF0089B12F /* ServerUpdate.m */;
+		name = "ServerUpdate.m: 11";
+		rLen = 619;
+		rLoc = 231;
+		rType = 0;
+		vrLen = 858;
+		vrLoc = 0;
+	};
+	3E1A5B891169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B181169AAC900D80702 /* ConnectionUpdateDelegate.h */;
+		name = "ConnectionUpdateDelegate.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 250;
+		vrLoc = 0;
+	};
+	3E1A5B8A1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556363114ED8CF0089B12F /* ServerUpdate.m */;
+		name = "ServerUpdate.m: 11";
+		rLen = 619;
+		rLoc = 231;
+		rType = 0;
+		vrLen = 857;
+		vrLoc = 0;
+	};
+	3E1A5B8B1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556391114EDBA70089B12F /* ServerUpdateDelegate.h */;
+		name = "ServerUpdateDelegate.h: 12";
+		rLen = 0;
+		rLoc = 261;
+		rType = 0;
+		vrLen = 371;
+		vrLoc = 0;
+	};
+	3E1A5B8C1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B121169A90700D80702 /* ConnectionRequest.h */;
+		name = "ConnectionRequest.h: 10";
+		rLen = 0;
+		rLoc = 211;
+		rType = 0;
+		vrLen = 346;
+		vrLoc = 0;
+	};
+	3E1A5B8D1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556391114EDBA70089B12F /* ServerUpdateDelegate.h */;
+		name = "ServerUpdateDelegate.h: 10";
+		rLen = 165;
+		rLoc = 205;
+		rType = 0;
+		vrLen = 371;
+		vrLoc = 0;
+	};
+	3E1A5B8E1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B181169AAC900D80702 /* ConnectionUpdateDelegate.h */;
+		name = "ConnectionUpdateDelegate.h: 17";
+		rLen = 0;
+		rLoc = 372;
+		rType = 0;
+		vrLen = 372;
+		vrLoc = 0;
+	};
+	3E1A5B8F1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556391114EDBA70089B12F /* ServerUpdateDelegate.h */;
+		name = "ServerUpdateDelegate.h: 10";
+		rLen = 165;
+		rLoc = 205;
+		rType = 0;
+		vrLen = 371;
+		vrLoc = 0;
+	};
+	3E1A5B901169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B191169AAC900D80702 /* ConnectionUpdateDelegate.m */;
+		name = "ConnectionUpdateDelegate.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 242;
+		vrLoc = 0;
+	};
+	3E1A5B911169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556392114EDBA70089B12F /* ServerUpdateDelegate.m */;
+		name = "ServerUpdateDelegate.m: 11";
+		rLen = 68;
+		rLoc = 205;
+		rType = 0;
+		vrLen = 274;
+		vrLoc = 0;
+	};
+	3E1A5B921169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B191169AAC900D80702 /* ConnectionUpdateDelegate.m */;
+		name = "ConnectionUpdateDelegate.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 242;
+		vrLoc = 0;
+	};
+	3E1A5B931169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556392114EDBA70089B12F /* ServerUpdateDelegate.m */;
+		name = "ServerUpdateDelegate.m: 11";
+		rLen = 68;
+		rLoc = 205;
+		rType = 0;
+		vrLen = 274;
+		vrLoc = 0;
+	};
+	3E1A5B941169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B191169AAC900D80702 /* ConnectionUpdateDelegate.m */;
+		name = "ConnectionUpdateDelegate.m: 11";
+		rLen = 0;
+		rLoc = 272;
+		rType = 0;
+		vrLen = 263;
+		vrLoc = 0;
+	};
+	3E1A5B951169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556392114EDBA70089B12F /* ServerUpdateDelegate.m */;
+		name = "ServerUpdateDelegate.m: 11";
+		rLen = 68;
+		rLoc = 205;
+		rType = 0;
+		vrLen = 274;
+		vrLoc = 0;
+	};
+	3E1A5B961169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B191169AAC900D80702 /* ConnectionUpdateDelegate.m */;
+		name = "ConnectionUpdateDelegate.m: 11";
+		rLen = 0;
+		rLoc = 254;
+		rType = 0;
+		vrLen = 271;
+		vrLoc = 0;
+	};
+	3E1A5B971169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B181169AAC900D80702 /* ConnectionUpdateDelegate.h */;
+		name = "ConnectionUpdateDelegate.h: 16";
+		rLen = 0;
+		rLoc = 338;
+		rType = 0;
+		vrLen = 376;
+		vrLoc = 0;
+	};
+	3E1A5B981169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556391114EDBA70089B12F /* ServerUpdateDelegate.h */;
+		name = "ServerUpdateDelegate.h: 10";
+		rLen = 165;
+		rLoc = 205;
+		rType = 0;
+		vrLen = 371;
+		vrLoc = 0;
+	};
+	3E1A5B991169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B181169AAC900D80702 /* ConnectionUpdateDelegate.h */;
+		name = "ConnectionUpdateDelegate.h: 16";
+		rLen = 0;
+		rLoc = 338;
+		rType = 0;
+		vrLen = 376;
+		vrLoc = 0;
+	};
+	3E1A5B9A1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556391114EDBA70089B12F /* ServerUpdateDelegate.h */;
+		name = "ServerUpdateDelegate.h: 10";
+		rLen = 165;
+		rLoc = 205;
+		rType = 0;
+		vrLen = 371;
+		vrLoc = 0;
+	};
+	3E1A5B9B1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B181169AAC900D80702 /* ConnectionUpdateDelegate.h */;
+		name = "ConnectionUpdateDelegate.h: 16";
+		rLen = 0;
+		rLoc = 338;
+		rType = 0;
+		vrLen = 376;
+		vrLoc = 0;
+	};
+	3E1A5B9C1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556391114EDBA70089B12F /* ServerUpdateDelegate.h */;
+		name = "ServerUpdateDelegate.h: 10";
+		rLen = 165;
+		rLoc = 205;
+		rType = 0;
+		vrLen = 371;
+		vrLoc = 0;
+	};
+	3E1A5B9D1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B181169AAC900D80702 /* ConnectionUpdateDelegate.h */;
+		name = "ConnectionUpdateDelegate.h: 16";
+		rLen = 0;
+		rLoc = 338;
+		rType = 0;
+		vrLen = 376;
+		vrLoc = 0;
+	};
+	3E1A5B9E1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B191169AAC900D80702 /* ConnectionUpdateDelegate.m */;
+		name = "ConnectionUpdateDelegate.m: 11";
+		rLen = 0;
+		rLoc = 254;
+		rType = 0;
+		vrLen = 271;
+		vrLoc = 0;
+	};
+	3E1A5B9F1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556392114EDBA70089B12F /* ServerUpdateDelegate.m */;
+		name = "ServerUpdateDelegate.m: 11";
+		rLen = 68;
+		rLoc = 205;
+		rType = 0;
+		vrLen = 274;
+		vrLoc = 0;
+	};
+	3E1A5BA01169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B181169AAC900D80702 /* ConnectionUpdateDelegate.h */;
+		name = "ConnectionUpdateDelegate.h: 16";
+		rLen = 0;
+		rLoc = 338;
+		rType = 0;
+		vrLen = 376;
+		vrLoc = 0;
+	};
+	3E1A5BA11169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556391114EDBA70089B12F /* ServerUpdateDelegate.h */;
+		name = "ServerUpdateDelegate.h: 10";
+		rLen = 165;
+		rLoc = 205;
+		rType = 0;
+		vrLen = 371;
+		vrLoc = 0;
+	};
+	3E1A5BA21169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B161169AA6B00D80702 /* ConnectionUpdate.m */;
+		name = "ConnectionUpdate.m: 38";
+		rLen = 0;
+		rLoc = 880;
+		rType = 0;
+		vrLen = 789;
+		vrLoc = 40;
+	};
+	3E1A5BA31169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556363114ED8CF0089B12F /* ServerUpdate.m */;
+		name = "ServerUpdate.m: 11";
+		rLen = 619;
+		rLoc = 231;
+		rType = 0;
+		vrLen = 857;
+		vrLoc = 0;
+	};
+	3E1A5BA41169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B161169AA6B00D80702 /* ConnectionUpdate.m */;
+		name = "ConnectionUpdate.m: 38";
+		rLen = 0;
+		rLoc = 880;
+		rType = 0;
+		vrLen = 789;
+		vrLoc = 40;
+	};
+	3E1A5BA51169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556363114ED8CF0089B12F /* ServerUpdate.m */;
+		name = "ServerUpdate.m: 11";
+		rLen = 619;
+		rLoc = 231;
+		rType = 0;
+		vrLen = 857;
+		vrLoc = 0;
+	};
+	3E1A5BA61169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B161169AA6B00D80702 /* ConnectionUpdate.m */;
+		name = "ConnectionUpdate.m: 10";
+		rLen = 0;
+		rLoc = 215;
+		rType = 0;
+		vrLen = 834;
+		vrLoc = 26;
+	};
+	3E1A5BA71169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556363114ED8CF0089B12F /* ServerUpdate.m */;
+		name = "ServerUpdate.m: 11";
+		rLen = 619;
+		rLoc = 231;
+		rType = 0;
+		vrLen = 857;
+		vrLoc = 0;
+	};
+	3E1A5BA81169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B161169AA6B00D80702 /* ConnectionUpdate.m */;
+		name = "ConnectionUpdate.m: 10";
+		rLen = 0;
+		rLoc = 215;
+		rType = 0;
+		vrLen = 822;
+		vrLoc = 43;
+	};
+	3E1A5BA91169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B191169AAC900D80702 /* ConnectionUpdateDelegate.m */;
+		name = "ConnectionUpdateDelegate.m: 11";
+		rLen = 0;
+		rLoc = 254;
+		rType = 0;
+		vrLen = 271;
+		vrLoc = 0;
+	};
+	3E1A5BAA1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B181169AAC900D80702 /* ConnectionUpdateDelegate.h */;
+		name = "ConnectionUpdateDelegate.h: 16";
+		rLen = 0;
+		rLoc = 338;
+		rType = 0;
+		vrLen = 376;
+		vrLoc = 0;
+	};
+	3E1A5BAB1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B161169AA6B00D80702 /* ConnectionUpdate.m */;
+		name = "ConnectionUpdate.m: 32";
+		rLen = 0;
+		rLoc = 705;
+		rType = 0;
+		vrLen = 837;
+		vrLoc = 40;
+	};
+	3E1A5BAC1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B151169AA6B00D80702 /* ConnectionUpdate.h */;
+		name = "ConnectionUpdate.h: 10";
+		rLen = 0;
+		rLoc = 209;
+		rType = 0;
+		vrLen = 515;
+		vrLoc = 0;
+	};
+	3E1A5BAD1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556362114ED8CF0089B12F /* ServerUpdate.h */;
+		name = "ServerUpdate.h: 7";
+		rLen = 25;
+		rLoc = 176;
+		rType = 0;
+		vrLen = 508;
+		vrLoc = 0;
+	};
+	3E1A5BAE1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B151169AA6B00D80702 /* ConnectionUpdate.h */;
+		name = "ConnectionUpdate.h: 10";
+		rLen = 0;
+		rLoc = 209;
+		rType = 0;
+		vrLen = 515;
+		vrLoc = 0;
+	};
+	3E1A5BAF1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556362114ED8CF0089B12F /* ServerUpdate.h */;
+		name = "ServerUpdate.h: 7";
+		rLen = 25;
+		rLoc = 176;
+		rType = 0;
+		vrLen = 508;
+		vrLoc = 0;
+	};
+	3E1A5BB01169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B151169AA6B00D80702 /* ConnectionUpdate.h */;
+		name = "ConnectionUpdate.h: 10";
+		rLen = 0;
+		rLoc = 209;
+		rType = 0;
+		vrLen = 515;
+		vrLoc = 0;
+	};
+	3E1A5BB11169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B121169A90700D80702 /* ConnectionRequest.h */;
+		name = "ConnectionRequest.h: 10";
+		rLen = 0;
+		rLoc = 211;
+		rType = 0;
+		vrLen = 346;
+		vrLoc = 0;
+	};
+	3E1A5BB21169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556367114ED8E40089B12F /* ServerRequest.h */;
+		name = "ServerRequest.h: 7";
+		rLen = 26;
+		rLoc = 176;
+		rType = 0;
+		vrLen = 337;
+		vrLoc = 0;
+	};
+	3E1A5BB31169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B121169A90700D80702 /* ConnectionRequest.h */;
+		name = "ConnectionRequest.h: 10";
+		rLen = 0;
+		rLoc = 211;
+		rType = 0;
+		vrLen = 346;
+		vrLoc = 0;
+	};
+	3E1A5BB41169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556368114ED8E40089B12F /* ServerRequest.m */;
+		name = "ServerRequest.m: 10";
+		rLen = 69;
+		rLoc = 200;
+		rType = 0;
+		vrLen = 278;
+		vrLoc = 0;
+	};
+	3E1A5BB51169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B131169A90700D80702 /* ConnectionRequest.m */;
+		name = "ConnectionRequest.m: 17";
+		rLen = 0;
+		rLoc = 281;
+		rType = 0;
+		vrLen = 294;
+		vrLoc = 0;
+	};
+	3E1A5BB61169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556368114ED8E40089B12F /* ServerRequest.m */;
+		name = "ServerRequest.m: 15";
+		rLen = 0;
+		rLoc = 270;
+		rType = 0;
+		vrLen = 278;
+		vrLoc = 0;
+	};
+	3E1A5BB71169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B131169A90700D80702 /* ConnectionRequest.m */;
+		name = "ConnectionRequest.m: 17";
+		rLen = 0;
+		rLoc = 281;
+		rType = 0;
+		vrLen = 294;
+		vrLoc = 0;
+	};
+	3E1A5BB81169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556367114ED8E40089B12F /* ServerRequest.h */;
+		name = "ServerRequest.h: 7";
+		rLen = 26;
+		rLoc = 176;
+		rType = 0;
+		vrLen = 337;
+		vrLoc = 0;
+	};
+	3E1A5BB91169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B121169A90700D80702 /* ConnectionRequest.h */;
+		name = "ConnectionRequest.h: 10";
+		rLen = 0;
+		rLoc = 211;
+		rType = 0;
+		vrLen = 346;
+		vrLoc = 0;
+	};
+	3E1A5BBA1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556367114ED8E40089B12F /* ServerRequest.h */;
+		name = "ServerRequest.h: 7";
+		rLen = 26;
+		rLoc = 176;
+		rType = 0;
+		vrLen = 337;
+		vrLoc = 0;
+	};
+	3E1A5BBB1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B151169AA6B00D80702 /* ConnectionUpdate.h */;
+		name = "ConnectionUpdate.h: 10";
+		rLen = 0;
+		rLoc = 209;
+		rType = 0;
+		vrLen = 515;
+		vrLoc = 0;
+	};
+	3E1A5BBC1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556362114ED8CF0089B12F /* ServerUpdate.h */;
+		name = "ServerUpdate.h: 7";
+		rLen = 25;
+		rLoc = 176;
+		rType = 0;
+		vrLen = 508;
+		vrLoc = 0;
+	};
+	3E1A5BBD1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B161169AA6B00D80702 /* ConnectionUpdate.m */;
+		name = "ConnectionUpdate.m: 31";
+		rLen = 0;
+		rLoc = 625;
+		rType = 0;
+		vrLen = 841;
+		vrLoc = 40;
+	};
+	3E1A5BBE1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556363114ED8CF0089B12F /* ServerUpdate.m */;
+		name = "ServerUpdate.m: 11";
+		rLen = 619;
+		rLoc = 231;
+		rType = 0;
+		vrLen = 857;
+		vrLoc = 0;
+	};
+	3E1A5BBF1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B161169AA6B00D80702 /* ConnectionUpdate.m */;
+		name = "ConnectionUpdate.m: 31";
+		rLen = 0;
+		rLoc = 625;
+		rType = 0;
+		vrLen = 841;
+		vrLoc = 40;
+	};
+	3E1A5BC01169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B181169AAC900D80702 /* ConnectionUpdateDelegate.h */;
+		name = "ConnectionUpdateDelegate.h: 16";
+		rLen = 0;
+		rLoc = 338;
+		rType = 0;
+		vrLen = 376;
+		vrLoc = 0;
+	};
+	3E1A5BC11169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556391114EDBA70089B12F /* ServerUpdateDelegate.h */;
+		name = "ServerUpdateDelegate.h: 10";
+		rLen = 165;
+		rLoc = 205;
+		rType = 0;
+		vrLen = 371;
+		vrLoc = 0;
+	};
+	3E1A5BC21169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556392114EDBA70089B12F /* ServerUpdateDelegate.m */;
+		name = "ServerUpdateDelegate.m: 11";
+		rLen = 68;
+		rLoc = 205;
+		rType = 0;
+		vrLen = 274;
+		vrLoc = 0;
+	};
+	3E1A5BC31169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B191169AAC900D80702 /* ConnectionUpdateDelegate.m */;
+		name = "ConnectionUpdateDelegate.m: 11";
+		rLen = 0;
+		rLoc = 254;
+		rType = 0;
+		vrLen = 271;
+		vrLoc = 0;
+	};
+	3E1A5BC41169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B181169AAC900D80702 /* ConnectionUpdateDelegate.h */;
+		name = "ConnectionUpdateDelegate.h: 16";
+		rLen = 0;
+		rLoc = 338;
+		rType = 0;
+		vrLen = 376;
+		vrLoc = 0;
+	};
+	3E1A5BC51169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556392114EDBA70089B12F /* ServerUpdateDelegate.m */;
+		name = "ServerUpdateDelegate.m: 6";
+		rLen = 57;
+		rLoc = 109;
+		rType = 0;
+		vrLen = 274;
+		vrLoc = 0;
+	};
+	3E1A5BC61169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B121169A90700D80702 /* ConnectionRequest.h */;
+		name = "ConnectionRequest.h: 6";
+		rLen = 0;
+		rLoc = 146;
+		rType = 0;
+		vrLen = 349;
+		vrLoc = 0;
+	};
+	3E1A5BC71169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B131169A90700D80702 /* ConnectionRequest.m */;
+		name = "ConnectionRequest.m: 6";
+		rLen = 0;
+		rLoc = 146;
+		rType = 0;
+		vrLen = 297;
+		vrLoc = 0;
+	};
+	3E1A5BC81169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B151169AA6B00D80702 /* ConnectionUpdate.h */;
+		name = "ConnectionUpdate.h: 6";
+		rLen = 0;
+		rLoc = 145;
+		rType = 0;
+		vrLen = 518;
+		vrLoc = 0;
+	};
+	3E1A5BC91169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B161169AA6B00D80702 /* ConnectionUpdate.m */;
+		name = "ConnectionUpdate.m: 6";
+		rLen = 22;
+		rLoc = 123;
+		rType = 0;
+		vrLen = 841;
+		vrLoc = 40;
+	};
+	3E1A5BCA1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B151169AA6B00D80702 /* ConnectionUpdate.h */;
+		name = "ConnectionUpdate.h: 5";
+		rLen = 102;
+		rLoc = 43;
+		rType = 0;
+		vrLen = 518;
+		vrLoc = 0;
+	};
+	3E1A5BCB1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B161169AA6B00D80702 /* ConnectionUpdate.m */;
+		name = "ConnectionUpdate.m: 6";
+		rLen = 0;
+		rLoc = 145;
+		rType = 0;
+		vrLen = 875;
+		vrLoc = 0;
+	};
+	3E1A5BCC1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B181169AAC900D80702 /* ConnectionUpdateDelegate.h */;
+		name = "ConnectionUpdateDelegate.h: 6";
+		rLen = 0;
+		rLoc = 153;
+		rType = 0;
+		vrLen = 378;
+		vrLoc = 0;
+	};
+	3E1A5BCD1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B191169AAC900D80702 /* ConnectionUpdateDelegate.m */;
+		name = "ConnectionUpdateDelegate.m: 6";
+		rLen = 0;
+		rLoc = 153;
+		rType = 0;
+		vrLen = 273;
+		vrLoc = 0;
+	};
+	3E1A5BCE1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E55635F114ED8CF0089B12F /* ServerTranslations.h */;
+		name = "ServerTranslations.h: 12";
+		rLen = 0;
+		rLoc = 262;
+		rType = 0;
+		vrLen = 316;
+		vrLoc = 0;
+	};
+	3E1A5BCF1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556360114ED8CF0089B12F /* ServerTranslations.m */;
+		name = "ServerTranslations.m: 9";
+		rLen = 0;
+		rLoc = 184;
+		rType = 0;
+		vrLen = 707;
+		vrLoc = 0;
+	};
+	3E1A5BD01169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556361114ED8CF0089B12F /* ServerTranslations.xml */;
+		name = "ServerTranslations.xml: 17";
+		rLen = 0;
+		rLoc = 2468;
+		rType = 0;
+		vrLen = 1472;
+		vrLoc = 0;
+	};
+	3E1A5BD11169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B191169AAC900D80702 /* ConnectionUpdateDelegate.m */;
+		name = "ConnectionUpdateDelegate.m: 10";
+		rLen = 0;
+		rLoc = 195;
+		rType = 0;
+		vrLen = 273;
+		vrLoc = 0;
+	};
+	3E1A5BD21169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E1A5B121169A90700D80702 /* ConnectionRequest.h */;
+		name = "ConnectionRequest.h: 6";
+		rLen = 0;
+		rLoc = 146;
+		rType = 0;
+		vrLen = 349;
+		vrLoc = 0;
+	};
+	3E1A5BD31169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556392114EDBA70089B12F /* ServerUpdateDelegate.m */;
+		name = "ServerUpdateDelegate.m: 6";
+		rLen = 57;
+		rLoc = 109;
+		rType = 0;
+		vrLen = 274;
+		vrLoc = 0;
+	};
+	3E1A5BD41169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E55634D114ED6F70089B12F /* TrainingViewController.m */;
+		name = "TrainingViewController.m: 6";
+		rLen = 0;
+		rLoc = 151;
+		rType = 0;
+		vrLen = 913;
+		vrLoc = 0;
+	};
+	3E1A5BD51169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E55634C114ED6F70089B12F /* TrainingViewController.h */;
+		name = "TrainingViewController.h: 6";
+		rLen = 0;
+		rLoc = 151;
+		rType = 0;
+		vrLen = 268;
+		vrLoc = 0;
+	};
+	3E1A5BD61169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
+		name = "ComposeViewController.m: 16";
+		rLen = 0;
+		rLoc = 276;
+		rType = 0;
+		vrLen = 798;
+		vrLoc = 0;
+	};
+	3E1A5BD71169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556356114ED7CA0089B12F /* HelpViewController.m */;
+		name = "HelpViewController.m: 6";
+		rLen = 0;
+		rLoc = 147;
+		rType = 0;
+		vrLen = 868;
+		vrLoc = 0;
+	};
+	3E1A5BD81169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556355114ED7C90089B12F /* HelpViewController.h */;
+		name = "HelpViewController.h: 6";
+		rLen = 0;
+		rLoc = 147;
+		rType = 0;
+		vrLen = 260;
+		vrLoc = 0;
+	};
+	3E1A5BD91169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556353114ED7B00089B12F /* GamemodeViewController.m */;
+		name = "GamemodeViewController.m: 6";
+		rLen = 0;
+		rLoc = 151;
+		rType = 0;
+		vrLen = 880;
+		vrLoc = 0;
+	};
+	3E1A5BDA1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556352114ED7B00089B12F /* GamemodeViewController.h */;
+		name = "GamemodeViewController.h: 6";
+		rLen = 0;
+		rLoc = 151;
+		rType = 0;
+		vrLen = 268;
+		vrLoc = 0;
+	};
+	3E1A5BDB1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */;
+		name = "ComposeViewController.m: 6";
+		rLen = 0;
+		rLoc = 150;
+		rType = 0;
+		vrLen = 808;
+		vrLoc = 0;
+	};
+	3E1A5BDC1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CA0208D7115B28C60023D8FB /* ComposeViewController.h */;
+		name = "ComposeViewController.h: 6";
+		rLen = 0;
+		rLoc = 150;
+		rType = 0;
+		vrLen = 1005;
+		vrLoc = 0;
+	};
+	3E1A5BDD1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
+		name = "CrescendoViewController.m: 6";
+		rLen = 0;
+		rLoc = 152;
+		rType = 0;
+		vrLen = 961;
+		vrLoc = 0;
+	};
+	3E1A5BDE1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
+		name = "CrescendoViewController.h: 6";
+		rLen = 0;
+		rLoc = 152;
+		rType = 0;
+		vrLen = 1245;
+		vrLoc = 0;
+	};
+	3E1A5BDF1169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */;
+		name = "CrescendoAppDelegate.m: 6";
+		rLen = 0;
+		rLoc = 149;
+		rType = 0;
+		vrLen = 1013;
+		vrLoc = 0;
+	};
+	3E1A5BE01169ACB100D80702 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E556350114ED77F0089B12F /* CrescendoAppDelegate.h */;
+		name = "CrescendoAppDelegate.h: 6";
+		rLen = 0;
+		rLoc = 149;
+		rType = 0;
+		vrLen = 636;
 		vrLoc = 0;
 	};
 	3E556327114ED63B0089B12F /* Crescendo */ = {
@@ -5666,7 +7840,7 @@
 		argumentStrings = (
 		);
 		autoAttachOnCrash = 1;
-		breakpointsEnabled = 1;
+		breakpointsEnabled = 0;
 		configStateDict = {
 		};
 		customDataFormattersEnabled = 1;
@@ -5704,121 +7878,121 @@
 	};
 	3E55634C114ED6F70089B12F /* TrainingViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1335, 693}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 258}";
+			sepNavIntBoundsRect = "{{0, 0}, {1523, 514}}";
+			sepNavSelRange = "{151, 0}";
+			sepNavVisRange = "{0, 268}";
 		};
 	};
 	3E55634D114ED6F70089B12F /* TrainingViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1335, 910}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 1278}";
+			sepNavIntBoundsRect = "{{0, 0}, {1523, 938}}";
+			sepNavSelRange = "{151, 0}";
+			sepNavVisRange = "{0, 913}";
 		};
 	};
 	3E556350114ED77F0089B12F /* CrescendoAppDelegate.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1523, 514}}";
-			sepNavSelRange = "{205, 0}";
-			sepNavVisRange = "{0, 626}";
+			sepNavSelRange = "{149, 0}";
+			sepNavVisRange = "{0, 636}";
 		};
 	};
 	3E556351114ED7800089B12F /* CrescendoAppDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1523, 1120}}";
-			sepNavSelRange = "{1090, 0}";
-			sepNavVisRange = "{0, 1003}";
+			sepNavIntBoundsRect = "{{0, 0}, {1523, 1106}}";
+			sepNavSelRange = "{149, 0}";
+			sepNavVisRange = "{0, 1013}";
 			sepNavWindowFrame = "{{15, 155}, {1075, 1018}}";
 		};
 	};
 	3E556352114ED7B00089B12F /* GamemodeViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {826, 490}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 258}";
+			sepNavIntBoundsRect = "{{0, 0}, {1523, 514}}";
+			sepNavSelRange = "{151, 0}";
+			sepNavVisRange = "{0, 268}";
 		};
 	};
 	3E556353114ED7B00089B12F /* GamemodeViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {984, 952}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 897}";
+			sepNavIntBoundsRect = "{{0, 0}, {1523, 1036}}";
+			sepNavSelRange = "{151, 0}";
+			sepNavVisRange = "{0, 880}";
 		};
 	};
 	3E556355114ED7C90089B12F /* HelpViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {826, 490}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 250}";
+			sepNavIntBoundsRect = "{{0, 0}, {1523, 514}}";
+			sepNavSelRange = "{147, 0}";
+			sepNavVisRange = "{0, 260}";
 		};
 	};
 	3E556356114ED7CA0089B12F /* HelpViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {984, 952}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 885}";
+			sepNavIntBoundsRect = "{{0, 0}, {1523, 1036}}";
+			sepNavSelRange = "{147, 0}";
+			sepNavVisRange = "{0, 868}";
 		};
 	};
 	3E55635F114ED8CF0089B12F /* ServerTranslations.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1335, 693}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1523, 514}}";
 			sepNavSelRange = "{262, 0}";
 			sepNavVisRange = "{0, 316}";
 		};
 	};
 	3E556360114ED8CF0089B12F /* ServerTranslations.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1523, 491}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1523, 514}}";
 			sepNavSelRange = "{184, 0}";
 			sepNavVisRange = "{0, 707}";
 		};
 	};
 	3E556361114ED8CF0089B12F /* ServerTranslations.xml */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1523, 1596}}";
-			sepNavSelRange = "{3363, 0}";
-			sepNavVisRange = "{2207, 1910}";
+			sepNavIntBoundsRect = "{{0, 0}, {1523, 2016}}";
+			sepNavSelRange = "{1740, 0}";
+			sepNavVisRange = "{0, 1423}";
 		};
 	};
 	3E556362114ED8CF0089B12F /* ServerUpdate.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1523, 491}}";
-			sepNavSelRange = "{220, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {1523, 514}}";
+			sepNavSelRange = "{176, 25}";
 			sepNavVisRange = "{0, 508}";
 		};
 	};
 	3E556363114ED8CF0089B12F /* ServerUpdate.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1523, 546}}";
-			sepNavSelRange = "{231, 0}";
-			sepNavVisRange = "{0, 852}";
+			sepNavSelRange = "{231, 619}";
+			sepNavVisRange = "{0, 857}";
 		};
 	};
 	3E556367114ED8E40089B12F /* ServerRequest.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1335, 693}}";
-			sepNavSelRange = "{221, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {1523, 514}}";
+			sepNavSelRange = "{176, 26}";
 			sepNavVisRange = "{0, 337}";
 		};
 	};
 	3E556368114ED8E40089B12F /* ServerRequest.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1523, 491}}";
-			sepNavSelRange = "{200, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {1523, 514}}";
+			sepNavSelRange = "{270, 0}";
 			sepNavVisRange = "{0, 278}";
 		};
 	};
 	3E556391114EDBA70089B12F /* ServerUpdateDelegate.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1523, 491}}";
-			sepNavSelRange = "{261, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {1523, 514}}";
+			sepNavSelRange = "{205, 165}";
 			sepNavVisRange = "{0, 371}";
 		};
 	};
 	3E556392114EDBA70089B12F /* ServerUpdateDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1523, 491}}";
-			sepNavSelRange = "{186, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {1523, 514}}";
+			sepNavSelRange = "{109, 57}";
 			sepNavVisRange = "{0, 274}";
 		};
 	};
@@ -5872,6 +8046,13 @@
 			sepNavIntBoundsRect = "{{0, 0}, {1335, 670}}";
 			sepNavSelRange = "{228, 0}";
 			sepNavVisRange = "{0, 458}";
+		};
+	};
+	3E556420114EDE750089B12F /* RequestMessage.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1523, 514}}";
+			sepNavSelRange = "{175, 31}";
+			sepNavVisRange = "{0, 321}";
 		};
 	};
 	3E55642B114EDE760089B12F /* TranslationScope.m */ = {
@@ -6879,7 +9060,7 @@
 		fRef = 3E556350114ED77F0089B12F /* CrescendoAppDelegate.h */;
 		name = "CrescendoAppDelegate.h: 23";
 		rLen = 0;
-		rLoc = 580;
+		rLoc = 590;
 		rType = 0;
 		vrLen = 624;
 		vrLoc = 0;
@@ -6889,7 +9070,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 10";
 		rLen = 0;
-		rLoc = 183;
+		rLoc = 193;
 		rType = 0;
 		vrLen = 744;
 		vrLoc = 0;
@@ -7162,7 +9343,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 8";
 		rLen = 0;
-		rLoc = 146;
+		rLoc = 156;
 		rType = 0;
 		vrLen = 738;
 		vrLoc = 0;
@@ -7206,16 +9387,16 @@
 	CA0208D7115B28C60023D8FB /* ComposeViewController.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1523, 896}}";
-			sepNavSelRange = "{1649, 0}";
-			sepNavVisRange = "{141, 1123}";
+			sepNavSelRange = "{150, 0}";
+			sepNavVisRange = "{0, 1005}";
 		};
 	};
 	CA0208D8115B28C60023D8FB /* ComposeViewController.m */ = {
 		uiCtxt = {
-			sepNavFolds = "{\n    c =     (\n                {\n            r = \"{648, 14}\";\n            s = 0;\n        },\n                {\n            r = \"{1546, 158}\";\n            s = 0;\n        },\n                {\n            r = \"{1775, 45}\";\n            s = 0;\n        },\n                {\n            r = \"{1886, 3499}\";\n            s = 0;\n        },\n                {\n            r = \"{6014, 49}\";\n            s = 0;\n        },\n                {\n            r = \"{6231, 197}\";\n            s = 0;\n        },\n                {\n            r = \"{6471, 1891}\";\n            s = 0;\n        },\n                {\n            r = \"{8391, 1748}\";\n            s = 0;\n        },\n                {\n            r = \"{10173, 6046}\";\n            s = 0;\n        },\n                {\n            r = \"{16252, 5896}\";\n            s = 0;\n        },\n                {\n            r = \"{22184, 6346}\";\n            s = 0;\n        },\n                {\n            r = \"{28565, 6196}\";\n            s = 0;\n        },\n                {\n            r = \"{35919, 223}\";\n            s = 0;\n        }\n    );\n    r = \"{0, 36151}\";\n    s = 0;\n}";
-			sepNavIntBoundsRect = "{{0, 0}, {1523, 1890}}";
-			sepNavSelRange = "{266, 0}";
-			sepNavVisRange = "{0, 738}";
+			sepNavFolds = "{\n    c =     (\n                {\n            r = \"{658, 14}\";\n            s = 0;\n        },\n                {\n            r = \"{1556, 158}\";\n            s = 0;\n        },\n                {\n            r = \"{1785, 45}\";\n            s = 0;\n        },\n                {\n            r = \"{1896, 3499}\";\n            s = 0;\n        },\n                {\n            r = \"{6024, 49}\";\n            s = 0;\n        },\n                {\n            r = \"{6241, 197}\";\n            s = 0;\n        },\n                {\n            r = \"{6481, 1891}\";\n            s = 0;\n        },\n                {\n            r = \"{8401, 1748}\";\n            s = 0;\n        },\n                {\n            r = \"{10183, 6046}\";\n            s = 0;\n        },\n                {\n            r = \"{16262, 5896}\";\n            s = 0;\n        },\n                {\n            r = \"{22194, 6346}\";\n            s = 0;\n        },\n                {\n            r = \"{28575, 6196}\";\n            s = 0;\n        },\n                {\n            r = \"{35929, 223}\";\n            s = 0;\n        }\n    );\n    r = \"{0, 36161}\";\n    s = 0;\n}";
+			sepNavIntBoundsRect = "{{0, 0}, {1523, 1806}}";
+			sepNavSelRange = "{150, 0}";
+			sepNavVisRange = "{0, 795}";
 		};
 	};
 }
