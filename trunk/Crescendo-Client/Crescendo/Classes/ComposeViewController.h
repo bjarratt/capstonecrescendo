@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import "ServerUpdateDelegate.h"
+//#import "ServerUpdateDelegate.h"
 #import "XMLClient.h"
 
 @interface ComposeViewController : UIViewController <UIScrollViewDelegate> {

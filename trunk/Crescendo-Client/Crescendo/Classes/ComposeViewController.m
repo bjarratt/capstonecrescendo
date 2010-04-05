@@ -7,7 +7,7 @@
 //
 
 #import "ComposeViewController.h"
-#import "ServerRequest.h"
+//#import "ServerRequest.h"
 
 
 @implementation ComposeViewController
@@ -250,7 +250,7 @@
 - (void) sendNoteToServer: (id) sender {
 	/*
 	 *	Send notelength/notepitch to public display
-	 */
+	 
 	NSString* inputText = [NSString stringWithFormat: @"%@:%@", playerId, buildLabel.text];
 	
     // Initialize ChatRequest and set message to content's of the text field.
@@ -261,6 +261,7 @@
     [client performSelector:@selector(sendMessage:) withObject: request];
     
     [request release];
+	 */
 }
 
 #pragma mark Interface Methods

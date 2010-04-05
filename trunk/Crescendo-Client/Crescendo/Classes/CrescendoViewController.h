@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import "ServerUpdateDelegate.h"
+//#import "ServerUpdateDelegate.h"
 #import "ConnectionUpdateDelegate.h"
 #import "XMLClient.h"
 
@@ -17,7 +17,7 @@
 #import "HelpViewController.h"
 #import "TrainingViewController.h"
 
-@interface CrescendoViewController : UIViewController <ServerUpdateDelegate, ConnectionUpdateDelegate> {
+@interface CrescendoViewController : UIViewController <ConnectionUpdateDelegate> {
 	XMLClient *client;
 	NSString *playerId;
 	IBOutlet ComposeViewController *composeViewController;
