@@ -1,5 +1,6 @@
 package displayManager;
 
+
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import java.awt.Image;
@@ -151,5 +152,9 @@ public class Note
 			return myPitch + myLength + "-";
 		else
 			return myPitch + myLength;
+	}
+	
+	public String getLength(){
+		return myLength;
 	}
 }
