@@ -11,8 +11,6 @@
 
 @implementation ConnectionRequest
 
-@synthesize message;
-
 + (void) initialize {
 	[ConnectionRequest class];
 }

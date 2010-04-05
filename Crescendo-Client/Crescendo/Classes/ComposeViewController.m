@@ -312,6 +312,7 @@
 	buildButton = [UIButton buttonWithType: UIButtonTypeRoundedRect];
 	buildButton.frame = CGRectMake(204, 160, 70, 37);
 	[buildButton setTitle: @"Build" forState: UIControlStateNormal];
+	//[buildButton setBackgroundImage:@"menu_button_up.png" forState: UIControlStateNormal];
 	[buildButton addTarget:self	action:@selector(sendNoteToServer:) forControlEvents:UIControlEventTouchUpInside];
 	[self.view addSubview:buildButton];
 	
