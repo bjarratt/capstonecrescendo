@@ -157,4 +157,8 @@ public class Note
 	public String getLength(){
 		return myLength;
 	}
+	
+	public String getPitch(){
+		return myPitch;
+	}
 }

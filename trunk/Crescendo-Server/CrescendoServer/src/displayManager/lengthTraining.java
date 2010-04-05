@@ -5,11 +5,11 @@ import java.util.*;
 
 /**
  * This class is used for instantiations of the "Match Length" training 
- * mode. A set of three measures is created with random note lengths 
+ * mode. A set of measures is created with random note lengths 
  * that the user must match. The notes received as input can be of any 
  * desired pitch. The players will be prompted to enter the correct notes,
  * and given clues and feedback on their selections to help them learn the
- * pitches. 
+ * lengths. 
  * @author Chris Aikens
  *
  */

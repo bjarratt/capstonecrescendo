@@ -11,16 +11,29 @@ public class Main
 	{
 
 		new ConnectionManager();
-		lengthTraining test = new lengthTraining(1);
+		lengthTraining testLength = new lengthTraining(1);
 		
 		
-		for(Note n : test.wantedNotes)
+		for(Note n : testLength.wantedNotes)
 			System.out.println(n.getLength());
 		
 		String length = "h";
-		if(test.compareLength(length, 0))
+		if(testLength.compare(length, 0))
 			System.out.println("match!");
 		else
 			System.out.println("no match!");
+		
+		
+		pitchTraining testPitch = new pitchTraining(8);
+		
+		for(Note n : testPitch.wantedNotes)
+			System.out.println(n.getPitch());
+		
+		String pitch = "C6";
+		if(testPitch.compare(pitch, 0))
+			System.out.println("match!");
+		else
+			System.out.println("no match!");
+		
 	}
 }
