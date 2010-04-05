@@ -3,6 +3,8 @@ package network.OODSS;
 import java.io.IOException;
 import java.net.InetAddress;
 
+import server.TestDisplay;
+
 import ecologylab.collections.Scope;
 import ecologylab.net.NetTools;
 import ecologylab.services.distributed.server.DoubleThreadedNIOServer;
@@ -19,8 +21,12 @@ import ecologylab.xml.TranslationScope;
  */
 public class PublicServer {
 	
+	public static final String DISPLAY_HANDLE = "DISPLAY_HANDLE";
+	
 	private static final int	idleTimeout	= -1;
 	private static final int	MTU			= 40000;
+	
+	private static final TestDisplay display = new TestDisplay();
 	
 	@SuppressWarnings("unchecked")
 	public PublicServer() throws IOException {
@@ -30,6 +36,7 @@ public class PublicServer {
 		// Creates a scope for the server to use as an application scope as
 		// well as individual client session scopes.
 		Scope applicationScope = new Scope();
+		applicationScope.put(DISPLAY_HANDLE, display);
 		
 		// Acquire an array of all local ip-addresses
 		InetAddress[] locals = NetTools.getAllInetAddressesForLocalhost();
@@ -41,6 +48,7 @@ public class PublicServer {
 						applicationScope, idleTimeout, MTU);
 		
 		Server.start();
+		display.run();
 	}
 	
 	public static void main(String[] args) throws IOException

@@ -2,6 +2,8 @@ package network.OODSS;
 
 import java.util.HashMap;
 
+import server.TestDisplay;
+
 import ecologylab.collections.Scope;
 import ecologylab.services.distributed.common.SessionObjects;
 import ecologylab.services.distributed.server.clientsessionmanager.SessionHandle;
@@ -49,20 +51,27 @@ public class ServerRequest extends RequestMessage {
 		HashMap<Object, SessionHandle> sessionHandleMap = (HashMap<Object, SessionHandle>) cSScope
 			.get(SessionObjects.SESSIONS_MAP);
 		
+		TestDisplay display = (TestDisplay) cSScope.get(PublicServer.DISPLAY_HANDLE);
+		display.setText(message);
+		
 		// Get this client's SessionHandle
 		SessionHandle mySessionHandle = (SessionHandle) cSScope
 			.get(SessionObjects.SESSION_HANDLE);
 		
-		// Form a update message to send out to all of the other clients
-		ServerUpdate messageUpdate = new ServerUpdate(message, mySessionHandle);
+		ServerUpdate update = new ServerUpdate("player1", mySessionHandle);
 		
-		// Loop through the other sessions
-		for (SessionHandle otherClientHandle: sessionHandleMap.values()) {
-			// If this isn't me then send them an update
-			if (!mySessionHandle.equals(otherClientHandle)) {
-				otherClientHandle.sendUpdate(messageUpdate);
-			}
-		}
+		mySessionHandle.sendUpdate(update);
+		
+		// Form a update message to send out to all of the other clients
+//		ServerUpdate messageUpdate = new ServerUpdate(message, mySessionHandle);
+//		
+//		// Loop through the other sessions
+//		for (SessionHandle otherClientHandle: sessionHandleMap.values()) {
+//			// If this isn't me then send them an update
+//			if (!mySessionHandle.equals(otherClientHandle)) {
+//				otherClientHandle.sendUpdate(messageUpdate);
+//			}
+//		}
 		
 		// Send back a response confirming that we got the request
 		return OkResponse.reusableInstance;	
