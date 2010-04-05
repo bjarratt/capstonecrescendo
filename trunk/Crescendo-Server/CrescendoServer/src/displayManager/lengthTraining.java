@@ -130,7 +130,7 @@ public class lengthTraining {
 	 * @param index - the position within wantedNotes
 	 * @return
 	 */
-	boolean compareLength(String input, int index){
+	boolean compare(String input, int index){
 		if(input == wantedNotes.get(index).getLength()){
 			//correct note
 			return true;
