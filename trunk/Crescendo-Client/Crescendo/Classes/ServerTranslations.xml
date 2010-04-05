@@ -1,6 +1,6 @@
-<translation_scope name="ChatTranslations">
-	<class_descriptor described_class="class ecologylab.tutorials.oodss.chat.ChatRequest"
-		tag_name="chat_request">
+<translation_scope name="ServerTranslations">
+	<class_descriptor described_class="class network.OODSS.ServerRequest"
+		tag_name="server_request">
 		<field_descriptor
 			field="timeStamp"
 			tag_name="time_stamp" type="1" scalar_type="LongType"></field_descriptor>
@@ -83,8 +83,8 @@
 			field="sessionId"
 			tag_name="session_id" type="1" scalar_type="StringType"></field_descriptor>
 	</class_descriptor>
-	<class_descriptor described_class="class ecologylab.tutorials.oodss.chat.ChatUpdate"
-		tag_name="chat_update">
+	<class_descriptor described_class="class network.OODSS.ServerUpdate"
+		tag_name="server_update">
 		<field_descriptor
 			field="timeStamp"
 			tag_name="time_stamp" type="1" scalar_type="LongType"></field_descriptor>

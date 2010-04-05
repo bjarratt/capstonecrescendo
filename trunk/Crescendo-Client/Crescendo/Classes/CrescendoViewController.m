@@ -8,7 +8,7 @@
 
 #import "CrescendoViewController.h"
 #import "AppConfig.h"
-#import "ChatRequest.h"
+#import "ServerRequest.h"
 
 @implementation CrescendoViewController
 
@@ -20,7 +20,7 @@
 
 #pragma mark ChatUpdateDelegate Method
 
-- (void) recievedChatUpdate: (ChatUpdate*) update {
+- (void) recievedChatUpdate: (ServerUpdate*) update {
 }
 
 #pragma mark Interface Methods
@@ -41,7 +41,7 @@
 	NSString* inputText = @"training view";
 	
     // Initialize ChatRequest and set message to content's of the text field.
-    ChatRequest* request = [[ChatRequest alloc] init];
+	ServerRequest* request = [[ServerRequest alloc] init];
     [request setMessage:inputText];
     
     // Setup the client to send the message a little later in the run loop.

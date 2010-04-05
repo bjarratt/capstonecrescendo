@@ -18,10 +18,10 @@
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {    
 	// Get an instance of the ChatTranslations scope.
-	TranslationScope* scope = [ChatTranslations get];
+	TranslationScope* scope = [ServerTranslations get];
     
 	// Initialize the client with the ChatTranslations scope.
-	self.client = [[XMLClient alloc] initWithHostAddress:@"lennon.cs.tamu.edu" andPort:2108 
+	self.client = [[XMLClient alloc] initWithHostAddress:@"128.194.143.165" andPort:2108 
 									 andTranslationScope:scope];
 	
 	// Designate self as the client's delegate.

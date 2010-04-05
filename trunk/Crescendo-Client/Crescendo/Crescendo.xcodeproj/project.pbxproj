@@ -15,17 +15,17 @@
 		3E55634E114ED6F70089B12F /* TrainingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E55634D114ED6F70089B12F /* TrainingViewController.m */; };
 		3E556354114ED7B00089B12F /* GamemodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E556353114ED7B00089B12F /* GamemodeViewController.m */; };
 		3E556357114ED7CA0089B12F /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E556356114ED7CA0089B12F /* HelpViewController.m */; };
-		3E556364114ED8CF0089B12F /* ChatTranslations.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E556360114ED8CF0089B12F /* ChatTranslations.m */; };
-		3E556365114ED8CF0089B12F /* ChatTranslations.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3E556361114ED8CF0089B12F /* ChatTranslations.xml */; };
-		3E556366114ED8CF0089B12F /* ChatUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E556363114ED8CF0089B12F /* ChatUpdate.m */; };
-		3E556369114ED8E40089B12F /* ChatRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E556368114ED8E40089B12F /* ChatRequest.m */; };
+		3E556364114ED8CF0089B12F /* ServerTranslations.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E556360114ED8CF0089B12F /* ServerTranslations.m */; };
+		3E556365114ED8CF0089B12F /* ServerTranslations.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3E556361114ED8CF0089B12F /* ServerTranslations.xml */; };
+		3E556366114ED8CF0089B12F /* ServerUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E556363114ED8CF0089B12F /* ServerUpdate.m */; };
+		3E556369114ED8E40089B12F /* ServerRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E556368114ED8E40089B12F /* ServerRequest.m */; };
 		3E556375114ED9E30089B12F /* CrescendoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E556370114ED9E30089B12F /* CrescendoViewController.xib */; };
 		3E556376114ED9E30089B12F /* GamemodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E556371114ED9E30089B12F /* GamemodeViewController.xib */; };
 		3E556377114ED9E30089B12F /* HelpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E556372114ED9E30089B12F /* HelpViewController.xib */; };
 		3E556378114ED9E30089B12F /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E556373114ED9E30089B12F /* MainWindow.xib */; };
 		3E556379114ED9E30089B12F /* TrainingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E556374114ED9E30089B12F /* TrainingViewController.xib */; };
 		3E556387114EDB240089B12F /* CrescendoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */; };
-		3E556393114EDBA70089B12F /* ChatUpdateDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E556392114EDBA70089B12F /* ChatUpdateDelegate.m */; };
+		3E556393114EDBA70089B12F /* ServerUpdateDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E556392114EDBA70089B12F /* ServerUpdateDelegate.m */; };
 		3E5563A2114EDBFC0089B12F /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5563A1114EDBFC0089B12F /* appicon.png */; };
 		3E5563AA114EDCA60089B12F /* background_horizontal.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5563A5114EDCA60089B12F /* background_horizontal.png */; };
 		3E5563AB114EDCA60089B12F /* background_vertical.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5563A6114EDCA60089B12F /* background_vertical.png */; };
@@ -304,21 +304,21 @@
 		3E556353114ED7B00089B12F /* GamemodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamemodeViewController.m; sourceTree = "<group>"; };
 		3E556355114ED7C90089B12F /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
 		3E556356114ED7CA0089B12F /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
-		3E55635F114ED8CF0089B12F /* ChatTranslations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatTranslations.h; sourceTree = "<group>"; };
-		3E556360114ED8CF0089B12F /* ChatTranslations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatTranslations.m; sourceTree = "<group>"; };
-		3E556361114ED8CF0089B12F /* ChatTranslations.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ChatTranslations.xml; sourceTree = "<group>"; };
-		3E556362114ED8CF0089B12F /* ChatUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatUpdate.h; sourceTree = "<group>"; };
-		3E556363114ED8CF0089B12F /* ChatUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatUpdate.m; sourceTree = "<group>"; };
-		3E556367114ED8E40089B12F /* ChatRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatRequest.h; sourceTree = "<group>"; };
-		3E556368114ED8E40089B12F /* ChatRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatRequest.m; sourceTree = "<group>"; };
+		3E55635F114ED8CF0089B12F /* ServerTranslations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerTranslations.h; sourceTree = "<group>"; };
+		3E556360114ED8CF0089B12F /* ServerTranslations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerTranslations.m; sourceTree = "<group>"; };
+		3E556361114ED8CF0089B12F /* ServerTranslations.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ServerTranslations.xml; sourceTree = "<group>"; };
+		3E556362114ED8CF0089B12F /* ServerUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerUpdate.h; sourceTree = "<group>"; };
+		3E556363114ED8CF0089B12F /* ServerUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerUpdate.m; sourceTree = "<group>"; };
+		3E556367114ED8E40089B12F /* ServerRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerRequest.h; sourceTree = "<group>"; };
+		3E556368114ED8E40089B12F /* ServerRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerRequest.m; sourceTree = "<group>"; };
 		3E55636E114ED97A0089B12F /* libecologylabXMLLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libecologylabXMLLib.a; sourceTree = "<group>"; };
 		3E556370114ED9E30089B12F /* CrescendoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CrescendoViewController.xib; sourceTree = "<group>"; };
 		3E556371114ED9E30089B12F /* GamemodeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GamemodeViewController.xib; sourceTree = "<group>"; };
 		3E556372114ED9E30089B12F /* HelpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelpViewController.xib; sourceTree = "<group>"; };
 		3E556373114ED9E30089B12F /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		3E556374114ED9E30089B12F /* TrainingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrainingViewController.xib; sourceTree = "<group>"; };
-		3E556391114EDBA70089B12F /* ChatUpdateDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatUpdateDelegate.h; sourceTree = "<group>"; };
-		3E556392114EDBA70089B12F /* ChatUpdateDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatUpdateDelegate.m; sourceTree = "<group>"; };
+		3E556391114EDBA70089B12F /* ServerUpdateDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerUpdateDelegate.h; sourceTree = "<group>"; };
+		3E556392114EDBA70089B12F /* ServerUpdateDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerUpdateDelegate.m; sourceTree = "<group>"; };
 		3E5563A1114EDBFC0089B12F /* appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicon.png; sourceTree = "<group>"; };
 		3E5563A5114EDCA60089B12F /* background_horizontal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_horizontal.png; sourceTree = "<group>"; };
 		3E5563A6114EDCA60089B12F /* background_vertical.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_vertical.png; sourceTree = "<group>"; };
@@ -671,15 +671,15 @@
 		3E556358114ED7D40089B12F /* OODSS */ = {
 			isa = PBXGroup;
 			children = (
-				3E556367114ED8E40089B12F /* ChatRequest.h */,
-				3E556368114ED8E40089B12F /* ChatRequest.m */,
-				3E556362114ED8CF0089B12F /* ChatUpdate.h */,
-				3E556363114ED8CF0089B12F /* ChatUpdate.m */,
-				3E55635F114ED8CF0089B12F /* ChatTranslations.h */,
-				3E556360114ED8CF0089B12F /* ChatTranslations.m */,
-				3E556361114ED8CF0089B12F /* ChatTranslations.xml */,
-				3E556391114EDBA70089B12F /* ChatUpdateDelegate.h */,
-				3E556392114EDBA70089B12F /* ChatUpdateDelegate.m */,
+				3E556367114ED8E40089B12F /* ServerRequest.h */,
+				3E556368114ED8E40089B12F /* ServerRequest.m */,
+				3E556362114ED8CF0089B12F /* ServerUpdate.h */,
+				3E556363114ED8CF0089B12F /* ServerUpdate.m */,
+				3E55635F114ED8CF0089B12F /* ServerTranslations.h */,
+				3E556360114ED8CF0089B12F /* ServerTranslations.m */,
+				3E556361114ED8CF0089B12F /* ServerTranslations.xml */,
+				3E556391114EDBA70089B12F /* ServerUpdateDelegate.h */,
+				3E556392114EDBA70089B12F /* ServerUpdateDelegate.m */,
 			);
 			name = OODSS;
 			sourceTree = "<group>";
@@ -1186,7 +1186,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E556365114ED8CF0089B12F /* ChatTranslations.xml in Resources */,
+				3E556365114ED8CF0089B12F /* ServerTranslations.xml in Resources */,
 				3E556375114ED9E30089B12F /* CrescendoViewController.xib in Resources */,
 				3E556376114ED9E30089B12F /* GamemodeViewController.xib in Resources */,
 				3E556377114ED9E30089B12F /* HelpViewController.xib in Resources */,
@@ -1337,10 +1337,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E556369114ED8E40089B12F /* ChatRequest.m in Sources */,
-				3E556364114ED8CF0089B12F /* ChatTranslations.m in Sources */,
-				3E556366114ED8CF0089B12F /* ChatUpdate.m in Sources */,
-				3E556393114EDBA70089B12F /* ChatUpdateDelegate.m in Sources */,
+				3E556369114ED8E40089B12F /* ServerRequest.m in Sources */,
+				3E556364114ED8CF0089B12F /* ServerTranslations.m in Sources */,
+				3E556366114ED8CF0089B12F /* ServerUpdate.m in Sources */,
+				3E556393114EDBA70089B12F /* ServerUpdateDelegate.m in Sources */,
 				3E556387114EDB240089B12F /* CrescendoAppDelegate.m in Sources */,
 				28D7ACF80DDB3853001CB0EB /* CrescendoViewController.m in Sources */,
 				3E556354114ED7B00089B12F /* GamemodeViewController.m in Sources */,

@@ -6,7 +6,7 @@
 #import <Foundation/Foundation.h>
 #import "RequestMessage.h"
 
-@interface ChatRequest : RequestMessage
+@interface ServerRequest : RequestMessage
 {
 	NSString *message;
 }
