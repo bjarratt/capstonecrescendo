@@ -12,6 +12,9 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		28D7ACF80DDB3853001CB0EB /* CrescendoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */; };
+		3E1A5B141169A90700D80702 /* ConnectionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E1A5B131169A90700D80702 /* ConnectionRequest.m */; };
+		3E1A5B171169AA6B00D80702 /* ConnectionUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E1A5B161169AA6B00D80702 /* ConnectionUpdate.m */; };
+		3E1A5B1A1169AAC900D80702 /* ConnectionUpdateDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E1A5B191169AAC900D80702 /* ConnectionUpdateDelegate.m */; };
 		3E55634E114ED6F70089B12F /* TrainingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E55634D114ED6F70089B12F /* TrainingViewController.m */; };
 		3E556354114ED7B00089B12F /* GamemodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E556353114ED7B00089B12F /* GamemodeViewController.m */; };
 		3E556357114ED7CA0089B12F /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E556356114ED7CA0089B12F /* HelpViewController.m */; };
@@ -296,6 +299,12 @@
 		28D7ACF70DDB3853001CB0EB /* CrescendoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrescendoViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Crescendo_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Crescendo_Prefix.pch; sourceTree = "<group>"; };
+		3E1A5B121169A90700D80702 /* ConnectionRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionRequest.h; sourceTree = "<group>"; };
+		3E1A5B131169A90700D80702 /* ConnectionRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionRequest.m; sourceTree = "<group>"; };
+		3E1A5B151169AA6B00D80702 /* ConnectionUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionUpdate.h; sourceTree = "<group>"; };
+		3E1A5B161169AA6B00D80702 /* ConnectionUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionUpdate.m; sourceTree = "<group>"; };
+		3E1A5B181169AAC900D80702 /* ConnectionUpdateDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionUpdateDelegate.h; sourceTree = "<group>"; };
+		3E1A5B191169AAC900D80702 /* ConnectionUpdateDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionUpdateDelegate.m; sourceTree = "<group>"; };
 		3E55634C114ED6F70089B12F /* TrainingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingViewController.h; sourceTree = "<group>"; };
 		3E55634D114ED6F70089B12F /* TrainingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingViewController.m; sourceTree = "<group>"; };
 		3E556350114ED77F0089B12F /* CrescendoAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CrescendoAppDelegate.h; sourceTree = "<group>"; };
@@ -668,18 +677,40 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3E556358114ED7D40089B12F /* OODSS */ = {
+		3E1A5B1B1169AADB00D80702 /* Connection */ = {
+			isa = PBXGroup;
+			children = (
+				3E1A5B121169A90700D80702 /* ConnectionRequest.h */,
+				3E1A5B131169A90700D80702 /* ConnectionRequest.m */,
+				3E1A5B151169AA6B00D80702 /* ConnectionUpdate.h */,
+				3E1A5B161169AA6B00D80702 /* ConnectionUpdate.m */,
+				3E1A5B181169AAC900D80702 /* ConnectionUpdateDelegate.h */,
+				3E1A5B191169AAC900D80702 /* ConnectionUpdateDelegate.m */,
+			);
+			name = Connection;
+			sourceTree = "<group>";
+		};
+		3E1A5B1C1169AAE400D80702 /* Messages */ = {
 			isa = PBXGroup;
 			children = (
 				3E556367114ED8E40089B12F /* ServerRequest.h */,
 				3E556368114ED8E40089B12F /* ServerRequest.m */,
 				3E556362114ED8CF0089B12F /* ServerUpdate.h */,
 				3E556363114ED8CF0089B12F /* ServerUpdate.m */,
+				3E556391114EDBA70089B12F /* ServerUpdateDelegate.h */,
+				3E556392114EDBA70089B12F /* ServerUpdateDelegate.m */,
+			);
+			name = Messages;
+			sourceTree = "<group>";
+		};
+		3E556358114ED7D40089B12F /* OODSS */ = {
+			isa = PBXGroup;
+			children = (
+				3E1A5B1C1169AAE400D80702 /* Messages */,
+				3E1A5B1B1169AADB00D80702 /* Connection */,
 				3E55635F114ED8CF0089B12F /* ServerTranslations.h */,
 				3E556360114ED8CF0089B12F /* ServerTranslations.m */,
 				3E556361114ED8CF0089B12F /* ServerTranslations.xml */,
-				3E556391114EDBA70089B12F /* ServerUpdateDelegate.h */,
-				3E556392114EDBA70089B12F /* ServerUpdateDelegate.m */,
 			);
 			name = OODSS;
 			sourceTree = "<group>";
@@ -1349,6 +1380,9 @@
 				3E55634E114ED6F70089B12F /* TrainingViewController.m in Sources */,
 				3E55658B114EE2440089B12F /* AppConfig.m in Sources */,
 				CA0208D9115B28C60023D8FB /* ComposeViewController.m in Sources */,
+				3E1A5B141169A90700D80702 /* ConnectionRequest.m in Sources */,
+				3E1A5B171169AA6B00D80702 /* ConnectionUpdate.m in Sources */,
+				3E1A5B1A1169AAC900D80702 /* ConnectionUpdateDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

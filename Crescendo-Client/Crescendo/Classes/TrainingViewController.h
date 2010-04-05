@@ -2,8 +2,8 @@
 //  TrainingViewController.h
 //  Crescendo
 //
-//  Created by Brandon on 3/5/10.
-//  Copyright 2010 __MyCompanyName__. All rights reserved.
+//  Created by Brandon Kaster on 4/5/10.
+//  Copyright 2010 Texas A&M University. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
