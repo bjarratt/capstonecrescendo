@@ -11,22 +11,16 @@
 
 @implementation ConnectionUpdate
 
-@synthesize message;
-@synthesize host;
-@synthesize port;
+@synthesize playerNumber;
 
 + (void) initialize {
 	[ConnectionUpdate class];
 }
 
-- (void) setPortWithReference: (int *) p_port {
-	port = *p_port;
-}
-
 -(void) processUpdate:(Scope *) scope
 {
 	/*
-	 * Get reference to the CHAT_UPDATE_DELEGATE out of the application scope. 
+	 * Get reference to the CONNECTION_UPDATE_DELEGATE out of the application scope. 
 	 */
 	NSValue* updateDelegatePtr = (NSValue*)[scope objectForKey:CONNECTION_UPDATE_DELEGATE];
 	id<ConnectionUpdateDelegate> updateDelegate = (id<ConnectionUpdateDelegate>)[updateDelegatePtr pointerValue];

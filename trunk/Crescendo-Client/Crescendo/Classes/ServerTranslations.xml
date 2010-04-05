@@ -37,9 +37,6 @@
 		<field_descriptor
 			field="uid"
 			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
-		<field_descriptor
-			field="message"
-			tag_name="message" type="1" scalar_type="StringType"></field_descriptor>
 	</class_descriptor>
 	<class_descriptor described_class="class network.OODSS.ConnectionUpdate"
 		tag_name="connection_update">
@@ -50,14 +47,8 @@
 			field="uid"
 			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
 		<field_descriptor
-			field="message"
-			tag_name="message" type="1" scalar_type="StringType"></field_descriptor>
-		<field_descriptor
-			field="host"
-			tag_name="host" type="1" scalar_type="StringType"></field_descriptor>
-		<field_descriptor
-			field="port"
-			tag_name="port" type="1" scalar_type="IntType"></field_descriptor>
+			field="playerNumber"
+			tag_name="playerNumber" type="1" scalar_type="StringType"></field_descriptor>
 	</class_descriptor>
 	<class_descriptor
 		described_class="class ecologylab.services.messages.DisconnectRequest"

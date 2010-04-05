@@ -10,9 +10,6 @@
 #import "RequestMessage.h"
 
 @interface ConnectionRequest : RequestMessage {
-	NSString *message;
 }
-
-@property (nonatomic,readwrite, retain) NSString *message;
 
 @end

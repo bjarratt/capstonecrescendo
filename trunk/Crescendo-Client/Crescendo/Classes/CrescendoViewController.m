@@ -9,6 +9,7 @@
 #import "CrescendoViewController.h"
 #import "AppConfig.h"
 #import "ServerRequest.h"
+#import "ConnectionRequest.h"
 
 @implementation CrescendoViewController
 
@@ -22,7 +23,13 @@
 #pragma mark ChatUpdateDelegate Method
 
 - (void) recievedServerUpdate: (ServerUpdate*) update {
-	self.playerId = [NSString stringWithString: update.message];
+	//self.playerId = [NSString stringWithString: update.message];
+}
+
+#pragma mark ConnectionUpdateDelegate Method
+
+- (void) recievedConnectionUpdate: (ConnectionUpdate*) update {
+	self.playerId = [NSString stringWithString: update.playerNumber];
 }
 
 #pragma mark Interface Methods
@@ -74,13 +81,20 @@
  }
  */
 
+#pragma mark Initialize View Methods
 
-/*
  // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
  - (void)viewDidLoad {
- [super viewDidLoad];
+	 [super viewDidLoad];
+	 
+	 // Initialize a Connection Request.
+	 ConnectionRequest* request = [[ConnectionRequest alloc] init];
+	 
+	 // Setup the client to send the connection request a little later in the run loop.
+	 [client performSelector:@selector(sendMessage:) withObject: request];
+	 
+	 [request release];
  }
- */
 
 #pragma mark Autorotate Orientation Override
 

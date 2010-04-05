@@ -10,14 +10,9 @@
 #import "UpdateMessage.h"
 
 @interface ConnectionUpdate : UpdateMessage {
-	NSString *message;
-	NSString *host;
-	int port;
+	NSString *playerNumber;
 }
 
-@property (nonatomic,readwrite, retain) NSString *message;
-@property (nonatomic,readwrite, retain) NSString *host;
-@property (nonatomic,readwrite) int port;
+@property (nonatomic,readwrite, retain) NSString *playerNumber;
 
-- (void) setPortWithReference: (int *) p_port;
 @end

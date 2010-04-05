@@ -23,7 +23,7 @@
 -(void) processUpdate:(Scope *) scope
 {
   /*
-   * Get reference to the CHAT_UPDATE_DELEGATE out of the application scope. 
+   * Get reference to the SERVER_UPDATE_DELEGATE out of the application scope. 
    */
   NSValue* updateDelegatePtr = (NSValue*)[scope objectForKey:SERVER_UPDATE_DELEGATE];
   id<ServerUpdateDelegate> updateDelegate = (id<ServerUpdateDelegate>)[updateDelegatePtr pointerValue];
