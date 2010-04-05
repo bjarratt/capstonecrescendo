@@ -13,6 +13,7 @@
 @implementation ComposeViewController
 
 @synthesize client;
+@synthesize playerId;
 @synthesize myLengthScrollView;
 @synthesize myPitchScrollView;
 @synthesize buildButton;
@@ -39,7 +40,7 @@
 		   withEvent: (UIEvent *) event {
 	
 	if (event.type == UIEventSubtypeMotionShake) {
-		[self sendNoteToServer];
+		//[self sendNoteToServer];
 	}
 }
 
@@ -250,7 +251,7 @@
 	/*
 	 *	Send notelength/notepitch to public display
 	 */
-	NSString* inputText = buildLabel.text;
+	NSString* inputText = [NSString stringWithFormat: @"%@:%@", playerId, buildLabel.text];
 	
     // Initialize ChatRequest and set message to content's of the text field.
 	ServerRequest* request = [[ServerRequest alloc] init];
