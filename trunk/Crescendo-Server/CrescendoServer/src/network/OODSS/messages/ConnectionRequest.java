@@ -24,8 +24,8 @@ public class ConnectionRequest extends RequestMessage
 		
 		ConnectionUpdate update = new ConnectionUpdate(playerID);
 		
-		TestDisplay display = (TestDisplay)clientSessionScope.get(PublicServer.DISPLAY_HANDLE);
-		display.setText(playerID);
+//		TestDisplay display = (TestDisplay)clientSessionScope.get(PublicServer.DISPLAY_HANDLE);
+//		display.setText(playerID);
 		
 		handle.sendUpdate(update);
 		
