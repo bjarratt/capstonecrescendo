@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-//#import "ServerUpdateDelegate.h"
 #import "ConnectionUpdateDelegate.h"
+#import	"GameTypeUpdateDelegate.h"
+#import "PlayNoteUpdateDelegate.h"
 #import "XMLClient.h"
 
 #import "ComposeViewController.h"
