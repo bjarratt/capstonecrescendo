@@ -1,8 +1,13 @@
 package network;
 
 import java.io.IOException;
+import java.net.InetAddress;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Set;
+
+import ecologylab.collections.Scope;
+import ecologylab.services.distributed.server.clientsessionmanager.SessionHandle;
 
 import network.OODSS.base.Keys;
 import network.OODSS.base.PublicServer;
@@ -29,9 +34,39 @@ public class ConnectionManager
 		return playerID;
 	}
 	
-	public boolean removePlayer(String playerID)
+	public void cleanupPlayers()
 	{
-		return false;
+		HashMap<String, Object> newMap = new HashMap<String, Object>(playerMap);
+		
+		Set<String> keys = newMap.keySet();
+		
+		for (String key : keys)
+		{
+			SessionHandle sh = (SessionHandle)playerMap.get(key);
+			
+			if (sh != null && sh.getSessionManager().isInvalidating())
+			{
+				playerMap.remove(key);
+				playerMap.put(key, null);
+			}
+		}
+	}
+	
+	public String listPlayers()
+	{
+		String current = "Player List:\n";
+		
+		Set<String> keys = playerMap.keySet();
+		
+		for (String key : keys)
+		{
+			if (playerMap.get(key) != null)
+			{
+				current += " -- " + key + "\n";
+			}
+		}
+		
+		return current;
 	}
 	
 	public void initServer()

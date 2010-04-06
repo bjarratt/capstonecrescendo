@@ -19,8 +19,8 @@ public class ConnectionRequest extends RequestMessage
 	{
 		SessionHandle handle = (SessionHandle)clientSessionScope.get(SessionObjects.SESSION_HANDLE);
 		
-		Object sessionID = handle.getSessionId();
-		String playerID = ConnectionManager.getInstance().assignPlayerSlot(sessionID);
+		Object sessionHandle = handle;
+		String playerID = ConnectionManager.getInstance().assignPlayerSlot(sessionHandle);
 		
 		ConnectionUpdate update = new ConnectionUpdate(playerID);
 		
