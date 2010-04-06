@@ -45,11 +45,11 @@ public class Main
 			System.out.println("no match!");
 		*/
 		
-		JFrame window = new JFrame("Crescendo");
+	/*	JFrame window = new JFrame("Crescendo");
 		window.setBackground(Color.WHITE);
 		window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		window.getContentPane().add(new DisplayGUI());
 		window.pack();
-		window.setVisible(true);
+		window.setVisible(true);*/
 	}
 }

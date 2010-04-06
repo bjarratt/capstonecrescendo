@@ -83,15 +83,6 @@ public class DisplayGUI extends JPanel
             	g.drawImage(Images.getNoteImage(img, playerNotes.get(playerNotes.size() - 12)), 20, Images.getNotePosition(playerNotes.get(playerNotes.size() - 12)), this);
         }
     }
-    
-	public void reDraw()
-	{
-		for(int i=0; i<playerNotes.size(); i++)
-        {
-            //draw playerNotes[i] on the screen
-            //3 measures on the screen at any one time
-        }
-	}
 	
 	public void receiveMessage(String message)
 	{
