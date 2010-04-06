@@ -1,7 +1,9 @@
-package displayManager;
+package displayManager.gameModes;
 
 
 import java.util.*;
+
+import displayManager.Note;
 
 /**
  * This class is used for instantiations of the "Match Length" training 
@@ -15,7 +17,7 @@ import java.util.*;
  */
 public class lengthTraining {
 	
-	ArrayList<Note> wantedNotes;	//the array of notes the trainer wants
+	public ArrayList<Note> wantedNotes;	//the array of notes the trainer wants
 	private Random rand;
 	
 	final int maxSubdivisions = 8;		//per measure
@@ -25,7 +27,7 @@ public class lengthTraining {
 	 * Creates a new lengthTraining instantiation of the given measure length.
 	 * @param wantedMeasures - measures in this training session
 	 */
-	lengthTraining(int wantedMeasures){
+	public lengthTraining(int wantedMeasures){
 		
 		wantedNotes = new ArrayList<Note>();
 		rand = new Random();
@@ -39,7 +41,7 @@ public class lengthTraining {
 	 * another random note is chosen. To tying across measures is allowed.
 	 * @param measureCount - the number of measures to fill.
 	 */
-	void randomizeMeasures(int measureCount){
+	public void randomizeMeasures(int measureCount){
 		
 		int i = 0;
 		int test = 0;
@@ -130,7 +132,7 @@ public class lengthTraining {
 	 * @param index - the position within wantedNotes
 	 * @return
 	 */
-	boolean compare(String input, int index){
+	public boolean compare(String input, int index){
 		if(input == wantedNotes.get(index).getLength()){
 			//correct note
 			return true;
@@ -141,7 +143,7 @@ public class lengthTraining {
 		}
 	}
 	
-	ArrayList<Note> getNotes(){
+	public ArrayList<Note> getNotes(){
 		return this.wantedNotes;
 	}
 		

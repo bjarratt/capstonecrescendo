@@ -1,5 +1,8 @@
 package displayManager;
 
+import displayManager.gameModes.lengthTraining;
+import displayManager.gameModes.pitchTraining;
+
 /**
  *	This class simply starts the GameManager
  *
