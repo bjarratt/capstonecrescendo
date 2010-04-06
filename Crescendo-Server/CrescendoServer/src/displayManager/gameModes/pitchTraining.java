@@ -1,7 +1,9 @@
-package displayManager;
+package displayManager.gameModes;
 
 import java.util.ArrayList;
 import java.util.Random;
+
+import displayManager.Note;
 
 /**
  * This class is used for instantiations of the "Match Pitch" training
@@ -15,14 +17,14 @@ import java.util.Random;
  */
 public class pitchTraining {
 	
-	ArrayList<Note> wantedNotes;	//the array of notes the trainer wants
+	public ArrayList<Note> wantedNotes;	//the array of notes the trainer wants
 	private Random rand;
 	
 	/**
 	 * Creates a new pitchTraining instantiation of the given number of pitches
 	 * @param numberPitches - the number of pitches wanted 
 	 */
-	pitchTraining(int numberPitches){
+	public pitchTraining(int numberPitches){
 		
 		wantedNotes = new ArrayList<Note>();
 		rand = new Random();
@@ -36,7 +38,7 @@ public class pitchTraining {
 	 * or overwritten as needed/desired.
 	 * @param pitchesWanted - the number of pitches wanted
 	 */
-	void randomizePitches(int pitchesWanted){
+	public void randomizePitches(int pitchesWanted){
 		int i = 0;
 		while(i < pitchesWanted){
 			switch(rand.nextInt(19))
@@ -130,14 +132,14 @@ public class pitchTraining {
 	 * @param index - the position within wantedNotes
 	 * @return
 	 */
-	boolean compare(String input, int index){
+	public boolean compare(String input, int index){
 		if(input == wantedNotes.get(index).getPitch())
 			//matched pitch!
 			return true;
 		return false;
 	}
 	
-	ArrayList<Note> getNotes(){
+	public ArrayList<Note> getNotes(){
 		return this.wantedNotes;
 	}
 }

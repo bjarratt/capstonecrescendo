@@ -1,6 +1,8 @@
-package displayManager;
+package displayManager.gameModes;
 import java.util.ArrayList;
 import java.util.Random;
+
+import displayManager.Note;
 
 
 /**
