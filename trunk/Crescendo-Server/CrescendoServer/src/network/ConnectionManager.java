@@ -2,16 +2,36 @@ package network;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Set;
 
+import network.OODSS.base.Keys;
 import network.OODSS.base.PublicServer;
 
-public class ConnectionManager {
+public class ConnectionManager 
+{
 	
 	public String assignPlayerSlot(Object sessionID)
 	{
+		Set<String> keys = playerMap.keySet();
+		String playerID = "";
 		
+		for (String key : keys)
+		{
+			if (playerMap.get(key) == null)
+			{
+				playerMap.remove(key);
+				playerMap.put(key, sessionID);
+				playerID = key;
+				break;
+			}
+		}
 		
-		return "";
+		return playerID;
+	}
+	
+	public boolean removePlayer(String playerID)
+	{
+		return false;
 	}
 	
 	public void initServer()
@@ -37,6 +57,10 @@ public class ConnectionManager {
 	
 	private ConnectionManager() 
 	{
+		playerMap.put(Keys.PLAYER_1, null);
+		playerMap.put(Keys.PLAYER_2, null);
+		playerMap.put(Keys.PLAYER_3, null);
+		playerMap.put(Keys.PLAYER_4, null);
 	}
 	
 	private HashMap<String, Object> playerMap = new HashMap<String, Object>();
