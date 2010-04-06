@@ -1,7 +1,9 @@
 package displayManager.messageTranslationSystem;
 
-import java.util.regex.Pattern;
+
 import java.util.ArrayList;
+
+import org.jfugue.Pattern;
 
 public class Measure
 {
@@ -50,24 +52,24 @@ public class Measure
 		Pattern p;
 		String regex = new String();
 		for(Note note : notes)
-			regex += note.getJFuguePattern().pattern() + " ";
+			regex += note.getJFuguePattern().toString() + " ";
 
 		if(getNumberOfAvailableBeats() > 0)
 		{
 			ArrayList<Beat> rest = new ArrayList<Beat>();
 			for(int i = 0; i < getNumberOfAvailableBeats(); i++)
 				rest.add(new Beat());
-			regex += new Note(rest, "unknown").getJFuguePattern().pattern() + " ";
+			regex += new Note(rest, "unknown").getJFuguePattern().toString() + " ";
 		}
 
 		regex += "| ";
-		p = Pattern.compile(regex);
+		p = new Pattern(regex);
 
 		return p;
 	}
 
 	public String toString()
 	{
-		return getJFuguePattern().pattern();
+		return getJFuguePattern().toString();
 	}
 }
