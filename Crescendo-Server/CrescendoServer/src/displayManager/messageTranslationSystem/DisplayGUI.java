@@ -30,13 +30,18 @@ public class DisplayGUI extends JPanel
 		//update the screen with the new note
 		//msgText.append("new msg" + n.toString());
 		//System.out.println("new msg" + n.toString());
-		super.paintComponent(super.getGraphics());
+		//super.paintComponent(super.getGraphics());
+		//super.validate();
 		this.repaint();
+
+		n.playNote();
+		//this.revalidate();
 	}
 
     @Override
     public void paintComponent(Graphics graphics)
 	{
+    	super.paintComponent(graphics);
 		Graphics2D g = (Graphics2D) graphics;
 		
 		//draw the staff
