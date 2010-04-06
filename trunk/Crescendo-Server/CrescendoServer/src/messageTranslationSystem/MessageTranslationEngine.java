@@ -7,6 +7,9 @@ public class MessageTranslationEngine
 	private static HashMap<String, String> pitches = new HashMap<String, String>();
 	private static HashMap<String, String> lengths = new HashMap<String, String>();
 
+	/**
+	 *	Initializes both the 'pitches' and the 'lengths' HashMaps used to translate a Note from a message
+	 */
 	private static void initialize()
 	{
 		//set up the available note pitches
@@ -38,13 +41,14 @@ public class MessageTranslationEngine
 		lengths.put("halfnote", "h");
 		lengths.put("wholenote", "w");
 	}
-/**
-	 * Receive a message from the GameManager, translates the message, and inserts it correctly as a set of beats
+
+	/**
+	 * Translates a message from String and either sends a Message or constructs a note
 	 * Possible message formats 	:	playerX_connect
 	 *								:	playerX_disconnect
 	 *								:	playerX_pitch_length
 	 *
-	 * other messages? menu selection?
+	 * Other messages for state management are in development
 	 *
 	 * @param message a message received within the last timer duration
 	 */
@@ -143,6 +147,11 @@ public class MessageTranslationEngine
 		return newMessage;
 	}
 
+	/**
+	 *	A static class that wraps a Note or a String message and sends it back to the GameManager
+	 *
+	 *	@author Travis Kosarek
+	 */
 	public static class Message
 	{
 		private String _message;

@@ -9,23 +9,22 @@ import java.util.ArrayList;
  */
 public class DisplayManager
 {
-	private DisplayGUI myDisplayGUI;
-
-	final int maxSubdivisions;
-	int currentSubdivisions;
-
-
-	private static int ticks = 0;
+//	private DisplayGUI displayGUI;
 
 	public DisplayManager()
 	{
 		//set up the DisplayGUI
-		//myDisplayGUI = new DisplayGUI();
-
-
-		maxSubdivisions = 8;
-		currentSubdivisions = 0;
+	//	displayGUI = new DisplayGUI();
 
 	}
 
+	public void receiveMessage(String message)
+	{
+
+	}
+
+	public void receiveNote(Note note)
+	{
+
+	}
 }

@@ -21,7 +21,7 @@ public class ConnectionManager
 	Thread p2;
 	Thread p3;
 	Thread p4;
-	**************************/
+	/**************************/
 
 	public ConnectionManager()
 	{
@@ -46,7 +46,7 @@ public class ConnectionManager
 		p2.start();
 		p3.start();
 		p4.start();
-		**********************End of test code***********************/
+		/**********************End of test code***********************/
 
 		gameManager.run();
 	}

@@ -5,19 +5,34 @@ import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import java.awt.Image;
 
+//import org.jfugue.*;
+
 public class Note
 {
+	//The basics of a note
 	private String _pitch;
 	private String _length;
 
+	//is the note tied to the left or the right
 	private boolean _tiedLeft;
 	private boolean _tiedRight;
 
+	//a representation of the Note as a list of Beats
 	private ArrayList<Beat> _beats;
 
+	//the player that sent the note
 	private String _player;
+
+	//the image associated with the the note to be played
 	private ImageIcon _image;
 
+	/**
+	 *	A constructor that sets up a Note from String variables
+	 *
+	 *	@param pitch the desired pitch of the Note in a String format
+	 *	@param length the desired length of the Note in a String format
+	 *	@param player the iPhone that played the Note
+	 */
 	public Note(String pitch, String length, String player)
 	{
 		_pitch = pitch;
@@ -27,8 +42,17 @@ public class Note
 
 		for(int i = 0; i < this.getIntegerNoteLength(); i++)
 			_beats.add(new Beat(_pitch));
+
+		//the format of the image is playerX_Y, for example: player2_4 means player 2 half note
+		_image = new ImageIcon(_player + "_" + getIntegerNoteLength() + ".png");
 	}
 
+	/**
+	 *	A constructor that creates a Note from a list of beats and what iPhone played the Note
+	 *
+	 *	@param beats a representation of the Note as a list of Beat objects
+	 *	@param player the iPhone that played the Note
+	 */
 	public Note(ArrayList<Beat> beats, String player)
 	{
 		if(beats.size()>0)
@@ -51,38 +75,65 @@ public class Note
 			_player = "unknown";
 			_beats = new ArrayList<Beat>();
 		}
-
+		_image = new ImageIcon(_player + "_" + getIntegerNoteLength() + ".png");
 	}
 
+	/**
+	 *	Returns the iPhone that played the note
+	 *
+	 *	@return the iPhone that played the note
+	 */
 	public String getPlayer()
 	{
 		return _player;
 	}
 
+	/**
+	 *	Returns the Beat representation of the Note
+	 *
+	 *	@return the list of Beat objects representing a Note
+	 */
 	public ArrayList<Beat> getBeats()
 	{
 		return _beats;
 	}
 
+
+	/**
+	 *	Returns the length of the Note as an integer
+	 *
+	 *	@return the length of the Note as an integer
+	 */
 	public int size()
 	{
 		return _beats.size();
 	}
 
+
+	/**
+	 *	Returns the Image to be displayed on the screen associated with this Note
+	 *
+	 *	@return the Image to be displayed on the screen associated with this Note
+	 */
 	public Image getImage()
 	{
+		playNote();
 		return _image.getImage();
 	}
 
 	/**
-	 * Returns the given length of the note in terms of the
-	 * number of beat subdivisions that the note would occupy.
-	 * In 4/4 time, an eighth note takes up ONE of the eight
-	 * subdivisions, a quarter takes up TWO, etc. The number of
-	 * subdivisions is determined by the smallest supported note
-	 * length.
+	 *	This method send the JFugue Pattern to JFugue to be played audibly
+	 */
+	public void playNote()
+	{
+	//	Player jfuguePlayer = new Player();
+	//	jfuguePlayer.play(getJFuguePattern());
+	}
+
+	/**
+	 *	Returns the length of the Note as parsed by the JFugue Pattern
 	 *
-	 * @return - the length of the note as a function of subdivisions
+	 *	@return - the number of Beats in a Note
 	 */
 	private int getIntegerNoteLength()
 	{
@@ -105,6 +156,12 @@ public class Note
 		return 0;
 	}
 
+	/**
+	 *	Returns length of the note as the String representation needed by JFugue
+	 *
+	 *	@param length the number of Beats in a Note
+	 *	@return the String representation of the Note as needed by JFugue
+	 */
 	public String getStringNoteLength(int length)
 	{
 		switch(length)
@@ -130,36 +187,71 @@ public class Note
 		}
 	}
 
+	/**
+	 *	Returns the length of the Note
+	 *
+	 *	@return the length of the Note
+	 */
 	public String getLength()
 	{
 		return _length;
 	}
 
+	/**
+	 *	Returns the pitch of the Note
+	 *
+	 *	@return the pitch of the Note
+	 */
 	public String getPitch()
 	{
 		return _pitch;
 	}
 
+	/**
+	 *	Returns true if the Note is tied to another Note from the left
+	 *
+	 *	@return true if the Note is tied to another Note from the left
+	 */
 	public boolean isTiedLeft()
 	{
 		return _tiedLeft;
 	}
 
+	/**
+	 *	Returns true if the Note is tied to another Note from the right
+	 *
+	 *	@return true if the Note is tied to another Note from the right
+	 */
 	public boolean isTiedRight()
 	{
 		return _tiedRight;
 	}
 
+	/**
+	 *	Sets if the Note is tied to another Note from the left
+	 *
+	 *	@param tf if true, the note is tied from the left, otherwise false
+	 */
 	public void setTiedLeft(boolean tf)
 	{
 		_tiedLeft = tf;
 	}
 
+	/**
+	 *	Sets if the Note is tied to another Note from the right
+	 *
+	 *	@param tf if true, the note is tied from the right, otherwise false
+	 */
 	public void setTiedRight(boolean tf)
 	{
 		_tiedRight = tf;
 	}
 
+	/**
+	 *	Returns the JFuguePattern needed for the Note to be played in JFugue
+	 *
+	 *	@return the JFuguePattern needed for the Note to be played in JFugue
+	 */
 	public Pattern getJFuguePattern()
 	{
 		Pattern p;
@@ -174,6 +266,11 @@ public class Note
 		return p;
 	}
 
+	/**
+	 *	Returns a String representation of the note for an easy text version of the Note
+	 *
+	 *	@return a String representation of the note for an easy text version of the Note
+	 */
 	public String toString()
 	{
 		if(_tiedLeft && _tiedRight)
