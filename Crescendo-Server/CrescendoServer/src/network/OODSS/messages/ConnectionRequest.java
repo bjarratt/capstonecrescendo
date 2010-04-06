@@ -1,6 +1,7 @@
 package network.OODSS.messages;
 
 import server.TestDisplay;
+import network.ConnectionManager;
 import network.OODSS.base.PublicServer;
 import ecologylab.collections.Scope;
 import ecologylab.services.distributed.common.SessionObjects;
@@ -11,17 +12,20 @@ import ecologylab.services.messages.ResponseMessage;
 
 public class ConnectionRequest extends RequestMessage 
 {
+	
+	
 	@Override
 	public ResponseMessage performService(Scope clientSessionScope) 
 	{
 		SessionHandle handle = (SessionHandle)clientSessionScope.get(SessionObjects.SESSION_HANDLE);
 		
-		handle.getSessionId();
+		Object sessionID = handle.getSessionId();
+		String playerID = ConnectionManager.getInstance().assignPlayerSlot(sessionID);
 		
-		ConnectionUpdate update = new ConnectionUpdate("player1");
+		ConnectionUpdate update = new ConnectionUpdate(playerID);
 		
 		TestDisplay display = (TestDisplay)clientSessionScope.get(PublicServer.DISPLAY_HANDLE);
-		display.setText("player1");
+		display.setText(playerID);
 		
 		handle.sendUpdate(update);
 		

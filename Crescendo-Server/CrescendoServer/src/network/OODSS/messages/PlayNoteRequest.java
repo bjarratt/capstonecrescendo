@@ -1,6 +1,7 @@
 package network.OODSS.messages;
 
 import ecologylab.collections.Scope;
+import ecologylab.services.messages.OkResponse;
 import ecologylab.services.messages.RequestMessage;
 import ecologylab.services.messages.ResponseMessage;
 
@@ -12,12 +13,13 @@ import ecologylab.services.messages.ResponseMessage;
 public class PlayNoteRequest extends RequestMessage {
 
 	private String jfuguePattern = "";  	// This should be a pattern that JFugue recognizes to play a note
-	private String player = "";  			// This should be a uniqe String that identifies the player
 	
 	@Override
-	public ResponseMessage performService(Scope clientSessionScope) {
-		// TODO Auto-generated method stub
-		return null;
+	public ResponseMessage performService(Scope clientSessionScope) 
+	{
+		
+		
+		return OkResponse.reusableInstance;
 	}
 
 }
