@@ -16,6 +16,8 @@ import java.awt.event.ActionEvent;
  */
 public class GameManager implements ActionListener
 {
+	public static String GAME_MANAGER = "GAME_MANAGER";
+	
 	private DisplayGUI displayGUI;
 	private ArrayList<String> messagePool;
 	private ArrayList<String> messages;

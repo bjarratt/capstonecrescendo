@@ -24,9 +24,9 @@ public class GameTypeRequest extends RequestMessage
 	{
 		/* Send the gameType to the public display, so it can update the game state */
 		
-		TestDisplay display = (TestDisplay)clientSessionScope.get(PublicServer.DISPLAY_HANDLE);
-		
-		display.setText(gameType);
+//		TestDisplay display = (TestDisplay)clientSessionScope.get(PublicServer.DISPLAY_HANDLE);
+//		
+//		display.setText(gameType);
 		
 		return OkResponse.reusableInstance;
 	}
