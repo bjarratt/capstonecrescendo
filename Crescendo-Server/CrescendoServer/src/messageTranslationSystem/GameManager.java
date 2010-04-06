@@ -5,7 +5,11 @@ import javax.swing.Timer;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-
+/**
+ *	The GameManager houses the game loop, translates messages, and sends Notes to be displayed to the GUI
+ *
+ *	@author Travis Kosarek
+ */
 public class GameManager implements ActionListener
 {
 	private DisplayManager displayManager;
@@ -30,6 +34,9 @@ public class GameManager implements ActionListener
 	private ArrayList<Measure> song;
 	private int numberOfNotesPlayed;
 
+	/**
+	 *	Constructs a GameManager object with upto 4 players
+	 */
 	public GameManager()
 	{
 		//set up the display to receive messages
@@ -58,6 +65,9 @@ public class GameManager implements ActionListener
 		numberOfNotesPlayed = 0;
 	}
 
+	/**
+	 *	When a Timer ticks, this method is called and performs some action
+	 */
 	public void actionPerformed(ActionEvent event)
 	{
 		if(messages.size() == 0)
@@ -78,9 +88,12 @@ public class GameManager implements ActionListener
 		this.condenseMessagePool();
 		this.translateMessagePool();
 		this.constructMeasures();
-		this.sendNoteToDisplayManager();
+	//	this.sendNoteToDisplayManager();
 	}
 
+	/**
+	 *	Starts the game loop
+	 */
 	public void run()
 	{
 		System.out.println("Starting Game Loop in...");
@@ -123,11 +136,19 @@ public class GameManager implements ActionListener
 		}
 	}
 
+	/**
+	 *	Adds messages to a pool waiting to be translated and sent to GUI
+	 *
+	 *	@param message the message to be translated
+	 */
 	public void addMessageToPool(String message)
 	{
 		messagePool.add(message);
 	}
 
+	/**
+	 *	Limit the number of messages to be translated to one per player
+	 */
 	private void condenseMessagePool()
 	{
 		boolean p1 = false;
@@ -170,6 +191,9 @@ public class GameManager implements ActionListener
 		messages = newMessages;
 	}
 
+	/**
+	 *	Translate the messages to Note objects and Message objects for easy manipulation
+	 */
 	private void translateMessagePool()
 	{
 		MessageTranslationEngine.Message m;
@@ -210,10 +234,14 @@ public class GameManager implements ActionListener
 			else
 			{
 				//handle messages such as game type, connect, disconnect, etc.
+				sendMessageToDisplayManager(m.getMessage());
 			}
 		}
 	}
 
+	/**
+	 *	From the Note's played by each player, correctly formmated Measures are created
+	 */
 	private void constructMeasures()
 	{
 		//this is constructing measures based off of the turn
@@ -346,10 +374,24 @@ public class GameManager implements ActionListener
 		}
 	}
 
-	private void sendNoteToDisplayManager()
+	/**
+	 *	Sends a message to the GUI
+	 *
+	 *	@param message the message to be sent to the GUI
+	 */
+	private void sendMessageToDisplayManager(String message)
 	{
-//		displayManager.receiveMessage(messages);
-		messages = new ArrayList<String>();
+		displayManager.receiveMessage(message);
+	}
+
+	/**
+	 *	Sends a Note to the GUI
+	 *
+	 *	@param note the Note to be sent to the GUI
+	 */
+	private void sendNoteToDisplayManager(Note note)
+	{
+		displayManager.receiveNote(note);
 	}
 
 }
