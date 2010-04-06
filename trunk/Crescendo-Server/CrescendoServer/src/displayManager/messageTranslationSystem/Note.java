@@ -1,11 +1,11 @@
 package displayManager.messageTranslationSystem;
 
-import java.util.regex.Pattern;
+
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import java.awt.Image;
 
-//import org.jfugue.*;
+import org.jfugue.*;
 
 public class Note
 {
@@ -126,8 +126,9 @@ public class Note
 	 */
 	public void playNote()
 	{
-	//	Player jfuguePlayer = new Player();
-	//	jfuguePlayer.play(getJFuguePattern());
+		Player jfuguePlayer = new Player();
+		org.jfugue.Pattern p = this.getJFuguePattern();
+		jfuguePlayer.play(p);
 	}
 
 	/**
@@ -256,13 +257,13 @@ public class Note
 	{
 		Pattern p;
 		if(_tiedLeft && _tiedRight)
-			p = Pattern.compile(_pitch + "-" + _length + "-");
+			p = new Pattern(_pitch + "-" + _length + "-");
 		else if(_tiedLeft)
-			p = Pattern.compile(_pitch + "-" + _length);
+			p = new Pattern(_pitch + "-" + _length);
 		else if(_tiedRight)
-			p = Pattern.compile(_pitch + _length + "-");
+			p = new Pattern(_pitch + _length + "-");
 		else
-			p = Pattern.compile(_pitch + _length);
+			p = new Pattern(_pitch + _length);
 		return p;
 	}
 
