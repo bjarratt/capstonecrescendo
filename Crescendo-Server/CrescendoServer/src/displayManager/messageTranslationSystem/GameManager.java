@@ -69,7 +69,7 @@ public class GameManager implements ActionListener
 		player3 = new ArrayList<Note>();
 		player4 = new ArrayList<Note>();
 		metronome = new ArrayList<Note>();
-		numberOfActivePlayers = 3; //THIS NEEDS TO BE CHANGED TO THE ACTUAL NUMBER OF PLAYERS (not a static 4 value)
+		numberOfActivePlayers = 1; //THIS NEEDS TO BE CHANGED TO THE ACTUAL NUMBER OF PLAYERS (not a static 4 value)
 		turn = -1; //starts at turn 0, see 'constructMeasures()'
 
 		song = new ArrayList<Measure>();
