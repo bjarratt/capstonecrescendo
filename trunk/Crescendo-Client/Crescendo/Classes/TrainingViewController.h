@@ -8,11 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+#import "GameTypeUpdateDelegate.h"
+#import "XMLClient.h"
 
 @interface TrainingViewController : UIViewController {
-
+	XMLClient *client;
 }
 
+@property (nonatomic, retain) XMLClient *client;
+
 - (IBAction) goBack;
+- (IBAction) keepTheBeat;
+- (IBAction) noteLengths;
+- (IBAction) notePitches;
 
 @end

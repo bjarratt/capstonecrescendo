@@ -8,7 +8,7 @@
 
 #import "CrescendoViewController.h"
 #import "AppConfig.h"
-//#import "ServerRequest.h"
+#import "PlayNoteRequest.h"
 #import "ConnectionRequest.h"
 
 @implementation CrescendoViewController
@@ -22,9 +22,9 @@
 
 #pragma mark ChatUpdateDelegate Method
 
-//- (void) recievedServerUpdate: (ServerUpdate*) update {
+- (void) recievedPlayNoteUpdate: (PlayNoteUpdate*) update {
 	//self.playerId = [NSString stringWithString: update.message];
-//}
+}
 
 #pragma mark ConnectionUpdateDelegate Method
 

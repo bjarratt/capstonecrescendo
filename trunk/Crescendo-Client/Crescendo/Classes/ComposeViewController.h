@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-//#import "ServerUpdateDelegate.h"
+#import "PlayNoteUpdateDelegate.h"
 #import "XMLClient.h"
 
 @interface ComposeViewController : UIViewController <UIScrollViewDelegate> {
@@ -48,10 +48,9 @@
 
 - (void) determineScrollViewPage: (UIScrollView *) scrollView;
 
-- (void) sendNoteToServer: (id) sender;
-
 - (IBAction) goBack;
 - (void) updateBuildLabel;
+- (void) sendNoteToServer: (id) sender;
 - (void) drawPortraitView;
 - (void) drawPortraitLandscapeSideView;
 - (void) drawNoteLengths;

@@ -15,6 +15,12 @@
 		3E1A5B141169A90700D80702 /* ConnectionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E1A5B131169A90700D80702 /* ConnectionRequest.m */; };
 		3E1A5B171169AA6B00D80702 /* ConnectionUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E1A5B161169AA6B00D80702 /* ConnectionUpdate.m */; };
 		3E1A5B1A1169AAC900D80702 /* ConnectionUpdateDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E1A5B191169AAC900D80702 /* ConnectionUpdateDelegate.m */; };
+		3E287DDD116AB3C1001EEB86 /* PlayNoteRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E287DDC116AB3C1001EEB86 /* PlayNoteRequest.m */; };
+		3E287DE0116AB3D6001EEB86 /* PlayNoteUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E287DDF116AB3D6001EEB86 /* PlayNoteUpdate.m */; };
+		3E287DE3116AB3E6001EEB86 /* PlayNoteUpdateDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E287DE2116AB3E6001EEB86 /* PlayNoteUpdateDelegate.m */; };
+		3E287E30116AB7DC001EEB86 /* GameTypeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E287E2F116AB7DC001EEB86 /* GameTypeRequest.m */; };
+		3E287E33116AB7E9001EEB86 /* GameTypeUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E287E32116AB7E9001EEB86 /* GameTypeUpdate.m */; };
+		3E287E36116AB7F5001EEB86 /* GameTypeUpdateDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E287E35116AB7F5001EEB86 /* GameTypeUpdateDelegate.m */; };
 		3E55634E114ED6F70089B12F /* TrainingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E55634D114ED6F70089B12F /* TrainingViewController.m */; };
 		3E556354114ED7B00089B12F /* GamemodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E556353114ED7B00089B12F /* GamemodeViewController.m */; };
 		3E556357114ED7CA0089B12F /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E556356114ED7CA0089B12F /* HelpViewController.m */; };
@@ -304,6 +310,18 @@
 		3E1A5B161169AA6B00D80702 /* ConnectionUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionUpdate.m; sourceTree = "<group>"; };
 		3E1A5B181169AAC900D80702 /* ConnectionUpdateDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionUpdateDelegate.h; sourceTree = "<group>"; };
 		3E1A5B191169AAC900D80702 /* ConnectionUpdateDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionUpdateDelegate.m; sourceTree = "<group>"; };
+		3E287DDB116AB3C1001EEB86 /* PlayNoteRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayNoteRequest.h; sourceTree = "<group>"; };
+		3E287DDC116AB3C1001EEB86 /* PlayNoteRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayNoteRequest.m; sourceTree = "<group>"; };
+		3E287DDE116AB3D6001EEB86 /* PlayNoteUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayNoteUpdate.h; sourceTree = "<group>"; };
+		3E287DDF116AB3D6001EEB86 /* PlayNoteUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayNoteUpdate.m; sourceTree = "<group>"; };
+		3E287DE1116AB3E6001EEB86 /* PlayNoteUpdateDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayNoteUpdateDelegate.h; sourceTree = "<group>"; };
+		3E287DE2116AB3E6001EEB86 /* PlayNoteUpdateDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayNoteUpdateDelegate.m; sourceTree = "<group>"; };
+		3E287E2E116AB7DC001EEB86 /* GameTypeRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameTypeRequest.h; sourceTree = "<group>"; };
+		3E287E2F116AB7DC001EEB86 /* GameTypeRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameTypeRequest.m; sourceTree = "<group>"; };
+		3E287E31116AB7E9001EEB86 /* GameTypeUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameTypeUpdate.h; sourceTree = "<group>"; };
+		3E287E32116AB7E9001EEB86 /* GameTypeUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameTypeUpdate.m; sourceTree = "<group>"; };
+		3E287E34116AB7F5001EEB86 /* GameTypeUpdateDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameTypeUpdateDelegate.h; sourceTree = "<group>"; };
+		3E287E35116AB7F5001EEB86 /* GameTypeUpdateDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameTypeUpdateDelegate.m; sourceTree = "<group>"; };
 		3E55634C114ED6F70089B12F /* TrainingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingViewController.h; sourceTree = "<group>"; };
 		3E55634D114ED6F70089B12F /* TrainingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingViewController.m; sourceTree = "<group>"; };
 		3E556350114ED77F0089B12F /* CrescendoAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CrescendoAppDelegate.h; sourceTree = "<group>"; };
@@ -675,7 +693,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3E1A5B1B1169AADB00D80702 /* Connection */ = {
+		3E1A5B1B1169AADB00D80702 /* Connection Message */ = {
 			isa = PBXGroup;
 			children = (
 				3E1A5B121169A90700D80702 /* ConnectionRequest.h */,
@@ -685,7 +703,7 @@
 				3E1A5B181169AAC900D80702 /* ConnectionUpdateDelegate.h */,
 				3E1A5B191169AAC900D80702 /* ConnectionUpdateDelegate.m */,
 			);
-			name = Connection;
+			name = "Connection Message";
 			sourceTree = "<group>";
 		};
 		3E1A5B1C1169AAE400D80702 /* Messages */ = {
@@ -701,11 +719,39 @@
 			name = Messages;
 			sourceTree = "<group>";
 		};
+		3E287DD9116AB353001EEB86 /* Play Note Message */ = {
+			isa = PBXGroup;
+			children = (
+				3E287DDB116AB3C1001EEB86 /* PlayNoteRequest.h */,
+				3E287DDC116AB3C1001EEB86 /* PlayNoteRequest.m */,
+				3E287DDE116AB3D6001EEB86 /* PlayNoteUpdate.h */,
+				3E287DDF116AB3D6001EEB86 /* PlayNoteUpdate.m */,
+				3E287DE1116AB3E6001EEB86 /* PlayNoteUpdateDelegate.h */,
+				3E287DE2116AB3E6001EEB86 /* PlayNoteUpdateDelegate.m */,
+			);
+			name = "Play Note Message";
+			sourceTree = "<group>";
+		};
+		3E287E2D116AB7A7001EEB86 /* Game Type Message */ = {
+			isa = PBXGroup;
+			children = (
+				3E287E2E116AB7DC001EEB86 /* GameTypeRequest.h */,
+				3E287E2F116AB7DC001EEB86 /* GameTypeRequest.m */,
+				3E287E31116AB7E9001EEB86 /* GameTypeUpdate.h */,
+				3E287E32116AB7E9001EEB86 /* GameTypeUpdate.m */,
+				3E287E34116AB7F5001EEB86 /* GameTypeUpdateDelegate.h */,
+				3E287E35116AB7F5001EEB86 /* GameTypeUpdateDelegate.m */,
+			);
+			name = "Game Type Message";
+			sourceTree = "<group>";
+		};
 		3E556358114ED7D40089B12F /* OODSS */ = {
 			isa = PBXGroup;
 			children = (
+				3E287E2D116AB7A7001EEB86 /* Game Type Message */,
+				3E287DD9116AB353001EEB86 /* Play Note Message */,
 				3E1A5B1C1169AAE400D80702 /* Messages */,
-				3E1A5B1B1169AADB00D80702 /* Connection */,
+				3E1A5B1B1169AADB00D80702 /* Connection Message */,
 				3E55635F114ED8CF0089B12F /* ServerTranslations.h */,
 				3E556360114ED8CF0089B12F /* ServerTranslations.m */,
 				3E556361114ED8CF0089B12F /* ServerTranslations.xml */,
@@ -1379,6 +1425,12 @@
 				3E1A5B141169A90700D80702 /* ConnectionRequest.m in Sources */,
 				3E1A5B171169AA6B00D80702 /* ConnectionUpdate.m in Sources */,
 				3E1A5B1A1169AAC900D80702 /* ConnectionUpdateDelegate.m in Sources */,
+				3E287DDD116AB3C1001EEB86 /* PlayNoteRequest.m in Sources */,
+				3E287DE0116AB3D6001EEB86 /* PlayNoteUpdate.m in Sources */,
+				3E287DE3116AB3E6001EEB86 /* PlayNoteUpdateDelegate.m in Sources */,
+				3E287E30116AB7DC001EEB86 /* GameTypeRequest.m in Sources */,
+				3E287E33116AB7E9001EEB86 /* GameTypeUpdate.m in Sources */,
+				3E287E36116AB7F5001EEB86 /* GameTypeUpdateDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

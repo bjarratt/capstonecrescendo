@@ -20,6 +20,48 @@
 			field="playerNumber"
 			tag_name="player_number" type="1" scalar_type="StringType"></field_descriptor>
 	</class_descriptor>
+	<class_descriptor described_class="class network.OODSS.GameTypeRequest"
+		tag_name="game_type_request">
+		<field_descriptor
+			field="timeStamp"
+			tag_name="time_stamp" type="1" scalar_type="LongType"></field_descriptor>
+		<field_descriptor
+			field="uid"
+			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
+		<field_descriptor
+			field="gameType"
+			tag_name="game_type" type="1" scalar_type="StringType"></field_descriptor>
+	</class_descriptor>
+	<class_descriptor described_class="class network.OODSS.GameTypeUpdate"
+		tag_name="game_type_update">
+		<field_descriptor
+			field="timeStamp"
+			tag_name="time_stamp" type="1" scalar_type="LongType"></field_descriptor>
+		<field_descriptor
+			field="uid"
+			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
+	</class_descriptor>
+	<class_descriptor described_class="class network.OODSS.PlayNoteRequest"
+		tag_name="play_note_request">
+		<field_descriptor
+			field="timeStamp"
+			tag_name="time_stamp" type="1" scalar_type="LongType"></field_descriptor>
+		<field_descriptor
+			field="uid"
+			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
+		<field_descriptor
+			field="jfuguePattern"
+			tag_name="jfugue_pattern" type="1" scalar_type="StringType"></field_descriptor>
+	</class_descriptor>
+	<class_descriptor described_class="class network.OODSS.PlayNoteUpdate"
+		tag_name="play_note_update">
+		<field_descriptor
+			field="timeStamp"
+			tag_name="time_stamp" type="1" scalar_type="LongType"></field_descriptor>
+		<field_descriptor
+			field="uid"
+			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
+	</class_descriptor>
 	<class_descriptor
 		described_class="class ecologylab.services.messages.DisconnectRequest"
 		tag_name="disconnect_request">
