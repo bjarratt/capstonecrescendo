@@ -1,4 +1,4 @@
-package displayManager;
+package displayManager.messageTranslationSystem;
 
 import java.util.ArrayList;
 
