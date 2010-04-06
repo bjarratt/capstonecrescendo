@@ -2,7 +2,8 @@ package displayManager.gameModes;
 import java.util.ArrayList;
 import java.util.Random;
 
-import displayManager.Note;
+import displayManager.messageTranslationSystem.Note;
+
 
 
 /**
@@ -176,8 +177,9 @@ public class matchGM {
 	 * @param index - the position within wantedNotes
 	 * @return - if the notes match or not
 	 */
+	// TODO:  Test this!!!!!!!!!!!
 	boolean compare(String input, int index){
-		if(input == wantedNotes.get(index).getNote())
+		if(input == wantedNotes.get(index).toString())
 			return true;
 		return false;
 	}

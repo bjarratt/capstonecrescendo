@@ -1,20 +1,34 @@
-package displayManager;
+package displayManager.messageTranslationSystem;
 
 import java.util.Random;
 
+/**
+ *	A class to simulate an iPhone connected and sending messages to the server
+ *
+ *	@author Travis Kosarek
+ */
 public class Player implements Runnable
 {
 	String player;
 	ConnectionManager myCM;
 	Random rand;
 
-	public Player(String p, ConnectionManager cm)
+	/**
+	 *	Constructs a Player from a String id and a ConnectionManager
+	 *
+	 *	@param id a String that the player will be identified with
+	 *	@param cm the ConnectionManager object calling this Player
+	 */
+	public Player(String id, ConnectionManager cm)
 	{
-		player = p;
+		player = id;
 		myCM = cm;
 		rand = new Random();
 	}
 
+	/**
+	 *	Starts the Player sending random messages to the server
+	 */
 	public void run()
 	{
 		while(true)
@@ -23,7 +37,7 @@ public class Player implements Runnable
 			{
 				try
 				{
-					myCM.sendMessage(new String(player + "_" + this.generatePitch() + "_" + generateLength()));
+					myCM.sendMessage(new String(player + "_" + this.generatePitch() + "_" + this.generateLength()));
 					Thread.sleep(500);
 				}
 				catch(InterruptedException e)
@@ -34,7 +48,12 @@ public class Player implements Runnable
 		}
 	}
 
-	public String generatePitch()
+	/**
+	 *	Generates a random Note pitch to be used in a message sent to the server
+	 *
+	 *	@return a random Note pitch to be used in a message sent to the server
+	 */
+	private String generatePitch()
 	{
 		switch(rand.nextInt(19))
 		{
@@ -81,7 +100,12 @@ public class Player implements Runnable
 		}
 	}
 
-	public String generateLength()
+	/**
+	 *	Generates a random Note length to be used in a message sent to the server
+	 *
+	 *	@return a random Note length to be used in a message sent to the server
+	 */
+	private String generateLength()
 	{
 		switch(rand.nextInt(4))
 		{

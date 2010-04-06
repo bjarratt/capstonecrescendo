@@ -3,7 +3,8 @@ package displayManager.gameModes;
 
 import java.util.*;
 
-import displayManager.Note;
+import displayManager.messageTranslationSystem.Note;
+
 
 /**
  * This class is used for instantiations of the "Match Length" training 

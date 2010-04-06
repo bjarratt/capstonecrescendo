@@ -1,8 +1,13 @@
 package displayManager;
 
 import javax.swing.*;
+
+import displayManager.messageTranslationSystem.Note;
+
 import java.util.*;
 import java.awt.*;
+
+
 /**
  *	The DisplayGUI class handles all of the graphical aspects of the display
  *

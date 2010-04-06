@@ -1,4 +1,4 @@
-package displayManager;
+package displayManager.messageTranslationSystem;
 
 /**
  *	This classifies what is intended to be played at each beat

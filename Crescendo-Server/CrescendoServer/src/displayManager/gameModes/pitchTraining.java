@@ -3,7 +3,8 @@ package displayManager.gameModes;
 import java.util.ArrayList;
 import java.util.Random;
 
-import displayManager.Note;
+import displayManager.messageTranslationSystem.Note;
+
 
 /**
  * This class is used for instantiations of the "Match Pitch" training
