@@ -84,7 +84,7 @@ public class GameManager implements ActionListener
 	 */
 	public void actionPerformed(ActionEvent event)
 	{
-		if(messages.size() == 0)
+		if(messagePool.size() == 0)
 		{
 			ticks++;
 			if(ticks >= timeout)
@@ -96,14 +96,14 @@ public class GameManager implements ActionListener
 		else
 		{
 			ticks = 0;
+			messages = new ArrayList<String>(messagePool);
+			messagePool = new ArrayList<String>();
+			this.condenseMessagePool();
+			this.translateMessagePool();
+			this.constructMeasures();
+			this.sendNoteToDisplayGUI();
+			currentBeat++;
 		}
-		messages = new ArrayList<String>(messagePool);
-		messagePool = new ArrayList<String>();
-		this.condenseMessagePool();
-		this.translateMessagePool();
-		this.constructMeasures();
-		this.sendNoteToDisplayGUI();
-		currentBeat++;
 	}
 
 	/**
@@ -112,51 +112,32 @@ public class GameManager implements ActionListener
 	public void run()
 	{
 		System.out.println("Starting Game Loop in...");
-		try
+		System.out.println("Game Loop Initializing...");
+
+		timer.start();
+		
+		//create a new display window
+		JFrame window = new JFrame("Crescendo");
+		window.setBackground(Color.WHITE);
+		window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		window.getContentPane().add(displayGUI);
+		window.pack();
+		window.setVisible(true);
+
+		while(true)
 		{
-			Thread.sleep(1000);
-			System.out.println("3...");
-			Thread.sleep(1000);
-			System.out.println("2...");
-			Thread.sleep(1000);
-			System.out.println("1...");
-			Thread.sleep(1000);
-			System.out.println("Game Loop Initializing...");
-
-			timer.start();
-			
-			//create a new display window
-			JFrame window = new JFrame("Crescendo");
-			window.setBackground(Color.WHITE);
-			window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-			window.getContentPane().add(displayGUI);
-			window.pack();
-			window.setVisible(true);
-
-			while(true)
+			if(exit == true)
+				break;
+			if(timeout_to_menu == true)
 			{
-				if(exit == true)
-					break;
-				if(timeout_to_menu == true)
-				{
-					System.out.println("No messages were sent for " + timeout + " ticks");
-					//return to menu if no messages were sent
-					timeout_to_menu = false;
-					//for now, exit when timeout
-					exit = true;
-				}
+				System.out.println("No messages were sent for " + timeout + " ticks");
+				//return to menu if no messages were sent
+				timeout_to_menu = false;
+				//for now, exit when timeout
+				exit = true;
 			}
-			timer.stop();
 		}
-		catch(InterruptedException e)
-		{
-
-		}
-		finally
-		{
-			System.out.println("Exiting Game Loop");
-			System.exit(0);
-		}
+		timer.stop();
 	}
 
 	/**
@@ -414,7 +395,7 @@ public class GameManager implements ActionListener
 	 */
 	private void sendNoteToDisplayGUI()
 	{
-		if(currentBeat == 0)
+/*		if(currentBeat == 0)
 		{
 			displayGUI.getNote(songNotes.get(currentNote));
 		}
@@ -423,6 +404,14 @@ public class GameManager implements ActionListener
 			currentBeat = -1;
 			currentNote++;
 		}
+	*/
+		if(songNotes.size()>currentNote)
+		{
+			displayGUI.getNote(songNotes.get(currentNote));
+			currentNote++;
+		}
+		
+		
 	}
 
 }

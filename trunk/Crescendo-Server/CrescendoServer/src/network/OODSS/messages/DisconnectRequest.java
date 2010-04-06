@@ -28,9 +28,9 @@ public class DisconnectRequest extends ecologylab.services.messages.DisconnectRe
 		
 		ConnectionManager.getInstance().cleanupPlayers();
 		
-		TestDisplay display = (TestDisplay)clientSessionScope.get(PublicServer.DISPLAY_HANDLE);
+		//TestDisplay display = (TestDisplay)clientSessionScope.get(PublicServer.DISPLAY_HANDLE);
 		
-		display.setText(ConnectionManager.getInstance().listPlayers());
+		//display.setText(ConnectionManager.getInstance().listPlayers());
 		
 		return OkResponse.reusableInstance;
 	}
