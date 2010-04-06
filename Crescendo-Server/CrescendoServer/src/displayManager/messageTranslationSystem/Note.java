@@ -126,7 +126,7 @@ public class Note
 	 */
 	public void playNote()
 	{
-		Player jfuguePlayer = new Player();
+		org.jfugue.Player jfuguePlayer = new org.jfugue.Player();
 		org.jfugue.Pattern p = this.getJFuguePattern();
 		jfuguePlayer.play(p);
 	}
@@ -257,11 +257,11 @@ public class Note
 	{
 		Pattern p;
 		if(_tiedLeft && _tiedRight)
-			p = new Pattern(_pitch + "-" + _length + "-");
+			p = new Pattern(_pitch + "-" + _length + "- ");
 		else if(_tiedLeft)
 			p = new Pattern(_pitch + "-" + _length);
 		else if(_tiedRight)
-			p = new Pattern(_pitch + _length + "-");
+			p = new Pattern(_pitch + _length + "- ");
 		else
 			p = new Pattern(_pitch + _length);
 		return p;
@@ -275,12 +275,12 @@ public class Note
 	public String toString()
 	{
 		if(_tiedLeft && _tiedRight)
-			return _player + " played " + _pitch + "-" + _length + "-";
+			return _pitch + "- " + _length + "-";
 		else if(_tiedLeft)
-			return _player + " played " + _pitch + "-" + _length;
+			return _pitch + "- " + _length;
 		else if(_tiedRight)
-			return _player + " played " + _pitch + _length + "-";
+			return _pitch + _length + "-";
 		else
-			return _player + " played " + _pitch + _length;
+			return _pitch + _length;
 	}
 }
