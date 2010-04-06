@@ -179,4 +179,9 @@ public class matchGM {
 			return true;
 		return false;
 	}
+	
+	ArrayList<Note> getNotes(){
+		return this.wantedNotes;
+	}
+	
 }
