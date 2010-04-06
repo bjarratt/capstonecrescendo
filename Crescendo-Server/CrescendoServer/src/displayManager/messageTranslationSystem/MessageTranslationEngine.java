@@ -13,8 +13,6 @@ public class MessageTranslationEngine
 	private static void initialize()
 	{
 		//set up the available note pitches
-		pitches.put("D5", "D5");
-		pitches.put("DSharp5", "D#5");
 		pitches.put("E5", "E5");
 		pitches.put("ESharp5", "E#5");
 		pitches.put("F5", "F5");
@@ -31,6 +29,7 @@ public class MessageTranslationEngine
 		pitches.put("E6", "E6");
 		pitches.put("ESharp6", "E#6");
 		pitches.put("F6", "F6");
+		pitches.put("FSharp6", "F#6");
 
 		//A rest is also specified in pitches
 		pitches.put("rest", "R");

@@ -1,5 +1,10 @@
 package displayManager.messageTranslationSystem;
 
+import java.awt.Color;
+
+import javax.swing.JFrame;
+
+
 import displayManager.gameModes.lengthTraining;
 import displayManager.gameModes.pitchTraining;
 
@@ -14,6 +19,7 @@ public class Main
 	{
 
 		ConnectionManager cm = new ConnectionManager();
+		/*
 		lengthTraining testLength = new lengthTraining(1);
 
 
@@ -37,6 +43,13 @@ public class Main
 			System.out.println("match!");
 		else
 			System.out.println("no match!");
-
+		*/
+		
+		JFrame window = new JFrame("Crescendo");
+		window.setBackground(Color.WHITE);
+		window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		window.getContentPane().add(new DisplayGUI());
+		window.pack();
+		window.setVisible(true);
 	}
 }

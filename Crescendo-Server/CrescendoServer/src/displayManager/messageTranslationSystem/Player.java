@@ -58,9 +58,7 @@ public class Player implements Runnable
 		switch(rand.nextInt(19))
 		{
 			case 0:
-				return "D5";
-			case 1:
-				return "DSharp5";
+				return "FSharp6";
 			case 2:
 				return "E5";
 			case 3:
@@ -93,10 +91,8 @@ public class Player implements Runnable
 				return "ESharp6";
 			case 17:
 				return "F6";
-			case 18:
-				return "rest";
 			default:
-				return "rest";
+				return "B5";
 		}
 	}
 

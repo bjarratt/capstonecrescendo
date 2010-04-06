@@ -1,6 +1,5 @@
 package displayManager.messageTranslationSystem;
 
-
 /**
  *	This class holds all of the connection information for each iPhone
  *	This could also be a private class of GameManager or could simply be done away with, this is just my take on the class
@@ -29,7 +28,7 @@ public class ConnectionManager
 		gameManager = new GameManager();
 
 		/*******************Beginning of test code********************/
-		//This section emulates four connected iPhones sending random mesages
+		//This section emulates four connected iPhones sending random messages
 
 		player1 = new Player("player1",this);
 		player2 = new Player("player2",this);

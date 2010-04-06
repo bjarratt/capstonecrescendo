@@ -1,7 +1,11 @@
 package displayManager.messageTranslationSystem;
 
 import java.util.ArrayList;
+
+import javax.swing.JFrame;
 import javax.swing.Timer;
+
+import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -12,14 +16,16 @@ import java.awt.event.ActionEvent;
  */
 public class GameManager implements ActionListener
 {
-	private DisplayManager displayManager;
+	private DisplayGUI displayGUI;
 	private ArrayList<String> messagePool;
 	private ArrayList<String> messages;
 	private Timer timer;
-	private static int delay = 1000;
-	//set the timeout value to 300 delay periods (in this case 300 seconds = 5 min)
+	private static int delay = 500;
+	//set the timeout value to 300 delay periods (in this case 300 seconds = 2.5 min)
 	private static int timeout = 300;
 	private int ticks;
+	private int currentNote;
+	private int currentBeat;
 	private boolean timeout_to_menu;
 	private boolean exit;
 
@@ -33,6 +39,8 @@ public class GameManager implements ActionListener
 
 	private ArrayList<Measure> song;
 	private int numberOfNotesPlayed;
+	
+	ArrayList<Note> songNotes;
 
 	/**
 	 *	Constructs a GameManager object with upto 4 players
@@ -40,7 +48,7 @@ public class GameManager implements ActionListener
 	public GameManager()
 	{
 		//set up the display to receive messages
-		displayManager = new DisplayManager();
+		displayGUI = new DisplayGUI();
 		//message pool
 		messagePool = new ArrayList<String>();
 		//messages to be translated
@@ -48,6 +56,8 @@ public class GameManager implements ActionListener
 		//set up a timer
 		timer = new Timer(delay,this);
 		ticks = 0;
+		currentNote = 0;
+		currentBeat = 0;
 
 		timeout_to_menu = false;
 		exit = false;
@@ -63,6 +73,8 @@ public class GameManager implements ActionListener
 		song = new ArrayList<Measure>();
 		song.add(new Measure());
 		numberOfNotesPlayed = 0;
+		
+		songNotes = new ArrayList<Note>();
 	}
 
 	/**
@@ -88,7 +100,8 @@ public class GameManager implements ActionListener
 		this.condenseMessagePool();
 		this.translateMessagePool();
 		this.constructMeasures();
-	//	this.sendNoteToDisplayManager();
+		this.sendNoteToDisplayGUI();
+		currentBeat++;
 	}
 
 	/**
@@ -109,6 +122,14 @@ public class GameManager implements ActionListener
 			System.out.println("Game Loop Initializing...");
 
 			timer.start();
+			
+			//create a new display window
+			JFrame window = new JFrame("Crescendo");
+			window.setBackground(Color.WHITE);
+			window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+			window.getContentPane().add(displayGUI);
+			window.pack();
+			window.setVisible(true);
 
 			while(true)
 			{
@@ -208,26 +229,31 @@ public class GameManager implements ActionListener
 				if(n.getPlayer().equals("player1"))
 				{
 					player1.add(n);
+					songNotes.add(n);
 					numberOfNotesPlayed++;
 				}
 				else if(n.getPlayer().equals("player2"))
 				{
 					player2.add(n);
+					songNotes.add(n);
 					numberOfNotesPlayed++;
 				}
 				else if(n.getPlayer().equals("player3"))
 				{
 					player3.add(n);
+					songNotes.add(n);
 					numberOfNotesPlayed++;
 				}
 				else if(n.getPlayer().equals("player4"))
 				{
 					player4.add(n);
+					songNotes.add(n);
 					numberOfNotesPlayed++;
 				}
 				else if(n.getPlayer().equals("metronome"))
 				{
 					metronome.add(n);
+					songNotes.add(n);
 					numberOfNotesPlayed++;
 				}
 			}
@@ -252,7 +278,6 @@ public class GameManager implements ActionListener
 		if(!(song.get(song.size()-1).getNumberOfAvailableBeats()>0))
 		{
 			song.add(new Measure());
-			System.out.println(song.get(song.size()-2));
 		}
 		Measure measure = song.get(song.size()-1);
 
@@ -280,7 +305,6 @@ public class GameManager implements ActionListener
 
 				//add a new measure and update the current measure
 				song.add(new Measure());
-				System.out.println(song.get(song.size()-2));
 				measure = song.get(song.size()-1);
 
 				//add the rest of the note carried over from the previous measure
@@ -307,7 +331,6 @@ public class GameManager implements ActionListener
 
 				//add a new measure and update the current measure
 				song.add(new Measure());
-				System.out.println(song.get(song.size()-2));
 				measure = song.get(song.size()-1);
 
 				//add the rest of the note carried over from the previous measure
@@ -334,7 +357,6 @@ public class GameManager implements ActionListener
 
 				//add a new measure and update the current measure
 				song.add(new Measure());
-				System.out.println(song.get(song.size()-2));
 				measure = song.get(song.size()-1);
 
 				//add the rest of the note carried over from the previous measure
@@ -361,7 +383,6 @@ public class GameManager implements ActionListener
 
 				//add a new measure and update the current measure
 				song.add(new Measure());
-				System.out.println(song.get(song.size()-2));
 				measure = song.get(song.size()-1);
 
 				//add the rest of the note carried over from the previous measure
@@ -381,7 +402,7 @@ public class GameManager implements ActionListener
 	 */
 	private void sendMessageToDisplayManager(String message)
 	{
-		displayManager.receiveMessage(message);
+		displayGUI.receiveMessage(message);
 	}
 
 	/**
@@ -389,9 +410,17 @@ public class GameManager implements ActionListener
 	 *
 	 *	@param note the Note to be sent to the GUI
 	 */
-	private void sendNoteToDisplayManager(Note note)
+	private void sendNoteToDisplayGUI()
 	{
-		displayManager.receiveNote(note);
+		if(currentBeat == 0)
+		{
+			displayGUI.getNote(songNotes.get(currentNote));
+		}
+		else if(currentBeat == songNotes.get(currentNote).size())
+		{
+			currentBeat = -1;
+			currentNote++;
+		}
 	}
 
 }
