@@ -15,7 +15,6 @@
 @synthesize viewController;
 @synthesize client;
 
-
 - (void)applicationDidFinishLaunching:(UIApplication *)application {    
 	// Get an instance of the ChatTranslations scope.
 	TranslationScope* scope = [ServerTranslations get];

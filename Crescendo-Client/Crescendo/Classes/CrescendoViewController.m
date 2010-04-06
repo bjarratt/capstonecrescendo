@@ -8,8 +8,10 @@
 
 #import "CrescendoViewController.h"
 #import "AppConfig.h"
-#import "PlayNoteRequest.h"
+
 #import "ConnectionRequest.h"
+#import "GameTypeRequest.h"
+#import "PlayNoteRequest.h"
 
 @implementation CrescendoViewController
 
@@ -20,10 +22,9 @@
 @synthesize helpViewController;
 @synthesize trainingViewController;
 
-#pragma mark ChatUpdateDelegate Method
+#pragma mark PlayNoteUpdateDelegate Method
 
 - (void) recievedPlayNoteUpdate: (PlayNoteUpdate*) update {
-	//self.playerId = [NSString stringWithString: update.message];
 }
 
 #pragma mark ConnectionUpdateDelegate Method
@@ -32,11 +33,31 @@
 	self.playerId = [NSString stringWithString: update.playerNumber];
 }
 
+#pragma mark GameTypeUpdateDelegate Method
+
+- (void) recievedGameTypeUpdate: (GameTypeUpdate*) update {
+}
+
 #pragma mark Interface Methods
 
 - (IBAction) goToComposeView {
 	composeViewController.client = self.client;
 	composeViewController.playerId = self.playerId;
+	
+	/*
+	 *	Send game type selected to public display
+	 */
+	NSString* inputText = @"compose";
+	
+    // Initialize PlayNoteRequest and set message to content's of the text field.
+	GameTypeRequest* request = [[GameTypeRequest alloc] init];
+    [request setGameType:inputText];
+    
+    // Setup the client to send the message a little later in the run loop.
+    [client performSelector:@selector(sendMessage:) withObject: request];
+    
+    [request release];
+	
 	[self presentModalViewController:composeViewController animated:YES];
 }
 
@@ -49,17 +70,7 @@
 }
 
 - (IBAction) goToTrainingView {
-	/*NSString* inputText = @"training view";
-	
-    // Initialize ChatRequest and set message to content's of the text field.
-	ServerRequest* request = [[ServerRequest alloc] init];
-    [request setMessage:inputText];
-    
-    // Setup the client to send the message a little later in the run loop.
-    [client performSelector:@selector(sendMessage:) withObject: request];
-    
-    [request release];*/
-	
+	trainingViewController.client = self.client;
 	[self presentModalViewController:trainingViewController animated:YES];
 }
 
