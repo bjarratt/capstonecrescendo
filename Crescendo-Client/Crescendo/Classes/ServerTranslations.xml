@@ -20,6 +20,27 @@
 			field="playerNumber"
 			tag_name="player_number" type="1" scalar_type="StringType"></field_descriptor>
 	</class_descriptor>
+	<class_descriptor described_class="class network.OODSS.DisconnectionRequest"
+		tag_name="disconnection_request">
+		<field_descriptor
+			field="timeStamp"
+			tag_name="time_stamp" type="1" scalar_type="LongType"></field_descriptor>
+		<field_descriptor
+			field="uid"
+			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
+		<field_descriptor
+			field="playerNumber"
+			tag_name="player_number" type="1" scalar_type="StringType"></field_descriptor>
+	</class_descriptor>
+	<class_descriptor described_class="class network.OODSS.DisconnectionUpdate"
+		tag_name="disconnection_update">
+		<field_descriptor
+			field="timeStamp"
+			tag_name="time_stamp" type="1" scalar_type="LongType"></field_descriptor>
+		<field_descriptor
+			field="uid"
+			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
+	</class_descriptor>
 	<class_descriptor described_class="class network.OODSS.GameTypeRequest"
 		tag_name="game_type_request">
 		<field_descriptor
@@ -63,7 +84,7 @@
 			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
 	</class_descriptor>
 	<class_descriptor
-		described_class="class ecologylab.services.messages.DisconnectRequest"
+		described_class="class network.OODSS.messages.DisconnectRequest"
 		tag_name="disconnect_request">
 		<field_descriptor
 			field="timeStamp"
