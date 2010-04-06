@@ -11,7 +11,7 @@ public class ConnectionManager
 {
 	private GameManager gameManager;
 
-	/*****iPhone Emulators*****
+	/*****iPhone Emulators*****/
 	Player player1;
 	Player player2;
 	Player player3;
@@ -28,7 +28,7 @@ public class ConnectionManager
 		//set up the display to receive messages
 		gameManager = new GameManager();
 
-		/*******************Beginning of test code********************
+		/*******************Beginning of test code********************/
 		//This section emulates four connected iPhones sending random mesages
 
 		player1 = new Player("player1",this);
