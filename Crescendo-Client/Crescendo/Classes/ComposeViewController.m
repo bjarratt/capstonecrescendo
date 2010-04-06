@@ -251,14 +251,14 @@
 }
 
 - (void) updateBuildLabel {
-	buildLabel.text = [NSString stringWithFormat:@"%@_%@", noteLength, notePitch];
+	buildLabel.text = [NSString stringWithFormat:@"%@_%@", notePitch, noteLength];
 }
 
 - (void) sendNoteToServer: (id) sender {
 	/*
 	 *	Send notelength/notepitch to public display
 	 */
-	NSString* inputText = [NSString stringWithFormat: @"%@:%@", playerId, buildLabel.text];
+	NSString* inputText = [NSString stringWithFormat: @"%@_%@", playerId, buildLabel.text];
 	
     // Initialize PlayNoteRequest and set message to content's of the text field.
 	PlayNoteRequest* request = [[PlayNoteRequest alloc] init];
