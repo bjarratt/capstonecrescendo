@@ -53,6 +53,7 @@ public class PublicServer {
 																			 MTU);
 		
 		server.start();
+		manager.run();
 //		display.run();
 	}
 }
