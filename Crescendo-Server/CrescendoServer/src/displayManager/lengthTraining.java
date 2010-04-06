@@ -140,6 +140,10 @@ public class lengthTraining {
 			return false;
 		}
 	}
+	
+	ArrayList<Note> getNotes(){
+		return this.wantedNotes;
+	}
 		
 	
 }
