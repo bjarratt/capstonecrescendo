@@ -45,7 +45,7 @@ public class Images
 		Image img = null;
 		try
         {
-			img = ImageIO.read(new File("staff.png"));
+			img = ImageIO.read(new File("src/staff.png"));
 		}
         catch (IOException e)
         {
@@ -62,28 +62,28 @@ public class Images
 			//check for the sixth octave, returning flipped images
 			if(p.getMusicString().contains("6") || p.getMusicString().contains("B5")){
 				if (p.getMusicString().contains("i"))
-					img = ImageIO.read(new File("eighth_note_flipped.png"));
+					img = ImageIO.read(new File("src/eighth_note_flipped.png"));
 				else if (p.getMusicString().contains("q"))
-					img = ImageIO.read(new File("quarter_note_flipped.png"));
+					img = ImageIO.read(new File("src/quarter_note_flipped.png"));
 				else if (p.getMusicString().contains("h"))
-					img = ImageIO.read(new File("half_note_flipped.png"));
+					img = ImageIO.read(new File("src/half_note_flipped.png"));
 				else if (p.getMusicString().contains("w"))
-					img = ImageIO.read(new File("whole_note_flipped.png"));
+					img = ImageIO.read(new File("src/whole_note_flipped.png"));
 				else
-					img = ImageIO.read(new File("whole_note_flipped.png"));
+					img = ImageIO.read(new File("src/whole_note_flipped.png"));
 			}
 			//check for the fifth octave, returning regular images
 			else if(p.getMusicString().contains("5")){
 				if (p.getMusicString().contains("i"))
-					img = ImageIO.read(new File("eighth_note.png"));
+					img = ImageIO.read(new File("src/eighth_note.png"));
 				else if (p.getMusicString().contains("q"))
-					img = ImageIO.read(new File("quarter_note.png"));
+					img = ImageIO.read(new File("src/quarter_note.png"));
 				else if (p.getMusicString().contains("h"))
-					img = ImageIO.read(new File("half_note.png"));
+					img = ImageIO.read(new File("src/half_note.png"));
 				else if (p.getMusicString().contains("w"))
-					img = ImageIO.read(new File("whole_note.png"));
+					img = ImageIO.read(new File("src/whole_note.png"));
 				else
-					img = ImageIO.read(new File("whole_note.png"));
+					img = ImageIO.read(new File("src/whole_note.png"));
 			}
 			
 		} catch (IOException e) {
