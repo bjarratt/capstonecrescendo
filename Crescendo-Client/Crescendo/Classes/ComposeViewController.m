@@ -7,8 +7,7 @@
 //
 
 #import "ComposeViewController.h"
-//#import "ServerRequest.h"
-
+#import "PlayNoteRequest.h"
 
 @implementation ComposeViewController
 
@@ -245,25 +244,6 @@
 	[self updateBuildLabel];
 }
 
-#pragma mark OODSS Methods
-
-- (void) sendNoteToServer: (id) sender {
-	/*
-	 *	Send notelength/notepitch to public display
-	 
-	NSString* inputText = [NSString stringWithFormat: @"%@:%@", playerId, buildLabel.text];
-	
-    // Initialize ChatRequest and set message to content's of the text field.
-	ServerRequest* request = [[ServerRequest alloc] init];
-    [request setMessage:inputText];
-    
-    // Setup the client to send the message a little later in the run loop.
-    [client performSelector:@selector(sendMessage:) withObject: request];
-    
-    [request release];
-	 */
-}
-
 #pragma mark Interface Methods
 
 - (IBAction) goBack {
@@ -272,6 +252,22 @@
 
 - (void) updateBuildLabel {
 	buildLabel.text = [NSString stringWithFormat:@"%@_%@", noteLength, notePitch];
+}
+
+- (void) sendNoteToServer: (id) sender {
+	/*
+	 *	Send notelength/notepitch to public display
+	 */
+	NSString* inputText = [NSString stringWithFormat: @"%@:%@", playerId, buildLabel.text];
+	
+    // Initialize PlayNoteRequest and set message to content's of the text field.
+	PlayNoteRequest* request = [[PlayNoteRequest alloc] init];
+    [request setJfuguePattern:inputText];
+    
+    // Setup the client to send the message a little later in the run loop.
+    [client performSelector:@selector(sendMessage:) withObject: request];
+    
+    [request release];
 }
 
 #pragma mark Draw Methods
