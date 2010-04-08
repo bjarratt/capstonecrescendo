@@ -156,32 +156,32 @@
 		}
 		else if (page >= 0.7840)
 		{
-			notePitch = @"FSharp5";
+			notePitch = @"F5";
 			notePitchPage = 13;
 		}
 		else if (page >= 0.7211)
 		{
-			notePitch = @"F5";
+			notePitch = @"FSharp5";
 			notePitchPage = 12;
 		}
 		else if (page >= 0.6583)
 		{
-			notePitch = @"GSharp5";
+			notePitch = @"G5";
 			notePitchPage = 11;
 		}
 		else if (page >= 0.5954)
 		{
-			notePitch = @"G5";
+			notePitch = @"GSharp5";
 			notePitchPage = 10;
 		}
 		else if (page >= 0.5325)
 		{
-			notePitch = @"ASharp5";
+			notePitch = @"A5";
 			notePitchPage = 9;
 		}
 		else if (page >= 0.4696)
 		{
-			notePitch = @"A5";
+			notePitch = @"ASharp5";
 			notePitchPage = 8;
 		}
 		else if (page >= 0.4068)
@@ -191,22 +191,22 @@
 		}
 		else if (page >= 0.3439)
 		{
-			notePitch = @"CSharp6";
+			notePitch = @"C6";
 			notePitchPage = 6;
 		}
 		else if (page >= 0.2810)
 		{
-			notePitch = @"C6";
+			notePitch = @"CSharp6";
 			notePitchPage = 5;
 		}
 		else if (page >= 0.2181)
 		{
-			notePitch = @"DSharp6";
+			notePitch = @"D6";
 			notePitchPage = 4;
 		}
 		else if (page >= 0.1553)
 		{
-			notePitch = @"D6";
+			notePitch = @"DSharp6";
 			notePitchPage = 3;
 		}
 		else if (page >= 0.0924)
@@ -216,12 +216,12 @@
 		}
 		else if (page >= 0.0295)
 		{
-			notePitch = @"FSharp6";
+			notePitch = @"F6";
 			notePitchPage = 1;
 		}
 		else if (page >= 0)
 		{
-			notePitch = @"F6";
+			notePitch = @"FSharp6";
 			notePitchPage = 0;
 		}
 		
@@ -252,6 +252,8 @@
 
 - (void) updateBuildLabel {
 	buildLabel.text = [NSString stringWithFormat:@"%@_%@", notePitch, noteLength];
+	//Allows for the buildButton to reflect the currently selected note
+	[buildButton setBackgroundImage:[UIImage imageNamed: [[NSString alloc] initWithFormat:@"%@_%@.png", notePitch, [noteLength substringToIndex: [noteLength length] - 4]]] forState: UIControlStateNormal];
 }
 
 - (void) sendNoteToServer: (id) sender {
@@ -303,13 +305,13 @@
 	
 	float yCoord = 0;
 	
+
 	/*
 	 * Build Button
 	 */
 	buildButton = [UIButton buttonWithType: UIButtonTypeRoundedRect];
-	buildButton.frame = CGRectMake(204, 160, 70, 37);
-	[buildButton setTitle: @"Build" forState: UIControlStateNormal];
-	//[buildButton setBackgroundImage:@"menu_button_up.png" forState: UIControlStateNormal];
+	buildButton.frame = CGRectMake(204, 160, 70, 70);
+	//[buildButton setTitle: @"Build" forState: UIControlStateNormal];
 	[buildButton addTarget:self	action:@selector(sendNoteToServer:) forControlEvents:UIControlEventTouchUpInside];
 	[self.view addSubview:buildButton];
 	
@@ -405,18 +407,19 @@
 	/*
 	 * Note Pitches (Wholenote)
 	 */
-	UIImageView *pitWholeF6 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
-	[pitWholeF6 setImage:[UIImage imageNamed: @"F6_whole.png"]];
-	[pitWholeF6 setHighlightedImage:[UIImage imageNamed:@"F6_whole_selected.png"]];
-	pitWholeF6.opaque = YES;
-	[myPitchScrollView addSubview:pitWholeF6];
-	
-	yCoord += 168;
 	UIImageView *pitWholeFSharp6 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
 	[pitWholeFSharp6 setImage:[UIImage imageNamed: @"FSharp6_whole.png"]];
 	[pitWholeFSharp6 setHighlightedImage:[UIImage imageNamed:@"FSharp6_whole_selected.png"]];
 	pitWholeFSharp6.opaque = YES;
 	[myPitchScrollView addSubview:pitWholeFSharp6];
+
+	
+	yCoord += 168;
+	UIImageView *pitWholeF6 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
+	[pitWholeF6 setImage:[UIImage imageNamed: @"F6_whole.png"]];
+	[pitWholeF6 setHighlightedImage:[UIImage imageNamed:@"F6_whole_selected.png"]];
+	pitWholeF6.opaque = YES;
+	[myPitchScrollView addSubview:pitWholeF6];
 	
 	yCoord += 168;
 	UIImageView *pitWholeE6 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
@@ -426,13 +429,6 @@
 	[myPitchScrollView addSubview:pitWholeE6];
 	
 	yCoord += 168;
-	UIImageView *pitWholeD6 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
-	[pitWholeD6 setImage:[UIImage imageNamed: @"D6_whole.png"]];
-	[pitWholeD6 setHighlightedImage:[UIImage imageNamed:@"D6_whole_selected.png"]];
-	pitWholeD6.opaque = YES;
-	[myPitchScrollView addSubview:pitWholeD6];
-	
-	yCoord += 168;
 	UIImageView *pitWholeDSharp6 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
 	[pitWholeDSharp6 setImage:[UIImage imageNamed: @"DSharp6_whole.png"]];
 	[pitWholeDSharp6 setHighlightedImage:[UIImage imageNamed:@"DSharp6_whole_selected.png"]];
@@ -440,11 +436,11 @@
 	[myPitchScrollView addSubview:pitWholeDSharp6];
 	
 	yCoord += 168;
-	UIImageView *pitWholeC6 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
-	[pitWholeC6 setImage:[UIImage imageNamed: @"C6_whole.png"]];
-	[pitWholeC6 setHighlightedImage:[UIImage imageNamed:@"C6_whole_selected.png"]];
-	pitWholeC6.opaque = YES;
-	[myPitchScrollView addSubview:pitWholeC6];
+	UIImageView *pitWholeD6 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
+	[pitWholeD6 setImage:[UIImage imageNamed: @"D6_whole.png"]];
+	[pitWholeD6 setHighlightedImage:[UIImage imageNamed:@"D6_whole_selected.png"]];
+	pitWholeD6.opaque = YES;
+	[myPitchScrollView addSubview:pitWholeD6];
 	
 	yCoord += 168;
 	UIImageView *pitWholeCSharp6 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
@@ -454,18 +450,18 @@
 	[myPitchScrollView addSubview:pitWholeCSharp6];
 	
 	yCoord += 168;
+	UIImageView *pitWholeC6 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
+	[pitWholeC6 setImage:[UIImage imageNamed: @"C6_whole.png"]];
+	[pitWholeC6 setHighlightedImage:[UIImage imageNamed:@"C6_whole_selected.png"]];
+	pitWholeC6.opaque = YES;
+	[myPitchScrollView addSubview:pitWholeC6];
+
+	yCoord += 168;
 	UIImageView *pitWholeB5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
 	[pitWholeB5 setImage:[UIImage imageNamed: @"B5_whole.png"]];
 	[pitWholeB5 setHighlightedImage:[UIImage imageNamed:@"B5_whole_selected.png"]];
 	pitWholeB5.opaque = YES;
 	[myPitchScrollView addSubview:pitWholeB5];
-	
-	yCoord += 168;
-	UIImageView *pitWholeA5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
-	[pitWholeA5 setImage:[UIImage imageNamed: @"A5_whole.png"]];
-	[pitWholeA5 setHighlightedImage:[UIImage imageNamed:@"A5_whole_selected.png"]];
-	pitWholeA5.opaque = YES;
-	[myPitchScrollView addSubview:pitWholeA5];
 	
 	yCoord += 168;
 	UIImageView *pitWholeASharp5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
@@ -475,12 +471,12 @@
 	[myPitchScrollView addSubview:pitWholeASharp5];
 	
 	yCoord += 168;
-	UIImageView *pitWholeG5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
-	[pitWholeG5 setImage:[UIImage imageNamed: @"G5_whole.png"]];
-	[pitWholeG5 setHighlightedImage:[UIImage imageNamed:@"G5_whole_selected.png"]];
-	pitWholeG5.opaque = YES;
-	[myPitchScrollView addSubview:pitWholeG5];
-	
+	UIImageView *pitWholeA5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
+	[pitWholeA5 setImage:[UIImage imageNamed: @"A5_whole.png"]];
+	[pitWholeA5 setHighlightedImage:[UIImage imageNamed:@"A5_whole_selected.png"]];
+	pitWholeA5.opaque = YES;
+	[myPitchScrollView addSubview:pitWholeA5];
+
 	yCoord += 168;
 	UIImageView *pitWholeGSharp5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
 	[pitWholeGSharp5 setImage:[UIImage imageNamed: @"GSharp5_whole.png"]];
@@ -489,11 +485,11 @@
 	[myPitchScrollView addSubview:pitWholeGSharp5];
 	
 	yCoord += 168;
-	UIImageView *pitWholeF5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
-	[pitWholeF5 setImage:[UIImage imageNamed: @"F5_whole.png"]];
-	[pitWholeF5 setHighlightedImage:[UIImage imageNamed:@"F5_whole_selected.png"]];
-	pitWholeF5.opaque = YES;
-	[myPitchScrollView addSubview:pitWholeF5];
+	UIImageView *pitWholeG5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
+	[pitWholeG5 setImage:[UIImage imageNamed: @"G5_whole.png"]];
+	[pitWholeG5 setHighlightedImage:[UIImage imageNamed:@"G5_whole_selected.png"]];
+	pitWholeG5.opaque = YES;
+	[myPitchScrollView addSubview:pitWholeG5];
 	
 	yCoord += 168;
 	UIImageView *pitWholeFSharp5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
@@ -501,6 +497,13 @@
 	[pitWholeFSharp5 setHighlightedImage:[UIImage imageNamed:@"FSharp5_whole_selected.png"]];
 	pitWholeFSharp5.opaque = YES;
 	[myPitchScrollView addSubview:pitWholeFSharp5];
+	
+	yCoord += 168;
+	UIImageView *pitWholeF5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
+	[pitWholeF5 setImage:[UIImage imageNamed: @"F5_whole.png"]];
+	[pitWholeF5 setHighlightedImage:[UIImage imageNamed:@"F5_whole_selected.png"]];
+	pitWholeF5.opaque = YES;
+	[myPitchScrollView addSubview:pitWholeF5];
 	
 	yCoord += 168;
 	UIImageView *pitWholeE5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
@@ -554,18 +557,19 @@
 	/*
 	 * Note Pitches (Halfnote)
 	 */
-	UIImageView *pitHalfF6 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
-	[pitHalfF6 setImage:[UIImage imageNamed: @"F6_half.png"]];
-	[pitHalfF6 setHighlightedImage:[UIImage imageNamed:@"F6_half_selected.png"]];
-	pitHalfF6.opaque = YES;
-	[myPitchScrollView addSubview:pitHalfF6];
-	
-	yCoord += 168;
 	UIImageView *pitHalfFSharp6 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
 	[pitHalfFSharp6 setImage:[UIImage imageNamed: @"FSharp6_half.png"]];
 	[pitHalfFSharp6 setHighlightedImage:[UIImage imageNamed:@"FSharp6_half_selected.png"]];
 	pitHalfFSharp6.opaque = YES;
 	[myPitchScrollView addSubview:pitHalfFSharp6];
+	
+	yCoord += 168;
+	UIImageView *pitHalfF6 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
+	[pitHalfF6 setImage:[UIImage imageNamed: @"F6_half.png"]];
+	[pitHalfF6 setHighlightedImage:[UIImage imageNamed:@"F6_half_selected.png"]];
+	pitHalfF6.opaque = YES;
+	[myPitchScrollView addSubview:pitHalfF6];
+
 	
 	yCoord += 168;
 	UIImageView *pitHalfE6 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
@@ -575,25 +579,18 @@
 	[myPitchScrollView addSubview:pitHalfE6];
 	
 	yCoord += 168;
-	UIImageView *pitHalfD6 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
-	[pitHalfD6 setImage:[UIImage imageNamed: @"D6_half.png"]];
-	[pitHalfD6 setHighlightedImage:[UIImage imageNamed:@"D6_half_selected.png"]];
-	pitHalfD6.opaque = YES;
-	[myPitchScrollView addSubview:pitHalfD6];
-	
-	yCoord += 168;
 	UIImageView *pitHalfDSharp6 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
 	[pitHalfDSharp6 setImage:[UIImage imageNamed: @"DSharp6_half.png"]];
 	[pitHalfDSharp6 setHighlightedImage:[UIImage imageNamed:@"DSharp6_half_selected.png"]];
 	pitHalfDSharp6.opaque = YES;
 	[myPitchScrollView addSubview:pitHalfDSharp6];
-	
+
 	yCoord += 168;
-	UIImageView *pitHalfC6 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
-	[pitHalfC6 setImage:[UIImage imageNamed: @"C6_half.png"]];
-	[pitHalfC6 setHighlightedImage:[UIImage imageNamed:@"C6_half_selected.png"]];
-	pitHalfC6.opaque = YES;
-	[myPitchScrollView addSubview:pitHalfC6];
+	UIImageView *pitHalfD6 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
+	[pitHalfD6 setImage:[UIImage imageNamed: @"D6_half.png"]];
+	[pitHalfD6 setHighlightedImage:[UIImage imageNamed:@"D6_half_selected.png"]];
+	pitHalfD6.opaque = YES;
+	[myPitchScrollView addSubview:pitHalfD6];
 	
 	yCoord += 168;
 	UIImageView *pitHalfCSharp6 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
@@ -603,18 +600,18 @@
 	[myPitchScrollView addSubview:pitHalfCSharp6];
 	
 	yCoord += 168;
+	UIImageView *pitHalfC6 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
+	[pitHalfC6 setImage:[UIImage imageNamed: @"C6_half.png"]];
+	[pitHalfC6 setHighlightedImage:[UIImage imageNamed:@"C6_half_selected.png"]];
+	pitHalfC6.opaque = YES;
+	[myPitchScrollView addSubview:pitHalfC6];
+	
+	yCoord += 168;
 	UIImageView *pitHalfB5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
 	[pitHalfB5 setImage:[UIImage imageNamed: @"B5_half.png"]];
 	[pitHalfB5 setHighlightedImage:[UIImage imageNamed:@"B5_half_selected.png"]];
 	pitHalfB5.opaque = YES;
 	[myPitchScrollView addSubview:pitHalfB5];
-	
-	yCoord += 168;
-	UIImageView *pitHalfA5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
-	[pitHalfA5 setImage:[UIImage imageNamed: @"A5_half.png"]];
-	[pitHalfA5 setHighlightedImage:[UIImage imageNamed:@"A5_half_selected.png"]];
-	pitHalfA5.opaque = YES;
-	[myPitchScrollView addSubview:pitHalfA5];
 	
 	yCoord += 168;
 	UIImageView *pitHalfASharp5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
@@ -624,11 +621,11 @@
 	[myPitchScrollView addSubview:pitHalfASharp5];
 	
 	yCoord += 168;
-	UIImageView *pitHalfG5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
-	[pitHalfG5 setImage:[UIImage imageNamed: @"G5_half.png"]];
-	[pitHalfG5 setHighlightedImage:[UIImage imageNamed:@"G5_half_selected.png"]];
-	pitHalfG5.opaque = YES;
-	[myPitchScrollView addSubview:pitHalfG5];
+	UIImageView *pitHalfA5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
+	[pitHalfA5 setImage:[UIImage imageNamed: @"A5_half.png"]];
+	[pitHalfA5 setHighlightedImage:[UIImage imageNamed:@"A5_half_selected.png"]];
+	pitHalfA5.opaque = YES;
+	[myPitchScrollView addSubview:pitHalfA5];
 	
 	yCoord += 168;
 	UIImageView *pitHalfGSharp5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
@@ -638,11 +635,11 @@
 	[myPitchScrollView addSubview:pitHalfGSharp5];
 	
 	yCoord += 168;
-	UIImageView *pitHalfF5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
-	[pitHalfF5 setImage:[UIImage imageNamed: @"F5_half.png"]];
-	[pitHalfF5 setHighlightedImage:[UIImage imageNamed:@"F5_half_selected.png"]];
-	pitHalfF5.opaque = YES;
-	[myPitchScrollView addSubview:pitHalfF5];
+	UIImageView *pitHalfG5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
+	[pitHalfG5 setImage:[UIImage imageNamed: @"G5_half.png"]];
+	[pitHalfG5 setHighlightedImage:[UIImage imageNamed:@"G5_half_selected.png"]];
+	pitHalfG5.opaque = YES;
+	[myPitchScrollView addSubview:pitHalfG5];
 	
 	yCoord += 168;
 	UIImageView *pitHalfFSharp5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
@@ -651,6 +648,14 @@
 	pitHalfFSharp5.opaque = YES;
 	[myPitchScrollView addSubview:pitHalfFSharp5];
 	
+	yCoord += 168;
+	UIImageView *pitHalfF5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
+	[pitHalfF5 setImage:[UIImage imageNamed: @"F5_half.png"]];
+	[pitHalfF5 setHighlightedImage:[UIImage imageNamed:@"F5_half_selected.png"]];
+	pitHalfF5.opaque = YES;
+	[myPitchScrollView addSubview:pitHalfF5];
+	
+
 	yCoord += 168;
 	UIImageView *pitHalfE5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
 	[pitHalfE5 setImage:[UIImage imageNamed: @"E5_half.png"]];
@@ -703,18 +708,18 @@
 	/*
 	 * Note Pitches (Quarternote)
 	 */
-	UIImageView *pitQuarterF6 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
-	[pitQuarterF6 setImage:[UIImage imageNamed: @"F6_quarter.png"]];
-	[pitQuarterF6 setHighlightedImage:[UIImage imageNamed:@"F6_quarter_selected.png"]];
-	pitQuarterF6.opaque = YES;
-	[myPitchScrollView addSubview:pitQuarterF6];
-	
-	yCoord += 168;
 	UIImageView *pitQuarterFSharp6 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
 	[pitQuarterFSharp6 setImage:[UIImage imageNamed: @"FSharp6_quarter.png"]];
 	[pitQuarterFSharp6 setHighlightedImage:[UIImage imageNamed:@"FSharp6_quarter_selected.png"]];
 	pitQuarterFSharp6.opaque = YES;
 	[myPitchScrollView addSubview:pitQuarterFSharp6];
+
+	yCoord += 168;
+	UIImageView *pitQuarterF6 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
+	[pitQuarterF6 setImage:[UIImage imageNamed: @"F6_quarter.png"]];
+	[pitQuarterF6 setHighlightedImage:[UIImage imageNamed:@"F6_quarter_selected.png"]];
+	pitQuarterF6.opaque = YES;
+	[myPitchScrollView addSubview:pitQuarterF6];
 	
 	yCoord += 168;
 	UIImageView *pitQuarterE6 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
@@ -724,18 +729,25 @@
 	[myPitchScrollView addSubview:pitQuarterE6];
 	
 	yCoord += 168;
-	UIImageView *pitQuarterD6 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
-	[pitQuarterD6 setImage:[UIImage imageNamed: @"D6_quarter.png"]];
-	[pitQuarterD6 setHighlightedImage:[UIImage imageNamed:@"D6_quarter_selected.png"]];
-	pitQuarterD6.opaque = YES;
-	[myPitchScrollView addSubview:pitQuarterD6];
-	
-	yCoord += 168;
 	UIImageView *pitQuarterDSharp6 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
 	[pitQuarterDSharp6 setImage:[UIImage imageNamed: @"DSharp6_quarter.png"]];
 	[pitQuarterDSharp6 setHighlightedImage:[UIImage imageNamed:@"DSharp6_quarter_selected.png"]];
 	pitQuarterDSharp6.opaque = YES;
 	[myPitchScrollView addSubview:pitQuarterDSharp6];
+	
+	yCoord += 168;
+	UIImageView *pitQuarterD6 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
+	[pitQuarterD6 setImage:[UIImage imageNamed: @"D6_quarter.png"]];
+	[pitQuarterD6 setHighlightedImage:[UIImage imageNamed:@"D6_quarter_selected.png"]];
+	pitQuarterD6.opaque = YES;
+	[myPitchScrollView addSubview:pitQuarterD6];
+
+	yCoord += 168;
+	UIImageView *pitQuarterCSharp6 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
+	[pitQuarterCSharp6 setImage:[UIImage imageNamed: @"CSharp6_quarter.png"]];
+	[pitQuarterCSharp6 setHighlightedImage:[UIImage imageNamed:@"CSharp6_quarter_selected.png"]];
+	pitQuarterCSharp6.opaque = YES;
+	[myPitchScrollView addSubview:pitQuarterCSharp6];
 	
 	yCoord += 168;
 	UIImageView *pitQuarterC6 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
@@ -745,25 +757,11 @@
 	[myPitchScrollView addSubview:pitQuarterC6];
 	
 	yCoord += 168;
-	UIImageView *pitQuarterCSharp6 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
-	[pitQuarterCSharp6 setImage:[UIImage imageNamed: @"CSharp6_quarter.png"]];
-	[pitQuarterCSharp6 setHighlightedImage:[UIImage imageNamed:@"CSharp6_quarter_selected.png"]];
-	pitQuarterCSharp6.opaque = YES;
-	[myPitchScrollView addSubview:pitQuarterCSharp6];
-	
-	yCoord += 168;
 	UIImageView *pitQuarterB5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
 	[pitQuarterB5 setImage:[UIImage imageNamed: @"B5_quarter.png"]];
 	[pitQuarterB5 setHighlightedImage:[UIImage imageNamed:@"B5_quarter_selected.png"]];
 	pitQuarterB5.opaque = YES;
 	[myPitchScrollView addSubview:pitQuarterB5];
-	
-	yCoord += 168;
-	UIImageView *pitQuarterA5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
-	[pitQuarterA5 setImage:[UIImage imageNamed: @"A5_quarter.png"]];
-	[pitQuarterA5 setHighlightedImage:[UIImage imageNamed:@"A5_quarter_selected.png"]];
-	pitQuarterA5.opaque = YES;
-	[myPitchScrollView addSubview:pitQuarterA5];
 	
 	yCoord += 168;
 	UIImageView *pitQuarterASharp5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
@@ -773,11 +771,11 @@
 	[myPitchScrollView addSubview:pitQuarterASharp5];
 	
 	yCoord += 168;
-	UIImageView *pitQuarterG5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
-	[pitQuarterG5 setImage:[UIImage imageNamed: @"G5_quarter.png"]];
-	[pitQuarterG5 setHighlightedImage:[UIImage imageNamed:@"G5_quarter_selected.png"]];
-	pitQuarterG5.opaque = YES;
-	[myPitchScrollView addSubview:pitQuarterG5];
+	UIImageView *pitQuarterA5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
+	[pitQuarterA5 setImage:[UIImage imageNamed: @"A5_quarter.png"]];
+	[pitQuarterA5 setHighlightedImage:[UIImage imageNamed:@"A5_quarter_selected.png"]];
+	pitQuarterA5.opaque = YES;
+	[myPitchScrollView addSubview:pitQuarterA5];
 	
 	yCoord += 168;
 	UIImageView *pitQuarterGSharp5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
@@ -787,18 +785,25 @@
 	[myPitchScrollView addSubview:pitQuarterGSharp5];
 	
 	yCoord += 168;
-	UIImageView *pitQuarterF5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
-	[pitQuarterF5 setImage:[UIImage imageNamed: @"F5_quarter.png"]];
-	[pitQuarterF5 setHighlightedImage:[UIImage imageNamed:@"F5_quarter_selected.png"]];
-	pitQuarterF5.opaque = YES;
-	[myPitchScrollView addSubview:pitQuarterF5];
-	
+	UIImageView *pitQuarterG5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
+	[pitQuarterG5 setImage:[UIImage imageNamed: @"G5_quarter.png"]];
+	[pitQuarterG5 setHighlightedImage:[UIImage imageNamed:@"G5_quarter_selected.png"]];
+	pitQuarterG5.opaque = YES;
+	[myPitchScrollView addSubview:pitQuarterG5];
+
 	yCoord += 168;
 	UIImageView *pitQuarterFSharp5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
 	[pitQuarterFSharp5 setImage:[UIImage imageNamed: @"FSharp5_quarter.png"]];
 	[pitQuarterFSharp5 setHighlightedImage:[UIImage imageNamed:@"FSharp5_quarter_selected.png"]];
 	pitQuarterFSharp5.opaque = YES;
 	[myPitchScrollView addSubview:pitQuarterFSharp5];
+	
+	yCoord += 168;
+	UIImageView *pitQuarterF5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
+	[pitQuarterF5 setImage:[UIImage imageNamed: @"F5_quarter.png"]];
+	[pitQuarterF5 setHighlightedImage:[UIImage imageNamed:@"F5_quarter_selected.png"]];
+	pitQuarterF5.opaque = YES;
+	[myPitchScrollView addSubview:pitQuarterF5];
 	
 	yCoord += 168;
 	UIImageView *pitQuarterE5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
@@ -852,18 +857,18 @@
 	/*
 	 * Note Pitches (Eighthnote)
 	 */
-	UIImageView *pitEighthF6 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
-	[pitEighthF6 setImage:[UIImage imageNamed: @"F6_eighth.png"]];
-	[pitEighthF6 setHighlightedImage:[UIImage imageNamed:@"F6_eighth_selected.png"]];
-	pitEighthF6.opaque = YES;
-	[myPitchScrollView addSubview:pitEighthF6];
-	
-	yCoord += 168;
 	UIImageView *pitEighthFSharp6 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
 	[pitEighthFSharp6 setImage:[UIImage imageNamed: @"FSharp6_eighth.png"]];
 	[pitEighthFSharp6 setHighlightedImage:[UIImage imageNamed:@"FSharp6_eighth_selected.png"]];
 	pitEighthFSharp6.opaque = YES;
 	[myPitchScrollView addSubview:pitEighthFSharp6];
+
+	yCoord += 168;
+	UIImageView *pitEighthF6 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
+	[pitEighthF6 setImage:[UIImage imageNamed: @"F6_eighth.png"]];
+	[pitEighthF6 setHighlightedImage:[UIImage imageNamed:@"F6_eighth_selected.png"]];
+	pitEighthF6.opaque = YES;
+	[myPitchScrollView addSubview:pitEighthF6];
 	
 	yCoord += 168;
 	UIImageView *pitEighthE6 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
@@ -873,13 +878,6 @@
 	[myPitchScrollView addSubview:pitEighthE6];
 	
 	yCoord += 168;
-	UIImageView *pitEighthD6 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
-	[pitEighthD6 setImage:[UIImage imageNamed: @"D6_eighth.png"]];
-	[pitEighthD6 setHighlightedImage:[UIImage imageNamed:@"D6_eighth_selected.png"]];
-	pitEighthD6.opaque = YES;
-	[myPitchScrollView addSubview:pitEighthD6];
-	
-	yCoord += 168;
 	UIImageView *pitEighthDSharp6 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
 	[pitEighthDSharp6 setImage:[UIImage imageNamed: @"DSharp6_eighth.png"]];
 	[pitEighthDSharp6 setHighlightedImage:[UIImage imageNamed:@"DSharp6_eighth_selected.png"]];
@@ -887,11 +885,11 @@
 	[myPitchScrollView addSubview:pitEighthDSharp6];
 	
 	yCoord += 168;
-	UIImageView *pitEighthC6 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
-	[pitEighthC6 setImage:[UIImage imageNamed: @"C6_eighth.png"]];
-	[pitEighthC6 setHighlightedImage:[UIImage imageNamed:@"C6_eighth_selected.png"]];
-	pitEighthC6.opaque = YES;
-	[myPitchScrollView addSubview:pitEighthC6];
+	UIImageView *pitEighthD6 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
+	[pitEighthD6 setImage:[UIImage imageNamed: @"D6_eighth.png"]];
+	[pitEighthD6 setHighlightedImage:[UIImage imageNamed:@"D6_eighth_selected.png"]];
+	pitEighthD6.opaque = YES;
+	[myPitchScrollView addSubview:pitEighthD6];
 	
 	yCoord += 168;
 	UIImageView *pitEighthCSharp6 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
@@ -901,18 +899,18 @@
 	[myPitchScrollView addSubview:pitEighthCSharp6];
 	
 	yCoord += 168;
+	UIImageView *pitEighthC6 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
+	[pitEighthC6 setImage:[UIImage imageNamed: @"C6_eighth.png"]];
+	[pitEighthC6 setHighlightedImage:[UIImage imageNamed:@"C6_eighth_selected.png"]];
+	pitEighthC6.opaque = YES;
+	[myPitchScrollView addSubview:pitEighthC6];
+	
+	yCoord += 168;
 	UIImageView *pitEighthB5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
 	[pitEighthB5 setImage:[UIImage imageNamed: @"B5_eighth.png"]];
 	[pitEighthB5 setHighlightedImage:[UIImage imageNamed:@"B5_eighth_selected.png"]];
 	pitEighthB5.opaque = YES;
 	[myPitchScrollView addSubview:pitEighthB5];
-	
-	yCoord += 168;
-	UIImageView *pitEighthA5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
-	[pitEighthA5 setImage:[UIImage imageNamed: @"A5_eighth.png"]];
-	[pitEighthA5 setHighlightedImage:[UIImage imageNamed:@"A5_eighth_selected.png"]];
-	pitEighthA5.opaque = YES;
-	[myPitchScrollView addSubview:pitEighthA5];
 	
 	yCoord += 168;
 	UIImageView *pitEighthASharp5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
@@ -922,11 +920,11 @@
 	[myPitchScrollView addSubview:pitEighthASharp5];
 	
 	yCoord += 168;
-	UIImageView *pitEighthG5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
-	[pitEighthG5 setImage:[UIImage imageNamed: @"G5_eighth.png"]];
-	[pitEighthG5 setHighlightedImage:[UIImage imageNamed:@"G5_eighth_selected.png"]];
-	pitEighthG5.opaque = YES;
-	[myPitchScrollView addSubview:pitEighthG5];
+	UIImageView *pitEighthA5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
+	[pitEighthA5 setImage:[UIImage imageNamed: @"A5_eighth.png"]];
+	[pitEighthA5 setHighlightedImage:[UIImage imageNamed:@"A5_eighth_selected.png"]];
+	pitEighthA5.opaque = YES;
+	[myPitchScrollView addSubview:pitEighthA5];
 	
 	yCoord += 168;
 	UIImageView *pitEighthGSharp5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
@@ -936,11 +934,11 @@
 	[myPitchScrollView addSubview:pitEighthGSharp5];
 	
 	yCoord += 168;
-	UIImageView *pitEighthF5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
-	[pitEighthF5 setImage:[UIImage imageNamed: @"F5_eighth.png"]];
-	[pitEighthF5 setHighlightedImage:[UIImage imageNamed:@"F5_eighth_selected.png"]];
-	pitEighthF5.opaque = YES;
-	[myPitchScrollView addSubview:pitEighthF5];
+	UIImageView *pitEighthG5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
+	[pitEighthG5 setImage:[UIImage imageNamed: @"G5_eighth.png"]];
+	[pitEighthG5 setHighlightedImage:[UIImage imageNamed:@"G5_eighth_selected.png"]];
+	pitEighthG5.opaque = YES;
+	[myPitchScrollView addSubview:pitEighthG5];
 	
 	yCoord += 168;
 	UIImageView *pitEighthFSharp5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
@@ -948,6 +946,13 @@
 	[pitEighthFSharp5 setHighlightedImage:[UIImage imageNamed:@"FSharp5_eighth_selected.png"]];
 	pitEighthFSharp5.opaque = YES;
 	[myPitchScrollView addSubview:pitEighthFSharp5];
+	
+	yCoord += 168;
+	UIImageView *pitEighthF5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
+	[pitEighthF5 setImage:[UIImage imageNamed: @"F5_eighth.png"]];
+	[pitEighthF5 setHighlightedImage:[UIImage imageNamed:@"F5_eighth_selected.png"]];
+	pitEighthF5.opaque = YES;
+	[myPitchScrollView addSubview:pitEighthF5];
 	
 	yCoord += 168;
 	UIImageView *pitEighthE5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];

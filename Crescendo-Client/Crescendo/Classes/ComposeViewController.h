@@ -19,6 +19,7 @@
 	UIButton *buildButton;
 	IBOutlet UILabel *buildLabel;
 	IBOutlet UIButton *backButton;
+
 	
 	NSArray *lengthImages;
 	NSArray *pitchImages;
