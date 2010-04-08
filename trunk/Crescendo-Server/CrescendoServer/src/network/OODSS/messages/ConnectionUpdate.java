@@ -1,5 +1,6 @@
 package network.OODSS.messages;
 
+import network.OODSS.Test.PseudoiPhone;
 import ecologylab.services.messages.ResponseMessage;
 import ecologylab.services.messages.UpdateMessage;
 import ecologylab.collections.Scope;
@@ -25,7 +26,8 @@ public class ConnectionUpdate extends UpdateMessage
 	@Override
 	public void processUpdate(Scope s)
 	{
-		
+		PseudoiPhone phone = (PseudoiPhone)s.get(PseudoiPhone.PHONE_HANDLE);
+		phone.setPlayerNumber(this.playerNumber);
 	}
 	
 }

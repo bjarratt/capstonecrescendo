@@ -23,7 +23,6 @@ public class PublicServer {
 	
 	public static final String DISPLAY_HANDLE = "DISPLAY_HANDLE";
 	
-//	private static TestDisplay display = new TestDisplay();
 	private static GameManager manager = new GameManager();
 	private static final int	idleTimeout	= -1;
 	private static final int	MTU			= 40000;
@@ -32,11 +31,9 @@ public class PublicServer {
 		// Get base translations with static accessor
 		TranslationScope publicServerTranslations = CrescendoTranslation.get();
 		
-		
 		// Creates a scope for the server to use as an application scope as
 		// well as individual client session scopes.
 		Scope applicationScope = new Scope();
-//		applicationScope.put(DISPLAY_HANDLE, display);
 		
 		applicationScope.put(GameManager.GAME_MANAGER, manager);
 		
@@ -54,6 +51,5 @@ public class PublicServer {
 		
 		server.start();
 		manager.run();
-//		display.run();
 	}
 }
