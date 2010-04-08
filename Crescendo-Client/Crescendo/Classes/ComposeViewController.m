@@ -80,7 +80,6 @@
 	int notePitchPage = 0;
 	
 	float page = scrollView.contentOffset.y / scrollView.contentSize.height;
-		
 	if (scrollView == myLengthScrollView)
 	{
 		if (page >= 0.503)
@@ -252,7 +251,7 @@
 
 - (void) updateBuildLabel {
 	buildLabel.text = [NSString stringWithFormat:@"%@_%@", notePitch, noteLength];
-	//Allows for the buildButton to reflect the currently selected note
+	// Allows for the buildButton to reflect the currently selected note
 	[buildButton setBackgroundImage:[UIImage imageNamed: [[NSString alloc] initWithFormat:@"%@_%@.png", notePitch, [noteLength substringToIndex: [noteLength length] - 4]]] forState: UIControlStateNormal];
 }
 
@@ -515,20 +514,20 @@
 	/*
 	 * Note Pitch Array
 	 */
-	pitchImages = [[NSArray alloc] initWithObjects: pitWholeF6,
-									 pitWholeFSharp6,
+	pitchImages = [[NSArray alloc] initWithObjects: pitWholeFSharp6,
+									 pitWholeF6,
 									 pitWholeE6,
-									 pitWholeD6,
 									 pitWholeDSharp6,
-									 pitWholeC6,
+									 pitWholeD6,
 									 pitWholeCSharp6,
+									 pitWholeC6,
 									 pitWholeB5,
-									 pitWholeA5,
 									 pitWholeASharp5,
-									 pitWholeG5,
+									 pitWholeA5,
 									 pitWholeGSharp5,
-									 pitWholeF5,
+									 pitWholeG5,
 									 pitWholeFSharp5,
+									 pitWholeF5,
 									 pitWholeE5, nil];
 	/*
 	[pitWholeF6 release];
@@ -666,20 +665,20 @@
 	/*
 	 * Note Pitch Array
 	 */
-	pitchImages = [[NSArray alloc] initWithObjects: pitHalfF6,
-									pitHalfFSharp6,
+	pitchImages = [[NSArray alloc] initWithObjects: pitHalfFSharp6,
+									pitHalfF6,
 									pitHalfE6,
-									pitHalfD6,
 									pitHalfDSharp6,
-									pitHalfC6,
+									pitHalfD6,
 									pitHalfCSharp6,
+									pitHalfC6,
 									pitHalfB5,
-									pitHalfA5,
 									pitHalfASharp5,
-									pitHalfG5,
+									pitHalfA5,
 									pitHalfGSharp5,
-									pitHalfF5,
+									pitHalfG5,
 									pitHalfFSharp5,
+									pitHalfF5,
 									pitHalfE5, nil];
 	/*
 	[pitHalfF6 release];
@@ -815,20 +814,20 @@
 	/*
 	 * Note Pitch Array
 	 */
-	pitchImages = [[NSArray alloc] initWithObjects: pitQuarterF6,
-									   pitQuarterFSharp6,
+	pitchImages = [[NSArray alloc] initWithObjects: pitQuarterFSharp6,
+									   pitQuarterF6,
 									   pitQuarterE6,
-									   pitQuarterD6,
 									   pitQuarterDSharp6,
-									   pitQuarterC6,
+									   pitQuarterD6,
 									   pitQuarterCSharp6,
+									   pitQuarterC6,
 									   pitQuarterB5,
-									   pitQuarterA5,
 									   pitQuarterASharp5,
-									   pitQuarterG5,
+									   pitQuarterA5,
 									   pitQuarterGSharp5,
-									   pitQuarterF5,
+									   pitQuarterG5,
 									   pitQuarterFSharp5,
+									   pitQuarterF5,
 									   pitQuarterE5, nil];
 	/*
 	[pitQuarterF6 release];
@@ -964,20 +963,20 @@
 	/*
 	 * Note Pitch Array
 	 */
-	pitchImages = [[NSArray alloc] initWithObjects: pitEighthF6,
-									  pitEighthFSharp6,
+	pitchImages = [[NSArray alloc] initWithObjects: pitEighthFSharp6,
+									  pitEighthF6,
 									  pitEighthE6,
-									  pitEighthD6,
 									  pitEighthDSharp6,
-									  pitEighthC6,
+									  pitEighthD6,
 									  pitEighthCSharp6,
+									  pitEighthC6,
 									  pitEighthB5,
-									  pitEighthA5,
 									  pitEighthASharp5,
-									  pitEighthG5,
+									  pitEighthA5,
 									  pitEighthGSharp5,
-									  pitEighthF5,
+									  pitEighthG5,
 									  pitEighthFSharp5,
+									  pitEighthF5,
 									  pitEighthE5, nil];
 	/*
 	[pitEighthF6 release];
