@@ -24,6 +24,14 @@
 @synthesize notePitch;
 @synthesize previousNoteLengthPage;
 @synthesize previousNotePitchPage;
+@synthesize keySlider;
+@synthesize timeSlider;
+@synthesize tempoSlider;
+@synthesize barsSliders;
+@synthesize keyLabel;
+@synthesize timeLabel;
+@synthesize tempoLabel;
+@synthesize barsLabel;
 
 #pragma mark Shake
 
@@ -282,6 +290,65 @@
 	[buildButton removeFromSuperview];
 	backButton.hidden = NO;
 	buildLabel.hidden = YES;
+	
+	/*
+	 * Sliders
+	 */
+	keySlider = [[UISlider alloc] initWithFrame: CGRectMake(-10, 300, 118, 23)];
+	keySlider.minimumValue = 1;
+	keySlider.maximumValue = 12;
+	keySlider.value = 1;
+	keySlider.continuous = YES;
+	keySlider.transform = CGAffineTransformRotate(keySlider.transform, 270.0/180*M_PI);
+	[self.view addSubview:keySlider];
+	
+	timeSlider = [[UISlider alloc] initWithFrame: CGRectMake(63, 300, 118, 23)];
+	timeSlider.minimumValue = 1;
+	timeSlider.maximumValue = 3;
+	timeSlider.value = 1;
+	timeSlider.continuous = YES;
+	timeSlider.transform = CGAffineTransformRotate(timeSlider.transform, 270.0/180*M_PI);
+	[self.view addSubview:timeSlider];
+	
+	tempoSlider = [[UISlider alloc] initWithFrame: CGRectMake(136, 300, 118, 23)];
+	tempoSlider.minimumValue = 1;
+	tempoSlider.maximumValue = 3;
+	tempoSlider.value = 1;
+	tempoSlider.continuous = YES;
+	tempoSlider.transform = CGAffineTransformRotate(tempoSlider.transform, 270.0/180*M_PI);
+	[self.view addSubview:tempoSlider];
+	
+	barsSliders = [[UISlider alloc] initWithFrame: CGRectMake(209, 300, 118, 23)];
+	barsSliders.minimumValue = 1;
+	barsSliders.maximumValue = 3;
+	barsSliders.value = 1;
+	barsSliders.continuous = YES;
+	barsSliders.transform = CGAffineTransformRotate(barsSliders.transform, 270.0/180*M_PI);
+	[self.view addSubview:barsSliders];
+	
+	/*
+	 * Slider Labels
+	 */
+	keyLabel = [[UILabel alloc] initWithFrame: CGRectMake(20, 200, 50, 30)];
+	keyLabel.text = [NSString stringWithFormat: @"Key"];
+	keyLabel.backgroundColor = [UIColor blackColor];
+	keyLabel.textColor = [UIColor whiteColor];
+	[self.view addSubview:keyLabel];
+	timeLabel = [[UILabel alloc] initWithFrame: CGRectMake(70, 200, 50, 30)];
+	timeLabel.text = [NSString stringWithFormat: @"Time"];
+	timeLabel.backgroundColor = [UIColor blackColor];
+	timeLabel.textColor = [UIColor whiteColor];
+	[self.view addSubview:timeLabel];
+	tempoLabel = [[UILabel alloc] initWithFrame: CGRectMake(140, 200, 50, 30)];
+	tempoLabel.text = [NSString stringWithFormat: @"Tempo"];
+	tempoLabel.backgroundColor = [UIColor blackColor];
+	tempoLabel.textColor = [UIColor whiteColor];
+	[self.view addSubview:tempoLabel];
+	barsLabel = [[UILabel alloc] initWithFrame: CGRectMake(210, 200, 50, 30)];
+	barsLabel.text = [NSString stringWithFormat: @"Bars"];
+	barsLabel.backgroundColor = [UIColor blackColor];
+	barsLabel.textColor = [UIColor whiteColor];
+	[self.view addSubview:barsLabel];
 }
 
 - (void) drawPortraitLandscapeSideView {
@@ -299,6 +366,10 @@
 	[myLengthScrollView removeFromSuperview];
 	[myPitchScrollView removeFromSuperview];
 	[buildButton removeFromSuperview];
+	[keySlider removeFromSuperview];
+	[timeSlider removeFromSuperview];
+	[tempoSlider removeFromSuperview];
+	[barsSliders removeFromSuperview];
 	backButton.hidden = YES;
 	buildLabel.hidden = NO;
 	
