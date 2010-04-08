@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 
 import displayManager.gameModes.lengthTraining;
 import displayManager.gameModes.pitchTraining;
+import network.ConnectionManager;
 
 /**
  *	This class simply starts the GameManager
@@ -18,7 +19,9 @@ public class Main
 	public static void main(String bikini[])
 	{
 
-		ConnectionManager cm = new ConnectionManager();
+		ConnectionManager.getInstance().initServer();
+		
+//		ConnectionManager cm = new ConnectionManager();
 		/*
 		lengthTraining testLength = new lengthTraining(1);
 
