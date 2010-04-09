@@ -1,15 +1,17 @@
 //
-//  ComposeViewController.m
+//  BuildViewController.m
 //  Crescendo
 //
-//  Created by Brandon Kaster on 4/5/10.
-//  Copyright 2010 Texas A&M University. All rights reserved.
+//  Created by Senior Capstone on 4/8/10.
+//  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import "ComposeViewController.h"
+#import "BuildView.h"
 #import "PlayNoteRequest.h"
 
-@implementation ComposeViewController
+
+@implementation BuildView
+
 
 @synthesize client;
 @synthesize playerId;
@@ -25,20 +27,6 @@
 @synthesize previousNoteLengthPage;
 @synthesize previousNotePitchPage;
 
-@synthesize keySlider;
-@synthesize timeSlider;
-@synthesize tempoSlider;
-@synthesize barsSlider;
-@synthesize keyText;
-@synthesize timeText;
-@synthesize tempoText;
-@synthesize barsText;
-@synthesize keyLabel;
-@synthesize timeLabel;
-@synthesize tempoLabel;
-@synthesize barsLabel;
-
-#pragma mark Shake
 
 - (BOOL) canBecomeFirstResponder {
 	return YES;
@@ -286,112 +274,6 @@
 
 #pragma mark Draw Methods
 
-- (void) drawPortraitView {
-	/*
-	 * Properties
-	 */
-	[myLengthScrollView removeFromSuperview];
-	[myPitchScrollView removeFromSuperview];
-	[buildButton removeFromSuperview];
-	backButton.hidden = NO;
-	buildLabel.hidden = YES;
-	
-	
-	
-	/*
-	 * Sliders
-	 */
-	if(!keySlider){
-		keySlider = [[UISlider alloc] initWithFrame: CGRectMake(-12, 350, 118, 23)];
-		keySlider.minimumValue = 1;
-		keySlider.maximumValue = 12;
-		keySlider.value = 12;
-		keySlider.continuous = YES;
-		keySlider.transform = CGAffineTransformRotate(keySlider.transform, 270.0/180*M_PI);
-	}
-	[self.view addSubview:keySlider];
-	
-	if(!timeSlider){
-		timeSlider = [[UISlider alloc] initWithFrame: CGRectMake(63, 350, 118, 23)];
-		timeSlider.minimumValue = 1;
-		timeSlider.maximumValue = 3;
-		timeSlider.value = 3;
-		timeSlider.continuous = YES;
-		timeSlider.transform = CGAffineTransformRotate(timeSlider.transform, 270.0/180*M_PI);
-	}
-	[self.view addSubview:timeSlider];
-	
-	if(!tempoSlider){
-		tempoSlider = [[UISlider alloc] initWithFrame: CGRectMake(136, 350, 118, 23)];
-		tempoSlider.minimumValue = 1;
-		tempoSlider.maximumValue = 12;
-		tempoSlider.value = 12;
-		tempoSlider.continuous = YES;
-		tempoSlider.transform = CGAffineTransformRotate(tempoSlider.transform, 270.0/180*M_PI);
-	}
-	[self.view addSubview:tempoSlider];
-
-	if(!barsSlider){
-		barsSlider = [[UISlider alloc] initWithFrame: CGRectMake(209, 350, 118, 23)];
-		barsSlider.minimumValue = 1;
-		barsSlider.maximumValue = 8;
-		barsSlider.value = 8;
-		barsSlider.continuous = YES;
-		barsSlider.transform = CGAffineTransformRotate(barsSlider.transform, 270.0/180*M_PI);
-	}
-	[self.view addSubview:barsSlider];
-	
-	/*
-	 * Slider Text Fields
-	 */
-	keyText = [[UITextField alloc] initWithFrame:CGRectMake(15, 220, 60, 60)];
-	keyText.placeholder = [NSString stringWithFormat: @"Key"];
-	keyText.borderStyle = UITextBorderStyleRoundedRect;
-	[self.view addSubview:keyText];
-	
-	timeText = [[UITextField alloc] initWithFrame:CGRectMake(90, 220, 60, 60)];
-	timeText.placeholder = [NSString stringWithFormat: @"Time"];
-	timeText.borderStyle = UITextBorderStyleRoundedRect;
-	[self.view addSubview:timeText];
-	
-	tempoText = [[UITextField alloc] initWithFrame:CGRectMake(165, 220, 60, 60)];
-	tempoText.placeholder = [NSString stringWithFormat: @"Temp"];
-	tempoText.borderStyle = UITextBorderStyleRoundedRect;
-	[self.view addSubview:tempoText];
-	
-	barsText = [[UITextField alloc] initWithFrame:CGRectMake(240, 220, 60, 60)];
-	barsText.placeholder = [NSString stringWithFormat: @"Bars"];
-	barsText.borderStyle = UITextBorderStyleRoundedRect;
-	[self.view addSubview:barsText];
-	
-	/*
-	 * Slider Labels
-	 */
-	keyLabel = [[UILabel alloc] initWithFrame: CGRectMake(30, 180, 50, 30)];
-	keyLabel.text = [NSString stringWithFormat: @"Key"];
-	keyLabel.backgroundColor = [UIColor blackColor];
-	keyLabel.textColor = [UIColor whiteColor];
-	[self.view addSubview:keyLabel];
-	
-	timeLabel = [[UILabel alloc] initWithFrame: CGRectMake(100, 180, 50, 30)];
-	timeLabel.text = [NSString stringWithFormat: @"Time"];
-	timeLabel.backgroundColor = [UIColor blackColor];
-	timeLabel.textColor = [UIColor whiteColor];
-	[self.view addSubview:timeLabel];
-	
-	tempoLabel = [[UILabel alloc] initWithFrame: CGRectMake(170, 180, 75, 30)];
-	tempoLabel.text = [NSString stringWithFormat: @"Tempo"];
-	tempoLabel.backgroundColor = [UIColor blackColor];
-	tempoLabel.textColor = [UIColor whiteColor];
-	[self.view addSubview:tempoLabel];
-	
-	barsLabel = [[UILabel alloc] initWithFrame: CGRectMake(250, 180, 50, 30)];
-	barsLabel.text = [NSString stringWithFormat: @"Bars"];
-	barsLabel.backgroundColor = [UIColor blackColor];
-	barsLabel.textColor = [UIColor whiteColor];
-	[self.view addSubview:barsLabel];
-}
-
 - (void) drawPortraitLandscapeSideView {
 	/*
 	 * Initialize Variables
@@ -406,25 +288,13 @@
 	 */
 	[myLengthScrollView removeFromSuperview];
 	[myPitchScrollView removeFromSuperview];
-	//[buildButton removeFromSuperview];
-	[keySlider removeFromSuperview];
-	[timeSlider removeFromSuperview];
-	[tempoSlider removeFromSuperview];
-	[barsSlider removeFromSuperview];
-	[keyText removeFromSuperview];
-	[timeText removeFromSuperview];
-	[tempoText removeFromSuperview];
-	[barsText removeFromSuperview];
-	[keyLabel removeFromSuperview];
-	[timeLabel removeFromSuperview];
-	[tempoLabel removeFromSuperview];
-	[barsLabel removeFromSuperview];
+	[buildButton removeFromSuperview];
 	backButton.hidden = YES;
 	buildLabel.hidden = NO;
 	
 	float yCoord = 0;
 	
-
+	
 	/*
 	 * Build Button
 	 */
@@ -471,7 +341,7 @@
 
 - (void) drawNoteLengths {
 	float yCoord = 0;
-
+	
 	/*
 	 * Note Lengths
 	 */
@@ -511,11 +381,11 @@
 					lenQuarternote,
 					lenEighthnote, nil];
 	/*
-	[lenWholenote release];
-	[lenHalfnote release];
-	[lenQuarternote release];
-	[lenEighthnote release];
-	*/
+	 [lenWholenote release];
+	 [lenHalfnote release];
+	 [lenQuarternote release];
+	 [lenEighthnote release];
+	 */
 	
 	[self determineScrollViewPage:myLengthScrollView];
 }
@@ -531,7 +401,7 @@
 	[pitWholeFSharp6 setHighlightedImage:[UIImage imageNamed:@"FSharp6_whole_selected.png"]];
 	pitWholeFSharp6.opaque = YES;
 	[myPitchScrollView addSubview:pitWholeFSharp6];
-
+	
 	
 	yCoord += 168;
 	UIImageView *pitWholeF6 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
@@ -574,7 +444,7 @@
 	[pitWholeC6 setHighlightedImage:[UIImage imageNamed:@"C6_whole_selected.png"]];
 	pitWholeC6.opaque = YES;
 	[myPitchScrollView addSubview:pitWholeC6];
-
+	
 	yCoord += 168;
 	UIImageView *pitWholeB5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
 	[pitWholeB5 setImage:[UIImage imageNamed: @"B5_whole.png"]];
@@ -595,7 +465,7 @@
 	[pitWholeA5 setHighlightedImage:[UIImage imageNamed:@"A5_whole_selected.png"]];
 	pitWholeA5.opaque = YES;
 	[myPitchScrollView addSubview:pitWholeA5];
-
+	
 	yCoord += 168;
 	UIImageView *pitWholeGSharp5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
 	[pitWholeGSharp5 setImage:[UIImage imageNamed: @"GSharp5_whole.png"]];
@@ -635,37 +505,37 @@
 	 * Note Pitch Array
 	 */
 	pitchImages = [[NSArray alloc] initWithObjects: pitWholeFSharp6,
-									 pitWholeF6,
-									 pitWholeE6,
-									 pitWholeDSharp6,
-									 pitWholeD6,
-									 pitWholeCSharp6,
-									 pitWholeC6,
-									 pitWholeB5,
-									 pitWholeASharp5,
-									 pitWholeA5,
-									 pitWholeGSharp5,
-									 pitWholeG5,
-									 pitWholeFSharp5,
-									 pitWholeF5,
-									 pitWholeE5, nil];
+				   pitWholeF6,
+				   pitWholeE6,
+				   pitWholeDSharp6,
+				   pitWholeD6,
+				   pitWholeCSharp6,
+				   pitWholeC6,
+				   pitWholeB5,
+				   pitWholeASharp5,
+				   pitWholeA5,
+				   pitWholeGSharp5,
+				   pitWholeG5,
+				   pitWholeFSharp5,
+				   pitWholeF5,
+				   pitWholeE5, nil];
 	/*
-	[pitWholeF6 release];
-	[pitWholeFSharp6 release];
-	[pitWholeE6 release];
-	[pitWholeD6 release];
-	[pitWholeDSharp6 release];
-	[pitWholeC6 release];
-	[pitWholeCSharp6 release];
-	[pitWholeB5 release];
-	[pitWholeA5 release];
-	[pitWholeASharp5 release];
-	[pitWholeG5 release];
-	[pitWholeGSharp5 release];
-	[pitWholeF5 release];
-	[pitWholeFSharp5 release];
-	[pitWholeE5 release];
-	*/
+	 [pitWholeF6 release];
+	 [pitWholeFSharp6 release];
+	 [pitWholeE6 release];
+	 [pitWholeD6 release];
+	 [pitWholeDSharp6 release];
+	 [pitWholeC6 release];
+	 [pitWholeCSharp6 release];
+	 [pitWholeB5 release];
+	 [pitWholeA5 release];
+	 [pitWholeASharp5 release];
+	 [pitWholeG5 release];
+	 [pitWholeGSharp5 release];
+	 [pitWholeF5 release];
+	 [pitWholeFSharp5 release];
+	 [pitWholeE5 release];
+	 */
 	
 	[self determineScrollViewPage:myPitchScrollView];
 }
@@ -688,7 +558,7 @@
 	[pitHalfF6 setHighlightedImage:[UIImage imageNamed:@"F6_half_selected.png"]];
 	pitHalfF6.opaque = YES;
 	[myPitchScrollView addSubview:pitHalfF6];
-
+	
 	
 	yCoord += 168;
 	UIImageView *pitHalfE6 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
@@ -703,7 +573,7 @@
 	[pitHalfDSharp6 setHighlightedImage:[UIImage imageNamed:@"DSharp6_half_selected.png"]];
 	pitHalfDSharp6.opaque = YES;
 	[myPitchScrollView addSubview:pitHalfDSharp6];
-
+	
 	yCoord += 168;
 	UIImageView *pitHalfD6 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
 	[pitHalfD6 setImage:[UIImage imageNamed: @"D6_half.png"]];
@@ -774,7 +644,7 @@
 	pitHalfF5.opaque = YES;
 	[myPitchScrollView addSubview:pitHalfF5];
 	
-
+	
 	yCoord += 168;
 	UIImageView *pitHalfE5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
 	[pitHalfE5 setImage:[UIImage imageNamed: @"E5_half.png"]];
@@ -786,37 +656,37 @@
 	 * Note Pitch Array
 	 */
 	pitchImages = [[NSArray alloc] initWithObjects: pitHalfFSharp6,
-									pitHalfF6,
-									pitHalfE6,
-									pitHalfDSharp6,
-									pitHalfD6,
-									pitHalfCSharp6,
-									pitHalfC6,
-									pitHalfB5,
-									pitHalfASharp5,
-									pitHalfA5,
-									pitHalfGSharp5,
-									pitHalfG5,
-									pitHalfFSharp5,
-									pitHalfF5,
-									pitHalfE5, nil];
+				   pitHalfF6,
+				   pitHalfE6,
+				   pitHalfDSharp6,
+				   pitHalfD6,
+				   pitHalfCSharp6,
+				   pitHalfC6,
+				   pitHalfB5,
+				   pitHalfASharp5,
+				   pitHalfA5,
+				   pitHalfGSharp5,
+				   pitHalfG5,
+				   pitHalfFSharp5,
+				   pitHalfF5,
+				   pitHalfE5, nil];
 	/*
-	[pitHalfF6 release];
-	[pitHalfFSharp6 release];
-	[pitHalfE6 release];
-	[pitHalfD6 release];
-	[pitHalfDSharp6 release];
-	[pitHalfC6 release];
-	[pitHalfCSharp6 release];
-	[pitHalfB5 release];
-	[pitHalfA5 release];
-	[pitHalfASharp5 release];
-	[pitHalfG5 release];
-	[pitHalfGSharp5 release];
-	[pitHalfF5 release];
-	[pitHalfFSharp5 release];
-	[pitHalfE5 release];
-	*/
+	 [pitHalfF6 release];
+	 [pitHalfFSharp6 release];
+	 [pitHalfE6 release];
+	 [pitHalfD6 release];
+	 [pitHalfDSharp6 release];
+	 [pitHalfC6 release];
+	 [pitHalfCSharp6 release];
+	 [pitHalfB5 release];
+	 [pitHalfA5 release];
+	 [pitHalfASharp5 release];
+	 [pitHalfG5 release];
+	 [pitHalfGSharp5 release];
+	 [pitHalfF5 release];
+	 [pitHalfFSharp5 release];
+	 [pitHalfE5 release];
+	 */
 	
 	[self determineScrollViewPage:myPitchScrollView];
 }
@@ -832,7 +702,7 @@
 	[pitQuarterFSharp6 setHighlightedImage:[UIImage imageNamed:@"FSharp6_quarter_selected.png"]];
 	pitQuarterFSharp6.opaque = YES;
 	[myPitchScrollView addSubview:pitQuarterFSharp6];
-
+	
 	yCoord += 168;
 	UIImageView *pitQuarterF6 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
 	[pitQuarterF6 setImage:[UIImage imageNamed: @"F6_quarter.png"]];
@@ -860,7 +730,7 @@
 	[pitQuarterD6 setHighlightedImage:[UIImage imageNamed:@"D6_quarter_selected.png"]];
 	pitQuarterD6.opaque = YES;
 	[myPitchScrollView addSubview:pitQuarterD6];
-
+	
 	yCoord += 168;
 	UIImageView *pitQuarterCSharp6 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
 	[pitQuarterCSharp6 setImage:[UIImage imageNamed: @"CSharp6_quarter.png"]];
@@ -909,7 +779,7 @@
 	[pitQuarterG5 setHighlightedImage:[UIImage imageNamed:@"G5_quarter_selected.png"]];
 	pitQuarterG5.opaque = YES;
 	[myPitchScrollView addSubview:pitQuarterG5];
-
+	
 	yCoord += 168;
 	UIImageView *pitQuarterFSharp5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
 	[pitQuarterFSharp5 setImage:[UIImage imageNamed: @"FSharp5_quarter.png"]];
@@ -935,37 +805,37 @@
 	 * Note Pitch Array
 	 */
 	pitchImages = [[NSArray alloc] initWithObjects: pitQuarterFSharp6,
-									   pitQuarterF6,
-									   pitQuarterE6,
-									   pitQuarterDSharp6,
-									   pitQuarterD6,
-									   pitQuarterCSharp6,
-									   pitQuarterC6,
-									   pitQuarterB5,
-									   pitQuarterASharp5,
-									   pitQuarterA5,
-									   pitQuarterGSharp5,
-									   pitQuarterG5,
-									   pitQuarterFSharp5,
-									   pitQuarterF5,
-									   pitQuarterE5, nil];
+				   pitQuarterF6,
+				   pitQuarterE6,
+				   pitQuarterDSharp6,
+				   pitQuarterD6,
+				   pitQuarterCSharp6,
+				   pitQuarterC6,
+				   pitQuarterB5,
+				   pitQuarterASharp5,
+				   pitQuarterA5,
+				   pitQuarterGSharp5,
+				   pitQuarterG5,
+				   pitQuarterFSharp5,
+				   pitQuarterF5,
+				   pitQuarterE5, nil];
 	/*
-	[pitQuarterF6 release];
-	[pitQuarterFSharp6 release];
-	[pitQuarterE6 release];
-	[pitQuarterD6 release];
-	[pitQuarterDSharp6 release];
-	[pitQuarterC6 release];
-	[pitQuarterCSharp6 release];
-	[pitQuarterB5 release];
-	[pitQuarterA5 release];
-	[pitQuarterASharp5 release];
-	[pitQuarterG5 release];
-	[pitQuarterGSharp5 release];
-	[pitQuarterF5 release];
-	[pitQuarterFSharp5 release];
-	[pitQuarterE5 release];
-	*/
+	 [pitQuarterF6 release];
+	 [pitQuarterFSharp6 release];
+	 [pitQuarterE6 release];
+	 [pitQuarterD6 release];
+	 [pitQuarterDSharp6 release];
+	 [pitQuarterC6 release];
+	 [pitQuarterCSharp6 release];
+	 [pitQuarterB5 release];
+	 [pitQuarterA5 release];
+	 [pitQuarterASharp5 release];
+	 [pitQuarterG5 release];
+	 [pitQuarterGSharp5 release];
+	 [pitQuarterF5 release];
+	 [pitQuarterFSharp5 release];
+	 [pitQuarterE5 release];
+	 */
 	
 	[self determineScrollViewPage:myPitchScrollView];
 }
@@ -981,7 +851,7 @@
 	[pitEighthFSharp6 setHighlightedImage:[UIImage imageNamed:@"FSharp6_eighth_selected.png"]];
 	pitEighthFSharp6.opaque = YES;
 	[myPitchScrollView addSubview:pitEighthFSharp6];
-
+	
 	yCoord += 168;
 	UIImageView *pitEighthF6 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
 	[pitEighthF6 setImage:[UIImage imageNamed: @"F6_eighth.png"]];
@@ -1084,37 +954,37 @@
 	 * Note Pitch Array
 	 */
 	pitchImages = [[NSArray alloc] initWithObjects: pitEighthFSharp6,
-									  pitEighthF6,
-									  pitEighthE6,
-									  pitEighthDSharp6,
-									  pitEighthD6,
-									  pitEighthCSharp6,
-									  pitEighthC6,
-									  pitEighthB5,
-									  pitEighthASharp5,
-									  pitEighthA5,
-									  pitEighthGSharp5,
-									  pitEighthG5,
-									  pitEighthFSharp5,
-									  pitEighthF5,
-									  pitEighthE5, nil];
+				   pitEighthF6,
+				   pitEighthE6,
+				   pitEighthDSharp6,
+				   pitEighthD6,
+				   pitEighthCSharp6,
+				   pitEighthC6,
+				   pitEighthB5,
+				   pitEighthASharp5,
+				   pitEighthA5,
+				   pitEighthGSharp5,
+				   pitEighthG5,
+				   pitEighthFSharp5,
+				   pitEighthF5,
+				   pitEighthE5, nil];
 	/*
-	[pitEighthF6 release];
-	[pitEighthFSharp6 release];
-	[pitEighthE6 release];
-	[pitEighthD6 release];
-	[pitEighthDSharp6 release];
-	[pitEighthC6 release];
-	[pitEighthCSharp6 release];
-	[pitEighthB5 release];
-	[pitEighthA5 release];
-	[pitEighthASharp5 release];
-	[pitEighthG5 release];
-	[pitEighthGSharp5 release];
-	[pitEighthF5 release];
-	[pitEighthFSharp5 release];
-	[pitEighthE5 release];
-	*/
+	 [pitEighthF6 release];
+	 [pitEighthFSharp6 release];
+	 [pitEighthE6 release];
+	 [pitEighthD6 release];
+	 [pitEighthDSharp6 release];
+	 [pitEighthC6 release];
+	 [pitEighthCSharp6 release];
+	 [pitEighthB5 release];
+	 [pitEighthA5 release];
+	 [pitEighthASharp5 release];
+	 [pitEighthG5 release];
+	 [pitEighthGSharp5 release];
+	 [pitEighthF5 release];
+	 [pitEighthFSharp5 release];
+	 [pitEighthE5 release];
+	 */
 	
 	[self determineScrollViewPage:myPitchScrollView];
 }
@@ -1134,17 +1004,17 @@
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        // Custom initialization
-    }
-    return self;
-}
-
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView {
-}
-*/
+ - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+ if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+ // Custom initialization
+ }
+ return self;
+ }
+ 
+ // Implement loadView to create a view hierarchy programmatically, without using a nib.
+ - (void)loadView {
+ }
+ */
 
 #pragma mark Unload Controller
 
@@ -1165,18 +1035,6 @@
     [super dealloc];
 	[myLengthScrollView release];
 	[myPitchScrollView release];
-	[keySlider release];
-	[keyText release];
-	[keyLabel release];
-	[timeSlider release];
-	[timeText release];
-	[timeLabel release];
-	[tempoSlider release];
-	[tempoText release];
-	[tempoLabel release];
-	[barsSlider release];
-	[barsText release];
-	[barsLabel release];
 	[buildLabel release];
 	[backButton release];
 	[lengthImages release];
