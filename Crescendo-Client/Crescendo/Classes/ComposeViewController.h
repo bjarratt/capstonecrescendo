@@ -76,7 +76,6 @@
 
 - (void) determineScrollViewPage: (UIScrollView *) scrollView;
 
-- (IBAction) setKeyText: (id) sender;
 - (IBAction) goBack;
 - (void) updateBuildLabel;
 - (void) sendNoteToServer: (id) sender;
