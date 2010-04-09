@@ -345,22 +345,22 @@
 	 * Slider Text Fields
 	 */
 	keyText = [[UITextField alloc] initWithFrame:CGRectMake(15, 220, 60, 60)];
-	keyText.placeholder = [NSString stringWithFormat: @"Key"];
+	keyText.text = [NSString stringWithFormat: @"Key"];
 	keyText.borderStyle = UITextBorderStyleRoundedRect;
 	[self.view addSubview:keyText];
 	
 	timeText = [[UITextField alloc] initWithFrame:CGRectMake(90, 220, 60, 60)];
-	timeText.placeholder = [NSString stringWithFormat: @"Time"];
+	timeText.text = [NSString stringWithFormat: @"Time"];
 	timeText.borderStyle = UITextBorderStyleRoundedRect;
 	[self.view addSubview:timeText];
 	
 	tempoText = [[UITextField alloc] initWithFrame:CGRectMake(165, 220, 60, 60)];
-	tempoText.placeholder = [NSString stringWithFormat: @"Temp"];
+	tempoText.text = [NSString stringWithFormat: @"Temp"];
 	tempoText.borderStyle = UITextBorderStyleRoundedRect;
 	[self.view addSubview:tempoText];
 	
 	barsText = [[UITextField alloc] initWithFrame:CGRectMake(240, 220, 60, 60)];
-	barsText.placeholder = [NSString stringWithFormat: @"Bars"];
+	barsText.text = [NSString stringWithFormat: @"Bars"];
 	barsText.borderStyle = UITextBorderStyleRoundedRect;
 	[self.view addSubview:barsText];
 	
