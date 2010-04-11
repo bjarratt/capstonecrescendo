@@ -1,11 +1,11 @@
-package displayManager.messageTranslationSystem;
+package keys;
 
 /**
  *	GameState holds all of the
  *
  *	@author Travis Kosarek
  */
-public class GameStateKeys
+public class GameState
 {
 	public final static String SPLASH_SCREEN = "splashscreen";
 	public final static String GAME_TYPES = "gametypes";
