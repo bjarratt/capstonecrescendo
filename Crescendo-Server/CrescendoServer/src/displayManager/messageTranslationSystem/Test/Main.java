@@ -1,4 +1,6 @@
-package displayManager.messageTranslationSystem;
+package displayManager.messageTranslationSystem.Test;
+
+import displayManager.messageTranslationSystem.ConnectionManager;
 
 
 /**

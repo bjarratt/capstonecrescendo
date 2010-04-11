@@ -11,7 +11,9 @@ import java.util.GregorianCalendar;
 import java.util.Locale;
 import java.util.TimeZone;
 
-import keys.LogStrings;
+import keys.Logging;
+
+
 
 
 /**
@@ -43,8 +45,8 @@ final public class LogManager
 	 * 		<li>Client (dis)connections</li>
 	 * 		<li>Game start/end</li>
 	 * </ol>
-	 * @param originator - <code>String</code> that tells who did what.  Look in LogStrings.java
-	 * @param action - <code>String</code> that tells what the action was.  Look in LogStrings.java
+	 * @param originator - <code>String</code> that tells who did what.  Look in Logging.java
+	 * @param action - <code>String</code> that tells what the action was.  Look in Logging.java
 	 * @throws IOException - if writing to the log fails
 	 */
 	public synchronized void writeLogEntry(final String originator,
@@ -128,9 +130,9 @@ final public class LogManager
 	// Return a file object with the path 
 	private File getLog()
 	{
-		String path = System.getProperty(LogStrings.WORKING_DIRECTORY) + 
-					  System.getProperty(LogStrings.FILE_SEPARATOR);
-		File f = new File (path + LogStrings.LOG_NAME);
+		String path = System.getProperty(Logging.WORKING_DIRECTORY) + 
+					  System.getProperty(Logging.FILE_SEPARATOR);
+		File f = new File (path + Logging.LOG_NAME);
 		
 		return f;
 	}

@@ -1,5 +1,7 @@
 package displayManager.messageTranslationSystem;
 
+import displayManager.messageTranslationSystem.Test.Player;
+
 /**
  *	This class holds all of the connection information for each iPhone
  *	This could also be a private class of GameManager or could simply be done away with, this is just my take on the class
@@ -8,6 +10,7 @@ package displayManager.messageTranslationSystem;
  */
 public class ConnectionManager
 {
+	// TODO Remove this class
 	private GameManager gameManager;
 
 	/*****iPhone Emulators*****/

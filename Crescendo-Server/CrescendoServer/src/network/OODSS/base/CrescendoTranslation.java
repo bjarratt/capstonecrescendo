@@ -2,6 +2,8 @@ package network.OODSS.base;
 
 import java.util.ArrayList;
 
+import keys.Translations;
+
 import network.OODSS.messages.ConnectionRequest;
 import network.OODSS.messages.ConnectionUpdate;
 import network.OODSS.messages.DisconnectRequest;
@@ -13,8 +15,6 @@ import ecologylab.xml.TranslationScope;
 
 public class CrescendoTranslation 
 {
-	public static final String TRANSLATION_SPACE_NAME = "CrescendoTranslation";
-	
 	public static TranslationScope get()
 	{
 		TranslationScope scope = DefaultServicesTranslations.get();
@@ -33,7 +33,7 @@ public class CrescendoTranslation
 		
 		Class[] elem = new Class[pruned.size()];
 		
-		return TranslationScope.get(TRANSLATION_SPACE_NAME,
+		return TranslationScope.get(Translations.TRANSLATION_SPACE_NAME,
 									TranslationScope.get("PRUNED_DEFAULT", pruned.toArray(elem)),
 									ConnectionRequest.class,
 									ConnectionUpdate.class,

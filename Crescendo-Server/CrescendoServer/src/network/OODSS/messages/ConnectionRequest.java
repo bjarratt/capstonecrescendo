@@ -1,7 +1,6 @@
 package network.OODSS.messages;
 
 import network.ConnectionManager;
-import network.OODSS.base.PublicServer;
 import ecologylab.collections.Scope;
 import ecologylab.services.distributed.common.SessionObjects;
 import ecologylab.services.distributed.server.clientsessionmanager.SessionHandle;
@@ -11,8 +10,6 @@ import ecologylab.services.messages.ResponseMessage;
 
 public class ConnectionRequest extends RequestMessage 
 {
-	
-	
 	@Override
 	public ResponseMessage performService(Scope clientSessionScope) 
 	{
