@@ -11,7 +11,8 @@ import java.util.GregorianCalendar;
 import java.util.Locale;
 import java.util.TimeZone;
 
-import logging.constants.LogStrings;
+import keys.LogStrings;
+
 
 /**
  * <code>LogManager</code>
