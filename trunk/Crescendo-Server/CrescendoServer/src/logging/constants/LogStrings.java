@@ -8,11 +8,11 @@ public class LogStrings
 	public static final String LOG_NAME = "CrescendoServerLog.txt";
 	
 	// originators
-	public static final String PLAYER_ONE = "Player1";
-	public static final String PLAYER_TWO = "Player2";
-	public static final String PLAYER_THREE = "Player3";
-	public static final String PLAYER_FOUR = "Player4";
-	public static final String SERVER = "Server";
+	public static final String PLAYER_ONE = "player1";
+	public static final String PLAYER_TWO = "player2";
+	public static final String PLAYER_THREE = "player3";
+	public static final String PLAYER_FOUR = "player4";
+	public static final String SERVER = "server";
 	
 	// actions
 	public static final String CONNECTION = "Connection";
