@@ -1,4 +1,4 @@
-package displayManager.messageTranslationSystem;
+package gameManagement.messageTranslationSystem;
 
 import java.awt.Image;
 import java.io.File;

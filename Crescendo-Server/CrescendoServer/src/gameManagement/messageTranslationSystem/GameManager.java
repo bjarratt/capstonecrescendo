@@ -1,4 +1,4 @@
-package displayManager.messageTranslationSystem;
+package gameManagement.messageTranslationSystem;
 
 import java.util.ArrayList;
 

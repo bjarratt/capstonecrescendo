@@ -1,6 +1,6 @@
-package displayManager.messageTranslationSystem;
+package gameManagement.messageTranslationSystem;
 
-//import displayManager.messageTranslationSystem.Test.Player;
+//import gameManagement.messageTranslationSystem.Test.Player;
 
 /**
  *	This class holds all of the connection information for each iPhone
