@@ -3,6 +3,8 @@ package network.OODSS.base;
 import java.io.IOException;
 import java.net.InetAddress;
 
+import keys.OODSS;
+
 
 import ecologylab.collections.Scope;
 import ecologylab.net.NetTools;
@@ -33,7 +35,7 @@ public class PublicServer {
 		// well as individual client session scopes.
 		Scope applicationScope = new Scope();
 		
-		applicationScope.put(GameManager.GAME_MANAGER, manager);
+		applicationScope.put(OODSS.GAME_MANAGER, manager);
 		
 		// Acquire an array of all local ip-addresses
 		InetAddress[] locals = NetTools.getAllInetAddressesForLocalhost();

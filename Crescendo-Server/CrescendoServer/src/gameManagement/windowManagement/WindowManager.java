@@ -1,18 +1,13 @@
 package gameManagement.windowManagement;
 
-import gameManagement.windowManagement.listeners.WindowHandler;
-import gameManagement.windowManagement.windows.Window;
-
-import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.util.HashMap;
 
 import javax.swing.JFrame;
 import java.awt.Panel;
 
-
-import processing.core.*;
+import gameManagement.windowManagement.listeners.WindowHandler;
+import gameManagement.windowManagement.windows.Window;
 
 public class WindowManager 
 {

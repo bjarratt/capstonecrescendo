@@ -1,5 +1,6 @@
 package network.OODSS.messages;
 
+import keys.OODSS;
 import network.OODSS.base.PublicServer;
 import ecologylab.collections.Scope;
 import ecologylab.services.messages.OkResponse;
@@ -24,7 +25,7 @@ public class PlayNoteRequest extends RequestMessage {
 	@Override
 	public ResponseMessage performService(Scope clientSessionScope) 
 	{
-		GameManager manager = (GameManager)clientSessionScope.get(GameManager.GAME_MANAGER);
+		GameManager manager = (GameManager)clientSessionScope.get(OODSS.GAME_MANAGER);
 		
 		manager.addMessageToPool(jfuguePattern);
 		
