@@ -3,6 +3,8 @@ package network;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Set;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 import ecologylab.services.distributed.server.clientsessionmanager.SessionHandle;
 
@@ -11,21 +13,26 @@ import network.OODSS.base.PublicServer;
 
 public class ConnectionManager 
 {
-	
 	public String assignPlayerSlot(Object sessionID)
 	{
-		Set<String> keys = playerMap.keySet();
 		String playerID = "";
 		
-		for (String key : keys)
-		{
-			if (playerMap.get(key) == null)
+		lock.lock();
+		try {
+			Set<String> keys = playerMap.keySet();
+			for (String key : keys)
 			{
-				playerMap.remove(key);
-				playerMap.put(key, sessionID);
-				playerID = key;
-				break;
+				if (playerMap.get(key) == null)
+				{
+					playerMap.remove(key);
+					playerMap.put(key, sessionID);
+					playerID = key;
+					break;
+				}
 			}
+		}
+		finally {
+			lock.unlock();
 		}
 		
 		return playerID;
@@ -33,22 +40,33 @@ public class ConnectionManager
 	
 	public void cleanupPlayers()
 	{
-		HashMap<String, Object> newMap = new HashMap<String, Object>(playerMap);
-		
-		Set<String> keys = newMap.keySet();
-		
-		for (String key : keys)
+		lock.lock();
+		try
 		{
-			SessionHandle sh = (SessionHandle)playerMap.get(key);
+			HashMap<String, Object> newMap = new HashMap<String, Object>(playerMap);
 			
-			if (sh != null && sh.getSessionManager().isInvalidating())
+			Set<String> keys = newMap.keySet();
+			
+			for (String key : keys)
 			{
-				playerMap.remove(key);
-				playerMap.put(key, null);
+				SessionHandle sh = (SessionHandle)playerMap.get(key);
+				
+				if (sh != null && sh.getSessionManager().isInvalidating())
+				{
+					playerMap.remove(key);
+					playerMap.put(key, null);
+				}
 			}
+		}
+		finally {
+			lock.unlock();
 		}
 	}
 	
+	/**
+	 * Utility method for seeing which player slots are filled.
+	 * @return - a <code>String</code> with all the player keys that have filled slots
+	 */
 	public String listPlayers()
 	{
 		String current = "Player List:\n";
@@ -66,11 +84,14 @@ public class ConnectionManager
 		return current;
 	}
 	
+	/**
+	 * Call this method to initialized the OODSS server
+	 */
 	public void initServer()
 	{
+		lock.lock();
 		try {
 			this.server = new PublicServer();
-			//playerMap.
 			this.isInitialized = true;
 		}
 		catch (IOException e) 
@@ -79,7 +100,10 @@ public class ConnectionManager
 			System.err.println(e.getMessage());
 			this.isInitialized = false;
 		}
-
+		finally
+		{
+			lock.unlock();
+		}
 	}
 	
 	public static ConnectionManager getInstance()
@@ -95,8 +119,10 @@ public class ConnectionManager
 		playerMap.put(Keys.PLAYER_4, null);
 	}
 	
+	private Lock lock = new ReentrantLock();
+	
 	private HashMap<String, Object> playerMap = new HashMap<String, Object>();
-	private PublicServer server;
+	private PublicServer server = null;
 	private static ConnectionManager instance = new ConnectionManager();
 	private boolean isInitialized = false;
 }
