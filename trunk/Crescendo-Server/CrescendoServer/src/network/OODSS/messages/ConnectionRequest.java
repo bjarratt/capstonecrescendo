@@ -1,6 +1,5 @@
 package network.OODSS.messages;
 
-import server.TestDisplay;
 import network.ConnectionManager;
 import network.OODSS.base.PublicServer;
 import ecologylab.collections.Scope;
@@ -23,9 +22,6 @@ public class ConnectionRequest extends RequestMessage
 		String playerID = ConnectionManager.getInstance().assignPlayerSlot(sessionHandle);
 		
 		ConnectionUpdate update = new ConnectionUpdate(playerID);
-		
-//		TestDisplay display = (TestDisplay)clientSessionScope.get(PublicServer.DISPLAY_HANDLE);
-//		display.setText(playerID);
 		
 		handle.sendUpdate(update);
 		

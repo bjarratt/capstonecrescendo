@@ -2,7 +2,6 @@ package network.OODSS.messages;
 
 import displayManager.messageTranslationSystem.GameManager;
 import network.OODSS.base.PublicServer;
-import server.TestDisplay;
 import ecologylab.collections.Scope;
 import ecologylab.services.messages.OkResponse;
 import ecologylab.services.messages.RequestMessage;
@@ -25,10 +24,6 @@ public class PlayNoteRequest extends RequestMessage {
 	@Override
 	public ResponseMessage performService(Scope clientSessionScope) 
 	{
-//		TestDisplay display = (TestDisplay)clientSessionScope.get(PublicServer.DISPLAY_HANDLE);
-//		
-//		display.setText(this.jfuguePattern);
-		
 		GameManager manager = (GameManager)clientSessionScope.get(GameManager.GAME_MANAGER);
 		
 		manager.addMessageToPool(jfuguePattern);
