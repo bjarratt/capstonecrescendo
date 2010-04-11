@@ -16,9 +16,9 @@ public class ConnectionManager
 {
 	public String assignPlayerSlot(Object sessionID)
 	{
+		lock.lock();
 		String playerID = "";
 		
-		lock.lock();
 		try {
 			Set<String> keys = playerMap.keySet();
 			for (String key : keys)
