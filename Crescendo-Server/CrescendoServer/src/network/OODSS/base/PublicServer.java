@@ -5,8 +5,6 @@ import java.net.InetAddress;
 
 import displayManager.messageTranslationSystem.GameManager;
 
-import server.TestDisplay;
-
 import ecologylab.collections.Scope;
 import ecologylab.net.NetTools;
 import ecologylab.services.distributed.server.DoubleThreadedNIOServer;

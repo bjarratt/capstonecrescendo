@@ -1,12 +1,9 @@
 package network;
 
 import java.io.IOException;
-import java.net.InetAddress;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.Set;
 
-import ecologylab.collections.Scope;
 import ecologylab.services.distributed.server.clientsessionmanager.SessionHandle;
 
 import network.OODSS.base.Keys;
