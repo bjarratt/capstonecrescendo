@@ -31,6 +31,22 @@ public class Player implements Runnable
 	 */
 	public void run()
 	{
+		try
+		{
+			myCM.sendMessage(new String(player + "_connect"));
+			Thread.sleep(500);
+
+			if(player.equals("player1"))
+			{
+				System.out.println("Player 1 is waiting 1 second to start the game");
+				Thread.sleep(1000);
+				myCM.sendMessage(new String(player + "_start"));
+			}
+		}
+		catch(InterruptedException e)
+		{
+
+		}
 		while(true)
 		{
 			if(rand.nextInt(100000)==13)
@@ -46,6 +62,7 @@ public class Player implements Runnable
 				}
 			}
 		}
+
 	}
 
 	/**

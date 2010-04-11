@@ -62,21 +62,22 @@ public class MessageTranslationEngine
 
 		messageComponents = message.split("_");
 
-		Message newMessage = null;
+		Message newMessage = new Message(message);
 
 		if(messageComponents.length == 2)
 		{
+			//I don't think these are absolutely necessary... maybe to check for bad messages?
 			if(messageComponents[1].equals("connect"))
 			{
-				System.out.println(message);
-				//send something to the DisplayGUI that animates the connection of some player
-				//the player number is in messageComponents[0] as PlayerX
+
 			}
 			else if(messageComponents[1].equals("disconnect"))
 			{
-				System.out.println(message);
-				//send something to the DisplayGUI that animates the disconnection of some player
-				//the player number is in messageComponents[0] as PlayerX
+
+			}
+			else if(messageComponents[1].equals("start"))
+			{
+
 			}
 			else
 			{
@@ -110,27 +111,22 @@ public class MessageTranslationEngine
 
 			if(messageComponents[0].equals("player1"))
 			{
-				newMessage = new Message(messageComponents[0]);
 				newMessage.setNote(new Note(pitch,length,messageComponents[0]));
 			}
 			else if(messageComponents[0].equals("player2"))
 			{
-				newMessage = new Message(messageComponents[0]);
 				newMessage.setNote(new Note(pitch,length,messageComponents[0]));
 			}
 			else if(messageComponents[0].equals("player3"))
 			{
-				newMessage = new Message(messageComponents[0]);
 				newMessage.setNote(new Note(pitch,length,messageComponents[0]));
 			}
 			else if(messageComponents[0].equals("player4"))
 			{
-				newMessage = new Message(messageComponents[0]);
 				newMessage.setNote(new Note(pitch,length,messageComponents[0]));
 			}
 			else if(messageComponents[0].equals("metronome"))
 			{
-				newMessage = new Message(messageComponents[0]);
 				newMessage.setNote(new Note(pitch,length,messageComponents[0]));
 			}
 			else
@@ -158,8 +154,8 @@ public class MessageTranslationEngine
 
 		public Message(String message)
 		{
-			_message = message;
-			_note = null;
+			_message = new String(message);
+			_note = new Note("R","i","unknown");
 		}
 
 		public String getMessage()
@@ -174,7 +170,7 @@ public class MessageTranslationEngine
 
 		public boolean isNote()
 		{
-			if(_note == null)
+			if(!_note.getPlayer().equals("player1") && !_note.getPlayer().equals("player2") &&!_note.getPlayer().equals("player3") && !_note.getPlayer().equals("player4"))
 				return false;
 			return true;
 		}
