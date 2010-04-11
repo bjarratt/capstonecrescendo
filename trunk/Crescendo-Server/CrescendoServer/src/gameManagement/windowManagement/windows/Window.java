@@ -49,7 +49,6 @@ public class Window extends PApplet
 		}
 		if (panel != null)
 		{
-			int listSize = panels.size();
 			panels.set(1, panel);
 			setDirection(1);
 			
@@ -72,7 +71,6 @@ public class Window extends PApplet
 		{
 			initSelf();
 			initPanels();
-			smooth();
 			setupComplete = true;
 			Thread.currentThread().notifyAll();
 		}
@@ -82,19 +80,38 @@ public class Window extends PApplet
 	@Override
 	public void draw()
 	{
-		background(0);
-		Dimension parentSize = this.getParent().getSize();
-		this.setSize(parentSize);
+		rect(-1, -1, width + 1, height + 1);
+		fill(0, 15);
 		
 		if (animateScreen)
 		{
-			Point p = autoCenter(panels.get(1).getSize());
+			Dimension newsSize = panels.get(0).getSize();
+			Dimension oldsSize = panels.get(1).getSize();
+			Point p = autoCenter(oldsSize);
 			
 			Point oldPoint = panels.get(0).getLocation();
 			Point newPoint = panels.get(1).getLocation();
 			
 			int oldsX = oldPoint.x + getDirection()*deltaX;
 			int newsX = newPoint.x + getDirection()*deltaX;
+			
+			stroke(random(255), random(255), random(255));
+			if (isNextAnimation)
+			{
+				xNewLineIncrement = newsSize.width;
+				xOldLineIncrement = oldsSize.width;
+			}
+			else
+			{
+				xNewLineIncrement = 0;
+				xOldLineIncrement = 0;
+			}
+			
+			if (panels.get(0).getParent() != null)
+			{
+				line(oldPoint.x + xOldLineIncrement , oldPoint.y, oldPoint.x + xOldLineIncrement, oldPoint.y + oldsSize.height);
+			}
+			line(newPoint.x + xNewLineIncrement, newPoint.y, newPoint.x + xNewLineIncrement, newPoint.y + newsSize.height);
 			
 			panels.get(0).setLocation(oldsX, oldPoint.y);
 			panels.get(1).setLocation(newsX, newPoint.y);  
@@ -112,8 +129,9 @@ public class Window extends PApplet
 	{
 		Dimension size = this.getParent().getSize();
 		this.setSize(size);
+		noStroke();
+		smooth();
 		frameRate(55);
-		background(0);
 	}
 	
 	private void initPanels()
@@ -175,6 +193,10 @@ public class Window extends PApplet
 	
 	private static Lock lock = new ReentrantLock();
 	
+	// for trailing line
+	int xNewLineIncrement = 0;
+	int xOldLineIncrement = 0;
+
 	private final int WAIT = 10;
 	private boolean setupComplete = false;
 	private boolean isNextAnimation = false;

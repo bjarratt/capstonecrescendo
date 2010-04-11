@@ -2,7 +2,7 @@ package network.OODSS.base;
 
 import java.util.ArrayList;
 
-import keys.Translations;
+import keys.OODSS;
 
 import network.OODSS.messages.ConnectionRequest;
 import network.OODSS.messages.ConnectionUpdate;
@@ -33,7 +33,7 @@ public class CrescendoTranslation
 		
 		Class[] elem = new Class[pruned.size()];
 		
-		return TranslationScope.get(Translations.TRANSLATION_SPACE_NAME,
+		return TranslationScope.get(OODSS.TRANSLATION_SPACE_NAME,
 									TranslationScope.get("PRUNED_DEFAULT", pruned.toArray(elem)),
 									ConnectionRequest.class,
 									ConnectionUpdate.class,
