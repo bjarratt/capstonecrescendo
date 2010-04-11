@@ -34,13 +34,18 @@ public class Player implements Runnable
 		try
 		{
 			myCM.sendMessage(new String(player + "_connect"));
-			Thread.sleep(500);
+			Thread.sleep(1000);
 
 			if(player.equals("player1"))
 			{
-				System.out.println("Player 1 is waiting 1 second to start the game");
 				Thread.sleep(1000);
-				myCM.sendMessage(new String(player + "_start"));
+				myCM.sendMessage(new String(player + "_" + GameState.SPLASH_SCREEN));
+				Thread.sleep(1000);
+				myCM.sendMessage(new String(player + "_" + GameState.GAME_TYPES));
+				Thread.sleep(1000);
+				myCM.sendMessage(new String(player + "_" + GameState.GAME_OPTIONS));
+				Thread.sleep(1000);
+				myCM.sendMessage(new String(player + "_" + GameState.START_GAME));
 			}
 		}
 		catch(InterruptedException e)

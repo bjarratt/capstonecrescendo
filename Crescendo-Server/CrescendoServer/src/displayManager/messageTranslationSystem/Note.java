@@ -275,11 +275,11 @@ public class Note
 	public String toString()
 	{
 		if(_tiedLeft && _tiedRight)
-			return _pitch + "- " + _length + "-";
+			return _pitch + "-" + _length + "- ";
 		else if(_tiedLeft)
-			return _pitch + "- " + _length;
+			return _pitch + "-" + _length;
 		else if(_tiedRight)
-			return _pitch + _length + "-";
+			return _pitch + _length + "- ";
 		else
 			return _pitch + _length;
 	}
