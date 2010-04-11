@@ -67,17 +67,16 @@ public class MessageTranslationEngine
 		if(messageComponents.length == 2)
 		{
 			//I don't think these are absolutely necessary... maybe to check for bad messages?
-			if(messageComponents[1].equals("connect"))
+			if(	messageComponents[1].equals("connect") ||
+				messageComponents[1].equals("disconnect") ||
+				messageComponents[1].equals(GameState.SPLASH_SCREEN) ||
+				messageComponents[1].equals(GameState.GAME_TYPES) ||
+				messageComponents[1].equals(GameState.GAME_OPTIONS) ||
+				messageComponents[1].equals(GameState.START_GAME) ||
+				messageComponents[1].equals(GameState.POST_GAME) ||
+				messageComponents[1].equals(GameState.EXIT))
 			{
-
-			}
-			else if(messageComponents[1].equals("disconnect"))
-			{
-
-			}
-			else if(messageComponents[1].equals("start"))
-			{
-
+				//all good!  :)
 			}
 			else
 			{

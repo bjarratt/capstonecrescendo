@@ -22,15 +22,17 @@ public class GameManager implements ActionListener
 	private ArrayList<String> messagePool;
 	private ArrayList<String> messages;
 	private Timer timer;
+
+	//game options
 	private static int tempo = 1000;
-	//set the timeout value to 300 delay periods (in this case 300 seconds = 2.5 min)
-	private static int timeout = 300;
-	private int ticks;
 
 	//gamestate options
-	private boolean timeout_to_menu;
 	private boolean exit;
-	private boolean song_has_started;
+	private boolean at_game_start;
+	private boolean at_splash_screen;
+	private boolean at_game_types;
+	private boolean at_game_options;
+	private boolean at_post_game;
 
 	private ArrayList<Beat> player1Beats;
 	private ArrayList<Beat> player2Beats;
@@ -75,7 +77,6 @@ public class GameManager implements ActionListener
 		messages = new ArrayList<String>();
 		//set up a timer
 		timer = new Timer(tempo,this);
-		ticks = 0;
 
 		player1CurrentNote = 0;
 		player2CurrentNote = 0;
@@ -85,9 +86,12 @@ public class GameManager implements ActionListener
 
 		currentBeat = 0;
 
-		timeout_to_menu = false;
 		exit = false;
-		song_has_started = false;
+		at_splash_screen = false;
+		at_game_types = false;
+		at_game_options = false;
+		at_game_start = false;
+		at_post_game = false;
 
 		player1Beats = new ArrayList<Beat>();
 		player2Beats = new ArrayList<Beat>();
@@ -120,23 +124,48 @@ public class GameManager implements ActionListener
 	}
 
 	/**
+	 *	Starts the game loop
+	 */
+	public void run()
+	{
+		timer.start();
+
+		//create a new display window
+		JFrame window = new JFrame("Crescendo");
+		window.setBackground(Color.WHITE);
+		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		window.getContentPane().add(displayGUI);
+		window.pack();
+		window.setVisible(false);
+
+		while(true)
+		{
+			if(exit == true)
+				break;
+			if(at_splash_screen)
+			{
+				if(at_game_types)
+				{
+					if(at_game_options)
+					{
+						if(at_post_game)
+						{
+
+						}
+					}
+				}
+			}
+		}
+		timer.stop();
+	}
+
+	/**
 	 *	When a Timer ticks, this method is called and performs some action
 	 */
 	public void actionPerformed(ActionEvent event)
 	{
-		if(messagePool.size() == 0)
+		if(messagePool.size() != 0)
 		{
-			ticks++;
-			if(ticks >= timeout)
-			{
-				timeout_to_menu = true;
-				ticks = 0;
-			}
-		}
-		else
-		{
-			ticks = 0; // for timeout message
-
 			//constrict message pool size every tick
 			messages = new ArrayList<String>(messagePool);
 			messagePool = new ArrayList<String>();
@@ -146,7 +175,7 @@ public class GameManager implements ActionListener
 			//translate the messages
 			this.translateMessagePool();
 
-			if(song_has_started)
+			if(at_game_start)
 			{
 				this.addRests();
 				this.constructMeasures();
@@ -154,40 +183,6 @@ public class GameManager implements ActionListener
 				currentBeat++;
 			}
 		}
-	}
-
-	/**
-	 *	Starts the game loop
-	 */
-	public void run()
-	{
-		System.out.println("Starting Game Loop in...");
-		System.out.println("Game Loop Initializing...");
-
-		timer.start();
-
-		//create a new display window
-		JFrame window = new JFrame("Crescendo");
-		window.setBackground(Color.WHITE);
-		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		window.getContentPane().add(displayGUI);
-		window.pack();
-		window.setVisible(true);
-
-		while(true)
-		{
-			if(exit == true)
-				break;
-			if(timeout_to_menu == true)
-			{
-				System.out.println("No messages were sent for " + timeout + " ticks");
-				//return to menu if no messages were sent
-				timeout_to_menu = false;
-				//for now, exit when timeout
-				exit = true;
-			}
-		}
-		timer.stop();
 	}
 
 	/**
@@ -308,24 +303,48 @@ public class GameManager implements ActionListener
 			}
 			else
 			{
-				if(m.getMessage().split("_")[1].equals("connect"))
-				{
+				if(at_splash_screen && !at_game_types && m.getMessage().split("_")[1].equals("connect"))
 					numberOfActivePlayers++;
-					System.out.println("numberOfActivePlayers: " + numberOfActivePlayers);
-				}
 
 				if(m.getMessage().split("_")[1].equals("disconnect"))
-				{
 					numberOfActivePlayers--;
-					System.out.println("numberOfActivePlayers: " + numberOfActivePlayers);
-				}
 
-				if(m.getMessage().split("_")[1].equals("start"))
-					song_has_started = true;
+				//message is "player1_splashscreen"  (checking to make sure player 1 has sent the message)
+				if(m.getMessage().split("_")[1].equals(GameState.SPLASH_SCREEN))
+				{
+					at_splash_screen = true;
+					System.out.println("Now at the splash screen");
+				}
+				//message is "player1_gametypes"  (checking to make sure player 1 has sent the message)
+				if(at_splash_screen && m.getMessage().split("_")[1].equals(GameState.GAME_TYPES))
+				{
+					at_game_types = true;
+					System.out.println("Now choosing a game type");
+				}
+				//message is "player1_gameoptions"  (checking to make sure player 1 has sent the message)
+				if(at_splash_screen && at_game_types && m.getMessage().split("_")[1].equals(GameState.GAME_OPTIONS))
+				{
+					at_game_options = true;
+					System.out.println("Now selecting game options");
+				}
+				//message is "player1_startgame"  (checking to make sure player 1 has sent the message)
+				if(at_splash_screen && at_game_types && at_game_options && m.getMessage().split("_")[1].equals(GameState.START_GAME))
+				{
+					at_game_start = true;
+					System.out.println("Now starting the game");
+				}
+				//message is "player1_postgame"  (checking to make sure player 1 has sent the message)
+				if(at_splash_screen && at_game_types && at_game_options && at_game_start && m.getMessage().split("_")[1].equals(GameState.POST_GAME))
+				{
+					at_post_game = true;
+				}
+				//message is "player1_exit"  (checking to make sure player 1 has sent the message)
+				//maybe disconnect all iPhones?
+				if(m.getMessage().split("_")[1].equals(GameState.EXIT))
+					exit = true;
 
 				//handle messages such as game type, connect, disconnect, etc.
 				sendMessageToDisplayManager(m.getMessage());
-
 			}
 		}
 	}
@@ -640,11 +659,8 @@ public class GameManager implements ActionListener
 	 */
 	private void sendNoteToDisplayGUI()
 	{
-		if(notesToSend.size()>0)
-		{
-			displayGUI.getNotes(notesToSend);
-			notesToSend = new ArrayList<Note>();
-		}
+		displayGUI.getNotes(notesToSend, currentBeat);
+		notesToSend = new ArrayList<Note>();
 	}
 
 }
