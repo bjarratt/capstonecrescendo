@@ -6,9 +6,10 @@ import java.util.Set;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+import keys.Players;
+
 import ecologylab.services.distributed.server.clientsessionmanager.SessionHandle;
 
-import network.OODSS.base.Keys;
 import network.OODSS.base.PublicServer;
 
 public class ConnectionManager 
@@ -113,10 +114,10 @@ public class ConnectionManager
 	
 	private ConnectionManager() 
 	{
-		playerMap.put(Keys.PLAYER_1, null);
-		playerMap.put(Keys.PLAYER_2, null);
-		playerMap.put(Keys.PLAYER_3, null);
-		playerMap.put(Keys.PLAYER_4, null);
+		playerMap.put(Players.PLAYER_ONE, null);
+		playerMap.put(Players.PLAYER_TWO, null);
+		playerMap.put(Players.PLAYER_THREE, null);
+		playerMap.put(Players.PLAYER_FOUR, null);
 	}
 	
 	private Lock lock = new ReentrantLock();
