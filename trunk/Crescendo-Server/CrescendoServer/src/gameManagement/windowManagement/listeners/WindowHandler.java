@@ -1,4 +1,4 @@
-package displayManager.windowManagement.listeners;
+package gameManagement.windowManagement.listeners;
 
 import java.awt.Window;
 import java.awt.event.WindowEvent;

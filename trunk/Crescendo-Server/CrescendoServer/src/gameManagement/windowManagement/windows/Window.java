@@ -1,4 +1,4 @@
-package displayManager.windowManagement.windows;
+package gameManagement.windowManagement.windows;
 
 import javax.swing.JFrame;
 

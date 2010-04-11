@@ -1,4 +1,4 @@
-package displayManager;
+package gameManagement;
 
 import java.util.ArrayList;
 import java.util.HashMap;

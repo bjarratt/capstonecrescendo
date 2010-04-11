@@ -1,9 +1,10 @@
-package displayManager.gameModes;
+package gameManagement.gameModes;
 
+
+import gameManagement.messageTranslationSystem.Note;
 
 import java.util.*;
 
-import displayManager.messageTranslationSystem.Note;
 
 
 /**

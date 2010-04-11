@@ -1,4 +1,7 @@
-package displayManager.windowManagement;
+package gameManagement.windowManagement;
+
+import gameManagement.windowManagement.listeners.WindowHandler;
+import gameManagement.windowManagement.windows.Window;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -10,8 +13,6 @@ import java.awt.Panel;
 
 
 import processing.core.*;
-import displayManager.windowManagement.listeners.WindowHandler;
-import displayManager.windowManagement.windows.Window;
 
 public class WindowManager 
 {

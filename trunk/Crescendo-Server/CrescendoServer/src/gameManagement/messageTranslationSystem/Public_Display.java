@@ -1,4 +1,4 @@
-package displayManager.messageTranslationSystem;
+package gameManagement.messageTranslationSystem;
 import processing.core.*; 
 import processing.xml.*; 
 
@@ -125,6 +125,6 @@ class staff
 }
 
   static public void main(String args[]) {
-    PApplet.main(new String[] { "--present", "--bgcolor=#666666", "--stop-color=#cccccc", "displayManager.messageTranslationSystem.Public_Display" });
+    PApplet.main(new String[] { "--present", "--bgcolor=#666666", "--stop-color=#cccccc", "gameManagement.messageTranslationSystem.Public_Display" });
   }
 }

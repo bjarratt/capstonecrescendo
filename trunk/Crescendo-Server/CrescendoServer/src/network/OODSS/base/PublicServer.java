@@ -3,13 +3,13 @@ package network.OODSS.base;
 import java.io.IOException;
 import java.net.InetAddress;
 
-import displayManager.messageTranslationSystem.GameManager;
 
 import ecologylab.collections.Scope;
 import ecologylab.net.NetTools;
 import ecologylab.services.distributed.server.DoubleThreadedNIOServer;
 import ecologylab.xml.TranslationScope;
 import ecologylab.xml.XMLTranslationException;
+import gameManagement.messageTranslationSystem.GameManager;
 
 /**
  * PublicServer: A server implemented with OODSS.
