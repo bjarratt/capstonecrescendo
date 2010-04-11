@@ -9,6 +9,8 @@ import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+import keys.GameState;
+
 /**
  *	The GameManager houses the game loop, translates messages, and sends Notes to be displayed to the GUI
  *
@@ -310,37 +312,37 @@ public class GameManager implements ActionListener
 					numberOfActivePlayers--;
 
 				//message is "player1_splashscreen"  (checking to make sure player 1 has sent the message)
-				if(m.getMessage().split("_")[1].equals(GameStateKeys.SPLASH_SCREEN))
+				if(m.getMessage().split("_")[1].equals(GameState.SPLASH_SCREEN))
 				{
 					at_splash_screen = true;
 					System.out.println("Now at the splash screen");
 				}
 				//message is "player1_gametypes"  (checking to make sure player 1 has sent the message)
-				if(at_splash_screen && m.getMessage().split("_")[1].equals(GameStateKeys.GAME_TYPES))
+				if(at_splash_screen && m.getMessage().split("_")[1].equals(GameState.GAME_TYPES))
 				{
 					at_game_types = true;
 					System.out.println("Now choosing a game type");
 				}
 				//message is "player1_gameoptions"  (checking to make sure player 1 has sent the message)
-				if(at_splash_screen && at_game_types && m.getMessage().split("_")[1].equals(GameStateKeys.GAME_OPTIONS))
+				if(at_splash_screen && at_game_types && m.getMessage().split("_")[1].equals(GameState.GAME_OPTIONS))
 				{
 					at_game_options = true;
 					System.out.println("Now selecting game options");
 				}
 				//message is "player1_startgame"  (checking to make sure player 1 has sent the message)
-				if(at_splash_screen && at_game_types && at_game_options && m.getMessage().split("_")[1].equals(GameStateKeys.START_GAME))
+				if(at_splash_screen && at_game_types && at_game_options && m.getMessage().split("_")[1].equals(GameState.START_GAME))
 				{
 					at_game_start = true;
 					System.out.println("Now starting the game");
 				}
 				//message is "player1_postgame"  (checking to make sure player 1 has sent the message)
-				if(at_splash_screen && at_game_types && at_game_options && at_game_start && m.getMessage().split("_")[1].equals(GameStateKeys.POST_GAME))
+				if(at_splash_screen && at_game_types && at_game_options && at_game_start && m.getMessage().split("_")[1].equals(GameState.POST_GAME))
 				{
 					at_post_game = true;
 				}
 				//message is "player1_exit"  (checking to make sure player 1 has sent the message)
 				//maybe disconnect all iPhones?
-				if(m.getMessage().split("_")[1].equals(GameStateKeys.EXIT))
+				if(m.getMessage().split("_")[1].equals(GameState.EXIT))
 					exit = true;
 
 				//handle messages such as game type, connect, disconnect, etc.

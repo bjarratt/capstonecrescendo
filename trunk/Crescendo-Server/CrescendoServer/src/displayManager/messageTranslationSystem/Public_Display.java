@@ -125,6 +125,6 @@ class staff
 }
 
   static public void main(String args[]) {
-    PApplet.main(new String[] { "--present", "--bgcolor=#666666", "--stop-color=#cccccc", "Public_Display" });
+    PApplet.main(new String[] { "--present", "--bgcolor=#666666", "--stop-color=#cccccc", "displayManager.messageTranslationSystem.Public_Display" });
   }
 }
