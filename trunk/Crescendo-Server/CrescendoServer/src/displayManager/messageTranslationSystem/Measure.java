@@ -11,10 +11,10 @@ public class Measure
 	private int beatsPerMeasure;
 	private int currentBeatsInMeasure;
 
-	public Measure()
+	public Measure(int beats)
 	{
 		notes = new ArrayList<Note>();
-		beatsPerMeasure = 8; //we are only implementing 4/4 time at the moment
+		beatsPerMeasure = beats;
 		currentBeatsInMeasure = 0;
 	}
 

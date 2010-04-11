@@ -32,19 +32,19 @@ public class ConnectionManager
 
 		player1 = new Player("player1",this);
 		player2 = new Player("player2",this);
-	//	player3 = new Player("player3",this);
-	//	player4 = new Player("player4",this);
+		player3 = new Player("player3",this);
+		player4 = new Player("player4",this);
 
 		p1 = new Thread(player1);
 		p2 = new Thread(player2);
-	//	p3 = new Thread(player3);
-	//	p4 = new Thread(player4);
+		p3 = new Thread(player3);
+		p4 = new Thread(player4);
 
 
 		p1.start();
 		p2.start();
-	//	p3.start();
-	//	p4.start();
+		p3.start();
+		p4.start();
 		/**********************End of test code***********************/
 
 		gameManager.run();
