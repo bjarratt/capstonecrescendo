@@ -11,7 +11,7 @@ import ecologylab.net.NetTools;
 import ecologylab.services.distributed.server.DoubleThreadedNIOServer;
 import ecologylab.xml.TranslationScope;
 import ecologylab.xml.XMLTranslationException;
-import gameManagement.messageTranslationSystem.GameManager;
+import gameManagement.GameManager;
 
 /**
  * PublicServer: A server implemented with OODSS.

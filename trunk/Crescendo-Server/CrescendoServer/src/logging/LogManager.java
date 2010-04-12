@@ -67,7 +67,7 @@ final public class LogManager
 					strSeconds = "0" + strSeconds;
 				}
 				
-				String entry = String.format("Time stamp: %1$tm/%1$td/%1tY --%2$d:%3$d:%4$s  Whodunit: %5$s  Action: %6$s\n", 
+				String entry = String.format("%1$tm/%1$td/%1tY --%2$d:%3$d:%4$s,%5$s,%6$s\n", 
 											 c,
 											 c.get(Calendar.HOUR_OF_DAY),
 											 c.get(Calendar.MINUTE),
@@ -89,6 +89,7 @@ final public class LogManager
 	public synchronized void closeLog()
 		throws IOException
 	{
+		fileWriter.flush();
 		fileWriter.close();
 	}
 	
@@ -143,7 +144,12 @@ final public class LogManager
 		BufferedWriter writer = null;
 		
 		try {
+			boolean doesExist = f.exists();
 			writer = new BufferedWriter(new FileWriter(f, true));
+			if (!doesExist)
+			{
+				writeHeaders(writer);
+			}
 		}
 		catch (IOException ioe) {
 			writer = null;
@@ -151,6 +157,24 @@ final public class LogManager
 		}
 		
 		return writer;
+	}
+	
+	private void writeHeaders(final BufferedWriter writer)
+	{
+		if (writer != null)
+		{
+			String headers = keys.Logging.TIMESTAMP + "," + 
+							 keys.Logging.PLAYER + "," + 
+							 keys.Logging.ACTION + "\n";
+			try {
+				writer.append(headers);
+				writer.flush();
+			}
+			catch (IOException e)
+			{
+				e.printStackTrace();
+			}
+		}
 	}
 	
 	// Keep constructor private
