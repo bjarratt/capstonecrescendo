@@ -247,6 +247,19 @@ public class Note
 	{
 		_tiedRight = tf;
 	}
+	
+	/**
+	 * Checks if the inputed note has the same pitch and length of this note
+	 * 
+	 * @param note the note to be compared
+	 * @return if the Notes are equal or not
+	 */
+	public boolean equals(Note note)
+	{
+		if(this.getPitch().equals(note.getPitch()) && this.getLength().equals(note.getLength()))
+			return true;
+		return false;
+	}
 
 	/**
 	 *	Returns the JFuguePattern needed for the Note to be played in JFugue

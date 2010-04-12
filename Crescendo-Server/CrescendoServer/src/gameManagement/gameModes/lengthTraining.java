@@ -19,7 +19,7 @@ import java.util.*;
  */
 public class lengthTraining {
 	
-	public ArrayList<Note> wantedNotes;	//the array of notes the trainer wants
+	private ArrayList<Note> wantedNotes;	//the array of notes the trainer wants
 	private Random rand;
 	
 	final int maxSubdivisions = 8;		//per measure

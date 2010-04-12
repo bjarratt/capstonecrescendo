@@ -35,15 +35,24 @@ public class GameManager implements ActionListener
 
 	//game options
 	private static int tempo = 1000;
-
+	private static String key = "C";
+	private static int numberOfBars = 8;
+	private static String timeSignature = "4/4";
+	
 	//gamestate options
 	private boolean exit;
-	private boolean at_game_start;
+	private boolean at_play;
+	private boolean at_pause;
 	private boolean at_splash_screen;
 	private boolean at_game_types;
 	private boolean at_game_options;
 	private boolean at_post_game;
 
+	//game
+	private String gameType;
+	private gameManagement.gameModes.matchGM game;
+	private ArrayList<Note> gameNotes;
+	
 	private ArrayList<Beat> player1Beats;
 	private ArrayList<Beat> player2Beats;
 	private ArrayList<Beat> player3Beats;
@@ -94,12 +103,17 @@ public class GameManager implements ActionListener
 		currentBeat = 0;
 
 		exit = false;
-		at_splash_screen = false;
+		at_splash_screen = true;
 		at_game_types = false;
 		at_game_options = false;
-		at_game_start = false;
+		at_play = false;
+		at_pause = false;
 		at_post_game = false;
-
+		
+		gameType = GameState.NOTE_MATCHING;
+		game = new gameManagement.gameModes.matchGM(numberOfBars);
+		gameNotes = game.getNotes();
+		
 		player1Beats = new ArrayList<Beat>();
 		player2Beats = new ArrayList<Beat>();
 		player3Beats = new ArrayList<Beat>();
@@ -127,7 +141,6 @@ public class GameManager implements ActionListener
 		metronomeMeasures.add(new Measure(numberOfBeatsPerMeasure));
 
 		notesToSend = new ArrayList<Note>();
-
 	}
 
 	/**
@@ -142,34 +155,16 @@ public class GameManager implements ActionListener
 		wrapper.setBackground(Color.BLACK);
 		wrapper.setSize(800, 600);
 		
+		
 		WindowManager.getInstance().addWindow(keys.GameState.SPLASH_SCREEN, wrapper);
 		WindowManager.getInstance().run();
 		try {
+			//display new window
 			WindowManager.getInstance().nextWindow(keys.GameState.SPLASH_SCREEN);
 			
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		
-		while(true)
-		{
-			if(exit == true)
-				break;
-			if(at_splash_screen)
-			{
-				if(at_game_types)
-				{
-					if(at_game_options)
-					{
-						if(at_post_game)
-						{
-
-						}
-					}
-				}
-			}
-		}
-		timer.stop();
 	}
 
 	/**
@@ -188,7 +183,7 @@ public class GameManager implements ActionListener
 			//translate the messages
 			this.translateMessagePool();
 
-			if(at_game_start)
+			if(at_play)
 			{
 				this.addRests();
 				this.constructMeasures();
@@ -264,7 +259,7 @@ public class GameManager implements ActionListener
 		{
 			m = MessageTranslationEngine.translateMessage(message);
 
-			if(m.isNote())
+			if(m.isNote() && at_play)
 			{
 				Note n = m.getNote();
 
@@ -273,8 +268,16 @@ public class GameManager implements ActionListener
 					//only add the new note if player1 is not currently playing a note
 					if(player1Beats.size()<=currentBeat)
 					{
-						player1Beats.addAll(n.getBeats());
-						player1Notes.add(n);
+						if(n.equals(gameNotes.get(player1CurrentNote)))
+						{
+							player1Beats.addAll(n.getBeats());
+							player1Notes.add(n);
+						}
+						else
+						{
+							//send message to player that a wrong note was played
+							System.out.println("Player 1 played an incorrect note");
+						}
 					}
 				}
 				else if(n.getPlayer().equals("player2"))
@@ -282,8 +285,16 @@ public class GameManager implements ActionListener
 					//only add the new note if player2 is not currently playing a note
 					if(player2Beats.size()<=currentBeat)
 					{
-						player2Beats.addAll(n.getBeats());
-						player2Notes.add(n);
+						if(n.equals(gameNotes.get(player1CurrentNote)))
+						{
+							player2Beats.addAll(n.getBeats());
+							player2Notes.add(n);
+						}
+						else
+						{
+							//send message to player that a wrong note was played
+							System.out.println("Player 2 played an incorrect note");
+						}
 					}
 				}
 				else if(n.getPlayer().equals("player3"))
@@ -291,8 +302,16 @@ public class GameManager implements ActionListener
 					//only add the new note if player3 is not currently playing a note
 					if(player3Beats.size()<=currentBeat)
 					{
-						player3Beats.addAll(n.getBeats());
-						player3Notes.add(n);
+						if(n.equals(gameNotes.get(player1CurrentNote)))
+						{
+							player3Beats.addAll(n.getBeats());
+							player3Notes.add(n);
+						}
+						else
+						{
+							//send message to player that a wrong note was played
+							System.out.println("Player 3 played an incorrect note");
+						}
 					}
 				}
 				else if(n.getPlayer().equals("player4"))
@@ -300,8 +319,16 @@ public class GameManager implements ActionListener
 					//only add the new note if player4 is not currently playing a note
 					if(player4Beats.size()<=currentBeat)
 					{
-						player4Beats.addAll(n.getBeats());
-						player4Notes.add(n);
+						if(n.equals(gameNotes.get(player1CurrentNote)))
+						{
+							player4Beats.addAll(n.getBeats());
+							player4Notes.add(n);
+						}
+						else
+						{
+							//send message to player that a wrong note was played
+							System.out.println("Player 4 played an incorrect note");
+						}
 					}
 				}
 				else if(n.getPlayer().equals("metronome"))
@@ -309,49 +336,97 @@ public class GameManager implements ActionListener
 					//only add the new note if the metronome is not currently playing a note
 					if(metronomeBeats.size()<=currentBeat)
 					{
-						metronomeBeats.addAll(n.getBeats());
-						metronomeNotes.add(n);
+						if(n.equals(gameNotes.get(player1CurrentNote)))
+						{
+							metronomeBeats.addAll(n.getBeats());
+							metronomeNotes.add(n);
+						}
+						else
+						{
+							//send message to player that a wrong note was played.. maybe not for the metronome
+						}
 					}
 				}
 			}
 			else
 			{
-				if(at_splash_screen && !at_game_types && m.getMessage().split("_")[1].equals("connect"))
-					numberOfActivePlayers++;
-
 				if(m.getMessage().split("_")[1].equals("disconnect"))
 					numberOfActivePlayers--;
-
-				//message is "player1_splashscreen"  (checking to make sure player 1 has sent the message)
-				if(m.getMessage().split("_")[1].equals(GameState.SPLASH_SCREEN))
-				{
-					at_splash_screen = true;
-					System.out.println("Now at the splash screen");
-				}
+				
+				//     SPLASH SCREEN     //
+				//message is "playerX_connect"
+				if(at_splash_screen && m.getMessage().split("_")[1].equals("connect"))
+					numberOfActivePlayers++;
 				//message is "player1_gametypes"  (checking to make sure player 1 has sent the message)
-				if(at_splash_screen && m.getMessage().split("_")[1].equals(GameState.GAME_TYPES))
+				if(at_splash_screen && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.GAME_TYPES))
 				{
+					at_splash_screen = false;
 					at_game_types = true;
-					System.out.println("Now choosing a game type");
+					setActivePlayers();
+				}
+				
+				//     GAME TYPES     //
+				//message is "player1_splashscreen"  (checking to make sure player 1 has sent the message)
+				if(at_game_types && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.SPLASH_SCREEN))
+				{
+					at_game_types = false;
+					at_splash_screen = true;
 				}
 				//message is "player1_gameoptions"  (checking to make sure player 1 has sent the message)
-				if(at_splash_screen && at_game_types && m.getMessage().split("_")[1].equals(GameState.GAME_OPTIONS))
+				if(at_game_types && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.GAME_OPTIONS))
 				{
+					at_game_types = false;
 					at_game_options = true;
-					System.out.println("Now selecting game options");
 				}
-				//message is "player1_startgame"  (checking to make sure player 1 has sent the message)
-				if(at_splash_screen && at_game_types && at_game_options && m.getMessage().split("_")[1].equals(GameState.START_GAME))
+
+				//     GAME OPTIONS     //
+				//message is "player1_gametypes"  (checking to make sure player 1 has sent the message)
+				if(at_game_options && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.GAME_TYPES))
 				{
-					at_game_start = true;
-					System.out.println("Now starting the game");
+					at_game_options = false;
+					at_game_types = true;
+				}
+				//message is "player1_play"  (checking to make sure player 1 has sent the message)
+				if(at_game_options && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.PLAY))
+				{
+					setGameNotes();
+					at_game_options = false;
+					at_play = true;
+				}
+
+				//     PLAY     //
+				//message is "playerX_pause"
+				if(at_play && m.getMessage().split("_")[1].equals(GameState.PAUSE))
+				{
+					at_play = false;
+					at_pause = true;
+					timer.stop();
 				}
 				//message is "player1_postgame"  (checking to make sure player 1 has sent the message)
-				if(at_splash_screen && at_game_types && at_game_options && at_game_start && m.getMessage().split("_")[1].equals(GameState.POST_GAME))
+				if(at_play && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.POST_GAME))
 				{
+					at_play = false;
 					at_post_game = true;
 				}
-				//message is "player1_exit"  (checking to make sure player 1 has sent the message)
+
+				//     PAUSE     //
+				//message is "playerX_play"  (checking to make sure player 1 has sent the message)
+				if(at_pause && m.getMessage().split("_")[1].equals(GameState.PLAY))
+				{
+					at_play = true;
+					at_pause = false;
+					timer.start();
+				}
+				
+				//     POST GAME     //
+				//message is "player1_splashscreen"  (checking to make sure player 1 has sent the message)
+				if(at_post_game && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.SPLASH_SCREEN))
+				{
+					at_post_game = false;
+					at_splash_screen = true;
+				}
+				
+				//message is "playerX_exit"
 				//maybe disconnect all iPhones?
 				if(m.getMessage().split("_")[1].equals(GameState.EXIT))
 					exit = true;
@@ -408,7 +483,7 @@ public class GameManager implements ActionListener
 
 
 	/**
-	 *	From the Note's played by each player, correctly formmated Measures are created
+	 *	From the Note's played by each player, correctly formated Measures are created
 	 */
 	private void constructMeasures()
 	{
@@ -416,52 +491,60 @@ public class GameManager implements ActionListener
 		ArrayList<Beat> lastNoteBeats;
 		Note firstNote;
 		ArrayList<Beat> firstNoteBeats;
-
+		
+		Measure measure;
 
 		////	Player 1	////
-		//we have reached the end of a measure, so add a new one
-		if(!(player1Measures.get(player1Measures.size()-1).getNumberOfAvailableBeats()>0))
+		if(!(player1Measures.size()>numberOfBars))
 		{
-			player1Measures.add(new Measure(numberOfBeatsPerMeasure));
-		}
-
-		Measure measure = player1Measures.get(player1Measures.size()-1);
-
-		if(player1Notes.size()>0 && player1Notes.size()>player1CurrentNote)
-		{
-			player1CurrentNote++;
-
-			//if a note can be simply added to the measure, then do it
-			if(measure.canAddNote(player1Notes.get(player1Notes.size()-1)))
+			//we have reached the end of a measure, so add a new one
+			if(!(player1Measures.get(player1Measures.size()-1).getNumberOfAvailableBeats()>0))
 			{
-				measure.addNote(player1Notes.get(player1Notes.size()-1));
-				notesToSend.add(player1Notes.get(player1Notes.size()-1));
-			}
-			else
-			{
-				lastNoteBeats = new ArrayList<Beat>();
-				firstNoteBeats = new ArrayList<Beat>();
-
-				//add a note for the rest of the measure
-				for(int i = 0; i < measure.getNumberOfAvailableBeats(); i++)
-					lastNoteBeats.add(new Beat(player1Beats.get(currentBeat).getPitch()));
-				lastNote = new Note(lastNoteBeats, "player1");
-				lastNote.setTiedRight(true);
-				measure.addNote(lastNote);
-				notesToSend.add(lastNote);
-
-				//add a new measure and update the current measure
 				player1Measures.add(new Measure(numberOfBeatsPerMeasure));
-				measure = player1Measures.get(player1Measures.size()-1);
-
-				//add the rest of the note carried over from the previous measure
-				for(int i = 0; i < (player1Notes.get(player1Notes.size()-1).size() - lastNote.size()); i++)
-					firstNoteBeats.add(new Beat(player1Beats.get(currentBeat).getPitch()));
-				firstNote = new Note(firstNoteBeats, "player1");
-				firstNote.setTiedLeft(true);
-				measure.addNote(firstNote);
-				notesToSend.add(firstNote);
 			}
+	
+			measure = player1Measures.get(player1Measures.size()-1);
+	
+			if(player1Notes.size()>0 && player1Notes.size()>player1CurrentNote)
+			{
+				player1CurrentNote++;
+	
+				//if a note can be simply added to the measure, then do it
+				if(measure.canAddNote(player1Notes.get(player1Notes.size()-1)))
+				{
+					measure.addNote(player1Notes.get(player1Notes.size()-1));
+					notesToSend.add(player1Notes.get(player1Notes.size()-1));
+				}
+				else
+				{
+					lastNoteBeats = new ArrayList<Beat>();
+					firstNoteBeats = new ArrayList<Beat>();
+	
+					//add a note for the rest of the measure
+					for(int i = 0; i < measure.getNumberOfAvailableBeats(); i++)
+						lastNoteBeats.add(new Beat(player1Beats.get(currentBeat).getPitch()));
+					lastNote = new Note(lastNoteBeats, "player1");
+					lastNote.setTiedRight(true);
+					measure.addNote(lastNote);
+					notesToSend.add(lastNote);
+	
+					//add a new measure and update the current measure
+					player1Measures.add(new Measure(numberOfBeatsPerMeasure));
+					measure = player1Measures.get(player1Measures.size()-1);
+	
+					//add the rest of the note carried over from the previous measure
+					for(int i = 0; i < (player1Notes.get(player1Notes.size()-1).size() - lastNote.size()); i++)
+						firstNoteBeats.add(new Beat(player1Beats.get(currentBeat).getPitch()));
+					firstNote = new Note(firstNoteBeats, "player1");
+					firstNote.setTiedLeft(true);
+					measure.addNote(firstNote);
+					notesToSend.add(firstNote);
+				}
+			}
+		}
+		else
+		{
+			addMessageToPool(new String(keys.Players.PLAYER_ONE + "_" + GameState.POST_GAME));
 		}
 		////	Player 1	////
 
@@ -654,7 +737,23 @@ public class GameManager implements ActionListener
 		////	Metronome	////
 
 	}
+	
+	/**
+	 * Sends the number of active players to the public display
+	 */
+	private void setActivePlayers()
+	{
+		//Public_Display.setActivePlayers(numberofActivePlayers);
+	}
 
+	/**
+	 * Sends the gameNotes to the public display for visual reasons, notes are checked in the GameManager
+	 */
+	private void setGameNotes()
+	{
+		//send gameNotes to the public display
+	}
+	
 	/**
 	 *	Sends a message to the GUI
 	 *
@@ -677,5 +776,5 @@ public class GameManager implements ActionListener
 		//displayGUI.getNotes(notesToSend, currentBeat);
 		notesToSend = new ArrayList<Note>();
 	}
-
+	
 }
