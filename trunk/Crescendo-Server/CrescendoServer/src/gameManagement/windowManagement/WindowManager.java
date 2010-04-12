@@ -6,8 +6,9 @@ import java.util.HashMap;
 import javax.swing.JFrame;
 import java.awt.Panel;
 
+import gameManagement.windowManagement.base.WindowDisplay;
+import gameManagement.windowManagement.base.Wrapper;
 import gameManagement.windowManagement.listeners.WindowHandler;
-import gameManagement.windowManagement.windows.Window;
 
 public class WindowManager 
 {
@@ -19,7 +20,7 @@ public class WindowManager
 		mainWindow.start();
 	}
 	
-	public void addPane(final String key, final Panel window)
+	public void addWindow(final String key, final Wrapper window)
 	{
 		if (key != null && !windows.containsKey(key) && window != null)
 		{
@@ -52,9 +53,9 @@ public class WindowManager
 		return instance;
 	}
 	
-	private HashMap<String, Panel> windows = new HashMap<String, Panel>();
+	private HashMap<String, Wrapper> windows = new HashMap<String, Wrapper>();
 	private JFrame mainFrame = new JFrame();
-	private Window mainWindow = new Window();
+	private WindowDisplay mainWindow = new WindowDisplay();
 	private WindowHandler handler = new WindowHandler();
 	
 	private void initFrame()

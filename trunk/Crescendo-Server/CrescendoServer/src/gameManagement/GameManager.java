@@ -5,13 +5,18 @@ import gameManagement.messageTranslationSystem.Measure;
 import gameManagement.messageTranslationSystem.MessageTranslationEngine;
 import gameManagement.messageTranslationSystem.Note;
 import gameManagement.messageTranslationSystem.MessageTranslationEngine.Message;
+import gameManagement.windowManagement.WindowManager;
+import gameManagement.windowManagement.base.Wrapper;
+import gameManagement.windowManagement.windows.Splash_Screen;
 
 import java.util.ArrayList;
 
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 import javax.swing.Timer;
 
 import java.awt.Color;
+import java.awt.Panel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -24,7 +29,6 @@ import keys.GameState;
  */
 public class GameManager implements ActionListener
 {
-//	private DisplayGUI displayGUI;
 	private ArrayList<String> messagePool;
 	private ArrayList<String> messages;
 	private Timer timer;
@@ -67,8 +71,7 @@ public class GameManager implements ActionListener
 	private ArrayList<Measure> player4Measures;
 	private ArrayList<Measure> metronomeMeasures;
 
-	ArrayList<Note> notesToSend;
-
+	ArrayList<Note> notesToSend; 
 
 	/**
 	 *	Constructs a GameManager object with up to 4 players
@@ -135,12 +138,19 @@ public class GameManager implements ActionListener
 		timer.start();
 
 		//create a new display window
-		JFrame window = new JFrame("Crescendo");
-		window.setBackground(Color.WHITE);
-		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		window.pack();
-		window.setVisible(true);
-
+		Wrapper wrapper = new Wrapper(new Splash_Screen());
+		wrapper.setBackground(Color.BLACK);
+		wrapper.setSize(800, 600);
+		
+		WindowManager.getInstance().addWindow(keys.GameState.SPLASH_SCREEN, wrapper);
+		WindowManager.getInstance().run();
+		try {
+			WindowManager.getInstance().nextWindow(keys.GameState.SPLASH_SCREEN);
+			
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
 		while(true)
 		{
 			if(exit == true)

@@ -1,4 +1,4 @@
-package gameManagement.windowManagement.windows;
+package gameManagement.windowManagement.base;
 
 import javax.swing.JFrame;
 
@@ -14,9 +14,9 @@ import java.util.concurrent.locks.ReentrantLock;
 
 import processing.core.PApplet;
 
-public class Window extends PApplet 
+public class WindowDisplay extends PApplet 
 {
-	public void nextPanel(Panel panel) throws InterruptedException
+	public void nextPanel(Wrapper panel) throws InterruptedException
 	{
 		lock.lock();
 		while(!setupComplete || animateScreen)
@@ -40,7 +40,7 @@ public class Window extends PApplet
 		lock.unlock();
 	}
 	
-	public void previousPanel(Panel panel) throws InterruptedException
+	public void previousPanel(Wrapper panel) throws InterruptedException
 	{
 		lock.lock();
 		while(!setupComplete || animateScreen)
@@ -80,12 +80,8 @@ public class Window extends PApplet
 	@Override
 	public void draw()
 	{
-		rect(-1, -1, width + 1, height + 1);
-		fill(0, 15);
-		
 		if (animateScreen)
 		{
-			Dimension newsSize = panels.get(0).getSize();
 			Dimension oldsSize = panels.get(1).getSize();
 			Point p = autoCenter(oldsSize);
 			
@@ -95,24 +91,6 @@ public class Window extends PApplet
 			int oldsX = oldPoint.x + getDirection()*deltaX;
 			int newsX = newPoint.x + getDirection()*deltaX;
 			
-			stroke(random(255), random(255), random(255));
-			if (isNextAnimation)
-			{
-				xNewLineIncrement = newsSize.width;
-				xOldLineIncrement = oldsSize.width;
-			}
-			else
-			{
-				xNewLineIncrement = 0;
-				xOldLineIncrement = 0;
-			}
-			
-			if (panels.get(0).getParent() != null)
-			{
-				line(oldPoint.x + xOldLineIncrement , oldPoint.y, oldPoint.x + xOldLineIncrement, oldPoint.y + oldsSize.height);
-			}
-			line(newPoint.x + xNewLineIncrement, newPoint.y, newPoint.x + xNewLineIncrement, newPoint.y + newsSize.height);
-			
 			panels.get(0).setLocation(oldsX, oldPoint.y);
 			panels.get(1).setLocation(newsX, newPoint.y);  
 	
@@ -120,6 +98,7 @@ public class Window extends PApplet
 			{
 				this.remove(panels.get(0));
 				panels.set(0, panels.get(1));
+				panels.get(0).startApplet();
 				animateScreen = false;
 			}
 		}
@@ -129,8 +108,7 @@ public class Window extends PApplet
 	{
 		Dimension size = this.getParent().getSize();
 		this.setSize(size);
-		noStroke();
-		smooth();
+		background(0);
 		frameRate(55);
 	}
 	
@@ -138,8 +116,8 @@ public class Window extends PApplet
 	{
 		// This could be initialized a little better, but this seemed to be the only way to get 
 		// array list initialized before calling draw()
-		panels.add(new Panel());
-		panels.add(new Panel());
+		panels.add(new Wrapper());
+		panels.add(new Wrapper());
 		panels.get(0).setBackground(Color.BLACK);
 		panels.get(0).setSize(800, 600);
 		Point p = autoCenter(panels.get(0).getSize());
@@ -193,15 +171,11 @@ public class Window extends PApplet
 	
 	private static Lock lock = new ReentrantLock();
 	
-	// for trailing line
-	int xNewLineIncrement = 0;
-	int xOldLineIncrement = 0;
-
 	private final int WAIT = 10;
 	private boolean setupComplete = false;
 	private boolean isNextAnimation = false;
 	private boolean animateScreen = false;
 	private int direction = 1;
-	private int deltaX = 18;
-	private ArrayList<Panel> panels = new ArrayList<Panel>(2);
+	private int deltaX = 25;
+	private ArrayList<Wrapper> panels = new ArrayList<Wrapper>(2);
 }

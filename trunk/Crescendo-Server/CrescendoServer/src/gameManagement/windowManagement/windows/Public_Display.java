@@ -1,6 +1,8 @@
-package gameManagement.messageTranslationSystem;
+package gameManagement.windowManagement.windows;
 import processing.core.*; 
 import processing.xml.*; 
+
+import gameManagement.messageTranslationSystem.Note;
 
 import java.applet.*; 
 import java.awt.Dimension; 
