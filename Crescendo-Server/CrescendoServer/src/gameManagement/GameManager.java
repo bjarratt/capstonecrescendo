@@ -1,4 +1,10 @@
-package gameManagement.messageTranslationSystem;
+package gameManagement;
+
+import gameManagement.messageTranslationSystem.Beat;
+import gameManagement.messageTranslationSystem.Measure;
+import gameManagement.messageTranslationSystem.MessageTranslationEngine;
+import gameManagement.messageTranslationSystem.Note;
+import gameManagement.messageTranslationSystem.MessageTranslationEngine.Message;
 
 import java.util.ArrayList;
 
@@ -65,12 +71,10 @@ public class GameManager implements ActionListener
 
 
 	/**
-	 *	Constructs a GameManager object with upto 4 players
+	 *	Constructs a GameManager object with up to 4 players
 	 */
 	public GameManager()
 	{
-		//set up the display to receive messages
-//		displayGUI = new DisplayGUI();
 		//message pool
 		messagePool = new ArrayList<String>();
 		//messages to be translated
@@ -134,9 +138,8 @@ public class GameManager implements ActionListener
 		JFrame window = new JFrame("Crescendo");
 		window.setBackground(Color.WHITE);
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		//window.getContentPane().add(displayGUI);
 		window.pack();
-		window.setVisible(false);
+		window.setVisible(true);
 
 		while(true)
 		{
