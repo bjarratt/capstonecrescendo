@@ -1,6 +1,8 @@
 package network;
 
+import java.util.List;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
 import java.util.concurrent.locks.Lock;
@@ -68,9 +70,9 @@ public class ConnectionManager
 	 * Utility method for seeing which player slots are filled.
 	 * @return - a <code>String</code> with all the player keys that have filled slots
 	 */
-	public String listPlayers()
+	public List<String> listPlayers()
 	{
-		String current = "Player List:\n";
+		ArrayList<String> currentPlayers = new ArrayList<String>();
 		
 		Set<String> keys = playerMap.keySet();
 		
@@ -78,11 +80,11 @@ public class ConnectionManager
 		{
 			if (playerMap.get(key) != null)
 			{
-				current += " -- " + key + "\n";
+				currentPlayers.add(key);
 			}
 		}
 		
-		return current;
+		return currentPlayers;
 	}
 	
 	/**
