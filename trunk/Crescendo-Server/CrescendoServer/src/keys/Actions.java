@@ -13,5 +13,6 @@ public class Actions
 	public static final String SERVER_STARTED = "Server started";
 	public static final String SERVER_SHUTDOWN = "Server shutdown";
 	public static final String GAME_START = "Game start";
+	public static final String PLAYED_NOTE = "Played note";
 	public static final String GAME_END = "Game end";
 }
