@@ -107,7 +107,7 @@ public class WindowDisplay extends PApplet
 	private void initSelf()
 	{
 		Dimension size = this.getParent().getSize();
-		this.setSize(size);
+		size(size.width, size.height, P3D);
 		background(0);
 		frameRate(55);
 	}

@@ -28,6 +28,16 @@ public class WindowManager
 		}
 	}
 	
+	public Wrapper getWindow(String key)
+	{
+		Wrapper w = null;
+		if (windows.containsKey(key))
+		{
+			w = windows.get(key);
+		}
+		return w;
+	}
+	
 	public void nextWindow(String key) throws InterruptedException
 	{
 		if (windows.containsKey(key))
