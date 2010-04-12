@@ -50,13 +50,12 @@ public class GameManager implements ActionListener
 
 	//game
 	private String gameType;
-	private gameManagement.gameModes.matchGM game;
-	private ArrayList<Note> gameNotes;
 	
 	private ArrayList<Beat> player1Beats;
 	private ArrayList<Beat> player2Beats;
 	private ArrayList<Beat> player3Beats;
 	private ArrayList<Beat> player4Beats;
+	private ArrayList<Beat> gameBeats;
 	private ArrayList<Beat> metronomeBeats;
 	private int currentBeat;
 
@@ -64,11 +63,13 @@ public class GameManager implements ActionListener
 	private ArrayList<Note> player2Notes;
 	private ArrayList<Note> player3Notes;
 	private ArrayList<Note> player4Notes;
+	private ArrayList<Note> gameNotes;
 	private ArrayList<Note> metronomeNotes;
 	private int player1CurrentNote;
 	private int player2CurrentNote;
 	private int player3CurrentNote;
 	private int player4CurrentNote;
+	private int gameCurrentNote;
 	private int metronomeCurrentNote;
 	private int numberOfActivePlayers;
 
@@ -78,6 +79,7 @@ public class GameManager implements ActionListener
 	private ArrayList<Measure> player2Measures;
 	private ArrayList<Measure> player3Measures;
 	private ArrayList<Measure> player4Measures;
+	private ArrayList<Measure> gameMeasures;
 	private ArrayList<Measure> metronomeMeasures;
 
 	ArrayList<Note> notesToSend; 
@@ -98,6 +100,7 @@ public class GameManager implements ActionListener
 		player2CurrentNote = 0;
 		player3CurrentNote = 0;
 		player4CurrentNote = 0;
+		gameCurrentNote = 0;
 		metronomeCurrentNote = 0;
 
 		currentBeat = 0;
@@ -111,8 +114,13 @@ public class GameManager implements ActionListener
 		at_post_game = false;
 		
 		gameType = GameState.NOTE_MATCHING;
-		game = new gameManagement.gameModes.matchGM(numberOfBars);
-		gameNotes = game.getNotes();
+		
+		if(gameType.equals(GameState.NOTE_LENGTHS))
+			gameNotes = new gameManagement.gameModes.lengthTraining(numberOfBars).getNotes();
+		else if(gameType.equals(GameState.NOTE_PITCHES))
+			gameNotes = new gameManagement.gameModes.pitchTraining(numberOfBars).getNotes();
+		else if(gameType.equals(GameState.NOTE_MATCHING))
+			gameNotes = new gameManagement.gameModes.matchGM(numberOfBars).getNotes();
 		
 		player1Beats = new ArrayList<Beat>();
 		player2Beats = new ArrayList<Beat>();
@@ -174,6 +182,9 @@ public class GameManager implements ActionListener
 	{
 		if(messagePool.size() != 0)
 		{
+			if(exit)
+				System.exit(0);
+			
 			//constrict message pool size every tick
 			messages = new ArrayList<String>(messagePool);
 			messagePool = new ArrayList<String>();
@@ -185,6 +196,8 @@ public class GameManager implements ActionListener
 
 			if(at_play)
 			{
+				if(currentBeat%2 == 0)
+					metronomeNotes.add(new Note("C7","i","metronome"));
 				this.addRests();
 				this.constructMeasures();
 				this.sendNoteToDisplayGUI();
@@ -238,11 +251,6 @@ public class GameManager implements ActionListener
 				p4 = true;
 				newMessages.add(message);
 			}
-			if(message.split("_")[0].equals("metronome") && !met)
-			{
-				met = true;
-				newMessages.add(message);
-			}
 		}
 
 		messages = newMessages;
@@ -270,8 +278,11 @@ public class GameManager implements ActionListener
 					{
 						if(n.equals(gameNotes.get(player1CurrentNote)))
 						{
-							player1Beats.addAll(n.getBeats());
-							player1Notes.add(n);
+							if(gameType.equals(GameState.NOTE_LENGTHS) || gameType.equals(GameState.NOTE_PITCHES) || gameType.equals(GameState.NOTE_MATCHING))
+							{
+								player1Beats.addAll(n.getBeats());
+								player1Notes.add(n);
+							}
 						}
 						else
 						{
@@ -285,10 +296,13 @@ public class GameManager implements ActionListener
 					//only add the new note if player2 is not currently playing a note
 					if(player2Beats.size()<=currentBeat)
 					{
-						if(n.equals(gameNotes.get(player1CurrentNote)))
+						if(n.equals(gameNotes.get(player2CurrentNote)))
 						{
-							player2Beats.addAll(n.getBeats());
-							player2Notes.add(n);
+							if(gameType.equals(GameState.NOTE_LENGTHS) || gameType.equals(GameState.NOTE_PITCHES) || gameType.equals(GameState.NOTE_MATCHING))
+							{
+								player2Beats.addAll(n.getBeats());
+								player2Notes.add(n);
+							}
 						}
 						else
 						{
@@ -302,10 +316,13 @@ public class GameManager implements ActionListener
 					//only add the new note if player3 is not currently playing a note
 					if(player3Beats.size()<=currentBeat)
 					{
-						if(n.equals(gameNotes.get(player1CurrentNote)))
+						if(n.equals(gameNotes.get(player3CurrentNote)))
 						{
-							player3Beats.addAll(n.getBeats());
-							player3Notes.add(n);
+							if(gameType.equals(GameState.NOTE_LENGTHS) || gameType.equals(GameState.NOTE_PITCHES) || gameType.equals(GameState.NOTE_MATCHING))
+							{
+								player3Beats.addAll(n.getBeats());
+								player3Notes.add(n);
+							}
 						}
 						else
 						{
@@ -319,31 +336,18 @@ public class GameManager implements ActionListener
 					//only add the new note if player4 is not currently playing a note
 					if(player4Beats.size()<=currentBeat)
 					{
-						if(n.equals(gameNotes.get(player1CurrentNote)))
+						if(n.equals(gameNotes.get(player4CurrentNote)))
 						{
-							player4Beats.addAll(n.getBeats());
-							player4Notes.add(n);
+							if(gameType.equals(GameState.NOTE_LENGTHS) || gameType.equals(GameState.NOTE_PITCHES) || gameType.equals(GameState.NOTE_MATCHING))
+							{
+								player4Beats.addAll(n.getBeats());
+								player4Notes.add(n);
+							}
 						}
 						else
 						{
 							//send message to player that a wrong note was played
 							System.out.println("Player 4 played an incorrect note");
-						}
-					}
-				}
-				else if(n.getPlayer().equals("metronome"))
-				{
-					//only add the new note if the metronome is not currently playing a note
-					if(metronomeBeats.size()<=currentBeat)
-					{
-						if(n.equals(gameNotes.get(player1CurrentNote)))
-						{
-							metronomeBeats.addAll(n.getBeats());
-							metronomeNotes.add(n);
-						}
-						else
-						{
-							//send message to player that a wrong note was played.. maybe not for the metronome
 						}
 					}
 				}
@@ -493,58 +497,62 @@ public class GameManager implements ActionListener
 		ArrayList<Beat> firstNoteBeats;
 		
 		Measure measure;
-
-		////	Player 1	////
-		if(!(player1Measures.size()>numberOfBars))
-		{
-			//we have reached the end of a measure, so add a new one
-			if(!(player1Measures.get(player1Measures.size()-1).getNumberOfAvailableBeats()>0))
-			{
-				player1Measures.add(new Measure(numberOfBeatsPerMeasure));
-			}
-	
-			measure = player1Measures.get(player1Measures.size()-1);
-	
-			if(player1Notes.size()>0 && player1Notes.size()>player1CurrentNote)
-			{
-				player1CurrentNote++;
-	
-				//if a note can be simply added to the measure, then do it
-				if(measure.canAddNote(player1Notes.get(player1Notes.size()-1)))
-				{
-					measure.addNote(player1Notes.get(player1Notes.size()-1));
-					notesToSend.add(player1Notes.get(player1Notes.size()-1));
-				}
-				else
-				{
-					lastNoteBeats = new ArrayList<Beat>();
-					firstNoteBeats = new ArrayList<Beat>();
-	
-					//add a note for the rest of the measure
-					for(int i = 0; i < measure.getNumberOfAvailableBeats(); i++)
-						lastNoteBeats.add(new Beat(player1Beats.get(currentBeat).getPitch()));
-					lastNote = new Note(lastNoteBeats, "player1");
-					lastNote.setTiedRight(true);
-					measure.addNote(lastNote);
-					notesToSend.add(lastNote);
-	
-					//add a new measure and update the current measure
-					player1Measures.add(new Measure(numberOfBeatsPerMeasure));
-					measure = player1Measures.get(player1Measures.size()-1);
-	
-					//add the rest of the note carried over from the previous measure
-					for(int i = 0; i < (player1Notes.get(player1Notes.size()-1).size() - lastNote.size()); i++)
-						firstNoteBeats.add(new Beat(player1Beats.get(currentBeat).getPitch()));
-					firstNote = new Note(firstNoteBeats, "player1");
-					firstNote.setTiedLeft(true);
-					measure.addNote(firstNote);
-					notesToSend.add(firstNote);
-				}
-			}
-		}
-		else
+		
+		if(player1CurrentNote>=gameNotes.size())
 		{
 			addMessageToPool(new String(keys.Players.PLAYER_ONE + "_" + GameState.POST_GAME));
+			return;
+		}
+			
+
+		////	Player 1	////
+		//we have reached the end of a measure, so add a new one
+		if(!(player1Measures.get(player1Measures.size()-1).getNumberOfAvailableBeats()>0))
+		{
+			player1Measures.add(new Measure(numberOfBeatsPerMeasure));
+		}
+
+		measure = player1Measures.get(player1Measures.size()-1);
+
+		if(player1Notes.size()>0 && player1Notes.size()>player1CurrentNote)
+		{
+			player1CurrentNote++;
+			
+			measure.addNote(player1Notes.get(player1Notes.size()-1));
+			notesToSend.add(player1Notes.get(player1Notes.size()-1));
+
+			/* Taken out until note ties are added back in 
+			//if a note can be simply added to the measure, then do it
+			if(measure.canAddNote(player1Notes.get(player1Notes.size()-1)))
+			{
+				measure.addNote(player1Notes.get(player1Notes.size()-1));
+				notesToSend.add(player1Notes.get(player1Notes.size()-1));
+			}
+			else
+			{
+				lastNoteBeats = new ArrayList<Beat>();
+				firstNoteBeats = new ArrayList<Beat>();
+
+				//add a note for the rest of the measure
+				for(int i = 0; i < measure.getNumberOfAvailableBeats(); i++)
+					lastNoteBeats.add(new Beat(player1Beats.get(currentBeat).getPitch()));
+				lastNote = new Note(lastNoteBeats, "player1");
+				lastNote.setTiedRight(true);
+				measure.addNote(lastNote);
+				notesToSend.add(lastNote);
+
+				//add a new measure and update the current measure
+				player1Measures.add(new Measure(numberOfBeatsPerMeasure));
+				measure = player1Measures.get(player1Measures.size()-1);
+
+				//add the rest of the note carried over from the previous measure
+				for(int i = 0; i < (player1Notes.get(player1Notes.size()-1).size() - lastNote.size()); i++)
+					firstNoteBeats.add(new Beat(player1Beats.get(currentBeat).getPitch()));
+				firstNote = new Note(firstNoteBeats, "player1");
+				firstNote.setTiedLeft(true);
+				measure.addNote(firstNote);
+				notesToSend.add(firstNote);
+			}*/
 		}
 		////	Player 1	////
 
@@ -560,7 +568,11 @@ public class GameManager implements ActionListener
 		if(player2Notes.size()>0 && player2Notes.size()>player2CurrentNote)
 		{
 			player2CurrentNote++;
+			
+			measure.addNote(player2Notes.get(player2Notes.size()-1));
+			notesToSend.add(player2Notes.get(player2Notes.size()-1));
 
+			/* Taken out until note ties are added back in 
 			//if a note can be simply added to the measure, then do it
 			if(measure.canAddNote(player2Notes.get(player2Notes.size()-1)))
 			{
@@ -591,7 +603,7 @@ public class GameManager implements ActionListener
 				firstNote.setTiedLeft(true);
 				measure.addNote(firstNote);
 				notesToSend.add(firstNote);
-			}
+			}*/
 		}
 		////	Player 2	////
 
@@ -608,6 +620,10 @@ public class GameManager implements ActionListener
 		{
 			player3CurrentNote++;
 
+			measure.addNote(player3Notes.get(player3Notes.size()-1));
+			notesToSend.add(player3Notes.get(player3Notes.size()-1));
+			
+			/* Taken out until note ties are added back in 
 			//if a note can be simply added to the measure, then do it
 			if(measure.canAddNote(player3Notes.get(player3Notes.size()-1)))
 			{
@@ -638,7 +654,7 @@ public class GameManager implements ActionListener
 				firstNote.setTiedLeft(true);
 				measure.addNote(firstNote);
 				notesToSend.add(firstNote);
-			}
+			} */
 		}
 		////	Player 3	////
 
@@ -654,7 +670,11 @@ public class GameManager implements ActionListener
 		if(player4Notes.size()>0 && player4Notes.size()>player4CurrentNote)
 		{
 			player4CurrentNote++;
-
+			
+			measure.addNote(player4Notes.get(player4Notes.size()-1));
+			notesToSend.add(player4Notes.get(player4Notes.size()-1));
+			
+			/* Taken out until note ties are added back in 
 			//if a note can be simply added to the measure, then do it
 			if(measure.canAddNote(player4Notes.get(player4Notes.size()-1)))
 			{
@@ -685,7 +705,7 @@ public class GameManager implements ActionListener
 				firstNote.setTiedLeft(true);
 				measure.addNote(firstNote);
 				notesToSend.add(firstNote);
-			}
+			}*/
 		}
 		////	Player 4	////
 
@@ -702,37 +722,16 @@ public class GameManager implements ActionListener
 		{
 			metronomeCurrentNote++;
 
+			measure.addNote(metronomeNotes.get(metronomeNotes.size()-1));
+			notesToSend.add(metronomeNotes.get(metronomeNotes.size()-1));
+			
+			/* Taken out until note ties are added back in 
 			//if a note can be simply added to the measure, then do it
 			if(measure.canAddNote(metronomeNotes.get(metronomeNotes.size()-1)))
 			{
 				measure.addNote(metronomeNotes.get(metronomeNotes.size()-1));
 				notesToSend.add(metronomeNotes.get(metronomeNotes.size()-1));
-			}
-			else
-			{
-				lastNoteBeats = new ArrayList<Beat>();
-				firstNoteBeats = new ArrayList<Beat>();
-
-				//add a note for the rest of the measure
-				for(int i = 0; i < measure.getNumberOfAvailableBeats(); i++)
-					lastNoteBeats.add(new Beat(metronomeBeats.get(currentBeat).getPitch()));
-				lastNote = new Note(lastNoteBeats, "metronome");
-				lastNote.setTiedRight(true);
-				measure.addNote(lastNote);
-				notesToSend.add(lastNote);
-
-				//add a new measure and update the current measure
-				metronomeMeasures.add(new Measure(numberOfBeatsPerMeasure));
-				measure = metronomeMeasures.get(metronomeMeasures.size()-1);
-
-				//add the rest of the note carried over from the previous measure
-				for(int i = 0; i < (metronomeNotes.get(metronomeNotes.size()-1).size() - lastNote.size()); i++)
-					firstNoteBeats.add(new Beat(metronomeBeats.get(currentBeat).getPitch()));
-				firstNote = new Note(firstNoteBeats, "metronome");
-				firstNote.setTiedLeft(true);
-				measure.addNote(firstNote);
-				notesToSend.add(firstNote);
-			}
+			}*/
 		}
 		////	Metronome	////
 
