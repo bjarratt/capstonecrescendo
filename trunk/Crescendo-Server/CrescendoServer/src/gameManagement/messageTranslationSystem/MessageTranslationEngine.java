@@ -74,7 +74,8 @@ public class MessageTranslationEngine
 				messageComponents[1].equals(GameState.SPLASH_SCREEN) ||
 				messageComponents[1].equals(GameState.GAME_TYPES) ||
 				messageComponents[1].equals(GameState.GAME_OPTIONS) ||
-				messageComponents[1].equals(GameState.START_GAME) ||
+				messageComponents[1].equals(GameState.PLAY) ||
+				messageComponents[1].equals(GameState.PAUSE) ||
 				messageComponents[1].equals(GameState.POST_GAME) ||
 				messageComponents[1].equals(GameState.EXIT))
 			{

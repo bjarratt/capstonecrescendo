@@ -17,13 +17,13 @@ import java.util.Random;
  */
 public class matchGM {
 
-	ArrayList<Note> wantedNotes;	//the array of notes the game wants
+	private ArrayList<Note> wantedNotes;	//the array of notes the game wants
 	private Random rand;
 	
 	final int maxSubdivisions = 8;		//per measure
 	int currentSubdivisions;
 	
-	matchGM(int wantedMeasures){
+	public matchGM(int wantedMeasures){
 		
 		wantedNotes = new ArrayList<Note>();
 		rand = new Random();
@@ -38,7 +38,7 @@ public class matchGM {
 	 * length is selected, a random pitch is assigned to it to create the new Note.
 	 * @param measureCount - the number of measures to fill.
 	 */
-	void randomizeMeasures(int measureCount){
+	private void randomizeMeasures(int measureCount){
 		
 		int i = 0;
 		int test = 0;
@@ -125,7 +125,7 @@ public class matchGM {
 	
 	public String randomizePitch()
 	{
-		switch(rand.nextInt(19))
+		switch(rand.nextInt(18))
 		{
 			case 0:
 				return "D5";
@@ -163,8 +163,6 @@ public class matchGM {
 				return "ESharp6";
 			case 17:
 				return "F6";
-			case 18:
-				return "rest";
 			default:
 				return "rest";
 		}
@@ -179,13 +177,13 @@ public class matchGM {
 	 * @return - if the notes match or not
 	 */
 	// TODO:  Test this!!!!!!!!!!!
-	boolean compare(String input, int index){
+	public boolean compare(String input, int index){
 		if(input == wantedNotes.get(index).toString())
 			return true;
 		return false;
 	}
 	
-	ArrayList<Note> getNotes(){
+	public ArrayList<Note> getNotes(){
 		return this.wantedNotes;
 	}
 	
