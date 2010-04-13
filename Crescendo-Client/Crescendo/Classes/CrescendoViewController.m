@@ -17,10 +17,8 @@
 
 @synthesize client;
 @synthesize playerId;
-@synthesize composeViewController;
 @synthesize gamemodeViewController;
 @synthesize helpViewController;
-@synthesize trainingViewController;
 
 #pragma mark PlayNoteUpdateDelegate Method
 
@@ -40,38 +38,15 @@
 
 #pragma mark Interface Methods
 
-- (IBAction) goToComposeView {
-	composeViewController.client = self.client;
-	composeViewController.playerId = self.playerId;
-	
-	/*
-	 *	Send game type selected to public display
-	 */
-	NSString* inputText = @"compose";
-	
-    // Initialize PlayNoteRequest and set message to content's of the text field.
-	GameTypeRequest* request = [[GameTypeRequest alloc] init];
-    [request setGameType:inputText];
-    
-    // Setup the client to send the message a little later in the run loop.
-    [client performSelector:@selector(sendMessage:) withObject: request];
-    
-    [request release];
-	
-	[self presentModalViewController:composeViewController animated:YES];
-}
-
 - (IBAction) goToGamemodeView {
+	gamemodeViewController.client = self.client;
+	gamemodeViewController.playerId = self.playerId;
+	
 	[self presentModalViewController:gamemodeViewController animated:YES];
 }
 
 - (IBAction) goToHelpView {
 	[self presentModalViewController:helpViewController	animated:YES];
-}
-
-- (IBAction) goToTrainingView {
-	trainingViewController.client = self.client;
-	[self presentModalViewController:trainingViewController animated:YES];
 }
 
 #pragma mark Initialize View Methods
@@ -133,10 +108,8 @@
 
 
 - (void) dealloc {
-	[composeViewController release];
 	[gamemodeViewController release];
 	[helpViewController release];
-	[trainingViewController release];
     [super dealloc];
 }
 
