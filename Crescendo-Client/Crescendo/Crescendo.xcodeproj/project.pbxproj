@@ -21,7 +21,6 @@
 		3E287E30116AB7DC001EEB86 /* GameTypeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E287E2F116AB7DC001EEB86 /* GameTypeRequest.m */; };
 		3E287E33116AB7E9001EEB86 /* GameTypeUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E287E32116AB7E9001EEB86 /* GameTypeUpdate.m */; };
 		3E287E36116AB7F5001EEB86 /* GameTypeUpdateDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E287E35116AB7F5001EEB86 /* GameTypeUpdateDelegate.m */; };
-		3E55634E114ED6F70089B12F /* TrainingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E55634D114ED6F70089B12F /* TrainingViewController.m */; };
 		3E556354114ED7B00089B12F /* GamemodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E556353114ED7B00089B12F /* GamemodeViewController.m */; };
 		3E556357114ED7CA0089B12F /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E556356114ED7CA0089B12F /* HelpViewController.m */; };
 		3E556364114ED8CF0089B12F /* ServerTranslations.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E556360114ED8CF0089B12F /* ServerTranslations.m */; };
@@ -30,7 +29,6 @@
 		3E556376114ED9E30089B12F /* GamemodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E556371114ED9E30089B12F /* GamemodeViewController.xib */; };
 		3E556377114ED9E30089B12F /* HelpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E556372114ED9E30089B12F /* HelpViewController.xib */; };
 		3E556378114ED9E30089B12F /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E556373114ED9E30089B12F /* MainWindow.xib */; };
-		3E556379114ED9E30089B12F /* TrainingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E556374114ED9E30089B12F /* TrainingViewController.xib */; };
 		3E556387114EDB240089B12F /* CrescendoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E556351114ED7800089B12F /* CrescendoAppDelegate.m */; };
 		3E5563A2114EDBFC0089B12F /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5563A1114EDBFC0089B12F /* appicon.png */; };
 		3E5563AA114EDCA60089B12F /* background_horizontal.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5563A5114EDCA60089B12F /* background_horizontal.png */; };
@@ -150,6 +148,8 @@
 		3E55658B114EE2440089B12F /* AppConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E55658A114EE2440089B12F /* AppConfig.m */; };
 		3E55658F114EE2790089B12F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E55658E114EE2790089B12F /* CFNetwork.framework */; };
 		3E55664A114EE34E0089B12F /* libecologylabXMLLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E5563E2114EDE1E0089B12F /* libecologylabXMLLib.a */; };
+		3E8F998C116EB5D800867CA4 /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8F998B116EB5D800867CA4 /* MenuView.m */; };
+		3E8F9997116EB8EC00867CA4 /* BuildView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8F9996116EB8EC00867CA4 /* BuildView.m */; };
 		CA0208D9115B28C60023D8FB /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */; };
 		CA0208DB115B28DE0023D8FB /* ComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA0208DA115B28DE0023D8FB /* ComposeViewController.xib */; };
 		CA8A33D9115EDC6400D2E693 /* eighthnote.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8A33D1115EDC6400D2E693 /* eighthnote.png */; };
@@ -319,8 +319,6 @@
 		3E287E32116AB7E9001EEB86 /* GameTypeUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameTypeUpdate.m; sourceTree = "<group>"; };
 		3E287E34116AB7F5001EEB86 /* GameTypeUpdateDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameTypeUpdateDelegate.h; sourceTree = "<group>"; };
 		3E287E35116AB7F5001EEB86 /* GameTypeUpdateDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameTypeUpdateDelegate.m; sourceTree = "<group>"; };
-		3E55634C114ED6F70089B12F /* TrainingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingViewController.h; sourceTree = "<group>"; };
-		3E55634D114ED6F70089B12F /* TrainingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingViewController.m; sourceTree = "<group>"; };
 		3E556350114ED77F0089B12F /* CrescendoAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CrescendoAppDelegate.h; sourceTree = "<group>"; };
 		3E556351114ED7800089B12F /* CrescendoAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CrescendoAppDelegate.m; sourceTree = "<group>"; };
 		3E556352114ED7B00089B12F /* GamemodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamemodeViewController.h; sourceTree = "<group>"; };
@@ -335,7 +333,6 @@
 		3E556371114ED9E30089B12F /* GamemodeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GamemodeViewController.xib; sourceTree = "<group>"; };
 		3E556372114ED9E30089B12F /* HelpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelpViewController.xib; sourceTree = "<group>"; };
 		3E556373114ED9E30089B12F /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
-		3E556374114ED9E30089B12F /* TrainingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrainingViewController.xib; sourceTree = "<group>"; };
 		3E5563A1114EDBFC0089B12F /* appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicon.png; sourceTree = "<group>"; };
 		3E5563A5114EDCA60089B12F /* background_horizontal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_horizontal.png; sourceTree = "<group>"; };
 		3E5563A6114EDCA60089B12F /* background_vertical.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_vertical.png; sourceTree = "<group>"; };
@@ -456,6 +453,10 @@
 		3E556589114EE2440089B12F /* AppConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConfig.h; sourceTree = "<group>"; };
 		3E55658A114EE2440089B12F /* AppConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppConfig.m; sourceTree = "<group>"; };
 		3E55658E114EE2790089B12F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		3E8F998A116EB5D800867CA4 /* MenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuView.h; path = ../MenuView.h; sourceTree = "<group>"; };
+		3E8F998B116EB5D800867CA4 /* MenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuView.m; path = ../MenuView.m; sourceTree = "<group>"; };
+		3E8F9995116EB8EC00867CA4 /* BuildView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildView.h; sourceTree = "<group>"; };
+		3E8F9996116EB8EC00867CA4 /* BuildView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildView.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Crescendo-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Crescendo-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		CA0208D7115B28C60023D8FB /* ComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
 		CA0208D8115B28C60023D8FB /* ComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
@@ -666,7 +667,6 @@
 				3E556371114ED9E30089B12F /* GamemodeViewController.xib */,
 				3E556372114ED9E30089B12F /* HelpViewController.xib */,
 				3E556373114ED9E30089B12F /* MainWindow.xib */,
-				3E556374114ED9E30089B12F /* TrainingViewController.xib */,
 				8D1107310486CEB800E47090 /* Crescendo-Info.plist */,
 			);
 			name = Resources;
@@ -885,11 +885,31 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		3E8F9A26116EBF9E00867CA4 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				3E8F998A116EB5D800867CA4 /* MenuView.h */,
+				3E8F998B116EB5D800867CA4 /* MenuView.m */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		3E8F9A28116EBFB200867CA4 /* Build */ = {
+			isa = PBXGroup;
+			children = (
+				3E8F9995116EB8EC00867CA4 /* BuildView.h */,
+				3E8F9996116EB8EC00867CA4 /* BuildView.m */,
+			);
+			name = Build;
+			sourceTree = "<group>";
+		};
 		CA0208D6115B28B30023D8FB /* Compose */ = {
 			isa = PBXGroup;
 			children = (
 				CA0208D7115B28C60023D8FB /* ComposeViewController.h */,
 				CA0208D8115B28C60023D8FB /* ComposeViewController.m */,
+				3E8F9A28116EBFB200867CA4 /* Build */,
+				3E8F9A26116EBF9E00867CA4 /* Menu */,
 			);
 			name = Compose;
 			sourceTree = "<group>";
@@ -1076,7 +1096,6 @@
 				CA0208D6115B28B30023D8FB /* Compose */,
 				CA9D9D6D1159A7C90097EF8A /* Gamemode */,
 				CA9D9D6F1159A7F20097EF8A /* Help */,
-				CA9D9D6E1159A7DD0097EF8A /* Training */,
 			);
 			name = "Crescendo Controllers";
 			sourceTree = "<group>";
@@ -1088,15 +1107,6 @@
 				3E556353114ED7B00089B12F /* GamemodeViewController.m */,
 			);
 			name = Gamemode;
-			sourceTree = "<group>";
-		};
-		CA9D9D6E1159A7DD0097EF8A /* Training */ = {
-			isa = PBXGroup;
-			children = (
-				3E55634C114ED6F70089B12F /* TrainingViewController.h */,
-				3E55634D114ED6F70089B12F /* TrainingViewController.m */,
-			);
-			name = Training;
 			sourceTree = "<group>";
 		};
 		CA9D9D6F1159A7F20097EF8A /* Help */ = {
@@ -1242,7 +1252,6 @@
 				3E556376114ED9E30089B12F /* GamemodeViewController.xib in Resources */,
 				3E556377114ED9E30089B12F /* HelpViewController.xib in Resources */,
 				3E556378114ED9E30089B12F /* MainWindow.xib in Resources */,
-				3E556379114ED9E30089B12F /* TrainingViewController.xib in Resources */,
 				3E5563A2114EDBFC0089B12F /* appicon.png in Resources */,
 				3E5563AA114EDCA60089B12F /* background_horizontal.png in Resources */,
 				3E5563AB114EDCA60089B12F /* background_vertical.png in Resources */,
@@ -1393,7 +1402,6 @@
 				3E556354114ED7B00089B12F /* GamemodeViewController.m in Sources */,
 				3E556357114ED7CA0089B12F /* HelpViewController.m in Sources */,
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
-				3E55634E114ED6F70089B12F /* TrainingViewController.m in Sources */,
 				3E55658B114EE2440089B12F /* AppConfig.m in Sources */,
 				CA0208D9115B28C60023D8FB /* ComposeViewController.m in Sources */,
 				3E1A5B141169A90700D80702 /* ConnectionRequest.m in Sources */,
@@ -1405,6 +1413,8 @@
 				3E287E30116AB7DC001EEB86 /* GameTypeRequest.m in Sources */,
 				3E287E33116AB7E9001EEB86 /* GameTypeUpdate.m in Sources */,
 				3E287E36116AB7F5001EEB86 /* GameTypeUpdateDelegate.m in Sources */,
+				3E8F998C116EB5D800867CA4 /* MenuView.m in Sources */,
+				3E8F9997116EB8EC00867CA4 /* BuildView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
