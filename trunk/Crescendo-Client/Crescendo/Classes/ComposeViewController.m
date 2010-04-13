@@ -70,7 +70,7 @@
 }
 
 - (BOOL) shouldAutorotateToInterfaceOrientation: (UIInterfaceOrientation) interfaceOrientation {
-	return YES;
+	return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (interfaceOrientation == UIInterfaceOrientationLandscapeRight) || (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 #pragma mark ScrollView 
@@ -420,7 +420,7 @@
 	[tempoLabel removeFromSuperview];
 	[barsLabel removeFromSuperview];
 	backButton.hidden = YES;
-	buildLabel.hidden = NO;
+	buildLabel.hidden = YES;
 	
 	float yCoord = 0;
 	
@@ -429,7 +429,7 @@
 	 * Build Button
 	 */
 	buildButton = [UIButton buttonWithType: UIButtonTypeRoundedRect];
-	buildButton.frame = CGRectMake(204, 160, 70, 70);
+	buildButton.frame = CGRectMake(190, 105, 100, 100);
 	//[buildButton setTitle: @"Build" forState: UIControlStateNormal];
 	[buildButton addTarget:self	action:@selector(sendNoteToServer:) forControlEvents:UIControlEventTouchUpInside];
 	[self.view addSubview:buildButton];
