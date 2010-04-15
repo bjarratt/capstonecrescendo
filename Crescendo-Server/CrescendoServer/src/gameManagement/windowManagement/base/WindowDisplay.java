@@ -14,6 +14,11 @@ import java.util.concurrent.locks.ReentrantLock;
 
 import processing.core.PApplet;
 
+/**
+ * It makes the program sparkle.  That's really all you need to know.
+ * @author Zach
+ *
+ */
 public class WindowDisplay extends PApplet 
 {
 	public void nextPanel(Wrapper panel) throws InterruptedException
@@ -80,8 +85,12 @@ public class WindowDisplay extends PApplet
 	@Override
 	public void draw()
 	{
+		fill(0, 15);
+		rect(-1, -1, width + 1, height + 1);
 		if (animateScreen)
 		{
+			fill(255);
+			ellipse(random(width), random(height), 4, 4);
 			Dimension oldsSize = panels.get(1).getSize();
 			Point p = autoCenter(oldsSize);
 			
@@ -106,9 +115,10 @@ public class WindowDisplay extends PApplet
 	
 	private void initSelf()
 	{
-		Dimension size = this.getParent().getSize();
-		size(size.width, size.height, P3D);
-		background(0);
+		Dimension parentSize = this.getParent().getSize();
+		size(parentSize.width, parentSize.height, P3D);
+		noStroke();
+		smooth();
 		frameRate(55);
 	}
 	
