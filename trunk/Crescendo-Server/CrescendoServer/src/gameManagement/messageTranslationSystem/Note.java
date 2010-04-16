@@ -31,6 +31,8 @@ public class Note
 
 	//the image associated with the the note to be played
 	private BufferedImage image;
+	
+	private boolean correct;
 
 	/**
 	 *	A constructor that sets up a Note from String variables
@@ -41,22 +43,20 @@ public class Note
 	 */
 	public Note(String pitch, String length, String player)
 	{
-		if(MessageTranslationEngine.pitches.size()==0 || MessageTranslationEngine.lengths.size()==0)
-			MessageTranslationEngine.initialize();
-		
 		this.pitch = pitch;
 		this.jPitch = MessageTranslationEngine.pitches.get(pitch);
 		this.length = length;
 		this.jLength = MessageTranslationEngine.lengths.get(length);
 		this.player = player;
 		beats = new ArrayList<Beat>();
+		correct = true;
 
 		for(int i = 0; i < this.getIntegerNoteLength(); i++)
 			beats.add(new Beat(this.pitch));
 		
 		try
 		{
-			image = ImageIO.read(new File(this.player + "_" + this.pitch + "_" + this.length + ".png"));
+			image = ImageIO.read(new File(this.length + ".png"));
 		}
 		catch(IOException e)
 		{
@@ -73,9 +73,6 @@ public class Note
 	 */
 	public Note(ArrayList<Beat> beats, String player)
 	{
-		if(MessageTranslationEngine.pitches.size()==0 || MessageTranslationEngine.lengths.size()==0)
-			MessageTranslationEngine.initialize();
-		
 		if(beats.size()>0)
 		{
 			String originalPitch = beats.get(0).getPitch();
@@ -103,9 +100,11 @@ public class Note
 			this.beats = new ArrayList<Beat>();
 		}
 		
+		correct = true;
+		
 		try
 		{
-			image = ImageIO.read(new File(this.player + "_" + this.pitch + "_" + this.length + ".png"));
+			image = ImageIO.read(new File(this.length + ".png"));
 		}
 		catch(IOException e)
 		{
@@ -114,6 +113,26 @@ public class Note
 		}
 	}
 
+	/**
+	 *	Sets if the Note played is correct or not
+	 *
+	 *	@return if the Note played is correct or not
+	 */
+	public void setCorrect(boolean c)
+	{
+		correct = c;
+	}
+	
+	/**
+	 *	Returns if the Note played is correct or not
+	 *
+	 *	@return if the Note played is correct or not
+	 */
+	public boolean isCorrect()
+	{
+		return correct;
+	}
+	
 	/**
 	 *	Returns the iPhone that played the note
 	 *

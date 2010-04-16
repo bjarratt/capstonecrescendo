@@ -13,7 +13,7 @@ public class MessageTranslationEngine
 	/**
 	 *	Initializes both the 'pitches' and the 'lengths' HashMaps used to translate a Note from a message
 	 */
-	public static void initialize()
+	static
 	{
 		//set up the available note pitches
 		pitches.put("E5", "E5");
@@ -56,9 +56,6 @@ public class MessageTranslationEngine
 	 */
 	public static Message translateMessage(String message)
 	{
-		if(pitches.size()==0 || lengths.size()==0)
-			MessageTranslationEngine.initialize();
-
 		String[] messageComponents;
 		String pitch;
 		String length;

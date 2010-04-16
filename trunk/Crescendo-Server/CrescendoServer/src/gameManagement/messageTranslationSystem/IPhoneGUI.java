@@ -6,23 +6,20 @@ import java.util.ArrayList;
 
 import javax.swing.JPanel;
 
-public class DisplayGUI extends JPanel
+public class IPhoneGUI extends JPanel
 {
 	
-	public DisplayGUI()
+	public IPhoneGUI()
 	{
 		super(true);
         this.setPreferredSize(new Dimension(800,600));
 		this.setVisible(true);
 	}
 
-	 public void paintComponent(Graphics graphics)
-	 {
-		 super.paintComponent(graphics);
-	 }
-	
-	public void getNotes(ArrayList<Note> notes)
+	public void paintComponent(Graphics graphics)
 	{
-		
+		super.paintComponent(graphics);
 	}
+	
+	
 }
