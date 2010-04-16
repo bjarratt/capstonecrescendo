@@ -17,7 +17,7 @@ import java.util.*;
  * @author Chris Aikens
  *
  */
-public class lengthTraining {
+public class LengthTraining {
 	
 	private ArrayList<Note> wantedNotes;	//the array of notes the trainer wants
 	private Random rand;
@@ -29,7 +29,7 @@ public class lengthTraining {
 	 * Creates a new lengthTraining instantiation of the given measure length.
 	 * @param wantedMeasures - measures in this training session
 	 */
-	public lengthTraining(int wantedMeasures){
+	public LengthTraining(int wantedMeasures){
 		
 		wantedNotes = new ArrayList<Note>();
 		rand = new Random();

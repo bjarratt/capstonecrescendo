@@ -39,13 +39,14 @@ public class GameManager implements ActionListener
 	private static String timeSignature = "4/4";
 	
 	//gamestate options
-	private boolean exit;
-	private boolean at_play;
-	private boolean at_pause;
 	private boolean at_splash_screen;
 	private boolean at_game_types;
+	private boolean at_game_info;
 	private boolean at_game_options;
+	private boolean at_play;
+	private boolean at_pause;
 	private boolean at_post_game;
+	private boolean exit;
 
 	//game
 	private String gameType;
@@ -104,20 +105,21 @@ public class GameManager implements ActionListener
 
 		currentBeat = 0;
 
-		exit = false;
 		at_splash_screen = true;
 		at_game_types = false;
+		at_game_info = false;
 		at_game_options = false;
 		at_play = false;
 		at_pause = false;
 		at_post_game = false;
+		exit = false;
 		
 		gameType = GameState.NOTE_TRAINING;
 		
 		if(gameType.equals(GameState.LENGTH_TRAINING))
-			gameNotes = new gameManagement.gameModes.lengthTraining(numberOfBars).getNotes();
+			gameNotes = new gameManagement.gameModes.LengthTraining(numberOfBars).getNotes();
 		else if(gameType.equals(GameState.PITCH_TRAINING))
-			gameNotes = new gameManagement.gameModes.pitchTraining(numberOfBars).getNotes();
+			gameNotes = new gameManagement.gameModes.PitchTraining(numberOfBars).getNotes();
 		else if(gameType.equals(GameState.NOTE_TRAINING))
 			gameNotes = new gameManagement.gameModes.NoteTraining(numberOfBars).getNotes();
 		
@@ -190,7 +192,7 @@ public class GameManager implements ActionListener
 			if(at_play)
 			{
 				if(currentBeat%2 == 0)
-					metronomeNotes.add(new Note("C7","i","metronome"));
+					metronomeNotes.add(new Note("CSharp7","eighth","metronome"));
 				this.constructMeasures();
 				this.sendNoteToDisplayGUI();
 				currentBeat++;
@@ -217,7 +219,6 @@ public class GameManager implements ActionListener
 		boolean p2 = false;
 		boolean p3 = false;
 		boolean p4 = false;
-		boolean met = false;
 
 		ArrayList<String> newMessages = new ArrayList<String>();
 
@@ -346,6 +347,9 @@ public class GameManager implements ActionListener
 			}
 			else
 			{
+				//TODO add in other messages from the iPhones
+				
+				
 				if(m.getMessage().split("_")[1].equals("disconnect"))
 					numberOfActivePlayers--;
 				
@@ -368,19 +372,33 @@ public class GameManager implements ActionListener
 					at_game_types = false;
 					at_splash_screen = true;
 				}
+				//message is "player1_gameinfo"  (checking to make sure player 1 has sent the message)
+				if(at_game_types && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.GAME_INFO))
+				{
+					at_game_types = false;
+					at_game_info = true;
+				}
+				
+				//     GAME INFO     //
+				//message is "player1_gametypes"  (checking to make sure player 1 has sent the message)
+				if(at_game_types && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.GAME_TYPES))
+				{
+					at_game_info = false;
+					at_game_types = true;
+				}
 				//message is "player1_gameoptions"  (checking to make sure player 1 has sent the message)
 				if(at_game_types && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.GAME_OPTIONS))
 				{
-					at_game_types = false;
+					at_game_info = false;
 					at_game_options = true;
 				}
 
 				//     GAME OPTIONS     //
-				//message is "player1_gametypes"  (checking to make sure player 1 has sent the message)
-				if(at_game_options && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.GAME_TYPES))
+				//message is "player1_gameinfo"  (checking to make sure player 1 has sent the message)
+				if(at_game_options && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.GAME_INFO))
 				{
 					at_game_options = false;
-					at_game_types = true;
+					at_game_info = true;
 				}
 				//message is "player1_play"  (checking to make sure player 1 has sent the message)
 				if(at_game_options && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.PLAY))
@@ -398,6 +416,7 @@ public class GameManager implements ActionListener
 					at_pause = true;
 					timer.stop();
 				}
+				//TODO Player 1 should not send this message it should just continue to Post Game
 				//message is "player1_postgame"  (checking to make sure player 1 has sent the message)
 				if(at_play && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.POST_GAME))
 				{

@@ -17,7 +17,7 @@ import java.util.Random;
  * @author Chris Aikens
  *
  */
-public class pitchTraining {
+public class PitchTraining {
 	
 	public ArrayList<Note> wantedNotes;	//the array of notes the trainer wants
 	private Random rand;
@@ -26,7 +26,7 @@ public class pitchTraining {
 	 * Creates a new pitchTraining instantiation of the given number of pitches
 	 * @param numberPitches - the number of pitches wanted 
 	 */
-	public pitchTraining(int numberPitches){
+	public PitchTraining(int numberPitches){
 		
 		wantedNotes = new ArrayList<Note>();
 		rand = new Random();
