@@ -9,9 +9,9 @@ import java.util.Random;
  */
 public class Player implements Runnable
 {
-	String player;
-	ConnectionManager myCM;
-	Random rand;
+	private String player;
+	private ConnectionManager myCM;
+	private Random rand;
 
 	/**
 	 *	Constructs a Player from a String id and a ConnectionManager

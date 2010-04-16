@@ -208,6 +208,7 @@ public class GameManager implements ActionListener
 	public void addMessageToPool(String message)
 	{
 		messagePool.add(message);
+		System.out.println(message);
 	}
 
 	/**
