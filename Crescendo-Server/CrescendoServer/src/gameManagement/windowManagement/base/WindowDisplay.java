@@ -74,10 +74,16 @@ public class WindowDisplay extends PApplet
 	{
 		synchronized (Thread.currentThread())
 		{
-			initSelf();
-			initPanels();
-			setupComplete = true;
-			Thread.currentThread().notifyAll();
+			lock.lock();
+			try {
+				initSelf();
+				initPanels();
+				setupComplete = true;
+				Thread.currentThread().notifyAll();
+			}
+			finally {
+				lock.unlock();
+			}
 		}
 	}
 	
