@@ -262,6 +262,93 @@
 	[self dismissModalViewControllerAnimated:YES];
 }
 
+- (void) keySliderValueChanged:(UISlider *)sender {
+	float val = sender.value;
+	if(val <= 12 && val > 11)
+		keyText.text = @"C";
+	else if(val <= 11 && val > 10)
+		keyText.text = @"G";
+	else if(val <= 10 && val > 9)
+		keyText.text = @"D";
+	else if(val <= 9 && val > 8)
+		keyText.text = @"A";
+	else if(val <= 8 && val > 7)
+		keyText.text = @"E";
+	else if(val <= 7 && val > 6)
+		keyText.text = @"B";
+	else if(val <= 6 && val > 5)
+		keyText.text = @"FSharp";
+	else if(val <= 5 && val > 4)
+		keyText.text = @"DFlat";
+	else if(val <= 4 && val > 3)
+		keyText.text = @"AFlat";
+	else if(val <= 3 && val > 2)
+		keyText.text = @"EFlat";
+	else if(val <= 2 && val > 1)
+		keyText.text = @"BFlat";
+	else if(val <= 1 && val >= 0)
+		keyText.text = @"F";
+	}
+
+- (void) tempoSliderValueChanged:(UISlider *)sender {  
+	float val = sender.value;
+	if(val <= 12 && val > 11)
+		tempoText.text = @"20";
+	else if(val <= 11 && val > 10)
+		tempoText.text = @"40";
+	else if(val <= 10 && val > 9)
+		tempoText.text = @"60";
+	else if(val <= 9 && val > 8)
+		tempoText.text = @"80";
+	else if(val <= 8 && val > 7)
+		tempoText.text = @"100";
+	else if(val <= 7 && val > 6)
+		tempoText.text = @"120";
+	else if(val <= 6 && val > 5)
+		tempoText.text = @"140";
+	else if(val <= 5 && val > 4)
+		tempoText.text = @"160";
+	else if(val <= 4 && val > 3)
+		tempoText.text = @"180";
+	else if(val <= 3 && val > 2)
+		tempoText.text = @"200";
+	else if(val <= 2 && val > 1)
+		tempoText.text = @"220";
+	else if(val <= 1 && val >= 0)
+		tempoText.text = @"240";
+
+}  
+
+- (void) timeSliderValueChanged:(UISlider *)sender {  
+	float val = sender.value;
+	if(val <= 3 && val > 2)
+		timeText.text = @"4/4";
+	else if(val <= 2 && val > 1)
+		timeText.text = @"3/4";
+	else if(val <= 1 && val >= 0)
+		timeText.text = @"2/4";    
+}  
+
+- (void) barsSliderValueChanged:(UISlider *)sender {  
+	float val = sender.value;
+	if(val <= 8 && val > 7)
+		barsText.text = @"4";
+	else if(val <= 7 && val > 6)
+		barsText.text = @"5";
+	else if(val <= 6 && val > 5)
+		barsText.text = @"6";
+	else if(val <= 5 && val > 4)
+		barsText.text = @"7";
+	else if(val <= 4 && val > 3)
+		barsText.text = @"8";
+	else if(val <= 3 && val > 2)
+		barsText.text = @"9";
+	else if(val <= 2 && val > 1)
+		barsText.text = @"10";
+	else if(val <= 1 && val >= 0)
+		barsText.text = @"11";  
+}  
+
 - (void) updateBuildLabel {
 	buildLabel.text = [NSString stringWithFormat:@"%@_%@", notePitch, noteLength];
 	// Allows for the buildButton to reflect the currently selected note
@@ -296,100 +383,118 @@
 	backButton.hidden = NO;
 	buildLabel.hidden = YES;
 	
-	
+	/*
+	 * View Backgrounds
+	 */
+	self.view.backgroundColor = [UIColor blackColor];
 	
 	/*
-	 * Sliders
+	 * Player 1 Controls
 	 */
-	if(!keySlider){
-		keySlider = [[UISlider alloc] initWithFrame: CGRectMake(-12, 350, 118, 23)];
-		keySlider.minimumValue = 1;
-		keySlider.maximumValue = 12;
-		keySlider.value = 12;
-		keySlider.continuous = YES;
-		keySlider.transform = CGAffineTransformRotate(keySlider.transform, 270.0/180*M_PI);
+	if (playerId == @"1") {
+		/*
+		 * Sliders
+		 */
+		if(!keySlider){
+			keySlider = [[UISlider alloc] initWithFrame: CGRectMake(-12, 350, 118, 23)];
+			keySlider.minimumValue = 1;
+			keySlider.maximumValue = 12;
+			keySlider.value = 12;
+			keySlider.continuous = YES;
+			keySlider.transform = CGAffineTransformRotate(keySlider.transform, 270.0/180*M_PI);
+			[keySlider addTarget:self action:@selector(keySliderValueChanged:) forControlEvents:UIControlEventValueChanged];
+		}
+		[self.view addSubview:keySlider];
+		
+		if(!timeSlider){
+			timeSlider = [[UISlider alloc] initWithFrame: CGRectMake(63, 350, 118, 23)];
+			timeSlider.minimumValue = 1;
+			timeSlider.maximumValue = 3;
+			timeSlider.value = 3;
+			timeSlider.continuous = YES;
+			//timeSlider.value = 0.0; // Or some other initial value
+			timeSlider.transform = CGAffineTransformRotate(timeSlider.transform, 270.0/180*M_PI);
+			[timeSlider addTarget:self action:@selector(timeSliderValueChanged:) forControlEvents:UIControlEventValueChanged];
+		}
+		[self.view addSubview:timeSlider];
+		
+		if(!tempoSlider){
+			tempoSlider = [[UISlider alloc] initWithFrame: CGRectMake(136, 350, 118, 23)];
+			tempoSlider.minimumValue = 1;
+			tempoSlider.maximumValue = 12;
+			tempoSlider.value = 6.5;
+			tempoSlider.continuous = YES;
+			tempoSlider.transform = CGAffineTransformRotate(tempoSlider.transform, 270.0/180*M_PI);
+			[tempoSlider addTarget:self action:@selector(tempoSliderValueChanged:) forControlEvents:UIControlEventValueChanged];
+		}
+		[self.view addSubview:tempoSlider];
+		
+		if(!barsSlider){
+			barsSlider = [[UISlider alloc] initWithFrame: CGRectMake(209, 350, 118, 23)];
+			barsSlider.minimumValue = 1;
+			barsSlider.maximumValue = 8;
+			barsSlider.value = 8;
+			barsSlider.continuous = YES;
+			barsSlider.transform = CGAffineTransformRotate(barsSlider.transform, 270.0/180*M_PI);
+			[barsSlider addTarget:self action:@selector(barsSliderValueChanged:) forControlEvents:UIControlEventValueChanged];
+		}
+		[self.view addSubview:barsSlider];
+		
+		/*
+		 * Slider Text Fields
+		 */
+		keyText = [[UILabel alloc] initWithFrame:CGRectMake(15, 220, 60, 60)];
+		keyText.text = [NSString stringWithFormat: @"C"];
+		keyText.backgroundColor = [UIColor blackColor];
+		keyText.textColor = [UIColor whiteColor];
+		[self.view addSubview:keyText];
+		
+		timeText = [[UILabel alloc] initWithFrame:CGRectMake(90, 220, 60, 60)];
+		timeText.text = [NSString stringWithFormat: @"4/4"];
+		timeText.backgroundColor = [UIColor blackColor];
+		timeText.textColor = [UIColor whiteColor];
+		[self.view addSubview:timeText];
+		
+		tempoText = [[UILabel alloc] initWithFrame:CGRectMake(165, 220, 60, 60)];
+		tempoText.text = [NSString stringWithFormat: @"120"];
+		tempoText.backgroundColor = [UIColor blackColor];
+		tempoText.textColor = [UIColor whiteColor];
+		[self.view addSubview:tempoText];
+		
+		barsText = [[UILabel alloc] initWithFrame:CGRectMake(240, 220, 60, 60)];
+		barsText.text = [NSString stringWithFormat: @"4"];
+		barsText.backgroundColor = [UIColor blackColor];
+		barsText.textColor = [UIColor whiteColor];
+		[self.view addSubview:barsText];
+		
+		/*
+		 * Slider Labels
+		 */
+		keyLabel = [[UILabel alloc] initWithFrame: CGRectMake(30, 180, 50, 30)];
+		keyLabel.text = [NSString stringWithFormat: @"Key"];
+		keyLabel.backgroundColor = [UIColor blackColor];
+		keyLabel.textColor = [UIColor whiteColor];
+		[self.view addSubview:keyLabel];
+		
+		timeLabel = [[UILabel alloc] initWithFrame: CGRectMake(100, 180, 50, 30)];
+		timeLabel.text = [NSString stringWithFormat: @"Time"];
+		timeLabel.backgroundColor = [UIColor blackColor];
+		timeLabel.textColor = [UIColor whiteColor];
+		[self.view addSubview:timeLabel];
+		
+		tempoLabel = [[UILabel alloc] initWithFrame: CGRectMake(170, 180, 75, 30)];
+		tempoLabel.text = [NSString stringWithFormat: @"Tempo"];
+		tempoLabel.backgroundColor = [UIColor blackColor];
+		tempoLabel.textColor = [UIColor whiteColor];
+		[self.view addSubview:tempoLabel];
+		
+		barsLabel = [[UILabel alloc] initWithFrame: CGRectMake(250, 180, 50, 30)];
+		barsLabel.text = [NSString stringWithFormat: @"Bars"];
+		barsLabel.backgroundColor = [UIColor blackColor];
+		barsLabel.textColor = [UIColor whiteColor];
+		[self.view addSubview:barsLabel];
 	}
-	[self.view addSubview:keySlider];
 	
-	if(!timeSlider){
-		timeSlider = [[UISlider alloc] initWithFrame: CGRectMake(63, 350, 118, 23)];
-		timeSlider.minimumValue = 1;
-		timeSlider.maximumValue = 3;
-		timeSlider.value = 3;
-		timeSlider.continuous = YES;
-		timeSlider.transform = CGAffineTransformRotate(timeSlider.transform, 270.0/180*M_PI);
-	}
-	[self.view addSubview:timeSlider];
-	
-	if(!tempoSlider){
-		tempoSlider = [[UISlider alloc] initWithFrame: CGRectMake(136, 350, 118, 23)];
-		tempoSlider.minimumValue = 1;
-		tempoSlider.maximumValue = 12;
-		tempoSlider.value = 12;
-		tempoSlider.continuous = YES;
-		tempoSlider.transform = CGAffineTransformRotate(tempoSlider.transform, 270.0/180*M_PI);
-	}
-	[self.view addSubview:tempoSlider];
-
-	if(!barsSlider){
-		barsSlider = [[UISlider alloc] initWithFrame: CGRectMake(209, 350, 118, 23)];
-		barsSlider.minimumValue = 1;
-		barsSlider.maximumValue = 8;
-		barsSlider.value = 8;
-		barsSlider.continuous = YES;
-		barsSlider.transform = CGAffineTransformRotate(barsSlider.transform, 270.0/180*M_PI);
-	}
-	[self.view addSubview:barsSlider];
-	
-	/*
-	 * Slider Text Fields
-	 */
-	keyText = [[UITextField alloc] initWithFrame:CGRectMake(15, 220, 60, 60)];
-	keyText.text = [NSString stringWithFormat: @"Key"];
-	keyText.borderStyle = UITextBorderStyleRoundedRect;
-	[self.view addSubview:keyText];
-	
-	timeText = [[UITextField alloc] initWithFrame:CGRectMake(90, 220, 60, 60)];
-	timeText.text = [NSString stringWithFormat: @"Time"];
-	timeText.borderStyle = UITextBorderStyleRoundedRect;
-	[self.view addSubview:timeText];
-	
-	tempoText = [[UITextField alloc] initWithFrame:CGRectMake(165, 220, 60, 60)];
-	tempoText.text = [NSString stringWithFormat: @"Temp"];
-	tempoText.borderStyle = UITextBorderStyleRoundedRect;
-	[self.view addSubview:tempoText];
-	
-	barsText = [[UITextField alloc] initWithFrame:CGRectMake(240, 220, 60, 60)];
-	barsText.text = [NSString stringWithFormat: @"Bars"];
-	barsText.borderStyle = UITextBorderStyleRoundedRect;
-	[self.view addSubview:barsText];
-	
-	/*
-	 * Slider Labels
-	 */
-	keyLabel = [[UILabel alloc] initWithFrame: CGRectMake(30, 180, 50, 30)];
-	keyLabel.text = [NSString stringWithFormat: @"Key"];
-	keyLabel.backgroundColor = [UIColor blackColor];
-	keyLabel.textColor = [UIColor whiteColor];
-	[self.view addSubview:keyLabel];
-	
-	timeLabel = [[UILabel alloc] initWithFrame: CGRectMake(100, 180, 50, 30)];
-	timeLabel.text = [NSString stringWithFormat: @"Time"];
-	timeLabel.backgroundColor = [UIColor blackColor];
-	timeLabel.textColor = [UIColor whiteColor];
-	[self.view addSubview:timeLabel];
-	
-	tempoLabel = [[UILabel alloc] initWithFrame: CGRectMake(170, 180, 75, 30)];
-	tempoLabel.text = [NSString stringWithFormat: @"Tempo"];
-	tempoLabel.backgroundColor = [UIColor blackColor];
-	tempoLabel.textColor = [UIColor whiteColor];
-	[self.view addSubview:tempoLabel];
-	
-	barsLabel = [[UILabel alloc] initWithFrame: CGRectMake(250, 180, 50, 30)];
-	barsLabel.text = [NSString stringWithFormat: @"Bars"];
-	barsLabel.backgroundColor = [UIColor blackColor];
-	barsLabel.textColor = [UIColor whiteColor];
-	[self.view addSubview:barsLabel];
 }
 
 - (void) drawPortraitLandscapeSideView {
@@ -406,7 +511,6 @@
 	 */
 	[myLengthScrollView removeFromSuperview];
 	[myPitchScrollView removeFromSuperview];
-	//[buildButton removeFromSuperview];
 	[keySlider removeFromSuperview];
 	[timeSlider removeFromSuperview];
 	[tempoSlider removeFromSuperview];
@@ -424,6 +528,17 @@
 	
 	float yCoord = 0;
 	
+	/*
+	 * View Backgrounds
+	 */
+	if (playerId == @"1")
+		self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"compose_1_background.png"]];
+	else if (playerId == @"2")
+		self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"compose_1_background.png"]];
+	else if (playerId == @"3")
+		self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"compose_1_background.png"]];
+	else if (playerId == @"4")
+		self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"compose_1_background.png"]];
 
 	/*
 	 * Build Button
@@ -1128,7 +1243,7 @@
 	 * User Interface *
 	 ******************/
 	[self becomeFirstResponder];
-	
+	self.playerId = @"2";
 	[self drawPortraitView];
 }
 

@@ -34,10 +34,10 @@
 	UISlider *tempoSlider;
 	UISlider *barsSlider;
 	
-	UITextField *keyText;
-	UITextField *timeText;
-	UITextField *tempoText;
-	UITextField *barsText;
+	UILabel *keyText;
+	UILabel *timeText;
+	UILabel *tempoText;
+	UILabel *barsText;
 	
 	UILabel *keyLabel;
 	UILabel *timeLabel;
@@ -58,18 +58,18 @@
 @property (nonatomic, retain) NSString *notePitch;
 @property (readwrite, assign) int previousNoteLengthPage;
 @property (readwrite, assign) int previousNotePitchPage;
-@property (readwrite, assign) UISlider *keySlider;
-@property (readwrite, assign) UISlider *timeSlider;
-@property (readwrite, assign) UISlider *tempoSlider;
-@property (readwrite, assign) UISlider *barsSlider;
-@property (readwrite, assign) UITextField *keyText;
-@property (readwrite, assign) UITextField *timeText;
-@property (readwrite, assign) UITextField *tempoText;
-@property (readwrite, assign) UITextField *barsText;
-@property (readwrite, assign) UILabel *keyLabel;
-@property (readwrite, assign) UILabel *timeLabel;
-@property (readwrite, assign) UILabel *tempoLabel;
-@property (readwrite, assign) UILabel *barsLabel;
+@property (nonatomic, retain) UISlider *keySlider;
+@property (nonatomic, retain) UISlider *timeSlider;
+@property (nonatomic, retain) UISlider *tempoSlider;
+@property (nonatomic, retain) UISlider *barsSlider;
+@property (nonatomic, retain) UILabel *keyText;
+@property (nonatomic, retain) UILabel *timeText;
+@property (nonatomic, retain) UILabel *tempoText;
+@property (nonatomic, retain) UILabel *barsText;
+@property (nonatomic, retain) UILabel *keyLabel;
+@property (nonatomic, retain) UILabel *timeLabel;
+@property (nonatomic, retain) UILabel *tempoLabel;
+@property (nonatomic, retain) UILabel *barsLabel;
 
 - (void) scrollViewDidEndDragging: (UIScrollView *) scrollView willDecelerate: (BOOL) decelerate;
 - (void) scrollViewDidEndDecelerating: (UIScrollView *) scrollView;
@@ -77,6 +77,7 @@
 - (void) determineScrollViewPage: (UIScrollView *) scrollView;
 
 - (IBAction) goBack;
+- (void) sliderValueChanged:(id)sender;  
 - (void) updateBuildLabel;
 - (void) sendNoteToServer: (id) sender;
 - (void) drawPortraitView;
