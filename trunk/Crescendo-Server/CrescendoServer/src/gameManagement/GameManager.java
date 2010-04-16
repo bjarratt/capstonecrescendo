@@ -33,7 +33,7 @@ public class GameManager implements ActionListener
 	private Timer timer;
 
 	//game options
-	private static int tempo = 1000;
+	private static int tempo = 500;
 	private static String key = "C";
 	private static int numberOfBars = 8;
 	private static String timeSignature = "4/4";
@@ -115,7 +115,7 @@ public class GameManager implements ActionListener
 		exit = false;
 		
 		gameType = GameState.NOTE_TRAINING;
-		
+//TODO add gameNotes for each different gametype		
 		if(gameType.equals(GameState.LENGTH_TRAINING))
 			gameNotes = new gameManagement.gameModes.LengthTraining(numberOfBars).getNotes();
 		else if(gameType.equals(GameState.PITCH_TRAINING))
@@ -157,8 +157,6 @@ public class GameManager implements ActionListener
 	 */
 	public void run()
 	{
-		timer.start();
-
 	/*	//create a new display window
 		Wrapper display = new Wrapper(new PublicDisplay(2));
 		Wrapper splash = new Wrapper(new Splash_Screen());
@@ -168,6 +166,8 @@ public class GameManager implements ActionListener
 		
 		WindowManager.getInstance().addWindow(keys.GameState.SPLASH_SCREEN, splash);
 		//WindowManager.getInstance().run();*/
+		
+		timer.start();
 	}
 
 	/**
@@ -191,10 +191,10 @@ public class GameManager implements ActionListener
 
 			if(at_play)
 			{
-				if(currentBeat%2 == 0)
-					metronomeNotes.add(new Note("CSharp7","eighth","metronome"));
+				//if(currentBeat%2 == 0)
+				//	metronomeNotes.add(new Note("CSharp7","eighth","metronome"));
 				this.constructMeasures();
-				this.sendNoteToDisplayGUI();
+				this.sendNotesToDisplayGUI();
 				currentBeat++;
 			}
 		}
@@ -260,7 +260,7 @@ public class GameManager implements ActionListener
 		{
 			m = MessageTranslationEngine.translateMessage(message);
 
-			if(m.isNote() && at_play)
+			if(at_play && m.isNote())
 			{
 				Note n = m.getNote();
 
@@ -351,18 +351,25 @@ public class GameManager implements ActionListener
 				
 				
 				if(m.getMessage().split("_")[1].equals("disconnect"))
+				{
 					numberOfActivePlayers--;
+					sendMessageToDisplay(m.getMessage());
+				}
 				
 				//     SPLASH SCREEN     //
 				//message is "playerX_connect"
 				if(at_splash_screen && m.getMessage().split("_")[1].equals("connect"))
+				{
 					numberOfActivePlayers++;
+					sendMessageToDisplay(m.getMessage());
+				}
 				//message is "player1_gametypes"  (checking to make sure player 1 has sent the message)
 				if(at_splash_screen && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.GAME_TYPES))
 				{
 					at_splash_screen = false;
 					at_game_types = true;
 					setActivePlayers();
+					sendMessageToDisplay(m.getMessage());
 				}
 				
 				//     GAME TYPES     //
@@ -371,26 +378,30 @@ public class GameManager implements ActionListener
 				{
 					at_game_types = false;
 					at_splash_screen = true;
+					sendMessageToDisplay(m.getMessage());
 				}
 				//message is "player1_gameinfo"  (checking to make sure player 1 has sent the message)
 				if(at_game_types && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.GAME_INFO))
 				{
 					at_game_types = false;
 					at_game_info = true;
+					sendMessageToDisplay(m.getMessage());
 				}
 				
 				//     GAME INFO     //
 				//message is "player1_gametypes"  (checking to make sure player 1 has sent the message)
-				if(at_game_types && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.GAME_TYPES))
+				if(at_game_info && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.GAME_TYPES))
 				{
 					at_game_info = false;
 					at_game_types = true;
+					sendMessageToDisplay(m.getMessage());
 				}
 				//message is "player1_gameoptions"  (checking to make sure player 1 has sent the message)
-				if(at_game_types && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.GAME_OPTIONS))
+				if(at_game_info && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.GAME_OPTIONS))
 				{
 					at_game_info = false;
 					at_game_options = true;
+					sendMessageToDisplay(m.getMessage());
 				}
 
 				//     GAME OPTIONS     //
@@ -399,6 +410,7 @@ public class GameManager implements ActionListener
 				{
 					at_game_options = false;
 					at_game_info = true;
+					sendMessageToDisplay(m.getMessage());
 				}
 				//message is "player1_play"  (checking to make sure player 1 has sent the message)
 				if(at_game_options && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.PLAY))
@@ -406,6 +418,7 @@ public class GameManager implements ActionListener
 					setGameNotes();
 					at_game_options = false;
 					at_play = true;
+					sendMessageToDisplay(m.getMessage());
 				}
 
 				//     PLAY     //
@@ -414,6 +427,7 @@ public class GameManager implements ActionListener
 				{
 					at_play = false;
 					at_pause = true;
+					sendMessageToDisplay(m.getMessage());
 					timer.stop();
 				}
 				//TODO Player 1 should not send this message it should just continue to Post Game
@@ -422,6 +436,7 @@ public class GameManager implements ActionListener
 				{
 					at_play = false;
 					at_post_game = true;
+					sendMessageToDisplay(m.getMessage());
 				}
 
 				//     PAUSE     //
@@ -430,6 +445,7 @@ public class GameManager implements ActionListener
 				{
 					at_play = true;
 					at_pause = false;
+					sendMessageToDisplay(m.getMessage());
 					timer.start();
 				}
 				
@@ -439,15 +455,16 @@ public class GameManager implements ActionListener
 				{
 					at_post_game = false;
 					at_splash_screen = true;
+					sendMessageToDisplay(m.getMessage());
 				}
 				
 				//message is "playerX_exit"
 				//maybe disconnect all iPhones?
 				if(m.getMessage().split("_")[1].equals(GameState.EXIT))
+				{
 					exit = true;
-
-				//handle messages such as game length, connect, disconnect, etc.
-				sendMessageToDisplayManager(m.getMessage());
+					sendMessageToDisplay(m.getMessage());
+				}
 			}
 		}
 	}
@@ -726,8 +743,9 @@ public class GameManager implements ActionListener
 	 *
 	 *	@param message the message to be sent to the GUI
 	 */
-	private void sendMessageToDisplayManager(String message)
+	private void sendMessageToDisplay(String message)
 	{
+		System.out.println(message);
 		// TODO This method still needs to be somewhere
 		//displayGUI.receiveMessage(message);
 	}
@@ -737,7 +755,7 @@ public class GameManager implements ActionListener
 	 *
 	 *	@param note the Note to be sent to the GUI
 	 */
-	private void sendNoteToDisplayGUI()
+	private void sendNotesToDisplayGUI()
 	{
 		// TODO This method still needs to be somewhere
 		//displayGUI.getNotes(notesToSend, currentBeat);

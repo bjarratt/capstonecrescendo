@@ -60,7 +60,8 @@ public class Note
 		}
 		catch(IOException e)
 		{
-			e.printStackTrace();
+			//TODO ignore for now
+			//e.printStackTrace();
 		}
 	}
 
@@ -108,7 +109,8 @@ public class Note
 		}
 		catch(IOException e)
 		{
-			e.printStackTrace();
+			//TODO ignore for now
+			//e.printStackTrace();
 		}
 	}
 
@@ -338,6 +340,13 @@ public class Note
 	 */
 	public String toString()
 	{
-		return pitch + "_" + length;
+		if(tiedLeft && tiedRight)
+			return "tie_" + pitch + "_" + length + "_tie";
+		else if(tiedLeft)
+			return "tie_" + pitch + "_" + length;
+		else if(tiedRight)
+			return pitch + "_" + length + "_tie";
+		else
+			return pitch + "_" + length;
 	}
 }
