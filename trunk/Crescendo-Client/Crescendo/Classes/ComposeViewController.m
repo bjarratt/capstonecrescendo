@@ -13,10 +13,13 @@
 
 @synthesize client;
 @synthesize playerId;
+@synthesize inGame;
 @synthesize myLengthScrollView;
 @synthesize myPitchScrollView;
 @synthesize buildButton;
 @synthesize buildLabel;
+@synthesize gameLabel;
+@synthesize backgroundImage;
 @synthesize backButton;
 @synthesize lengthImages;
 @synthesize pitchImages;
@@ -37,6 +40,9 @@
 @synthesize timeLabel;
 @synthesize tempoLabel;
 @synthesize barsLabel;
+
+@synthesize pauseButton;
+@synthesize disconnectButton;
 
 #pragma mark Shake
 
@@ -262,6 +268,15 @@
 	[self dismissModalViewControllerAnimated:YES];
 }
 
+- (void) pause {
+		//TODO: Send pause message
+}
+
+- (void) disconnect {
+	//TODO: Send disconnect message
+	//TODO: Return to CrescendoViewController
+}
+
 - (void) keySliderValueChanged:(UISlider *)sender {
 	float val = sender.value;
 	if(val <= 12 && val > 11)
@@ -380,121 +395,29 @@
 	[myLengthScrollView removeFromSuperview];
 	[myPitchScrollView removeFromSuperview];
 	[buildButton removeFromSuperview];
+	[gameLabel removeFromSuperview];
+	[pauseButton removeFromSuperview];
+	[disconnectButton removeFromSuperview];
 	backButton.hidden = NO;
 	buildLabel.hidden = YES;
 	
 	/*
 	 * View Backgrounds
 	 */
-	self.view.backgroundColor = [UIColor blackColor];
+	[self.view addSubview:backgroundImage];
+	[self.view sendSubviewToBack:backgroundImage];
 	
 	/*
-	 * Player 1 Controls
+	 * Game Options Display
 	 */
-	if (playerId == @"1") {
-		/*
-		 * Sliders
-		 */
-		if(!keySlider){
-			keySlider = [[UISlider alloc] initWithFrame: CGRectMake(-12, 350, 118, 23)];
-			keySlider.minimumValue = 1;
-			keySlider.maximumValue = 12;
-			keySlider.value = 12;
-			keySlider.continuous = YES;
-			keySlider.transform = CGAffineTransformRotate(keySlider.transform, 270.0/180*M_PI);
-			[keySlider addTarget:self action:@selector(keySliderValueChanged:) forControlEvents:UIControlEventValueChanged];
-		}
-		[self.view addSubview:keySlider];
-		
-		if(!timeSlider){
-			timeSlider = [[UISlider alloc] initWithFrame: CGRectMake(63, 350, 118, 23)];
-			timeSlider.minimumValue = 1;
-			timeSlider.maximumValue = 3;
-			timeSlider.value = 3;
-			timeSlider.continuous = YES;
-			//timeSlider.value = 0.0; // Or some other initial value
-			timeSlider.transform = CGAffineTransformRotate(timeSlider.transform, 270.0/180*M_PI);
-			[timeSlider addTarget:self action:@selector(timeSliderValueChanged:) forControlEvents:UIControlEventValueChanged];
-		}
-		[self.view addSubview:timeSlider];
-		
-		if(!tempoSlider){
-			tempoSlider = [[UISlider alloc] initWithFrame: CGRectMake(136, 350, 118, 23)];
-			tempoSlider.minimumValue = 1;
-			tempoSlider.maximumValue = 12;
-			tempoSlider.value = 6.5;
-			tempoSlider.continuous = YES;
-			tempoSlider.transform = CGAffineTransformRotate(tempoSlider.transform, 270.0/180*M_PI);
-			[tempoSlider addTarget:self action:@selector(tempoSliderValueChanged:) forControlEvents:UIControlEventValueChanged];
-		}
-		[self.view addSubview:tempoSlider];
-		
-		if(!barsSlider){
-			barsSlider = [[UISlider alloc] initWithFrame: CGRectMake(209, 350, 118, 23)];
-			barsSlider.minimumValue = 1;
-			barsSlider.maximumValue = 8;
-			barsSlider.value = 8;
-			barsSlider.continuous = YES;
-			barsSlider.transform = CGAffineTransformRotate(barsSlider.transform, 270.0/180*M_PI);
-			[barsSlider addTarget:self action:@selector(barsSliderValueChanged:) forControlEvents:UIControlEventValueChanged];
-		}
-		[self.view addSubview:barsSlider];
-		
-		/*
-		 * Slider Text Fields
-		 */
-		keyText = [[UILabel alloc] initWithFrame:CGRectMake(15, 220, 60, 60)];
-		keyText.text = [NSString stringWithFormat: @"C"];
-		keyText.backgroundColor = [UIColor blackColor];
-		keyText.textColor = [UIColor whiteColor];
-		[self.view addSubview:keyText];
-		
-		timeText = [[UILabel alloc] initWithFrame:CGRectMake(90, 220, 60, 60)];
-		timeText.text = [NSString stringWithFormat: @"4/4"];
-		timeText.backgroundColor = [UIColor blackColor];
-		timeText.textColor = [UIColor whiteColor];
-		[self.view addSubview:timeText];
-		
-		tempoText = [[UILabel alloc] initWithFrame:CGRectMake(165, 220, 60, 60)];
-		tempoText.text = [NSString stringWithFormat: @"120"];
-		tempoText.backgroundColor = [UIColor blackColor];
-		tempoText.textColor = [UIColor whiteColor];
-		[self.view addSubview:tempoText];
-		
-		barsText = [[UILabel alloc] initWithFrame:CGRectMake(240, 220, 60, 60)];
-		barsText.text = [NSString stringWithFormat: @"4"];
-		barsText.backgroundColor = [UIColor blackColor];
-		barsText.textColor = [UIColor whiteColor];
-		[self.view addSubview:barsText];
-		
-		/*
-		 * Slider Labels
-		 */
-		keyLabel = [[UILabel alloc] initWithFrame: CGRectMake(30, 180, 50, 30)];
-		keyLabel.text = [NSString stringWithFormat: @"Key"];
-		keyLabel.backgroundColor = [UIColor blackColor];
-		keyLabel.textColor = [UIColor whiteColor];
-		[self.view addSubview:keyLabel];
-		
-		timeLabel = [[UILabel alloc] initWithFrame: CGRectMake(100, 180, 50, 30)];
-		timeLabel.text = [NSString stringWithFormat: @"Time"];
-		timeLabel.backgroundColor = [UIColor blackColor];
-		timeLabel.textColor = [UIColor whiteColor];
-		[self.view addSubview:timeLabel];
-		
-		tempoLabel = [[UILabel alloc] initWithFrame: CGRectMake(170, 180, 75, 30)];
-		tempoLabel.text = [NSString stringWithFormat: @"Tempo"];
-		tempoLabel.backgroundColor = [UIColor blackColor];
-		tempoLabel.textColor = [UIColor whiteColor];
-		[self.view addSubview:tempoLabel];
-		
-		barsLabel = [[UILabel alloc] initWithFrame: CGRectMake(250, 180, 50, 30)];
-		barsLabel.text = [NSString stringWithFormat: @"Bars"];
-		barsLabel.backgroundColor = [UIColor blackColor];
-		barsLabel.textColor = [UIColor whiteColor];
-		[self.view addSubview:barsLabel];
+	if (self.inGame == YES) {
+		[self drawGamePlayOptions];
 	}
-	
+	else {
+		if (playerId == @"1") {
+			[self drawGameOptions];
+		}
+	}	
 }
 
 - (void) drawPortraitLandscapeSideView {
@@ -523,10 +446,22 @@
 	[timeLabel removeFromSuperview];
 	[tempoLabel removeFromSuperview];
 	[barsLabel removeFromSuperview];
+	[gameLabel removeFromSuperview];
+	[pauseButton removeFromSuperview];
+	[disconnectButton removeFromSuperview];
+	[backgroundImage removeFromSuperview];
 	backButton.hidden = YES;
 	buildLabel.hidden = YES;
 	
 	float yCoord = 0;
+	
+	/*
+	 * In Game Variables & Messages
+	 */
+	//TODO: Send game option messages
+	//TODO: Send play message
+	//TODO: Each player receives request that game has begun (therefore game play options appear)
+	self.inGame = YES;	
 	
 	/*
 	 * View Backgrounds
@@ -545,7 +480,6 @@
 	 */
 	buildButton = [UIButton buttonWithType: UIButtonTypeRoundedRect];
 	buildButton.frame = CGRectMake(190, 105, 100, 100);
-	//[buildButton setTitle: @"Build" forState: UIControlStateNormal];
 	[buildButton addTarget:self	action:@selector(sendNoteToServer:) forControlEvents:UIControlEventTouchUpInside];
 	[self.view addSubview:buildButton];
 	
@@ -553,35 +487,34 @@
 	 * Note Pitch Scrollview
 	 */
 	yCoord = 76;
-	myPitchScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(300, 0, 200, 320)];
-    myPitchScrollView.delegate = self;
-	myPitchScrollView.contentSize = CGSizeMake(200, yCoord + 168*15 + yCoord);
-	myPitchScrollView.scrollEnabled = YES;
-	myPitchScrollView.canCancelContentTouches = NO;
-	myPitchScrollView.showsVerticalScrollIndicator = NO;
-	myPitchScrollView.showsHorizontalScrollIndicator = NO;
-	[myPitchScrollView setUserInteractionEnabled:YES];
-	
-	//[self drawWholenotePitches];
-	
+	if (!myPitchScrollView) {
+		myPitchScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(300, 0, 200, 320)];
+		myPitchScrollView.delegate = self;
+		myPitchScrollView.contentSize = CGSizeMake(200, yCoord + 168*15 + yCoord);
+		myPitchScrollView.scrollEnabled = YES;
+		myPitchScrollView.canCancelContentTouches = NO;
+		myPitchScrollView.showsVerticalScrollIndicator = NO;
+		myPitchScrollView.showsHorizontalScrollIndicator = NO;
+		[myPitchScrollView setUserInteractionEnabled:YES];
+	}
 	[self.view addSubview:myPitchScrollView];	
 	
 	/*
 	 * Note Length Scrollview
 	 */
 	yCoord = 76;
-	myLengthScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(20, 0, 200, 320)];
-    myLengthScrollView.delegate = self;
-	myLengthScrollView.contentSize = CGSizeMake(200, yCoord + 168*4 + yCoord);
-	myLengthScrollView.scrollEnabled = YES;
-	myLengthScrollView.canCancelContentTouches = NO;
-	myLengthScrollView.showsVerticalScrollIndicator = NO;
-	myLengthScrollView.showsHorizontalScrollIndicator = NO;
-	[myLengthScrollView setUserInteractionEnabled:YES];
-	
-	[self drawNoteLengths];
-	
+	if(!myLengthScrollView){
+		myLengthScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(20, 0, 200, 320)];
+		myLengthScrollView.delegate = self;
+		myLengthScrollView.contentSize = CGSizeMake(200, yCoord + 168*4 + yCoord);
+		myLengthScrollView.scrollEnabled = YES;
+		myLengthScrollView.canCancelContentTouches = NO;
+		myLengthScrollView.showsVerticalScrollIndicator = NO;
+		myLengthScrollView.showsHorizontalScrollIndicator = NO;
+		[myLengthScrollView setUserInteractionEnabled:YES];
+	}
 	[self.view addSubview:myLengthScrollView];
+	[self drawNoteLengths];
 }
 
 - (void) drawNoteLengths {
@@ -1234,6 +1167,174 @@
 	[self determineScrollViewPage:myPitchScrollView];
 }
 
+- (void) drawGamePlayOptions {
+	/*
+	 * Label
+	 */
+	gameLabel.text = @"game options";
+	[self.view addSubview:gameLabel];
+	
+	/*
+	 * Pause button
+	 */
+	//TODO: Send pause message
+	if (!pauseButton) {
+		pauseButton = [UIButton buttonWithType: UIButtonTypeRoundedRect];
+		pauseButton.frame = CGRectMake(50, 190, 220, 50);
+		[pauseButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+		[pauseButton setTitle: @"pause" forState:UIControlStateNormal];
+		//[pauseButton setTitle: @"pause" forState:UIControlStateHighlighted];
+		//[pauseButton setTitle: @"pause" forState:UIControlStateDisabled];
+		//[pauseButton setTitle: @"pause" forState:UIControlStateSelected];
+		[pauseButton setBackgroundImage:[UIImage imageNamed:@"menu_button_up.png"] forState:UIControlStateNormal];
+		[pauseButton addTarget:self	action:@selector(pause:) forControlEvents:UIControlEventTouchUpInside];
+	}
+	[self.view addSubview:pauseButton];
+	
+	/*
+	 * Disconnect button
+	 */
+	//TODO: Send disconnect button
+	if (!disconnectButton) {
+		disconnectButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+		disconnectButton.frame = CGRectMake(50, 255, 220, 50);
+		[disconnectButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+		[disconnectButton setTitle: @"disconnect" forState:UIControlStateNormal];
+		//[disconnectButton setTitle: @"disconnect" forState:UIControlStateHighlighted];
+		//[disconnectButton setTitle: @"disconnect" forState:UIControlStateDisabled];
+		//[disconnectButton setTitle: @"disconnect" forState:UIControlStateSelected];
+		[disconnectButton setBackgroundImage:[UIImage imageNamed:@"menu_button_up.png"] forState:UIControlStateNormal];
+		[disconnectButton addTarget:self action:@selector(disconnect:) forControlEvents:UIControlEventTouchUpInside];
+	}
+	[self.view addSubview:disconnectButton];
+}
+
+- (void) drawGameOptions {
+	/*
+	 * Label
+	 */
+	gameLabel.text = @"game play options";
+	[self.view addSubview:gameLabel];
+	
+	/*
+	 * Sliders
+	 */
+	if(!keySlider){
+		keySlider = [[UISlider alloc] initWithFrame: CGRectMake(-12, 350, 118, 23)];
+		keySlider.minimumValue = 1;
+		keySlider.maximumValue = 12;
+		keySlider.value = 12;
+		keySlider.continuous = YES;
+		keySlider.transform = CGAffineTransformRotate(keySlider.transform, 270.0/180*M_PI);
+		[keySlider addTarget:self action:@selector(keySliderValueChanged:) forControlEvents:UIControlEventValueChanged];
+	}
+	[self.view addSubview:keySlider];
+	
+	if(!timeSlider){
+		timeSlider = [[UISlider alloc] initWithFrame: CGRectMake(63, 350, 118, 23)];
+		timeSlider.minimumValue = 1;
+		timeSlider.maximumValue = 3;
+		timeSlider.value = 3;
+		timeSlider.continuous = YES;
+		//timeSlider.value = 0.0; // Or some other initial value
+		timeSlider.transform = CGAffineTransformRotate(timeSlider.transform, 270.0/180*M_PI);
+		[timeSlider addTarget:self action:@selector(timeSliderValueChanged:) forControlEvents:UIControlEventValueChanged];
+	}
+	[self.view addSubview:timeSlider];
+	
+	if(!tempoSlider){
+		tempoSlider = [[UISlider alloc] initWithFrame: CGRectMake(136, 350, 118, 23)];
+		tempoSlider.minimumValue = 1;
+		tempoSlider.maximumValue = 12;
+		tempoSlider.value = 6.5;
+		tempoSlider.continuous = YES;
+		tempoSlider.transform = CGAffineTransformRotate(tempoSlider.transform, 270.0/180*M_PI);
+		[tempoSlider addTarget:self action:@selector(tempoSliderValueChanged:) forControlEvents:UIControlEventValueChanged];
+	}
+	[self.view addSubview:tempoSlider];
+	
+	if(!barsSlider){
+		barsSlider = [[UISlider alloc] initWithFrame: CGRectMake(209, 350, 118, 23)];
+		barsSlider.minimumValue = 1;
+		barsSlider.maximumValue = 8;
+		barsSlider.value = 8;
+		barsSlider.continuous = YES;
+		barsSlider.transform = CGAffineTransformRotate(barsSlider.transform, 270.0/180*M_PI);
+		[barsSlider addTarget:self action:@selector(barsSliderValueChanged:) forControlEvents:UIControlEventValueChanged];
+	}
+	[self.view addSubview:barsSlider];
+	
+	/*
+	 * Slider Text Fields
+	 */
+	if(!keyText){
+		keyText = [[UILabel alloc] initWithFrame:CGRectMake(15, 220, 60, 60)];
+		keyText.text = [NSString stringWithFormat: @"C"];
+		keyText.backgroundColor = [UIColor blackColor];
+		keyText.textColor = [UIColor whiteColor];
+	}
+	[self.view addSubview:keyText];
+	
+	if(!timeText){
+		timeText = [[UILabel alloc] initWithFrame:CGRectMake(90, 220, 60, 60)];
+		timeText.text = [NSString stringWithFormat: @"4/4"];
+		timeText.backgroundColor = [UIColor blackColor];
+		timeText.textColor = [UIColor whiteColor];
+	}
+	[self.view addSubview:timeText];
+	
+	if(!tempoText){
+		tempoText = [[UILabel alloc] initWithFrame:CGRectMake(165, 220, 60, 60)];
+		tempoText.text = [NSString stringWithFormat: @"120"];
+		tempoText.backgroundColor = [UIColor blackColor];
+		tempoText.textColor = [UIColor whiteColor];
+	}
+	[self.view addSubview:tempoText];
+	
+	if(!barsText){
+		barsText = [[UILabel alloc] initWithFrame:CGRectMake(240, 220, 60, 60)];
+		barsText.text = [NSString stringWithFormat: @"4"];
+		barsText.backgroundColor = [UIColor blackColor];
+		barsText.textColor = [UIColor whiteColor];
+	}
+	[self.view addSubview:barsText];
+	
+	/*
+	 * Slider Labels
+	 */
+	if(!keyLabel){
+		keyLabel = [[UILabel alloc] initWithFrame: CGRectMake(30, 180, 50, 30)];
+		keyLabel.text = [NSString stringWithFormat: @"Key"];
+		keyLabel.backgroundColor = [UIColor blackColor];
+		keyLabel.textColor = [UIColor whiteColor];
+	}
+	[self.view addSubview:keyLabel];
+	
+	if(!timeLabel){
+		timeLabel = [[UILabel alloc] initWithFrame: CGRectMake(100, 180, 50, 30)];
+		timeLabel.text = [NSString stringWithFormat: @"Time"];
+		timeLabel.backgroundColor = [UIColor blackColor];
+		timeLabel.textColor = [UIColor whiteColor];
+	}
+	[self.view addSubview:timeLabel];
+	
+	if(!tempoLabel){
+		tempoLabel = [[UILabel alloc] initWithFrame: CGRectMake(170, 180, 75, 30)];
+		tempoLabel.text = [NSString stringWithFormat: @"Tempo"];
+		tempoLabel.backgroundColor = [UIColor blackColor];
+		tempoLabel.textColor = [UIColor whiteColor];
+	}
+	[self.view addSubview:tempoLabel];
+	
+	if(!barsLabel){
+		barsLabel = [[UILabel alloc] initWithFrame: CGRectMake(250, 180, 50, 30)];
+		barsLabel.text = [NSString stringWithFormat: @"Bars"];
+		barsLabel.backgroundColor = [UIColor blackColor];
+		barsLabel.textColor = [UIColor whiteColor];
+	}
+	[self.view addSubview:barsLabel];
+}
+
 #pragma mark Initialize View Methods
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -1243,7 +1344,8 @@
 	 * User Interface *
 	 ******************/
 	[self becomeFirstResponder];
-	self.playerId = @"2";
+	self.playerId = @"1";
+	self.inGame = NO;
 	[self drawPortraitView];
 }
 

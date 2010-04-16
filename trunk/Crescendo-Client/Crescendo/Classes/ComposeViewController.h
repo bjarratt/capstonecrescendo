@@ -14,12 +14,16 @@
 @interface ComposeViewController : UIViewController <UIScrollViewDelegate> {
 	XMLClient *client;
 	NSString *playerId;
+	
+	BOOL inGame;
+	
 	UIScrollView *myLengthScrollView;
 	UIScrollView *myPitchScrollView;
 	UIButton *buildButton;
 	IBOutlet UILabel *buildLabel;
 	IBOutlet UIButton *backButton;
-
+	IBOutlet UILabel *gameLabel;
+	IBOutlet UIImageView *backgroundImage;
 	
 	NSArray *lengthImages;
 	NSArray *pitchImages;
@@ -33,25 +37,29 @@
 	UISlider *timeSlider;
 	UISlider *tempoSlider;
 	UISlider *barsSlider;
-	
 	UILabel *keyText;
 	UILabel *timeText;
 	UILabel *tempoText;
 	UILabel *barsText;
-	
 	UILabel *keyLabel;
 	UILabel *timeLabel;
 	UILabel *tempoLabel;
 	UILabel *barsLabel;
+	
+	UIButton *pauseButton;
+	UIButton *disconnectButton;
 }
 
 @property (nonatomic, retain) XMLClient *client;
 @property (nonatomic, retain) NSString *playerId;
+@property (readwrite, assign) BOOL inGame;
 @property (nonatomic, retain) UIScrollView *myLengthScrollView;
 @property (nonatomic, retain) UIScrollView *myPitchScrollView;
 @property (nonatomic, retain) UIButton *buildButton;
 @property (nonatomic, retain) IBOutlet UILabel *buildLabel;
 @property (nonatomic, retain) IBOutlet UIButton *backButton;
+@property (nonatomic, retain) IBOutlet UILabel *gameLabel;
+@property (nonatomic, retain) IBOutlet UIImageView *backgroundImage;
 @property (nonatomic, retain) NSArray *lengthImages;
 @property (nonatomic, retain) NSArray *pitchImages;
 @property (nonatomic, retain) NSString *noteLength;
@@ -70,6 +78,8 @@
 @property (nonatomic, retain) UILabel *timeLabel;
 @property (nonatomic, retain) UILabel *tempoLabel;
 @property (nonatomic, retain) UILabel *barsLabel;
+@property (nonatomic, retain) UIButton *pauseButton;
+@property (nonatomic, retain) UIButton *disconnectButton;
 
 - (void) scrollViewDidEndDragging: (UIScrollView *) scrollView willDecelerate: (BOOL) decelerate;
 - (void) scrollViewDidEndDecelerating: (UIScrollView *) scrollView;
@@ -77,7 +87,12 @@
 - (void) determineScrollViewPage: (UIScrollView *) scrollView;
 
 - (IBAction) goBack;
-- (void) sliderValueChanged:(id)sender;  
+- (void) pause;
+- (void) disconnect;
+- (void) keySliderValueChanged:(id)sender;
+- (void) timeSliderValueChanged:(id)sender;
+- (void) tempoSliderValueChanged:(id)sender;
+- (void) barsSliderValueChanged:(id)sender;  
 - (void) updateBuildLabel;
 - (void) sendNoteToServer: (id) sender;
 - (void) drawPortraitView;
@@ -87,5 +102,7 @@
 - (void) drawHalfnotePitches;
 - (void) drawQuarternotePitches;
 - (void) drawEighthnotePitches;
+- (void) drawGameOptions;
+- (void) drawGamePlayOptions;
 
 @end
