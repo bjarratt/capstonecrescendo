@@ -1,30 +1,36 @@
 package gameManagement.messageTranslationSystem;
 
-
 import java.util.ArrayList;
-import javax.swing.ImageIcon;
-import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 import org.jfugue.*;
 
 public class Note
 {
-	//The basics of a note
-	private String _pitch;
-	private String _length;
-
+	//The basics of a note in string format as read in from the message
+	private String pitch;
+	private String length;
+	
+	//These hold the JFugue Pattern of the pitch and length
+	private String jPitch;
+	private String jLength;
+	
 	//is the note tied to the left or the right
-	private boolean _tiedLeft;
-	private boolean _tiedRight;
+	private boolean tiedLeft;
+	private boolean tiedRight;
 
 	//a representation of the Note as a list of Beats
-	private ArrayList<Beat> _beats;
+	private ArrayList<Beat> beats;
 
 	//the player that sent the note
-	private String _player;
+	private String player;
 
 	//the image associated with the the note to be played
-	private ImageIcon _image;
+	private BufferedImage image;
 
 	/**
 	 *	A constructor that sets up a Note from String variables
@@ -35,16 +41,27 @@ public class Note
 	 */
 	public Note(String pitch, String length, String player)
 	{
-		_pitch = pitch;
-		_length = length;
-		_player = player;
-		_beats = new ArrayList<Beat>();
+		if(MessageTranslationEngine.pitches.size()==0 || MessageTranslationEngine.lengths.size()==0)
+			MessageTranslationEngine.initialize();
+		
+		this.pitch = pitch;
+		this.jPitch = MessageTranslationEngine.pitches.get(pitch);
+		this.length = length;
+		this.jLength = MessageTranslationEngine.lengths.get(length);
+		this.player = player;
+		beats = new ArrayList<Beat>();
 
 		for(int i = 0; i < this.getIntegerNoteLength(); i++)
-			_beats.add(new Beat(_pitch));
-
-		//the format of the image is playerX_Y, for example: player2_4 means player 2 half note
-		_image = new ImageIcon(_player + "_" + getIntegerNoteLength() + ".png");
+			beats.add(new Beat(this.pitch));
+		
+		try
+		{
+			image = ImageIO.read(new File(this.player + "_" + this.pitch + "_" + this.length + ".png"));
+		}
+		catch(IOException e)
+		{
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -55,27 +72,44 @@ public class Note
 	 */
 	public Note(ArrayList<Beat> beats, String player)
 	{
+		if(MessageTranslationEngine.pitches.size()==0 || MessageTranslationEngine.lengths.size()==0)
+			MessageTranslationEngine.initialize();
+		
 		if(beats.size()>0)
 		{
 			String originalPitch = beats.get(0).getPitch();
+			
 			//check to see if all beats have matching pitches
 			for(Beat beat : beats)
 				if(!originalPitch.equals(beat.getPitch()))
 					System.err.println("Error in Note(ArrayList<Beat> beats) " + beat.getPitch() + " does not match original pitch " + originalPitch);
-			_pitch = originalPitch;
-			_length = getStringNoteLength(beats.size());
-			_player = player;
-			_beats = beats;
+			
+			this.pitch = originalPitch;
+			this.jPitch = MessageTranslationEngine.pitches.get(pitch);
+			this.length = getStringNoteLength(beats.size());
+			this.jLength = MessageTranslationEngine.lengths.get(length);
+			this.player = player;
+			this.beats = beats;
 		}
 		else
 		{
 			System.err.println("Error in Note(ArrayList<Beat> beats) : beats.size() <= 0");
-			_pitch = "R";
-			_length = "i";
-			_player = "unknown";
-			_beats = new ArrayList<Beat>();
+			this.pitch = "rest";
+			this.jPitch = MessageTranslationEngine.pitches.get(pitch);
+			this.length = "eighth";
+			this.jLength = MessageTranslationEngine.lengths.get(length);
+			this.player = "unknown";
+			this.beats = new ArrayList<Beat>();
 		}
-		_image = new ImageIcon(_player + "_" + getIntegerNoteLength() + ".png");
+		
+		try
+		{
+			image = ImageIO.read(new File(this.player + "_" + this.pitch + "_" + this.length + ".png"));
+		}
+		catch(IOException e)
+		{
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -85,7 +119,7 @@ public class Note
 	 */
 	public String getPlayer()
 	{
-		return _player;
+		return player;
 	}
 
 	/**
@@ -95,9 +129,8 @@ public class Note
 	 */
 	public ArrayList<Beat> getBeats()
 	{
-		return _beats;
+		return beats;
 	}
-
 
 	/**
 	 *	Returns the length of the Note as an integer
@@ -106,19 +139,17 @@ public class Note
 	 */
 	public int size()
 	{
-		return _beats.size();
+		return beats.size();
 	}
-
 
 	/**
 	 *	Returns the Image to be displayed on the screen associated with this Note
 	 *
 	 *	@return the Image to be displayed on the screen associated with this Note
 	 */
-	public Image getImage()
+	public BufferedImage getImage()
 	{
-		playNote();
-		return _image.getImage();
+		return image;
 	}
 
 	/**
@@ -138,21 +169,21 @@ public class Note
 	 */
 	private int getIntegerNoteLength()
 	{
-		if(_length.equals("i"))
+		if(length.equals("eighth"))
 			return 1;
-		else if(_length.equals("q"))
+		else if(length.equals("quarter"))
 			return 2;
-		else if(_length.equals("q."))
+		else if(length.equals("quarter_dot"))
 			return 3;
-		else if(_length.equals("h"))
+		else if(length.equals("half"))
 			return 4;
-		else if(_length.equals("h-" + _pitch + "-i"))
+		else if(length.equals("half_tie_eighth"))
 			return 5;
-		else if(_length.equals("h."))
+		else if(length.equals("half_dot"))
 			return 6;
-		else if(_length.equals("h.-" + _pitch + "-i"))
+		else if(length.equals("half_dot_tie_eighth"))
 			return 7;
-		else if(_length.equals("w"))
+		else if(length.equals("whole"))
 			return 8;
 		return 0;
 	}
@@ -168,23 +199,23 @@ public class Note
 		switch(length)
 		{
 			case 1:
-				return "i";
+				return "eighth";
 			case 2:
-				return "q";
+				return "quarter";
 			case 3:
-				return "q.";
+				return "quarter_dot";
 			case 4:
-				return "h";
+				return "half";
 			case 5:
-				return "h-" + _pitch + "-i";
+				return "half_tie_eighth";
 			case 6:
-				return "h.";
+				return "half_dot";
 			case 7:
-				return "h.-" + _pitch + "-i";
+				return "half_dot_tie_eighth";
 			case 8:
-				return "w";
+				return "whole";
 			default:
-				return "i";
+				return "eighth";
 		}
 	}
 
@@ -195,7 +226,7 @@ public class Note
 	 */
 	public String getLength()
 	{
-		return _length;
+		return length;
 	}
 
 	/**
@@ -205,7 +236,27 @@ public class Note
 	 */
 	public String getPitch()
 	{
-		return _pitch;
+		return pitch;
+	}
+	
+	/**
+	 *	Returns the JFugue String representing the length of the Note
+	 *
+	 *	@return the JFugue String representing the length of the Note
+	 */
+	public String getJFugueLength()
+	{
+		return jLength;
+	}
+
+	/**
+	 *	Returns the JFugue String representing the pitch of the Note
+	 *
+	 *	@return the JFugue String representing the pitch of the Note
+	 */
+	public String getJFuguePitch()
+	{
+		return jPitch;
 	}
 
 	/**
@@ -215,7 +266,7 @@ public class Note
 	 */
 	public boolean isTiedLeft()
 	{
-		return _tiedLeft;
+		return tiedLeft;
 	}
 
 	/**
@@ -225,7 +276,7 @@ public class Note
 	 */
 	public boolean isTiedRight()
 	{
-		return _tiedRight;
+		return tiedRight;
 	}
 
 	/**
@@ -235,7 +286,7 @@ public class Note
 	 */
 	public void setTiedLeft(boolean tf)
 	{
-		_tiedLeft = tf;
+		tiedLeft = tf;
 	}
 
 	/**
@@ -245,7 +296,7 @@ public class Note
 	 */
 	public void setTiedRight(boolean tf)
 	{
-		_tiedRight = tf;
+		tiedRight = tf;
 	}
 	
 	/**
@@ -269,14 +320,14 @@ public class Note
 	public Pattern getJFuguePattern()
 	{
 		Pattern p;
-		if(_tiedLeft && _tiedRight)
-			p = new Pattern(_pitch + "-" + _length + "- ");
-		else if(_tiedLeft)
-			p = new Pattern(_pitch + "-" + _length);
-		else if(_tiedRight)
-			p = new Pattern(_pitch + _length + "- ");
+		if(tiedLeft && tiedRight)
+			p = new Pattern(jPitch + "-" + jLength + "- ");
+		else if(tiedLeft)
+			p = new Pattern(jPitch + "-" + jLength);
+		else if(tiedRight)
+			p = new Pattern(jPitch + jLength + "- ");
 		else
-			p = new Pattern(_pitch + _length);
+			p = new Pattern(jPitch + jLength);
 		return p;
 	}
 
@@ -287,13 +338,6 @@ public class Note
 	 */
 	public String toString()
 	{
-		if(_tiedLeft && _tiedRight)
-			return _pitch + "-" + _length + "- ";
-		else if(_tiedLeft)
-			return _pitch + "-" + _length;
-		else if(_tiedRight)
-			return _pitch + _length + "- ";
-		else
-			return _pitch + _length;
+		return pitch + "_" + length;
 	}
 }

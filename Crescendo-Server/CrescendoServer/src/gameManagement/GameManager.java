@@ -1,7 +1,9 @@
 package gameManagement;
 
-import gameManagement.messageTranslationSystem.*;
-import gameManagement.messageTranslationSystem.MessageTranslationEngine.Message;
+import gameManagement.messageTranslationSystem.MessageTranslationEngine;
+import gameManagement.messageTranslationSystem.Beat;
+import gameManagement.messageTranslationSystem.Note;
+import gameManagement.messageTranslationSystem.Measure;
 import gameManagement.windowManagement.WindowManager;
 import gameManagement.windowManagement.base.Wrapper;
 import gameManagement.windowManagement.windows.*;
@@ -110,14 +112,14 @@ public class GameManager implements ActionListener
 		at_pause = false;
 		at_post_game = false;
 		
-		gameType = GameState.NOTE_MATCHING;
+		gameType = GameState.NOTE_TRAINING;
 		
-		if(gameType.equals(GameState.NOTE_LENGTHS))
+		if(gameType.equals(GameState.LENGTH_TRAINING))
 			gameNotes = new gameManagement.gameModes.lengthTraining(numberOfBars).getNotes();
-		else if(gameType.equals(GameState.NOTE_PITCHES))
+		else if(gameType.equals(GameState.PITCH_TRAINING))
 			gameNotes = new gameManagement.gameModes.pitchTraining(numberOfBars).getNotes();
-		else if(gameType.equals(GameState.NOTE_MATCHING))
-			gameNotes = new gameManagement.gameModes.matchGM(numberOfBars).getNotes();
+		else if(gameType.equals(GameState.NOTE_TRAINING))
+			gameNotes = new gameManagement.gameModes.NoteTraining(numberOfBars).getNotes();
 		
 		player1Beats = new ArrayList<Beat>();
 		player2Beats = new ArrayList<Beat>();
@@ -155,7 +157,7 @@ public class GameManager implements ActionListener
 	{
 		timer.start();
 
-		//create a new display window
+	/*	//create a new display window
 		Wrapper display = new Wrapper(new PublicDisplay(2));
 		Wrapper splash = new Wrapper(new Splash_Screen());
 		splash.setBackground(Color.BLACK);
@@ -163,7 +165,7 @@ public class GameManager implements ActionListener
 		
 		
 		WindowManager.getInstance().addWindow(keys.GameState.SPLASH_SCREEN, splash);
-		//WindowManager.getInstance().run();
+		//WindowManager.getInstance().run();*/
 	}
 
 	/**
@@ -189,7 +191,6 @@ public class GameManager implements ActionListener
 			{
 				if(currentBeat%2 == 0)
 					metronomeNotes.add(new Note("C7","i","metronome"));
-				this.addRests();
 				this.constructMeasures();
 				this.sendNoteToDisplayGUI();
 				currentBeat++;
@@ -269,7 +270,7 @@ public class GameManager implements ActionListener
 					{
 						if(n.equals(gameNotes.get(player1CurrentNote)))
 						{
-							if(gameType.equals(GameState.NOTE_LENGTHS) || gameType.equals(GameState.NOTE_PITCHES) || gameType.equals(GameState.NOTE_MATCHING))
+							if(gameType.equals(GameState.LENGTH_TRAINING) || gameType.equals(GameState.PITCH_TRAINING) || gameType.equals(GameState.NOTE_TRAINING))
 							{
 								player1Beats.addAll(n.getBeats());
 								player1Notes.add(n);
@@ -289,7 +290,7 @@ public class GameManager implements ActionListener
 					{
 						if(n.equals(gameNotes.get(player2CurrentNote)))
 						{
-							if(gameType.equals(GameState.NOTE_LENGTHS) || gameType.equals(GameState.NOTE_PITCHES) || gameType.equals(GameState.NOTE_MATCHING))
+							if(gameType.equals(GameState.LENGTH_TRAINING) || gameType.equals(GameState.PITCH_TRAINING) || gameType.equals(GameState.NOTE_TRAINING))
 							{
 								player2Beats.addAll(n.getBeats());
 								player2Notes.add(n);
@@ -309,7 +310,7 @@ public class GameManager implements ActionListener
 					{
 						if(n.equals(gameNotes.get(player3CurrentNote)))
 						{
-							if(gameType.equals(GameState.NOTE_LENGTHS) || gameType.equals(GameState.NOTE_PITCHES) || gameType.equals(GameState.NOTE_MATCHING))
+							if(gameType.equals(GameState.LENGTH_TRAINING) || gameType.equals(GameState.PITCH_TRAINING) || gameType.equals(GameState.NOTE_TRAINING))
 							{
 								player3Beats.addAll(n.getBeats());
 								player3Notes.add(n);
@@ -329,7 +330,7 @@ public class GameManager implements ActionListener
 					{
 						if(n.equals(gameNotes.get(player4CurrentNote)))
 						{
-							if(gameType.equals(GameState.NOTE_LENGTHS) || gameType.equals(GameState.NOTE_PITCHES) || gameType.equals(GameState.NOTE_MATCHING))
+							if(gameType.equals(GameState.LENGTH_TRAINING) || gameType.equals(GameState.PITCH_TRAINING) || gameType.equals(GameState.NOTE_TRAINING))
 							{
 								player4Beats.addAll(n.getBeats());
 								player4Notes.add(n);
@@ -432,49 +433,6 @@ public class GameManager implements ActionListener
 		}
 	}
 
-	/**
-	 *	Adds rests for each tick that a player does not play a note.
-	 *	Rests are not sent to the GUI
-	 */
-	private void addRests()
-	{
-		Note n;
-		if(player1Beats.size()<currentBeat)
-		{
-			n = new Note("R","i","player1");
-			player1Beats.addAll(n.getBeats());
-			player1Notes.add(n);
-			player1CurrentNote++;
-		}
-		else if(player2Beats.size()<currentBeat)
-		{
-			n = new Note("R","i","player2");
-			player2Beats.addAll(n.getBeats());
-			player2Notes.add(n);
-			player2CurrentNote++;
-		}
-		else if(player3Beats.size()<currentBeat)
-		{
-			n = new Note("R","i","player3");
-			player3Beats.addAll(n.getBeats());
-			player3Notes.add(n);
-			player3CurrentNote++;
-		}
-		else if(player4Beats.size()<currentBeat)
-		{
-			n = new Note("R","i","player4");
-			player4Beats.addAll(n.getBeats());
-			player4Notes.add(n);
-			player4CurrentNote++;
-		}
-		else if(metronomeBeats.size()<currentBeat)
-		{
-			n = new Note("R","i","metronome");
-			metronomeBeats.addAll(n.getBeats());
-			metronomeNotes.add(n);
-			metronomeCurrentNote++;
-		}
-	}
 
 
 	/**
