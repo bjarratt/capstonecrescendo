@@ -150,6 +150,7 @@
 		3E55664A114EE34E0089B12F /* libecologylabXMLLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E5563E2114EDE1E0089B12F /* libecologylabXMLLib.a */; };
 		3E8F998C116EB5D800867CA4 /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8F998B116EB5D800867CA4 /* MenuView.m */; };
 		3E8F9997116EB8EC00867CA4 /* BuildView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8F9996116EB8EC00867CA4 /* BuildView.m */; };
+		3EC0F384117903E600ABD56E /* compose_1_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EC0F383117903E600ABD56E /* compose_1_background.png */; };
 		CA0208D9115B28C60023D8FB /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0208D8115B28C60023D8FB /* ComposeViewController.m */; };
 		CA0208DB115B28DE0023D8FB /* ComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA0208DA115B28DE0023D8FB /* ComposeViewController.xib */; };
 		CA8A33D9115EDC6400D2E693 /* eighthnote.png in Resources */ = {isa = PBXBuildFile; fileRef = CA8A33D1115EDC6400D2E693 /* eighthnote.png */; };
@@ -457,6 +458,7 @@
 		3E8F998B116EB5D800867CA4 /* MenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuView.m; path = ../MenuView.m; sourceTree = "<group>"; };
 		3E8F9995116EB8EC00867CA4 /* BuildView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildView.h; sourceTree = "<group>"; };
 		3E8F9996116EB8EC00867CA4 /* BuildView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildView.m; sourceTree = "<group>"; };
+		3EC0F383117903E600ABD56E /* compose_1_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = compose_1_background.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Crescendo-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Crescendo-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		CA0208D7115B28C60023D8FB /* ComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
 		CA0208D8115B28C60023D8FB /* ComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
@@ -758,6 +760,7 @@
 		3E5563A4114EDC070089B12F /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				3EC0F383117903E600ABD56E /* compose_1_background.png */,
 				3E5563A5114EDCA60089B12F /* background_horizontal.png */,
 				3E5563A6114EDCA60089B12F /* background_vertical.png */,
 				3E5563A7114EDCA60089B12F /* help_button_up.png */,
@@ -1386,6 +1389,7 @@
 				CA8A34CE115EDCD500D2E693 /* G5_whole_selected.png in Resources */,
 				CA8A34CF115EDCD500D2E693 /* GSharp5_whole.png in Resources */,
 				CA8A34D0115EDCD500D2E693 /* GSharp5_whole_selected.png in Resources */,
+				3EC0F384117903E600ABD56E /* compose_1_background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
