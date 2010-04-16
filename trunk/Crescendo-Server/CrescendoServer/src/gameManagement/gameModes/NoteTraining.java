@@ -15,7 +15,7 @@ import java.util.Random;
  * @author Chris Aikens
  *
  */
-public class matchGM {
+public class NoteTraining {
 
 	private ArrayList<Note> wantedNotes;	//the array of notes the game wants
 	private Random rand;
@@ -23,7 +23,7 @@ public class matchGM {
 	final int maxSubdivisions = 8;		//per measure
 	int currentSubdivisions;
 	
-	public matchGM(int wantedMeasures){
+	public NoteTraining(int wantedMeasures){
 		
 		wantedNotes = new ArrayList<Note>();
 		rand = new Random();

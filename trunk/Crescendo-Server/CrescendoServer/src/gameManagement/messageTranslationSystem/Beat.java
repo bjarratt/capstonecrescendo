@@ -15,7 +15,7 @@ public class Beat
 	 */
 	public Beat()
 	{
-		pitch = "R";
+		pitch = "rest";
 	}
 
 	/**

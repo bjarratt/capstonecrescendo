@@ -3,16 +3,17 @@ package gameManagement.messageTranslationSystem;
 import java.util.HashMap;
 
 import keys.GameState;
+import keys.Players;
 
 public class MessageTranslationEngine
 {
-	private static HashMap<String, String> pitches = new HashMap<String, String>();
-	private static HashMap<String, String> lengths = new HashMap<String, String>();
+	public static HashMap<String, String> pitches = new HashMap<String, String>();
+	public static HashMap<String, String> lengths = new HashMap<String, String>();
 
 	/**
 	 *	Initializes both the 'pitches' and the 'lengths' HashMaps used to translate a Note from a message
 	 */
-	private static void initialize()
+	public static void initialize()
 	{
 		//set up the available note pitches
 		pitches.put("E5", "E5");
@@ -37,10 +38,10 @@ public class MessageTranslationEngine
 		pitches.put("rest", "R");
 
 		//set up the available note lengths
-		lengths.put("eighthnote", "i");
-		lengths.put("quarternote", "q");
-		lengths.put("halfnote", "h");
-		lengths.put("wholenote", "w");
+		lengths.put("eighth", "i");
+		lengths.put("quarter", "q");
+		lengths.put("half", "h");
+		lengths.put("whole", "w");
 	}
 
 	/**
@@ -91,43 +92,7 @@ public class MessageTranslationEngine
 			pitch = messageComponents[1];
 			length = messageComponents[2];
 
-			if(pitches.containsKey(pitch))
-			{
-				pitch = pitches.get(pitch);
-			}
-			else
-			{
-				System.err.println("Incorrect message format in MessageTranslationEngine.receiveMessage(ArrayList<String> messages) of length 3 in [1] : " + messageComponents[1]);
-				pitch = "R";
-			}
-
-			if(lengths.containsKey(length))
-			{
-				length = lengths.get(length);
-			}
-			else
-			{
-				System.err.println("Incorrect message format in MessageTranslationEngine.receiveMessage(ArrayList<String> messages) of length 3 in [2] : " + messageComponents[2]);
-				length = "i";
-			}
-
-			if(messageComponents[0].equals("player1"))
-			{
-				newMessage.setNote(new Note(pitch,length,messageComponents[0]));
-			}
-			else if(messageComponents[0].equals("player2"))
-			{
-				newMessage.setNote(new Note(pitch,length,messageComponents[0]));
-			}
-			else if(messageComponents[0].equals("player3"))
-			{
-				newMessage.setNote(new Note(pitch,length,messageComponents[0]));
-			}
-			else if(messageComponents[0].equals("player4"))
-			{
-				newMessage.setNote(new Note(pitch,length,messageComponents[0]));
-			}
-			else if(messageComponents[0].equals("metronome"))
+			if(pitches.containsKey(pitch) && lengths.containsKey(length) && (messageComponents[0].equals(Players.PLAYER_ONE) || messageComponents[0].equals(Players.PLAYER_TWO) || messageComponents[0].equals(Players.PLAYER_THREE) || messageComponents[0].equals(Players.PLAYER_FOUR)))
 			{
 				newMessage.setNote(new Note(pitch,length,messageComponents[0]));
 			}
@@ -151,35 +116,35 @@ public class MessageTranslationEngine
 	 */
 	public static class Message
 	{
-		private String _message;
-		private Note _note;
+		private String message;
+		private Note note;
 
 		public Message(String message)
 		{
-			_message = new String(message);
-			_note = new Note("R","i","unknown");
+			this.message = new String(message);
+			this.note = new Note("rest","eighth","unknown");
 		}
 
 		public String getMessage()
 		{
-			return _message;
+			return message;
 		}
 
 		protected void setNote(Note note)
 		{
-			_note = note;
+			this.note = note;
 		}
 
 		public boolean isNote()
 		{
-			if(!_note.getPlayer().equals("player1") && !_note.getPlayer().equals("player2") &&!_note.getPlayer().equals("player3") && !_note.getPlayer().equals("player4"))
+			if(!note.getPlayer().equals(Players.PLAYER_ONE) && !note.getPlayer().equals(Players.PLAYER_TWO) &&!note.getPlayer().equals(Players.PLAYER_THREE) && !note.getPlayer().equals(Players.PLAYER_FOUR))
 				return false;
 			return true;
 		}
 
 		public Note getNote()
 		{
-			return _note;
+			return note;
 		}
 	}
 }

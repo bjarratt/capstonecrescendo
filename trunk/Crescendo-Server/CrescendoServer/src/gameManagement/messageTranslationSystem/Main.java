@@ -1,6 +1,5 @@
 package gameManagement.messageTranslationSystem;
 
-
 /**
  *	This class simply starts the GameManager
  *
@@ -8,7 +7,7 @@ package gameManagement.messageTranslationSystem;
  */
 public class Main
 {
-	public static void main(String bikini[]) // throws IOException
+	public static void main(String bikini[])
 	{
 		new gameManagement.messageTranslationSystem.ConnectionManager();
 	}

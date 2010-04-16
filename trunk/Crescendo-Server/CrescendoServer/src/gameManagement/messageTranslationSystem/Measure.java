@@ -2,7 +2,6 @@ package gameManagement.messageTranslationSystem;
 
 
 import java.util.ArrayList;
-
 import org.jfugue.Pattern;
 
 public class Measure
@@ -11,10 +10,10 @@ public class Measure
 	private int beatsPerMeasure;
 	private int currentBeatsInMeasure;
 
-	public Measure(int beats)
+	public Measure(int beatsPerMeasure)
 	{
 		notes = new ArrayList<Note>();
-		beatsPerMeasure = beats;
+		this.beatsPerMeasure = beatsPerMeasure;
 		currentBeatsInMeasure = 0;
 	}
 
