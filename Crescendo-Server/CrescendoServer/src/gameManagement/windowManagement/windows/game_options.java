@@ -1,29 +1,19 @@
+package gameManagement.windowManagement.windows;
+
 import processing.core.*; 
-import processing.xml.*; 
 
-import java.applet.*; 
-import java.awt.Dimension; 
-import java.awt.Frame; 
-import java.awt.event.MouseEvent; 
-import java.awt.event.KeyEvent; 
-import java.awt.event.FocusEvent; 
-import java.awt.Image; 
-import java.io.*; 
-import java.net.*; 
-import java.text.*; 
-import java.util.*; 
-import java.util.zip.*; 
-import java.util.regex.*; 
+public class game_options extends PApplet {
 
-public class pause_screen extends PApplet {
 
+	private static final long serialVersionUID = 1L;
 Cube stage; // external large cube
 int noties = 50;
 Note[]n = new Note[noties];
-char[]type = {'w','h','q'};
 PImage bg;
 PImage logo;
-boolean connection;
+Option o1,o2,o3,o4,o5;
+boolean selection;
+PImage icon1,icon2,icon3,icon4,icon5;
 
 // Controls notie's movement
 float[]x = new float[noties];
@@ -44,7 +34,12 @@ float bounds = 640;
 public void setup() {
   size(800, 600, P3D);
   bg = loadImage("blackground.jpg");
-  logo = loadImage("paused.png");
+  logo = loadImage("gameoptions.png");
+  icon1 = loadImage("player1.png");
+  icon2 = loadImage("player2.png");
+  icon3 = loadImage("player3.png");
+  icon4 = loadImage("player4.png");
+  icon5 = loadImage("player1.png");
 
   for(int i = 0; i < noties; i++)
   {
@@ -53,8 +48,8 @@ public void setup() {
     char notieType = 'q';
     n[i] = new Note(notieSize,notieSize,notieSize,notieSize,notieType);
     
-    x[i] = random(-300, 300);
-    y[i] = random(-300, 300);
+    x[i] = 0;
+    y[i] = 0;
     z[i] = 0;
     
     xSpeed[i] = random(-1, 1);
@@ -67,14 +62,34 @@ public void setup() {
   }
   // Instantiate external large cube
   stage =  new Cube(bounds, bounds, bounds);
+  
+  //instantiate player icons
+  o1 = new Option(1,width/11,width/11,width/12,(height/5+height/2),selection);
+  o1.selectOption();
+  
+  o2 = new Option(2,width/11,width/11,width/4+width/40,(height/5+height/2),selection);
+  o2.selectOption();
+  
+  o3 = new Option(3,width/11,width/11,width/2-width/32,(height/5+height/2),selection);
+  o3.selectOption();
+  
+  o4 = new Option(4,width/11,width/11,width/2+width/7,(height/5+height/2),selection);
+  o4.selectOption();
+  
+  o5 = new Option(5, width/11,width/11,width/2+width/3,(height/5+height/2),selection);
+  o5.selectOption();
 }
 
 public void draw()
 {
-  tint(100);
   image(bg,0,0,width,height);
-  image(logo,width/4,height/4,width/2,height/3);
+  image(logo,width/4,height/12,width/2,height/3);
   lights();
+  o1.display(icon1);
+  o2.display(icon2);
+  o3.display(icon3);
+  o4.display(icon4);
+  o5.display(icon5);
   
   // Center in display window
   translate(width/2, height/2, 0);
@@ -216,8 +231,83 @@ class Note
     rect(x+w/2-w/8,y,w/11,2*h);
   }
 }
+class Option
+{
+  int optionIndex;
+  float xPos;
+  float yPos;
+  float height;
+  float width;
+  boolean selected;
+  PFont font = loadFont("Helvetica-32.vlw");
+  
+  Option(int o, int h, int w, int x, int y, boolean sel)
+  {
+    optionIndex = o;
+    height = h;
+    width = w;
+    xPos = x;
+    yPos = y; 
+    selected = sel;
+  }
+  
+  public void selectOption()
+  {
+    selected = true;
+  }
+  
+  public void unselectOption()
+  {
+    selected = false;
+  }
+  
+  public void display(PImage icon)
+  {
+    //tint the icon depending on player connection
+    if(selected == true){tint(255);}
+    if(selected == false){tint(0,40);}
+    
+    if(optionIndex == 1)
+    {
+      textFont(font);
+      fill(255);
+      text("Key",xPos+xPos/7,yPos-height);
+      image(icon,xPos,yPos,width,height);
+    }
+    if(optionIndex == 2)
+    {
+      textFont(font);
+      fill(255);
+      text("Time",xPos,yPos-height);
+      image(icon,xPos,yPos,width,height);
+    }
+    if(optionIndex == 3)
+    {
+      textFont(font);
+      fill(255);
+      text("Tempo",xPos-xPos/26,yPos-height);
+      image(icon,xPos,yPos,width,height);
+    }
+    if(optionIndex == 4)
+    {
+      textFont(font);
+      fill(255);
+      text("Bars",xPos,yPos-height);
+      image(icon,xPos,yPos,width,height);
+    }
+    if(optionIndex == 5)
+    {
+      textFont(font);
+      fill(255);
+      text("Time Limit",xPos-xPos/22,yPos-height);
+      image(icon,xPos,yPos,width,height);
+    }
+    tint(255);
+  }
+}
+
 
   static public void main(String args[]) {
-    PApplet.main(new String[] { "--present", "--bgcolor=#666666", "--stop-color=#cccccc", "displayManager.messageTranslationSystem.pause_screen" });
+    PApplet.main(new String[] { "--present", "--bgcolor=#666666", "--stop-color=#cccccc", "displayManager.messageTranslationSystem.game_options" });
   }
 }

@@ -14,10 +14,10 @@ import keys.Pitches;
 public class PublicDisplay extends PApplet 
 {
 	private static final int WAIT = 10;
+	private static final int NOTE_CAP = 8;
 	
 	// sync flags
 	private boolean setupComplete = false;
-	private boolean addingNote = false;
 	
 	private int num_of_players = 0;
 	private Staff[] staffs;
@@ -57,8 +57,8 @@ public class PublicDisplay extends PApplet
 		  
 				imgList[0] = loadImage("capsule1.png");
 				imgList[1] = loadImage("capsule2.png");
-				//imgList[2] = loadImage("capsule3.png");
-				//imgList[3] = loadImage("capsule4.png");
+				imgList[2] = loadImage("capsule3.png");
+				imgList[3] = loadImage("capsule4.png");
 				players.add("player1");
 				players.add("player2");
 				players.add("player3");
@@ -71,7 +71,7 @@ public class PublicDisplay extends PApplet
 					cap.setScrollIncrement(cap.width/30);
 					staffs[0] = cap;
 				}
-				if(num_of_players == 2)
+				else if(num_of_players == 2)
 				{
 					cap = new Staff(1,height/3,width-100,50,height/4-height/5);
 					cap2 = new Staff(2,height/3,width-100,50,(2*height/4));
@@ -80,7 +80,7 @@ public class PublicDisplay extends PApplet
 					staffs[0] = cap;
 					staffs[1] = cap2;
 				}
-				if(num_of_players == 3)
+				else if(num_of_players == 3)
 				{
 					cap = new Staff(1,height/4,width-100,50,height/4-height/5);
 					cap2 = new Staff(2,height/4,width-100,50,height/4+height/12);
@@ -92,7 +92,7 @@ public class PublicDisplay extends PApplet
 					staffs[1] = cap2;
 					staffs[2] = cap3;
 				}
-				if(num_of_players == 4)
+				else if(num_of_players == 4)
 				{
 					cap = new Staff(1,height/4,width-100,50,height/50);
 					cap2 = new Staff(2,height/4,width-100,50,height/4+height/60);
@@ -120,11 +120,10 @@ public class PublicDisplay extends PApplet
 		for(int i = 0; i < staffs.length; i++)
 		{
 			staffs[i].display(imgList[i]);
-		}
-		for (DrawNote note : notes)
-		{
-			
-			note.create();
+			for (DrawNote note : notes)
+			{
+				note.create();
+			}
 		}
 	}
 		
@@ -157,18 +156,18 @@ public class PublicDisplay extends PApplet
 		lock.lock();
 		try 
 		{
-			addingNote = true;
-			while (!setupComplete && addingNote)
+			while (!setupComplete)
 			{
 				Thread.sleep(WAIT);
 			}
-
+			
 			if (rawInfo != null)
 			{
 				String[] parsed = rawInfo.trim().split("_");
-				if (parsed.length == 3 && players.indexOf(parsed[0]) != -1)
+				int index = players.indexOf(parsed[0]);
+				if (parsed.length == 3 && index != -1)
 				{
-					int index = players.indexOf(parsed[0]);
+					noLoop();
 					Staff current = staffs[index];
 					current.scrollNotes();
 					float position = 1;
@@ -188,7 +187,7 @@ public class PublicDisplay extends PApplet
 		}
 		finally
 		{
-			addingNote = false;
+			loop();
 			lock.unlock();
 		}
 	}
@@ -210,54 +209,54 @@ public class PublicDisplay extends PApplet
 		    type = t;
 		}
 	  
-	  public void setX(float x)
-	  {
-	    this.x = x;
-	  }
+		public void setX(float x)
+		{
+			this.x = x;
+		}
 	  
-	  public float getX()
-	  {
-	    return this.x;
-	  }
+		public float getX()
+		{
+			return this.x;
+		}
 	  
-	  public void setY(float y)
-	  {
-	    this.y = y;
-	  }
+		public void setY(float y)
+		{
+			this.y = y;
+		}
+		
+		public void setWidth(float w)
+		{
+			this.w = w;
+		}
 	  
-	  public void setWidth(float w)
-	  {
-	    this.w = w;
-	  }
+		public void setHeight(float h)
+		{
+			this.h = h;
+		}
 	  
-	  public void setHeight(float h)
-	  {
-	    this.h = h;
-	  }
-	  
-	    public void create()
-	    {
-	    	if(type == 'q')
-		  {
-	    		drawFilledEllipse();			  
-	    		drawStem();
-		  }
-		  if(type == 'h')
-		  {
-			  drawOpenEllipse();			  
-			  drawStem();
-		  }
-		  if(type == 'w')
-		  {
-			  drawOpenEllipse();
-		  }
-		  if(type == 'i')
-		  {
-			  drawFilledEllipse();
-		      drawStem();
-		      rect(x + (w+8)/2 - (w+5)/10 , y-2*h , w+10, h/4);
-		  }
-	   }
+		public void create()
+		{
+			if(type == 'q')
+			{
+				drawFilledEllipse();			  
+				drawStem();
+			}
+			if(type == 'h')
+			{
+				drawOpenEllipse();			  
+				drawStem();
+			}
+			if(type == 'w')
+			{
+				drawOpenEllipse();
+			}
+			if(type == 'i')
+			{
+				drawFilledEllipse();
+				drawStem();
+				rect(x + (w+8)/2 - (w+5)/10 , y-2*h , w+10, h/4);
+			}
+		}
 	    private void drawFilledEllipse()
 	    {
 	    	fill(0);
@@ -341,16 +340,16 @@ public class PublicDisplay extends PApplet
 			this.deltaX = deltaX;
 		}
 	 
-	 // have the public display call this every time a beat goes by.
-	  public void scrollNotes()
-	  {
-	    int listSize = notes.size();
-	    for (int i = 0; i < listSize; ++i)
-	    {
-	      DrawNote note = notes.get(i);
-	      note.setX((float) (note.getX() - this.deltaX - 0.15*height));
-	    }
-	  }
+		// have the public display call this every time a beat goes by.
+		public void scrollNotes()
+		{
+		    int listSize = notes.size();
+		    for (int i = 0; i < listSize; ++i)
+		    {
+		    	DrawNote note = notes.get(i);
+		    	note.setX((float) (note.getX() - this.deltaX - 0.15*height));
+		    }
+		}
 	  
 	  public void display(PImage icon)
 	  {
@@ -387,7 +386,7 @@ public class PublicDisplay extends PApplet
 	  }
 	}
 	
-	static PublicDisplay display = new PublicDisplay(2);
+	static PublicDisplay display = new PublicDisplay(4);
 	static public void main(String args[]) 
 	{
 		
@@ -399,18 +398,15 @@ public class PublicDisplay extends PApplet
 		display.start();
 		frame.setVisible(true);
 		
-		for (int i = 0; i < 10; ++i)
-		{
 			Thread t1 = new Thread(new Runnable() 
 								   { 
 								       public void run() {
 								    	   for (int i = 0; i < 10; ++i)
 								    	   {
 								    		   try {
-												Thread.sleep(1000);
-												display.playNoteHandler("player1_C6_whole");
+								    			   Thread.sleep(1000);
+												display.playNoteHandler("player2_C6_whole");
 											} catch (InterruptedException e) {
-												// TODO Auto-generated catch block
 												e.printStackTrace();
 											}
 								    		   
@@ -419,23 +415,21 @@ public class PublicDisplay extends PApplet
 								   });
 			
 			Thread t2 = new Thread(new Runnable() 
-			   { 
-			       public void run() {
-			    	   for (int i = 0; i < 10; ++i)
-			    	   {
-			    		   try {
-//								Thread.sleep(1000);
-								display.playNoteHandler("player1_C6_eighth");
-							} catch (InterruptedException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							}
-			    	   }
-			       } 
-			   });
+								   { 
+								       public void run() {
+								    	   for (int i = 0; i < 10; ++i)
+								    	   {
+								    		   try {
+								    			   Thread.sleep(1000);
+													display.playNoteHandler("player1_C6_eighth");
+												} catch (InterruptedException e) {
+													e.printStackTrace();
+												}
+								    	   }
+								       } 
+								   });
 
-			t1.run();
+//			t1.run();
 //			t2.run();
-		}
 	}
 }
