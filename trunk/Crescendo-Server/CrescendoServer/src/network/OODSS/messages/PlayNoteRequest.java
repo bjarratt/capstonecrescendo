@@ -18,6 +18,11 @@ public class PlayNoteRequest extends RequestMessage {
 
 	@xml_attribute private String jfuguePattern = "";  	// This should be a pattern that JFugue recognizes to play a note
 	
+	public PlayNoteRequest(String s)
+	{
+		jfuguePattern = s;
+	}
+	
 	public PlayNoteRequest()
 	{
 		
