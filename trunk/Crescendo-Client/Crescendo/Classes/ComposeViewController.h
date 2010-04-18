@@ -46,6 +46,7 @@
 	UILabel *tempoLabel;
 	UILabel *barsLabel;
 	
+	UIButton *startButton;
 	UIButton *pauseButton;
 	UIButton *disconnectButton;
 }
@@ -78,6 +79,7 @@
 @property (nonatomic, retain) UILabel *timeLabel;
 @property (nonatomic, retain) UILabel *tempoLabel;
 @property (nonatomic, retain) UILabel *barsLabel;
+@property (nonatomic, retain) UIButton *startButton;
 @property (nonatomic, retain) UIButton *pauseButton;
 @property (nonatomic, retain) UIButton *disconnectButton;
 
