@@ -41,6 +41,7 @@
 @synthesize tempoLabel;
 @synthesize barsLabel;
 
+@synthesize startButton;
 @synthesize pauseButton;
 @synthesize disconnectButton;
 
@@ -395,9 +396,6 @@
 	[myLengthScrollView removeFromSuperview];
 	[myPitchScrollView removeFromSuperview];
 	[buildButton removeFromSuperview];
-	[gameLabel removeFromSuperview];
-	[pauseButton removeFromSuperview];
-	[disconnectButton removeFromSuperview];
 	backButton.hidden = NO;
 	buildLabel.hidden = YES;
 	
@@ -434,21 +432,26 @@
 	 */
 	[myLengthScrollView removeFromSuperview];
 	[myPitchScrollView removeFromSuperview];
-	[keySlider removeFromSuperview];
-	[timeSlider removeFromSuperview];
-	[tempoSlider removeFromSuperview];
-	[barsSlider removeFromSuperview];
-	[keyText removeFromSuperview];
-	[timeText removeFromSuperview];
-	[tempoText removeFromSuperview];
-	[barsText removeFromSuperview];
-	[keyLabel removeFromSuperview];
-	[timeLabel removeFromSuperview];
-	[tempoLabel removeFromSuperview];
-	[barsLabel removeFromSuperview];
+	if (self.inGame == YES) {
+		[pauseButton removeFromSuperview];
+		[disconnectButton removeFromSuperview];
+	}
+	else {
+		[startButton removeFromSuperview];
+		[keySlider removeFromSuperview];
+		[timeSlider removeFromSuperview];
+		[tempoSlider removeFromSuperview];
+		[barsSlider removeFromSuperview];
+		[keyText removeFromSuperview];
+		[timeText removeFromSuperview];
+		[tempoText removeFromSuperview];
+		[barsText removeFromSuperview];
+		[keyLabel removeFromSuperview];
+		[timeLabel removeFromSuperview];
+		[tempoLabel removeFromSuperview];
+		[barsLabel removeFromSuperview];
+	}
 	[gameLabel removeFromSuperview];
-	[pauseButton removeFromSuperview];
-	[disconnectButton removeFromSuperview];
 	[backgroundImage removeFromSuperview];
 	backButton.hidden = YES;
 	buildLabel.hidden = YES;
@@ -1178,34 +1181,30 @@
 	 * Pause button
 	 */
 	//TODO: Send pause message
-	if (!pauseButton) {
-		pauseButton = [UIButton buttonWithType: UIButtonTypeRoundedRect];
-		pauseButton.frame = CGRectMake(50, 190, 220, 50);
-		[pauseButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-		[pauseButton setTitle: @"pause" forState:UIControlStateNormal];
-		//[pauseButton setTitle: @"pause" forState:UIControlStateHighlighted];
-		//[pauseButton setTitle: @"pause" forState:UIControlStateDisabled];
-		//[pauseButton setTitle: @"pause" forState:UIControlStateSelected];
-		[pauseButton setBackgroundImage:[UIImage imageNamed:@"menu_button_up.png"] forState:UIControlStateNormal];
-		[pauseButton addTarget:self	action:@selector(pause:) forControlEvents:UIControlEventTouchUpInside];
-	}
+	pauseButton = [UIButton buttonWithType: UIButtonTypeRoundedRect];
+	pauseButton.frame = CGRectMake(50, 190, 220, 50);
+	[pauseButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+	[pauseButton setTitle: @"pause" forState:UIControlStateNormal];
+	//[pauseButton setTitle: @"pause" forState:UIControlStateHighlighted];
+	//[pauseButton setTitle: @"pause" forState:UIControlStateDisabled];
+	//[pauseButton setTitle: @"pause" forState:UIControlStateSelected];
+	[pauseButton setBackgroundImage:[UIImage imageNamed:@"menu_button_up.png"] forState:UIControlStateNormal];
+	[pauseButton addTarget:self	action:@selector(pause:) forControlEvents:UIControlEventTouchUpInside];
 	[self.view addSubview:pauseButton];
 	
 	/*
 	 * Disconnect button
 	 */
 	//TODO: Send disconnect button
-	if (!disconnectButton) {
-		disconnectButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-		disconnectButton.frame = CGRectMake(50, 255, 220, 50);
-		[disconnectButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-		[disconnectButton setTitle: @"disconnect" forState:UIControlStateNormal];
-		//[disconnectButton setTitle: @"disconnect" forState:UIControlStateHighlighted];
-		//[disconnectButton setTitle: @"disconnect" forState:UIControlStateDisabled];
-		//[disconnectButton setTitle: @"disconnect" forState:UIControlStateSelected];
-		[disconnectButton setBackgroundImage:[UIImage imageNamed:@"menu_button_up.png"] forState:UIControlStateNormal];
-		[disconnectButton addTarget:self action:@selector(disconnect:) forControlEvents:UIControlEventTouchUpInside];
-	}
+	disconnectButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+	disconnectButton.frame = CGRectMake(50, 255, 220, 50);
+	[disconnectButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+	[disconnectButton setTitle: @"disconnect" forState:UIControlStateNormal];
+	//[disconnectButton setTitle: @"disconnect" forState:UIControlStateHighlighted];
+	//[disconnectButton setTitle: @"disconnect" forState:UIControlStateDisabled];
+	//[disconnectButton setTitle: @"disconnect" forState:UIControlStateSelected];
+	[disconnectButton setBackgroundImage:[UIImage imageNamed:@"menu_button_up.png"] forState:UIControlStateNormal];
+	[disconnectButton addTarget:self action:@selector(disconnect:) forControlEvents:UIControlEventTouchUpInside];
 	[self.view addSubview:disconnectButton];
 }
 
@@ -1217,10 +1216,24 @@
 	[self.view addSubview:gameLabel];
 	
 	/*
+	 * Start button
+	 */
+	startButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+	startButton.frame = CGRectMake(50, 400, 220, 50);
+	[startButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+	[startButton setTitle: @"start" forState:UIControlStateNormal];
+	//[startButton setTitle: @"disconnect" forState:UIControlStateHighlighted];
+	//[startButton setTitle: @"disconnect" forState:UIControlStateDisabled];
+	//[startButton setTitle: @"disconnect" forState:UIControlStateSelected];
+	[startButton setBackgroundImage:[UIImage imageNamed:@"menu_button_up.png"] forState:UIControlStateNormal];
+	[startButton addTarget:self action:@selector(disconnect:) forControlEvents:UIControlEventTouchUpInside];
+	[self.view addSubview:startButton];
+	
+	/*
 	 * Sliders
 	 */
 	if(!keySlider){
-		keySlider = [[UISlider alloc] initWithFrame: CGRectMake(-12, 350, 118, 23)];
+		keySlider = [[UISlider alloc] initWithFrame: CGRectMake(-12, 300, 118, 23)];
 		keySlider.minimumValue = 1;
 		keySlider.maximumValue = 12;
 		keySlider.value = 12;
@@ -1231,7 +1244,7 @@
 	[self.view addSubview:keySlider];
 	
 	if(!timeSlider){
-		timeSlider = [[UISlider alloc] initWithFrame: CGRectMake(63, 350, 118, 23)];
+		timeSlider = [[UISlider alloc] initWithFrame: CGRectMake(63, 300, 118, 23)];
 		timeSlider.minimumValue = 1;
 		timeSlider.maximumValue = 3;
 		timeSlider.value = 3;
@@ -1243,7 +1256,7 @@
 	[self.view addSubview:timeSlider];
 	
 	if(!tempoSlider){
-		tempoSlider = [[UISlider alloc] initWithFrame: CGRectMake(136, 350, 118, 23)];
+		tempoSlider = [[UISlider alloc] initWithFrame: CGRectMake(136, 300, 118, 23)];
 		tempoSlider.minimumValue = 1;
 		tempoSlider.maximumValue = 12;
 		tempoSlider.value = 6.5;
@@ -1254,7 +1267,7 @@
 	[self.view addSubview:tempoSlider];
 	
 	if(!barsSlider){
-		barsSlider = [[UISlider alloc] initWithFrame: CGRectMake(209, 350, 118, 23)];
+		barsSlider = [[UISlider alloc] initWithFrame: CGRectMake(209, 300, 118, 23)];
 		barsSlider.minimumValue = 1;
 		barsSlider.maximumValue = 8;
 		barsSlider.value = 8;
@@ -1268,33 +1281,33 @@
 	 * Slider Text Fields
 	 */
 	if(!keyText){
-		keyText = [[UILabel alloc] initWithFrame:CGRectMake(15, 220, 60, 60)];
+		keyText = [[UILabel alloc] initWithFrame:CGRectMake(30, 220, 60, 60)];
 		keyText.text = [NSString stringWithFormat: @"C"];
-		keyText.backgroundColor = [UIColor blackColor];
+		keyText.backgroundColor = [UIColor clearColor];
 		keyText.textColor = [UIColor whiteColor];
 	}
 	[self.view addSubview:keyText];
 	
 	if(!timeText){
-		timeText = [[UILabel alloc] initWithFrame:CGRectMake(90, 220, 60, 60)];
+		timeText = [[UILabel alloc] initWithFrame:CGRectMake(100, 220, 60, 60)];
 		timeText.text = [NSString stringWithFormat: @"4/4"];
-		timeText.backgroundColor = [UIColor blackColor];
+		timeText.backgroundColor = [UIColor clearColor];
 		timeText.textColor = [UIColor whiteColor];
 	}
 	[self.view addSubview:timeText];
 	
 	if(!tempoText){
-		tempoText = [[UILabel alloc] initWithFrame:CGRectMake(165, 220, 60, 60)];
+		tempoText = [[UILabel alloc] initWithFrame:CGRectMake(170, 220, 60, 60)];
 		tempoText.text = [NSString stringWithFormat: @"120"];
-		tempoText.backgroundColor = [UIColor blackColor];
+		tempoText.backgroundColor = [UIColor clearColor];
 		tempoText.textColor = [UIColor whiteColor];
 	}
 	[self.view addSubview:tempoText];
 	
 	if(!barsText){
-		barsText = [[UILabel alloc] initWithFrame:CGRectMake(240, 220, 60, 60)];
+		barsText = [[UILabel alloc] initWithFrame:CGRectMake(250, 220, 60, 60)];
 		barsText.text = [NSString stringWithFormat: @"4"];
-		barsText.backgroundColor = [UIColor blackColor];
+		barsText.backgroundColor = [UIColor clearColor];
 		barsText.textColor = [UIColor whiteColor];
 	}
 	[self.view addSubview:barsText];
@@ -1305,7 +1318,7 @@
 	if(!keyLabel){
 		keyLabel = [[UILabel alloc] initWithFrame: CGRectMake(30, 180, 50, 30)];
 		keyLabel.text = [NSString stringWithFormat: @"Key"];
-		keyLabel.backgroundColor = [UIColor blackColor];
+		keyLabel.backgroundColor = [UIColor clearColor];
 		keyLabel.textColor = [UIColor whiteColor];
 	}
 	[self.view addSubview:keyLabel];
@@ -1313,7 +1326,7 @@
 	if(!timeLabel){
 		timeLabel = [[UILabel alloc] initWithFrame: CGRectMake(100, 180, 50, 30)];
 		timeLabel.text = [NSString stringWithFormat: @"Time"];
-		timeLabel.backgroundColor = [UIColor blackColor];
+		timeLabel.backgroundColor = [UIColor clearColor];
 		timeLabel.textColor = [UIColor whiteColor];
 	}
 	[self.view addSubview:timeLabel];
@@ -1321,7 +1334,7 @@
 	if(!tempoLabel){
 		tempoLabel = [[UILabel alloc] initWithFrame: CGRectMake(170, 180, 75, 30)];
 		tempoLabel.text = [NSString stringWithFormat: @"Tempo"];
-		tempoLabel.backgroundColor = [UIColor blackColor];
+		tempoLabel.backgroundColor = [UIColor clearColor];
 		tempoLabel.textColor = [UIColor whiteColor];
 	}
 	[self.view addSubview:tempoLabel];
@@ -1329,7 +1342,7 @@
 	if(!barsLabel){
 		barsLabel = [[UILabel alloc] initWithFrame: CGRectMake(250, 180, 50, 30)];
 		barsLabel.text = [NSString stringWithFormat: @"Bars"];
-		barsLabel.backgroundColor = [UIColor blackColor];
+		barsLabel.backgroundColor = [UIColor clearColor];
 		barsLabel.textColor = [UIColor whiteColor];
 	}
 	[self.view addSubview:barsLabel];
