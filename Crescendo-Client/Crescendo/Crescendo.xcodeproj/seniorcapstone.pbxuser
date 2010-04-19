@@ -215,6 +215,7 @@
 			3E2A587E117BF2E000456B11 /* PBXTextBookmark */ = 3E2A587E117BF2E000456B11 /* PBXTextBookmark */;
 			3E2A587F117BF2E000456B11 /* PBXTextBookmark */ = 3E2A587F117BF2E000456B11 /* PBXTextBookmark */;
 			3E2A5880117BF2F900456B11 /* PBXTextBookmark */ = 3E2A5880117BF2F900456B11 /* PBXTextBookmark */;
+			3E2A5886117BF42C00456B11 /* PBXTextBookmark */ = 3E2A5886117BF42C00456B11 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 3E2A296A117BCCA2001A4136 /* Source Control */;
 		userBuildSettings = {
@@ -319,8 +320,8 @@
 	3E2A2A5B117BD47A001A4136 /* CrescendoViewController.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {960, 2688}}";
-			sepNavSelRange = "{869, 0}";
-			sepNavVisRange = "{0, 1096}";
+			sepNavSelRange = "{1499, 0}";
+			sepNavVisRange = "{931, 1322}";
 			sepNavWindowFrame = "{{-1012, 287}, {952, 887}}";
 		};
 	};
@@ -828,7 +829,7 @@
 		fRef = 3E2A2A5B117BD47A001A4136 /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 116";
 		rLen = 5;
-		rLoc = 4657;
+		rLoc = 4659;
 		rType = 0;
 		vrLen = 658;
 		vrLoc = 2259;
@@ -926,7 +927,7 @@
 		fRef = 3E2A2A5B117BD47A001A4136 /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 156";
 		rLen = 0;
-		rLoc = 4191;
+		rLoc = 4193;
 		rType = 0;
 		vrLen = 1534;
 		vrLoc = 302;
@@ -1256,7 +1257,7 @@
 		fRef = 3E2A2A5B117BD47A001A4136 /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 69";
 		rLen = 0;
-		rLoc = 2229;
+		rLoc = 2231;
 		rType = 0;
 		vrLen = 1488;
 		vrLoc = 848;
@@ -1306,7 +1307,7 @@
 		fRef = 3E2A2A5B117BD47A001A4136 /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 69";
 		rLen = 0;
-		rLoc = 2229;
+		rLoc = 2231;
 		rType = 0;
 		vrLen = 1365;
 		vrLoc = 1960;
@@ -1336,7 +1337,7 @@
 		fRef = 3E2A2A5B117BD47A001A4136 /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 91";
 		rLen = 0;
-		rLoc = 2487;
+		rLoc = 2489;
 		rType = 0;
 		vrLen = 1431;
 		vrLoc = 1241;
@@ -1370,7 +1371,7 @@
 		fRef = 3E2A2A5B117BD47A001A4136 /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 91";
 		rLen = 0;
-		rLoc = 2407;
+		rLoc = 2409;
 		rType = 0;
 		vrLen = 1527;
 		vrLoc = 1241;
@@ -1438,7 +1439,7 @@
 		fRef = 3E2A2A5B117BD47A001A4136 /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 189";
 		rLen = 5;
-		rLoc = 4657;
+		rLoc = 4659;
 		rType = 0;
 		vrLen = 759;
 		vrLoc = 1513;
@@ -1458,7 +1459,7 @@
 		fRef = 3E2A2A5B117BD47A001A4136 /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 133";
 		rLen = 0;
-		rLoc = 3273;
+		rLoc = 3275;
 		rType = 0;
 		vrLen = 780;
 		vrLoc = 2833;
@@ -1472,5 +1473,15 @@
 		rType = 0;
 		vrLen = 1096;
 		vrLoc = 0;
+	};
+	3E2A5886117BF42C00456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A5B117BD47A001A4136 /* CrescendoViewController.m */;
+		name = "CrescendoViewController.m: 62";
+		rLen = 0;
+		rLoc = 1499;
+		rType = 0;
+		vrLen = 1322;
+		vrLoc = 931;
 	};
 }
