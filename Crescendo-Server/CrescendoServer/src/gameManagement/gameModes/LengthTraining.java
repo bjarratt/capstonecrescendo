@@ -4,6 +4,7 @@ package gameManagement.gameModes;
 import gameManagement.messageTranslationSystem.Note;
 import keys.GameState;
 import keys.Lengths;
+import keys.Pitches;
 
 import java.util.*;
 
@@ -25,17 +26,18 @@ public class LengthTraining {
 	private ArrayList<Note> wantedNotes;	//the array of notes the trainer wants
 	private Random rand;
 	
-	final int maxSubdivisions = 8;		//per measure
+	int maxSubdivisions;		//per measure
 	int currentSubdivisions;
 	
 	/**
 	 * Creates a new lengthTraining instantiation of the given measure length.
 	 * @param wantedMeasures - measures in this training session
 	 */
-	public LengthTraining(int wantedMeasures){
+	public LengthTraining(int subdivisions, int wantedMeasures){
 		
 		wantedNotes = new ArrayList<Note>();
 		rand = new Random();
+		maxSubdivisions = subdivisions;
 		currentSubdivisions = 0;
 		randomizeMeasures(wantedMeasures);
 	}
@@ -56,12 +58,12 @@ public class LengthTraining {
 				case 0:		//eighth note
 					test = currentSubdivisions + 1;
 					if(test < maxSubdivisions){				//random note will fit in measure
-						wantedNotes.add(new Note(null, Lengths.EIGHTH, GameState.LENGTH_TRAINING));
+						wantedNotes.add(new Note(Pitches.B5, Lengths.EIGHTH, GameState.LENGTH_TRAINING));
 						currentSubdivisions += 1;
 						break;
 					}
 					else if(test == maxSubdivisions){		//end of measure, advance to next
-						wantedNotes.add(new Note(null, Lengths.EIGHTH, GameState.LENGTH_TRAINING));
+						wantedNotes.add(new Note(Pitches.B5, Lengths.EIGHTH, GameState.LENGTH_TRAINING));
 						currentSubdivisions = 0;
 						i++;
 						break;
@@ -73,13 +75,13 @@ public class LengthTraining {
 				case 1:		//quarter note
 					test = currentSubdivisions + 2;
 					if(test < maxSubdivisions){				//random note will fit in measure
-						wantedNotes.add(new Note(null, Lengths.QUARTER, GameState.LENGTH_TRAINING));
+						wantedNotes.add(new Note(Pitches.B5, Lengths.QUARTER, GameState.LENGTH_TRAINING));
 						currentSubdivisions += 2;
 						break;
 
 					}
 					else if(test == maxSubdivisions){		//end of measure, advance to next
-						wantedNotes.add(new Note(null, Lengths.QUARTER, GameState.LENGTH_TRAINING));
+						wantedNotes.add(new Note(Pitches.B5, Lengths.QUARTER, GameState.LENGTH_TRAINING));
 						currentSubdivisions = 0;
 						i++;
 						break;
@@ -91,13 +93,13 @@ public class LengthTraining {
 				case 2:		//half note
 					test = currentSubdivisions + 4;
 					if(test < maxSubdivisions){				//random note will fit in measure
-						wantedNotes.add(new Note(null, Lengths.HALF, GameState.LENGTH_TRAINING));
+						wantedNotes.add(new Note(Pitches.B5, Lengths.HALF, GameState.LENGTH_TRAINING));
 						currentSubdivisions += 4;
 						break;
 
 					}
 					else if(test == maxSubdivisions){		//end of measure, advance to next
-						wantedNotes.add(new Note(null, Lengths.HALF, GameState.LENGTH_TRAINING));
+						wantedNotes.add(new Note(Pitches.B5, Lengths.HALF, GameState.LENGTH_TRAINING));
 						currentSubdivisions = 0;
 						i++;
 						break;
@@ -109,13 +111,13 @@ public class LengthTraining {
 				case 3:		//whole note
 					test = currentSubdivisions + 8;
 					if(test < maxSubdivisions){				//random note will fit in measure
-						wantedNotes.add(new Note(null, Lengths.WHOLE, GameState.LENGTH_TRAINING));
+						wantedNotes.add(new Note(Pitches.B5, Lengths.WHOLE, GameState.LENGTH_TRAINING));
 						currentSubdivisions += 8;
 						break;
 
 					}
 					else if(test == maxSubdivisions){		//end of measure, advance to next
-						wantedNotes.add(new Note(null, Lengths.WHOLE, GameState.LENGTH_TRAINING));
+						wantedNotes.add(new Note(Pitches.B5, Lengths.WHOLE, GameState.LENGTH_TRAINING));
 						currentSubdivisions = 0;
 						i++;
 						break;
@@ -131,27 +133,9 @@ public class LengthTraining {
 		}
 	}
 	
-	/**Check that the input length is equal to the length of the
-	 * note at the given index. Maintain the index externally.
-	 * @param input - the length from the player
-	 * @param index - the position within wantedNotes
-	 * @return
-	 */
-	public boolean compare(String input, int index){
-		if(input == wantedNotes.get(index).getLength()){
-			//correct note
-			return true;
-		}
-		else{
-			//incorrect note
-			return false;
-		}
-	}
-	
 	public ArrayList<Note> getNotes(){
 		return this.wantedNotes;
 	}
 		
-	
 }
 
