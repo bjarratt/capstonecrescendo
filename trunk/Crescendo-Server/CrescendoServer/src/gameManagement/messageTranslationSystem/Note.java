@@ -22,7 +22,7 @@ public class Note
 	//is the note tied to the left or the right
 	private boolean tiedLeft;
 	private boolean tiedRight;
-
+	
 	//a representation of the Note as a list of Beats
 	private ArrayList<Beat> beats;
 
@@ -296,6 +296,16 @@ public class Note
 	 *	@return true if the Note is tied to another Note from the right
 	 */
 	public boolean isTiedRight()
+	{
+		return tiedRight;
+	}
+
+	/**
+	 *	Returns true if the Note is tied to another Note from the right (same as isTiedRight())
+	 *
+	 *	@return true if the Note is tied to another Note from the right (same as isTiedRight())
+	 */
+	public boolean isTied()
 	{
 		return tiedRight;
 	}
