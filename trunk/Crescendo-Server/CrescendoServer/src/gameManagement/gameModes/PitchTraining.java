@@ -1,6 +1,7 @@
 package gameManagement.gameModes;
 
 import gameManagement.messageTranslationSystem.Note;
+import keys.GameState;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -46,75 +47,75 @@ public class PitchTraining {
 			switch(rand.nextInt(19))
 			{
 				case 0:		//D5
-					wantedNotes.add(new Note("D5", null, "pitchTraining"));
+					wantedNotes.add(new Note("D5", null, GameState.PITCH_TRAINING));
 					i++;
 					break;
 				case 1:		//DSharp5
-					wantedNotes.add(new Note("DSharp5", null, "pitchTraining"));
+					wantedNotes.add(new Note("DSharp5", null, GameState.PITCH_TRAINING));
 					i++;
 					break;
 				case 2:		//E5
-					wantedNotes.add(new Note("E5", null, "pitchTraining"));
+					wantedNotes.add(new Note("E5", null, GameState.PITCH_TRAINING));
 					i++;
 					break;
 				case 3:		//ESharp5
-					wantedNotes.add(new Note("ESharp5", null, "pitchTraining"));
+					wantedNotes.add(new Note("ESharp5", null, GameState.PITCH_TRAINING));
 					i++;
 					break;
 				case 4:		//F5
-					wantedNotes.add(new Note("F5", null, "pitchTraining"));
+					wantedNotes.add(new Note("F5", null, GameState.PITCH_TRAINING));
 					i++;
 					break;
 				case 5:		//FSharp5
-					wantedNotes.add(new Note("FSharp5", null, "pitchTraining"));
+					wantedNotes.add(new Note("FSharp5", null, GameState.PITCH_TRAINING));
 					i++;
 					break;
 				case 6:		//G5
-					wantedNotes.add(new Note("G5", null, "pitchTraining"));
+					wantedNotes.add(new Note("G5", null, GameState.PITCH_TRAINING));
 					i++;
 					break;
 				case 7:		//GSharp5
-					wantedNotes.add(new Note("GSharp5", null, "pitchTraining"));
+					wantedNotes.add(new Note("GSharp5", null, GameState.PITCH_TRAINING));
 					i++;
 					break;
 				case 8:		//A5
-					wantedNotes.add(new Note("A5", null, "pitchTraining"));
+					wantedNotes.add(new Note("A5", null, GameState.PITCH_TRAINING));
 					i++;
 					break;
 				case 9:		//ASharp5
-					wantedNotes.add(new Note("ASharp5", null, "pitchTraining"));
+					wantedNotes.add(new Note("ASharp5", null, GameState.PITCH_TRAINING));
 					i++;
 					break;
 				case 10:	//B5
-					wantedNotes.add(new Note("B5", null, "pitchTraining"));
+					wantedNotes.add(new Note("B5", null, GameState.PITCH_TRAINING));
 					i++;
 					break;
 				case 11:	//C6
-					wantedNotes.add(new Note("C6", null, "pitchTraining"));
+					wantedNotes.add(new Note("C6", null, GameState.PITCH_TRAINING));
 					i++;
 					break;
 				case 12:	//CSharp6
-					wantedNotes.add(new Note("CSharp6", null, "pitchTraining"));
+					wantedNotes.add(new Note("CSharp6", null, GameState.PITCH_TRAINING));
 					i++;
 					break;
 				case 13:	//D6
-					wantedNotes.add(new Note("D6", null, "pitchTraining"));
+					wantedNotes.add(new Note("D6", null, GameState.PITCH_TRAINING));
 					i++;
 					break;
 				case 14:	//DSharp6
-					wantedNotes.add(new Note("DSharp6", null, "pitchTraining"));
+					wantedNotes.add(new Note("DSharp6", null, GameState.PITCH_TRAINING));
 					i++;
 					break;
 				case 15:	//E6
-					wantedNotes.add(new Note("E6", null, "pitchTraining"));
+					wantedNotes.add(new Note("E6", null, GameState.PITCH_TRAINING));
 					i++;
 					break;
 				case 16:	//ESharp6
-					wantedNotes.add(new Note("ESharp6", null, "pitchTraining"));
+					wantedNotes.add(new Note("ESharp6", null, GameState.PITCH_TRAINING));
 					i++;
 					break;
 				case 17:	//F6
-					wantedNotes.add(new Note("F6", null, "pitchTraining"));
+					wantedNotes.add(new Note("F6", null, GameState.PITCH_TRAINING));
 					i++;
 					break;
 				case 18:

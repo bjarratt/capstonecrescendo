@@ -46,69 +46,80 @@ public class MessageTranslationEngine
 
 	/**
 	 * Translates a message from String and either sends a Message or constructs a note
-	 * Possible message formats 	:	playerX_connect
-	 *								:	playerX_disconnect
-	 *								:	playerX_pitch_length
-	 *
-	 * Other messages for state management are in development
-	 *
 	 * @param message a message received within the last timer duration
 	 */
 	public static Message translateMessage(String message)
 	{
 		String[] messageComponents;
-		String pitch;
-		String length;
-
+		String one;
+		String two;
+		
 		messageComponents = message.split("_");
 
 		Message newMessage = new Message(message);
 
 		if(messageComponents.length == 2)
 		{
+			one = messageComponents[1];
+			
 			//I don't think these are absolutely necessary... maybe to check for bad messages?
-			if(	messageComponents[1].equals(GameState.CONNECT) ||
-				messageComponents[1].equals(GameState.DISCONNECT) ||
-				messageComponents[1].equals(GameState.SPLASH_SCREEN) ||
-				messageComponents[1].equals(GameState.GAME_MODES) ||
-				messageComponents[1].equals(GameState.GAME_INFO) ||
-				messageComponents[1].equals(GameState.GAME_OPTIONS) ||
-				messageComponents[1].equals(GameState.PLAY) ||
-				messageComponents[1].equals(GameState.PAUSE) ||
-				messageComponents[1].equals(GameState.LENGTH_TRAINING) ||
-				messageComponents[1].equals(GameState.PITCH_TRAINING) ||
-				messageComponents[1].equals(GameState.NOTE_TRAINING) ||
-				messageComponents[1].equals(GameState.CONCERT_MASTER) ||
-				messageComponents[1].equals(GameState.MUSICAL_IPHONES) ||
-				messageComponents[1].equals(GameState.NOTES_AROUND_THE_ROOM) ||
-				messageComponents[1].equals(GameState.COMP_TIME) ||
-				messageComponents[1].equals(GameState.SET_TEMPO) ||
-				messageComponents[1].equals(GameState.SET_KEY) ||
-				messageComponents[1].equals(GameState.SET_TIME_SIGNATURE) ||
-				messageComponents[1].equals(GameState.SET_NUMBER_OF_BARS) ||
-				messageComponents[1].equals(GameState.POST_GAME) ||
-				messageComponents[1].equals(GameState.REVIEW) ||
-				messageComponents[1].equals(GameState.EXIT))
+			if(	one.equals(GameState.CONNECT) ||
+				one.equals(GameState.DISCONNECT) ||
+				one.equals(GameState.SPLASH_SCREEN) ||
+				one.equals(GameState.GAME_MODES) ||
+				one.equals(GameState.GAME_INFO) ||
+				one.equals(GameState.GAME_OPTIONS) ||
+				one.equals(GameState.PLAY) ||
+				one.equals(GameState.PAUSE) ||
+				one.equals(GameState.LENGTH_TRAINING) ||
+				one.equals(GameState.PITCH_TRAINING) ||
+				one.equals(GameState.NOTE_TRAINING) ||
+				one.equals(GameState.CONCERT_MASTER) ||
+				one.equals(GameState.MUSICAL_IPHONES) ||
+				one.equals(GameState.NOTES_AROUND_THE_ROOM) ||
+				one.equals(GameState.COMP_TIME) ||
+				one.equals(GameState.POST_GAME) ||
+				one.equals(GameState.REVIEW) ||
+				one.equals(GameState.EXIT))
 			{
 				//all good!  :)
 			}
 			else
 			{
-				System.err.println("Incorrect message format in MessageTranslationEngine.receiveMessage(ArrayList<String> messages) of length 2 : " + messageComponents[0] + " " + messageComponents[1]);
+				System.err.println("Incorrect message format in MessageTranslationEngine.receiveMessage(ArrayList<String> messages) of length 2 : " + message);
 			}
 		}
 		else if(messageComponents.length == 3)
 		{
-			pitch = messageComponents[1];
-			length = messageComponents[2];
-
-			if(pitches.containsKey(pitch) && lengths.containsKey(length) && (messageComponents[0].equals(Players.PLAYER_ONE) || messageComponents[0].equals(Players.PLAYER_TWO) || messageComponents[0].equals(Players.PLAYER_THREE) || messageComponents[0].equals(Players.PLAYER_FOUR)))
+			one = messageComponents[1];
+			two = messageComponents[2];
+			
+			if(	one.equals(GameState.SET_TEMPO) ||
+				one.equals(GameState.SET_KEY) ||
+				one.equals(GameState.SET_NUMBER_OF_BARS))
 			{
-				newMessage.setNote(new Note(pitch,length,messageComponents[0]));
+				//all good! :)
+			}
+			else if(pitches.containsKey(one) && lengths.containsKey(two) && (messageComponents[0].equals(Players.PLAYER_ONE) || messageComponents[0].equals(Players.PLAYER_TWO) || messageComponents[0].equals(Players.PLAYER_THREE) || messageComponents[0].equals(Players.PLAYER_FOUR)))
+			{
+				newMessage.setNote(new Note(one,two,messageComponents[0]));
 			}
 			else
 			{
-				System.err.println("Incorrect message format in MessageTranslationEngine.receiveMessage(ArrayList<String> messages) of length 3 in [0] : " + messageComponents[0]);
+				System.err.println("Incorrect message format in MessageTranslationEngine.receiveMessage(ArrayList<String> messages) of length 3 : " + message);
+			}
+		}
+		else if(messageComponents.length == 4)
+		{
+			one = messageComponents[1];
+			
+			if(one.equals(GameState.SET_TIME_SIGNATURE))
+			{
+				//all good :)
+			}
+			else
+			{
+				System.err.println("Incorrect message format in MessageTranslationEngine.receiveMessage(ArrayList<String> messages) of length 4 : " + message);
 			}
 		}
 		else
