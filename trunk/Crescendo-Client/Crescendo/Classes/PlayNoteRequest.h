@@ -11,6 +11,8 @@
 
 @interface PlayNoteRequest : RequestMessage
 {
+	/* playerId_notePitch_noteLength
+	 */
 	NSString *jfuguePattern;
 }
 
