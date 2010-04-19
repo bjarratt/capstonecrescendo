@@ -159,7 +159,7 @@ public class GameManager implements ActionListener
 	{
 	/*	//create a new display window
 		Wrapper display = new Wrapper(new PublicDisplay(2));
-		Wrapper splash = new Wrapper(new Splash_Screen());
+		Wrapper splash = new Wrapper(new SplashScreen());
 		splash.setBackground(Color.BLACK);
 		splash.setSize(800, 600);
 		

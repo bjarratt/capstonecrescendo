@@ -11,43 +11,25 @@ import java.util.HashMap;
  * @author Chris Aikens
  *
  */
-public class keySignatures {
+public class Scales 
+{
+	private ArrayList<String> keyC = new ArrayList<String>();
+	private ArrayList<String> keyG = new ArrayList<String>();
+	private ArrayList<String> keyD = new ArrayList<String>();
+	private ArrayList<String> keyA = new ArrayList<String>();
+	private ArrayList<String> keyE = new ArrayList<String>();
+	private ArrayList<String> keyB = new ArrayList<String>();
+	private ArrayList<String> keyGFlat = new ArrayList<String>();
+	private ArrayList<String> keyDFlat = new ArrayList<String>();
+	private ArrayList<String> keyAFlat = new ArrayList<String>();
+	private ArrayList<String> keyEFlat = new ArrayList<String>();
+	private ArrayList<String> keyBFlat = new ArrayList<String>();
+	private ArrayList<String> keyF = new ArrayList<String>();
 	
-
-	ArrayList<String> keyC;
-	ArrayList<String> keyG;
-	ArrayList<String> keyD;
-	ArrayList<String> keyA;
-	ArrayList<String> keyE;
-	ArrayList<String> keyB;
-	ArrayList<String> keyGFlat;
-	ArrayList<String> keyDFlat;
-	ArrayList<String> keyAFlat;
-	ArrayList<String> keyEFlat;
-	ArrayList<String> keyBFlat;
-	ArrayList<String> keyF;
+	private HashMap<String, ArrayList<String>> allKeys = new HashMap<String, ArrayList<String>>();
 	
-	HashMap<String, ArrayList<String>> allKeys;
-	
-	keySignatures(){
-		
-		keyC = new ArrayList<String>();
-		keyG = new ArrayList<String>();
-		keyD = new ArrayList<String>();
-		keyA = new ArrayList<String>();
-		keyE = new ArrayList<String>();
-		keyB = new ArrayList<String>();
-		keyGFlat = new ArrayList<String>();
-		keyDFlat = new ArrayList<String>();
-		keyAFlat = new ArrayList<String>();
-		keyEFlat = new ArrayList<String>();
-		keyBFlat = new ArrayList<String>();
-		keyF = new ArrayList<String>();
-		
-		
-		allKeys = new HashMap<String, ArrayList<String>>();
-		
-		
+	public Scales()
+	{
 		//Key of C
 		String[] pitches = new String[]{"E5", "F5", "G5", "A5", "B5", "C6", "D6", "E6", "F6"};
 		for(String p : pitches)
@@ -130,12 +112,12 @@ public class keySignatures {
 	 * @param wantedKey - the wanted key
 	 * @return - the pitches that are in that key signature
 	 */
-	ArrayList<String> getNotes(String wantedKey){
-		if(allKeys.containsKey(wantedKey)){
+	public ArrayList<String> getNotes(String wantedKey)
+	{
+		if(allKeys.containsKey(wantedKey))
+		{
 			return allKeys.get(wantedKey);
 		}
 		return null;
-			
 	}
-	
 }
