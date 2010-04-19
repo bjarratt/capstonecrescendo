@@ -89,8 +89,9 @@
 - (void) determineScrollViewPage: (UIScrollView *) scrollView;
 
 - (IBAction) goBack;
-- (void) pause;
-- (void) disconnect;
+- (IBAction) start;
+- (IBAction) pause;
+- (IBAction) disconnect;
 - (void) keySliderValueChanged:(id)sender;
 - (void) timeSliderValueChanged:(id)sender;
 - (void) tempoSliderValueChanged:(id)sender;

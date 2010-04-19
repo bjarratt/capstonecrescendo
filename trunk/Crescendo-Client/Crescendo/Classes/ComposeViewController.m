@@ -269,11 +269,15 @@
 	[self dismissModalViewControllerAnimated:YES];
 }
 
-- (void) pause {
+- (IBAction) start:(UIButton *)sender {
+	
+}
+
+- (IBAction) pause:(UIButton *)sender {
 		//TODO: Send pause message
 }
 
-- (void) disconnect {
+- (IBAction) disconnect:(UIButton *)sender {
 	//TODO: Send disconnect message
 	//TODO: Return to CrescendoViewController
 }
@@ -470,13 +474,13 @@
 	 * View Backgrounds
 	 */
 	if (playerId == @"1")
-		self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"compose_1_background.png"]];
+		self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"compose_background_red.png"]];
 	else if (playerId == @"2")
-		self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"compose_1_background.png"]];
+		self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"compose_background_blue.png"]];
 	else if (playerId == @"3")
-		self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"compose_1_background.png"]];
+		self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"compose_background_green.png"]];
 	else if (playerId == @"4")
-		self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"compose_1_background.png"]];
+		self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"compose_background_orange.png"]];
 
 	/*
 	 * Build Button
