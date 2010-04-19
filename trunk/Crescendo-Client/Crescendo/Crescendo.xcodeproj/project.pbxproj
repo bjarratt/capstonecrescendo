@@ -32,8 +32,6 @@
 		3E2A2B00117BD536001A4136 /* BooleanType.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E2A2A8F117BD536001A4136 /* BooleanType.h */; };
 		3E2A2B01117BD536001A4136 /* BooleanType.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2A2A90117BD536001A4136 /* BooleanType.m */; };
 		3E2A2B02117BD536001A4136 /* bsConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E2A2A91117BD536001A4136 /* bsConstants.h */; };
-		3E2A2B03117BD536001A4136 /* BuildView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E2A2A92117BD536001A4136 /* BuildView.h */; };
-		3E2A2B04117BD536001A4136 /* BuildView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2A2A93117BD536001A4136 /* BuildView.m */; };
 		3E2A2B05117BD536001A4136 /* Channel.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E2A2A94117BD536001A4136 /* Channel.h */; };
 		3E2A2B06117BD536001A4136 /* Channel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2A2A95117BD536001A4136 /* Channel.m */; };
 		3E2A2B07117BD536001A4136 /* ClassDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E2A2A96117BD536001A4136 /* ClassDescriptor.h */; };
@@ -292,7 +290,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 3E2A2A89117BD515001A4136 /* ecologylabXMLLib */;
+			remoteGlobalIDString = 3E2A2A89117BD515001A4136;
 			remoteInfo = ecologylabXMLLib;
 		};
 /* End PBXContainerItemProxy section */
@@ -341,8 +339,6 @@
 		3E2A2A8F117BD536001A4136 /* BooleanType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BooleanType.h; path = Classes/EcologyLabXMLLib/BooleanType.h; sourceTree = "<group>"; };
 		3E2A2A90117BD536001A4136 /* BooleanType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BooleanType.m; path = Classes/EcologyLabXMLLib/BooleanType.m; sourceTree = "<group>"; };
 		3E2A2A91117BD536001A4136 /* bsConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bsConstants.h; path = Classes/EcologyLabXMLLib/bsConstants.h; sourceTree = "<group>"; };
-		3E2A2A92117BD536001A4136 /* BuildView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BuildView.h; path = Classes/EcologyLabXMLLib/BuildView.h; sourceTree = "<group>"; };
-		3E2A2A93117BD536001A4136 /* BuildView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BuildView.m; path = Classes/EcologyLabXMLLib/BuildView.m; sourceTree = "<group>"; };
 		3E2A2A94117BD536001A4136 /* Channel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Channel.h; path = Classes/EcologyLabXMLLib/Channel.h; sourceTree = "<group>"; };
 		3E2A2A95117BD536001A4136 /* Channel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Channel.m; path = Classes/EcologyLabXMLLib/Channel.m; sourceTree = "<group>"; };
 		3E2A2A96117BD536001A4136 /* ClassDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClassDescriptor.h; path = Classes/EcologyLabXMLLib/ClassDescriptor.h; sourceTree = "<group>"; };
@@ -747,8 +743,6 @@
 				3E2A2A8F117BD536001A4136 /* BooleanType.h */,
 				3E2A2A90117BD536001A4136 /* BooleanType.m */,
 				3E2A2A91117BD536001A4136 /* bsConstants.h */,
-				3E2A2A92117BD536001A4136 /* BuildView.h */,
-				3E2A2A93117BD536001A4136 /* BuildView.m */,
 				3E2A2A94117BD536001A4136 /* Channel.h */,
 				3E2A2A95117BD536001A4136 /* Channel.m */,
 				3E2A2A96117BD536001A4136 /* ClassDescriptor.h */,
@@ -1117,7 +1111,6 @@
 				3E2A2AFE117BD536001A4136 /* BItem.h in Headers */,
 				3E2A2B00117BD536001A4136 /* BooleanType.h in Headers */,
 				3E2A2B02117BD536001A4136 /* bsConstants.h in Headers */,
-				3E2A2B03117BD536001A4136 /* BuildView.h in Headers */,
 				3E2A2B05117BD536001A4136 /* Channel.h in Headers */,
 				3E2A2B07117BD536001A4136 /* ClassDescriptor.h in Headers */,
 				3E2A2B09117BD536001A4136 /* ClassType.h in Headers */,
@@ -1418,7 +1411,6 @@
 			files = (
 				3E2A2AFF117BD536001A4136 /* BItem.m in Sources */,
 				3E2A2B01117BD536001A4136 /* BooleanType.m in Sources */,
-				3E2A2B04117BD536001A4136 /* BuildView.m in Sources */,
 				3E2A2B06117BD536001A4136 /* Channel.m in Sources */,
 				3E2A2B08117BD536001A4136 /* ClassDescriptor.m in Sources */,
 				3E2A2B0A117BD536001A4136 /* ClassType.m in Sources */,
