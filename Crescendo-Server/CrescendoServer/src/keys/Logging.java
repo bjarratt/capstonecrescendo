@@ -1,7 +1,7 @@
 package keys;
 
 /**
- * Keys for system properties needed for log entries written to disk
+ * KeySignatures for system properties needed for log entries written to disk
  * @author Zach
  *
  */

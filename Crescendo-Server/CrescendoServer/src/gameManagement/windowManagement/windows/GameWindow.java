@@ -5,16 +5,18 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import keys.KeySignatures;
 import keys.Pitches;
 
 import processing.core.PApplet;
+import processing.core.PFont;
 import processing.core.PImage;
 
 public class GameWindow extends PApplet 
 {
 	/**
 	 * Sets the number of players for the game
-	 * @param count
+	 * @param count - the number of players for a game
 	 */
 	public void setPlayerCount(int count)
 	{
@@ -29,6 +31,36 @@ public class GameWindow extends PApplet
 		loop();
 	}
 	
+	/**
+	 * Set the key signature for the game
+	 * @param key - <code>String</code> indicating where to place accidentals
+	 */
+	public void setKeySignature(String key)
+	{
+		if (key != null)
+		{
+			keySignature = key;
+		}
+	}
+	
+	/**
+	 * Okay, so if you set beatsPerMeasure to 2 and subdivision to 4, then you'll be in 2/4 time.  K?
+	 * @param beatsPerMeasure - Many beats in a bar
+	 * @param subdivision - what note gets the beat (e.g. whole note, half, quarter, etc...)
+	 */
+	public void setTimeSignature(int beatsPerMeasure, int subdivision)
+	{
+		// Don't tell the user this is hard-coded.  They'll be heart broken.  >:-D
+		subdivision = 4;
+		if (beatsPerMeasure < 2 || beatsPerMeasure > 4)
+		{
+			beatsPerMeasure = 4;
+		}
+		
+		this.beatsPerMeasure = beatsPerMeasure;
+		this.subdivision = subdivision;
+	}
+	
 	@Override
 	public void setup()
 	{
@@ -37,6 +69,8 @@ public class GameWindow extends PApplet
 		smooth();
 		background = loadImage("blackground.jpg");
 		clef = loadImage("Treble_clef.png");
+		flat = loadImage("flat.png");
+		sharp = loadImage("sharp.png");
 		
 		initPlayerBackgrounds();
 		initStaffPositions();
@@ -75,33 +109,16 @@ public class GameWindow extends PApplet
 	{
 		List<String> allNotes = Pitches.getAllNotes();
 		
-		float place = 0.5f;
+		float position = 0.5f;
 		for (int i = 0; i < allNotes.size(); ++i)
 		{
-			if (i % 2 == 0)
+			if (i % 3 == 0)
 			{
-				place += 0.5f;
+				position += 0.5f;
 			}
-			staffPositions.put(allNotes.get(i), place);
+			
+			staffPositions.put(allNotes.get(i), position);
 		}
-//		staffPositions.put(allNotes.get(0), 1f);
-//		staffPositions.put(allNotes.get(1), 1f);
-//		staffPositions.put(allNotes.get(2), 1.5f);
-//		staffPositions.put(allNotes.get(3), 1.5f);
-//		staffPositions.put(allNotes.get(4), 2f);
-//		staffPositions.put(allNotes.get(5), 2f);
-//		staffPositions.put(allNotes.get(6), 2.5f);
-//		staffPositions.put(allNotes.get(7), 2.5f);
-//		staffPositions.put(allNotes.get(8), 3f);
-//		staffPositions.put(allNotes.get(9), 3f);
-//		staffPositions.put(allNotes.get(10), 3.5f);
-//		staffPositions.put(allNotes.get(11), 3.5f);
-//		staffPositions.put(allNotes.get(12), 4f);
-//		staffPositions.put(allNotes.get(13), 4f);
-//		staffPositions.put(allNotes.get(14), 4.5f);
-//		staffPositions.put(allNotes.get(15), 4.5f);
-//		staffPositions.put(allNotes.get(16), 5f);
-		System.out.println(place);
 	}
 
 	// Draws the staff for the given player
@@ -124,7 +141,10 @@ public class GameWindow extends PApplet
 	    
 	    // draw staff lines
 	    drawStaffLines(x, y, width, height);
-	    drawClef(x, y, width, height);
+	    // draw clef, key, and time
+	    nextX = drawClef(x, y, width, height);
+	    nextX = drawKeySignature(keySignature, nextX, y, width, height);
+	    nextX = drawTimeSignature(nextX, y, width, height);
 	}
 	
 	private void roundRect(float x, float y, float w, float h)
@@ -159,9 +179,82 @@ public class GameWindow extends PApplet
 	    }
 	}
 	
-	private void drawClef(float x, float y, float width, float height)
+	// Returns the x-coordinate following the clef.  This is to know where to start drawing key signature
+	private float drawClef(float x, float y, float width, float height)
 	{
 		image(clef, x + width*0.1f, y + height*0.07f, height*0.40f, height*0.85f);
+		return x + width*0.1f + height*0.40f;
+	}
+	
+	private float drawKeySignature(String key, float x, float y, float width, float height)
+	{
+		float nextX = x;
+		List<String> accidentals = KeySignatures.getKeySignature(key);
+		if (accidentals != null)
+		{
+			for (int i = 0; i < accidentals.size(); ++i)
+			{
+				String accidental = accidentals.get(i);
+				if (staffPositions.containsKey(accidental))
+				{
+					PImage im = getAccidentalImage(accidental);
+					image(im, nextX, y + getAccidentalYCoord(im, accidental, y, height), height*0.05f, height*0.2f);
+					nextX += height*0.05f;
+				}
+			}
+		}
+		return nextX;
+	}
+	
+	private float drawTimeSignature(float x, float y, float width, float height)
+	{
+		float nextX = x;
+		
+		Integer bpm = new Integer(beatsPerMeasure);
+		Integer sub = new Integer(subdivision);
+		
+		helvetica = createFont("Helvetica", 0.35f*height, true);
+		textFont(helvetica);
+		
+		text(bpm.toString(), x + 0.02f*width, y + height*0.45f);
+		text(sub.toString(), x + 0.02f*width, y + height*0.70f);
+		
+		return nextX + Math.max(textWidth(bpm.toString()), textWidth(sub.toString()));
+	}
+	
+	private float getAccidentalYCoord(PImage image, String accidental, float y, float staffHeight)
+	{
+		float value = 0f;
+		if (image != null && accidental != null && staffPositions.containsKey(accidental))
+		{
+			Float position = staffPositions.get(accidental);
+			if (image.equals(sharp))
+			{
+				value = staffHeight*(position*5 - 0.7f)/40;
+			}
+			else if (image.equals(flat))
+			{
+				value = staffHeight*(position*5 - 2.5f)/40;
+			}
+		}
+		return value;
+	}
+	
+	private PImage getAccidentalImage(String note)
+	{
+		PImage image = null;
+		if (note != null)
+		{
+			if (note.trim().toLowerCase().contains("flat"))
+			{
+				image = flat;
+			}
+			else if (note.trim().toLowerCase().contains("sharp"))
+			{
+				image = sharp;
+			}
+		}
+		return image;
 	}
 
 	// To make Eclipse happy
@@ -171,12 +264,22 @@ public class GameWindow extends PApplet
 	private static final float DECREMENT = 0.055f;
 	private static final float BASE_HEIGHT_SCALE = 0.48f;
 	private static final float BASE_WIDTH_SCALE = 0.98f;
+	private float nextX = 0;
 	
 	// other display related variables
-	private int playerCount = 2;
+	private ArrayList<PImage> capsules = new ArrayList<PImage>();
 	private PImage background = null;
 	private PImage clef = null;
-	private PImage keySignature = null;
-	private ArrayList<PImage> capsules = new ArrayList<PImage>();
+	private PImage flat = null;
+	private PImage sharp = null;
 	private HashMap<String, Float> staffPositions = new HashMap<String, Float>();
+	private PFont helvetica = null;
+	
+	// Game settings
+	private String keySignature = KeySignatures.FSharpMajor;
+	private int playerCount = 3;
+	private int beatsPerMeasure = 2;
+	private int subdivision = 4;
+
+	
 }
