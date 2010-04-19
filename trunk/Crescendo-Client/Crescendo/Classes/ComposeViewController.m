@@ -375,7 +375,7 @@
 	/*
 	 *	Send notelength/notepitch to public display
 	 */
-	NSString* inputText = [NSString stringWithFormat: @"%@_%@", playerId, buildLabel.text];
+	NSString* inputText = [NSString stringWithFormat: @"%@_%@_%@", playerId, notePitch, noteLength];
 	
     // Initialize PlayNoteRequest and set message to content's of the text field.
 	PlayNoteRequest* request = [[PlayNoteRequest alloc] init];
