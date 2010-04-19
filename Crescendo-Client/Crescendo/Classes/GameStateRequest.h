@@ -11,9 +11,9 @@
 
 @interface GameStateRequest : RequestMessage
 {
-	/* play (opposite of pause)
-	 * pause (opposite of play)
-	 * play_song
+	/* playerX_play (opposite of pause)
+	 * playerX_pause (opposite of play)
+	 * playerX_play_song
 	 */
 	NSString *gameState;
 }
