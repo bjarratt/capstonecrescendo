@@ -13,7 +13,7 @@ public class GameState
 	public final static String SPLASH_SCREEN = "splashscreen";
 	public final static String CONNECT = "connect";
 		
-	public final static String GAME_TYPES = "gametypes";
+	public final static String GAME_MODES = "gamemodes";
 	public final static String LENGTH_TRAINING = "lengthtraining";
 	public final static String PITCH_TRAINING = "pitchtraining";
 	public final static String NOTE_TRAINING = "notetraining";

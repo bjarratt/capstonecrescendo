@@ -67,14 +67,27 @@ public class MessageTranslationEngine
 		if(messageComponents.length == 2)
 		{
 			//I don't think these are absolutely necessary... maybe to check for bad messages?
-			if(	messageComponents[1].equals("connect") ||
-				messageComponents[1].equals("disconnect") ||
+			if(	messageComponents[1].equals(GameState.CONNECT) ||
+				messageComponents[1].equals(GameState.DISCONNECT) ||
 				messageComponents[1].equals(GameState.SPLASH_SCREEN) ||
-				messageComponents[1].equals(GameState.GAME_TYPES) ||
+				messageComponents[1].equals(GameState.GAME_MODES) ||
+				messageComponents[1].equals(GameState.GAME_INFO) ||
 				messageComponents[1].equals(GameState.GAME_OPTIONS) ||
 				messageComponents[1].equals(GameState.PLAY) ||
 				messageComponents[1].equals(GameState.PAUSE) ||
+				messageComponents[1].equals(GameState.LENGTH_TRAINING) ||
+				messageComponents[1].equals(GameState.PITCH_TRAINING) ||
+				messageComponents[1].equals(GameState.NOTE_TRAINING) ||
+				messageComponents[1].equals(GameState.CONCERT_MASTER) ||
+				messageComponents[1].equals(GameState.MUSICAL_IPHONES) ||
+				messageComponents[1].equals(GameState.NOTES_AROUND_THE_ROOM) ||
+				messageComponents[1].equals(GameState.COMP_TIME) ||
+				messageComponents[1].equals(GameState.SET_TEMPO) ||
+				messageComponents[1].equals(GameState.SET_KEY) ||
+				messageComponents[1].equals(GameState.SET_TIME_SIGNATURE) ||
+				messageComponents[1].equals(GameState.SET_NUMBER_OF_BARS) ||
 				messageComponents[1].equals(GameState.POST_GAME) ||
+				messageComponents[1].equals(GameState.REVIEW) ||
 				messageComponents[1].equals(GameState.EXIT))
 			{
 				//all good!  :)
