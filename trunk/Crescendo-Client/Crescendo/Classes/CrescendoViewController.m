@@ -59,7 +59,7 @@
 	// Initialize the client with the ChatTranslations scope.
 	// 192.168.1.105
 	// 128.194.143.165
-	self.client = [[XMLClient alloc] initWithHostAddress:@"192.168.1.110" andPort:2108 
+	self.client = [[XMLClient alloc] initWithHostAddress:@"128.194.143.165" andPort:2108 
 									 andTranslationScope:scope];
 	
 	// Designate self as the client's delegate.
