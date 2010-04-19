@@ -20,6 +20,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 import keys.GameState;
+import keys.Players;
 
 /**
  *	The GameManager houses the game loop, translates messages, and sends Notes to be displayed to the GUI
@@ -31,6 +32,7 @@ public class GameManager implements ActionListener
 	private ArrayList<String> messagePool;
 	private ArrayList<String> messages;
 	private Timer timer;
+	private Timer inGameTimer;
 
 	//game options
 	private static int tempo = 500;
@@ -50,6 +52,8 @@ public class GameManager implements ActionListener
 
 	//game
 	private String gameType;
+	
+	private String pausedPlayerId;
 	
 	private ArrayList<Beat> player1Beats;
 	private ArrayList<Beat> player2Beats;
@@ -94,7 +98,8 @@ public class GameManager implements ActionListener
 		//messages to be translated
 		messages = new ArrayList<String>();
 		//set up a timer
-		timer = new Timer(tempo,this);
+		timer = new Timer(500,this);
+		inGameTimer = new Timer(500,this);
 
 		player1CurrentNote = 0;
 		player2CurrentNote = 0;
@@ -122,6 +127,8 @@ public class GameManager implements ActionListener
 			gameNotes = new gameManagement.gameModes.PitchTraining(numberOfBars).getNotes();
 		else if(gameType.equals(GameState.NOTE_TRAINING))
 			gameNotes = new gameManagement.gameModes.NoteTraining(numberOfBars).getNotes();
+		
+		pausedPlayerId = new String();
 		
 		player1Beats = new ArrayList<Beat>();
 		player2Beats = new ArrayList<Beat>();
@@ -157,6 +164,7 @@ public class GameManager implements ActionListener
 	 */
 	public void run()
 	{
+		System.out.println("*****\tAt the Splash Screen\t*****");
 	/*	//create a new display window
 		Wrapper display = new Wrapper(new PublicDisplay(2));
 		Wrapper splash = new Wrapper(new SplashScreen());
@@ -175,10 +183,10 @@ public class GameManager implements ActionListener
 	 */
 	public void actionPerformed(ActionEvent event)
 	{
+		if(exit)
+			System.exit(0);
 		if(messagePool.size() != 0)
 		{
-			if(exit)
-				System.exit(0);
 			
 			//constrict message pool size every tick
 			messages = new ArrayList<String>(messagePool);
@@ -208,7 +216,7 @@ public class GameManager implements ActionListener
 	public void addMessageToPool(String message)
 	{
 		messagePool.add(message);
-		System.out.println(message);
+		//System.out.println("GameManager received message:\t\t" + message);
 	}
 
 	/**
@@ -353,20 +361,35 @@ public class GameManager implements ActionListener
 				
 				if(m.getMessage().split("_")[1].equals("disconnect"))
 				{
-					numberOfActivePlayers--;
+					at_splash_screen = true;
+					at_game_types = false;
+					at_game_info = false;
+					at_game_options = false;
+					at_play = false;
+					at_pause = false;
+					at_post_game = false;
+					exit = false;
 					sendMessageToDisplay(m.getMessage());
+					System.out.println("*****\tAt the Splash Screen\t*****");
+					sendMessageToDisplay(Players.PLAYER_ONE + "_" + GameState.DISCONNECT);
+					sendMessageToDisplay(Players.PLAYER_TWO + "_" + GameState.DISCONNECT);
+					sendMessageToDisplay(Players.PLAYER_THREE + "_" + GameState.DISCONNECT);
+					sendMessageToDisplay(Players.PLAYER_FOUR + "_" + GameState.DISCONNECT);
+					numberOfActivePlayers=0;
+					System.out.println("All players have been disconnected");
 				}
 				
 				//     SPLASH SCREEN     //
 				//message is "playerX_connect"
-				if(at_splash_screen && m.getMessage().split("_")[1].equals("connect"))
+				else if(at_splash_screen && m.getMessage().split("_")[1].equals("connect"))
 				{
 					numberOfActivePlayers++;
 					sendMessageToDisplay(m.getMessage());
 				}
 				//message is "player1_gametypes"  (checking to make sure player 1 has sent the message)
-				if(at_splash_screen && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.GAME_TYPES))
+				else if(at_splash_screen && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.GAME_MODES))
 				{
+					System.out.println("*****\tAt the Game Modes Screen\t*****");
 					at_splash_screen = false;
 					at_game_types = true;
 					setActivePlayers();
@@ -375,15 +398,17 @@ public class GameManager implements ActionListener
 				
 				//     GAME TYPES     //
 				//message is "player1_splashscreen"  (checking to make sure player 1 has sent the message)
-				if(at_game_types && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.SPLASH_SCREEN))
+				else if(at_game_types && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.SPLASH_SCREEN))
 				{
+					System.out.println("*****\tAt the Splash Screen\t*****");
 					at_game_types = false;
 					at_splash_screen = true;
 					sendMessageToDisplay(m.getMessage());
 				}
 				//message is "player1_gameinfo"  (checking to make sure player 1 has sent the message)
-				if(at_game_types && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.GAME_INFO))
+				else if(at_game_types && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.GAME_INFO))
 				{
+					System.out.println("*****\tAt the Game Info Screen\t*****");
 					at_game_types = false;
 					at_game_info = true;
 					sendMessageToDisplay(m.getMessage());
@@ -391,15 +416,17 @@ public class GameManager implements ActionListener
 				
 				//     GAME INFO     //
 				//message is "player1_gametypes"  (checking to make sure player 1 has sent the message)
-				if(at_game_info && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.GAME_TYPES))
+				else if(at_game_info && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.GAME_MODES))
 				{
+					System.out.println("*****\tAt the Game Modes Screen\t*****");
 					at_game_info = false;
 					at_game_types = true;
 					sendMessageToDisplay(m.getMessage());
 				}
 				//message is "player1_gameoptions"  (checking to make sure player 1 has sent the message)
-				if(at_game_info && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.GAME_OPTIONS))
+				else if(at_game_info && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.GAME_OPTIONS))
 				{
+					System.out.println("*****\tAt the Game Options Screen\t*****");
 					at_game_info = false;
 					at_game_options = true;
 					sendMessageToDisplay(m.getMessage());
@@ -407,16 +434,19 @@ public class GameManager implements ActionListener
 
 				//     GAME OPTIONS     //
 				//message is "player1_gameinfo"  (checking to make sure player 1 has sent the message)
-				if(at_game_options && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.GAME_INFO))
+				else if(at_game_options && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.GAME_INFO))
 				{
+					System.out.println("*****\tAt the Game Info Screen\t*****");
 					at_game_options = false;
 					at_game_info = true;
 					sendMessageToDisplay(m.getMessage());
 				}
 				//message is "player1_play"  (checking to make sure player 1 has sent the message)
-				if(at_game_options && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.PLAY))
+				else if(at_game_options && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.PLAY))
 				{
+					System.out.println("*****\tAt the Play Screen\t*****");
 					setGameNotes();
+					inGameTimer.start();
 					at_game_options = false;
 					at_play = true;
 					sendMessageToDisplay(m.getMessage());
@@ -424,17 +454,20 @@ public class GameManager implements ActionListener
 
 				//     PLAY     //
 				//message is "playerX_pause"
-				if(at_play && m.getMessage().split("_")[1].equals(GameState.PAUSE))
+				else if(at_play && m.getMessage().split("_")[1].equals(GameState.PAUSE))
 				{
+					System.out.println("*****\tAt the Pause Screen\t*****");
 					at_play = false;
 					at_pause = true;
+					pausedPlayerId = new String(m.getMessage().split("_")[0]);
 					sendMessageToDisplay(m.getMessage());
-					timer.stop();
+					inGameTimer.stop();
 				}
 				//TODO Player 1 should not send this message it should just continue to Post Game
 				//message is "player1_postgame"  (checking to make sure player 1 has sent the message)
-				if(at_play && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.POST_GAME))
+				else if(at_play && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.POST_GAME))
 				{
+					System.out.println("*****\tAt the Post Game Screen\t*****");
 					at_play = false;
 					at_post_game = true;
 					sendMessageToDisplay(m.getMessage());
@@ -442,18 +475,20 @@ public class GameManager implements ActionListener
 
 				//     PAUSE     //
 				//message is "playerX_play"  (checking to make sure player 1 has sent the message)
-				if(at_pause && m.getMessage().split("_")[1].equals(GameState.PLAY))
+				else if(at_pause && m.getMessage().split("_")[1].equals(GameState.PLAY) && m.getMessage().split("_")[0].equals(pausedPlayerId))
 				{
+					System.out.println("*****\tAt the Play Screen\t*****");
 					at_play = true;
 					at_pause = false;
 					sendMessageToDisplay(m.getMessage());
-					timer.start();
+					inGameTimer.start();
 				}
 				
 				//     POST GAME     //
 				//message is "player1_splashscreen"  (checking to make sure player 1 has sent the message)
-				if(at_post_game && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.SPLASH_SCREEN))
+				else if(at_post_game && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.SPLASH_SCREEN))
 				{
+					System.out.println("*****\tAt the Splash Screen\t*****");
 					at_post_game = false;
 					at_splash_screen = true;
 					sendMessageToDisplay(m.getMessage());
@@ -461,10 +496,14 @@ public class GameManager implements ActionListener
 				
 				//message is "playerX_exit"
 				//maybe disconnect all iPhones?
-				if(m.getMessage().split("_")[1].equals(GameState.EXIT))
+				else if(m.getMessage().split("_")[1].equals(GameState.EXIT))
 				{
 					exit = true;
 					sendMessageToDisplay(m.getMessage());
+				}
+				else
+				{
+					System.out.println("GameManager ignored message: " + m.getMessage());
 				}
 			}
 		}
@@ -746,7 +785,7 @@ public class GameManager implements ActionListener
 	 */
 	private void sendMessageToDisplay(String message)
 	{
-		System.out.println(message);
+		System.out.println("GameManager sending message to GUI:\t" + message);
 		// TODO This method still needs to be somewhere
 		//displayGUI.receiveMessage(message);
 	}
