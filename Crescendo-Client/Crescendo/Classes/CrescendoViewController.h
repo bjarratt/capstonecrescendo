@@ -18,7 +18,7 @@
 #import "GamemodeViewController.h"
 #import "HelpViewController.h"
 
-@interface CrescendoViewController : UIViewController <ConnectionUpdateDelegate, GameTypeUpdateDelegate, PlayNoteUpdateDelegate, XMLClientDelegate> {
+@interface CrescendoViewController : UIViewController <ConnectionUpdateDelegate, GameTypeUpdateDelegate, PlayNoteUpdateDelegate, XMLClientDelegate, UITextFieldDelegate> {
 	XMLClient *client;
 	NSString *playerId;
 	IBOutlet GamemodeViewController *gamemodeViewController;
