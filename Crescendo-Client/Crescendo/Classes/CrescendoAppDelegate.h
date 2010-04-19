@@ -12,8 +12,8 @@
 
 @class CrescendoViewController;
 
-@interface CrescendoAppDelegate : NSObject {
-    UIWindow *window;
+@interface CrescendoAppDelegate : NSObject <UIApplicationDelegate> {
+	UIWindow *window;
     CrescendoViewController *viewController;
 }
 
