@@ -40,6 +40,13 @@
 - (void) recievedGameTypeUpdate: (GameTypeUpdate*) update {
 }
 
+#pragma mark UITextFieldDelegate Method
+
+- (BOOL) textFieldShouldReturn: (UITextField *) textField {
+	[textField resignFirstResponder];
+	return NO;
+}
+
 #pragma mark Interface Methods
 
 - (IBAction) goToGamemodeView {
@@ -130,6 +137,7 @@
  // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
  - (void)viewDidLoad {
 	 [super viewDidLoad];
+	 ipText.delegate = self;
 	 [self drawIP];
  }
 
