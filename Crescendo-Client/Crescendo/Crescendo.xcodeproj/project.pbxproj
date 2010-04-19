@@ -743,9 +743,9 @@
 		3E2A2A84117BD4E1001A4136 /* OODSS */ = {
 			isa = PBXGroup;
 			children = (
+				3E2A2B82117BD59A001A4136 /* Connection Message */,
 				3E2A58FB117C040700456B11 /* Game Options Message */,
 				3E2A58EA117C010D00456B11 /* Game State Message */,
-				3E2A2B82117BD59A001A4136 /* Connection Message */,
 				3E2A2B84117BD5AF001A4136 /* Game Type Message */,
 				3E2A2B83117BD59E001A4136 /* Play Note Message */,
 				3E2A2A6C117BD47A001A4136 /* ServerTranslations.h */,

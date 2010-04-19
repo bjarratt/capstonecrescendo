@@ -79,7 +79,7 @@
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
 					20,
-					723,
+					1283,
 					20,
 					48,
 					43,
@@ -635,14 +635,14 @@
 	};
 	3E2A58FC117C041B00456B11 /* GameOptionsRequest.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {925, 661}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1485, 724}}";
 			sepNavSelRange = "{276, 0}";
 			sepNavVisRange = "{0, 543}";
 		};
 	};
 	3E2A58FD117C041B00456B11 /* GameOptionsRequest.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {925, 661}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1485, 701}}";
 			sepNavSelRange = "{243, 0}";
 			sepNavVisRange = "{0, 305}";
 		};

@@ -41,6 +41,48 @@
 			field="uid"
 			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
 	</class_descriptor>
+	<class_descriptor described_class="class network.OODSS.GameOptionsRequest"
+		tag_name="game_options_request">
+		<field_descriptor
+			field="timeStamp"
+			tag_name="time_stamp" type="1" scalar_type="LongType"></field_descriptor>
+		<field_descriptor
+			field="uid"
+			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
+		<field_descriptor
+			field="gameOption"
+			tag_name="game_option" type="1" scalar_type="StringType"></field_descriptor>
+	</class_descriptor>
+	<class_descriptor described_class="class network.OODSS.GameOptionUpdate"
+		tag_name="game_option_update">
+		<field_descriptor
+			field="timeStamp"
+			tag_name="time_stamp" type="1" scalar_type="LongType"></field_descriptor>
+		<field_descriptor
+			field="uid"
+			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
+	</class_descriptor>
+	<class_descriptor described_class="class network.OODSS.GameStateRequest"
+		tag_name="game_state_request">
+		<field_descriptor
+			field="timeStamp"
+			tag_name="time_stamp" type="1" scalar_type="LongType"></field_descriptor>
+		<field_descriptor
+			field="uid"
+			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
+		<field_descriptor
+			field="gameState"
+			tag_name="game_state" type="1" scalar_type="StringType"></field_descriptor>
+	</class_descriptor>
+	<class_descriptor described_class="class network.OODSS.GameStateUpdate"
+		tag_name="game_state_update">
+		<field_descriptor
+			field="timeStamp"
+			tag_name="time_stamp" type="1" scalar_type="LongType"></field_descriptor>
+		<field_descriptor
+			field="uid"
+			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
+	</class_descriptor>
 	<class_descriptor described_class="class network.OODSS.GameTypeRequest"
 		tag_name="game_type_request">
 		<field_descriptor
