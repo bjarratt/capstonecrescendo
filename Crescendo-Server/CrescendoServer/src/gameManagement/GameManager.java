@@ -44,6 +44,11 @@ public class GameManager implements ActionListener
 	private boolean at_post_game;
 	private boolean exit;
 
+	private boolean player1IsDone;
+	private boolean player2IsDone;
+	private boolean player3IsDone;
+	private boolean player4IsDone;
+	
 	//game
 	private String gameMode;
 
@@ -109,6 +114,11 @@ public class GameManager implements ActionListener
 		at_pause = false;
 		at_post_game = false;
 		exit = false;
+
+		player1IsDone = false;
+		player2IsDone = false;
+		player3IsDone = false;
+		player4IsDone = false;
 		
 		gameMode = GameState.LENGTH_TRAINING;
 		setGameMode(gameMode);
@@ -185,7 +195,7 @@ public class GameManager implements ActionListener
 					//if(currentBeat%2 == 0)
 					//	metronomeNotes.add(new Note("CSharp7","eighth","metronome"));
 					this.constructMeasures();
-					this.sendNotesToDisplayGUI();
+					this.sendNotesToDisplay();
 					currentTick++;
 				}
 			}
@@ -284,7 +294,7 @@ public class GameManager implements ActionListener
 						}
 						else
 						{
-							addMessageToPool(Players.PLAYER_ONE + "_" + GameState.POST_GAME);
+							player1IsDone = true;
 						}
 					}
 					if(n.getPlayer().equals(Players.PLAYER_TWO))
@@ -307,7 +317,7 @@ public class GameManager implements ActionListener
 						}
 						else
 						{
-							addMessageToPool(Players.PLAYER_TWO + "_" + GameState.POST_GAME);
+							player2IsDone = true;
 						}
 					}
 					if(n.getPlayer().equals(Players.PLAYER_THREE))
@@ -330,7 +340,7 @@ public class GameManager implements ActionListener
 						}
 						else
 						{
-							addMessageToPool(Players.PLAYER_THREE + "_" + GameState.POST_GAME);
+							player3IsDone = true;
 						}
 					}
 					if(n.getPlayer().equals(Players.PLAYER_FOUR))
@@ -353,7 +363,7 @@ public class GameManager implements ActionListener
 						}
 						else
 						{
-							addMessageToPool(Players.PLAYER_FOUR + "_" + GameState.POST_GAME);
+							player4IsDone = true;
 						}
 					}
 				}
@@ -379,7 +389,7 @@ public class GameManager implements ActionListener
 						}
 						else
 						{
-							addMessageToPool(Players.PLAYER_ONE + "_" + GameState.POST_GAME);
+							player1IsDone = true;
 						}
 					}
 					if(n.getPlayer().equals(Players.PLAYER_TWO))
@@ -402,7 +412,7 @@ public class GameManager implements ActionListener
 						}
 						else
 						{
-							addMessageToPool(Players.PLAYER_TWO + "_" + GameState.POST_GAME);
+							player2IsDone = true;
 						}
 					}
 					if(n.getPlayer().equals(Players.PLAYER_THREE))
@@ -425,7 +435,7 @@ public class GameManager implements ActionListener
 						}
 						else
 						{
-							addMessageToPool(Players.PLAYER_THREE + "_" + GameState.POST_GAME);
+							player3IsDone = true;
 						}
 					}
 					if(n.getPlayer().equals(Players.PLAYER_FOUR))
@@ -448,7 +458,7 @@ public class GameManager implements ActionListener
 						}
 						else
 						{
-							addMessageToPool(Players.PLAYER_FOUR + "_" + GameState.POST_GAME);
+							player4IsDone = true;
 						}
 					}
 				}
@@ -474,7 +484,7 @@ public class GameManager implements ActionListener
 						}
 						else
 						{
-							addMessageToPool(Players.PLAYER_ONE + "_" + GameState.POST_GAME);
+							player1IsDone = true;
 						}
 					}
 					if(n.getPlayer().equals(Players.PLAYER_TWO))
@@ -497,7 +507,7 @@ public class GameManager implements ActionListener
 						}
 						else
 						{
-							addMessageToPool(Players.PLAYER_TWO + "_" + GameState.POST_GAME);
+							player2IsDone = true;
 						}
 					}
 					if(n.getPlayer().equals(Players.PLAYER_THREE))
@@ -520,7 +530,7 @@ public class GameManager implements ActionListener
 						}
 						else
 						{
-							addMessageToPool(Players.PLAYER_THREE + "_" + GameState.POST_GAME);
+							player3IsDone = true;
 						}
 					}
 					if(n.getPlayer().equals(Players.PLAYER_FOUR))
@@ -543,7 +553,7 @@ public class GameManager implements ActionListener
 						}
 						else
 						{
-							addMessageToPool(Players.PLAYER_FOUR + "_" + GameState.POST_GAME);
+							player4IsDone = true;
 						}
 					}
 				}
@@ -619,7 +629,7 @@ public class GameManager implements ActionListener
 					System.out.println("*****\tAt the Game Modes Screen\t*****");
 					at_splash_screen = false;
 					at_game_modes = true;
-					setActivePlayers();
+					sendActivePlayers();
 					sendMessageToDisplay(m.getMessage());
 				}
 				
@@ -764,8 +774,6 @@ public class GameManager implements ActionListener
 					sendMessageToDisplay(m.getMessage());
 				}
 				
-				//message is "playerX_exit"
-				//maybe disconnect all iPhones?
 				else if(m.getMessage().split("_")[1].equals(GameState.EXIT))
 				{
 					exit = true;
@@ -792,6 +800,28 @@ public class GameManager implements ActionListener
 		ArrayList<Beat> firstNoteBeats;
 		
 		Measure measure;
+		
+		if(numberOfActivePlayers == 1 && player1IsDone)
+		{
+			addMessageToPool(Players.PLAYER_ONE + "_" + GameState.POST_GAME);
+		}
+		else if(numberOfActivePlayers == 2 && player1IsDone && player2IsDone)
+		{
+			addMessageToPool(Players.PLAYER_ONE + "_" + GameState.POST_GAME);
+		}
+		else if(numberOfActivePlayers == 3 && player1IsDone && player2IsDone && player3IsDone)
+		{
+			addMessageToPool(Players.PLAYER_ONE + "_" + GameState.POST_GAME);
+		}
+		else if(numberOfActivePlayers == 4 && player1IsDone && player2IsDone && player3IsDone && player4IsDone)
+		{
+			addMessageToPool(Players.PLAYER_ONE + "_" + GameState.POST_GAME);
+		}
+		else if(numberOfActivePlayers > 4)
+		{
+			addMessageToPool(Players.PLAYER_ONE + "_" + GameState.POST_GAME);
+		}
+		
 		
 		notesToSend = new ArrayList<Note>();
 		////	Player 1	////
@@ -1017,7 +1047,7 @@ public class GameManager implements ActionListener
 	/**
 	 * Sends the number of active players to the public display
 	 */
-	private void setActivePlayers()
+	private void sendActivePlayers()
 	{
 		//PublicDisplay.setActivePlayers(numberofActivePlayers);
 	}
@@ -1052,7 +1082,7 @@ public class GameManager implements ActionListener
 	 *
 	 *	@param note the Note to be sent to the GUI
 	 */
-	private void sendNotesToDisplayGUI()
+	private void sendNotesToDisplay()
 	{
 		// TODO This method still needs to be somewhere
 		//displayGUI.getNotes(notesToSend, currentBeat);

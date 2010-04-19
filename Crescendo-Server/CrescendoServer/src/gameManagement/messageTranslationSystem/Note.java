@@ -194,15 +194,15 @@ public class Note
 			return 1;
 		else if(length.equals("quarter"))
 			return 2;
-		else if(length.equals("quarter_dot"))
+		else if(length.equals("quarter_tie_eighth"))
 			return 3;
 		else if(length.equals("half"))
 			return 4;
 		else if(length.equals("half_tie_eighth"))
 			return 5;
-		else if(length.equals("half_dot"))
+		else if(length.equals("half_tie_quarter"))
 			return 6;
-		else if(length.equals("half_dot_tie_eighth"))
+		else if(length.equals("half_tie_quarter_tie_eighth"))
 			return 7;
 		else if(length.equals("whole"))
 			return 8;
@@ -224,15 +224,15 @@ public class Note
 			case 2:
 				return "quarter";
 			case 3:
-				return "quarter_dot";
+				return "quarter_tie_eighth";
 			case 4:
 				return "half";
 			case 5:
 				return "half_tie_eighth";
 			case 6:
-				return "half_dot";
+				return "half_tie_quarter";
 			case 7:
-				return "half_dot_tie_eighth";
+				return "half_tie_quarter_tie_eighth";
 			case 8:
 				return "whole";
 			default:
