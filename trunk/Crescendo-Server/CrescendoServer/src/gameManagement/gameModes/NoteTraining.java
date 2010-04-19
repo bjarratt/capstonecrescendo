@@ -23,13 +23,15 @@ public class NoteTraining {
 	private ArrayList<Note> wantedNotes;	//the array of notes the game wants
 	private Random rand;
 	
-	final int maxSubdivisions = 8;		//per measure
+	int maxSubdivisions;		//per measure
 	int currentSubdivisions;
 	
-	public NoteTraining(int wantedMeasures){
+	public NoteTraining(int subdivisions, int wantedMeasures){
 		
 		wantedNotes = new ArrayList<Note>();
 		rand = new Random();
+		maxSubdivisions = subdivisions;
+		currentSubdivisions = 0;
 		randomizeMeasures(wantedMeasures);
 		
 	}
@@ -128,44 +130,42 @@ public class NoteTraining {
 	
 	public String randomizePitch()
 	{
-		switch(rand.nextInt(18))
+		switch(rand.nextInt(17))
 		{
 			case 0:
-				return "D5";
-			case 1:
-				return "DSharp5";
-			case 2:
 				return "E5";
-			case 3:
+			case 1:
 				return "ESharp5";
-			case 4:
+			case 2:
 				return "F5";
-			case 5:
+			case 3:
 				return "FSharp5";
-			case 6:
+			case 4:
 				return "G5";
-			case 7:
+			case 5:
 				return "GSharp5";
-			case 8:
+			case 6:
 				return "A5";
-			case 9:
+			case 7:
 				return "ASharp5";
-			case 10:
+			case 8:
 				return "B5";
-			case 11:
+			case 9:
 				return "C6";
-			case 12:
+			case 10:
 				return "CSharp6";
-			case 13:
+			case 11:
 				return "D6";
-			case 14:
+			case 12:
 				return "DSharp6";
-			case 15:
+			case 13:
 				return "E6";
-			case 16:
+			case 14:
 				return "ESharp6";
-			case 17:
+			case 15:
 				return "F6";
+			case 16:
+				return "FSharp6";
 			default:
 				return "rest";
 		}

@@ -32,7 +32,9 @@ public class GameManager implements ActionListener
 	private static int tempo = 1000;
 	private static String key = "CMajor";
 	private static int numberOfBars = 8;
-	private static String timeSignature = "4_4";
+	private static int timeSignatureNumerator = 3;
+	private static int timeSignatureDenominator = 4;
+	private static int numberOfBeatsPerMeasure;;
 	
 	//gamestate options
 	private boolean at_splash_screen;
@@ -51,9 +53,6 @@ public class GameManager implements ActionListener
 	
 	//game
 	private String gameMode;
-
-	private int numberOfBeatsPerMeasure;
-	private int whichNoteGetsTheMinimumBeat;
 	
 	private String pausedPlayerId;
 	
@@ -69,12 +68,11 @@ public class GameManager implements ActionListener
 	private ArrayList<Note> player3Notes;
 	private ArrayList<Note> player4Notes;
 	private ArrayList<Note> gameNotes;
-	private ArrayList<Note> metronomeNotes;
+
 	private int player1CurrentNote;
 	private int player2CurrentNote;
 	private int player3CurrentNote;
 	private int player4CurrentNote;
-	private int gameCurrentNote;
 	private int numberOfActivePlayers;
 
 	private ArrayList<Measure> player1Measures;
@@ -101,7 +99,6 @@ public class GameManager implements ActionListener
 		player2CurrentNote = 0;
 		player3CurrentNote = 0;
 		player4CurrentNote = 0;
-		gameCurrentNote = 0;
 
 		currentTick = 0;
 		currentInGameTick = 0;
@@ -136,7 +133,7 @@ public class GameManager implements ActionListener
 		player4Notes = new ArrayList<Note>();
 		numberOfActivePlayers = 0;
 
-		numberOfBeatsPerMeasure = 8;
+		setNumberOfBeatsPerMeasure();
 
 		player1Measures = new ArrayList<Measure>();
 		player1Measures.add(new Measure(numberOfBeatsPerMeasure));
@@ -1029,27 +1026,64 @@ public class GameManager implements ActionListener
 		////	Player 4	////
 	}
 	
+	private void setNumberOfBeatsPerMeasure()
+	{
+		if(timeSignatureDenominator == 2)
+			numberOfBeatsPerMeasure = timeSignatureNumerator*4;
+		else if(timeSignatureDenominator == 4)
+			numberOfBeatsPerMeasure = timeSignatureNumerator*2;
+		else if(timeSignatureDenominator == 8)
+			numberOfBeatsPerMeasure = timeSignatureNumerator;
+		else
+			numberOfBeatsPerMeasure = 8;
+	}
+	
 	private void setGameMode(String game)
 	{
 		gameMode = new String(game);
 		//TODO add gameNotes for each different game mode that requires them		
 		if(gameMode.equals(GameState.LENGTH_TRAINING))
-			gameNotes = new gameManagement.gameModes.LengthTraining(numberOfBars).getNotes();
+			gameNotes = new gameManagement.gameModes.LengthTraining(timeSignatureNumerator*2,numberOfBars).getNotes();
 		else if(gameMode.equals(GameState.PITCH_TRAINING))
-			gameNotes = new gameManagement.gameModes.PitchTraining(numberOfBars).getNotes();
+			gameNotes = new gameManagement.gameModes.PitchTraining(timeSignatureNumerator*2,numberOfBars).getNotes();
 		else if(gameMode.equals(GameState.NOTE_TRAINING))
-			gameNotes = new gameManagement.gameModes.NoteTraining(numberOfBars).getNotes();
+			gameNotes = new gameManagement.gameModes.NoteTraining(timeSignatureNumerator*2,numberOfBars).getNotes();
 		else
 			gameNotes = null;
 	}
 	
+	private void setTempo(int t)
+	{
+		tempo = t;
+		//TODO send message to Display
+	}
+	
+	private void setKey(String k)
+	{
+		key = k;
+		//TODO send message to Display
+	}
+	
+	private void setNumberOfBars(int n)
+	{
+		numberOfBars = n;
+		//TODO send message to Display
+	}
+	
+	private void setTimeSignature(int n, int d)
+	{
+		timeSignatureNumerator = n;
+		timeSignatureDenominator = d;
+		//TODO send message to Display
+	}
 	
 	/**
 	 * Sends the number of active players to the public display
 	 */
 	private void sendActivePlayers()
 	{
-		//PublicDisplay.setActivePlayers(numberofActivePlayers);
+		//numberofActivePlayers;
+		//TODO send message to Display
 	}
 
 	/**
@@ -1057,6 +1091,7 @@ public class GameManager implements ActionListener
 	 */
 	private void sendGameNotes()
 	{
+		//TODO send message to Display
 		//send gameNotes to the public display
 	}
 	
@@ -1075,6 +1110,7 @@ public class GameManager implements ActionListener
 	private void sendTimeToDisplay(int time)
 	{
 	//	System.out.println(time + " seconds have passed in game");
+		//TODO send message to Display
 	}
 	
 	/**
