@@ -13,6 +13,8 @@
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* Crescendo */,
 		);
+		breakpoints = (
+		);
 		codeSenseManager = 3E2A296B117BCCA2001A4136 /* Code sense */;
 		executables = (
 			3E2A2966117BCC8E001A4136 /* Crescendo */,
@@ -216,6 +218,58 @@
 			3E2A587F117BF2E000456B11 /* PBXTextBookmark */ = 3E2A587F117BF2E000456B11 /* PBXTextBookmark */;
 			3E2A5880117BF2F900456B11 /* PBXTextBookmark */ = 3E2A5880117BF2F900456B11 /* PBXTextBookmark */;
 			3E2A5886117BF42C00456B11 /* PBXTextBookmark */ = 3E2A5886117BF42C00456B11 /* PBXTextBookmark */;
+			3E2A588E117BF51900456B11 /* PBXTextBookmark */ = 3E2A588E117BF51900456B11 /* PBXTextBookmark */;
+			3E2A588F117BF51900456B11 /* PBXTextBookmark */ = 3E2A588F117BF51900456B11 /* PBXTextBookmark */;
+			3E2A5890117BF51900456B11 /* PBXTextBookmark */ = 3E2A5890117BF51900456B11 /* PBXTextBookmark */;
+			3E2A5891117BF51900456B11 /* PBXTextBookmark */ = 3E2A5891117BF51900456B11 /* PBXTextBookmark */;
+			3E2A5892117BF51900456B11 /* PBXTextBookmark */ = 3E2A5892117BF51900456B11 /* PBXTextBookmark */;
+			3E2A5893117BF51900456B11 /* PBXTextBookmark */ = 3E2A5893117BF51900456B11 /* PBXTextBookmark */;
+			3E2A5894117BF51900456B11 /* PBXTextBookmark */ = 3E2A5894117BF51900456B11 /* PBXTextBookmark */;
+			3E2A5895117BF51900456B11 /* PBXTextBookmark */ = 3E2A5895117BF51900456B11 /* PBXTextBookmark */;
+			3E2A5896117BF51900456B11 /* PBXTextBookmark */ = 3E2A5896117BF51900456B11 /* PBXTextBookmark */;
+			3E2A5897117BF51900456B11 /* PBXTextBookmark */ = 3E2A5897117BF51900456B11 /* PBXTextBookmark */;
+			3E2A5898117BF51900456B11 /* PBXTextBookmark */ = 3E2A5898117BF51900456B11 /* PBXTextBookmark */;
+			3E2A5899117BF51900456B11 /* PBXTextBookmark */ = 3E2A5899117BF51900456B11 /* PBXTextBookmark */;
+			3E2A589A117BF51900456B11 /* PBXTextBookmark */ = 3E2A589A117BF51900456B11 /* PBXTextBookmark */;
+			3E2A589B117BF51900456B11 /* PBXTextBookmark */ = 3E2A589B117BF51900456B11 /* PBXTextBookmark */;
+			3E2A589C117BF51900456B11 /* PBXTextBookmark */ = 3E2A589C117BF51900456B11 /* PBXTextBookmark */;
+			3E2A58A4117BF56700456B11 /* PBXTextBookmark */ = 3E2A58A4117BF56700456B11 /* PBXTextBookmark */;
+			3E2A58A5117BF56700456B11 /* PBXTextBookmark */ = 3E2A58A5117BF56700456B11 /* PBXTextBookmark */;
+			3E2A58A6117BF56700456B11 /* PBXTextBookmark */ = 3E2A58A6117BF56700456B11 /* PBXTextBookmark */;
+			3E2A58A7117BF56700456B11 /* PBXTextBookmark */ = 3E2A58A7117BF56700456B11 /* PBXTextBookmark */;
+			3E2A58A8117BF56700456B11 /* PBXTextBookmark */ = 3E2A58A8117BF56700456B11 /* PBXTextBookmark */;
+			3E2A58A9117BF56700456B11 /* PBXTextBookmark */ = 3E2A58A9117BF56700456B11 /* PBXTextBookmark */;
+			3E2A58AB117BF59A00456B11 /* PBXBookmark */ = 3E2A58AB117BF59A00456B11 /* PBXBookmark */;
+			3E2A58AD117BF62A00456B11 /* PBXTextBookmark */ = 3E2A58AD117BF62A00456B11 /* PBXTextBookmark */;
+			3E2A58AE117BF62A00456B11 /* PBXTextBookmark */ = 3E2A58AE117BF62A00456B11 /* PBXTextBookmark */;
+			3E2A58AF117BF62A00456B11 /* PBXTextBookmark */ = 3E2A58AF117BF62A00456B11 /* PBXTextBookmark */;
+			3E2A58B0117BF62A00456B11 /* PBXTextBookmark */ = 3E2A58B0117BF62A00456B11 /* PBXTextBookmark */;
+			3E2A58B1117BF62A00456B11 /* PBXTextBookmark */ = 3E2A58B1117BF62A00456B11 /* PBXTextBookmark */;
+			3E2A58B2117BF62A00456B11 /* PBXTextBookmark */ = 3E2A58B2117BF62A00456B11 /* PBXTextBookmark */;
+			3E2A58B3117BF62A00456B11 /* PBXTextBookmark */ = 3E2A58B3117BF62A00456B11 /* PBXTextBookmark */;
+			3E2A58B4117BF62A00456B11 /* PBXTextBookmark */ = 3E2A58B4117BF62A00456B11 /* PBXTextBookmark */;
+			3E2A58B5117BF62A00456B11 /* PBXTextBookmark */ = 3E2A58B5117BF62A00456B11 /* PBXTextBookmark */;
+			3E2A58B6117BF62A00456B11 /* PBXTextBookmark */ = 3E2A58B6117BF62A00456B11 /* PBXTextBookmark */;
+			3E2A58B7117BF62A00456B11 /* PBXTextBookmark */ = 3E2A58B7117BF62A00456B11 /* PBXTextBookmark */;
+			3E2A58B8117BF62A00456B11 /* PBXTextBookmark */ = 3E2A58B8117BF62A00456B11 /* PBXTextBookmark */;
+			3E2A58B9117BF62A00456B11 /* PBXTextBookmark */ = 3E2A58B9117BF62A00456B11 /* PBXTextBookmark */;
+			3E2A58BA117BF62A00456B11 /* PBXTextBookmark */ = 3E2A58BA117BF62A00456B11 /* PBXTextBookmark */;
+			3E2A58BB117BF62A00456B11 /* PBXTextBookmark */ = 3E2A58BB117BF62A00456B11 /* PBXTextBookmark */;
+			3E2A58BC117BF62A00456B11 /* PBXTextBookmark */ = 3E2A58BC117BF62A00456B11 /* PBXTextBookmark */;
+			3E2A58BF117BF62A00456B11 /* PBXTextBookmark */ = 3E2A58BF117BF62A00456B11 /* PBXTextBookmark */;
+			3E2A58C1117BF63100456B11 /* PBXTextBookmark */ = 3E2A58C1117BF63100456B11 /* PBXTextBookmark */;
+			3E2A58C2117BF63100456B11 /* PBXTextBookmark */ = 3E2A58C2117BF63100456B11 /* PBXTextBookmark */;
+			3E2A58C3117BF63100456B11 /* PBXTextBookmark */ = 3E2A58C3117BF63100456B11 /* PBXTextBookmark */;
+			3E2A58C4117BF63100456B11 /* PBXTextBookmark */ = 3E2A58C4117BF63100456B11 /* PBXTextBookmark */;
+			3E2A58C5117BF63100456B11 /* PBXTextBookmark */ = 3E2A58C5117BF63100456B11 /* PBXTextBookmark */;
+			3E2A58C6117BF63100456B11 /* PBXTextBookmark */ = 3E2A58C6117BF63100456B11 /* PBXTextBookmark */;
+			3E2A58C9117BF66200456B11 /* PBXTextBookmark */ = 3E2A58C9117BF66200456B11 /* PBXTextBookmark */;
+			3E2A58CA117BF66200456B11 /* PBXTextBookmark */ = 3E2A58CA117BF66200456B11 /* PBXTextBookmark */;
+			3E2A58CB117BF66200456B11 /* PBXTextBookmark */ = 3E2A58CB117BF66200456B11 /* PBXTextBookmark */;
+			3E2A58CC117BF66200456B11 /* PBXTextBookmark */ = 3E2A58CC117BF66200456B11 /* PBXTextBookmark */;
+			3E2A58CD117BF66200456B11 /* PBXTextBookmark */ = 3E2A58CD117BF66200456B11 /* PBXTextBookmark */;
+			3E2A58CE117BF66200456B11 /* PBXTextBookmark */ = 3E2A58CE117BF66200456B11 /* PBXTextBookmark */;
+			3E2A58CF117BF66200456B11 /* PBXTextBookmark */ = 3E2A58CF117BF66200456B11 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 3E2A296A117BCCA2001A4136 /* Source Control */;
 		userBuildSettings = {
@@ -230,7 +284,7 @@
 		argumentStrings = (
 		);
 		autoAttachOnCrash = 1;
-		breakpointsEnabled = 0;
+		breakpointsEnabled = 1;
 		configStateDict = {
 		};
 		customDataFormattersEnabled = 1;
@@ -244,8 +298,12 @@
 		executableUserSymbolLevel = 0;
 		libgmallocEnabled = 0;
 		name = Crescendo;
+		savedGlobals = {
+		};
 		sourceDirectories = (
 		);
+		variableFormatDictionary = {
+		};
 	};
 	3E2A296A117BCCA2001A4136 /* Source Control */ = {
 		isa = PBXSourceControlManager;
@@ -296,32 +354,32 @@
 	};
 	3E2A2A58117BD47A001A4136 /* CrescendoAppDelegate.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {960, 769}}";
-			sepNavSelRange = "{315, 0}";
-			sepNavVisRange = "{0, 508}";
+			sepNavIntBoundsRect = "{{0, 0}, {960, 638}}";
+			sepNavSelRange = "{178, 0}";
+			sepNavVisRange = "{0, 529}";
 		};
 	};
 	3E2A2A59117BD47A001A4136 /* CrescendoAppDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {893, 759}}";
-			sepNavSelRange = "{596, 0}";
-			sepNavVisRange = "{0, 625}";
+			sepNavIntBoundsRect = "{{0, 0}, {960, 661}}";
+			sepNavSelRange = "{786, 0}";
+			sepNavVisRange = "{0, 830}";
 			sepNavWindowFrame = "{{-989, 266}, {952, 887}}";
 		};
 	};
 	3E2A2A5A117BD47A001A4136 /* CrescendoViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1044, 759}}";
-			sepNavSelRange = "{1507, 0}";
-			sepNavVisRange = "{0, 1515}";
+			sepNavIntBoundsRect = "{{0, 0}, {906, 759}}";
+			sepNavSelRange = "{572, 0}";
+			sepNavVisRange = "{0, 1492}";
 			sepNavWindowFrame = "{{-975, -200}, {952, 887}}";
 		};
 	};
 	3E2A2A5B117BD47A001A4136 /* CrescendoViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {960, 2688}}";
-			sepNavSelRange = "{1499, 0}";
-			sepNavVisRange = "{931, 1322}";
+			sepNavIntBoundsRect = "{{0, 0}, {839, 2604}}";
+			sepNavSelRange = "{3275, 0}";
+			sepNavVisRange = "{2646, 763}";
 			sepNavWindowFrame = "{{-1012, 287}, {952, 887}}";
 		};
 	};
@@ -337,6 +395,34 @@
 			sepNavIntBoundsRect = "{{0, 0}, {493, 280}}";
 			sepNavSelRange = "{0, 0}";
 			sepNavVisRange = "{0, 347}";
+		};
+	};
+	3E2A2A60117BD47A001A4136 /* GameTypeUpdate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {960, 661}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 262}";
+		};
+	};
+	3E2A2A61117BD47A001A4136 /* GameTypeUpdate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {960, 661}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 747}";
+		};
+	};
+	3E2A2A62117BD47A001A4136 /* GameTypeUpdateDelegate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {960, 661}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 364}";
+		};
+	};
+	3E2A2A63117BD47A001A4136 /* GameTypeUpdateDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {960, 661}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 264}";
 		};
 	};
 	3E2A2A64117BD47A001A4136 /* HelpViewController.h */ = {
@@ -821,7 +907,7 @@
 		comments = "warning: incomplete implementation of class 'CrescendoViewController'";
 		fRef = 3E2A2A5B117BD47A001A4136 /* CrescendoViewController.m */;
 		rLen = 1;
-		rLoc = 191;
+		rLoc = 183;
 		rType = 1;
 	};
 	3E2A582B117BE8B600456B11 /* PBXTextBookmark */ = {
@@ -829,7 +915,7 @@
 		fRef = 3E2A2A5B117BD47A001A4136 /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 116";
 		rLen = 5;
-		rLoc = 4659;
+		rLoc = 4465;
 		rType = 0;
 		vrLen = 658;
 		vrLoc = 2259;
@@ -847,7 +933,7 @@
 		fRef = 3E2A2A58117BD47A001A4136 /* CrescendoAppDelegate.h */;
 		name = "CrescendoAppDelegate.h: 16";
 		rLen = 0;
-		rLoc = 315;
+		rLoc = 336;
 		rType = 0;
 		vrLen = 508;
 		vrLoc = 0;
@@ -907,7 +993,7 @@
 		fRef = 3E2A2A5A117BD47A001A4136 /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 21";
 		rLen = 0;
-		rLoc = 595;
+		rLoc = 572;
 		rType = 0;
 		vrLen = 1515;
 		vrLoc = 0;
@@ -947,7 +1033,7 @@
 		fRef = 3E2A2A5A117BD47A001A4136 /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 38";
 		rLen = 0;
-		rLoc = 1387;
+		rLoc = 1364;
 		rType = 0;
 		vrLen = 1356;
 		vrLoc = 0;
@@ -957,7 +1043,7 @@
 		fRef = 3E2A2A5A117BD47A001A4136 /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 38";
 		rLen = 0;
-		rLoc = 1387;
+		rLoc = 1364;
 		rType = 0;
 		vrLen = 1316;
 		vrLoc = 47;
@@ -967,7 +1053,7 @@
 		fRef = 3E2A2A5A117BD47A001A4136 /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 41";
 		rLen = 0;
-		rLoc = 1442;
+		rLoc = 1419;
 		rType = 0;
 		vrLen = 1326;
 		vrLoc = 33;
@@ -977,7 +1063,7 @@
 		fRef = 3E2A2A5A117BD47A001A4136 /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 41";
 		rLen = 0;
-		rLoc = 1435;
+		rLoc = 1412;
 		rType = 0;
 		vrLen = 1323;
 		vrLoc = 33;
@@ -987,7 +1073,7 @@
 		fRef = 3E2A2A58117BD47A001A4136 /* CrescendoAppDelegate.h */;
 		name = "CrescendoAppDelegate.h: 19";
 		rLen = 0;
-		rLoc = 500;
+		rLoc = 521;
 		rType = 0;
 		vrLen = 495;
 		vrLoc = 0;
@@ -997,7 +1083,7 @@
 		fRef = 3E2A2A5A117BD47A001A4136 /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 21";
 		rLen = 0;
-		rLoc = 613;
+		rLoc = 590;
 		rType = 0;
 		vrLen = 1407;
 		vrLoc = 0;
@@ -1007,7 +1093,7 @@
 		fRef = 3E2A2A5A117BD47A001A4136 /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 21";
 		rLen = 0;
-		rLoc = 613;
+		rLoc = 590;
 		rType = 0;
 		vrLen = 1407;
 		vrLoc = 0;
@@ -1027,7 +1113,7 @@
 		fRef = 3E2A2A5A117BD47A001A4136 /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 21";
 		rLen = 0;
-		rLoc = 613;
+		rLoc = 590;
 		rType = 0;
 		vrLen = 1407;
 		vrLoc = 0;
@@ -1037,7 +1123,7 @@
 		fRef = 3E2A2A5A117BD47A001A4136 /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 46";
 		rLen = 0;
-		rLoc = 1507;
+		rLoc = 1484;
 		rType = 0;
 		vrLen = 1444;
 		vrLoc = 0;
@@ -1047,7 +1133,7 @@
 		fRef = 3E2A2A5A117BD47A001A4136 /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 46";
 		rLen = 0;
-		rLoc = 1507;
+		rLoc = 1484;
 		rType = 0;
 		vrLen = 1444;
 		vrLoc = 0;
@@ -1057,7 +1143,7 @@
 		fRef = 3E2A2A58117BD47A001A4136 /* CrescendoAppDelegate.h */;
 		name = "CrescendoAppDelegate.h: 20";
 		rLen = 0;
-		rLoc = 315;
+		rLoc = 336;
 		rType = 0;
 		vrLen = 588;
 		vrLoc = 0;
@@ -1067,7 +1153,7 @@
 		fRef = 3E2A2A5A117BD47A001A4136 /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 46";
 		rLen = 0;
-		rLoc = 1507;
+		rLoc = 1484;
 		rType = 0;
 		vrLen = 1444;
 		vrLoc = 0;
@@ -1087,7 +1173,7 @@
 		fRef = 3E2A2A5A117BD47A001A4136 /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 46";
 		rLen = 0;
-		rLoc = 1507;
+		rLoc = 1484;
 		rType = 0;
 		vrLen = 1444;
 		vrLoc = 0;
@@ -1097,7 +1183,7 @@
 		fRef = 3E2A2A58117BD47A001A4136 /* CrescendoAppDelegate.h */;
 		name = "CrescendoAppDelegate.h: 20";
 		rLen = 0;
-		rLoc = 315;
+		rLoc = 336;
 		rType = 0;
 		vrLen = 588;
 		vrLoc = 0;
@@ -1107,7 +1193,7 @@
 		fRef = 3E2A2A5A117BD47A001A4136 /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 46";
 		rLen = 0;
-		rLoc = 1507;
+		rLoc = 1484;
 		rType = 0;
 		vrLen = 1444;
 		vrLoc = 0;
@@ -1117,7 +1203,7 @@
 		fRef = 3E2A2A58117BD47A001A4136 /* CrescendoAppDelegate.h */;
 		name = "CrescendoAppDelegate.h: 16";
 		rLen = 0;
-		rLoc = 315;
+		rLoc = 336;
 		rType = 0;
 		vrLen = 508;
 		vrLoc = 0;
@@ -1137,7 +1223,7 @@
 		fRef = 3E2A2A5A117BD47A001A4136 /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 21";
 		rLen = 0;
-		rLoc = 522;
+		rLoc = 499;
 		rType = 0;
 		vrLen = 1467;
 		vrLoc = 0;
@@ -1197,7 +1283,7 @@
 		fRef = 3E2A2A5A117BD47A001A4136 /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 21";
 		rLen = 0;
-		rLoc = 522;
+		rLoc = 499;
 		rType = 0;
 		vrLen = 1467;
 		vrLoc = 0;
@@ -1207,7 +1293,7 @@
 		fRef = 3E2A2A5A117BD47A001A4136 /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 21";
 		rLen = 0;
-		rLoc = 522;
+		rLoc = 499;
 		rType = 0;
 		vrLen = 1467;
 		vrLoc = 0;
@@ -1237,7 +1323,7 @@
 		fRef = 3E2A2A5A117BD47A001A4136 /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 21";
 		rLen = 0;
-		rLoc = 595;
+		rLoc = 572;
 		rType = 0;
 		vrLen = 1515;
 		vrLoc = 0;
@@ -1267,7 +1353,7 @@
 		fRef = 3E2A2A59117BD47A001A4136 /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 53";
 		rLen = 0;
-		rLoc = 619;
+		rLoc = 824;
 		rType = 0;
 		vrLen = 1455;
 		vrLoc = 0;
@@ -1277,7 +1363,7 @@
 		fRef = 3E2A2A5A117BD47A001A4136 /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 46";
 		rLen = 0;
-		rLoc = 1507;
+		rLoc = 1484;
 		rType = 0;
 		vrLen = 1515;
 		vrLoc = 0;
@@ -1297,7 +1383,7 @@
 		fRef = 3E2A2A58117BD47A001A4136 /* CrescendoAppDelegate.h */;
 		name = "CrescendoAppDelegate.h: 16";
 		rLen = 0;
-		rLoc = 315;
+		rLoc = 336;
 		rType = 0;
 		vrLen = 508;
 		vrLoc = 0;
@@ -1327,7 +1413,7 @@
 		fRef = 3E2A2A58117BD47A001A4136 /* CrescendoAppDelegate.h */;
 		name = "CrescendoAppDelegate.h: 16";
 		rLen = 0;
-		rLoc = 315;
+		rLoc = 336;
 		rType = 0;
 		vrLen = 508;
 		vrLoc = 0;
@@ -1347,7 +1433,7 @@
 		fRef = 3E2A2A59117BD47A001A4136 /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 53";
 		rLen = 0;
-		rLoc = 619;
+		rLoc = 824;
 		rType = 0;
 		vrLen = 1455;
 		vrLoc = 0;
@@ -1401,7 +1487,7 @@
 		fRef = 3E2A2A5A117BD47A001A4136 /* CrescendoViewController.h */;
 		name = "CrescendoViewController.h: 46";
 		rLen = 0;
-		rLoc = 1507;
+		rLoc = 1484;
 		rType = 0;
 		vrLen = 1515;
 		vrLoc = 0;
@@ -1411,7 +1497,7 @@
 		fRef = 3E2A2A59117BD47A001A4136 /* CrescendoAppDelegate.m */;
 		name = "CrescendoAppDelegate.m: 26";
 		rLen = 0;
-		rLoc = 596;
+		rLoc = 592;
 		rType = 0;
 		vrLen = 625;
 		vrLoc = 0;
@@ -1439,7 +1525,7 @@
 		fRef = 3E2A2A5B117BD47A001A4136 /* CrescendoViewController.m */;
 		name = "CrescendoViewController.m: 189";
 		rLen = 5;
-		rLoc = 4659;
+		rLoc = 4465;
 		rType = 0;
 		vrLen = 759;
 		vrLoc = 1513;
@@ -1483,5 +1569,519 @@
 		rType = 0;
 		vrLen = 1322;
 		vrLoc = 931;
+	};
+	3E2A588E117BF51900456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A60117BD47A001A4136 /* GameTypeUpdate.h */;
+		name = "GameTypeUpdate.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 262;
+		vrLoc = 0;
+	};
+	3E2A588F117BF51900456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A61117BD47A001A4136 /* GameTypeUpdate.m */;
+		name = "GameTypeUpdate.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 747;
+		vrLoc = 0;
+	};
+	3E2A5890117BF51900456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A63117BD47A001A4136 /* GameTypeUpdateDelegate.m */;
+		name = "GameTypeUpdateDelegate.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 264;
+		vrLoc = 0;
+	};
+	3E2A5891117BF51900456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A62117BD47A001A4136 /* GameTypeUpdateDelegate.h */;
+		name = "GameTypeUpdateDelegate.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 364;
+		vrLoc = 0;
+	};
+	3E2A5892117BF51900456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A5A117BD47A001A4136 /* CrescendoViewController.h */;
+		name = "CrescendoViewController.h: 21";
+		rLen = 0;
+		rLoc = 572;
+		rType = 0;
+		vrLen = 1514;
+		vrLoc = 0;
+	};
+	3E2A5893117BF51900456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A5B117BD47A001A4136 /* CrescendoViewController.m */;
+		name = "CrescendoViewController.m: 62";
+		rLen = 0;
+		rLoc = 1499;
+		rType = 0;
+		vrLen = 1215;
+		vrLoc = 1390;
+	};
+	3E2A5894117BF51900456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A5B117BD47A001A4136 /* CrescendoViewController.m */;
+		name = "CrescendoViewController.m: 62";
+		rLen = 0;
+		rLoc = 1499;
+		rType = 0;
+		vrLen = 1215;
+		vrLoc = 1390;
+	};
+	3E2A5895117BF51900456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A60117BD47A001A4136 /* GameTypeUpdate.h */;
+		name = "GameTypeUpdate.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 262;
+		vrLoc = 0;
+	};
+	3E2A5896117BF51900456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A61117BD47A001A4136 /* GameTypeUpdate.m */;
+		name = "GameTypeUpdate.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 747;
+		vrLoc = 0;
+	};
+	3E2A5897117BF51900456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A62117BD47A001A4136 /* GameTypeUpdateDelegate.h */;
+		name = "GameTypeUpdateDelegate.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 364;
+		vrLoc = 0;
+	};
+	3E2A5898117BF51900456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A63117BD47A001A4136 /* GameTypeUpdateDelegate.m */;
+		name = "GameTypeUpdateDelegate.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 264;
+		vrLoc = 0;
+	};
+	3E2A5899117BF51900456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A62117BD47A001A4136 /* GameTypeUpdateDelegate.h */;
+		name = "GameTypeUpdateDelegate.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 364;
+		vrLoc = 0;
+	};
+	3E2A589A117BF51900456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A5B117BD47A001A4136 /* CrescendoViewController.m */;
+		name = "CrescendoViewController.m: 62";
+		rLen = 0;
+		rLoc = 1499;
+		rType = 0;
+		vrLen = 1215;
+		vrLoc = 1390;
+	};
+	3E2A589B117BF51900456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A5A117BD47A001A4136 /* CrescendoViewController.h */;
+		name = "CrescendoViewController.h: 21";
+		rLen = 0;
+		rLoc = 572;
+		rType = 0;
+		vrLen = 1514;
+		vrLoc = 0;
+	};
+	3E2A589C117BF51900456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A5B117BD47A001A4136 /* CrescendoViewController.m */;
+		name = "CrescendoViewController.m: 62";
+		rLen = 0;
+		rLoc = 1499;
+		rType = 0;
+		vrLen = 1044;
+		vrLoc = 3620;
+	};
+	3E2A58A4117BF56700456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A5B117BD47A001A4136 /* CrescendoViewController.m */;
+		name = "CrescendoViewController.m: 184";
+		rLen = 0;
+		rLoc = 4463;
+		rType = 0;
+		vrLen = 1044;
+		vrLoc = 3620;
+	};
+	3E2A58A5117BF56700456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A59117BD47A001A4136 /* CrescendoAppDelegate.m */;
+		name = "CrescendoAppDelegate.m: 35";
+		rLen = 0;
+		rLoc = 787;
+		rType = 0;
+		vrLen = 821;
+		vrLoc = 0;
+	};
+	3E2A58A6117BF56700456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A58117BD47A001A4136 /* CrescendoAppDelegate.h */;
+		name = "CrescendoAppDelegate.h: 16";
+		rLen = 0;
+		rLoc = 336;
+		rType = 0;
+		vrLen = 508;
+		vrLoc = 0;
+	};
+	3E2A58A7117BF56700456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A5B117BD47A001A4136 /* CrescendoViewController.m */;
+		name = "CrescendoViewController.m: 184";
+		rLen = 0;
+		rLoc = 4463;
+		rType = 0;
+		vrLen = 1044;
+		vrLoc = 3620;
+	};
+	3E2A58A8117BF56700456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A59117BD47A001A4136 /* CrescendoAppDelegate.m */;
+		name = "CrescendoAppDelegate.m: 35";
+		rLen = 0;
+		rLoc = 787;
+		rType = 0;
+		vrLen = 821;
+		vrLoc = 0;
+	};
+	3E2A58A9117BF56700456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A58117BD47A001A4136 /* CrescendoAppDelegate.h */;
+		name = "CrescendoAppDelegate.h: 15";
+		rLen = 0;
+		rLoc = 315;
+		rType = 0;
+		vrLen = 532;
+		vrLoc = 0;
+	};
+	3E2A58AB117BF59A00456B11 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 3E2A2A5A117BD47A001A4136 /* CrescendoViewController.h */;
+	};
+	3E2A58AD117BF62A00456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A5B117BD47A001A4136 /* CrescendoViewController.m */;
+		name = "CrescendoViewController.m: 182";
+		rLen = 0;
+		rLoc = 4463;
+		rType = 0;
+		vrLen = 1144;
+		vrLoc = 3326;
+	};
+	3E2A58AE117BF62A00456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A59117BD47A001A4136 /* CrescendoAppDelegate.m */;
+		name = "CrescendoAppDelegate.m: 13";
+		rLen = 0;
+		rLoc = 261;
+		rType = 0;
+		vrLen = 830;
+		vrLoc = 0;
+	};
+	3E2A58AF117BF62A00456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A58117BD47A001A4136 /* CrescendoAppDelegate.h */;
+		name = "CrescendoAppDelegate.h: 10";
+		rLen = 0;
+		rLoc = 178;
+		rType = 0;
+		vrLen = 529;
+		vrLoc = 0;
+	};
+	3E2A58B0117BF62A00456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A5A117BD47A001A4136 /* CrescendoViewController.h */;
+		name = "CrescendoViewController.h: 21";
+		rLen = 0;
+		rLoc = 572;
+		rType = 0;
+		vrLen = 1514;
+		vrLoc = 0;
+	};
+	3E2A58B1117BF62A00456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A58117BD47A001A4136 /* CrescendoAppDelegate.h */;
+		name = "CrescendoAppDelegate.h: 15";
+		rLen = 0;
+		rLoc = 315;
+		rType = 0;
+		vrLen = 532;
+		vrLoc = 0;
+	};
+	3E2A58B2117BF62A00456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A59117BD47A001A4136 /* CrescendoAppDelegate.m */;
+		name = "CrescendoAppDelegate.m: 36";
+		rLen = 0;
+		rLoc = 823;
+		rType = 0;
+		vrLen = 821;
+		vrLoc = 0;
+	};
+	3E2A58B3117BF62A00456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A5B117BD47A001A4136 /* CrescendoViewController.m */;
+		name = "CrescendoViewController.m: 182";
+		rLen = 0;
+		rLoc = 4463;
+		rType = 0;
+		vrLen = 1144;
+		vrLoc = 3326;
+	};
+	3E2A58B4117BF62A00456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A5A117BD47A001A4136 /* CrescendoViewController.h */;
+		name = "CrescendoViewController.h: 21";
+		rLen = 0;
+		rLoc = 572;
+		rType = 0;
+		vrLen = 1514;
+		vrLoc = 0;
+	};
+	3E2A58B5117BF62A00456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A59117BD47A001A4136 /* CrescendoAppDelegate.m */;
+		name = "CrescendoAppDelegate.m: 36";
+		rLen = 0;
+		rLoc = 823;
+		rType = 0;
+		vrLen = 821;
+		vrLoc = 0;
+	};
+	3E2A58B6117BF62A00456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A58117BD47A001A4136 /* CrescendoAppDelegate.h */;
+		name = "CrescendoAppDelegate.h: 23";
+		rLen = 0;
+		rLoc = 384;
+		rType = 0;
+		vrLen = 624;
+		vrLoc = 0;
+	};
+	3E2A58B7117BF62A00456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A59117BD47A001A4136 /* CrescendoAppDelegate.m */;
+		name = "CrescendoAppDelegate.m: 36";
+		rLen = 0;
+		rLoc = 803;
+		rType = 0;
+		vrLen = 850;
+		vrLoc = 0;
+	};
+	3E2A58B8117BF62A00456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A58117BD47A001A4136 /* CrescendoAppDelegate.h */;
+		name = "CrescendoAppDelegate.h: 16";
+		rLen = 0;
+		rLoc = 319;
+		rType = 0;
+		vrLen = 529;
+		vrLoc = 0;
+	};
+	3E2A58B9117BF62A00456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A5A117BD47A001A4136 /* CrescendoViewController.h */;
+		name = "CrescendoViewController.h: 21";
+		rLen = 0;
+		rLoc = 572;
+		rType = 0;
+		vrLen = 1514;
+		vrLoc = 0;
+	};
+	3E2A58BA117BF62A00456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A59117BD47A001A4136 /* CrescendoAppDelegate.m */;
+		name = "CrescendoAppDelegate.m: 13";
+		rLen = 0;
+		rLoc = 261;
+		rType = 0;
+		vrLen = 830;
+		vrLoc = 0;
+	};
+	3E2A58BB117BF62A00456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A58117BD47A001A4136 /* CrescendoAppDelegate.h */;
+		name = "CrescendoAppDelegate.h: 10";
+		rLen = 0;
+		rLoc = 178;
+		rType = 0;
+		vrLen = 529;
+		vrLoc = 0;
+	};
+	3E2A58BC117BF62A00456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A5A117BD47A001A4136 /* CrescendoViewController.h */;
+		name = "CrescendoViewController.h: 21";
+		rLen = 0;
+		rLoc = 572;
+		rType = 0;
+		vrLen = 1508;
+		vrLoc = 0;
+	};
+	3E2A58BF117BF62A00456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A5A117BD47A001A4136 /* CrescendoViewController.h */;
+		name = "CrescendoViewController.h: 21";
+		rLen = 0;
+		rLoc = 572;
+		rType = 0;
+		vrLen = 1515;
+		vrLoc = 0;
+	};
+	3E2A58C1117BF63100456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A5A117BD47A001A4136 /* CrescendoViewController.h */;
+		name = "CrescendoViewController.h: 21";
+		rLen = 0;
+		rLoc = 572;
+		rType = 0;
+		vrLen = 1508;
+		vrLoc = 0;
+	};
+	3E2A58C2117BF63100456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A58117BD47A001A4136 /* CrescendoAppDelegate.h */;
+		name = "CrescendoAppDelegate.h: 10";
+		rLen = 0;
+		rLoc = 178;
+		rType = 0;
+		vrLen = 529;
+		vrLoc = 0;
+	};
+	3E2A58C3117BF63100456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A5A117BD47A001A4136 /* CrescendoViewController.h */;
+		name = "CrescendoViewController.h: 21";
+		rLen = 0;
+		rLoc = 572;
+		rType = 0;
+		vrLen = 1508;
+		vrLoc = 0;
+	};
+	3E2A58C4117BF63100456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A58117BD47A001A4136 /* CrescendoAppDelegate.h */;
+		name = "CrescendoAppDelegate.h: 10";
+		rLen = 0;
+		rLoc = 178;
+		rType = 0;
+		vrLen = 529;
+		vrLoc = 0;
+	};
+	3E2A58C5117BF63100456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A59117BD47A001A4136 /* CrescendoAppDelegate.m */;
+		name = "CrescendoAppDelegate.m: 13";
+		rLen = 0;
+		rLoc = 261;
+		rType = 0;
+		vrLen = 830;
+		vrLoc = 0;
+	};
+	3E2A58C6117BF63100456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A5A117BD47A001A4136 /* CrescendoViewController.h */;
+		name = "CrescendoViewController.h: 21";
+		rLen = 0;
+		rLoc = 572;
+		rType = 0;
+		vrLen = 1515;
+		vrLoc = 0;
+	};
+	3E2A58C9117BF66200456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A5B117BD47A001A4136 /* CrescendoViewController.m */;
+		name = "CrescendoViewController.m: 18";
+		rLen = 0;
+		rLoc = 344;
+		rType = 0;
+		vrLen = 1044;
+		vrLoc = 0;
+	};
+	3E2A58CA117BF66200456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A59117BD47A001A4136 /* CrescendoAppDelegate.m */;
+		name = "CrescendoAppDelegate.m: 35";
+		rLen = 0;
+		rLoc = 786;
+		rType = 0;
+		vrLen = 830;
+		vrLoc = 0;
+	};
+	3E2A58CB117BF66200456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A59117BD47A001A4136 /* CrescendoAppDelegate.m */;
+		name = "CrescendoAppDelegate.m: 13";
+		rLen = 0;
+		rLoc = 261;
+		rType = 0;
+		vrLen = 830;
+		vrLoc = 0;
+	};
+	3E2A58CC117BF66200456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A5B117BD47A001A4136 /* CrescendoViewController.m */;
+		name = "CrescendoViewController.m: 18";
+		rLen = 0;
+		rLoc = 344;
+		rType = 0;
+		vrLen = 1044;
+		vrLoc = 0;
+	};
+	3E2A58CD117BF66200456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A59117BD47A001A4136 /* CrescendoAppDelegate.m */;
+		name = "CrescendoAppDelegate.m: 35";
+		rLen = 0;
+		rLoc = 786;
+		rType = 0;
+		vrLen = 830;
+		vrLoc = 0;
+	};
+	3E2A58CE117BF66200456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A5A117BD47A001A4136 /* CrescendoViewController.h */;
+		name = "CrescendoViewController.h: 21";
+		rLen = 0;
+		rLoc = 499;
+		rType = 0;
+		vrLen = 1491;
+		vrLoc = 0;
+	};
+	3E2A58CF117BF66200456B11 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A5A117BD47A001A4136 /* CrescendoViewController.h */;
+		name = "CrescendoViewController.h: 21";
+		rLen = 0;
+		rLoc = 572;
+		rType = 0;
+		vrLen = 1492;
+		vrLoc = 0;
 	};
 }

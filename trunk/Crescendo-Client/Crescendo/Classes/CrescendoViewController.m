@@ -181,12 +181,4 @@
 	NSLog(@"Connection successful with session id:%@\n", sessionId);
 }
 
-#pragma mark UIApplicationDelegate Methods
-
-// Close the connection when the user hits the home button.
-- (void) applicationWillTerminate:(UIApplication*) application
-{
-	[client disconnect];
-}
-
 @end
