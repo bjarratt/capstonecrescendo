@@ -11,6 +11,10 @@
 
 @interface GameTypeRequest : RequestMessage
 {
+	/*
+	 *
+	 *
+	 */
 	NSString *gameType;
 }
 
