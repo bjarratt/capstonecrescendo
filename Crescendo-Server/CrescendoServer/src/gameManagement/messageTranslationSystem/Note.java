@@ -369,13 +369,27 @@ public class Note
 	 */
 	public String toString()
 	{
-		if(tiedLeft && tiedRight)
-			return "tie_" + pitch + "_" + length + "_tie";
-		else if(tiedLeft)
-			return "tie_" + pitch + "_" + length;
-		else if(tiedRight)
-			return pitch + "_" + length + "_tie";
+		if(isCorrect())
+		{
+			if(tiedLeft && tiedRight)
+				return "tie_" + pitch + "_" + length + "_tie";
+			else if(tiedLeft)
+				return "tie_" + pitch + "_" + length;
+			else if(tiedRight)
+				return pitch + "_" + length + "_tie";
+			else
+				return pitch + "_" + length;
+		}
 		else
-			return pitch + "_" + length;
+		{
+			if(tiedLeft && tiedRight)
+				return "tie_" + pitch + "_" + length + "_tieX";
+			else if(tiedLeft)
+				return "tie_" + pitch + "_" + length + "X";
+			else if(tiedRight)
+				return pitch + "_" + length + "_tieX";
+			else
+				return pitch + "_" + length + "X";
+		}
 	}
 }

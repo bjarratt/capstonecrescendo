@@ -1,5 +1,8 @@
 package gameManagement.gameModes;
+
 import gameManagement.messageTranslationSystem.Note;
+import keys.GameState;
+import keys.Lengths;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -48,12 +51,12 @@ public class NoteTraining {
 				case 0:		//eighth note
 					test = currentSubdivisions + 1;
 					if(test < maxSubdivisions){				//random note will fit in measure
-						wantedNotes.add(new Note(randomizePitch(), "i", "matchGM"));
+						wantedNotes.add(new Note(randomizePitch(), Lengths.EIGHTH, GameState.NOTE_TRAINING));
 						currentSubdivisions += 1;
 						break;
 					}
 					else if(test == maxSubdivisions){		//end of measure, advance to next
-						wantedNotes.add(new Note(randomizePitch(), "i", "matchGM"));
+						wantedNotes.add(new Note(randomizePitch(), Lengths.EIGHTH, GameState.NOTE_TRAINING));
 						currentSubdivisions = 0;
 						i++;
 						break;
@@ -65,13 +68,13 @@ public class NoteTraining {
 				case 1:		//quarter note
 					test = currentSubdivisions + 2;
 					if(test < maxSubdivisions){				//random note will fit in measure
-						wantedNotes.add(new Note(randomizePitch(), "q", "matchGM"));
+						wantedNotes.add(new Note(randomizePitch(), Lengths.QUARTER, GameState.NOTE_TRAINING));
 						currentSubdivisions += 2;
 						break;
 
 					}
 					else if(test == maxSubdivisions){		//end of measure, advance to next
-						wantedNotes.add(new Note(randomizePitch(), "q", "matchGM"));
+						wantedNotes.add(new Note(randomizePitch(), Lengths.QUARTER, GameState.NOTE_TRAINING));
 						currentSubdivisions = 0;
 						i++;
 						break;
@@ -83,13 +86,13 @@ public class NoteTraining {
 				case 2:		//half note
 					test = currentSubdivisions + 4;
 					if(test < maxSubdivisions){				//random note will fit in measure
-						wantedNotes.add(new Note(randomizePitch(), "h", "matchGM"));
+						wantedNotes.add(new Note(randomizePitch(), Lengths.HALF, GameState.NOTE_TRAINING));
 						currentSubdivisions += 4;
 						break;
 
 					}
 					else if(test == maxSubdivisions){		//end of measure, advance to next
-						wantedNotes.add(new Note(randomizePitch(), "h", "matchGM"));
+						wantedNotes.add(new Note(randomizePitch(), Lengths.HALF, GameState.NOTE_TRAINING));
 						currentSubdivisions = 0;
 						i++;
 						break;
@@ -101,13 +104,13 @@ public class NoteTraining {
 				case 3:		//whole note
 					test = currentSubdivisions + 8;
 					if(test < maxSubdivisions){				//random note will fit in measure
-						wantedNotes.add(new Note(randomizePitch(), "w", "matchGM"));
+						wantedNotes.add(new Note(randomizePitch(), Lengths.WHOLE, GameState.NOTE_TRAINING));
 						currentSubdivisions += 8;
 						break;
 
 					}
 					else if(test == maxSubdivisions){		//end of measure, advance to next
-						wantedNotes.add(new Note(randomizePitch(), "w", "matchGM"));
+						wantedNotes.add(new Note(randomizePitch(), Lengths.WHOLE, GameState.NOTE_TRAINING));
 						currentSubdivisions = 0;
 						i++;
 						break;

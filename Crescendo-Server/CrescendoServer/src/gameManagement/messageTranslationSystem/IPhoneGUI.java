@@ -144,131 +144,47 @@ public class IPhoneGUI extends JPanel implements ActionListener
 	public void actionPerformed(ActionEvent e)
 	{
 		if(e.getSource() == connect)
-		{
-		//	System.out.print("\n" + player + " sending message: ");
-		//	System.out.println("\t\t" + player + "_" + GameState.CONNECT);
 			myCM.sendMessage(player + "_" + GameState.CONNECT);
-		}
 		if(e.getSource() == disconnect)
-		{
-		//	System.out.print("\n" + player + " sending message: ");
-		//	System.out.println("\t\t" + player + "_" + GameState.DISCONNECT);
 			myCM.sendMessage(player + "_" + GameState.DISCONNECT);
-		}
 		if(e.getSource() == playNote)
-		{
-		//	System.out.print("\n" + player + " sending message: ");
-		//	System.out.println("\t\t" + player + "_" + generatePitch() + "_" + generateLength());
 			myCM.sendMessage(player + "_" + generatePitch() + "_" + generateLength());
-		}
 		if(e.getSource() == splashScreen)
-		{
-		//	System.out.print("\n" + player + " sending message: ");
-		//	System.out.println("\t\t" + player + "_" + GameState.SPLASH_SCREEN);
 			myCM.sendMessage(player + "_" + GameState.SPLASH_SCREEN);
-		}
 		if(e.getSource() == gameTypes)
-		{
-		//	System.out.print("\n" + player + " sending message: ");
-		//	System.out.println("\t\t" + player + "_" + GameState.GAME_TYPES);
 			myCM.sendMessage(player + "_" + GameState.GAME_MODES);
-		}
 		if(e.getSource() == pitchTraining)
-		{
-		//	System.out.print("\n" + player + " sending message: ");
-		//	System.out.println("\t\t" + player + "_" + GameState.PITCH_TRAINING);
 			myCM.sendMessage(player + "_" + GameState.PITCH_TRAINING);
-		}
 		if(e.getSource() == lengthTraining)
-		{
-		//	System.out.print("\n" + player + " sending message: ");
-		//	System.out.println("\t\t" + player + "_" + GameState.LENGTH_TRAINING);
 			myCM.sendMessage(player + "_" + GameState.LENGTH_TRAINING);
-		}
 		if(e.getSource() == noteTraining)
-		{
-		//	System.out.print("\n" + player + " sending message: ");
-		//	System.out.println("\t\t" + player + "_" + GameState.NOTE_TRAINING);
 			myCM.sendMessage(player + "_" + GameState.NOTE_TRAINING);
-		}
 		if(e.getSource() == concertMaster)
-		{
-		//	System.out.print("\n" + player + " sending message: ");
-		//	System.out.println("\t\t" + player + "_" + GameState.CONCERT_MASTER);
 			myCM.sendMessage(player + "_" + GameState.CONCERT_MASTER);
-		}
 		if(e.getSource() == musicalIphones)
-		{
-		//	System.out.print("\n" + player + " sending message: ");
-		//	System.out.println("\t\t" + player + "_" + GameState.MUSICAL_IPHONES);
 			myCM.sendMessage(player + "_" + GameState.MUSICAL_IPHONES);
-		}
 		if(e.getSource() == notesAroundTheRoom)
-		{
-		//	System.out.print("\n" + player + " sending message: ");
-		//	System.out.println("\t\t" + player + "_" + GameState.NOTES_AROUND_THE_ROOM);
 			myCM.sendMessage(player + "_" + GameState.NOTES_AROUND_THE_ROOM);
-		}
 		if(e.getSource() == compTime)
-		{
-		//	System.out.print("\n" + player + " sending message: ");
-		//	System.out.println("\t\t" + player + "_" + GameState.COMP_TIME);
 			myCM.sendMessage(player + "_" + GameState.COMP_TIME);
-		}
 		if(e.getSource() == gameInfo)
-		{
-		//	System.out.print("\n" + player + " sending message: ");
-		//	System.out.println("\t\t" + player + "_" + GameState.GAME_INFO);
 			myCM.sendMessage(player + "_" + GameState.GAME_INFO);
-		}
 		if(e.getSource() == gameOptions)
-		{
-		//	System.out.print("\n" + player + " sending message: ");
-		//	System.out.println("\t\t" + player + "_" + GameState.GAME_OPTIONS);
 			myCM.sendMessage(player + "_" + GameState.GAME_OPTIONS);
-		}
 		if(e.getSource() == setTempo)
-		{
-		//	System.out.print("\n" + player + " sending message: ");
-		//	System.out.println("\t\t" + player + "_" + GameState.SET_TEMPO);
 			myCM.sendMessage(player + "_" + GameState.SET_TEMPO);
-		}
 		if(e.getSource() == setKey)
-		{
-		//	System.out.print("\n" + player + " sending message: ");
-		//	System.out.println("\t\t" + player + "_" + GameState.SET_KEY);
 			myCM.sendMessage(player + "_" + GameState.SET_KEY);
-		}
 		if(e.getSource() == setTimeSignature)
-		{
-		//	System.out.print("\n" + player + " sending message: ");
-		//	System.out.println("\t\t" + player + "_" + GameState.SET_TIME_SIGNATURE);
 			myCM.sendMessage(player + "_" + GameState.SET_TIME_SIGNATURE);
-		}
 		if(e.getSource() == setNumberOfBars)
-		{
-		//	System.out.print("\n" + player + " sending message: ");
-		//	System.out.println("\t\t" + player + "_" + GameState.SET_NUMBER_OF_BARS);
 			myCM.sendMessage(player + "_" + GameState.SET_NUMBER_OF_BARS);
-		}
 		if(e.getSource() == play)
-		{
-		//	System.out.print("\n" + player + " sending message: ");
-		//	System.out.println("\t\t" + player + "_" + GameState.PLAY);
 			myCM.sendMessage(player + "_" + GameState.PLAY);
-		}
 		if(e.getSource() == pause)
-		{
-		//	System.out.print("\n" + player + " sending message: ");
-		//	System.out.println("\t\t" + player + "_" + GameState.PAUSE);
 			myCM.sendMessage(player + "_" + GameState.PAUSE);
-		}
 		if(e.getSource() == review)
-		{
-		//	System.out.print("\n" + player + " sending message: ");
-		//	System.out.println("\t\t" + player + "_" + GameState.REVIEW);
 			myCM.sendMessage(player + "_" + GameState.REVIEW);
-		}		
 	}
 
 	/**
