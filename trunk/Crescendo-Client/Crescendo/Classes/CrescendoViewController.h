@@ -20,6 +20,7 @@
 
 @interface CrescendoViewController : UIViewController <ConnectionUpdateDelegate, GameTypeUpdateDelegate, PlayNoteUpdateDelegate, XMLClientDelegate, UITextFieldDelegate, UIAlertViewDelegate> {
 	XMLClient *client;
+	BOOL clientConnected;
 	NSString *playerId;
 	IBOutlet GamemodeViewController *gamemodeViewController;
 	IBOutlet HelpViewController *helpViewController;
@@ -32,6 +33,7 @@
 }
 
 @property (nonatomic, retain) XMLClient *client;
+@property (nonatomic, readwrite, assign) BOOL clientConnected;
 @property (nonatomic, retain) NSString *playerId;
 @property (nonatomic, retain) IBOutlet GamemodeViewController *gamemodeViewController;
 @property (nonatomic, retain) IBOutlet HelpViewController *helpViewController;

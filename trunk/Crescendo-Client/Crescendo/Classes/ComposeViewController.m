@@ -15,6 +15,7 @@
 @implementation ComposeViewController
 
 @synthesize client;
+@synthesize clientConnected;
 @synthesize playerId;
 @synthesize inGame;
 @synthesize myLengthScrollView;
@@ -278,7 +279,7 @@
 	 *	Send playerX_play
 	 */
 	NSString *state = @"play";
-	NSString *inputText = [NSString stringWithFormat: @"player%@_%@", playerId, state];
+	NSString *inputText = [NSString stringWithFormat: @"%@_%@", playerId, state];
 	
 	// Initialize GameStateRequest and set game state to content's of the text field.
 	GameOptionsRequest* request = [[GameOptionsRequest alloc] init];
@@ -310,12 +311,12 @@
 }
 
 - (void) pausePlay:(UIButton *)sender {
-	if (sender.titleLabel.text == @"pause") {
+	if ([sender.titleLabel.text isEqualToString:@"pause"]) {
 		/*
 		 *	Send playerX_pause
 		 */
 		NSString *state = @"pause";
-		NSString *inputText = [NSString stringWithFormat: @"player%@_%@", playerId, state];
+		NSString *inputText = [NSString stringWithFormat: @"%@_%@", playerId, state];
 		
 		// Initialize GameStateRequest and set game state to content's of the text field.
 		GameStateRequest* request = [[GameStateRequest alloc] init];
@@ -334,7 +335,7 @@
 		 *	Send playerX_play
 		 */
 		NSString *state = @"play";
-		NSString *inputText = [NSString stringWithFormat: @"player%@_%@", playerId, state];
+		NSString *inputText = [NSString stringWithFormat: @"%@_%@", playerId, state];
 		
 		// Initialize GameStateRequest and set game state to content's of the text field.
 		GameStateRequest* request = [[GameStateRequest alloc] init];
@@ -355,7 +356,7 @@
 	 *	Send playerX_play_song
 	 */
 	NSString *state = @"play_song";
-	NSString *inputText = [NSString stringWithFormat: @"player%@_%@", playerId, state];
+	NSString *inputText = [NSString stringWithFormat: @"%@_%@", playerId, state];
 	
     // Initialize GameStateRequest and set game state to content's of the text field.
 	GameStateRequest* request = [[GameStateRequest alloc] init];
@@ -370,15 +371,15 @@
 }
 
 - (void) disconnect:(UIButton *)sender {
-	//TODO: Send disconnect message
-	//TODO: Return to CrescendoViewController
+	[client disconnect];
+	[self dismissModalViewControllerAnimated:YES];
 }
 
 - (void) keySliderValueSet:(UISlider *)sender {
 	/*
 	 *	Send player1_setkey_PITCH
 	 */
-	NSString* inputText = [NSString stringWithFormat: @"player%@_setkey_%@", playerId, keyText.text];
+	NSString* inputText = [NSString stringWithFormat: @"%@_setkey_%@", playerId, keyText.text];
 	
     // Initialize PlayNoteRequest and set message to content's of the text field.
 	GameOptionsRequest* request = [[GameOptionsRequest alloc] init];
@@ -423,7 +424,7 @@
 	/*
 	 *	Send player1_settempo_X
 	 */
-	NSString* inputText = [NSString stringWithFormat: @"player%@_settempo_%@", playerId, tempoText.text];
+	NSString* inputText = [NSString stringWithFormat: @"%@_settempo_%@", playerId, tempoText.text];
 	
     // Initialize PlayNoteRequest and set message to content's of the text field.
 	GameOptionsRequest* request = [[GameOptionsRequest alloc] init];
@@ -469,7 +470,7 @@
 	/*
 	 *	Send player1_settimesignature_X_Y
 	 */
-	NSString* inputText = [NSString stringWithFormat: @"player%@_settimesignature_%@", playerId, timeText.text];
+	NSString* inputText = [NSString stringWithFormat: @"%@_settimesignature_%@", playerId, timeText.text];
 	
     // Initialize PlayNoteRequest and set message to content's of the text field.
 	GameOptionsRequest* request = [[GameOptionsRequest alloc] init];
@@ -497,7 +498,7 @@
 	/*
 	 *	Send player1_setnumberofbars_X
 	 */
-	NSString* inputText = [NSString stringWithFormat: @"player%@_setnumberofbars_%@", playerId, barsText.text];
+	NSString* inputText = [NSString stringWithFormat: @"%@_setnumberofbars_%@", playerId, barsText.text];
 	
     // Initialize PlayNoteRequest and set message to content's of the text field.
 	GameOptionsRequest* request = [[GameOptionsRequest alloc] init];
@@ -541,7 +542,7 @@
 	/*
 	 *	Send notepitch_notelength to public display
 	 */
-	NSString* inputText = [NSString stringWithFormat: @"player%@_%@_%@", playerId, notePitch, noteLength];
+	NSString* inputText = [NSString stringWithFormat: @"%@_%@_%@", playerId, notePitch, noteLength];
 	
     // Initialize PlayNoteRequest and set message to content's of the text field.
 	PlayNoteRequest* request = [[PlayNoteRequest alloc] init];
@@ -579,7 +580,7 @@
 		[self drawGamePlayOptions];
 	}
 	else {
-		if (playerId == @"1") {
+		if ([playerId isEqualToString:@"player1"]) {
 			[self drawGameOptions];
 		}
 	}	
@@ -637,13 +638,13 @@
 	/*
 	 * View Backgrounds
 	 */
-	if (playerId == @"1")
+	if ([playerId isEqualToString:@"1"])
 		self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"compose_background_red.png"]];
-	else if (playerId == @"2")
+	else if ([playerId isEqualToString:@"2"])
 		self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"compose_background_blue.png"]];
-	else if (playerId == @"3")
+	else if ([playerId isEqualToString:@"3"])
 		self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"compose_background_green.png"]];
-	else if (playerId == @"4")
+	else if ([playerId isEqualToString:@"4"])
 		self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"compose_background_orange.png"]];
 
 	/*
@@ -1539,7 +1540,7 @@
 	 * User Interface *
 	 ******************/
 	[self becomeFirstResponder];
-	self.playerId = @"1";
+	self.playerId = @"player1";
 	self.inGame = NO;
 	[self drawPortraitView];
 }
@@ -1559,6 +1560,10 @@
 */
 
 #pragma mark Unload Controller
+
+- (void) viewWillDisappear: (BOOL) animated {
+	self.inGame = NO;
+}
 
 - (void) didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.

@@ -16,6 +16,7 @@
 @implementation CrescendoViewController
 
 @synthesize client;
+@synthesize clientConnected;
 @synthesize playerId;
 @synthesize gamemodeViewController;
 @synthesize helpViewController;
@@ -60,8 +61,8 @@
 
 - (IBAction) goToGamemodeView {
 	gamemodeViewController.client = self.client;
+	gamemodeViewController.clientConnected = self.clientConnected;
 	gamemodeViewController.playerId = self.playerId;
-	
 	[self presentModalViewController:gamemodeViewController animated:YES];
 }
 
@@ -108,7 +109,7 @@
 	[request release];
 	
 	// Draw main screen with game modes
-    [self drawMain];
+	[self drawMain];
 }
 
 - (IBAction) goDisconnect {
@@ -160,11 +161,23 @@
 
 #pragma mark Initialize View Methods
 
+- (void) viewWillAppear:(BOOL) animated {
+	[super viewDidAppear:animated];
+	if (self.clientConnected == YES) {
+		NSLog(@"YES");
+		[self performSelector:@selector(drawMain) withObject:nil afterDelay:0.1];
+	}
+	else {
+		NSLog(@"NO");
+		[self performSelector:@selector(drawIP) withObject:nil afterDelay:0.1];
+	}
+}
+
  // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
  - (void)viewDidLoad {
 	 [super viewDidLoad];
 	 ipText.delegate = self;
-	 [self drawIP];
+	 clientConnected = NO;
  }
 
 #pragma mark Autorotate Orientation Override
@@ -203,18 +216,39 @@
 - (void) connectionTerminated:(XMLClient*)client
 {
 	NSLog(@"The connection terminated!\n");
+	self.clientConnected = NO;
+	if (self.gamemodeViewController) {
+		[self.gamemodeViewController setClientConnected: NO];
+		if (self.gamemodeViewController.composeViewController) {
+			[self.gamemodeViewController.composeViewController setClientConnected: NO];
+		}
+	}
 	//TODO: AlertView connection terminated
 }
 
 - (void) connectionAttemptFailed:(XMLClient*) connection
 {
 	NSLog(@"The connection failed to connect!\n");
+	self.clientConnected = NO;
+	if (self.gamemodeViewController) {
+		[self.gamemodeViewController setClientConnected: NO];
+		if (self.gamemodeViewController.composeViewController) {
+			[self.gamemodeViewController.composeViewController setClientConnected: NO];
+		}
+	}
 	//TODO: AlertView unable to connect
 }
 
 - (void) connectionSuccessful:(XMLClient*) client withSessionId:(NSString*) sessionId;
 {
 	NSLog(@"Connection successful with session id:%@\n", sessionId);
+	self.clientConnected = YES;
+	if (self.gamemodeViewController) {
+		[self.gamemodeViewController setClientConnected: YES];
+		if (self.gamemodeViewController.composeViewController) {
+			[self.gamemodeViewController.composeViewController setClientConnected: YES];
+		}
+	}
 	//TODO: Add IP to the list of successful connection IPs for user to later use
 }
 

@@ -65,7 +65,7 @@
 							<int key="NSfFlags">16</int>
 						</object>
 						<int key="IBUIButtonType">1</int>
-						<string key="IBUINormalTitle">free compose</string>
+						<string key="IBUINormalTitle">note training</string>
 						<object class="NSColor" key="IBUIHighlightedTitleColor" id="185394104">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MQA</bytes>
@@ -94,7 +94,7 @@
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<reference key="IBUIFont" ref="688619497"/>
 						<int key="IBUIButtonType">1</int>
-						<string key="IBUINormalTitle">note lengths</string>
+						<string key="IBUINormalTitle">note length training</string>
 						<reference key="IBUIHighlightedTitleColor" ref="185394104"/>
 						<reference key="IBUINormalTitleColor" ref="52216485"/>
 						<reference key="IBUINormalTitleShadowColor" ref="54418376"/>
@@ -111,7 +111,7 @@
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<reference key="IBUIFont" ref="688619497"/>
 						<int key="IBUIButtonType">1</int>
-						<string key="IBUINormalTitle">note pitches</string>
+						<string key="IBUINormalTitle">note pitch training</string>
 						<reference key="IBUIHighlightedTitleColor" ref="185394104"/>
 						<reference key="IBUINormalTitleColor" ref="52216485"/>
 						<reference key="IBUINormalTitleShadowColor" ref="54418376"/>
@@ -364,11 +364,33 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>goBack</string>
+							<string>barsSliderValueChanged:</string>
+							<string>barsSliderValueSet:</string>
+							<string>disconnect:</string>
+							<string>keySliderValueChanged:</string>
+							<string>keySliderValueSet:</string>
+							<string>pausePlay:</string>
+							<string>playSong:</string>
 							<string>sendNoteToServer:</string>
+							<string>start:</string>
+							<string>tempoSliderValueChanged:</string>
+							<string>tempoSliderValueSet:</string>
+							<string>timeSliderValueChanged:</string>
+							<string>timeSliderValueSet:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
+							<string>id</string>
+							<string>UIButton</string>
+							<string>id</string>
+							<string>id</string>
+							<string>UIButton</string>
+							<string>UIButton</string>
+							<string>id</string>
+							<string>UIButton</string>
+							<string>id</string>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 						</object>
@@ -378,11 +400,15 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>backButton</string>
+							<string>backgroundImage</string>
 							<string>buildLabel</string>
+							<string>gameLabel</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>UIButton</string>
+							<string>UIImageView</string>
+							<string>UILabel</string>
 							<string>UILabel</string>
 						</object>
 					</object>
@@ -423,7 +449,7 @@
 			</object>
 		</object>
 		<int key="IBDocument.localizationMode">0</int>
-		<string key="IBDocument.LastKnownRelativeProjectPath">Crescendo.xcodeproj</string>
+		<string key="IBDocument.LastKnownRelativeProjectPath">../Crescendo.xcodeproj</string>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<string key="IBCocoaTouchPluginVersion">3.1</string>
 	</data>
