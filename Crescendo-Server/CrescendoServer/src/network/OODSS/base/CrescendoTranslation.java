@@ -7,6 +7,8 @@ import keys.OODSS;
 import network.OODSS.messages.ConnectionRequest;
 import network.OODSS.messages.ConnectionUpdate;
 import network.OODSS.messages.DisconnectRequest;
+import network.OODSS.messages.GameOptionsRequest;
+import network.OODSS.messages.GameStateRequest;
 import network.OODSS.messages.GameTypeRequest;
 import network.OODSS.messages.PlayNoteRequest;
 import ecologylab.services.messages.DefaultServicesTranslations;
@@ -39,6 +41,8 @@ public class CrescendoTranslation
 									ConnectionUpdate.class,
 									DisconnectRequest.class,
 									PlayNoteRequest.class,
-									GameTypeRequest.class);
+									GameTypeRequest.class,
+									GameOptionsRequest.class,
+									GameStateRequest.class);
 	}
 }
