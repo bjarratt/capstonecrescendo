@@ -139,6 +139,7 @@ public class GameWindow extends PApplet
 			initStaffPositions();
 			
 			setupComplete = true;
+			this.redraw();
 		}
 	}
 	
