@@ -35,6 +35,9 @@ public class Pitches
 	public static final String FSharp6 = "FSharp6";
 	public static final String Rest = "Rest";
 	
+	public static final String Sharp = "Sharp";
+	public static final String Flat = "Flat";
+	
 	static
 	{
 		notes.add(FSharp6);

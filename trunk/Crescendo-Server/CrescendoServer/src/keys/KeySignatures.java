@@ -15,7 +15,7 @@ public class KeySignatures
 	public static String EMajor = "EMajor";
 	public static String BMajor = "BMajor";
 	public static String FSharpMajor = "FSharpMajor";
-	public static String BFlatMajor = "ASharpMajor";
+	public static String BFlatMajor = "BFlatMajor";
 	public static String EFlatMajor = "EFlatMajor";
 	public static String AFlatMajor = "AFlatMajor";
 	public static String DFlatMajor = "DFlatMajor";
