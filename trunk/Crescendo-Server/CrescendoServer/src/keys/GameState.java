@@ -23,6 +23,7 @@ public class GameState
 	public final static String MUSICAL_IPHONES = "musicaliphones";
 	public final static String NOTES_AROUND_THE_ROOM = "notesaroundtheroom";
 	public final static String COMP_TIME = "comptime";
+	public final static String COMPOSE = "compose";
 	// *******************************************************************************
 	
 	public final static String GAME_INFO = "gameinfo";
