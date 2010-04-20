@@ -638,13 +638,13 @@
 	/*
 	 * View Backgrounds
 	 */
-	if ([playerId isEqualToString:@"1"])
+	if ([playerId isEqualToString:@"player1"])
 		self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"compose_background_red.png"]];
-	else if ([playerId isEqualToString:@"2"])
+	else if ([playerId isEqualToString:@"player2"])
 		self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"compose_background_blue.png"]];
-	else if ([playerId isEqualToString:@"3"])
+	else if ([playerId isEqualToString:@"player3"])
 		self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"compose_background_green.png"]];
-	else if ([playerId isEqualToString:@"4"])
+	else if ([playerId isEqualToString:@"player4"])
 		self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"compose_background_orange.png"]];
 
 	/*
@@ -1540,7 +1540,7 @@
 	 * User Interface *
 	 ******************/
 	[self becomeFirstResponder];
-	self.playerId = @"player1";
+	self.playerId = @"player2";
 	self.inGame = NO;
 	[self drawPortraitView];
 }
