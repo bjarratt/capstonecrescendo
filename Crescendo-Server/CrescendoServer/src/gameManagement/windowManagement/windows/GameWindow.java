@@ -452,8 +452,6 @@ public class GameWindow extends PApplet
 	private int beatsPerMeasure = 4;
 	private int subdivision = 4;
 	
-	// Keeping track of notes
-	private List<String> players = keys.Players.getPlayers();
 	private ArrayList<Vector<DisplayNote>> playerNotes = new ArrayList<Vector<DisplayNote>>();
 	boolean setupComplete = false;
 	
