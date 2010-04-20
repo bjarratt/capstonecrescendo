@@ -12,6 +12,7 @@
 @implementation GamemodeViewController
 
 @synthesize client;
+@synthesize clientConnected;
 @synthesize playerId;
 @synthesize composeViewController;
 
@@ -23,11 +24,12 @@
 
 - (IBAction) freeCompose {
 	composeViewController.client = self.client;
+	composeViewController.clientConnected = self.clientConnected;
 	composeViewController.playerId = self.playerId;
 	/*
 	 *	Send game type selected to public display
 	 */
-	NSString* inputText = @"free compose";
+	NSString* inputText = [NSString stringWithFormat: @"%@_%@", playerId, @"notetraining"];
 	
     // Initialize PlayNoteRequest and set message to content's of the text field.
 	GameTypeRequest* request = [[GameTypeRequest alloc] init];
@@ -42,11 +44,12 @@
 }
 - (IBAction) noteLengths {
 	composeViewController.client = self.client;
+	composeViewController.clientConnected = self.clientConnected;
 	composeViewController.playerId = self.playerId;
 	/*
 	 *	Send game type selected to public display
 	 */
-	NSString *inputText = @"note lengths";
+	NSString *inputText = [NSString stringWithFormat: @"%@_%@", playerId, @"lengthtraining"];
 	
     // Initialize PlayNoteRequest and set message to content's of the text field.
 	GameTypeRequest* request = [[GameTypeRequest alloc] init];
@@ -61,11 +64,12 @@
 }
 - (IBAction) notePitches {
 	composeViewController.client = self.client;
+	composeViewController.clientConnected = self.clientConnected;
 	composeViewController.playerId = self.playerId;
 	/*
 	 *	Send game type selected to public display
 	 */
-	NSString *inputText = @"note pitches";
+	NSString *inputText = [NSString stringWithFormat: @"%@_%@", playerId, @"pitchtraining"];
 	
     // Initialize PlayNoteRequest and set message to content's of the text field.
 	GameTypeRequest* request = [[GameTypeRequest alloc] init];
@@ -90,6 +94,31 @@
  return self;
  }
  */
+
+- (void) viewDidAppear:(BOOL) animated {
+	[super viewDidAppear: animated];
+	/*
+	 *	Send game type selected to public display
+	 */
+	NSString* inputText = [NSString stringWithFormat: @"%@_%@", playerId, @"splashscreen"];
+	
+    // Initialize PlayNoteRequest and set message to content's of the text field.
+	GameTypeRequest* request = [[GameTypeRequest alloc] init];
+    [request setGameType:inputText];
+    
+    // Setup the client to send the message a little later in the run loop.
+    [client performSelector:@selector(sendMessage:) withObject: request];
+    
+    [request release];
+	
+	if (self.clientConnected == YES) {
+		NSLog(@"YES");
+	}
+	else {
+		NSLog(@"NO");
+		[self performSelector:@selector(goBack) withObject:nil afterDelay:0.1];
+	}
+}
 
 /*
  // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.

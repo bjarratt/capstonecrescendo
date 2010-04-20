@@ -13,11 +13,13 @@
 
 @interface GamemodeViewController : UIViewController {
 	XMLClient *client;
+	BOOL clientConnected;
 	NSString *playerId;
 	IBOutlet ComposeViewController *composeViewController;
 }
 
 @property (nonatomic, retain) XMLClient *client;
+@property (nonatomic, readwrite, assign) BOOL clientConnected;
 @property (nonatomic, retain) NSString *playerId;
 @property (nonatomic, retain) IBOutlet ComposeViewController *composeViewController;
 

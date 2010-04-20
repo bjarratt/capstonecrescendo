@@ -17,6 +17,7 @@
 
 @interface ComposeViewController : UIViewController <UIScrollViewDelegate> {
 	XMLClient *client;
+	BOOL clientConnected;
 	NSString *playerId;
 	
 	BOOL inGame;
@@ -57,6 +58,7 @@
 }
 
 @property (nonatomic, retain) XMLClient *client;
+@property (nonatomic, readwrite, assign) BOOL clientConnected;
 @property (nonatomic, retain) NSString *playerId;
 @property (readwrite, assign) BOOL inGame;
 @property (nonatomic, retain) UIScrollView *myLengthScrollView;
@@ -120,3 +122,4 @@
 - (void) drawGamePlayOptions;
 
 @end
+
