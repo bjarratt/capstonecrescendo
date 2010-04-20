@@ -10,12 +10,14 @@ import processing.core.PApplet;
 import processing.core.PFont;
 import processing.core.PImage;
 
-public class GameTypesWindow extends PApplet 
+public class GameModesWindow extends PApplet 
 {
 	public void addGameType(String type)
 	{
 		lock.lock();
-		try {
+		try 
+		{
+			while (!setupComplete) {}
 			if (type != null && type != "")
 			{
 				gameTypes.add(type);
@@ -28,55 +30,48 @@ public class GameTypesWindow extends PApplet
 	
 	public void addGameTypes(String[] types)
 	{
-		lock.lock();
-		try {
-			if (types != null)
+		if (types != null)
+		{
+			for (int i = 0; i < types.length; ++i)
 			{
-				for (int i = 0; i < types.length; ++i)
-				{
-					gameTypes.add(types[i]);
-				}
+				addGameType(types[i]);
 			}
-		}
-		finally {
-			lock.unlock();
 		}
 	}
 	
 	public void addGameTypes(List<String> types)
 	{
-		lock.lock();
-		try {
-			if (types != null)
+		if (types != null)
+		{
+			for (String type : types)
 			{
-				for (String type : types)
-				{
-					addGameType(type);
-				}
+				addGameType(type);
 			}
-		}
-		finally {
-			lock.unlock();
 		}
 	}
 	
 	@Override
 	public void setup()
 	{
-		smooth();
-		background(0);
-		Dimension parentSize = this.getParent().getSize();
-		size(parentSize.width, parentSize.height, P3D);
-		textAlign(CENTER, CENTER);
-		background = loadImage("blackground.jpg");
-		
-		addGameTypes(new String[] {"Match Pitches", 
-								   "Match Lengths", 
-								   "Keep the Beat", 
-								   "Make your Own", 
-								   "Trogdor the Burninator",
-								   "Kevin Spacey",
-								   "Donald Trump"});
+		synchronized (Thread.currentThread())
+		{
+			lock.lock();
+			try
+			{
+				setupComplete = false;
+				smooth();
+				background(0);
+				Dimension parentSize = this.getParent().getSize();
+				size(parentSize.width, parentSize.height, P3D);
+				textAlign(CENTER, CENTER);
+				background = loadImage("blackground.jpg");
+			}
+			finally
+			{
+				setupComplete = true;
+				lock.unlock();
+			}
+		}
 	}
 	
 	@Override
@@ -118,6 +113,8 @@ public class GameTypesWindow extends PApplet
 	private PFont headerFont = null;
 	private PFont optionsFont = null;
 	private ArrayList<String> gameTypes = new ArrayList<String>();
-	private final String HEADER = "Game Options";
+	private final String HEADER = "Game Modes";
+	
+	private boolean setupComplete = false;
 	private Lock lock = new ReentrantLock();
 }
