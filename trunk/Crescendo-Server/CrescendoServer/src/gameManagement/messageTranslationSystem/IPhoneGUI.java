@@ -38,13 +38,6 @@ public class IPhoneGUI extends JPanel implements ActionListener
 	private JButton play;
 	private JButton pause;
 	private JButton review;
-
-	private JLabel splash_screen;
-	private JLabel game_modes;
-	private JLabel game_options;
-	private JLabel play_screen;
-	private JLabel pause_screen;
-	private JLabel post_game;
 	
 	private Random rand;
 	
@@ -64,19 +57,10 @@ public class IPhoneGUI extends JPanel implements ActionListener
 		disconnect.addActionListener(this);
 		this.add(disconnect);
 		
-		splash_screen = new JLabel("Splash Screen");
-		splash_screen.setBackground(Color.GRAY);
-		this.add(splash_screen);
-		
 		connect = new JButton("Connect");
 		connect.addActionListener(this);
 		this.add(connect);
-		
-		
-		playNote = new JButton("Play a Random Note");
-		playNote.addActionListener(this);
-		this.add(playNote);
-		
+				
 		splashScreen = new JButton("Go to Splash Screen State");
 		splashScreen.addActionListener(this);
 		this.add(splashScreen);
@@ -144,6 +128,10 @@ public class IPhoneGUI extends JPanel implements ActionListener
 		pause = new JButton("Go to Pause State");
 		pause.addActionListener(this);
 		this.add(pause);
+		
+		playNote = new JButton("Play a Random Note");
+		playNote.addActionListener(this);
+		this.add(playNote);
 
 		review = new JButton("Review Game");
 		review.addActionListener(this);
@@ -181,8 +169,8 @@ public class IPhoneGUI extends JPanel implements ActionListener
 			myCM.sendMessage(player + "_" + GameState.NOTES_AROUND_THE_ROOM);
 		if(e.getSource() == compTime)
 			myCM.sendMessage(player + "_" + GameState.COMP_TIME);
-	//	if(e.getSource() == compose)
-	//		myCM.sendMessage(player + "_" + GameState.COMPOSE);
+		if(e.getSource() == compose)
+			myCM.sendMessage(player + "_" + GameState.COMPOSE);
 		if(e.getSource() == gameInfo)
 			myCM.sendMessage(player + "_" + GameState.GAME_INFO);
 		if(e.getSource() == setTempo)
@@ -208,41 +196,37 @@ public class IPhoneGUI extends JPanel implements ActionListener
 	 */
 	private String generatePitch()
 	{
-		switch(rand.nextInt(17))
+		switch(rand.nextInt(15))
 		{
 			case 0:
 				return "E5";
 			case 1:
-				return "ESharp5";
-			case 2:
 				return "F5";
-			case 3:
+			case 2:
 				return "FSharp5";
-			case 4:
+			case 3:
 				return "G5";
-			case 5:
+			case 4:
 				return "GSharp5";
-			case 6:
+			case 5:
 				return "A5";
-			case 7:
+			case 6:
 				return "ASharp5";
-			case 8:
+			case 7:
 				return "B5";
-			case 9:
+			case 8:
 				return "C6";
-			case 10:
+			case 9:
 				return "CSharp6";
-			case 11:
+			case 10:
 				return "D6";
-			case 12:
+			case 11:
 				return "DSharp6";
-			case 13:
+			case 12:
 				return "E6";
-			case 14:
-				return "ESharp6";
-			case 15:
+			case 13:
 				return "F6";
-			case 16:
+			case 14:
 				return "FSharp6";
 			default:
 				return "rest";

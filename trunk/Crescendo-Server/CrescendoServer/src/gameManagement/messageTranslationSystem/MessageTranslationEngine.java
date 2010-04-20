@@ -17,7 +17,6 @@ public class MessageTranslationEngine
 	{
 		//set up the available note pitches
 		pitches.put("E5", "E5");
-		pitches.put("ESharp5", "E#5");
 		pitches.put("F5", "F5");
 		pitches.put("FSharp5", "F#5");
 		pitches.put("G5", "G5");
@@ -30,7 +29,6 @@ public class MessageTranslationEngine
 		pitches.put("D6", "D6");
 		pitches.put("DSharp6", "D#6");
 		pitches.put("E6", "E6");
-		pitches.put("ESharp6", "E#6");
 		pitches.put("F6", "F6");
 		pitches.put("FSharp6", "F#6");
 
@@ -101,10 +99,10 @@ public class MessageTranslationEngine
 			{
 				//all good! :)
 			}
-			else if(pitches.containsKey(one) && lengths.containsKey(two.substring(0,two.length()-4)) && (messageComponents[0].equals(Players.PLAYER_ONE) || messageComponents[0].equals(Players.PLAYER_TWO) || messageComponents[0].equals(Players.PLAYER_THREE) || messageComponents[0].equals(Players.PLAYER_FOUR)))
+			else if(pitches.containsKey(one) && lengths.containsKey(two) && (messageComponents[0].equals(Players.PLAYER_ONE) || messageComponents[0].equals(Players.PLAYER_TWO) || messageComponents[0].equals(Players.PLAYER_THREE) || messageComponents[0].equals(Players.PLAYER_FOUR)))
 			{
-				String length = two.substring(0, two.length()-4);
-				newMessage.setNote(new Note(one,length,messageComponents[0]));
+				//TODO Check to make sure length is correct!  might end in "note"
+				newMessage.setNote(new Note(one,two,messageComponents[0]));
 			}
 			else
 			{
