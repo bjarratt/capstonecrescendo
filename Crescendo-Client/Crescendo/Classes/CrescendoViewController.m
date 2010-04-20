@@ -128,6 +128,7 @@
 	ipText.hidden = NO;
 	ipLabel.hidden = NO;
 	gameModes.hidden = YES;
+	//ipText.text = @"192.168.1.105";
 	ipText.text = @"128.194.143.165";
 }
 

@@ -274,7 +274,23 @@
 }
 
 - (void) start:(UIButton *)sender {
-	//TODO: Send start message
+	/*
+	 *	Send playerX_play
+	 */
+	NSString *state = @"play";
+	NSString *inputText = [NSString stringWithFormat: @"player%@_%@", playerId, state];
+	
+	// Initialize GameStateRequest and set game state to content's of the text field.
+	GameOptionsRequest* request = [[GameOptionsRequest alloc] init];
+	[request setGameOption:inputText];
+	
+	// Setup the client to send the message a little later in the run loop.
+	[client performSelector:@selector(sendMessage:) withObject: request];
+	
+	[state release];
+	[inputText release];
+	[request release];
+	
 	self.inGame = YES;
 	[startButton removeFromSuperview];
 	[keySlider removeFromSuperview];
@@ -299,11 +315,11 @@
 		 *	Send playerX_pause
 		 */
 		NSString *state = @"pause";
-		NSString *inputText = [NSString stringWithFormat: @"%@_%@", playerId, state];
+		NSString *inputText = [NSString stringWithFormat: @"player%@_%@", playerId, state];
 		
 		// Initialize GameStateRequest and set game state to content's of the text field.
 		GameStateRequest* request = [[GameStateRequest alloc] init];
-		[request gameState:inputText];
+		[request setGameState:inputText];
 		
 		// Setup the client to send the message a little later in the run loop.
 		[client performSelector:@selector(sendMessage:) withObject: request];
@@ -318,11 +334,11 @@
 		 *	Send playerX_play
 		 */
 		NSString *state = @"play";
-		NSString *inputText = [NSString stringWithFormat: @"%@_%@", playerId, state];
+		NSString *inputText = [NSString stringWithFormat: @"player%@_%@", playerId, state];
 		
 		// Initialize GameStateRequest and set game state to content's of the text field.
 		GameStateRequest* request = [[GameStateRequest alloc] init];
-		[request gameState:inputText];
+		[request setGameState:inputText];
 		
 		// Setup the client to send the message a little later in the run loop.
 		[client performSelector:@selector(sendMessage:) withObject: request];
@@ -339,11 +355,11 @@
 	 *	Send playerX_play_song
 	 */
 	NSString *state = @"play_song";
-	NSString *inputText = [NSString stringWithFormat: @"%@_%@", playerId, state];
+	NSString *inputText = [NSString stringWithFormat: @"player%@_%@", playerId, state];
 	
     // Initialize GameStateRequest and set game state to content's of the text field.
 	GameStateRequest* request = [[GameStateRequest alloc] init];
-    [request gameState:inputText];
+    [request setGameState:inputText];
     
     // Setup the client to send the message a little later in the run loop.
     [client performSelector:@selector(sendMessage:) withObject: request];
@@ -356,6 +372,23 @@
 - (void) disconnect:(UIButton *)sender {
 	//TODO: Send disconnect message
 	//TODO: Return to CrescendoViewController
+}
+
+- (void) keySliderValueSet:(UISlider *)sender {
+	/*
+	 *	Send player1_setkey_PITCH
+	 */
+	NSString* inputText = [NSString stringWithFormat: @"player%@_setkey_%@", playerId, keyText.text];
+	
+    // Initialize PlayNoteRequest and set message to content's of the text field.
+	GameOptionsRequest* request = [[GameOptionsRequest alloc] init];
+    [request setGameOption:inputText];
+    
+    // Setup the client to send the message a little later in the run loop.
+    [client performSelector:@selector(sendMessage:) withObject: request];
+    
+	[inputText release];
+    [request release];
 }
 
 - (void) keySliderValueChanged:(UISlider *)sender {
@@ -384,9 +417,27 @@
 		keyText.text = @"BFlat";
 	else if(val <= 1 && val >= 0)
 		keyText.text = @"F";
-	}
+}
+
+- (void) tempoSliderValueSet:(UISlider *)sender {
+	/*
+	 *	Send player1_settempo_X
+	 */
+	NSString* inputText = [NSString stringWithFormat: @"player%@_settempo_%@", playerId, tempoText.text];
+	
+    // Initialize PlayNoteRequest and set message to content's of the text field.
+	GameOptionsRequest* request = [[GameOptionsRequest alloc] init];
+    [request setGameOption:inputText];
+    
+    // Setup the client to send the message a little later in the run loop.
+    [client performSelector:@selector(sendMessage:) withObject: request];
+    
+	[inputText release];
+    [request release];
+}
 
 - (void) tempoSliderValueChanged:(UISlider *)sender {  
+	//TODO: Send GameOptionsRequest message
 	float val = sender.value;
 	if(val <= 12 && val > 11)
 		tempoText.text = @"20";
@@ -412,10 +463,27 @@
 		tempoText.text = @"220";
 	else if(val <= 1 && val >= 0)
 		tempoText.text = @"240";
+}
 
-}  
+- (void) timeSliderValueSet:(UISlider *)sender {
+	/*
+	 *	Send player1_settimesignature_X_Y
+	 */
+	NSString* inputText = [NSString stringWithFormat: @"player%@_settimesignature_%@", playerId, timeText.text];
+	
+    // Initialize PlayNoteRequest and set message to content's of the text field.
+	GameOptionsRequest* request = [[GameOptionsRequest alloc] init];
+    [request setGameOption:inputText];
+    
+    // Setup the client to send the message a little later in the run loop.
+    [client performSelector:@selector(sendMessage:) withObject: request];
+    
+	[inputText release];
+    [request release];
+}
 
 - (void) timeSliderValueChanged:(UISlider *)sender {  
+	//TODO: Send GameOptionsRequest message
 	float val = sender.value;
 	if(val <= 3 && val > 2)
 		timeText.text = @"4/4";
@@ -423,9 +491,27 @@
 		timeText.text = @"3/4";
 	else if(val <= 1 && val >= 0)
 		timeText.text = @"2/4";    
-}  
+}
 
-- (void) barsSliderValueChanged:(UISlider *)sender {  
+- (void) barsSliderValueSet:(UISlider *)sender {
+	/*
+	 *	Send player1_setnumberofbars_X
+	 */
+	NSString* inputText = [NSString stringWithFormat: @"player%@_setnumberofbars_%@", playerId, barsText.text];
+	
+    // Initialize PlayNoteRequest and set message to content's of the text field.
+	GameOptionsRequest* request = [[GameOptionsRequest alloc] init];
+    [request setGameOption:inputText];
+    
+    // Setup the client to send the message a little later in the run loop.
+    [client performSelector:@selector(sendMessage:) withObject: request];
+    
+	[inputText release];
+    [request release];
+}
+
+- (void) barsSliderValueChanged:(UISlider *)sender { 
+	//TODO: Send GameOptionsRequest message
 	float val = sender.value;
 	if(val <= 8 && val > 7)
 		barsText.text = @"4";
@@ -455,7 +541,7 @@
 	/*
 	 *	Send notepitch_notelength to public display
 	 */
-	NSString* inputText = [NSString stringWithFormat: @"%@_%@_%@", playerId, notePitch, noteLength];
+	NSString* inputText = [NSString stringWithFormat: @"player%@_%@_%@", playerId, notePitch, noteLength];
 	
     // Initialize PlayNoteRequest and set message to content's of the text field.
 	PlayNoteRequest* request = [[PlayNoteRequest alloc] init];
@@ -464,6 +550,7 @@
     // Setup the client to send the message a little later in the run loop.
     [client performSelector:@selector(sendMessage:) withObject: request];
     
+	[inputText release];
     [request release];
 }
 
@@ -1331,6 +1418,7 @@
 		keySlider.continuous = YES;
 		keySlider.transform = CGAffineTransformRotate(keySlider.transform, 270.0/180*M_PI);
 		[keySlider addTarget:self action:@selector(keySliderValueChanged:) forControlEvents:UIControlEventValueChanged];
+		[keySlider addTarget:self action:@selector(keySliderValueSet:) forControlEvents:UIControlEventTouchUpInside];
 	}
 	[self.view addSubview:keySlider];
 	
@@ -1343,6 +1431,7 @@
 		//timeSlider.value = 0.0; // Or some other initial value
 		timeSlider.transform = CGAffineTransformRotate(timeSlider.transform, 270.0/180*M_PI);
 		[timeSlider addTarget:self action:@selector(timeSliderValueChanged:) forControlEvents:UIControlEventValueChanged];
+		[timeSlider addTarget:self action:@selector(timeSliderValueSet:) forControlEvents:UIControlEventTouchUpInside];
 	}
 	[self.view addSubview:timeSlider];
 	
@@ -1354,6 +1443,7 @@
 		tempoSlider.continuous = YES;
 		tempoSlider.transform = CGAffineTransformRotate(tempoSlider.transform, 270.0/180*M_PI);
 		[tempoSlider addTarget:self action:@selector(tempoSliderValueChanged:) forControlEvents:UIControlEventValueChanged];
+		[tempoSlider addTarget:self action:@selector(tempoSliderValueSet:) forControlEvents:UIControlEventTouchUpInside];
 	}
 	[self.view addSubview:tempoSlider];
 	
@@ -1365,6 +1455,7 @@
 		barsSlider.continuous = YES;
 		barsSlider.transform = CGAffineTransformRotate(barsSlider.transform, 270.0/180*M_PI);
 		[barsSlider addTarget:self action:@selector(barsSliderValueChanged:) forControlEvents:UIControlEventValueChanged];
+		[barsSlider addTarget:self action:@selector(barsSliderValueSet:) forControlEvents:UIControlEventTouchUpInside];
 	}
 	[self.view addSubview:barsSlider];
 	
@@ -1486,6 +1577,15 @@
     [super dealloc];
 	[myLengthScrollView release];
 	[myPitchScrollView release];
+	[buildButton release];
+	[buildLabel release];
+	[backButton release];
+	[gameLabel release];
+	[backgroundImage release];
+	[lengthImages release];
+	[pitchImages release];
+	[noteLength release];
+	[notePitch release];
 	[keySlider release];
 	[keyText release];
 	[keyLabel release];
@@ -1498,12 +1598,10 @@
 	[barsSlider release];
 	[barsText release];
 	[barsLabel release];
-	[buildLabel release];
-	[backButton release];
-	[lengthImages release];
-	[pitchImages release];
-	[noteLength release];
-	[notePitch release];
+	[startButton release];
+	[pauseButton release];
+	[playButton release];
+	[disconnectButton release];
 }
 
 
