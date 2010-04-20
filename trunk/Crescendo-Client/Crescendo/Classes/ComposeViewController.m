@@ -7,6 +7,9 @@
 //
 
 #import "ComposeViewController.h"
+#import "GameOptionsRequest.h"
+#import "GameStateRequest.h"
+#import "GameTypeRequest.h"
 #import "PlayNoteRequest.h"
 
 @implementation ComposeViewController
@@ -43,6 +46,7 @@
 
 @synthesize startButton;
 @synthesize pauseButton;
+@synthesize playButton;
 @synthesize disconnectButton;
 
 #pragma mark Shake
@@ -269,15 +273,87 @@
 	[self dismissModalViewControllerAnimated:YES];
 }
 
-- (IBAction) start:(UIButton *)sender {
+- (void) start:(UIButton *)sender {
+	//TODO: Send start message
+	self.inGame = YES;
+	[startButton removeFromSuperview];
+	[keySlider removeFromSuperview];
+	[timeSlider removeFromSuperview];
+	[tempoSlider removeFromSuperview];
+	[barsSlider removeFromSuperview];
+	[keyText removeFromSuperview];
+	[timeText removeFromSuperview];
+	[tempoText removeFromSuperview];
+	[barsText removeFromSuperview];
+	[keyLabel removeFromSuperview];
+	[timeLabel removeFromSuperview];
+	[tempoLabel removeFromSuperview];
+	[barsLabel removeFromSuperview];
+	[self drawPortraitView];
 	
 }
 
-- (IBAction) pause:(UIButton *)sender {
-		//TODO: Send pause message
+- (void) pausePlay:(UIButton *)sender {
+	if (sender.titleLabel.text == @"pause") {
+		/*
+		 *	Send playerX_pause
+		 */
+		NSString *state = @"pause";
+		NSString *inputText = [NSString stringWithFormat: @"%@_%@", playerId, state];
+		
+		// Initialize GameStateRequest and set game state to content's of the text field.
+		GameStateRequest* request = [[GameStateRequest alloc] init];
+		[request gameState:inputText];
+		
+		// Setup the client to send the message a little later in the run loop.
+		[client performSelector:@selector(sendMessage:) withObject: request];
+		
+		[state release];
+		[inputText release];
+		[request release];
+		[sender setTitle:@"play" forState:UIControlStateNormal];
+	}
+	else {
+		/*
+		 *	Send playerX_play
+		 */
+		NSString *state = @"play";
+		NSString *inputText = [NSString stringWithFormat: @"%@_%@", playerId, state];
+		
+		// Initialize GameStateRequest and set game state to content's of the text field.
+		GameStateRequest* request = [[GameStateRequest alloc] init];
+		[request gameState:inputText];
+		
+		// Setup the client to send the message a little later in the run loop.
+		[client performSelector:@selector(sendMessage:) withObject: request];
+		
+		[state release];
+		[inputText release];
+		[request release];
+		[sender setTitle:@"pause" forState:UIControlStateNormal];
+	}
 }
 
-- (IBAction) disconnect:(UIButton *)sender {
+- (void) playSong:(UIButton *)sender {
+	/*
+	 *	Send playerX_play_song
+	 */
+	NSString *state = @"play_song";
+	NSString *inputText = [NSString stringWithFormat: @"%@_%@", playerId, state];
+	
+    // Initialize GameStateRequest and set game state to content's of the text field.
+	GameStateRequest* request = [[GameStateRequest alloc] init];
+    [request gameState:inputText];
+    
+    // Setup the client to send the message a little later in the run loop.
+    [client performSelector:@selector(sendMessage:) withObject: request];
+    
+	[state release];
+	[inputText release];
+    [request release];
+}
+
+- (void) disconnect:(UIButton *)sender {
 	//TODO: Send disconnect message
 	//TODO: Return to CrescendoViewController
 }
@@ -377,7 +453,7 @@
 
 - (void) sendNoteToServer: (id) sender {
 	/*
-	 *	Send notelength/notepitch to public display
+	 *	Send notepitch_notelength to public display
 	 */
 	NSString* inputText = [NSString stringWithFormat: @"%@_%@_%@", playerId, notePitch, noteLength];
 	
@@ -438,6 +514,7 @@
 	[myPitchScrollView removeFromSuperview];
 	if (self.inGame == YES) {
 		[pauseButton removeFromSuperview];
+		[playButton removeFromSuperview];
 		[disconnectButton removeFromSuperview];
 	}
 	else {
@@ -1175,6 +1252,7 @@
 }
 
 - (void) drawGamePlayOptions {
+	backButton.hidden = YES;
 	/*
 	 * Label
 	 */
@@ -1184,7 +1262,6 @@
 	/*
 	 * Pause button
 	 */
-	//TODO: Send pause message
 	pauseButton = [UIButton buttonWithType: UIButtonTypeRoundedRect];
 	pauseButton.frame = CGRectMake(50, 190, 220, 50);
 	[pauseButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -1193,15 +1270,25 @@
 	//[pauseButton setTitle: @"pause" forState:UIControlStateDisabled];
 	//[pauseButton setTitle: @"pause" forState:UIControlStateSelected];
 	[pauseButton setBackgroundImage:[UIImage imageNamed:@"menu_button_up.png"] forState:UIControlStateNormal];
-	[pauseButton addTarget:self	action:@selector(pause:) forControlEvents:UIControlEventTouchUpInside];
+	[pauseButton addTarget:self	action:@selector(pausePlay:) forControlEvents:UIControlEventTouchUpInside];
 	[self.view addSubview:pauseButton];
+	
+	playButton = [UIButton buttonWithType: UIButtonTypeRoundedRect];
+	playButton.frame = CGRectMake(50, 255, 220, 50);
+	[playButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+	[playButton setTitle: @"play song" forState:UIControlStateNormal];
+	//[pauseButton setTitle: @"pause" forState:UIControlStateHighlighted];
+	//[pauseButton setTitle: @"pause" forState:UIControlStateDisabled];
+	//[pauseButton setTitle: @"pause" forState:UIControlStateSelected];
+	[playButton setBackgroundImage:[UIImage imageNamed:@"menu_button_up.png"] forState:UIControlStateNormal];
+	[playButton addTarget:self	action:@selector(playSong:) forControlEvents:UIControlEventTouchUpInside];
+	[self.view addSubview:playButton];
 	
 	/*
 	 * Disconnect button
 	 */
-	//TODO: Send disconnect button
 	disconnectButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-	disconnectButton.frame = CGRectMake(50, 255, 220, 50);
+	disconnectButton.frame = CGRectMake(50, 320, 220, 50);
 	[disconnectButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 	[disconnectButton setTitle: @"disconnect" forState:UIControlStateNormal];
 	//[disconnectButton setTitle: @"disconnect" forState:UIControlStateHighlighted];
@@ -1230,7 +1317,7 @@
 	//[startButton setTitle: @"disconnect" forState:UIControlStateDisabled];
 	//[startButton setTitle: @"disconnect" forState:UIControlStateSelected];
 	[startButton setBackgroundImage:[UIImage imageNamed:@"menu_button_up.png"] forState:UIControlStateNormal];
-	[startButton addTarget:self action:@selector(disconnect:) forControlEvents:UIControlEventTouchUpInside];
+	[startButton addTarget:self action:@selector(start:) forControlEvents:UIControlEventTouchUpInside];
 	[self.view addSubview:startButton];
 	
 	/*
