@@ -99,10 +99,10 @@ public class MessageTranslationEngine
 			{
 				//all good! :)
 			}
-			else if(pitches.containsKey(one) && lengths.containsKey(two) && (messageComponents[0].equals(Players.PLAYER_ONE) || messageComponents[0].equals(Players.PLAYER_TWO) || messageComponents[0].equals(Players.PLAYER_THREE) || messageComponents[0].equals(Players.PLAYER_FOUR)))
+			else if(pitches.containsKey(one) && lengths.containsKey(two.substring(0,two.length()-4)) && (messageComponents[0].equals(Players.PLAYER_ONE) || messageComponents[0].equals(Players.PLAYER_TWO) || messageComponents[0].equals(Players.PLAYER_THREE) || messageComponents[0].equals(Players.PLAYER_FOUR)))
 			{
 				//TODO Check to make sure length is correct!  might end in "note"
-				newMessage.setNote(new Note(one,two,messageComponents[0]));
+				newMessage.setNote(new Note(one,two.substring(0,two.length()-4),messageComponents[0]));
 			}
 			else
 			{

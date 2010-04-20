@@ -243,13 +243,13 @@ public class IPhoneGUI extends JPanel implements ActionListener
 		switch(rand.nextInt(4))
 		{
 			case 0:
-				return "eighth";
+				return "eighthnote";
 			case 1:
-				return "quarter";
+				return "quarternote";
 			case 2:
-				return "half";
+				return "halfnote";
 			default:
-				return "whole";
+				return "wholenote";
 		}
 	}
 	
