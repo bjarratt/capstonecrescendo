@@ -11,6 +11,9 @@
 
 @interface GameTypeUpdate : UpdateMessage 
 {
+	NSString *currentType;
 }
+
+@property (nonatomic,readwrite, retain) NSString *currentType;
 
 @end

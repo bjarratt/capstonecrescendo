@@ -11,6 +11,8 @@
 
 @implementation GameTypeUpdate
 
+@synthesize currentType;
+
 + (void) initialize {
 	[GameTypeUpdate class];
 }

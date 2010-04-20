@@ -55,6 +55,8 @@
 - (void) alertView: (UIAlertView *) actionSheet clickedButtonAtIndex: (NSInteger) buttonIndex {
 	if (buttonIndex == 0)
 		NSLog(@"alertView: Ok");
+
+	[self drawIP];
 }
 
 #pragma mark Interface Methods
@@ -107,9 +109,6 @@
 	[client performSelector:@selector(sendMessage:) withObject: request];
 	
 	[request release];
-	
-	// Draw main screen with game modes
-	[self drawMain];
 }
 
 - (IBAction) goDisconnect {
@@ -130,6 +129,7 @@
 	ipLabel.hidden = NO;
 	gameModes.hidden = YES;
 	//ipText.text = @"192.168.1.105";
+	//ipText.text = @"128.194.132.140";
 	ipText.text = @"128.194.143.165";
 }
 
@@ -164,11 +164,9 @@
 - (void) viewWillAppear:(BOOL) animated {
 	[super viewDidAppear:animated];
 	if (self.clientConnected == YES) {
-		NSLog(@"YES");
 		[self performSelector:@selector(drawMain) withObject:nil afterDelay:0.1];
 	}
 	else {
-		NSLog(@"NO");
 		[self performSelector:@selector(drawIP) withObject:nil afterDelay:0.1];
 	}
 }
@@ -223,7 +221,6 @@
 			[self.gamemodeViewController.composeViewController setClientConnected: NO];
 		}
 	}
-	//TODO: AlertView connection terminated
 }
 
 - (void) connectionAttemptFailed:(XMLClient*) connection
@@ -236,7 +233,9 @@
 			[self.gamemodeViewController.composeViewController setClientConnected: NO];
 		}
 	}
-	//TODO: AlertView unable to connect
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Unable to connect" message:(@"Unable to connect to %@.", validatedIp) delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+	[alert show];
+	[alert release];
 }
 
 - (void) connectionSuccessful:(XMLClient*) client withSessionId:(NSString*) sessionId;
@@ -249,6 +248,8 @@
 			[self.gamemodeViewController.composeViewController setClientConnected: YES];
 		}
 	}
+	[self drawMain];
+	
 	//TODO: Add IP to the list of successful connection IPs for user to later use
 }
 

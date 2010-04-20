@@ -100,7 +100,7 @@
 	/*
 	 *	Send game type selected to public display
 	 */
-	NSString* inputText = [NSString stringWithFormat: @"%@_%@", playerId, @"splashscreen"];
+	NSString* inputText = [NSString stringWithFormat: @"%@_%@", playerId, @"gamemodes"];
 	
     // Initialize PlayNoteRequest and set message to content's of the text field.
 	GameTypeRequest* request = [[GameTypeRequest alloc] init];

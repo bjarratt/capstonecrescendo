@@ -103,6 +103,9 @@
 		<field_descriptor
 			field="uid"
 			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
+		<field_descriptor
+			field="currentType"
+			tag_name="current_type" type="1" scalar_type="StringType"></field_descriptor>
 	</class_descriptor>
 	<class_descriptor described_class="class network.OODSS.PlayNoteRequest"
 		tag_name="play_note_request">
