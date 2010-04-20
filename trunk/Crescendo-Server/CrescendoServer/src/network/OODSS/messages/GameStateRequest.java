@@ -1,6 +1,7 @@
 package network.OODSS.messages;
 
 import ecologylab.collections.Scope;
+import ecologylab.services.messages.OkResponse;
 import ecologylab.services.messages.RequestMessage;
 import ecologylab.services.messages.ResponseMessage;
 
@@ -12,6 +13,6 @@ public class GameStateRequest extends RequestMessage
 	@Override
 	public ResponseMessage performService(Scope clientSessionScope) 
 	{
-		return null;
+		return OkResponse.reusableInstance;
 	}
 }
