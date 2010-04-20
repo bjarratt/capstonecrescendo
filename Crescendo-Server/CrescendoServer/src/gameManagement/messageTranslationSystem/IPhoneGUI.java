@@ -27,8 +27,8 @@ public class IPhoneGUI extends JPanel implements ActionListener
 	private JButton musicalIphones;
 	private JButton notesAroundTheRoom;
 	private JButton compTime;
+	private JButton compose;
 	private JButton gameInfo;
-	private JButton gameOptions;
 	private JButton setTempo;
 	private JButton setKey;
 	private JButton setTimeSignature;
@@ -99,13 +99,13 @@ public class IPhoneGUI extends JPanel implements ActionListener
 		compTime.addActionListener(this);
 		this.add(compTime);
 
+		compose = new JButton("Compose");
+		compose.addActionListener(this);
+		this.add(compose);
+
 		gameInfo = new JButton("Go to Game Info State");
 		gameInfo.addActionListener(this);
 		this.add(gameInfo);
-
-		gameOptions = new JButton("Game Options State");
-		gameOptions.addActionListener(this);
-		this.add(gameOptions);
 
 		setTempo = new JButton("Set Tempo (Random)");
 		setTempo.addActionListener(this);
@@ -167,10 +167,10 @@ public class IPhoneGUI extends JPanel implements ActionListener
 			myCM.sendMessage(player + "_" + GameState.NOTES_AROUND_THE_ROOM);
 		if(e.getSource() == compTime)
 			myCM.sendMessage(player + "_" + GameState.COMP_TIME);
+		if(e.getSource() == compose)
+			myCM.sendMessage(player + "_" + GameState.COMPOSE);
 		if(e.getSource() == gameInfo)
 			myCM.sendMessage(player + "_" + GameState.GAME_INFO);
-		if(e.getSource() == gameOptions)
-			myCM.sendMessage(player + "_" + GameState.GAME_OPTIONS);
 		if(e.getSource() == setTempo)
 			myCM.sendMessage(player + "_" + GameState.SET_TEMPO);
 		if(e.getSource() == setKey)
