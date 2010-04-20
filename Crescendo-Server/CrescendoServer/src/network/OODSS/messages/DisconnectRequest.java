@@ -14,6 +14,12 @@ public class DisconnectRequest extends ecologylab.services.messages.DisconnectRe
 	@Override
 	public ResponseMessage performService(Scope clientSessionScope) 
 	{
+		try {
+			Thread.sleep(100);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
 		super.performService(clientSessionScope);
 		
 		ConnectionManager.getInstance().cleanupPlayers();

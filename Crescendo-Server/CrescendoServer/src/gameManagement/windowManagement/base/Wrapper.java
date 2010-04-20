@@ -11,6 +11,8 @@ import processing.core.PApplet;
  */
 public class Wrapper extends Panel 
 {
+	
+
 	public Wrapper() { super(); }
 	
 	public Wrapper(PApplet applet)
@@ -52,4 +54,5 @@ public class Wrapper extends Panel
 	}
 	
 	private PApplet applet;
+	private static final long serialVersionUID = 1L;
 }
