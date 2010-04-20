@@ -448,7 +448,7 @@ public class GameWindow extends PApplet
 	
 	// Game settings
 	private String keySignature = KeySignatures.BMajor;
-	private int playerCount = 3;
+	private int playerCount = 2;
 	private int beatsPerMeasure = 4;
 	private int subdivision = 4;
 	
