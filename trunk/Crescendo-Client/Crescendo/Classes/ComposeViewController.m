@@ -576,7 +576,7 @@
 	/*
 	 * Game Options Display
 	 */
-	if (self.inGame == YES) {
+	if (self.inGame == YES || ![playerId isEqualToString:@"player1"]) {
 		[self drawGamePlayOptions];
 	}
 	else {
