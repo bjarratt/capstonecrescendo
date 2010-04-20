@@ -85,9 +85,17 @@ public class GameManager implements ActionListener
 
 	ArrayList<Note> notesToSend; 
 	
-	Wrapper splash;
 	Wrapper display;
 	GameWindow myGameWindow;
+	
+	Wrapper modes;
+	GameModesWindow myGameModesWindow;
+	
+	Wrapper pause;
+	PauseScreen myPauseScreen;
+	
+	Wrapper splash;
+	SplashScreen mySplashScreen;
 
 	/**
 	 *	Constructs a GameManager object with up to 4 players
@@ -153,20 +161,35 @@ public class GameManager implements ActionListener
 
 		notesToSend = new ArrayList<Note>();
 
-		//create a new display window
-		splash = new Wrapper(new SplashScreen());
+		//create a new splash screen
+		mySplashScreen = new SplashScreen();
+		splash = new Wrapper(mySplashScreen);
 		splash.setBackground(Color.BLACK);
 		splash.setSize(800, 600);
 		WindowManager.getInstance().addWindow(keys.GameState.SPLASH_SCREEN, splash);
 		
+		//create a new splash screen
+	/*	myGameModesWindow = new GameModesWindow();
+		myGameModesWindow.addGameType(GameState.LENGTH_TRAINING);
+		myGameModesWindow.addGameType(GameState.PITCH_TRAINING);
+		myGameModesWindow.addGameType(GameState.NOTE_TRAINING);
+		modes = new Wrapper(myGameModesWindow);
+		modes.setBackground(Color.BLACK);
+		modes.setSize(800, 600);
+		WindowManager.getInstance().addWindow(keys.GameState.GAME_MODES, modes);
+
+		//create a new splash screen
+		myPauseScreen = new PauseScreen();
+		pause = new Wrapper(myPauseScreen);
+		pause.setBackground(Color.BLACK);
+		pause.setSize(800, 600);
+		WindowManager.getInstance().addWindow(keys.GameState.PAUSE, pause);
+		*/
 		myGameWindow = new GameWindow();
-		myGameWindow.setPlayerCount(numberOfActivePlayers+1);
-		
-		
 		display = new Wrapper(myGameWindow);
 		display.setBackground(Color.BLACK);
 		display.setSize(800, 600);
-		WindowManager.getInstance().addWindow(gameMode, display);
+		WindowManager.getInstance().addWindow(keys.GameState.PLAY, display);
 		
 		WindowManager.getInstance().run();
 	}
@@ -595,10 +618,11 @@ public class GameManager implements ActionListener
 					exit = false;
 					inGameTimer.stop();
 					sendMessageToDisplay(m.getMessage());
-					sendMessageToDisplay(Players.PLAYER_ONE + "_" + GameState.DISCONNECT);
-					sendMessageToDisplay(Players.PLAYER_TWO + "_" + GameState.DISCONNECT);
-					sendMessageToDisplay(Players.PLAYER_THREE + "_" + GameState.DISCONNECT);
-					sendMessageToDisplay(Players.PLAYER_FOUR + "_" + GameState.DISCONNECT);
+					
+					mySplashScreen.setConnected(1,false);
+					mySplashScreen.setConnected(2,false);
+					mySplashScreen.setConnected(3,false);
+					mySplashScreen.setConnected(4,false);
 					numberOfActivePlayers=0;
 					
 					setNumberOfBeatsPerMeasure();
@@ -642,7 +666,7 @@ public class GameManager implements ActionListener
 					
 					try
 					{
-						WindowManager.getInstance().previousWindow(GameState.SPLASH_SCREEN);
+						WindowManager.getInstance().nextWindow(GameState.SPLASH_SCREEN);
 					}
 					catch(InterruptedException e)
 					{
@@ -658,6 +682,7 @@ public class GameManager implements ActionListener
 				else if(at_splash_screen && m.getMessage().split("_")[1].equals("connect"))
 				{
 					numberOfActivePlayers++;
+					mySplashScreen.setConnected(m.getMessage().split("_")[0].charAt(m.getMessage().split("_")[0].length()-1)-48,true);
 					sendMessageToDisplay(m.getMessage());
 				}
 				//message is "player1_gamemodes"  (checking to make sure player 1 has sent the message)
@@ -675,7 +700,6 @@ public class GameManager implements ActionListener
 					
 					at_splash_screen = false;
 					at_game_modes = true;
-					sendActivePlayers();
 					myGameWindow.setPlayerCount(numberOfActivePlayers);
 					sendMessageToDisplay(m.getMessage());
 				}
@@ -902,16 +926,18 @@ public class GameManager implements ActionListener
 				{
 					try
 					{
-						WindowManager.getInstance().nextWindow(gameMode);
+						WindowManager.getInstance().nextWindow(GameState.PLAY);
 					}
 					catch(InterruptedException e)
 					{
 						
 					}
 					System.out.println("*****\tAt the Play Screen\t*****");
-					sendGameNotes();
+
 					at_game_options = false;
 					at_play = true;
+										
+					sendGameNotes();
 					inGameTimer.start();
 					sendMessageToDisplay(m.getMessage());
 				}
@@ -941,8 +967,6 @@ public class GameManager implements ActionListener
 				{
 					try
 					{
-						myGameWindow.stop();
-						myGameWindow.destroy();
 						WindowManager.getInstance().nextWindow(GameState.POST_GAME);
 					}
 					catch(InterruptedException e)
@@ -980,7 +1004,7 @@ public class GameManager implements ActionListener
 				else if(at_post_game && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.SPLASH_SCREEN))
 				{
 					try
-					{
+					{						
 						WindowManager.getInstance().nextWindow(GameState.SPLASH_SCREEN);
 					}
 					catch(InterruptedException e)
@@ -1069,7 +1093,12 @@ public class GameManager implements ActionListener
 		
 		if(numberOfActivePlayers == 1 && player1IsDone)
 		{
-			addMessageToPool(Players.PLAYER_ONE + "_" + GameState.POST_GAME);
+		/*	String mySong = new String("");
+			for(Note note : player1Notes)
+				mySong += note.getJFuguePattern();
+			System.out.println(mySong);
+			new org.jfugue.Player().play(new org.jfugue.Pattern(mySong));
+		*/	addMessageToPool(Players.PLAYER_ONE + "_" + GameState.POST_GAME);
 		}
 		else if(numberOfActivePlayers == 2 && player1IsDone && player2IsDone)
 		{
@@ -1393,6 +1422,7 @@ public class GameManager implements ActionListener
 		for(Note note : notesToSend)
 		{
 			myGameWindow.addNote(note);
+			//note.playNote();
 		}
 		notesToSend = new ArrayList<Note>();
 	}

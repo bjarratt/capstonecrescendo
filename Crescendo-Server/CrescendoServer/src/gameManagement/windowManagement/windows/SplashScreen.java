@@ -45,7 +45,7 @@ public class SplashScreen extends PApplet
 			
 			if (0 < playerIndex && playerIndex < 5)
 			{
-				Player p = players.get(playerIndex);
+				Player p = players.get(playerIndex-1);
 				
 				if (isConnected)
 				{

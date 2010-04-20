@@ -364,11 +364,11 @@ public class Note
 		if(tiedLeft && tiedRight)
 			p = new Pattern(jPitch + "-" + jLength + "- ");
 		else if(tiedLeft)
-			p = new Pattern(jPitch + "-" + jLength);
+			p = new Pattern(jPitch + "-" + jLength + " ");
 		else if(tiedRight)
 			p = new Pattern(jPitch + jLength + "- ");
 		else
-			p = new Pattern(jPitch + jLength);
+			p = new Pattern(jPitch + jLength + " ");
 		return p;
 	}
 
