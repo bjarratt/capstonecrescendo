@@ -2,6 +2,7 @@ package network.OODSS.messages;
 
 import keys.OODSS;
 import ecologylab.collections.Scope;
+import ecologylab.services.messages.OkResponse;
 import ecologylab.services.messages.RequestMessage;
 import ecologylab.services.messages.ResponseMessage;
 import gameManagement.GameManager;
@@ -18,6 +19,6 @@ public class GameOptionsRequest extends RequestMessage {
 		GameManager manager = (GameManager)clientSessionScope.get(OODSS.GAME_MANAGER);
 		manager.addMessageToPool(gameOption);
 		
-		return null;
+		return OkResponse.reusableInstance;
 	}
 }
