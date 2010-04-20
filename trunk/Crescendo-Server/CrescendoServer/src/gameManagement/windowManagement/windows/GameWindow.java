@@ -31,10 +31,7 @@ public class GameWindow extends PApplet
 		lock.lock();
 		try
 		{
-			for (Vector<DisplayNote> notes : playerNotes)
-			{
-				notes = new Vector<DisplayNote>();
-			}
+//			noLoop();
 		}
 		finally
 		{
@@ -501,5 +498,12 @@ public class GameWindow extends PApplet
 		{
 			e.printStackTrace();
 		}
+		
+		window.stop();
+		window.destroy();
+		
+		window = new GameWindow();
+		window.init();
+		window.start();
 	}
 }

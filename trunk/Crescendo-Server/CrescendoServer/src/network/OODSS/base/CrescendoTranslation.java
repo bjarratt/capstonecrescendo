@@ -10,6 +10,7 @@ import network.OODSS.messages.DisconnectRequest;
 import network.OODSS.messages.GameOptionsRequest;
 import network.OODSS.messages.GameStateRequest;
 import network.OODSS.messages.GameTypeRequest;
+import network.OODSS.messages.GameTypeUpdate;
 import network.OODSS.messages.PlayNoteRequest;
 import ecologylab.services.messages.DefaultServicesTranslations;
 import ecologylab.xml.ElementState;
@@ -42,6 +43,7 @@ public class CrescendoTranslation
 									DisconnectRequest.class,
 									PlayNoteRequest.class,
 									GameTypeRequest.class,
+									GameTypeUpdate.class,
 									GameOptionsRequest.class,
 									GameStateRequest.class);
 	}
