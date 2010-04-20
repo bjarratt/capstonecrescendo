@@ -21,8 +21,10 @@
 @synthesize helpViewController;
 @synthesize gameModes;
 @synthesize connect;
+@synthesize disconnect;
 @synthesize ipText;
 @synthesize ipLabel;
+@synthesize validatedIp;
 
 #pragma mark PlayNoteUpdateDelegate Method
 
@@ -47,6 +49,13 @@
 	return NO;
 }
 
+#pragma mark UIAlertViewDelegate Method
+
+- (void) alertView: (UIAlertView *) actionSheet clickedButtonAtIndex: (NSInteger) buttonIndex {
+	if (buttonIndex == 0)
+		NSLog(@"alertView: Ok");
+}
+
 #pragma mark Interface Methods
 
 - (IBAction) goToGamemodeView {
@@ -62,11 +71,19 @@
 	 */
 	// Get an instance of the ChatTranslations scope.
 	TranslationScope* scope = [ServerTranslations get];
+	
+	//TODO: Validate IP Address
+	
+	//UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"IP Invalid" message:(@"%@ is an incorrect IP Address.", validatedIp) delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+	//[alert show];
+	//[alert release];
+	
+	validatedIp = ipText.text;
     
 	// Initialize the client with the ChatTranslations scope.
 	// 192.168.1.105
 	// 128.194.143.165
-	self.client = [[XMLClient alloc] initWithHostAddress:@"128.194.143.165" andPort:2108 
+	self.client = [[XMLClient alloc] initWithHostAddress:validatedIp andPort:2108 
 									 andTranslationScope:scope];
 	
 	// Designate self as the client's delegate.
@@ -94,6 +111,11 @@
     [self drawMain];
 }
 
+- (IBAction) goDisconnect {
+	[client disconnect];
+	[self drawIP];
+}
+
 - (IBAction) goToHelpView {
 	[self presentModalViewController:helpViewController	animated:YES];
 }
@@ -102,13 +124,16 @@
 
 - (void) drawIP {
 	connect.hidden = NO;
+	disconnect.hidden = YES;
 	ipText.hidden = NO;
 	ipLabel.hidden = NO;
 	gameModes.hidden = YES;
+	ipText.text = @"128.194.143.165";
 }
 
 - (void) drawMain {
 	connect.hidden = YES;
+	disconnect.hidden = NO;
 	ipText.hidden = YES;
 	ipLabel.hidden = YES;
 	gameModes.hidden = NO;
@@ -177,16 +202,19 @@
 - (void) connectionTerminated:(XMLClient*)client
 {
 	NSLog(@"The connection terminated!\n");
+	//TODO: AlertView connection terminated
 }
 
 - (void) connectionAttemptFailed:(XMLClient*) connection
 {
 	NSLog(@"The connection failed to connect!\n");
+	//TODO: AlertView unable to connect
 }
 
 - (void) connectionSuccessful:(XMLClient*) client withSessionId:(NSString*) sessionId;
 {
 	NSLog(@"Connection successful with session id:%@\n", sessionId);
+	//TODO: Add IP to the list of successful connection IPs for user to later use
 }
 
 @end

@@ -48,6 +48,7 @@
 	
 	UIButton *startButton;
 	UIButton *pauseButton;
+	UIButton *playButton;
 	UIButton *disconnectButton;
 }
 
@@ -81,6 +82,7 @@
 @property (nonatomic, retain) UILabel *barsLabel;
 @property (nonatomic, retain) UIButton *startButton;
 @property (nonatomic, retain) UIButton *pauseButton;
+@property (nonatomic, retain) UIButton *playButton;
 @property (nonatomic, retain) UIButton *disconnectButton;
 
 - (void) scrollViewDidEndDragging: (UIScrollView *) scrollView willDecelerate: (BOOL) decelerate;
@@ -88,10 +90,11 @@
 
 - (void) determineScrollViewPage: (UIScrollView *) scrollView;
 
-- (IBAction) goBack;
-- (IBAction) start;
-- (IBAction) pause;
-- (IBAction) disconnect;
+- (void) goBack;
+- (void) start:(UIButton *)sender;
+- (void) pausePlay:(UIButton *)sender;
+- (void) playSong:(UIButton *)sender;
+- (void) disconnect:(UIButton *)sender;
 - (void) keySliderValueChanged:(id)sender;
 - (void) timeSliderValueChanged:(id)sender;
 - (void) tempoSliderValueChanged:(id)sender;
