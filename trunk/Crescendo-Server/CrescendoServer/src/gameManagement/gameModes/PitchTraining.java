@@ -43,26 +43,10 @@ public class PitchTraining {
 	 * length is selected, a random pitch is assigned to it to create the new Note.
 	 * @param measureCount - the number of measures to fill.
 	 */
-	private void randomizeMeasures(int measureCount){
-		
-		int i = 0;
-		int test = 0;
-		while(i<measureCount)
-		{
-			test = currentSubdivisions + 2;
-		
-			if(test < maxSubdivisions){				//random note will fit in measure
-				wantedNotes.add(new Note(randomizePitch(), Lengths.QUARTER, GameState.PITCH_TRAINING));
-				currentSubdivisions += 2;
-				break;
-			}
-			else if(test == maxSubdivisions){		//end of measure, advance to next
-				wantedNotes.add(new Note(randomizePitch(), Lengths.QUARTER, GameState.PITCH_TRAINING));
-				currentSubdivisions = 0;
-				i++;
-				break;
-			}
-		}
+	private void randomizeMeasures(int measureCount)
+	{
+		for(int i = 0; i < (maxSubdivisions/2)*measureCount; i++)
+			wantedNotes.add(new Note(randomizePitch(), Lengths.QUARTER, GameState.PITCH_TRAINING));
 	}
 	
 	public String randomizePitch()

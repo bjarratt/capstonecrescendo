@@ -78,6 +78,7 @@ public class MessageTranslationEngine
 				one.equals(GameState.MUSICAL_IPHONES) ||
 				one.equals(GameState.NOTES_AROUND_THE_ROOM) ||
 				one.equals(GameState.COMP_TIME) ||
+				one.equals(GameState.COMPOSE) ||
 				one.equals(GameState.POST_GAME) ||
 				one.equals(GameState.REVIEW) ||
 				one.equals(GameState.EXIT))
