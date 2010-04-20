@@ -1,6 +1,5 @@
 package network.OODSS.messages;
 
-import network.OODSS.base.PublicServer;
 import ecologylab.collections.Scope;
 import ecologylab.services.messages.OkResponse;
 import ecologylab.services.messages.RequestMessage;
