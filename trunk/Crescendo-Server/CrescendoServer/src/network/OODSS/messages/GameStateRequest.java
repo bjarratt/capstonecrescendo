@@ -4,13 +4,14 @@ import ecologylab.collections.Scope;
 import ecologylab.services.messages.RequestMessage;
 import ecologylab.services.messages.ResponseMessage;
 
-public class GamePreferencesRequest extends RequestMessage {
+public class GameStateRequest extends RequestMessage 
+{
 
+	@xml_attribute private String gameState;
+	
 	@Override
-	public ResponseMessage performService(Scope clientSessionScope) {
-		// TODO Auto-generated method stub
+	public ResponseMessage performService(Scope clientSessionScope) 
+	{
 		return null;
 	}
-
-
 }
