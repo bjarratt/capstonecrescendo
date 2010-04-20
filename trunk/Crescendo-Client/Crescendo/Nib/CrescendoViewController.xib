@@ -125,6 +125,23 @@
 							<string key="NSResourceName">menu_button_up.png</string>
 						</object>
 					</object>
+					<object class="IBUIButton" id="855116857">
+						<reference key="NSNextResponder" ref="774585933"/>
+						<int key="NSvFlags">292</int>
+						<string key="NSFrame">{{50, 248}, {220, 50}}</string>
+						<reference key="NSSuperview" ref="774585933"/>
+						<bool key="IBUIOpaque">NO</bool>
+						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
+						<int key="IBUIContentHorizontalAlignment">0</int>
+						<int key="IBUIContentVerticalAlignment">0</int>
+						<reference key="IBUIFont" ref="719262226"/>
+						<int key="IBUIButtonType">1</int>
+						<string key="IBUINormalTitle">disconnect</string>
+						<reference key="IBUIHighlightedTitleColor" ref="248968066"/>
+						<reference key="IBUINormalTitleColor" ref="872876610"/>
+						<reference key="IBUINormalTitleShadowColor" ref="329507570"/>
+						<reference key="IBUINormalBackgroundImage" ref="121912276"/>
+					</object>
 					<object class="IBUIButton" id="200680749">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
@@ -276,6 +293,23 @@
 					</object>
 					<int key="connectionID">64</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">goDisconnect</string>
+						<reference key="source" ref="855116857"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">66</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">disconnect</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="855116857"/>
+					</object>
+					<int key="connectionID">67</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -308,6 +342,7 @@
 							<reference ref="375714300"/>
 							<reference ref="483626449"/>
 							<reference ref="1041189800"/>
+							<reference ref="855116857"/>
 						</object>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">View</string>
@@ -352,6 +387,11 @@
 						<reference key="object" ref="1041189800"/>
 						<reference key="parent" ref="774585933"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">65</int>
+						<reference key="object" ref="855116857"/>
+						<reference key="parent" ref="774585933"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -370,6 +410,7 @@
 					<string>58.IBPluginDependency</string>
 					<string>6.IBEditorWindowLastContentRect</string>
 					<string>6.IBPluginDependency</string>
+					<string>65.IBPluginDependency</string>
 					<string>9.CustomClassName</string>
 					<string>9.IBEditorWindowLastContentRect</string>
 					<string>9.IBPluginDependency</string>
@@ -387,6 +428,7 @@
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>{{915, 151}, {320, 480}}</string>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>GamemodeViewController</string>
 					<string>{{21, 481}, {320, 480}}</string>
@@ -409,7 +451,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">64</int>
+			<int key="maxID">67</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -422,14 +464,20 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>barsSliderValueChanged:</string>
+							<string>disconnect</string>
 							<string>goBack</string>
 							<string>keySliderValueChanged:</string>
+							<string>pause</string>
 							<string>sendNoteToServer:</string>
+							<string>start</string>
 							<string>tempoSliderValueChanged:</string>
 							<string>timeSliderValueChanged:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -468,11 +516,13 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>goConnect</string>
+							<string>goDisconnect</string>
 							<string>goToGamemodeView</string>
 							<string>goToHelpView</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -483,6 +533,7 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>connect</string>
+							<string>disconnect</string>
 							<string>gameModes</string>
 							<string>gamemodeViewController</string>
 							<string>helpViewController</string>
@@ -491,6 +542,7 @@
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>UIButton</string>
 							<string>UIButton</string>
 							<string>UIButton</string>
 							<string>GamemodeViewController</string>
