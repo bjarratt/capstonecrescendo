@@ -120,4 +120,16 @@ public class Scales
 		}
 		return null;
 	}
+	
+	/**
+	 * Checks if the specified pitch is in the given key.
+	 * @param pitch - the pitch to check
+	 * @param key - the current key signature
+	 * @return
+	 */
+	boolean checkNote(String pitch, String key){
+		if(allKeys.get(key).contains(pitch))
+			return true;
+		return false;
+	}
 }
