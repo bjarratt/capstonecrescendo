@@ -135,7 +135,7 @@ public class NoteTraining {
 			case 0:
 				return "E5";
 			case 1:
-				return "ESharp5";
+				return "E5";
 			case 2:
 				return "F5";
 			case 3:
@@ -161,7 +161,7 @@ public class NoteTraining {
 			case 13:
 				return "E6";
 			case 14:
-				return "ESharp6";
+				return "E6";
 			case 15:
 				return "F6";
 			case 16:

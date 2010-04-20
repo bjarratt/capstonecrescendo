@@ -9,6 +9,7 @@ import gameManagement.windowManagement.base.Wrapper;
 import gameManagement.windowManagement.windows.*;
 import keys.GameState;
 import keys.Players;
+import logging.LogManager;
 
 import java.util.ArrayList;
 import javax.swing.Timer;
@@ -33,7 +34,7 @@ public class GameManager implements ActionListener
 	//game options
 	private static int tempo = 1000;
 	private static String key = "CMajor";
-	private static int numberOfBars = 8;
+	private static int numberOfBars = 3;
 	private static int timeSignatureNumerator = 3;
 	private static int timeSignatureDenominator = 4;
 	private static int numberOfBeatsPerMeasure;;
@@ -109,11 +110,11 @@ public class GameManager implements ActionListener
 		currentTick = 0;
 		currentInGameTick = 0;
 
-		at_splash_screen = true;
+		//at_splash_screen = true;
 		at_game_modes = false;
 		at_game_info = false;
 		at_game_options = false;
-		at_play = false;
+		at_play = true;
 		at_pause = false;
 		at_post_game = false;
 		exit = false;
@@ -123,7 +124,7 @@ public class GameManager implements ActionListener
 		player3IsDone = false;
 		player4IsDone = false;
 		
-		gameMode = GameState.LENGTH_TRAINING;
+		gameMode = GameState.PITCH_TRAINING;
 		setGameMode(gameMode);
 		
 		pausedPlayerId = new String();
@@ -137,7 +138,7 @@ public class GameManager implements ActionListener
 		player2Notes = new ArrayList<Note>();
 		player3Notes = new ArrayList<Note>();
 		player4Notes = new ArrayList<Note>();
-		numberOfActivePlayers = 0;
+		numberOfActivePlayers = 2;
 
 		setNumberOfBeatsPerMeasure();
 
@@ -159,7 +160,7 @@ public class GameManager implements ActionListener
 		WindowManager.getInstance().addWindow(keys.GameState.SPLASH_SCREEN, splash);
 		
 		myGameWindow = new GameWindow();
-		myGameWindow.setPlayerCount(2);
+		myGameWindow.setPlayerCount(numberOfActivePlayers+1);
 		
 		
 		display = new Wrapper(myGameWindow);
@@ -178,7 +179,14 @@ public class GameManager implements ActionListener
 		System.out.println("*****\tAt the Splash Screen\t*****");
 		try
 		{
-			WindowManager.getInstance().nextWindow(GameState.SPLASH_SCREEN);
+			WindowManager.getInstance().nextWindow(GameState.PITCH_TRAINING);
+			myGameWindow.init();
+			myGameWindow.start();
+			for(Note note : gameNotes)
+			{
+				note.setPlayer(Players.PLAYER_ONE);
+				myGameWindow.addNote(note);
+			}
 		}
 		catch(InterruptedException e)
 		{
@@ -233,7 +241,6 @@ public class GameManager implements ActionListener
 	public void addMessageToPool(String message)
 	{
 		messagePool.add(message);
-		//System.out.println("GameManager received message:\t\t" + message);
 	}
 
 	/**
@@ -326,9 +333,9 @@ public class GameManager implements ActionListener
 							}
 							else
 							{
-								player2Beats.addAll(gameNotes.get(player2CurrentNote).getBeats());
-								player2Notes.add(new Note(n.getPitch(),gameNotes.get(player2CurrentNote).getLength(),Players.PLAYER_TWO));
-								player2Notes.get(player2Notes.size()-1).setCorrect(false);
+								//player2Beats.addAll(gameNotes.get(player2CurrentNote).getBeats());
+								//player2Notes.add(new Note(n.getPitch(),gameNotes.get(player2CurrentNote).getLength(),Players.PLAYER_TWO));
+								//player2Notes.get(player2Notes.size()-1).setCorrect(false);
 								//send message to player that a wrong note was played
 								//System.out.println("Player 1 played an incorrect note");
 							}
@@ -491,9 +498,9 @@ public class GameManager implements ActionListener
 							}
 							else
 							{
-								player1Beats.addAll(gameNotes.get(player1CurrentNote).getBeats());
-								player1Notes.add(new Note(n.getPitch(),gameNotes.get(player1CurrentNote).getLength(),Players.PLAYER_ONE));
-								player1Notes.get(player1Notes.size()-1).setCorrect(false);
+								//player1Beats.addAll(gameNotes.get(player1CurrentNote).getBeats());
+								//player1Notes.add(new Note(n.getPitch(),gameNotes.get(player1CurrentNote).getLength(),Players.PLAYER_ONE));
+								//player1Notes.get(player1Notes.size()-1).setCorrect(false);
 								//send message to player that a wrong note was played
 								//System.out.println("Player 1 played an incorrect note");
 							}
@@ -514,9 +521,9 @@ public class GameManager implements ActionListener
 							}
 							else
 							{
-								player2Beats.addAll(gameNotes.get(player2CurrentNote).getBeats());
-								player2Notes.add(new Note(n.getPitch(),gameNotes.get(player2CurrentNote).getLength(),Players.PLAYER_TWO));
-								player2Notes.get(player2Notes.size()-1).setCorrect(false);
+								//player2Beats.addAll(gameNotes.get(player2CurrentNote).getBeats());
+								//player2Notes.add(new Note(n.getPitch(),gameNotes.get(player2CurrentNote).getLength(),Players.PLAYER_TWO));
+								//player2Notes.get(player2Notes.size()-1).setCorrect(false);
 								//send message to player that a wrong note was played
 								//System.out.println("Player 1 played an incorrect note");
 							}
@@ -586,9 +593,9 @@ public class GameManager implements ActionListener
 							}
 							else
 							{
-								player1Beats.addAll(gameNotes.get(player1CurrentNote).getBeats());
-								player1Notes.add(new Note(n.getPitch(),gameNotes.get(player1CurrentNote).getLength(),Players.PLAYER_ONE));
-								player1Notes.get(player1Notes.size()-1).setCorrect(false);
+								//player1Beats.addAll(gameNotes.get(player1CurrentNote).getBeats());
+								//player1Notes.add(new Note(n.getPitch(),gameNotes.get(player1CurrentNote).getLength(),Players.PLAYER_ONE));
+								//player1Notes.get(player1Notes.size()-1).setCorrect(false);
 								//send message to player that a wrong note was played
 								//System.out.println("Player 1 played an incorrect note");
 							}
@@ -609,9 +616,9 @@ public class GameManager implements ActionListener
 							}
 							else
 							{
-								player2Beats.addAll(gameNotes.get(player2CurrentNote).getBeats());
-								player2Notes.add(new Note(n.getPitch(),gameNotes.get(player2CurrentNote).getLength(),Players.PLAYER_TWO));
-								player2Notes.get(player2Notes.size()-1).setCorrect(false);
+								//player2Beats.addAll(gameNotes.get(player2CurrentNote).getBeats());
+								//player2Notes.add(new Note(n.getPitch(),gameNotes.get(player2CurrentNote).getLength(),Players.PLAYER_TWO));
+								//player2Notes.get(player2Notes.size()-1).setCorrect(false);
 								//send message to player that a wrong note was played
 								//System.out.println("Player 1 played an incorrect note");
 							}
@@ -748,7 +755,7 @@ public class GameManager implements ActionListener
 				//message is "playerX_connect"
 				else if(at_splash_screen && m.getMessage().split("_")[1].equals("connect"))
 				{
-					numberOfActivePlayers++;
+					//numberOfActivePlayers++;
 					sendMessageToDisplay(m.getMessage());
 				}
 				//message is "player1_gamemodes"  (checking to make sure player 1 has sent the message)
@@ -756,10 +763,14 @@ public class GameManager implements ActionListener
 				{
 					try
 					{
-						WindowManager.getInstance().nextWindow(GameState.LENGTH_TRAINING);
+						WindowManager.getInstance().nextWindow(GameState.PITCH_TRAINING);
 						myGameWindow.init();
 						myGameWindow.start();
-						notesToSend.add(gameNotes.get(0));
+						for(Note note : gameNotes)
+						{
+							note.setPlayer(Players.PLAYER_ONE);
+							myGameWindow.addNote(note);
+						}
 					}
 					catch(InterruptedException e)
 					{
@@ -1078,15 +1089,13 @@ public class GameManager implements ActionListener
 		}
 
 		measure = player1Measures.get(player1Measures.size()-1);
-
+		
 		if(player1Notes.size()>0 && player1Notes.size()>player1CurrentNote)
 		{			
 			measure.addNote(player1Notes.get(player1CurrentNote));
 			notesToSend.add(player1Notes.get(player1CurrentNote));
 			
 			player1CurrentNote++;
-			if(player1CurrentNote<gameNotes.size())
-				notesToSend.add(gameNotes.get(player1CurrentNote));	
 
 			/* Taken out until note ties are added back in 
 			//if a note can be simply added to the measure, then do it
@@ -1131,12 +1140,12 @@ public class GameManager implements ActionListener
 		}
 
 		measure = player2Measures.get(player2Measures.size()-1);
-
+		
 		if(player2Notes.size()>0 && player2Notes.size()>player2CurrentNote)
-		{
+		{			
 			measure.addNote(player2Notes.get(player2CurrentNote));
 			notesToSend.add(player2Notes.get(player2CurrentNote));
-
+			
 			player2CurrentNote++;
 			
 			/* Taken out until note ties are added back in 
@@ -1373,9 +1382,30 @@ public class GameManager implements ActionListener
 	{
 		// TODO This method still needs to be somewhere
 		//displayGUI.getNotes(notesToSend, currentBeat);
+	//	for(Note note : notesToSend)
+	//		System.out.println(note.getPlayer() + " played " + note);
+	//	System.out.println();
 		for(Note note : notesToSend)
-			System.out.println(note.getPlayer() + " played " + note);
-		System.out.println();
+		{
+			if(note.getPlayer().equals(Players.PLAYER_TWO))
+			{
+				note.setPlayer(Players.PLAYER_THREE);
+				myGameWindow.addNote(note);
+				LogManager.getInstance().writeLogEntry(Players.PLAYER_THREE, note.toString());
+			}
+			else if(note.getPlayer().equals(Players.PLAYER_ONE))
+			{
+				note.setPlayer(Players.PLAYER_TWO);
+				myGameWindow.addNote(note);
+				LogManager.getInstance().writeLogEntry(Players.PLAYER_ONE, note.toString());
+			}
+			else if(note.getPlayer().equals(GameState.PITCH_TRAINING))
+			{
+				note.setPlayer(Players.PLAYER_ONE);
+				myGameWindow.addNote(note);
+				LogManager.getInstance().writeLogEntry(GameState.PITCH_TRAINING, note.toString());
+			}
+		}
 		notesToSend = new ArrayList<Note>();
 	}
 	

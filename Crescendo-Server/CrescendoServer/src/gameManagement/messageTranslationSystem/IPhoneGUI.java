@@ -167,8 +167,8 @@ public class IPhoneGUI extends JPanel implements ActionListener
 			myCM.sendMessage(player + "_" + GameState.NOTES_AROUND_THE_ROOM);
 		if(e.getSource() == compTime)
 			myCM.sendMessage(player + "_" + GameState.COMP_TIME);
-		if(e.getSource() == compose)
-			myCM.sendMessage(player + "_" + GameState.COMPOSE);
+	//	if(e.getSource() == compose)
+	//		myCM.sendMessage(player + "_" + GameState.COMPOSE);
 		if(e.getSource() == gameInfo)
 			myCM.sendMessage(player + "_" + GameState.GAME_INFO);
 		if(e.getSource() == setTempo)

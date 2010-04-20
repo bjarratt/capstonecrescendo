@@ -78,7 +78,7 @@ public class MessageTranslationEngine
 				one.equals(GameState.MUSICAL_IPHONES) ||
 				one.equals(GameState.NOTES_AROUND_THE_ROOM) ||
 				one.equals(GameState.COMP_TIME) ||
-				one.equals(GameState.COMPOSE) ||
+				//one.equals(GameState.COMPOSE) ||
 				one.equals(GameState.POST_GAME) ||
 				one.equals(GameState.REVIEW) ||
 				one.equals(GameState.EXIT))
@@ -101,9 +101,10 @@ public class MessageTranslationEngine
 			{
 				//all good! :)
 			}
-			else if(pitches.containsKey(one) && lengths.containsKey(two) && (messageComponents[0].equals(Players.PLAYER_ONE) || messageComponents[0].equals(Players.PLAYER_TWO) || messageComponents[0].equals(Players.PLAYER_THREE) || messageComponents[0].equals(Players.PLAYER_FOUR)))
+			else if(pitches.containsKey(one) && lengths.containsKey(two.substring(0,two.length()-4)) && (messageComponents[0].equals(Players.PLAYER_ONE) || messageComponents[0].equals(Players.PLAYER_TWO) || messageComponents[0].equals(Players.PLAYER_THREE) || messageComponents[0].equals(Players.PLAYER_FOUR)))
 			{
-				newMessage.setNote(new Note(one,two,messageComponents[0]));
+				String length = two.substring(0, two.length()-4);
+				newMessage.setNote(new Note(one,length,messageComponents[0]));
 			}
 			else
 			{
