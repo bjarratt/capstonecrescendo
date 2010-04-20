@@ -1540,7 +1540,7 @@
 	 * User Interface *
 	 ******************/
 	[self becomeFirstResponder];
-	self.playerId = @"player2";
+	//self.playerId = @"player2";
 	self.inGame = NO;
 	[self drawPortraitView];
 }
