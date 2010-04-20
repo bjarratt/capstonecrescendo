@@ -8,7 +8,7 @@ import gameManagement.GameManager;
 
 public class GameOptionsRequest extends RequestMessage {
 
-	@xml_attribute private String gameOptions;
+	@xml_attribute private String gameOption;
 	
 	public GameOptionsRequest() {}
 	
@@ -16,7 +16,7 @@ public class GameOptionsRequest extends RequestMessage {
 	public ResponseMessage performService(Scope clientSessionScope) 
 	{
 		GameManager manager = (GameManager)clientSessionScope.get(OODSS.GAME_MANAGER);
-		manager.addMessageToPool(gameOptions);
+		manager.addMessageToPool(gameOption);
 		
 		return null;
 	}
