@@ -22,8 +22,12 @@ public class WindowManager
 	
 	public void addWindow(final String key, final Wrapper window)
 	{
-		if (key != null && !windows.containsKey(key) && window != null)
+		if (key != null && window != null)
 		{
+			if (windows.containsKey(key))
+			{
+				windows.remove(key);
+			}
 			windows.put(key, window);
 		}
 	}

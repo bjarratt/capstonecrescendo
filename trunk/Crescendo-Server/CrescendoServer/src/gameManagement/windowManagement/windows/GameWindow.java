@@ -31,7 +31,6 @@ public class GameWindow extends PApplet
 		lock.lock();
 		try
 		{
-//			noLoop();
 		}
 		finally
 		{
@@ -152,7 +151,7 @@ public class GameWindow extends PApplet
 			initStaffPositions();
 			
 			setupComplete = true;
-			this.redraw();
+//			this.redraw();
 		}
 	}
 	
@@ -488,22 +487,31 @@ public class GameWindow extends PApplet
 		window.start();
 		mainFrame.setVisible(true);
 		
-		try 
-		{
-			Thread.sleep(1000);
-			window.addNote(new Note(Pitches.C6, Lengths.EIGHTH, Players.PLAYER_ONE));
-			window.addNote(new Note(Pitches.CSharp6, Lengths.EIGHTH, Players.PLAYER_ONE));
-		} 
-		catch (InterruptedException e) 
-		{
-			e.printStackTrace();
-		}
+//		try 
+//		{
+//			Thread.sleep(1000);
+//			window.addNote(new Note(Pitches.C6, Lengths.EIGHTH, Players.PLAYER_ONE));
+//			window.addNote(new Note(Pitches.CSharp6, Lengths.EIGHTH, Players.PLAYER_ONE));
+//		} 
+//		catch (InterruptedException e) 
+//		{
+//			e.printStackTrace();
+//		}
 		
 		window.stop();
 		window.destroy();
+		mainFrame.getContentPane().remove(window);
 		
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		window = new GameWindow();
+		mainFrame.getContentPane().add(window);
 		window.init();
 		window.start();
+		
 	}
 }
