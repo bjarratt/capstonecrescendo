@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+#import "GameOptionsUpdateDelegate.h"
+#import "GameStateUpdateDelegate.h"
+#import "GameTypeUpdateDelegate.h"
 #import "PlayNoteUpdateDelegate.h"
+
 #import "XMLClient.h"
 
 @interface ComposeViewController : UIViewController <UIScrollViewDelegate> {
@@ -95,9 +99,13 @@
 - (void) pausePlay:(UIButton *)sender;
 - (void) playSong:(UIButton *)sender;
 - (void) disconnect:(UIButton *)sender;
+- (void) keySliderValueSet:(id)sender;
 - (void) keySliderValueChanged:(id)sender;
+- (void) timeSliderValueSet:(id)sender;
 - (void) timeSliderValueChanged:(id)sender;
+- (void) tempoSliderValueSet:(id)sender;
 - (void) tempoSliderValueChanged:(id)sender;
+- (void) barsSliderValueSet:(id)sender;
 - (void) barsSliderValueChanged:(id)sender;  
 - (void) updateBuildLabel;
 - (void) sendNoteToServer: (id) sender;
