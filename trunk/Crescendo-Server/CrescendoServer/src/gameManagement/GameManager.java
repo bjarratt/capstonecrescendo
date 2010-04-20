@@ -124,7 +124,7 @@ public class GameManager implements ActionListener
 		player3IsDone = false;
 		player4IsDone = false;
 		
-		gameMode = GameState.PITCH_TRAINING;
+		gameMode = GameState.NOTE_TRAINING;
 		setGameMode(gameMode);
 		
 		pausedPlayerId = new String();
@@ -179,7 +179,7 @@ public class GameManager implements ActionListener
 		System.out.println("*****\tAt the Splash Screen\t*****");
 		try
 		{
-			WindowManager.getInstance().nextWindow(GameState.PITCH_TRAINING);
+			WindowManager.getInstance().nextWindow(GameState.SPLASH_SCREEN);
 			myGameWindow.init();
 			myGameWindow.start();
 			for(Note note : gameNotes)
@@ -391,99 +391,6 @@ public class GameManager implements ActionListener
 							player4IsDone = true;
 						}
 					}
-					
-					/*if(n.getPlayer().equals(Players.PLAYER_ONE))
-					{
-						if(gameNotes.size()>player1CurrentNote)
-						{
-							if(n.getLength().equals(gameNotes.get(player1CurrentNote).getLength()))
-							{
-								player1Beats.addAll(n.getBeats());
-								player1Notes.add(n);
-							}
-							else
-							{
-								player1Beats.addAll(gameNotes.get(player1CurrentNote).getBeats());
-								player1Notes.add(new Note(n.getPitch(),gameNotes.get(player1CurrentNote).getLength(),Players.PLAYER_ONE));
-								player1Notes.get(player1Notes.size()-1).setCorrect(false);
-								//send message to player that a wrong note was played
-								//System.out.println("Player 1 played an incorrect note");
-							}
-						}
-						else
-						{
-							player1IsDone = true;
-						}
-					}
-					if(n.getPlayer().equals(Players.PLAYER_TWO))
-					{
-						if(gameNotes.size()>player2CurrentNote)
-						{
-							if(n.getLength().equals(gameNotes.get(player2CurrentNote).getLength()))
-							{
-								player2Beats.addAll(n.getBeats());
-								player2Notes.add(new Note(n.getPitch(),n.getLength(),n.getPlayer()));
-							}
-							else
-							{
-								player2Beats.addAll(gameNotes.get(player2CurrentNote).getBeats());
-								player2Notes.add(new Note(n.getPitch(),gameNotes.get(player2CurrentNote).getLength(),Players.PLAYER_TWO));
-								player2Notes.get(player2Notes.size()-1).setCorrect(false);
-								//send message to player that a wrong note was played
-								//System.out.println("Player 1 played an incorrect note");
-							}
-						}
-						else
-						{
-							player2IsDone = true;
-						}
-					}
-					if(n.getPlayer().equals(Players.PLAYER_THREE))
-					{
-						if(gameNotes.size()>player3CurrentNote)
-						{
-							if(n.getLength().equals(gameNotes.get(player3CurrentNote).getLength()))
-							{
-								player3Beats.addAll(n.getBeats());
-								player3Notes.add(n);
-							}
-							else
-							{
-								player3Beats.addAll(gameNotes.get(player3CurrentNote).getBeats());
-								player3Notes.add(new Note(n.getPitch(),gameNotes.get(player3CurrentNote).getLength(),Players.PLAYER_THREE));
-								player3Notes.get(player3Notes.size()-1).setCorrect(false);
-								//send message to player that a wrong note was played
-								//System.out.println("Player 1 played an incorrect note");
-							}
-						}
-						else
-						{
-							player3IsDone = true;
-						}
-					}
-					if(n.getPlayer().equals(Players.PLAYER_FOUR))
-					{
-						if(gameNotes.size()>player4CurrentNote)
-						{
-							if(n.getLength().equals(gameNotes.get(player4CurrentNote).getLength()))
-							{
-								player4Beats.addAll(n.getBeats());
-								player4Notes.add(n);
-							}
-							else
-							{
-								player4Beats.addAll(gameNotes.get(player4CurrentNote).getBeats());
-								player4Notes.add(new Note(n.getPitch(),gameNotes.get(player4CurrentNote).getLength(),Players.PLAYER_FOUR));
-								player4Notes.get(player4Notes.size()-1).setCorrect(false);
-								//send message to player that a wrong note was played
-								//System.out.println("Player 1 played an incorrect note");
-							}
-						}
-						else
-						{
-							player4IsDone = true;
-						}
-					}*/
 				}
 				else if(gameMode.equals(GameState.PITCH_TRAINING))
 				{
@@ -755,7 +662,7 @@ public class GameManager implements ActionListener
 				//message is "playerX_connect"
 				else if(at_splash_screen && m.getMessage().split("_")[1].equals("connect"))
 				{
-					//numberOfActivePlayers++;
+					numberOfActivePlayers++;
 					sendMessageToDisplay(m.getMessage());
 				}
 				//message is "player1_gamemodes"  (checking to make sure player 1 has sent the message)
