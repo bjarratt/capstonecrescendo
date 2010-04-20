@@ -19,6 +19,19 @@
 #pragma mark Interface Methods
 
 - (IBAction) goBack {
+	/*
+	 *	Send game type selected to public display
+	 */
+	NSString* inputText = [NSString stringWithFormat: @"%@_%@", playerId, @"splashscreen"];
+	
+    // Initialize PlayNoteRequest and set message to content's of the text field.
+	GameTypeRequest* request = [[GameTypeRequest alloc] init];
+    [request setGameType:inputText];
+    
+    // Setup the client to send the message a little later in the run loop.
+    [client performSelector:@selector(sendMessage:) withObject: request];
+    
+    [request release];
 	[self dismissModalViewControllerAnimated:YES];
 }
 
