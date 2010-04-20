@@ -2,7 +2,7 @@ package gameManagement.windowManagement.windows;
 
 import processing.core.*; 
 
-public class pause_screen extends PApplet {
+public class PauseScreen extends PApplet {
 
 	private static final long serialVersionUID = 1L;
 Cube stage; // external large cube
