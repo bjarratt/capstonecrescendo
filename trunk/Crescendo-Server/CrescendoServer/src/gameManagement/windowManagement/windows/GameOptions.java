@@ -1,17 +1,17 @@
 package gameManagement.windowManagement.windows;
 
+import java.util.List;
+
 import processing.core.*; 
 
-public class game_options extends PApplet 
+public class GameOptions extends PApplet 
 {
 	private static final long serialVersionUID = 1L;
 	private int noties = 50;
 	private Note[] n = new Note[noties];
 	private PImage bg;
 	private PImage logo;
-	private Option o1, o2, o3, o4, o5;
-	private boolean selection;
-	private PImage icon1,icon2,icon3,icon4,icon5;
+	private Option o1, o2, o3, o4;
 
 	// Controls notie's movement
 	private float[] x = new float[noties];
@@ -34,11 +34,6 @@ public class game_options extends PApplet
 		size(800, 600, P3D);
 		bg = loadImage("blackground.jpg");
 		logo = loadImage("gameoptions.png");
-		icon1 = loadImage("player1.png");
-		icon2 = loadImage("player2.png");
-		icon3 = loadImage("player3.png");
-		icon4 = loadImage("player4.png");
-		icon5 = loadImage("player1.png");
 		
 		for(int i = 0; i < noties; i++)
 		{
@@ -61,21 +56,18 @@ public class game_options extends PApplet
 		}	
 		new Cube(bounds, bounds, bounds);
   
-		//instantiate player icons
-		o1 = new Option(1,width/11,width/11,width/12,(height/5+height/2),selection);
-		o1.selectOption();
+		List<String> options = keys.GameOptions.getOptions();
+		int optionHeight = width/11;
+		int optionWidth = optionHeight;
 		
-		o2 = new Option(2,width/11,width/11,width/4+width/40,(height/5+height/2),selection);
-		o2.selectOption();
+		//instantiate player icons
+		o1 = new Option("Key", width/12 + width/(7*12), 7/10*height - optionHeight);
+		
+		o2 = new Option("Time", width/4+width/40 + (width/4+width/40)/7, 7/10*height - optionHeight);
   
-		o3 = new Option(3,width/11,width/11,width/2-width/32,(height/5+height/2),selection);
-		o3.selectOption();
+		o3 = new Option("Tempo", width/2-width/32 + (width/2-width/32)/7, 7/10*height - optionHeight);
   
-		o4 = new Option(4,width/11,width/11,width/2+width/7,(height/5+height/2),selection);
-		o4.selectOption();
-  
-		o5 = new Option(5, width/11,width/11,width/2+width/3,(height/5+height/2),selection);
-		o5.selectOption();
+		o4 = new Option("Bars", width/2+width/7 + (width/2+width/7)/7, 7/10*height - optionHeight);
 	}
 
 	public void draw()
@@ -83,11 +75,10 @@ public class game_options extends PApplet
 		image(bg,0,0,width,height);
 		image(logo,width/4,height/12,width/2,height/3);
 		lights();
-		o1.display(icon1);
-		o2.display(icon2);
-		o3.display(icon3);
-		o4.display(icon4);
-		o5.display(icon5);
+		o1.display();
+		o2.display();
+		o3.display();
+		o4.display();
 		
 		// Center in display window
 		translate(width/2, height/2, 0);
@@ -115,12 +106,6 @@ public class game_options extends PApplet
 			z[i] += zSpeed[i];
 			popMatrix();
 
-			// Draw lines connecting cubbies
-			/* stroke(0);
-    		if (i < cubies-1){
-      			line(x[i], y[i], z[i], x[i+1], y[i+1], z[i+1]);
-    		}*/
-
 			// Check wall collisions
 			if (x[i] > bounds/2 || x[i] < -bounds/2){
 				xSpeed[i]*=-1;
@@ -136,21 +121,11 @@ public class game_options extends PApplet
 
 
 	// Custom Cube Class
-
-	class Cube
+	private class Cube
 	{
 		PVector[] vertices = new PVector[24];
-		float w, h, d;
-
-		// Default constructor
-		Cube(){ }
-
-		// Constructor 2
+		
 		Cube(float w, float h, float d) {
-			this.w = w;
-			this.h = h;
-			this.d = d;
-
 			// cube composed of 6 quads
 			//front
 			vertices[0] = new PVector(-w/2,-h/2,d/2);
@@ -182,46 +157,18 @@ public class game_options extends PApplet
 			vertices[21] = new PVector(-w/2,h/2,-d/2);
 			vertices[22] = new PVector(w/2,h/2,-d/2);
 			vertices[23] = new PVector(w/2,h/2,d/2);
-		}	
-		
-		public void create()
-		{
-			// Draw cube
-			for (int i=0; i<6; i++){
-				beginShape(QUADS);
-				for (int j=0; j<4; j++){
-					vertex(vertices[j+4*i].x, vertices[j+4*i].y, vertices[j+4*i].z);
-				}
-				endShape();
-			}
-		}
-		public void create(int[]quadBG){
-			// Draw cube
-			for (int i=0; i<6; i++){
-				fill(quadBG[i]);
-				beginShape(QUADS);
-				for (int j=0; j<4; j++){
-					vertex(vertices[j+4*i].x, vertices[j+4*i].y, vertices[j+4*i].z);
-				}
-				endShape();
-			}
 		}
 	}
 
 
-	class Note
+	private class Note
 	{
 		float x, y, w, h;
-		char type;
-		//default constructor
-		Note(){}
-		
 		Note(float x, float y, float w, float h, char t) {
 			this.x = x;
 			this.y = y;
 			this.w = w;
 			this.h = h;
-			type = t;
 		}
 
 		public void create()
@@ -233,78 +180,25 @@ public class game_options extends PApplet
 		}
 	}
 	
-	class Option
+	private class Option
 	{
-		int optionIndex;
+		String optionTitle;
 		float xPos;
 		float yPos;
-		float height;
-		float width;
-		boolean selected;
-		PFont font = loadFont("Helvetica-32.vlw");
+		PFont font = createFont("Helvetica", 32);
   
-		Option(int o, int h, int w, int x, int y, boolean sel)
+		public Option(String option, int x, int y)
 		{
-			optionIndex = o;
-			height = h;
-			width = w;
+			optionTitle = option;
 			xPos = x;
 			yPos = y; 
-			selected = sel;
 		}
   
-		public void selectOption()
+		public void display()
 		{
-			selected = true;
-		}
-  
-		public void unselectOption()
-		{
-			selected = false;
-		}
-  
-		public void display(PImage icon)
-		{
-			//tint the icon depending on player connection
-			if(selected == true){tint(255);}
-			if(selected == false){tint(0,40);}
-			
-			if(optionIndex == 1)
-			{
-				textFont(font);
-				fill(255);
-				text("Key",xPos+xPos/7,yPos-height);
-				image(icon,xPos,yPos,width,height);
-			}
-			if(optionIndex == 2)
-			{
-				textFont(font);
-				fill(255);
-				text("Time",xPos,yPos-height);
-				image(icon,xPos,yPos,width,height);
-			}
-			if(optionIndex == 3)
-			{
-				textFont(font);
-				fill(255);
-				text("Tempo",xPos-xPos/26,yPos-height);
-				image(icon,xPos,yPos,width,height);
-			}
-			if(optionIndex == 4)
-			{
-				textFont(font);
-				fill(255);
-				text("Bars",xPos,yPos-height);
-				image(icon,xPos,yPos,width,height);
-			}
-			if(optionIndex == 5)
-			{
-				textFont(font);
-				fill(255);
-				text("Time Limit",xPos-xPos/22,yPos-height);
-				image(icon,xPos,yPos,width,height);
-			}
-			tint(255);
+			textFont(font);
+			fill(255);
+			text(optionTitle, xPos/*xPos+xPos/7*/, yPos/*yPos-height*/);
 		}
 	}
 

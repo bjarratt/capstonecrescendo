@@ -26,6 +26,22 @@ import processing.core.PImage;
 
 public class GameWindow extends PApplet 
 {
+	public void nukeAllNotes()
+	{
+		lock.lock();
+		try
+		{
+			for (Vector<DisplayNote> notes : playerNotes)
+			{
+				notes = new Vector<DisplayNote>();
+			}
+		}
+		finally
+		{
+			lock.unlock();
+		}
+	}
+	
 	public void addNote(Note n)
 	{
 		lock.lock();

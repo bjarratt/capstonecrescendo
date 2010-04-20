@@ -1,13 +1,8 @@
 package gameManagement.windowManagement.base;
 
-import javax.swing.JFrame;
-
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Panel;
 import java.awt.Point;
-import java.awt.Toolkit;
-import java.security.Security;
 import java.util.ArrayList;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -194,4 +189,6 @@ public class WindowDisplay extends PApplet
 	private int direction = 1;
 	private int deltaX = 25;
 	private ArrayList<Wrapper> panels = new ArrayList<Wrapper>(2);
+	
+	private static final long serialVersionUID = 1L;
 }

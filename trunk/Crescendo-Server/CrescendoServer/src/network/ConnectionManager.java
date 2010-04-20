@@ -94,7 +94,7 @@ public class ConnectionManager
 	{
 		lock.lock();
 		try {
-			this.server = new PublicServer();
+			new PublicServer();
 			this.isInitialized = true;
 		}
 		catch (IOException e) 
@@ -125,7 +125,6 @@ public class ConnectionManager
 	private Lock lock = new ReentrantLock();
 	
 	private HashMap<String, Object> playerMap = new HashMap<String, Object>();
-	private PublicServer server = null;
 	private static ConnectionManager instance = new ConnectionManager();
 	private boolean isInitialized = false;
 }
