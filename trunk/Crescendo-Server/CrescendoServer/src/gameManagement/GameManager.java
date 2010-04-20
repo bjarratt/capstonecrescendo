@@ -8,6 +8,8 @@ import gameManagement.windowManagement.WindowManager;
 import gameManagement.windowManagement.base.Wrapper;
 import gameManagement.windowManagement.windows.*;
 import keys.GameState;
+import keys.Lengths;
+import keys.Pitches;
 import keys.Players;
 import logging.LogManager;
 
@@ -107,7 +109,7 @@ public class GameManager implements ActionListener
 		//messages to be translated
 		messages = new ArrayList<String>();
 		//set up a timer
-		timer = new Timer(500,this);
+		timer = new Timer(250,this);
 		inGameTimer = new Timer(1000,this);
 
 		player1CurrentNote = 0;
@@ -131,6 +133,8 @@ public class GameManager implements ActionListener
 		player2IsDone = false;
 		player3IsDone = false;
 		player4IsDone = false;
+		
+		notesToSend = new ArrayList<Note>();
 		
 		gameMode = GameState.NOTE_TRAINING;
 		setGameMode(gameMode);
@@ -159,7 +163,6 @@ public class GameManager implements ActionListener
 		player4Measures = new ArrayList<Measure>();
 		player4Measures.add(new Measure(numberOfBeatsPerMeasure));
 
-		notesToSend = new ArrayList<Note>();
 
 		//create a new splash screen
 		mySplashScreen = new SplashScreen();
@@ -168,23 +171,23 @@ public class GameManager implements ActionListener
 		splash.setSize(800, 600);
 		WindowManager.getInstance().addWindow(keys.GameState.SPLASH_SCREEN, splash);
 		
-		//create a new splash screen
-	/*	myGameModesWindow = new GameModesWindow();
-		myGameModesWindow.addGameType(GameState.LENGTH_TRAINING);
-		myGameModesWindow.addGameType(GameState.PITCH_TRAINING);
-		myGameModesWindow.addGameType(GameState.NOTE_TRAINING);
+		//create a new game modes screen
+		myGameModesWindow = new GameModesWindow();
+		//myGameModesWindow.addGameType(GameState.LENGTH_TRAINING);
+		//myGameModesWindow.addGameType(GameState.PITCH_TRAINING);
+		//myGameModesWindow.addGameType(GameState.NOTE_TRAINING);
 		modes = new Wrapper(myGameModesWindow);
 		modes.setBackground(Color.BLACK);
 		modes.setSize(800, 600);
 		WindowManager.getInstance().addWindow(keys.GameState.GAME_MODES, modes);
 
-		//create a new splash screen
+		//create a new pause screen
 		myPauseScreen = new PauseScreen();
 		pause = new Wrapper(myPauseScreen);
 		pause.setBackground(Color.BLACK);
 		pause.setSize(800, 600);
 		WindowManager.getInstance().addWindow(keys.GameState.PAUSE, pause);
-		*/
+		
 		myGameWindow = new GameWindow();
 		display = new Wrapper(myGameWindow);
 		display.setBackground(Color.BLACK);
@@ -203,8 +206,8 @@ public class GameManager implements ActionListener
 		try
 		{
 			WindowManager.getInstance().nextWindow(GameState.SPLASH_SCREEN);
-			myGameWindow.init();
-			myGameWindow.start();
+			//myGameWindow.init();
+			//myGameWindow.start();
 		}
 		catch(InterruptedException e)
 		{
@@ -666,6 +669,16 @@ public class GameManager implements ActionListener
 					
 					try
 					{
+						myGameWindow.stop();
+						myGameWindow.destroy();
+						myGameWindow = new GameWindow();
+						display = new Wrapper(myGameWindow);
+						display.setBackground(Color.BLACK);
+						display.setSize(800, 600);
+						WindowManager.getInstance().addWindow(keys.GameState.PLAY, display);
+						myGameWindow.init();
+						myGameWindow.start();
+						
 						WindowManager.getInstance().nextWindow(GameState.SPLASH_SCREEN);
 					}
 					catch(InterruptedException e)
@@ -925,7 +938,18 @@ public class GameManager implements ActionListener
 				else if(at_game_options && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.PLAY))
 				{
 					try
-					{
+					{	
+						myGameWindow.init();
+						myGameWindow.start();					
+						//TODO this is ghetto
+						myGameWindow.setPlayerCount(2);
+						//...in the ghetto!
+						for(Note note : gameNotes)
+						{
+							note.setPlayer(Players.PLAYER_ONE);
+							myGameWindow.addNote(note);
+						}
+						
 						WindowManager.getInstance().nextWindow(GameState.PLAY);
 					}
 					catch(InterruptedException e)
@@ -1004,7 +1028,17 @@ public class GameManager implements ActionListener
 				else if(at_post_game && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.SPLASH_SCREEN))
 				{
 					try
-					{						
+					{
+						myGameWindow.stop();
+						myGameWindow.destroy();
+						myGameWindow = new GameWindow();
+						display = new Wrapper(myGameWindow);
+						display.setBackground(Color.BLACK);
+						display.setSize(800, 600);
+						WindowManager.getInstance().addWindow(keys.GameState.PLAY, display);
+						myGameWindow.init();
+						myGameWindow.start();
+						
 						WindowManager.getInstance().nextWindow(GameState.SPLASH_SCREEN);
 					}
 					catch(InterruptedException e)
@@ -1093,12 +1127,11 @@ public class GameManager implements ActionListener
 		
 		if(numberOfActivePlayers == 1 && player1IsDone)
 		{
-		/*	String mySong = new String("");
+			String mySong = new String("");
 			for(Note note : player1Notes)
 				mySong += note.getJFuguePattern();
-			System.out.println(mySong);
 			new org.jfugue.Player().play(new org.jfugue.Pattern(mySong));
-		*/	addMessageToPool(Players.PLAYER_ONE + "_" + GameState.POST_GAME);
+			addMessageToPool(Players.PLAYER_ONE + "_" + GameState.POST_GAME);
 		}
 		else if(numberOfActivePlayers == 2 && player1IsDone && player2IsDone)
 		{
@@ -1337,11 +1370,53 @@ public class GameManager implements ActionListener
 		gameMode = new String(game);
 		//TODO add gameNotes for each different game mode that requires them		
 		if(gameMode.equals(GameState.LENGTH_TRAINING))
-			gameNotes = new gameManagement.gameModes.LengthTraining(timeSignatureNumerator*2,numberOfBars).getNotes();
+		{
+			//gameNotes = new gameManagement.gameModes.LengthTraining(timeSignatureNumerator*2,numberOfBars).getNotes();
+			gameNotes = new ArrayList<Note>();
+			gameNotes.add(new Note(Pitches.B5, Lengths.EIGHTH, gameMode));
+			gameNotes.add(new Note(Pitches.B5, Lengths.EIGHTH, gameMode));
+			gameNotes.add(new Note(Pitches.B5, Lengths.QUARTER, gameMode));
+			gameNotes.add(new Note(Pitches.B5, Lengths.EIGHTH, gameMode));
+			gameNotes.add(new Note(Pitches.B5, Lengths.EIGHTH, gameMode));
+			gameNotes.add(new Note(Pitches.B5, Lengths.QUARTER, gameMode));
+			gameNotes.add(new Note(Pitches.B5, Lengths.EIGHTH, gameMode));
+			gameNotes.add(new Note(Pitches.B5, Lengths.EIGHTH, gameMode));
+			gameNotes.add(new Note(Pitches.B5, Lengths.EIGHTH, gameMode));
+			gameNotes.add(new Note(Pitches.B5, Lengths.EIGHTH, gameMode));
+			gameNotes.add(new Note(Pitches.B5, Lengths.QUARTER, gameMode));
+		}
 		else if(gameMode.equals(GameState.PITCH_TRAINING))
-			gameNotes = new gameManagement.gameModes.PitchTraining(timeSignatureNumerator*2,numberOfBars).getNotes();
+		{
+			//gameNotes = new gameManagement.gameModes.PitchTraining(timeSignatureNumerator*2,numberOfBars).getNotes();
+			gameNotes = new ArrayList<Note>();
+			gameNotes.add(new Note(Pitches.G5, Lengths.QUARTER, gameMode));
+			gameNotes.add(new Note(Pitches.B5, Lengths.QUARTER, gameMode));
+			gameNotes.add(new Note(Pitches.CSharp6, Lengths.QUARTER, gameMode));
+			gameNotes.add(new Note(Pitches.G5, Lengths.QUARTER, gameMode));
+			gameNotes.add(new Note(Pitches.B5, Lengths.QUARTER, gameMode));
+			gameNotes.add(new Note(Pitches.CSharp6, Lengths.QUARTER, gameMode));
+			gameNotes.add(new Note(Pitches.G5, Lengths.QUARTER, gameMode));
+			gameNotes.add(new Note(Pitches.B5, Lengths.QUARTER, gameMode));
+			gameNotes.add(new Note(Pitches.CSharp6, Lengths.QUARTER, gameMode));
+			gameNotes.add(new Note(Pitches.FSharp6, Lengths.QUARTER, gameMode));
+			gameNotes.add(new Note(Pitches.E6, Lengths.QUARTER, gameMode));
+		}
 		else if(gameMode.equals(GameState.NOTE_TRAINING))
-			gameNotes = new gameManagement.gameModes.NoteTraining(timeSignatureNumerator*2,numberOfBars).getNotes();
+		{
+			//gameNotes = new gameManagement.gameModes.NoteTraining(timeSignatureNumerator*2,numberOfBars).getNotes();
+			gameNotes = new ArrayList<Note>();
+			gameNotes.add(new Note(Pitches.G5, Lengths.EIGHTH, gameMode));
+			gameNotes.add(new Note(Pitches.B5, Lengths.EIGHTH, gameMode));
+			gameNotes.add(new Note(Pitches.CSharp6, Lengths.QUARTER, gameMode));
+			gameNotes.add(new Note(Pitches.G5, Lengths.EIGHTH, gameMode));
+			gameNotes.add(new Note(Pitches.B5, Lengths.EIGHTH, gameMode));
+			gameNotes.add(new Note(Pitches.CSharp6, Lengths.QUARTER, gameMode));
+			gameNotes.add(new Note(Pitches.G5, Lengths.EIGHTH, gameMode));
+			gameNotes.add(new Note(Pitches.B5, Lengths.EIGHTH, gameMode));
+			gameNotes.add(new Note(Pitches.CSharp6, Lengths.EIGHTH, gameMode));
+			gameNotes.add(new Note(Pitches.FSharp6, Lengths.EIGHTH, gameMode));
+			gameNotes.add(new Note(Pitches.E6, Lengths.QUARTER, gameMode));
+		}
 		else
 			gameNotes = null;
 	}
@@ -1421,8 +1496,18 @@ public class GameManager implements ActionListener
 	//	System.out.println();
 		for(Note note : notesToSend)
 		{
-			myGameWindow.addNote(note);
-			//note.playNote();
+			if(note.getPlayer().equals(Players.PLAYER_ONE))
+			{
+				note.setPlayer(Players.PLAYER_TWO);
+				myGameWindow.addNote(note);
+				note.playNote();
+			}
+			else if(note.getPlayer().equals(gameMode))
+			{
+				note.setPlayer(Players.PLAYER_ONE);
+				myGameWindow.addNote(note);
+				//note.playNote();
+			}
 		}
 		notesToSend = new ArrayList<Note>();
 	}

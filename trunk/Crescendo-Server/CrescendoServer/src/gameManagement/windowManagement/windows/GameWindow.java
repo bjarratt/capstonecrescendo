@@ -31,6 +31,7 @@ public class GameWindow extends PApplet
 		lock.lock();
 		try
 		{
+			this.redraw();
 		}
 		finally
 		{
