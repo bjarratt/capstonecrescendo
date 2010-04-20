@@ -1,5 +1,6 @@
 package gameManagement.messageTranslationSystem;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
@@ -7,6 +8,7 @@ import java.awt.event.ActionListener;
 import java.util.Random;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import keys.GameState;
@@ -36,6 +38,13 @@ public class IPhoneGUI extends JPanel implements ActionListener
 	private JButton play;
 	private JButton pause;
 	private JButton review;
+
+	private JLabel splash_screen;
+	private JLabel game_modes;
+	private JLabel game_options;
+	private JLabel play_screen;
+	private JLabel pause_screen;
+	private JLabel post_game;
 	
 	private Random rand;
 	
@@ -51,13 +60,18 @@ public class IPhoneGUI extends JPanel implements ActionListener
 		this.myCM = myCM;
 		rand = new Random();
 		
+		disconnect = new JButton("Disconnect");
+		disconnect.addActionListener(this);
+		this.add(disconnect);
+		
+		splash_screen = new JLabel("Splash Screen");
+		splash_screen.setBackground(Color.GRAY);
+		this.add(splash_screen);
+		
 		connect = new JButton("Connect");
 		connect.addActionListener(this);
 		this.add(connect);
 		
-		disconnect = new JButton("Disconnect");
-		disconnect.addActionListener(this);
-		this.add(disconnect);
 		
 		playNote = new JButton("Play a Random Note");
 		playNote.addActionListener(this);
