@@ -25,7 +25,7 @@ public class Players
 		players.add(PLAYER_TWO);
 		players.add(PLAYER_THREE);
 		players.add(PLAYER_FOUR);
-		players.add(SERVER);
+		//players.add(SERVER);
 	}
 	
 	public static List<String> getPlayers()
