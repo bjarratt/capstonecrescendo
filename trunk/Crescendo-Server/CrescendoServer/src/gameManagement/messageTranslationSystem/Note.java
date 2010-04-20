@@ -142,6 +142,16 @@ public class Note
 	{
 		return player;
 	}
+	
+	/**
+	 *	Returns the iPhone that played the note
+	 *
+	 *	@return the iPhone that played the note
+	 */
+	public void setPlayer(String p)
+	{
+		player = new String(p);
+	}
 
 	/**
 	 *	Returns the Beat representation of the Note
