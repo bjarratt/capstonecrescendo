@@ -1,6 +1,7 @@
 package gameManagement.gameModes;
 
 import gameManagement.messageTranslationSystem.Note;
+import gameManagement.Scales;
 import keys.GameState;
 import keys.Lengths;
 
@@ -20,12 +21,14 @@ import java.util.Random;
  */
 public class PitchTraining {
 
+	private Scales scales;
 	private ArrayList<Note> wantedNotes;	//the array of notes the game wants
 	private Random rand;
 	
 	int maxSubdivisions;		//per measure
 	int currentSubdivisions;
 	
+	//Default constructor
 	public PitchTraining(int subdivisions, int wantedMeasures){
 		
 		wantedNotes = new ArrayList<Note>();
@@ -37,10 +40,99 @@ public class PitchTraining {
 	}
 	
 	/**
-	 * Randomizes the lengths added to each of the measures. If a length fits within a 
-	 * measure, then a new Note is added to wantedNotes. If a length cannot fit, then 
-	 * another random note is chosen. No tying across measures is allowed. After a 
-	 * length is selected, a random pitch is assigned to it to create the new Note.
+	 * This constructor allows for the pitches to be randomized based on the specified 
+	 * key signature. 
+	 * @param subdivisions
+	 * @param wantedMeasures
+	 * @param wantedKey
+	 */
+	public PitchTraining(int subdivisions, int wantedMeasures, String wantedKey){
+		
+		wantedNotes = new ArrayList<Note>();
+		rand = new Random();
+		maxSubdivisions = subdivisions;
+		currentSubdivisions = 0;
+		randomizeWithKey(wantedMeasures, wantedKey);
+	}
+	
+	/**
+	 * Randomizes the pitches added to each of the measures. The pitches are selected
+	 * only from those notes that are a part of the specified key signature.
+	 * @param measureCount - the number of measures to fill.
+	 * @param key - the key signature from which notes are selected
+	 */
+	private void randomizeWithKey(int measureCount, String key){
+		for(int i = 0; i < (maxSubdivisions/2)*measureCount; i++)
+			wantedNotes.add(new Note(randomizePitchWithKey(key), Lengths.QUARTER, GameState.PITCH_TRAINING));
+	}
+	
+	/**
+	 * Returns a note randomly selected from those that are part of the specified 
+	 * key signature. The keys (found in class Scales) have either 8 or 9 notes in
+	 * them. As such, this method checks the length of the Array for that key before
+	 * it randomly chooses a note for it.
+	 * @param key - the key to get notes from
+	 * @return - the randomized note within that key signature
+	 */
+	public String randomizePitchWithKey(String key)
+	{
+		ArrayList<String> keyNotes = scales.getNotes(key);
+		if(keyNotes.size() == 8)
+		{
+			switch(rand.nextInt(8))
+			{
+				case 0:
+					return keyNotes.get(0);
+				case 1:
+					return keyNotes.get(1);
+				case 2:
+					return keyNotes.get(2);
+				case 3:
+					return keyNotes.get(3);
+				case 4:
+					return keyNotes.get(4);
+				case 5:
+					return keyNotes.get(5);
+				case 6:
+					return keyNotes.get(6);
+				case 7:
+					return keyNotes.get(7);
+				default:
+					return "rest";
+			}
+		}
+		else if(keyNotes.size() == 9)
+		{
+			switch(rand.nextInt(9))
+			{
+				case 0:
+					return keyNotes.get(0);
+				case 1:
+					return keyNotes.get(1);
+				case 2:
+					return keyNotes.get(2);
+				case 3:
+					return keyNotes.get(3);
+				case 4:
+					return keyNotes.get(4);
+				case 5:
+					return keyNotes.get(5);
+				case 6:
+					return keyNotes.get(6);
+				case 7:
+					return keyNotes.get(7);
+				case 8:
+					return keyNotes.get(8);
+				default:
+					return "rest";
+			}	
+		}
+		return "rest";
+		
+	}
+	
+	/**
+	 * Randomizes the pitches added to each of the measures.
 	 * @param measureCount - the number of measures to fill.
 	 */
 	private void randomizeMeasures(int measureCount)
@@ -51,44 +143,40 @@ public class PitchTraining {
 	
 	public String randomizePitch()
 	{
-		switch(rand.nextInt(17))
+		switch(rand.nextInt(15))
 		{
-			case 0:
-				return "E5";
-			case 1:
-				return "E5";
-			case 2:
-				return "F5";
-			case 3:
-				return "FSharp5";
-			case 4:
-				return "G5";
-			case 5:
-				return "GSharp5";
-			case 6:
-				return "A5";
-			case 7:
-				return "ASharp5";
-			case 8:
-				return "B5";
-			case 9:
-				return "C6";
-			case 10:
-				return "CSharp6";
-			case 11:
-				return "D6";
-			case 12:
-				return "DSharp6";
-			case 13:
-				return "E6";
-			case 14:
-				return "E6";
-			case 15:
-				return "F6";
-			case 16:
-				return "FSharp6";
-			default:
-				return "rest";
+		case 0:
+			return "E5";
+		case 1:
+			return "F5";
+		case 2:
+			return "FSharp5";
+		case 3:
+			return "G5";
+		case 4:
+			return "GSharp5";
+		case 5:
+			return "A5";
+		case 6:
+			return "ASharp5";
+		case 7:
+			return "B5";
+		case 8:
+			return "C6";
+		case 9:
+			return "CSharp6";
+		case 10:
+			return "D6";
+		case 11:
+			return "DSharp6";
+		case 12:
+			return "E6";
+		case 13:
+			return "F6";
+		case 14:
+			return "FSharp6";
+		default:
+			return "rest";
 		}
 	}
 	
