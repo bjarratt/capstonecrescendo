@@ -49,6 +49,7 @@ public class PitchTraining {
 	public PitchTraining(int subdivisions, int wantedMeasures, String wantedKey){
 		
 		wantedNotes = new ArrayList<Note>();
+		scales = new Scales();
 		rand = new Random();
 		maxSubdivisions = subdivisions;
 		currentSubdivisions = 0;
@@ -76,27 +77,27 @@ public class PitchTraining {
 	 */
 	public String randomizePitchWithKey(String key)
 	{
-		ArrayList<String> keyNotes = scales.getNotes(key);
+		ArrayList<Note> keyNotes = scales.getNotes(key);
 		if(keyNotes.size() == 8)
 		{
 			switch(rand.nextInt(8))
 			{
 				case 0:
-					return keyNotes.get(0);
+					return keyNotes.get(0).getPitch();
 				case 1:
-					return keyNotes.get(1);
+					return keyNotes.get(1).getPitch();
 				case 2:
-					return keyNotes.get(2);
+					return keyNotes.get(2).getPitch();
 				case 3:
-					return keyNotes.get(3);
+					return keyNotes.get(3).getPitch();
 				case 4:
-					return keyNotes.get(4);
+					return keyNotes.get(4).getPitch();
 				case 5:
-					return keyNotes.get(5);
+					return keyNotes.get(5).getPitch();
 				case 6:
-					return keyNotes.get(6);
+					return keyNotes.get(6).getPitch();
 				case 7:
-					return keyNotes.get(7);
+					return keyNotes.get(7).getPitch();
 				default:
 					return "rest";
 			}
@@ -106,23 +107,23 @@ public class PitchTraining {
 			switch(rand.nextInt(9))
 			{
 				case 0:
-					return keyNotes.get(0);
+					return keyNotes.get(0).getPitch();
 				case 1:
-					return keyNotes.get(1);
+					return keyNotes.get(1).getPitch();
 				case 2:
-					return keyNotes.get(2);
+					return keyNotes.get(2).getPitch();
 				case 3:
-					return keyNotes.get(3);
+					return keyNotes.get(3).getPitch();
 				case 4:
-					return keyNotes.get(4);
+					return keyNotes.get(4).getPitch();
 				case 5:
-					return keyNotes.get(5);
+					return keyNotes.get(5).getPitch();
 				case 6:
-					return keyNotes.get(6);
+					return keyNotes.get(6).getPitch();
 				case 7:
-					return keyNotes.get(7);
+					return keyNotes.get(7).getPitch();
 				case 8:
-					return keyNotes.get(8);
+					return keyNotes.get(8).getPitch();
 				default:
 					return "rest";
 			}	
