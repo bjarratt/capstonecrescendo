@@ -306,8 +306,7 @@
 	[timeLabel removeFromSuperview];
 	[tempoLabel removeFromSuperview];
 	[barsLabel removeFromSuperview];
-	[self drawPortraitView];
-	
+	[self drawGamePlayOptions];
 }
 
 - (void) pausePlay:(UIButton *)sender {
@@ -372,6 +371,15 @@
 
 - (void) disconnect:(UIButton *)sender {
 	self.inGame = NO;
+	if ([playerId isEqualToString:@"player1"]) {
+		[pauseButton removeFromSuperview];
+		[playButton removeFromSuperview];
+		[disconnectButton removeFromSuperview];
+		[self drawGameOptions];
+	}
+	else {
+		[self drawGamePlayOptions];
+	}
 	[client disconnect];
 	[self dismissModalViewControllerAnimated:YES];
 }
@@ -1409,9 +1417,6 @@
 }
 
 - (void) drawGameOptions {
-	[pauseButton removeFromSuperview];
-	[playButton	removeFromSuperview];
-	[disconnectButton removeFromSuperview];
 	/*
 	 * Label
 	 */
