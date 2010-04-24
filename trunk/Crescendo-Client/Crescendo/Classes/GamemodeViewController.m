@@ -125,10 +125,10 @@
     [request release];
 	
 	if (self.clientConnected == YES) {
-		NSLog(@"YES");
+		//NSLog(@"YES");
 	}
 	else {
-		NSLog(@"NO");
+		//NSLog(@"NO");
 		[self performSelector:@selector(goBack) withObject:nil afterDelay:0.1];
 	}
 }

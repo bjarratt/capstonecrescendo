@@ -361,7 +361,7 @@
     // Initialize GameStateRequest and set game state to content's of the text field.
 	GameStateRequest* request = [[GameStateRequest alloc] init];
     [request setGameState:inputText];
-    
+     
     // Setup the client to send the message a little later in the run loop.
     [client performSelector:@selector(sendMessage:) withObject: request];
     
@@ -371,6 +371,7 @@
 }
 
 - (void) disconnect:(UIButton *)sender {
+	self.inGame = NO;
 	[client disconnect];
 	[self dismissModalViewControllerAnimated:YES];
 }
@@ -570,20 +571,26 @@
 	/*
 	 * View Backgrounds
 	 */
+	if (!backgroundImage) {
+		backgroundImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background_vertical.png"]];
+	}
 	[self.view addSubview:backgroundImage];
 	[self.view sendSubviewToBack:backgroundImage];
 	
 	/*
 	 * Game Options Display
 	 */
-	if (self.inGame == YES || ![playerId isEqualToString:@"player1"]) {
+	if (self.inGame == YES) {
 		[self drawGamePlayOptions];
 	}
 	else {
 		if ([playerId isEqualToString:@"player1"]) {
 			[self drawGameOptions];
 		}
-	}	
+		else {
+			[self drawGamePlayOptions];
+		}
+	}
 }
 
 - (void) drawPortraitLandscapeSideView {
@@ -600,7 +607,7 @@
 	 */
 	[myLengthScrollView removeFromSuperview];
 	[myPitchScrollView removeFromSuperview];
-	if (self.inGame == YES) {
+	if (self.inGame == YES || ![playerId isEqualToString:@"player1"]) {
 		[pauseButton removeFromSuperview];
 		[playButton removeFromSuperview];
 		[disconnectButton removeFromSuperview];
@@ -633,7 +640,7 @@
 	//TODO: Send game option messages
 	//TODO: Send play message
 	//TODO: Each player receives request that game has begun (therefore game play options appear)
-	self.inGame = YES;	
+	//self.inGame = YES;	
 	
 	/*
 	 * View Backgrounds
@@ -1341,6 +1348,20 @@
 
 - (void) drawGamePlayOptions {
 	backButton.hidden = YES;
+	if (self.inGame == NO) {
+		[keySlider removeFromSuperview];
+		[timeSlider removeFromSuperview];
+		[tempoSlider removeFromSuperview];
+		[barsSlider removeFromSuperview];
+		[keyText removeFromSuperview];
+		[timeText removeFromSuperview];
+		[tempoText removeFromSuperview];
+		[barsText removeFromSuperview];
+		[keyLabel removeFromSuperview];
+		[tempoLabel removeFromSuperview];
+		[barsLabel removeFromSuperview];
+		[startButton removeFromSuperview];
+	}
 	/*
 	 * Label
 	 */
@@ -1388,6 +1409,9 @@
 }
 
 - (void) drawGameOptions {
+	[pauseButton removeFromSuperview];
+	[playButton	removeFromSuperview];
+	[disconnectButton removeFromSuperview];
 	/*
 	 * Label
 	 */
@@ -1539,10 +1563,11 @@
 	/******************
 	 * User Interface *
 	 ******************/
-	[self becomeFirstResponder];
-	//self.playerId = @"player2";
-	self.inGame = NO;
 	[self drawPortraitView];
+}
+
+-(void) viewWillAppear: (BOOL) animated {
+	self.inGame = NO;
 }
 
 /*
