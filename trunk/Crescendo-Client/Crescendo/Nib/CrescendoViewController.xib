@@ -128,7 +128,7 @@
 					<object class="IBUIButton" id="855116857">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{50, 248}, {220, 50}}</string>
+						<string key="NSFrame">{{50, 255}, {220, 50}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
@@ -464,22 +464,30 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>barsSliderValueChanged:</string>
-							<string>disconnect</string>
-							<string>goBack</string>
+							<string>barsSliderValueSet:</string>
+							<string>disconnect:</string>
 							<string>keySliderValueChanged:</string>
-							<string>pause</string>
+							<string>keySliderValueSet:</string>
+							<string>pausePlay:</string>
+							<string>playSong:</string>
 							<string>sendNoteToServer:</string>
-							<string>start</string>
+							<string>start:</string>
 							<string>tempoSliderValueChanged:</string>
+							<string>tempoSliderValueSet:</string>
 							<string>timeSliderValueChanged:</string>
+							<string>timeSliderValueSet:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>id</string>
 							<string>id</string>
+							<string>UIButton</string>
 							<string>id</string>
 							<string>id</string>
+							<string>UIButton</string>
+							<string>UIButton</string>
 							<string>id</string>
+							<string>UIButton</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
