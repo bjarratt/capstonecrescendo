@@ -60,6 +60,11 @@ public class Measure
 
 	public String toString()
 	{
-		return getJFuguePattern().toString();
+		String s = new String();
+		for(Note note : notes)
+		{
+			s += note + " ";
+		}
+		return s;
 	}
 }

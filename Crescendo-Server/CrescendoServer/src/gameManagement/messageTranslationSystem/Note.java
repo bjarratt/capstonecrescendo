@@ -379,27 +379,28 @@ public class Note
 	 */
 	public String toString()
 	{
-		if(isCorrect())
-		{
-			if(tiedLeft && tiedRight)
-				return "tie_" + pitch + "_" + length + "_tie";
-			else if(tiedLeft)
-				return "tie_" + pitch + "_" + length;
-			else if(tiedRight)
-				return pitch + "_" + length + "_tie";
-			else
-				return pitch + "_" + length;
-		}
-		else
-		{
-			if(tiedLeft && tiedRight)
-				return "tie_" + pitch + "_" + length + "_tieX";
-			else if(tiedLeft)
-				return "tie_" + pitch + "_" + length + "X";
-			else if(tiedRight)
-				return pitch + "_" + length + "_tieX";
-			else
-				return pitch + "_" + length + "X";
-		}
+//		if(isCorrect())
+//		{
+//			if(tiedLeft && tiedRight)
+//				return "tie_" + pitch + "_" + length + "_tie";
+//			else if(tiedLeft)
+//				return "tie_" + pitch + "_" + length;
+//			else if(tiedRight)
+//				return pitch + "_" + length + "_tie";
+//			else
+//				return pitch + "_" + length;
+//		}
+//		else
+//		{
+//			if(tiedLeft && tiedRight)
+//				return "tie_" + pitch + "_" + length + "_tieX";
+//			else if(tiedLeft)
+//				return "tie_" + pitch + "_" + length + "X";
+//			else if(tiedRight)
+//				return pitch + "_" + length + "_tieX";
+//			else
+//				return pitch + "_" + length + "X";
+//		}
+		return getJFuguePattern().toString();
 	}
 }
