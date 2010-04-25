@@ -33,7 +33,6 @@ public class Pitches
 	public static final String FFlat6 = "FFlat6";
 	public static final String F6 = "F6";
 	public static final String FSharp6 = "FSharp6";
-	public static final String Rest = "Rest";
 	
 	public static final String Sharp = "Sharp";
 	public static final String Flat = "Flat";

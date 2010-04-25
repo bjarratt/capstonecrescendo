@@ -1,9 +1,9 @@
 package gameManagement.gameModes;
 
 import gameManagement.messageTranslationSystem.Note;
-import gameManagement.Scales;
 import keys.GameState;
 import keys.Lengths;
+import keys.Scales;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -19,9 +19,8 @@ import java.util.Random;
  * @author Chris Aikens
  *
  */
-public class PitchTraining {
-
-	private Scales scales;
+public class PitchTraining
+{
 	private ArrayList<Note> wantedNotes;	//the array of notes the game wants
 	private Random rand;
 	
@@ -49,7 +48,6 @@ public class PitchTraining {
 	public PitchTraining(int subdivisions, int wantedMeasures, String wantedKey){
 		
 		wantedNotes = new ArrayList<Note>();
-		scales = new Scales();
 		rand = new Random();
 		maxSubdivisions = subdivisions;
 		currentSubdivisions = 0;
@@ -77,7 +75,7 @@ public class PitchTraining {
 	 */
 	public String randomizePitchWithKey(String key)
 	{
-		ArrayList<Note> keyNotes = scales.getNotes(key);
+		ArrayList<Note> keyNotes = Scales.getNotes(key);
 		if(keyNotes.size() == 8)
 		{
 			switch(rand.nextInt(8))
@@ -96,10 +94,8 @@ public class PitchTraining {
 					return keyNotes.get(5).getPitch();
 				case 6:
 					return keyNotes.get(6).getPitch();
-				case 7:
-					return keyNotes.get(7).getPitch();
 				default:
-					return "rest";
+					return keyNotes.get(7).getPitch();
 			}
 		}
 		else if(keyNotes.size() == 9)
@@ -122,13 +118,11 @@ public class PitchTraining {
 					return keyNotes.get(6).getPitch();
 				case 7:
 					return keyNotes.get(7).getPitch();
-				case 8:
-					return keyNotes.get(8).getPitch();
 				default:
-					return "rest";
+					return keyNotes.get(8).getPitch();
 			}	
 		}
-		return "rest";
+		return keyNotes.get(0).getPitch();
 		
 	}
 	
@@ -146,38 +140,36 @@ public class PitchTraining {
 	{
 		switch(rand.nextInt(15))
 		{
-		case 0:
-			return "E5";
-		case 1:
-			return "F5";
-		case 2:
-			return "FSharp5";
-		case 3:
-			return "G5";
-		case 4:
-			return "GSharp5";
-		case 5:
-			return "A5";
-		case 6:
-			return "ASharp5";
-		case 7:
-			return "B5";
-		case 8:
-			return "C6";
-		case 9:
-			return "CSharp6";
-		case 10:
-			return "D6";
-		case 11:
-			return "DSharp6";
-		case 12:
-			return "E6";
-		case 13:
-			return "F6";
-		case 14:
-			return "FSharp6";
-		default:
-			return "rest";
+			case 0:
+				return "E5";
+			case 1:
+				return "F5";
+			case 2:
+				return "FSharp5";
+			case 3:
+				return "G5";
+			case 4:
+				return "GSharp5";
+			case 5:
+				return "A5";
+			case 6:
+				return "ASharp5";
+			case 7:
+				return "B5";
+			case 8:
+				return "C6";
+			case 9:
+				return "CSharp6";
+			case 10:
+				return "D6";
+			case 11:
+				return "DSharp6";
+			case 12:
+				return "E6";
+			case 13:
+				return "F6";
+			default:
+				return "FSharp6";
 		}
 	}
 	

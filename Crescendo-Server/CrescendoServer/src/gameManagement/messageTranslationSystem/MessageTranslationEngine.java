@@ -32,9 +32,6 @@ public class MessageTranslationEngine
 		pitches.put("F6", "F6");
 		pitches.put("FSharp6", "F#6");
 
-		//A rest is also specified in pitches
-		pitches.put("rest", "R");
-
 		//set up the available note lengths
 		lengths.put("eighth", "i");
 		lengths.put("quarter", "q");
@@ -76,7 +73,8 @@ public class MessageTranslationEngine
 				one.equals(GameState.MUSICAL_IPHONES) ||
 				one.equals(GameState.NOTES_AROUND_THE_ROOM) ||
 				one.equals(GameState.COMP_TIME) ||
-				//one.equals(GameState.COMPOSE) ||
+				one.equals(GameState.COMPOSE) ||
+				one.equals(GameState.KEY_MASTER) ||
 				one.equals(GameState.POST_GAME) ||
 				one.equals(GameState.REVIEW) ||
 				one.equals(GameState.EXIT))

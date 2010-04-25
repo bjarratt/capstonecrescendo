@@ -1,4 +1,4 @@
-package gameManagement;
+package keys;
 
 import gameManagement.messageTranslationSystem.Note;
 
@@ -15,22 +15,22 @@ import java.util.HashMap;
  */
 public class Scales 
 {
-	private ArrayList<Note> keyC = new ArrayList<Note>();
-	private ArrayList<Note> keyG = new ArrayList<Note>();
-	private ArrayList<Note> keyD = new ArrayList<Note>();
-	private ArrayList<Note> keyA = new ArrayList<Note>();
-	private ArrayList<Note> keyE = new ArrayList<Note>();
-	private ArrayList<Note> keyB = new ArrayList<Note>();
-	private ArrayList<Note> keyGFlat = new ArrayList<Note>();
-	private ArrayList<Note> keyDFlat = new ArrayList<Note>();
-	private ArrayList<Note> keyAFlat = new ArrayList<Note>();
-	private ArrayList<Note> keyEFlat = new ArrayList<Note>();
-	private ArrayList<Note> keyBFlat = new ArrayList<Note>();
-	private ArrayList<Note> keyF = new ArrayList<Note>();
+	private static ArrayList<Note> keyC = new ArrayList<Note>();
+	private static ArrayList<Note> keyG = new ArrayList<Note>();
+	private static ArrayList<Note> keyD = new ArrayList<Note>();
+	private static ArrayList<Note> keyA = new ArrayList<Note>();
+	private static ArrayList<Note> keyE = new ArrayList<Note>();
+	private static ArrayList<Note> keyB = new ArrayList<Note>();
+	private static ArrayList<Note> keyGFlat = new ArrayList<Note>();
+	private static ArrayList<Note> keyDFlat = new ArrayList<Note>();
+	private static ArrayList<Note> keyAFlat = new ArrayList<Note>();
+	private static ArrayList<Note> keyEFlat = new ArrayList<Note>();
+	private static ArrayList<Note> keyBFlat = new ArrayList<Note>();
+	private static ArrayList<Note> keyF = new ArrayList<Note>();
 	
-	private HashMap<String, ArrayList<Note>> allKeys = new HashMap<String, ArrayList<Note>>();
+	public static HashMap<String, ArrayList<Note>> allKeys = new HashMap<String, ArrayList<Note>>();
 	
-	public Scales()
+	static
 	{
 		//Key of C
 		Note[] notes = new Note[]{new Note(keys.Pitches.E5,keys.Lengths.EIGHTH,keys.GameState.SCALES), 
@@ -200,31 +200,30 @@ public class Scales
 			keyF.add(p);
 		allKeys.put(keys.KeySignatures.FMajor, keyF);
 	}
+		
+	/**
+	 * Checks if the specified pitch is in the given key.
+	 * @param note - note to check the pitch of
+	 * @param key - the current key signature
+	 * @return true if the Note is in the Key specified
+	 */
+	public static boolean isNoteInKey(Note note, String key)
+	{
+		if(allKeys.containsKey(key) && allKeys.get(key).contains(new Note(note.getPitch(),keys.Lengths.EIGHTH,keys.GameState.SCALES)))
+			return true;
+		return false;
+	}
 	
 	/**
-	 * Returns an arraylist of the notes that make up the given key signature. 
+	 * Returns an ArrayList of the notes that make up the given key signature. 
 	 * Returns null if the key cannot be found.
 	 * @param wantedKey - the wanted key
 	 * @return - the notes that are in that key signature
 	 */
-	public ArrayList<Note> getNotes(String wantedKey)
+	public static ArrayList<Note> getNotes(String wantedKey)
 	{
 		if(allKeys.containsKey(wantedKey))
-		{
 			return allKeys.get(wantedKey);
-		}
 		return null;
-	}
-	
-	/**
-	 * Checks if the specified pitch is in the given key.
-	 * @param pitch - the pitch to check
-	 * @param key - the current key signature
-	 * @return
-	 */
-	boolean checkNote(String pitch, String key){
-		if(allKeys.get(key).contains(pitch))
-			return true;
-		return false;
 	}
 }

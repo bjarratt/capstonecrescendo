@@ -1,6 +1,5 @@
 package gameManagement.messageTranslationSystem;
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
@@ -8,13 +7,14 @@ import java.awt.event.ActionListener;
 import java.util.Random;
 
 import javax.swing.JButton;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import keys.GameState;
 
 public class IPhoneGUI extends JPanel implements ActionListener
 {
+	private static final long serialVersionUID = -3339327851854047138L;
+	
 	private String player;
 	private gameManagement.messageTranslationSystem.ConnectionManager myCM;
 	private JButton connect;
@@ -30,6 +30,7 @@ public class IPhoneGUI extends JPanel implements ActionListener
 	private JButton notesAroundTheRoom;
 	private JButton compTime;
 	private JButton compose;
+	private JButton keyMaster;
 	private JButton gameInfo;
 	private JButton setTempo;
 	private JButton setKey;
@@ -69,41 +70,45 @@ public class IPhoneGUI extends JPanel implements ActionListener
 		gameTypes.addActionListener(this);
 		this.add(gameTypes);
 		
-		lengthTraining = new JButton("Length Training");
-		lengthTraining.addActionListener(this);
-		this.add(lengthTraining);
+//		lengthTraining = new JButton("Length Training");
+//		lengthTraining.addActionListener(this);
+//		this.add(lengthTraining);
+//
+//		pitchTraining = new JButton("Pitch Training");
+//		pitchTraining.addActionListener(this);
+//		this.add(pitchTraining);
+//
+//		noteTraining = new JButton("Note Training");
+//		noteTraining.addActionListener(this);
+//		this.add(noteTraining);
+//
+//		concertMaster = new JButton("Concert Master");
+//		concertMaster.addActionListener(this);
+//		this.add(concertMaster);
+//
+//		musicalIphones = new JButton("Musical iPhones");
+//		musicalIphones.addActionListener(this);
+//		this.add(musicalIphones);
+//
+//		notesAroundTheRoom = new JButton("Notes Around the Room");
+//		notesAroundTheRoom.addActionListener(this);
+//		this.add(notesAroundTheRoom);
+//
+//		compTime = new JButton("Comp Time");
+//		compTime.addActionListener(this);
+//		this.add(compTime);
+//
+//		compose = new JButton("Compose");
+//		compose.addActionListener(this);
+//		this.add(compose);
 
-		pitchTraining = new JButton("Pitch Training");
-		pitchTraining.addActionListener(this);
-		this.add(pitchTraining);
+		keyMaster = new JButton("Key Master");
+		keyMaster.addActionListener(this);
+		this.add(keyMaster);
 
-		noteTraining = new JButton("Note Training");
-		noteTraining.addActionListener(this);
-		this.add(noteTraining);
-
-		concertMaster = new JButton("Concert Master");
-		concertMaster.addActionListener(this);
-		this.add(concertMaster);
-
-		musicalIphones = new JButton("Musical iPhones");
-		musicalIphones.addActionListener(this);
-		this.add(musicalIphones);
-
-		notesAroundTheRoom = new JButton("Notes Around the Room");
-		notesAroundTheRoom.addActionListener(this);
-		this.add(notesAroundTheRoom);
-
-		compTime = new JButton("Comp Time");
-		compTime.addActionListener(this);
-		this.add(compTime);
-
-		compose = new JButton("Compose");
-		compose.addActionListener(this);
-		this.add(compose);
-
-		gameInfo = new JButton("Go to Game Info State");
-		gameInfo.addActionListener(this);
-		this.add(gameInfo);
+//		gameInfo = new JButton("Go to Game Info State");
+//		gameInfo.addActionListener(this);
+//		this.add(gameInfo);
 
 		setTempo = new JButton("Set Tempo (Random)");
 		setTempo.addActionListener(this);
@@ -171,16 +176,18 @@ public class IPhoneGUI extends JPanel implements ActionListener
 			myCM.sendMessage(player + "_" + GameState.COMP_TIME);
 		if(e.getSource() == compose)
 			myCM.sendMessage(player + "_" + GameState.COMPOSE);
+		if(e.getSource() == keyMaster)
+			myCM.sendMessage(player + "_" + GameState.KEY_MASTER);
 		if(e.getSource() == gameInfo)
 			myCM.sendMessage(player + "_" + GameState.GAME_INFO);
 		if(e.getSource() == setTempo)
-			myCM.sendMessage(player + "_" + GameState.SET_TEMPO);
+			myCM.sendMessage(player + "_" + GameState.SET_TEMPO + "_" + generateTempo());
 		if(e.getSource() == setKey)
-			myCM.sendMessage(player + "_" + GameState.SET_KEY);
+			myCM.sendMessage(player + "_" + GameState.SET_KEY + "_" + generateKey());
 		if(e.getSource() == setTimeSignature)
-			myCM.sendMessage(player + "_" + GameState.SET_TIME_SIGNATURE);
+			myCM.sendMessage(player + "_" + GameState.SET_TIME_SIGNATURE + "_" + generateTimeSignatureNumerator()+ "_4");
 		if(e.getSource() == setNumberOfBars)
-			myCM.sendMessage(player + "_" + GameState.SET_NUMBER_OF_BARS);
+			myCM.sendMessage(player + "_" + GameState.SET_NUMBER_OF_BARS + "_" + generateNumberOfBars());
 		if(e.getSource() == play)
 			myCM.sendMessage(player + "_" + GameState.PLAY);
 		if(e.getSource() == pause)
@@ -226,10 +233,8 @@ public class IPhoneGUI extends JPanel implements ActionListener
 				return "E6";
 			case 13:
 				return "F6";
-			case 14:
-				return "FSharp6";
 			default:
-				return "rest";
+				return "FSharp6";
 		}
 	}
 
@@ -251,6 +256,92 @@ public class IPhoneGUI extends JPanel implements ActionListener
 			default:
 				return "wholenote";
 		}
+	}
+	
+	/**
+	 *	Generates a random tempo from 60(Adagio) - 180(Presto)
+	 *
+	 *	@return a random tempo from 
+	 */
+	private String generateKey()
+	{
+		switch(rand.nextInt(12))
+		{
+			case 0:
+				return keys.KeySignatures.FMajor;
+			case 1:
+				return keys.KeySignatures.CMajor;
+			case 2:
+				return keys.KeySignatures.GMajor;
+			case 3:
+				return keys.KeySignatures.DMajor;
+			case 4:
+				return keys.KeySignatures.AMajor;
+			case 5:
+				return keys.KeySignatures.EMajor;
+			case 6:
+				return keys.KeySignatures.BMajor;
+			case 7:
+				return keys.KeySignatures.FSharpMajor;
+			case 8:
+				return keys.KeySignatures.BFlatMajor;
+			case 9:
+				return keys.KeySignatures.EFlatMajor;
+			case 10:
+				return keys.KeySignatures.AFlatMajor;
+			default:
+				return keys.KeySignatures.DFlatMajor;
+		}
+	}
+	
+	/**
+	 *	Generates a random tempo from 60(Adagio) - 180(Presto)
+	 *
+	 *	@return a random tempo from 
+	 */
+	private int generateTempo()
+	{
+		switch(rand.nextInt(9))
+		{
+			case 0:
+				return 60;
+			case 1:
+				return 65;
+			case 2:
+				return 70;
+			case 3:
+				return 80;
+			case 4:
+				return 95;
+			case 5:
+				return 110;
+			case 6:
+				return 120;
+			case 7:
+				return 145;
+			default:
+				return 180;
+		}
+	}
+	
+	/**
+	 *	Generates a random tempo from 60(Adagio) - 180(Presto)
+	 *
+	 *	@return a random tempo from 
+	 */
+	private int generateNumberOfBars()
+	{
+		return rand.nextInt(13)+4;
+	}
+	
+	/**
+	 *	Generates a random tempo from 60(Adagio) - 180(Presto)
+	 *
+	 *	@return a random tempo from 
+	 */
+	private int generateTimeSignatureNumerator()
+	{
+		return rand.nextInt(3)+2;
 	}
 	
 	

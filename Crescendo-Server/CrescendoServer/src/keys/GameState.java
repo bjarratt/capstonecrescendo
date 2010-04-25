@@ -24,6 +24,7 @@ public class GameState
 	public final static String NOTES_AROUND_THE_ROOM = "notesaroundtheroom";
 	public final static String COMP_TIME = "comptime";
 	public final static String COMPOSE = "compose";
+	public final static String KEY_MASTER = "keymaster";
 
 	public final static String SCALES = "scales";
 	// *******************************************************************************
