@@ -289,6 +289,7 @@
 		3E2A58FE117C041B00456B11 /* GameOptionsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2A58FD117C041B00456B11 /* GameOptionsRequest.m */; };
 		3E2A5901117C042400456B11 /* GameOptionsUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2A5900117C042400456B11 /* GameOptionsUpdate.m */; };
 		3E2A5904117C042F00456B11 /* GameOptionsUpdateDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2A5903117C042F00456B11 /* GameOptionsUpdateDelegate.m */; };
+		3EFC260A1183D87D0083B74E /* DataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFC26091183D87D0083B74E /* DataController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -609,6 +610,8 @@
 		3E2A5900117C042400456B11 /* GameOptionsUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOptionsUpdate.m; sourceTree = "<group>"; };
 		3E2A5902117C042F00456B11 /* GameOptionsUpdateDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOptionsUpdateDelegate.h; sourceTree = "<group>"; };
 		3E2A5903117C042F00456B11 /* GameOptionsUpdateDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOptionsUpdateDelegate.m; sourceTree = "<group>"; };
+		3EFC26081183D87D0083B74E /* DataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataController.h; sourceTree = "<group>"; };
+		3EFC26091183D87D0083B74E /* DataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -706,6 +709,8 @@
 			children = (
 				3E2A2A5A117BD47A001A4136 /* CrescendoViewController.h */,
 				3E2A2A5B117BD47A001A4136 /* CrescendoViewController.m */,
+				3EFC26081183D87D0083B74E /* DataController.h */,
+				3EFC26091183D87D0083B74E /* DataController.m */,
 				3E2A2A83117BD4B5001A4136 /* Compose */,
 				3E2A2A82117BD4AE001A4136 /* Gamemode */,
 				3E2A2A81117BD4A5001A4136 /* Help */,
@@ -1454,6 +1459,7 @@
 				3E2A58FE117C041B00456B11 /* GameOptionsRequest.m in Sources */,
 				3E2A5901117C042400456B11 /* GameOptionsUpdate.m in Sources */,
 				3E2A5904117C042F00456B11 /* GameOptionsUpdateDelegate.m in Sources */,
+				3EFC260A1183D87D0083B74E /* DataController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
