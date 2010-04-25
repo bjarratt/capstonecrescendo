@@ -24,6 +24,7 @@
 @property (nonatomic, retain) IBOutlet ComposeViewController *composeViewController;
 
 - (void) goToCompose;
+- (void) goBackQuick;
 - (IBAction) goBack;
 - (IBAction) freeCompose;
 - (IBAction) noteLengths;
