@@ -16,23 +16,33 @@
 @synthesize playerId;
 @synthesize composeViewController;
 
+#pragma mark Skip To Compose Methods
+- (void) goToCompose {
+	composeViewController.client = self.client;
+	composeViewController.clientConnected = self.clientConnected;
+	composeViewController.playerId = self.playerId;
+	[self presentModalViewController:composeViewController animated:NO];
+}
+
 #pragma mark Interface Methods
 
 - (IBAction) goBack {
-	/*
-	 *	Send game type selected to public display
-	 */
-	NSString* inputText = [NSString stringWithFormat: @"%@_%@", playerId, @"splashscreen"];
+	if ([playerId isEqualToString:@"player1"]) {
+		/*
+		 *	Send game type selected to public display
+		 */
+		NSString* inputText = [NSString stringWithFormat: @"%@_%@", playerId, @"splashscreen"];
 	
-    // Initialize PlayNoteRequest and set message to content's of the text field.
-	GameTypeRequest* request = [[GameTypeRequest alloc] init];
-    [request setGameType:inputText];
+		// Initialize PlayNoteRequest and set message to content's of the text field.
+		GameTypeRequest* request = [[GameTypeRequest alloc] init];
+		[request setGameType:inputText];
     
-    // Setup the client to send the message a little later in the run loop.
-    [client performSelector:@selector(sendMessage:) withObject: request];
+		// Setup the client to send the message a little later in the run loop.
+		[client performSelector:@selector(sendMessage:) withObject: request];
     
-    [request release];
-	[self dismissModalViewControllerAnimated:YES];
+		[request release];
+	}
+	[self dismissModalViewControllerAnimated:NO];
 }
 
 - (IBAction) freeCompose {
@@ -108,28 +118,30 @@
  }
  */
 
-- (void) viewDidAppear:(BOOL) animated {
-	[super viewDidAppear: animated];
-	/*
-	 *	Send game type selected to public display
-	 */
-	NSString* inputText = [NSString stringWithFormat: @"%@_%@", playerId, @"gamemodes"];
-	
-    // Initialize PlayNoteRequest and set message to content's of the text field.
-	GameTypeRequest* request = [[GameTypeRequest alloc] init];
-    [request setGameType:inputText];
-    
-    // Setup the client to send the message a little later in the run loop.
-    [client performSelector:@selector(sendMessage:) withObject: request];
-    
-    [request release];
-	
+- (void) viewWillAppear:(BOOL) animated {
 	if (self.clientConnected == YES) {
-		//NSLog(@"YES");
 	}
 	else {
-		//NSLog(@"NO");
-		[self performSelector:@selector(goBack) withObject:nil afterDelay:0.1];
+		[self performSelector:@selector(goBack) withObject:nil afterDelay:0.01];
+	}
+}
+
+- (void) viewDidAppear:(BOOL) animated {
+	[super viewDidAppear: animated];
+	if ([playerId isEqualToString:@"player1"]) {
+		/*
+		 *	Send game type selected to public display
+		 */
+		NSString* inputText = [NSString stringWithFormat: @"%@_%@", playerId, @"gamemodes"];
+	
+		// Initialize PlayNoteRequest and set message to content's of the text field.
+		GameTypeRequest* request = [[GameTypeRequest alloc] init];
+		[request setGameType:inputText];
+    
+		// Setup the client to send the message a little later in the run loop.
+		[client performSelector:@selector(sendMessage:) withObject: request];
+    
+		[request release];
 	}
 }
 

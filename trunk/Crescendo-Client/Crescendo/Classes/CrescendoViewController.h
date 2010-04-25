@@ -51,6 +51,8 @@
 
 - (void) drawIP;
 - (void) drawMain;
+- (void) drawGamemodesQuick;
+- (void) drawComposeQuick;
 
 @end
 

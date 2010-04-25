@@ -36,6 +36,20 @@
 
 - (void) recievedConnectionUpdate: (ConnectionUpdate*) update {
 	self.playerId = [NSString stringWithString: update.playerNumber];
+	if ([playerId isEqualToString:@""]) {
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Max players" message:(@"Maximum number of players have connected to %@.", validatedIp) delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+		[alert show];
+		[alert release];
+		return;
+	}
+	self.clientConnected = YES;
+	if (self.gamemodeViewController) {
+		[self.gamemodeViewController setClientConnected: YES];
+		if (self.gamemodeViewController.composeViewController) {
+			[self.gamemodeViewController.composeViewController setClientConnected: YES];
+		}
+	}
+	[self drawMain];
 }
 
 #pragma mark GameTypeUpdateDelegate Method
@@ -139,6 +153,21 @@
 	ipText.hidden = YES;
 	ipLabel.hidden = YES;
 	gameModes.hidden = NO;
+	if (![playerId isEqualToString:@"player1"]) {
+		[self drawGamemodesQuick];
+	}
+}
+
+- (void) drawGamemodesQuick {
+	gamemodeViewController.client = self.client;
+	gamemodeViewController.clientConnected = self.clientConnected;
+	gamemodeViewController.playerId = self.playerId;
+	[self presentModalViewController:gamemodeViewController animated:NO];
+	[self performSelector:@selector(drawComposeQuick) withObject:nil];
+}
+
+- (void) drawComposeQuick {
+	[gamemodeViewController goToCompose];
 }
 
 #pragma mark Initialize View Methods
@@ -164,10 +193,10 @@
 - (void) viewWillAppear:(BOOL) animated {
 	[super viewDidAppear:animated];
 	if (self.clientConnected == YES) {
-		[self performSelector:@selector(drawMain) withObject:nil afterDelay:0.1];
+		[self performSelector:@selector(drawMain) withObject:nil];
 	}
 	else {
-		[self performSelector:@selector(drawIP) withObject:nil afterDelay:0.1];
+		[self performSelector:@selector(drawIP) withObject:nil];
 	}
 }
 
@@ -241,14 +270,6 @@
 - (void) connectionSuccessful:(XMLClient*) client withSessionId:(NSString*) sessionId;
 {
 	NSLog(@"Connection successful with session id:%@\n", sessionId);
-	self.clientConnected = YES;
-	if (self.gamemodeViewController) {
-		[self.gamemodeViewController setClientConnected: YES];
-		if (self.gamemodeViewController.composeViewController) {
-			[self.gamemodeViewController.composeViewController setClientConnected: YES];
-		}
-	}
-	[self drawMain];
 	
 	//TODO: Add IP to the list of successful connection IPs for user to later use
 }
