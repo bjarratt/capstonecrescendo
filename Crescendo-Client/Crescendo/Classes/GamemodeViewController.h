@@ -23,6 +23,7 @@
 @property (nonatomic, retain) NSString *playerId;
 @property (nonatomic, retain) IBOutlet ComposeViewController *composeViewController;
 
+- (void) goToCompose;
 - (IBAction) goBack;
 - (IBAction) freeCompose;
 - (IBAction) noteLengths;

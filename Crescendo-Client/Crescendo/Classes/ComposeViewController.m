@@ -381,7 +381,7 @@
 		[self drawGamePlayOptions];
 	}
 	[client disconnect];
-	[self dismissModalViewControllerAnimated:YES];
+	[self dismissModalViewControllerAnimated:NO];
 }
 
 - (void) keySliderValueSet:(UISlider *)sender {
