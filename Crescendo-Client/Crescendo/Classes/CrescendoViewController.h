@@ -18,7 +18,9 @@
 #import "GamemodeViewController.h"
 #import "HelpViewController.h"
 
-@interface CrescendoViewController : UIViewController <ConnectionUpdateDelegate, GameTypeUpdateDelegate, PlayNoteUpdateDelegate, XMLClientDelegate, UITextFieldDelegate, UIAlertViewDelegate> {
+@class DataController;
+
+@interface CrescendoViewController : UIViewController <ConnectionUpdateDelegate, GameTypeUpdateDelegate, PlayNoteUpdateDelegate, XMLClientDelegate, UITextFieldDelegate, UIAlertViewDelegate, UITableViewDelegate, UITableViewDataSource> {
 	XMLClient *client;
 	BOOL clientConnected;
 	NSString *playerId;
@@ -30,6 +32,8 @@
 	IBOutlet UITextField *ipText;
 	IBOutlet UILabel *ipLabel;
 	NSString *validatedIp;
+	DataController *dataController;
+	UITableView *ipTableView;
 }
 
 @property (nonatomic, retain) XMLClient *client;
@@ -43,6 +47,8 @@
 @property (nonatomic, retain) IBOutlet UITextField *ipText;
 @property (nonatomic, retain) IBOutlet UILabel *ipLabel;
 @property (nonatomic, retain) NSString *validatedIp;
+@property (nonatomic, retain) DataController *dataController;
+@property (nonatomic, retain) UITableView *ipTableView;
 
 - (IBAction) goToGamemodeView;
 - (IBAction) goConnect;

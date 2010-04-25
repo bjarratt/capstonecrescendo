@@ -8,6 +8,7 @@
 
 #import "CrescendoAppDelegate.h"
 #import "CrescendoViewController.h"
+#import "DataController.h"
 
 @implementation CrescendoAppDelegate
 
@@ -32,6 +33,11 @@
 // Close the connection when the user hits the home button.
 - (void) applicationWillTerminate:(UIApplication*) application
 {
+	if (viewController.dataController) {
+		NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+		[prefs setObject:viewController.dataController.list forKey:@"ipList"];
+		[prefs synchronize];
+	}
 	[viewController.client disconnect];
 }
 @end
