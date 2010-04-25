@@ -581,6 +581,14 @@
 			3EFC25FB1183C7C20083B74E /* PBXTextBookmark */ = 3EFC25FB1183C7C20083B74E /* PBXTextBookmark */;
 			3EFC25FC1183C7C20083B74E /* PBXTextBookmark */ = 3EFC25FC1183C7C20083B74E /* PBXTextBookmark */;
 			3EFC25FD1183C7C20083B74E /* PBXTextBookmark */ = 3EFC25FD1183C7C20083B74E /* PBXTextBookmark */;
+			3EFC26001183D6EB0083B74E /* PBXTextBookmark */ = 3EFC26001183D6EB0083B74E /* PBXTextBookmark */;
+			3EFC26011183D6EB0083B74E /* PBXTextBookmark */ = 3EFC26011183D6EB0083B74E /* PBXTextBookmark */;
+			3EFC26021183D6EB0083B74E /* PBXTextBookmark */ = 3EFC26021183D6EB0083B74E /* PBXTextBookmark */;
+			3EFC26031183D6EB0083B74E /* PBXTextBookmark */ = 3EFC26031183D6EB0083B74E /* PBXTextBookmark */;
+			3EFC26041183D6EB0083B74E /* PBXTextBookmark */ = 3EFC26041183D6EB0083B74E /* PBXTextBookmark */;
+			3EFC26051183D6EB0083B74E /* PBXTextBookmark */ = 3EFC26051183D6EB0083B74E /* PBXTextBookmark */;
+			3EFC26061183D6EB0083B74E /* PBXTextBookmark */ = 3EFC26061183D6EB0083B74E /* PBXTextBookmark */;
+			3EFC26071183D6EB0083B74E /* PBXTextBookmark */ = 3EFC26071183D6EB0083B74E /* PBXTextBookmark */;
 		};
 		sourceControlManager = 3E2A296A117BCCA2001A4136 /* Source Control */;
 		userBuildSettings = {
@@ -785,7 +793,7 @@
 	};
 	3E2A2A50117BD47A001A4136 /* ComposeViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1236, 24570}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1236, 24556}}";
 			sepNavSelRange = "{9249, 38}";
 			sepNavVisRange = "{8518, 1618}";
 			sepNavWindowFrame = "{{-1665, 308}, {952, 887}}";
@@ -1619,7 +1627,7 @@
 		fRef = 3E2A2A50117BD47A001A4136 /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 1541";
 		rLen = 0;
-		rLoc = 54856;
+		rLoc = 54881;
 		rType = 0;
 		vrLen = 38836;
 		vrLoc = 15530;
@@ -1973,7 +1981,7 @@
 		fRef = 3E2A2A50117BD47A001A4136 /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 1551";
 		rLen = 0;
-		rLoc = 54803;
+		rLoc = 54828;
 		rType = 0;
 		vrLen = 971;
 		vrLoc = 53574;
@@ -1983,7 +1991,7 @@
 		fRef = 3E2A2A50117BD47A001A4136 /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 1550";
 		rLen = 0;
-		rLoc = 54803;
+		rLoc = 54828;
 		rType = 0;
 		vrLen = 1208;
 		vrLoc = 53122;
@@ -1993,7 +2001,7 @@
 		fRef = 3E2A2A50117BD47A001A4136 /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 1550";
 		rLen = 0;
-		rLoc = 54803;
+		rLoc = 54828;
 		rType = 0;
 		vrLen = 1210;
 		vrLoc = 53122;
@@ -2003,7 +2011,7 @@
 		fRef = 3E2A2A50117BD47A001A4136 /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 1550";
 		rLen = 0;
-		rLoc = 54803;
+		rLoc = 54828;
 		rType = 0;
 		vrLen = 672;
 		vrLoc = 15158;
@@ -2054,7 +2062,7 @@
 		fRef = 3E2A2A50117BD47A001A4136 /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 1560";
 		rLen = 0;
-		rLoc = 54713;
+		rLoc = 54738;
 		rType = 0;
 		vrLen = 1120;
 		vrLoc = 53842;
@@ -2064,7 +2072,7 @@
 		fRef = 3E2A2A50117BD47A001A4136 /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 1560";
 		rLen = 0;
-		rLoc = 54713;
+		rLoc = 54738;
 		rType = 0;
 		vrLen = 754;
 		vrLoc = 15506;
@@ -2632,7 +2640,7 @@
 		fRef = 3E2A2A50117BD47A001A4136 /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 1417";
 		rLen = 0;
-		rLoc = 48895;
+		rLoc = 48920;
 		rType = 0;
 		vrLen = 1929;
 		vrLoc = 46952;
@@ -2652,7 +2660,7 @@
 		fRef = 3E2A2A50117BD47A001A4136 /* ComposeViewController.m */;
 		name = "ComposeViewController.m: 1417";
 		rLen = 0;
-		rLoc = 48895;
+		rLoc = 48920;
 		rType = 0;
 		vrLen = 781;
 		vrLoc = 15299;
@@ -5271,6 +5279,83 @@
 		vrLoc = 0;
 	};
 	3EFC25FD1183C7C20083B74E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A4F117BD47A001A4136 /* ComposeViewController.h */;
+		name = "ComposeViewController.h: 88";
+		rLen = 0;
+		rLoc = 2789;
+		rType = 0;
+		vrLen = 1256;
+		vrLoc = 155;
+	};
+	3EFC26001183D6EB0083B74E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A5D117BD47A001A4136 /* GamemodeViewController.m */;
+		name = "GamemodeViewController.m: 143";
+		rLen = 0;
+		rLoc = 4787;
+		rType = 0;
+		vrLen = 1186;
+		vrLoc = 4237;
+	};
+	3EFC26011183D6EB0083B74E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A50117BD47A001A4136 /* ComposeViewController.m */;
+		rLen = 1;
+		rLoc = 1418;
+		rType = 1;
+	};
+	3EFC26021183D6EB0083B74E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A5D117BD47A001A4136 /* GamemodeViewController.m */;
+		name = "GamemodeViewController.m: 143";
+		rLen = 0;
+		rLoc = 4787;
+		rType = 0;
+		vrLen = 1186;
+		vrLoc = 4237;
+	};
+	3EFC26031183D6EB0083B74E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A50117BD47A001A4136 /* ComposeViewController.m */;
+		name = "ComposeViewController.m: 1420";
+		rLen = 0;
+		rLoc = 48919;
+		rType = 0;
+		vrLen = 1737;
+		vrLoc = 48002;
+	};
+	3EFC26041183D6EB0083B74E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A5D117BD47A001A4136 /* GamemodeViewController.m */;
+		name = "GamemodeViewController.m: 143";
+		rLen = 0;
+		rLoc = 4819;
+		rType = 0;
+		vrLen = 1749;
+		vrLoc = 3705;
+	};
+	3EFC26051183D6EB0083B74E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A2A50117BD47A001A4136 /* ComposeViewController.m */;
+		name = "ComposeViewController.m: 372";
+		rLen = 38;
+		rLoc = 9249;
+		rType = 0;
+		vrLen = 1618;
+		vrLoc = 8518;
+	};
+	3EFC26061183D6EB0083B74E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3E2A58EB117C015A00456B11 /* GameStateRequest.h */;
+		name = "GameStateRequest.h: 16";
+		rLen = 0;
+		rLoc = 355;
+		rType = 0;
+		vrLen = 452;
+		vrLoc = 0;
+	};
+	3EFC26071183D6EB0083B74E /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 3E2A2A4F117BD47A001A4136 /* ComposeViewController.h */;
 		name = "ComposeViewController.h: 88";

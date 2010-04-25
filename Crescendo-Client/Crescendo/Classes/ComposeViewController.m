@@ -1417,6 +1417,7 @@
 }
 
 - (void) drawGameOptions {
+	backButton.hidden = NO;
 	/*
 	 * Label
 	 */
