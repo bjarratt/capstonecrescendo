@@ -1,9 +1,9 @@
 package gameManagement.gameModes;
 
 import gameManagement.messageTranslationSystem.Note;
-import gameManagement.Scales;
 import keys.GameState;
 import keys.Lengths;
+import keys.Scales;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -19,9 +19,8 @@ import java.util.Random;
  * @author Chris Aikens
  *
  */
-public class NoteTraining {
-
-	private Scales scales;
+public class NoteTraining
+{
 	private ArrayList<Note> wantedNotes;	//the array of notes the game wants
 	private Random rand;
 	
@@ -38,9 +37,8 @@ public class NoteTraining {
 		
 	}
 	
-	public NoteTraining(int subdivisions, int wantedMeasures, String wantedKey){
-		
-		scales = new Scales();
+	public NoteTraining(int subdivisions, int wantedMeasures, String wantedKey)
+	{
 		wantedNotes = new ArrayList<Note>();
 		rand = new Random();
 		maxSubdivisions = subdivisions;
@@ -149,7 +147,7 @@ public class NoteTraining {
 	 */
 	public String randomizePitchWithKey(String key)
 	{
-		ArrayList<Note> keyNotes = scales.getNotes(key);
+		ArrayList<Note> keyNotes = Scales.getNotes(key);
 		if(keyNotes.size() == 8)
 		{
 			switch(rand.nextInt(8))
@@ -168,10 +166,8 @@ public class NoteTraining {
 					return keyNotes.get(5).getPitch();
 				case 6:
 					return keyNotes.get(6).getPitch();
-				case 7:
-					return keyNotes.get(7).getPitch();
 				default:
-					return "rest";
+					return keyNotes.get(7).getPitch();
 			}
 		}
 		else if(keyNotes.size() == 9)
@@ -194,14 +190,11 @@ public class NoteTraining {
 					return keyNotes.get(6).getPitch();
 				case 7:
 					return keyNotes.get(7).getPitch();
-				case 8:
-					return keyNotes.get(8).getPitch();
 				default:
-					return "rest";
+					return keyNotes.get(8).getPitch();
 			}	
 		}
-		return "rest";
-		
+		return keyNotes.get(0).getPitch();
 	}
 	
 	/**
@@ -328,10 +321,8 @@ public class NoteTraining {
 				return "E6";
 			case 13:
 				return "F6";
-			case 14:
-				return "FSharp6";
 			default:
-				return "rest";
+				return "FSharp6";
 		}
 	}
 	

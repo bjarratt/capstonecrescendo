@@ -53,15 +53,6 @@ public class Measure
 		for(Note note : notes)
 			regex += note.getJFuguePattern().toString() + " ";
 
-		if(getNumberOfAvailableBeats() > 0)
-		{
-			ArrayList<Beat> rest = new ArrayList<Beat>();
-			for(int i = 0; i < getNumberOfAvailableBeats(); i++)
-				rest.add(new Beat());
-			regex += new Note(rest, "unknown").getJFuguePattern().toString() + " ";
-		}
-
-		regex += "| ";
 		p = new Pattern(regex);
 
 		return p;

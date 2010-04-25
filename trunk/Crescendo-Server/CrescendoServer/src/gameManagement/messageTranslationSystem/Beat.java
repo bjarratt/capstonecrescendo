@@ -10,16 +10,7 @@ public class Beat
 	String pitch;
 
 	/**
-	 *	The definiton of the smallest length a Note can be
-	 *	Default pitch is a rest
-	 */
-	public Beat()
-	{
-		pitch = "rest";
-	}
-
-	/**
-	 *	The definiton of the smallest length a Note can be
+	 *	The definition of the smallest length a Note can be
 	 *
 	 *	@param p the pitch representing the Beat
 	 */
