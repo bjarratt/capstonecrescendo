@@ -47,7 +47,7 @@ public class IPhoneGUI extends JPanel implements ActionListener
 	{
 		super(true);
 		
-        this.setPreferredSize(new Dimension(220,720));
+        this.setPreferredSize(new Dimension(220,400));
 		this.setVisible(true);
 	
 		this.player = player;
