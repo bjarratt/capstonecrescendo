@@ -1,5 +1,6 @@
 package gameManagement;
 
+import gameManagement.gameModes.KeyMaster;
 import gameManagement.messageTranslationSystem.MessageTranslationEngine;
 import gameManagement.messageTranslationSystem.Beat;
 import gameManagement.messageTranslationSystem.Note;
@@ -10,6 +11,7 @@ import gameManagement.windowManagement.windows.*;
 import keys.GameState;
 import keys.Lengths;
 import keys.Players;
+import keys.Scales;
 
 import java.util.ArrayList;
 import javax.swing.Timer;
@@ -52,6 +54,8 @@ public class GameManager implements ActionListener
 	private boolean player3IsDone;
 	private boolean player4IsDone;
 	
+	KeyMaster keyMaster;
+	
 	//game
 	private String gameMode;
 	private ArrayList<String> keyProgression;
@@ -64,7 +68,8 @@ public class GameManager implements ActionListener
 	private ArrayList<Beat> player4Beats;
 	private int currentTick;
 	private int currentInGameTick;
-	private int initialGameTime;
+	private int initialInGameTime;
+	private int additionalInGameTime;
 
 	private ArrayList<Note> player1Notes;
 	private ArrayList<Note> player2Notes;
@@ -117,7 +122,8 @@ public class GameManager implements ActionListener
 
 		currentTick = 0;
 		currentInGameTick = 0;
-		initialGameTime = 30;
+		initialInGameTime = 30;
+		additionalInGameTime = 0;
 
 		at_splash_screen = true;
 		at_game_modes = false;
@@ -277,7 +283,14 @@ public class GameManager implements ActionListener
 		}
 		else if(event.getSource() == inGameTimer)
 		{
-			sendTimeToDisplay(currentInGameTick);
+			if((initialInGameTime-currentInGameTick+additionalInGameTime)<=0)
+			{
+				System.out.println("*****\tAt the Post Game Screen\t*****");
+				at_play = false;
+				at_post_game = true;
+				inGameTimer.stop();
+			}
+			sendTimeToDisplay(initialInGameTime-currentInGameTick+additionalInGameTime);
 			currentInGameTick++;
 		}
 	}
@@ -616,10 +629,6 @@ public class GameManager implements ActionListener
 						{
 							player1Beats.addAll(n.getBeats());
 							player1Notes.add(n);
-						}
-						else
-						{
-							player1IsDone = true;
 						}
 					}
 				}
@@ -1417,22 +1426,23 @@ public class GameManager implements ActionListener
 		gameMode = new String(game);
 		//TODO add gameNotes for each different game mode that requires them		
 		if(gameMode.equals(GameState.LENGTH_TRAINING))
-		{
 			gameNotes = new gameManagement.gameModes.LengthTraining(numberOfBeatsPerMeasure,numberOfBars).getNotes();
-		}
 		else if(gameMode.equals(GameState.PITCH_TRAINING))
-		{
 			gameNotes = new gameManagement.gameModes.PitchTraining(numberOfBeatsPerMeasure,numberOfBars).getNotes();
-		}
 		else if(gameMode.equals(GameState.NOTE_TRAINING))
-		{
 			gameNotes = new gameManagement.gameModes.NoteTraining(numberOfBeatsPerMeasure,numberOfBars).getNotes();
-		}
 		else
 			gameNotes = null;
 		
 		if(gameMode.equals(GameState.KEY_MASTER))
-			keyProgression = new gameManagement.gameModes.KeyMaster(key,numberOfBars,2).getKeyProgression();
+		{
+			keyMaster = new gameManagement.gameModes.KeyMaster(key,numberOfBars,2);
+			keyProgression = keyMaster.getKeyProgression();
+		}
+		else
+		{
+			keyProgression = null;
+		}
 	}
 	
 	private void setTempo(int t)
@@ -1532,6 +1542,39 @@ public class GameManager implements ActionListener
 			System.out.print(m + " | ");
 		System.out.println();
 		
+		for(Note note : notesToSend)
+		{
+			if(note.getPlayer().equals(Players.PLAYER_ONE))
+			{
+				for(int i = player1Measures.size()-1; i >=0; i--)
+					if(player1Measures.get(i).getNotes().contains(note))
+						if(keyProgression.size()>i)
+							if(!(Scales.isNoteInKey(note, keyProgression.get(i))))
+								note.setCorrect(false);
+			}
+			else if(note.getPlayer().equals(Players.PLAYER_TWO))
+			{
+				if(player2Notes.contains(note));
+				{
+					
+				}
+			}
+			else if(note.getPlayer().equals(Players.PLAYER_THREE))
+			{
+				if(player3Notes.contains(note));
+				{
+					
+				}
+			}
+			else if(note.getPlayer().equals(Players.PLAYER_FOUR))
+			{
+				if(player4Notes.contains(note));
+				{
+					
+				}
+			}
+		}
+				
 		notesToSend = new ArrayList<Note>();
 
 	}
