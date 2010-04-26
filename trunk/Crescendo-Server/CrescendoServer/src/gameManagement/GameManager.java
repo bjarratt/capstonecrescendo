@@ -5,9 +5,9 @@ import gameManagement.messageTranslationSystem.MessageTranslationEngine;
 import gameManagement.messageTranslationSystem.Beat;
 import gameManagement.messageTranslationSystem.Note;
 import gameManagement.messageTranslationSystem.Measure;
-import gameManagement.windowManagement.WindowManager;
-import gameManagement.windowManagement.base.Wrapper;
-import gameManagement.windowManagement.windows.*;
+//import gameManagement.windowManagement.WindowManager;
+//import gameManagement.windowManagement.base.Wrapper;
+//import gameManagement.windowManagement.windows.*;
 import keys.GameState;
 import keys.Lengths;
 import keys.Players;
@@ -302,7 +302,6 @@ public class GameManager implements ActionListener
 	 */
 	public void addMessageToPool(String message)
 	{
-		System.out.println("GameManager received the message: " + message);
 		messagePool.add(message);
 	}
 
@@ -623,17 +622,28 @@ public class GameManager implements ActionListener
 				}
 				else if(gameMode.equals(GameState.KEY_MASTER))
 				{
-					if(n.getPlayer().equals(Players.PLAYER_ONE))
+					if(n.getPlayer().equals(Players.PLAYER_ONE) && (player1Measures.size()<=numberOfBars) && (n.size()>0))
 					{
-						if((player1Measures.size()<=numberOfBars) && (n.size()>0))
-						{
-							player1Beats.addAll(n.getBeats());
-							player1Notes.add(n);
-						}
+						player1Beats.addAll(n.getBeats());
+						player1Notes.add(n);
+					}
+					if(n.getPlayer().equals(Players.PLAYER_TWO) && (player2Measures.size()<=numberOfBars) && (n.size()>0))
+					{
+						player2Beats.addAll(n.getBeats());
+						player2Notes.add(n);
+					}
+					if(n.getPlayer().equals(Players.PLAYER_THREE) && (player3Measures.size()<=numberOfBars) && (n.size()>0))
+					{
+						player3Beats.addAll(n.getBeats());
+						player3Notes.add(n);
+					}
+					if(n.getPlayer().equals(Players.PLAYER_FOUR) && (player4Measures.size()<=numberOfBars) && (n.size()>0))
+					{
+						player4Beats.addAll(n.getBeats());
+						player4Notes.add(n);
 					}
 				}
 					
-					//TODO add other games here
 			}
 			else
 			{	
@@ -1406,6 +1416,797 @@ public class GameManager implements ActionListener
 		}
 		////	Player 1	////
 
+		////	Player 2	////
+		//we have reached the end of a measure, so add a new one
+		if(!(player2Measures.get(player2Measures.size()-1).getNumberOfAvailableBeats()>0))
+		{
+			player2Measures.add(new Measure(numberOfBeatsPerMeasure));
+		}
+
+		measure = player2Measures.get(player2Measures.size()-1);
+		//bad name, but is the current note that was just played
+		if(player2Notes.size()>player2CurrentNote)
+		{
+			n = new Note(player2Notes.get(player2CurrentNote).getPitch(),player2Notes.get(player2CurrentNote).getLength(),player2Notes.get(player2CurrentNote).getPlayer());
+			
+			if((player2Notes.size()>0) && (player2Notes.size()>player2CurrentNote) && (n.getPlayer().equals(Players.PLAYER_TWO)))
+			{					
+				//if a note can be simply added to the measure, then do it
+				if(measure.canAddNote(player2Notes.get(player2CurrentNote)))
+				{
+					measure.addNote(player2Notes.get(player2CurrentNote));
+					notesToSend.add(player2Notes.get(player2CurrentNote));
+					
+					player2CurrentNote++;
+				}
+				else
+				{
+
+					lastNoteBeats = new ArrayList<Beat>();
+					firstNoteBeats = new ArrayList<Beat>();
+						
+					//add a note for the rest of the measure
+					for(int i = 0; i < measure.getNumberOfAvailableBeats(); i++)
+						lastNoteBeats.add(new Beat(n.getPitch()));
+					//check what the length of the Note is
+					if(lastNoteBeats.size()>0)
+					{
+						if(lastNoteBeats.size()==1)
+						{
+							lastNote = new Note(n.getPitch(), Lengths.EIGHTH, Players.PLAYER_TWO);
+							lastNote.setTiedRight(true);
+							player2Notes.remove(player2Notes.size()-1);
+							player2Notes.add(lastNote);
+							measure.addNote(lastNote);
+							notesToSend.add(lastNote);
+							player2CurrentNote++;
+						}
+						else if(lastNoteBeats.size()==2)
+						{
+							lastNote = new Note(n.getPitch(), Lengths.QUARTER, Players.PLAYER_TWO);
+							lastNote.setTiedRight(true);
+							player2Notes.remove(player2Notes.size()-1);
+							player2Notes.add(lastNote);
+							measure.addNote(lastNote);
+							notesToSend.add(lastNote);
+							player2CurrentNote++;
+						}
+						else if(lastNoteBeats.size()==3)
+						{
+							lastNote = new Note(n.getPitch(), Lengths.EIGHTH, Players.PLAYER_TWO);
+							lastNote.setTiedRight(true);
+							player2Notes.remove(player2Notes.size()-1);
+							player2Notes.add(lastNote);
+							measure.addNote(lastNote);
+							notesToSend.add(lastNote);
+							lastNote = new Note(n.getPitch(), Lengths.QUARTER, Players.PLAYER_TWO);
+							lastNote.setTiedLeft(true);
+							lastNote.setTiedRight(true);
+							player2Notes.add(lastNote);
+							measure.addNote(lastNote);
+							notesToSend.add(lastNote);
+							player2CurrentNote+=2;
+						}
+						else if(lastNoteBeats.size()==4)
+						{
+							lastNote = new Note(n.getPitch(), Lengths.HALF, Players.PLAYER_TWO);
+							lastNote.setTiedRight(true);
+							player2Notes.remove(player2Notes.size()-1);
+							player2Notes.add(lastNote);
+							measure.addNote(lastNote);
+							notesToSend.add(lastNote);
+							player2CurrentNote++;
+						}
+						else if(lastNoteBeats.size()==5)
+						{
+							lastNote = new Note(n.getPitch(), Lengths.EIGHTH, Players.PLAYER_TWO);
+							lastNote.setTiedRight(true);
+							player2Notes.remove(player2Notes.size()-1);
+							player2Notes.add(lastNote);
+							measure.addNote(lastNote);
+							notesToSend.add(lastNote);
+							lastNote = new Note(n.getPitch(), Lengths.HALF, Players.PLAYER_TWO);
+							lastNote.setTiedLeft(true);
+							lastNote.setTiedRight(true);
+							player2Notes.add(lastNote);
+							measure.addNote(lastNote);
+							notesToSend.add(lastNote);
+							player2CurrentNote+=2;
+						}
+						else if(lastNoteBeats.size()==6)
+						{
+							lastNote = new Note(n.getPitch(), Lengths.QUARTER, Players.PLAYER_TWO);
+							lastNote.setTiedRight(true);
+							player2Notes.remove(player2Notes.size()-1);
+							player2Notes.add(lastNote);
+							measure.addNote(lastNote);
+							notesToSend.add(lastNote);
+							lastNote = new Note(n.getPitch(), Lengths.HALF, Players.PLAYER_TWO);
+							lastNote.setTiedLeft(true);
+							lastNote.setTiedRight(true);
+							player2Notes.add(lastNote);
+							measure.addNote(lastNote);
+							notesToSend.add(lastNote);
+							player2CurrentNote+=2;
+						}
+						else if(lastNoteBeats.size()==7)
+						{
+							lastNote = new Note(n.getPitch(), Lengths.EIGHTH, Players.PLAYER_TWO);
+							lastNote.setTiedRight(true);
+							player2Notes.remove(player2Notes.size()-1);
+							player2Notes.add(lastNote);
+							measure.addNote(lastNote);
+							notesToSend.add(lastNote);
+							lastNote = new Note(n.getPitch(), Lengths.QUARTER, Players.PLAYER_TWO);
+							lastNote.setTiedLeft(true);
+							lastNote.setTiedRight(true);
+							player2Notes.add(lastNote);
+							measure.addNote(lastNote);
+							notesToSend.add(lastNote);
+							lastNote = new Note(n.getPitch(), Lengths.HALF, Players.PLAYER_TWO);
+							lastNote.setTiedLeft(true);
+							lastNote.setTiedRight(true);
+							player2Notes.add(lastNote);
+							measure.addNote(lastNote);
+							notesToSend.add(lastNote);
+							player2CurrentNote+=3;
+						}
+						else
+						{
+							lastNote = new Note(n.getPitch(), Lengths.WHOLE, Players.PLAYER_TWO);
+							lastNote.setTiedRight(true);
+							player2Notes.remove(player2Notes.size()-1);
+							player2Notes.add(lastNote);
+							measure.addNote(lastNote);
+							notesToSend.add(lastNote);
+							player2CurrentNote++;
+						}
+	
+						//add a new measure and update the current measure
+						player2Measures.add(new Measure(numberOfBeatsPerMeasure));
+						measure = player2Measures.get(player2Measures.size()-1);
+		
+						//add the rest of the note carried over from the previous measure
+						for(int i = 0; i < (n.size() - lastNoteBeats.size()); i++)
+							firstNoteBeats.add(new Beat(n.getPitch()));
+						if(firstNoteBeats.size()>0)
+						{
+							if(firstNoteBeats.size()==1)
+							{
+								firstNote = new Note(n.getPitch(), Lengths.EIGHTH, Players.PLAYER_TWO);
+								firstNote.setTiedLeft(true);
+								player2Notes.add(firstNote);
+								measure.addNote(firstNote);
+								notesToSend.add(firstNote);
+								player2CurrentNote++;
+							}
+							else if(firstNoteBeats.size()==2)
+							{
+								firstNote = new Note(n.getPitch(), Lengths.QUARTER, Players.PLAYER_TWO);
+								firstNote.setTiedLeft(true);
+								player2Notes.add(firstNote);
+								measure.addNote(firstNote);
+								notesToSend.add(firstNote);
+								player2CurrentNote++;
+							}
+							else if(firstNoteBeats.size()==3)
+							{
+								firstNote = new Note(n.getPitch(), Lengths.QUARTER, Players.PLAYER_TWO);
+								firstNote.setTiedLeft(true);
+								firstNote.setTiedRight(true);
+								player2Notes.add(firstNote);
+								measure.addNote(firstNote);
+								notesToSend.add(firstNote);
+								firstNote = new Note(n.getPitch(), Lengths.EIGHTH, Players.PLAYER_TWO);
+								firstNote.setTiedLeft(true);
+								player2Notes.add(firstNote);
+								measure.addNote(firstNote);
+								notesToSend.add(firstNote);
+								player2CurrentNote+=2;
+							}
+							else if(firstNoteBeats.size()==4)
+							{
+								firstNote = new Note(n.getPitch(), Lengths.HALF, Players.PLAYER_TWO);
+								firstNote.setTiedLeft(true);
+								player2Notes.add(firstNote);
+								measure.addNote(firstNote);
+								notesToSend.add(firstNote);
+								player2CurrentNote++;
+							}
+							else if(firstNoteBeats.size()==5)
+							{
+								firstNote = new Note(n.getPitch(), Lengths.HALF, Players.PLAYER_TWO);
+								firstNote.setTiedLeft(true);
+								firstNote.setTiedRight(true);
+								player2Notes.add(firstNote);
+								measure.addNote(firstNote);
+								notesToSend.add(firstNote);
+								firstNote = new Note(n.getPitch(), Lengths.EIGHTH, Players.PLAYER_TWO);
+								firstNote.setTiedLeft(true);
+								player2Notes.add(firstNote);
+								measure.addNote(firstNote);
+								notesToSend.add(firstNote);
+								player2CurrentNote+=2;
+							}
+							else if(firstNoteBeats.size()==6)
+							{
+								firstNote = new Note(n.getPitch(), Lengths.HALF, Players.PLAYER_TWO);
+								firstNote.setTiedLeft(true);
+								firstNote.setTiedRight(true);
+								player2Notes.add(firstNote);
+								measure.addNote(firstNote);
+								notesToSend.add(firstNote);
+								firstNote = new Note(n.getPitch(), Lengths.QUARTER, Players.PLAYER_TWO);
+								firstNote.setTiedLeft(true);
+								player2Notes.add(firstNote);
+								measure.addNote(firstNote);
+								notesToSend.add(firstNote);
+								player2CurrentNote+=2;
+							}
+							else if(firstNoteBeats.size()==7)
+							{
+								firstNote = new Note(n.getPitch(), Lengths.HALF, Players.PLAYER_TWO);
+								firstNote.setTiedLeft(true);
+								firstNote.setTiedRight(true);
+								player2Notes.add(firstNote);
+								measure.addNote(firstNote);
+								notesToSend.add(firstNote);
+								firstNote = new Note(n.getPitch(), Lengths.QUARTER, Players.PLAYER_TWO);
+								firstNote.setTiedLeft(true);
+								firstNote.setTiedRight(true);
+								player2Notes.add(firstNote);
+								measure.addNote(firstNote);
+								notesToSend.add(firstNote);
+								firstNote = new Note(n.getPitch(), Lengths.EIGHTH, Players.PLAYER_TWO);
+								firstNote.setTiedLeft(true);
+								player2Notes.add(firstNote);
+								measure.addNote(firstNote);
+								notesToSend.add(firstNote);
+								player2CurrentNote+=3;
+							}
+							else
+							{
+								firstNote = new Note(n.getPitch(), Lengths.WHOLE, Players.PLAYER_TWO);
+								firstNote.setTiedLeft(true);
+								player2Notes.add(firstNote);
+								measure.addNote(firstNote);
+								notesToSend.add(firstNote);
+								player2CurrentNote++;
+							}
+						}
+					}
+				}
+			}
+		}
+		////	Player 2	////
+
+		////	Player 3	////
+		//we have reached the end of a measure, so add a new one
+		if(!(player3Measures.get(player3Measures.size()-1).getNumberOfAvailableBeats()>0))
+		{
+			player3Measures.add(new Measure(numberOfBeatsPerMeasure));
+		}
+
+		measure = player3Measures.get(player3Measures.size()-1);
+		//bad name, but is the current note that was just played
+		if(player3Notes.size()>player3CurrentNote)
+		{
+			n = new Note(player3Notes.get(player3CurrentNote).getPitch(),player3Notes.get(player3CurrentNote).getLength(),player3Notes.get(player3CurrentNote).getPlayer());
+			
+			if((player3Notes.size()>0) && (player3Notes.size()>player3CurrentNote) && (n.getPlayer().equals(Players.PLAYER_THREE)))
+			{					
+				//if a note can be simply added to the measure, then do it
+				if(measure.canAddNote(player3Notes.get(player3CurrentNote)))
+				{
+					measure.addNote(player3Notes.get(player3CurrentNote));
+					notesToSend.add(player3Notes.get(player3CurrentNote));
+					
+					player3CurrentNote++;
+				}
+				else
+				{
+
+					lastNoteBeats = new ArrayList<Beat>();
+					firstNoteBeats = new ArrayList<Beat>();
+						
+					//add a note for the rest of the measure
+					for(int i = 0; i < measure.getNumberOfAvailableBeats(); i++)
+						lastNoteBeats.add(new Beat(n.getPitch()));
+					//check what the length of the Note is
+					if(lastNoteBeats.size()>0)
+					{
+						if(lastNoteBeats.size()==1)
+						{
+							lastNote = new Note(n.getPitch(), Lengths.EIGHTH, Players.PLAYER_THREE);
+							lastNote.setTiedRight(true);
+							player3Notes.remove(player3Notes.size()-1);
+							player3Notes.add(lastNote);
+							measure.addNote(lastNote);
+							notesToSend.add(lastNote);
+							player3CurrentNote++;
+						}
+						else if(lastNoteBeats.size()==2)
+						{
+							lastNote = new Note(n.getPitch(), Lengths.QUARTER, Players.PLAYER_THREE);
+							lastNote.setTiedRight(true);
+							player3Notes.remove(player3Notes.size()-1);
+							player3Notes.add(lastNote);
+							measure.addNote(lastNote);
+							notesToSend.add(lastNote);
+							player3CurrentNote++;
+						}
+						else if(lastNoteBeats.size()==3)
+						{
+							lastNote = new Note(n.getPitch(), Lengths.EIGHTH, Players.PLAYER_THREE);
+							lastNote.setTiedRight(true);
+							player3Notes.remove(player3Notes.size()-1);
+							player3Notes.add(lastNote);
+							measure.addNote(lastNote);
+							notesToSend.add(lastNote);
+							lastNote = new Note(n.getPitch(), Lengths.QUARTER, Players.PLAYER_THREE);
+							lastNote.setTiedLeft(true);
+							lastNote.setTiedRight(true);
+							player3Notes.add(lastNote);
+							measure.addNote(lastNote);
+							notesToSend.add(lastNote);
+							player3CurrentNote+=2;
+						}
+						else if(lastNoteBeats.size()==4)
+						{
+							lastNote = new Note(n.getPitch(), Lengths.HALF, Players.PLAYER_THREE);
+							lastNote.setTiedRight(true);
+							player3Notes.remove(player3Notes.size()-1);
+							player3Notes.add(lastNote);
+							measure.addNote(lastNote);
+							notesToSend.add(lastNote);
+							player3CurrentNote++;
+						}
+						else if(lastNoteBeats.size()==5)
+						{
+							lastNote = new Note(n.getPitch(), Lengths.EIGHTH, Players.PLAYER_THREE);
+							lastNote.setTiedRight(true);
+							player3Notes.remove(player3Notes.size()-1);
+							player3Notes.add(lastNote);
+							measure.addNote(lastNote);
+							notesToSend.add(lastNote);
+							lastNote = new Note(n.getPitch(), Lengths.HALF, Players.PLAYER_THREE);
+							lastNote.setTiedLeft(true);
+							lastNote.setTiedRight(true);
+							player3Notes.add(lastNote);
+							measure.addNote(lastNote);
+							notesToSend.add(lastNote);
+							player3CurrentNote+=2;
+						}
+						else if(lastNoteBeats.size()==6)
+						{
+							lastNote = new Note(n.getPitch(), Lengths.QUARTER, Players.PLAYER_THREE);
+							lastNote.setTiedRight(true);
+							player3Notes.remove(player3Notes.size()-1);
+							player3Notes.add(lastNote);
+							measure.addNote(lastNote);
+							notesToSend.add(lastNote);
+							lastNote = new Note(n.getPitch(), Lengths.HALF, Players.PLAYER_THREE);
+							lastNote.setTiedLeft(true);
+							lastNote.setTiedRight(true);
+							player3Notes.add(lastNote);
+							measure.addNote(lastNote);
+							notesToSend.add(lastNote);
+							player3CurrentNote+=2;
+						}
+						else if(lastNoteBeats.size()==7)
+						{
+							lastNote = new Note(n.getPitch(), Lengths.EIGHTH, Players.PLAYER_THREE);
+							lastNote.setTiedRight(true);
+							player3Notes.remove(player3Notes.size()-1);
+							player3Notes.add(lastNote);
+							measure.addNote(lastNote);
+							notesToSend.add(lastNote);
+							lastNote = new Note(n.getPitch(), Lengths.QUARTER, Players.PLAYER_THREE);
+							lastNote.setTiedLeft(true);
+							lastNote.setTiedRight(true);
+							player3Notes.add(lastNote);
+							measure.addNote(lastNote);
+							notesToSend.add(lastNote);
+							lastNote = new Note(n.getPitch(), Lengths.HALF, Players.PLAYER_THREE);
+							lastNote.setTiedLeft(true);
+							lastNote.setTiedRight(true);
+							player3Notes.add(lastNote);
+							measure.addNote(lastNote);
+							notesToSend.add(lastNote);
+							player3CurrentNote+=3;
+						}
+						else
+						{
+							lastNote = new Note(n.getPitch(), Lengths.WHOLE, Players.PLAYER_THREE);
+							lastNote.setTiedRight(true);
+							player3Notes.remove(player3Notes.size()-1);
+							player3Notes.add(lastNote);
+							measure.addNote(lastNote);
+							notesToSend.add(lastNote);
+							player3CurrentNote++;
+						}
+	
+						//add a new measure and update the current measure
+						player3Measures.add(new Measure(numberOfBeatsPerMeasure));
+						measure = player3Measures.get(player3Measures.size()-1);
+		
+						//add the rest of the note carried over from the previous measure
+						for(int i = 0; i < (n.size() - lastNoteBeats.size()); i++)
+							firstNoteBeats.add(new Beat(n.getPitch()));
+						if(firstNoteBeats.size()>0)
+						{
+							if(firstNoteBeats.size()==1)
+							{
+								firstNote = new Note(n.getPitch(), Lengths.EIGHTH, Players.PLAYER_THREE);
+								firstNote.setTiedLeft(true);
+								player3Notes.add(firstNote);
+								measure.addNote(firstNote);
+								notesToSend.add(firstNote);
+								player3CurrentNote++;
+							}
+							else if(firstNoteBeats.size()==2)
+							{
+								firstNote = new Note(n.getPitch(), Lengths.QUARTER, Players.PLAYER_THREE);
+								firstNote.setTiedLeft(true);
+								player3Notes.add(firstNote);
+								measure.addNote(firstNote);
+								notesToSend.add(firstNote);
+								player3CurrentNote++;
+							}
+							else if(firstNoteBeats.size()==3)
+							{
+								firstNote = new Note(n.getPitch(), Lengths.QUARTER, Players.PLAYER_THREE);
+								firstNote.setTiedLeft(true);
+								firstNote.setTiedRight(true);
+								player3Notes.add(firstNote);
+								measure.addNote(firstNote);
+								notesToSend.add(firstNote);
+								firstNote = new Note(n.getPitch(), Lengths.EIGHTH, Players.PLAYER_THREE);
+								firstNote.setTiedLeft(true);
+								player3Notes.add(firstNote);
+								measure.addNote(firstNote);
+								notesToSend.add(firstNote);
+								player3CurrentNote+=2;
+							}
+							else if(firstNoteBeats.size()==4)
+							{
+								firstNote = new Note(n.getPitch(), Lengths.HALF, Players.PLAYER_THREE);
+								firstNote.setTiedLeft(true);
+								player3Notes.add(firstNote);
+								measure.addNote(firstNote);
+								notesToSend.add(firstNote);
+								player3CurrentNote++;
+							}
+							else if(firstNoteBeats.size()==5)
+							{
+								firstNote = new Note(n.getPitch(), Lengths.HALF, Players.PLAYER_THREE);
+								firstNote.setTiedLeft(true);
+								firstNote.setTiedRight(true);
+								player3Notes.add(firstNote);
+								measure.addNote(firstNote);
+								notesToSend.add(firstNote);
+								firstNote = new Note(n.getPitch(), Lengths.EIGHTH, Players.PLAYER_THREE);
+								firstNote.setTiedLeft(true);
+								player3Notes.add(firstNote);
+								measure.addNote(firstNote);
+								notesToSend.add(firstNote);
+								player3CurrentNote+=2;
+							}
+							else if(firstNoteBeats.size()==6)
+							{
+								firstNote = new Note(n.getPitch(), Lengths.HALF, Players.PLAYER_THREE);
+								firstNote.setTiedLeft(true);
+								firstNote.setTiedRight(true);
+								player3Notes.add(firstNote);
+								measure.addNote(firstNote);
+								notesToSend.add(firstNote);
+								firstNote = new Note(n.getPitch(), Lengths.QUARTER, Players.PLAYER_THREE);
+								firstNote.setTiedLeft(true);
+								player3Notes.add(firstNote);
+								measure.addNote(firstNote);
+								notesToSend.add(firstNote);
+								player3CurrentNote+=2;
+							}
+							else if(firstNoteBeats.size()==7)
+							{
+								firstNote = new Note(n.getPitch(), Lengths.HALF, Players.PLAYER_THREE);
+								firstNote.setTiedLeft(true);
+								firstNote.setTiedRight(true);
+								player3Notes.add(firstNote);
+								measure.addNote(firstNote);
+								notesToSend.add(firstNote);
+								firstNote = new Note(n.getPitch(), Lengths.QUARTER, Players.PLAYER_THREE);
+								firstNote.setTiedLeft(true);
+								firstNote.setTiedRight(true);
+								player3Notes.add(firstNote);
+								measure.addNote(firstNote);
+								notesToSend.add(firstNote);
+								firstNote = new Note(n.getPitch(), Lengths.EIGHTH, Players.PLAYER_THREE);
+								firstNote.setTiedLeft(true);
+								player3Notes.add(firstNote);
+								measure.addNote(firstNote);
+								notesToSend.add(firstNote);
+								player3CurrentNote+=3;
+							}
+							else
+							{
+								firstNote = new Note(n.getPitch(), Lengths.WHOLE, Players.PLAYER_THREE);
+								firstNote.setTiedLeft(true);
+								player3Notes.add(firstNote);
+								measure.addNote(firstNote);
+								notesToSend.add(firstNote);
+								player3CurrentNote++;
+							}
+						}
+					}
+				}
+			}
+		}
+		////	Player 3	////
+
+		////	Player 4	////
+		//we have reached the end of a measure, so add a new one
+		if(!(player4Measures.get(player4Measures.size()-1).getNumberOfAvailableBeats()>0))
+		{
+			player4Measures.add(new Measure(numberOfBeatsPerMeasure));
+		}
+
+		measure = player4Measures.get(player4Measures.size()-1);
+		//bad name, but is the current note that was just played
+		if(player4Notes.size()>player4CurrentNote)
+		{
+			n = new Note(player4Notes.get(player4CurrentNote).getPitch(),player4Notes.get(player4CurrentNote).getLength(),player4Notes.get(player4CurrentNote).getPlayer());
+			
+			if((player4Notes.size()>0) && (player4Notes.size()>player4CurrentNote) && (n.getPlayer().equals(Players.PLAYER_FOUR)))
+			{					
+				//if a note can be simply added to the measure, then do it
+				if(measure.canAddNote(player4Notes.get(player4CurrentNote)))
+				{
+					measure.addNote(player4Notes.get(player4CurrentNote));
+					notesToSend.add(player4Notes.get(player4CurrentNote));
+					
+					player4CurrentNote++;
+				}
+				else
+				{
+
+					lastNoteBeats = new ArrayList<Beat>();
+					firstNoteBeats = new ArrayList<Beat>();
+						
+					//add a note for the rest of the measure
+					for(int i = 0; i < measure.getNumberOfAvailableBeats(); i++)
+						lastNoteBeats.add(new Beat(n.getPitch()));
+					//check what the length of the Note is
+					if(lastNoteBeats.size()>0)
+					{
+						if(lastNoteBeats.size()==1)
+						{
+							lastNote = new Note(n.getPitch(), Lengths.EIGHTH, Players.PLAYER_FOUR);
+							lastNote.setTiedRight(true);
+							player4Notes.remove(player4Notes.size()-1);
+							player4Notes.add(lastNote);
+							measure.addNote(lastNote);
+							notesToSend.add(lastNote);
+							player4CurrentNote++;
+						}
+						else if(lastNoteBeats.size()==2)
+						{
+							lastNote = new Note(n.getPitch(), Lengths.QUARTER, Players.PLAYER_FOUR);
+							lastNote.setTiedRight(true);
+							player4Notes.remove(player4Notes.size()-1);
+							player4Notes.add(lastNote);
+							measure.addNote(lastNote);
+							notesToSend.add(lastNote);
+							player4CurrentNote++;
+						}
+						else if(lastNoteBeats.size()==3)
+						{
+							lastNote = new Note(n.getPitch(), Lengths.EIGHTH, Players.PLAYER_FOUR);
+							lastNote.setTiedRight(true);
+							player4Notes.remove(player4Notes.size()-1);
+							player4Notes.add(lastNote);
+							measure.addNote(lastNote);
+							notesToSend.add(lastNote);
+							lastNote = new Note(n.getPitch(), Lengths.QUARTER, Players.PLAYER_FOUR);
+							lastNote.setTiedLeft(true);
+							lastNote.setTiedRight(true);
+							player4Notes.add(lastNote);
+							measure.addNote(lastNote);
+							notesToSend.add(lastNote);
+							player4CurrentNote+=2;
+						}
+						else if(lastNoteBeats.size()==4)
+						{
+							lastNote = new Note(n.getPitch(), Lengths.HALF, Players.PLAYER_FOUR);
+							lastNote.setTiedRight(true);
+							player4Notes.remove(player4Notes.size()-1);
+							player4Notes.add(lastNote);
+							measure.addNote(lastNote);
+							notesToSend.add(lastNote);
+							player4CurrentNote++;
+						}
+						else if(lastNoteBeats.size()==5)
+						{
+							lastNote = new Note(n.getPitch(), Lengths.EIGHTH, Players.PLAYER_FOUR);
+							lastNote.setTiedRight(true);
+							player4Notes.remove(player4Notes.size()-1);
+							player4Notes.add(lastNote);
+							measure.addNote(lastNote);
+							notesToSend.add(lastNote);
+							lastNote = new Note(n.getPitch(), Lengths.HALF, Players.PLAYER_FOUR);
+							lastNote.setTiedLeft(true);
+							lastNote.setTiedRight(true);
+							player4Notes.add(lastNote);
+							measure.addNote(lastNote);
+							notesToSend.add(lastNote);
+							player4CurrentNote+=2;
+						}
+						else if(lastNoteBeats.size()==6)
+						{
+							lastNote = new Note(n.getPitch(), Lengths.QUARTER, Players.PLAYER_FOUR);
+							lastNote.setTiedRight(true);
+							player4Notes.remove(player4Notes.size()-1);
+							player4Notes.add(lastNote);
+							measure.addNote(lastNote);
+							notesToSend.add(lastNote);
+							lastNote = new Note(n.getPitch(), Lengths.HALF, Players.PLAYER_FOUR);
+							lastNote.setTiedLeft(true);
+							lastNote.setTiedRight(true);
+							player4Notes.add(lastNote);
+							measure.addNote(lastNote);
+							notesToSend.add(lastNote);
+							player4CurrentNote+=2;
+						}
+						else if(lastNoteBeats.size()==7)
+						{
+							lastNote = new Note(n.getPitch(), Lengths.EIGHTH, Players.PLAYER_FOUR);
+							lastNote.setTiedRight(true);
+							player4Notes.remove(player4Notes.size()-1);
+							player4Notes.add(lastNote);
+							measure.addNote(lastNote);
+							notesToSend.add(lastNote);
+							lastNote = new Note(n.getPitch(), Lengths.QUARTER, Players.PLAYER_FOUR);
+							lastNote.setTiedLeft(true);
+							lastNote.setTiedRight(true);
+							player4Notes.add(lastNote);
+							measure.addNote(lastNote);
+							notesToSend.add(lastNote);
+							lastNote = new Note(n.getPitch(), Lengths.HALF, Players.PLAYER_FOUR);
+							lastNote.setTiedLeft(true);
+							lastNote.setTiedRight(true);
+							player4Notes.add(lastNote);
+							measure.addNote(lastNote);
+							notesToSend.add(lastNote);
+							player4CurrentNote+=3;
+						}
+						else
+						{
+							lastNote = new Note(n.getPitch(), Lengths.WHOLE, Players.PLAYER_FOUR);
+							lastNote.setTiedRight(true);
+							player4Notes.remove(player4Notes.size()-1);
+							player4Notes.add(lastNote);
+							measure.addNote(lastNote);
+							notesToSend.add(lastNote);
+							player4CurrentNote++;
+						}
+	
+						//add a new measure and update the current measure
+						player4Measures.add(new Measure(numberOfBeatsPerMeasure));
+						measure = player4Measures.get(player4Measures.size()-1);
+		
+						//add the rest of the note carried over from the previous measure
+						for(int i = 0; i < (n.size() - lastNoteBeats.size()); i++)
+							firstNoteBeats.add(new Beat(n.getPitch()));
+						if(firstNoteBeats.size()>0)
+						{
+							if(firstNoteBeats.size()==1)
+							{
+								firstNote = new Note(n.getPitch(), Lengths.EIGHTH, Players.PLAYER_FOUR);
+								firstNote.setTiedLeft(true);
+								player4Notes.add(firstNote);
+								measure.addNote(firstNote);
+								notesToSend.add(firstNote);
+								player4CurrentNote++;
+							}
+							else if(firstNoteBeats.size()==2)
+							{
+								firstNote = new Note(n.getPitch(), Lengths.QUARTER, Players.PLAYER_FOUR);
+								firstNote.setTiedLeft(true);
+								player4Notes.add(firstNote);
+								measure.addNote(firstNote);
+								notesToSend.add(firstNote);
+								player4CurrentNote++;
+							}
+							else if(firstNoteBeats.size()==3)
+							{
+								firstNote = new Note(n.getPitch(), Lengths.QUARTER, Players.PLAYER_FOUR);
+								firstNote.setTiedLeft(true);
+								firstNote.setTiedRight(true);
+								player4Notes.add(firstNote);
+								measure.addNote(firstNote);
+								notesToSend.add(firstNote);
+								firstNote = new Note(n.getPitch(), Lengths.EIGHTH, Players.PLAYER_FOUR);
+								firstNote.setTiedLeft(true);
+								player4Notes.add(firstNote);
+								measure.addNote(firstNote);
+								notesToSend.add(firstNote);
+								player4CurrentNote+=2;
+							}
+							else if(firstNoteBeats.size()==4)
+							{
+								firstNote = new Note(n.getPitch(), Lengths.HALF, Players.PLAYER_FOUR);
+								firstNote.setTiedLeft(true);
+								player4Notes.add(firstNote);
+								measure.addNote(firstNote);
+								notesToSend.add(firstNote);
+								player4CurrentNote++;
+							}
+							else if(firstNoteBeats.size()==5)
+							{
+								firstNote = new Note(n.getPitch(), Lengths.HALF, Players.PLAYER_FOUR);
+								firstNote.setTiedLeft(true);
+								firstNote.setTiedRight(true);
+								player4Notes.add(firstNote);
+								measure.addNote(firstNote);
+								notesToSend.add(firstNote);
+								firstNote = new Note(n.getPitch(), Lengths.EIGHTH, Players.PLAYER_FOUR);
+								firstNote.setTiedLeft(true);
+								player4Notes.add(firstNote);
+								measure.addNote(firstNote);
+								notesToSend.add(firstNote);
+								player4CurrentNote+=2;
+							}
+							else if(firstNoteBeats.size()==6)
+							{
+								firstNote = new Note(n.getPitch(), Lengths.HALF, Players.PLAYER_FOUR);
+								firstNote.setTiedLeft(true);
+								firstNote.setTiedRight(true);
+								player4Notes.add(firstNote);
+								measure.addNote(firstNote);
+								notesToSend.add(firstNote);
+								firstNote = new Note(n.getPitch(), Lengths.QUARTER, Players.PLAYER_FOUR);
+								firstNote.setTiedLeft(true);
+								player4Notes.add(firstNote);
+								measure.addNote(firstNote);
+								notesToSend.add(firstNote);
+								player4CurrentNote+=2;
+							}
+							else if(firstNoteBeats.size()==7)
+							{
+								firstNote = new Note(n.getPitch(), Lengths.HALF, Players.PLAYER_FOUR);
+								firstNote.setTiedLeft(true);
+								firstNote.setTiedRight(true);
+								player4Notes.add(firstNote);
+								measure.addNote(firstNote);
+								notesToSend.add(firstNote);
+								firstNote = new Note(n.getPitch(), Lengths.QUARTER, Players.PLAYER_FOUR);
+								firstNote.setTiedLeft(true);
+								firstNote.setTiedRight(true);
+								player4Notes.add(firstNote);
+								measure.addNote(firstNote);
+								notesToSend.add(firstNote);
+								firstNote = new Note(n.getPitch(), Lengths.EIGHTH, Players.PLAYER_FOUR);
+								firstNote.setTiedLeft(true);
+								player4Notes.add(firstNote);
+								measure.addNote(firstNote);
+								notesToSend.add(firstNote);
+								player4CurrentNote+=3;
+							}
+							else
+							{
+								firstNote = new Note(n.getPitch(), Lengths.WHOLE, Players.PLAYER_FOUR);
+								firstNote.setTiedLeft(true);
+								player4Notes.add(firstNote);
+								measure.addNote(firstNote);
+								notesToSend.add(firstNote);
+								player4CurrentNote++;
+							}
+						}
+					}
+				}
+			}
+		}
+		////	Player 4	////
 
 	}
 	
@@ -1516,7 +2317,6 @@ public class GameManager implements ActionListener
 
 	private void sendTimeToDisplay(int time)
 	{
-		System.out.println(time);
 	//	System.out.println(time + " seconds have passed in game");
 		//TODO send message to Display
 	}
@@ -1528,53 +2328,70 @@ public class GameManager implements ActionListener
 	 */
 	private void sendNotesToDisplay()
 	{
-		// TODO This method still needs to be somewhere
-		//displayGUI.getNotes(notesToSend, currentBeat);
-	//	for(Note note : notesToSend)
-	//		System.out.println(note.getPlayer() + " played " + note);
-	//	System.out.println();
-//		for(Note note : notesToSend)
-//		{
-//			System.out.println(note + " " + note.getPlayer());
-//			note.playNote();
-//		}
-		for(Measure m : player1Measures)
-			System.out.print(m + " | ");
-		System.out.println();
-		
 		for(Note note : notesToSend)
 		{
 			if(note.getPlayer().equals(Players.PLAYER_ONE))
 			{
 				for(int i = player1Measures.size()-1; i >=0; i--)
 					if(player1Measures.get(i).getNotes().contains(note))
+					{
 						if(keyProgression.size()>i)
 							if(!(Scales.isNoteInKey(note, keyProgression.get(i))))
 								note.setCorrect(false);
+						break;
+					}
 			}
 			else if(note.getPlayer().equals(Players.PLAYER_TWO))
 			{
-				if(player2Notes.contains(note));
-				{
-					
-				}
+				for(int i = player2Measures.size()-1; i >=0; i--)
+					if(player2Measures.get(i).getNotes().contains(note))
+					{
+						if(keyProgression.size()>i)
+							if(!(Scales.isNoteInKey(note, keyProgression.get(i))))
+								note.setCorrect(false);
+						break;
+					}
 			}
 			else if(note.getPlayer().equals(Players.PLAYER_THREE))
 			{
-				if(player3Notes.contains(note));
-				{
-					
-				}
+				for(int i = player3Measures.size()-1; i >=0; i--)
+					if(player3Measures.get(i).getNotes().contains(note))
+					{
+						if(keyProgression.size()>i)
+							if(!(Scales.isNoteInKey(note, keyProgression.get(i))))
+								note.setCorrect(false);
+						break;
+					}
 			}
 			else if(note.getPlayer().equals(Players.PLAYER_FOUR))
 			{
-				if(player4Notes.contains(note));
-				{
-					
-				}
+				for(int i = player4Measures.size()-1; i >=0; i--)
+					if(player4Measures.get(i).getNotes().contains(note))
+					{
+						if(keyProgression.size()>i)
+							if(!(Scales.isNoteInKey(note, keyProgression.get(i))))
+								note.setCorrect(false);
+						break;
+					}
 			}
 		}
 				
+		for(Measure m : player1Measures)
+			System.out.print(m + " | ");
+		System.out.println();
+		for(Measure m : player2Measures)
+			System.out.print(m + " | ");
+		System.out.println();
+		for(Measure m : player3Measures)
+			System.out.print(m + " | ");
+		System.out.println();
+		for(Measure m : player4Measures)
+			System.out.print(m + " | ");
+		System.out.println();
+		System.out.println();
+		
+		//TODO send notesToSend to display
+		
 		notesToSend = new ArrayList<Note>();
 
 	}

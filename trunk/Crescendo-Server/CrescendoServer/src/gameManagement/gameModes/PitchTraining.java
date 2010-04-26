@@ -75,27 +75,27 @@ public class PitchTraining
 	 */
 	public String randomizePitchWithKey(String key)
 	{
-		ArrayList<Note> keyNotes = Scales.getNotes(key);
+		ArrayList<String> keyNotes = Scales.getNotes(key);
 		if(keyNotes.size() == 8)
 		{
 			switch(rand.nextInt(8))
 			{
 				case 0:
-					return keyNotes.get(0).getPitch();
+					return keyNotes.get(0);
 				case 1:
-					return keyNotes.get(1).getPitch();
+					return keyNotes.get(1);
 				case 2:
-					return keyNotes.get(2).getPitch();
+					return keyNotes.get(2);
 				case 3:
-					return keyNotes.get(3).getPitch();
+					return keyNotes.get(3);
 				case 4:
-					return keyNotes.get(4).getPitch();
+					return keyNotes.get(4);
 				case 5:
-					return keyNotes.get(5).getPitch();
+					return keyNotes.get(5);
 				case 6:
-					return keyNotes.get(6).getPitch();
+					return keyNotes.get(6);
 				default:
-					return keyNotes.get(7).getPitch();
+					return keyNotes.get(7);
 			}
 		}
 		else if(keyNotes.size() == 9)
@@ -103,26 +103,26 @@ public class PitchTraining
 			switch(rand.nextInt(9))
 			{
 				case 0:
-					return keyNotes.get(0).getPitch();
+					return keyNotes.get(0);
 				case 1:
-					return keyNotes.get(1).getPitch();
+					return keyNotes.get(1);
 				case 2:
-					return keyNotes.get(2).getPitch();
+					return keyNotes.get(2);
 				case 3:
-					return keyNotes.get(3).getPitch();
+					return keyNotes.get(3);
 				case 4:
-					return keyNotes.get(4).getPitch();
+					return keyNotes.get(4);
 				case 5:
-					return keyNotes.get(5).getPitch();
+					return keyNotes.get(5);
 				case 6:
-					return keyNotes.get(6).getPitch();
+					return keyNotes.get(6);
 				case 7:
-					return keyNotes.get(7).getPitch();
+					return keyNotes.get(7);
 				default:
-					return keyNotes.get(8).getPitch();
+					return keyNotes.get(8);
 			}	
 		}
-		return keyNotes.get(0).getPitch();
+		return keyNotes.get(0);
 		
 	}
 	
