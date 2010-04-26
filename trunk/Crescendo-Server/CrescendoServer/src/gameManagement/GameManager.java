@@ -56,6 +56,7 @@ public class GameManager implements ActionListener
 	private String gameMode;
 	private ArrayList<String> keyProgression;
 	
+	private String currentPlayerId;
 	private String pausedPlayerId;
 	
 	private ArrayList<Beat> gameBeats;
@@ -118,7 +119,8 @@ public class GameManager implements ActionListener
 		notesToSend = new ArrayList<Note>();
 		
 		gameMode = GameState.KEY_MASTER;
-		
+
+		currentPlayerId = Players.PLAYER_ONE;
 		pausedPlayerId = new String();
 		
 		gameBeats = new ArrayList<Beat>();
@@ -302,25 +304,36 @@ public class GameManager implements ActionListener
 				if(gameMode.equals(GameState.KEY_MASTER))
 				{
 					//TODO add in current player's turn
-					if(n.getPlayer().equals(Players.PLAYER_ONE) && (gameMeasures.size()<=numberOfBars))
+					if(n.getPlayer().equals(Players.PLAYER_ONE) && (gameMeasures.size()<=numberOfBars) && (currentPlayerId.equals(Players.PLAYER_ONE)))
 					{
 						gameBeats.addAll(n.getBeats());
 						gameNotes.add(n);
+						if(numberOfActivePlayers>1)
+							currentPlayerId = new String(Players.PLAYER_TWO);
 					}
-					else if(n.getPlayer().equals(Players.PLAYER_TWO) && (gameMeasures.size()<=numberOfBars))
+					else if(n.getPlayer().equals(Players.PLAYER_TWO) && (gameMeasures.size()<=numberOfBars) && (currentPlayerId.equals(Players.PLAYER_TWO)))
 					{
 						gameBeats.addAll(n.getBeats());
 						gameNotes.add(n);
+						if(numberOfActivePlayers>2)
+							currentPlayerId = new String(Players.PLAYER_THREE);
+						else
+							currentPlayerId = new String(Players.PLAYER_ONE);
 					}
-					else if(n.getPlayer().equals(Players.PLAYER_THREE) && (gameMeasures.size()<=numberOfBars))
+					else if(n.getPlayer().equals(Players.PLAYER_THREE) && (gameMeasures.size()<=numberOfBars) && (currentPlayerId.equals(Players.PLAYER_THREE)))
 					{
 						gameBeats.addAll(n.getBeats());
 						gameNotes.add(n);
+						if(numberOfActivePlayers>3)
+							currentPlayerId = new String(Players.PLAYER_FOUR);
+						else
+							currentPlayerId = new String(Players.PLAYER_ONE);
 					}
-					else if(n.getPlayer().equals(Players.PLAYER_FOUR) && (gameMeasures.size()<=numberOfBars))
+					else if(n.getPlayer().equals(Players.PLAYER_FOUR) && (gameMeasures.size()<=numberOfBars) && (currentPlayerId.equals(Players.PLAYER_FOUR)))
 					{
 						gameBeats.addAll(n.getBeats());
 						gameNotes.add(n);
+						currentPlayerId = new String(Players.PLAYER_ONE);
 					}
 				}
 			}
