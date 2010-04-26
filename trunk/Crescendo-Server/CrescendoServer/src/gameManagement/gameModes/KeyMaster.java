@@ -28,7 +28,9 @@ public class KeyMaster
 		for(int i = 0; i < numberOfMeasures; i++)
 		{
 			if(i%lengthOfKeyChange==1)
+			{
 				keyProgression.add(currentKey);
+			}
 			else
 			{
 				currentKey = getRandomKey();
@@ -37,7 +39,7 @@ public class KeyMaster
 		}
 	}
 
-	private String getRandomKey()
+	public String getRandomKey()
 	{
 		return possibleKeys.get(rand.nextInt(possibleKeys.size()));	
 	}
