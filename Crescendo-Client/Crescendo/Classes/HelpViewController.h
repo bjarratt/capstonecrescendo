@@ -11,8 +11,13 @@
 
 @interface HelpViewController : UIViewController {
 
+	UITextView *helpText;
 }
 
+@property (nonatomic, retain) UITextView *helpText;
+
 - (IBAction) goBack;
+-(void) showMainHelp;
+-(void) showGameHelp;
 
 @end

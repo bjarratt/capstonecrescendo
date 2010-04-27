@@ -21,6 +21,7 @@
 @synthesize clientConnected;
 @synthesize playerId;
 @synthesize gamemodeViewController;
+@synthesize composeViewController;
 @synthesize helpViewController;
 @synthesize gameModes;
 @synthesize connect;
@@ -127,6 +128,29 @@
 
 #pragma mark Interface Methods
 
+//TODO: Go from Start to Free Compose (skip over the gamemodeViewController)
+- (IBAction) freeCompose {
+	composeViewController.client = self.client;
+	composeViewController.clientConnected = self.clientConnected;
+	composeViewController.playerId = self.playerId;
+	/*
+	 *	Send game type selected to public display
+	 */
+	NSString* inputText = [NSString stringWithFormat: @"%@_%@", playerId, @"notetraining"];
+	
+    // Initialize PlayNoteRequest and set message to content's of the text field.
+	GameTypeRequest* request = [[GameTypeRequest alloc] init];
+    [request setGameType:inputText];
+    
+    // Setup the client to send the message a little later in the run loop.
+    [client performSelector:@selector(sendMessage:) withObject: request];
+    
+    [request release];
+	
+	[self presentModalViewController:composeViewController animated:YES];
+}
+
+
 - (IBAction) goToGamemodeView {
 	gamemodeViewController.client = self.client;
 	gamemodeViewController.clientConnected = self.clientConnected;
@@ -184,6 +208,7 @@
 
 - (IBAction) goToHelpView {
 	[self presentModalViewController:helpViewController	animated:YES];
+	helpViewController.showMainHelp;
 }
 
 #pragma mark Draw Methods
@@ -258,10 +283,11 @@
 	 ipText.delegate = self;
 	 clientConnected = NO;
 	 self.dataController = [[DataController alloc] init];
-	 ipTableView = [[UITableView alloc] initWithFrame:CGRectMake(50, 310, 220, 125) style:UITableViewStylePlain];
+	 //ipTableView = [[UITableView alloc] initWithFrame:CGRectMake(50, 310, 220, 125) style:UITableViewStylePlain];
+	 ipTableView = [[UITableView alloc] initWithFrame:CGRectMake(50, 310, 220, 125) style:UITableViewStyleGrouped];
 	 ipTableView.dataSource = self;
 	 ipTableView.delegate = self;
-	 //ipTableView.backgroundColor = [UIColor clearColor];
+	 ipTableView.backgroundColor = [UIColor clearColor];
 	 //ipTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 	 ipTableView.indicatorStyle = UIScrollViewIndicatorStyleWhite;
 	 ipTableView.showsVerticalScrollIndicator = YES;
