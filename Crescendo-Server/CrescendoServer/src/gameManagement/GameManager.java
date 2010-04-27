@@ -59,6 +59,11 @@ public class GameManager implements ActionListener
 	private String currentPlayerId;
 	private String pausedPlayerId;
 	
+	private int player1Score;
+	private int player2Score;
+	private int player3Score;
+	private int player4Score;
+	
 	private ArrayList<Beat> gameBeats;
 	
 	private int currentTick;
@@ -122,6 +127,11 @@ public class GameManager implements ActionListener
 
 		currentPlayerId = Players.PLAYER_ONE;
 		pausedPlayerId = new String();
+
+		player1Score = 1000;
+		player2Score = 1000;
+		player3Score = 1000;
+		player4Score = 1000;
 		
 		gameBeats = new ArrayList<Beat>();
 
@@ -207,6 +217,9 @@ public class GameManager implements ActionListener
 				if(at_play)
 				{
 					this.constructMeasures();
+					this.checkNotesForCorrectness();
+					this.scoreNotes();
+					this.sendScoresToDisplay();
 					this.sendNotesToDisplay();
 					
 					if(!gameIsDone && (gameMeasures.size()>numberOfBars || (gameMeasures.size()==numberOfBars && gameMeasures.get(gameMeasures.size()-1).getNumberOfAvailableBeats()==0)))
@@ -642,7 +655,6 @@ public class GameManager implements ActionListener
 				
 		notesToSend = new ArrayList<Note>();
 		
-		////	Player 1	////
 		//we have reached the end of a measure, so add a new one
 		if(!(gameMeasures.get(gameMeasures.size()-1).getNumberOfAvailableBeats()>0))
 		{
@@ -904,7 +916,104 @@ public class GameManager implements ActionListener
 				}
 			}
 		}
-		////	Player 1	////
+	}
+	
+	private void checkNotesForCorrectness()
+	{
+		for(Note note : notesToSend)
+		{
+			if(note.getPlayer().equals(Players.PLAYER_ONE))
+			{
+				for(int i = gameMeasures.size()-1; i >=0; i--)
+					if(gameMeasures.get(i).getNotes().contains(note))
+					{
+						if(keyProgression.size()>i)
+							if(!(Scales.isNoteInKey(note, keyProgression.get(i))))
+								note.setCorrect(false);
+						break;
+					}
+			}
+			else if(note.getPlayer().equals(Players.PLAYER_TWO))
+			{
+				for(int i = gameMeasures.size()-1; i >=0; i--)
+					if(gameMeasures.get(i).getNotes().contains(note))
+					{
+						if(keyProgression.size()>i)
+							if(!(Scales.isNoteInKey(note, keyProgression.get(i))))
+								note.setCorrect(false);
+						break;
+					}
+			}
+			else if(note.getPlayer().equals(Players.PLAYER_THREE))
+			{
+				for(int i = gameMeasures.size()-1; i >=0; i--)
+					if(gameMeasures.get(i).getNotes().contains(note))
+					{
+						if(keyProgression.size()>i)
+							if(!(Scales.isNoteInKey(note, keyProgression.get(i))))
+								note.setCorrect(false);
+						break;
+					}
+			}
+			else if(note.getPlayer().equals(Players.PLAYER_FOUR))
+			{
+				for(int i = gameMeasures.size()-1; i >=0; i--)
+					if(gameMeasures.get(i).getNotes().contains(note))
+					{
+						if(keyProgression.size()>i)
+							if(!(Scales.isNoteInKey(note, keyProgression.get(i))))
+								note.setCorrect(false);
+						break;
+					}
+			}
+		}
+	}
+	
+	private void scoreNotes()
+	{
+		double score;
+		for(Note note : notesToSend)
+		{
+			score = 0;
+			//convert score from an integer to a double
+			if(note.getPlayer().equals(Players.PLAYER_ONE))
+				score = player1Score;
+			else if(note.getPlayer().equals(Players.PLAYER_TWO))
+				score = player2Score;
+			else if(note.getPlayer().equals(Players.PLAYER_THREE))
+				score = player3Score;
+			else if(note.getPlayer().equals(Players.PLAYER_FOUR))
+				score = player4Score;
+			
+			if(note.isCorrect())
+			{
+				//add points and time
+				score += Math.PI * 100;
+				additionalInGameTime += 6;
+				if(gameMeasures.size()<=keyProgression.size())
+					if(Scales.isNoteInArpeggio(note, keyProgression.get(gameMeasures.size()-1)))
+						score += Math.PI * 50;
+						additionalInGameTime += 3;
+			}
+			else
+			{
+				//subtract points and time
+				score -= Math.E * 100;
+				additionalInGameTime -= 3;
+				if(score<0)
+					score = 0;
+			}
+			
+			//convert score back to an integer
+			if(note.getPlayer().equals(Players.PLAYER_ONE))
+				player1Score = new Double(score).intValue();
+			else if(note.getPlayer().equals(Players.PLAYER_TWO))
+				player2Score = new Double(score).intValue();
+			else if(note.getPlayer().equals(Players.PLAYER_THREE))
+				player3Score = new Double(score).intValue();
+			else if(note.getPlayer().equals(Players.PLAYER_FOUR))
+				player4Score = new Double(score).intValue();
+		}
 	}
 	
 	private void setNumberOfBeatsPerMeasure()
@@ -985,10 +1094,20 @@ public class GameManager implements ActionListener
 		//displayGUI.receiveMessage(message);
 	}
 
+	private void sendScoresToDisplay()
+	{
+		System.out.println("player 1 Score: " + player1Score);
+		System.out.println("player 2 Score: " + player2Score);
+		System.out.println("player 3 Score: " + player3Score);
+		System.out.println("player 4 Score: " + player4Score);
+		System.out.println();
+	}
+	
 	private void sendTimeToDisplay(int time)
 	{
-	//	System.out.println(time + " seconds have passed in game");
+		System.out.println(time + " seconds left in the game");
 		//TODO send message to Display
+		
 	}
 	
 	/**
@@ -998,54 +1117,6 @@ public class GameManager implements ActionListener
 	 */
 	private void sendNotesToDisplay()
 	{
-		//TODO check for accuracy
-		for(Note note : notesToSend)
-		{
-			if(note.getPlayer().equals(Players.PLAYER_ONE))
-			{
-				for(int i = gameMeasures.size()-1; i >=0; i--)
-					if(gameMeasures.get(i).getNotes().contains(note))
-					{
-						if(keyProgression.size()>i)
-							if(!(Scales.isNoteInKey(note, keyProgression.get(i))))
-								note.setCorrect(false);
-						break;
-					}
-			}
-			else if(note.getPlayer().equals(Players.PLAYER_TWO))
-			{
-				for(int i = gameMeasures.size()-1; i >=0; i--)
-					if(gameMeasures.get(i).getNotes().contains(note))
-					{
-						if(keyProgression.size()>i)
-							if(!(Scales.isNoteInKey(note, keyProgression.get(i))))
-								note.setCorrect(false);
-						break;
-					}
-			}
-			else if(note.getPlayer().equals(Players.PLAYER_THREE))
-			{
-				for(int i = gameMeasures.size()-1; i >=0; i--)
-					if(gameMeasures.get(i).getNotes().contains(note))
-					{
-						if(keyProgression.size()>i)
-							if(!(Scales.isNoteInKey(note, keyProgression.get(i))))
-								note.setCorrect(false);
-						break;
-					}
-			}
-			else if(note.getPlayer().equals(Players.PLAYER_FOUR))
-			{
-				for(int i = gameMeasures.size()-1; i >=0; i--)
-					if(gameMeasures.get(i).getNotes().contains(note))
-					{
-						if(keyProgression.size()>i)
-							if(!(Scales.isNoteInKey(note, keyProgression.get(i))))
-								note.setCorrect(false);
-						break;
-					}
-			}
-		}
 				
 		for(Measure m : gameMeasures)
 			System.out.print(m + " | ");
