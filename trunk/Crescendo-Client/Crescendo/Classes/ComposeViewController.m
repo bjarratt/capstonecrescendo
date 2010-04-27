@@ -450,29 +450,29 @@
 	//TODO: Send GameOptionsRequest message
 	float val = sender.value;
 	if(val <= 12 && val > 11)
-		tempoText.text = @"20";
-	else if(val <= 11 && val > 10)
-		tempoText.text = @"40";
-	else if(val <= 10 && val > 9)
-		tempoText.text = @"60";
-	else if(val <= 9 && val > 8)
-		tempoText.text = @"80";
-	else if(val <= 8 && val > 7)
-		tempoText.text = @"100";
-	else if(val <= 7 && val > 6)
-		tempoText.text = @"120";
-	else if(val <= 6 && val > 5)
-		tempoText.text = @"140";
-	else if(val <= 5 && val > 4)
-		tempoText.text = @"160";
-	else if(val <= 4 && val > 3)
-		tempoText.text = @"180";
-	else if(val <= 3 && val > 2)
-		tempoText.text = @"200";
-	else if(val <= 2 && val > 1)
-		tempoText.text = @"220";
-	else if(val <= 1 && val >= 0)
 		tempoText.text = @"240";
+	else if(val <= 11 && val > 10)
+		tempoText.text = @"220";
+	else if(val <= 10 && val > 9)
+		tempoText.text = @"200";
+	else if(val <= 9 && val > 8)
+		tempoText.text = @"180";
+	else if(val <= 8 && val > 7)
+		tempoText.text = @"160";
+	else if(val <= 7 && val > 6)
+		tempoText.text = @"140";
+	else if(val <= 6 && val > 5)
+		tempoText.text = @"120";
+	else if(val <= 5 && val > 4)
+		tempoText.text = @"100";
+	else if(val <= 4 && val > 3)
+		tempoText.text = @"80";
+	else if(val <= 3 && val > 2)
+		tempoText.text = @"60";
+	else if(val <= 2 && val > 1)
+		tempoText.text = @"40";
+	else if(val <= 1 && val >= 0)
+		tempoText.text = @"20";
 }
 
 - (void) timeSliderValueSet:(UISlider *)sender {
@@ -524,21 +524,21 @@
 	//TODO: Send GameOptionsRequest message
 	float val = sender.value;
 	if(val <= 8 && val > 7)
-		barsText.text = @"4";
+		barsText.text = @"128";
 	else if(val <= 7 && val > 6)
-		barsText.text = @"5";
+		barsText.text = @"112";
 	else if(val <= 6 && val > 5)
-		barsText.text = @"6";
+		barsText.text = @"96";
 	else if(val <= 5 && val > 4)
-		barsText.text = @"7";
+		barsText.text = @"80";
 	else if(val <= 4 && val > 3)
-		barsText.text = @"8";
+		barsText.text = @"64";
 	else if(val <= 3 && val > 2)
-		barsText.text = @"9";
+		barsText.text = @"48";
 	else if(val <= 2 && val > 1)
-		barsText.text = @"10";
+		barsText.text = @"32";
 	else if(val <= 1 && val >= 0)
-		barsText.text = @"11";  
+		barsText.text = @"16";  
 }  
 
 - (void) updateBuildLabel {
@@ -1430,7 +1430,7 @@
 	startButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 	startButton.frame = CGRectMake(50, 400, 220, 50);
 	[startButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-	[startButton setTitle: @"start" forState:UIControlStateNormal];
+	[startButton setTitle: @"play" forState:UIControlStateNormal];
 	//[startButton setTitle: @"disconnect" forState:UIControlStateHighlighted];
 	//[startButton setTitle: @"disconnect" forState:UIControlStateDisabled];
 	//[startButton setTitle: @"disconnect" forState:UIControlStateSelected];
@@ -1482,7 +1482,7 @@
 		barsSlider = [[UISlider alloc] initWithFrame: CGRectMake(209, 300, 118, 23)];
 		barsSlider.minimumValue = 1;
 		barsSlider.maximumValue = 8;
-		barsSlider.value = 8;
+		barsSlider.value = 1;
 		barsSlider.continuous = YES;
 		barsSlider.transform = CGAffineTransformRotate(barsSlider.transform, 270.0/180*M_PI);
 		[barsSlider addTarget:self action:@selector(barsSliderValueChanged:) forControlEvents:UIControlEventValueChanged];
@@ -1494,7 +1494,7 @@
 	 * Slider Text Fields
 	 */
 	if(!keyText){
-		keyText = [[UILabel alloc] initWithFrame:CGRectMake(30, 220, 60, 60)];
+		keyText = [[UILabel alloc] initWithFrame:CGRectMake(30, 190, 60, 60)];
 		keyText.text = [NSString stringWithFormat: @"C"];
 		keyText.backgroundColor = [UIColor clearColor];
 		keyText.textColor = [UIColor whiteColor];
@@ -1502,7 +1502,7 @@
 	[self.view addSubview:keyText];
 	
 	if(!timeText){
-		timeText = [[UILabel alloc] initWithFrame:CGRectMake(100, 220, 60, 60)];
+		timeText = [[UILabel alloc] initWithFrame:CGRectMake(100, 190, 60, 60)];
 		timeText.text = [NSString stringWithFormat: @"4/4"];
 		timeText.backgroundColor = [UIColor clearColor];
 		timeText.textColor = [UIColor whiteColor];
@@ -1510,7 +1510,7 @@
 	[self.view addSubview:timeText];
 	
 	if(!tempoText){
-		tempoText = [[UILabel alloc] initWithFrame:CGRectMake(170, 220, 60, 60)];
+		tempoText = [[UILabel alloc] initWithFrame:CGRectMake(170, 190, 60, 60)];
 		tempoText.text = [NSString stringWithFormat: @"120"];
 		tempoText.backgroundColor = [UIColor clearColor];
 		tempoText.textColor = [UIColor whiteColor];
@@ -1518,8 +1518,8 @@
 	[self.view addSubview:tempoText];
 	
 	if(!barsText){
-		barsText = [[UILabel alloc] initWithFrame:CGRectMake(250, 220, 60, 60)];
-		barsText.text = [NSString stringWithFormat: @"4"];
+		barsText = [[UILabel alloc] initWithFrame:CGRectMake(250, 190, 60, 60)];
+		barsText.text = [NSString stringWithFormat: @"16"];
 		barsText.backgroundColor = [UIColor clearColor];
 		barsText.textColor = [UIColor whiteColor];
 	}

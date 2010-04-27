@@ -52,7 +52,7 @@
 					</object>
 					<object class="IBUIButton" id="282626864">
 						<reference key="NSNextResponder" ref="886720555"/>
-						<int key="NSvFlags">292</int>
+						<int key="NSvFlags">-2147483356</int>
 						<string key="NSFrame">{{50, 190}, {220, 50}}</string>
 						<reference key="NSSuperview" ref="886720555"/>
 						<bool key="IBUIOpaque">NO</bool>
@@ -94,7 +94,7 @@
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<reference key="IBUIFont" ref="688619497"/>
 						<int key="IBUIButtonType">1</int>
-						<string key="IBUINormalTitle">note length training</string>
+						<string key="IBUINormalTitle">start</string>
 						<reference key="IBUIHighlightedTitleColor" ref="185394104"/>
 						<reference key="IBUINormalTitleColor" ref="52216485"/>
 						<reference key="IBUINormalTitleShadowColor" ref="54418376"/>
@@ -102,7 +102,7 @@
 					</object>
 					<object class="IBUIButton" id="493920188">
 						<reference key="NSNextResponder" ref="886720555"/>
-						<int key="NSvFlags">292</int>
+						<int key="NSvFlags">-2147483356</int>
 						<string key="NSFrame">{{50, 320}, {220, 50}}</string>
 						<reference key="NSSuperview" ref="886720555"/>
 						<bool key="IBUIOpaque">NO</bool>
@@ -332,7 +332,7 @@
 					<string>ComposeViewController</string>
 					<string>{{21, 481}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<string>{{429, 191}, {320, 480}}</string>
+					<string>{{466, 248}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				</object>
 			</object>

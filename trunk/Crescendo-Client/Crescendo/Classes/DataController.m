@@ -24,8 +24,19 @@
 	[list removeObjectAtIndex:theIndex];
 }
 
+//Only add new IP to list if it is not already in the list
 - (void) addData: (NSString *) data {
-	[list addObject:data];
+	BOOL found;
+	found = NO;
+	int size = [list count];
+	for(int i = 0; i < size; i++){
+		NSString *ip = (NSString *) [list objectAtIndex:i];
+		if([ip isEqualToString: data])
+			found = YES;
+	}
+	if(!found){
+		[list addObject:data];
+	}
 }
 
 - (void) setList: (NSMutableArray *) newList {
