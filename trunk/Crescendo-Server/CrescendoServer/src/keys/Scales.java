@@ -213,6 +213,57 @@ public class Scales
 			return true;
 		return false;
 	}
+
+	/**
+	 * Checks if the specified pitch is in the given key.
+	 * @param note - note to check the pitch of
+	 * @param key - the current key signature
+	 * @return true if the String is in the Key specified
+	 */
+	public static boolean isNoteInArpeggio(Note note, String key)
+	{
+		if(allKeys.containsKey(key) && allKeys.get(key).contains(note.getPitch()))
+		{	
+			if(key.equals(KeySignatures.AFlatMajor))
+				if(note.getPitch().equals(Pitches.GSharp5) || note.getPitch().equals(Pitches.C6) || note.getPitch().equals(Pitches.DSharp6))
+					return true;
+			else if(key.equals(KeySignatures.AMajor))
+				if(note.getPitch().equals(Pitches.A5) || note.getPitch().equals(Pitches.CSharp6) || note.getPitch().equals(Pitches.E5) || note.getPitch().equals(Pitches.E6))
+					return true;
+			else if(key.equals(KeySignatures.BFlatMajor))
+				if(note.getPitch().equals(Pitches.ASharp5) || note.getPitch().equals(Pitches.D6) || note.getPitch().equals(Pitches.F5) || note.getPitch().equals(Pitches.F6))
+					return true;
+			else if(key.equals(KeySignatures.BMajor))
+				if(note.getPitch().equals(Pitches.B5) || note.getPitch().equals(Pitches.DSharp6) || note.getPitch().equals(Pitches.FSharp5) || note.getPitch().equals(Pitches.FSharp6))
+					return true;
+			else if(key.equals(KeySignatures.CMajor))
+				if(note.getPitch().equals(Pitches.C6) || note.getPitch().equals(Pitches.E5)|| note.getPitch().equals(Pitches.E6) || note.getPitch().equals(Pitches.G5))
+					return true;
+			else if(key.equals(KeySignatures.DFlatMajor))
+				if(note.getPitch().equals(Pitches.CSharp6) || note.getPitch().equals(Pitches.ESharp5) || note.getPitch().equals(Pitches.ESharp6) || note.getPitch().equals(Pitches.GSharp5))
+					return true;
+			else if(key.equals(KeySignatures.DMajor))
+				if(note.getPitch().equals(Pitches.D6) || note.getPitch().equals(Pitches.FSharp5) || note.getPitch().equals(Pitches.FSharp6) || note.getPitch().equals(Pitches.A5))
+					return true;
+			else if(key.equals(KeySignatures.EFlatMajor))
+				if(note.getPitch().equals(Pitches.DSharp6) || note.getPitch().equals(Pitches.G5) || note.getPitch().equals(Pitches.ASharp5))
+					return true;
+			else if(key.equals(KeySignatures.EMajor))
+				if(note.getPitch().equals(Pitches.E5) || note.getPitch().equals(Pitches.E6) || note.getPitch().equals(Pitches.GSharp5) || note.getPitch().equals(Pitches.B5))
+					return true;
+			else if(key.equals(KeySignatures.FMajor))
+				if(note.getPitch().equals(Pitches.F5) || note.getPitch().equals(Pitches.F6) || note.getPitch().equals(Pitches.A5) || note.getPitch().equals(Pitches.C6))
+					return true;
+			else if(key.equals(KeySignatures.FSharpMajor))
+				if(note.getPitch().equals(Pitches.FSharp5) || note.getPitch().equals(Pitches.FSharp6) || note.getPitch().equals(Pitches.ASharp5) || note.getPitch().equals(Pitches.CSharp6))
+					return true;
+			else if(key.equals(KeySignatures.GMajor))
+				if(note.getPitch().equals(Pitches.G5) || note.getPitch().equals(Pitches.B5) || note.getPitch().equals(Pitches.D6))
+					return true;
+		}
+		return false;
+	}
+	
 	
 	/**
 	 * Returns an ArrayList of the notes that make up the given key signature. 
