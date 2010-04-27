@@ -992,8 +992,10 @@ public class GameManager implements ActionListener
 				additionalInGameTime += 6;
 				if(gameMeasures.size()<=keyProgression.size())
 					if(Scales.isNoteInArpeggio(note, keyProgression.get(gameMeasures.size()-1)))
+					{
 						score += Math.PI * 50;
 						additionalInGameTime += 3;
+					}
 			}
 			else
 			{
