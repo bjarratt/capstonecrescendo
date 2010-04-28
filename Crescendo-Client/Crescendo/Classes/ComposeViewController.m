@@ -599,6 +599,7 @@
     
 	[inputText release];
     [request release];
+	[self playNote];
 }
 
 #pragma mark Draw Methods
@@ -1575,6 +1576,16 @@
 		barsLabel.textColor = [UIColor whiteColor];
 	}
 	[self.view addSubview:barsLabel];
+}
+
+#pragma mark Sound
+
+- (void) playNote {
+	NSString *path = [NSString stringWithFormat:@"%@%@", [[NSBundle mainBundle] resourcePath], @"/GSharp5.wav"];
+	SystemSoundID soundID;
+	NSURL *filePath = [NSURL fileURLWithPath:path isDirectory:NO];
+	AudioServicesCreateSystemSoundID((CFURLRef) filePath, &soundID);
+	AudioServicesPlaySystemSound(soundID);
 }
 
 #pragma mark Initialize View Methods

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AudioToolbox/AudioServices.h>
 
 #import "GameOptionsUpdateDelegate.h"
 #import "GameStateUpdateDelegate.h"
@@ -120,6 +121,7 @@
 - (void) drawEighthnotePitches;
 - (void) drawGameOptions;
 - (void) drawGamePlayOptions;
+- (void) playNote;
 
 @end
 
