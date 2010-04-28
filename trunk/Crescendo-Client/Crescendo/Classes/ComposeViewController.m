@@ -288,6 +288,7 @@
     [client performSelector:@selector(sendMessage:) withObject: request];
     
     [request release];
+	self.inGame = NO;
 	[self dismissModalViewControllerAnimated:YES];
 }
 
@@ -323,7 +324,7 @@
 	[timeLabel removeFromSuperview];
 	[tempoLabel removeFromSuperview];
 	[barsLabel removeFromSuperview];
-	[self drawGamePlayOptions];
+	[self drawPortraitView];
 }
 
 - (void) pausePlay:(UIButton *)sender {
@@ -1465,15 +1466,17 @@
 	/*
 	 * Start button
 	 */
-	startButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-	startButton.frame = CGRectMake(50, 400, 220, 50);
-	[startButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-	[startButton setTitle: @"play" forState:UIControlStateNormal];
-	//[startButton setTitle: @"disconnect" forState:UIControlStateHighlighted];
-	//[startButton setTitle: @"disconnect" forState:UIControlStateDisabled];
-	//[startButton setTitle: @"disconnect" forState:UIControlStateSelected];
-	[startButton setBackgroundImage:[UIImage imageNamed:@"menu_button_up.png"] forState:UIControlStateNormal];
-	[startButton addTarget:self action:@selector(start:) forControlEvents:UIControlEventTouchUpInside];
+	if (!startButton) {
+		startButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+		startButton.frame = CGRectMake(50, 400, 220, 50);
+		[startButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+		[startButton setTitle: @"play" forState:UIControlStateNormal];
+		//[startButton setTitle: @"disconnect" forState:UIControlStateHighlighted];
+		//[startButton setTitle: @"disconnect" forState:UIControlStateDisabled];
+		//[startButton setTitle: @"disconnect" forState:UIControlStateSelected];
+		[startButton setBackgroundImage:[UIImage imageNamed:@"menu_button_up.png"] forState:UIControlStateNormal];
+		[startButton addTarget:self action:@selector(start:) forControlEvents:UIControlEventTouchUpInside];
+	}
 	[self.view addSubview:startButton];
 	
 	/*
