@@ -83,7 +83,8 @@ public class MessageTranslationEngine
 			
 			if(	one.equals(GameState.SET_TEMPO) ||
 				one.equals(GameState.SET_KEY) ||
-				one.equals(GameState.SET_NUMBER_OF_BARS))
+				one.equals(GameState.SET_NUMBER_OF_BARS) ||
+				one.equals(GameState.SET_TIME_SIGNATURE))
 			{
 				//all good! :)
 			}
@@ -95,19 +96,6 @@ public class MessageTranslationEngine
 			else
 			{
 				System.err.println("Incorrect message format in MessageTranslationEngine.receiveMessage(ArrayList<String> messages) of length 3 : " + message);
-			}
-		}
-		else if(messageComponents.length == 4)
-		{
-			one = messageComponents[1];
-			
-			if(one.equals(GameState.SET_TIME_SIGNATURE))
-			{
-				//all good :)
-			}
-			else
-			{
-				System.err.println("Incorrect message format in MessageTranslationEngine.receiveMessage(ArrayList<String> messages) of length 4 : " + message);
 			}
 		}
 		else

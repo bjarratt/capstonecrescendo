@@ -42,7 +42,6 @@ public class GameManager implements ActionListener
 	
 	//gamestate options
 	private boolean at_splash_screen;
-	private boolean at_game_modes;
 	private boolean at_game_options;
 	private boolean at_play;
 	private boolean at_pause;
@@ -113,7 +112,6 @@ public class GameManager implements ActionListener
 		additionalInGameTime = 0;
 
 		at_splash_screen = true;
-		at_game_modes = false;
 		at_game_options = false;
 		at_play = false;
 		at_pause = false;
@@ -466,7 +464,7 @@ public class GameManager implements ActionListener
 				//message is "player1_setkey_X"  (checking to make sure player 1 has sent the message)
 				else if(at_game_options && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.SET_KEY))
 				{
-					setKey(m.getMessage().split("_")[2]);
+					setKey(m.getMessage().split("_")[2] + "Major");
 				}
 				//message is "player1_settempo_X"  (checking to make sure player 1 has sent the message)
 				else if(at_game_options && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.SET_TEMPO))
@@ -481,7 +479,7 @@ public class GameManager implements ActionListener
 				//message is "player1_settimesignature_X_Y"  (checking to make sure player 1 has sent the message)
 				else if(at_game_options && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.SET_TIME_SIGNATURE))
 				{
-					setTimeSignature(Integer.parseInt(m.getMessage().split("_")[2]),Integer.parseInt(m.getMessage().split("_")[3]));
+					setTimeSignature(Integer.parseInt(m.getMessage().split("_")[2].split("/")[0]),Integer.parseInt(m.getMessage().split("_")[2].split("/")[1]));
 				}
 				//message is "player1_play"  (checking to make sure player 1 has sent the message)
 				else if(at_game_options && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.PLAY))
