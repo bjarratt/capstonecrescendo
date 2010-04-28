@@ -15,7 +15,6 @@
 #import "ServerTranslations.h"
 
 #import "ComposeViewController.h"
-#import "GamemodeViewController.h"
 #import "HelpViewController.h"
 
 @class DataController;
@@ -24,10 +23,9 @@
 	XMLClient *client;
 	BOOL clientConnected;
 	NSString *playerId;
-	IBOutlet GamemodeViewController *gamemodeViewController;
 	IBOutlet ComposeViewController *composeViewController;
 	IBOutlet HelpViewController *helpViewController;
-	IBOutlet UIButton *gameModes;
+	IBOutlet UIButton *start;
 	IBOutlet UIButton *connect;
 	IBOutlet UIButton *disconnect;
 	IBOutlet UITextField *ipText;
@@ -40,10 +38,9 @@
 @property (nonatomic, retain) XMLClient *client;
 @property (nonatomic, readwrite, assign) BOOL clientConnected;
 @property (nonatomic, retain) NSString *playerId;
-@property (nonatomic, retain) IBOutlet GamemodeViewController *gamemodeViewController;
 @property (nonatomic, retain) IBOutlet ComposeViewController *composeViewController;
 @property (nonatomic, retain) IBOutlet HelpViewController *helpViewController;
-@property (nonatomic, retain) IBOutlet UIButton *gameModes;
+@property (nonatomic, retain) IBOutlet UIButton *start;
 @property (nonatomic, retain) IBOutlet UIButton *connect;
 @property (nonatomic, retain) IBOutlet UIButton *disconnect;
 @property (nonatomic, retain) IBOutlet UITextField *ipText;
@@ -52,16 +49,13 @@
 @property (nonatomic, retain) DataController *dataController;
 @property (nonatomic, retain) UITableView *ipTableView;
 
-- (IBAction) freeCompose;
-- (IBAction) goToGamemodeView;
+- (IBAction) goStart;
 - (IBAction) goConnect;
 - (IBAction) goDisconnect;
 - (IBAction) goToHelpView;
 
 - (void) drawIP;
 - (void) drawMain;
-- (void) drawGamemodesQuick;
-- (void) drawComposeQuick;
 
 @end
 

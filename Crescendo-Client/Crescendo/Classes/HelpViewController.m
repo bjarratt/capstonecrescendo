@@ -26,27 +26,14 @@
 
 - (void) showMainHelp {
 
-if(!helpText){
-	helpText = [[UITextView alloc] initWithFrame:CGRectMake(39, 194, 240, 265)];
-	helpText.text = [NSString stringWithFormat: @"FROM MAIN SCREEN! The help text should go here. Depending on what view the HelpViewController is accessed from, this text should say something different that applies to that view. Crescendo Boosh!"];
-	helpText.backgroundColor = [UIColor blackColor];
-	helpText.textColor = [UIColor whiteColor];
-	helpText.font = [UIFont fontWithName:@"helvetica" size:24];
-	helpText.editable = NO;
-}
-[self.view addSubview:helpText];
-}
-
-- (void) showGameHelp {
-	
-	if(!helpText){
+	if(!helpText) {
 		helpText = [[UITextView alloc] initWithFrame:CGRectMake(39, 194, 240, 265)];
-		helpText.text = [NSString stringWithFormat: @"FROM GAME MODES SCREEN! The help text should go here. Depending on what view the HelpViewController is accessed from, this text should say something different that applies to that view. Crescendo Boosh!"];
 		helpText.backgroundColor = [UIColor blackColor];
 		helpText.textColor = [UIColor whiteColor];
-		helpText.font = [UIFont fontWithName:@"helvetica" size:32];
+		helpText.font = [UIFont fontWithName:@"helvetica" size:24];
 		helpText.editable = NO;
 	}
+	helpText.text = [NSString stringWithFormat: @"FROM MAIN SCREEN! The help text should go here. Depending on what view the HelpViewController is accessed from, this text should say something different that applies to that view. Crescendo Boosh!"];
 	[self.view addSubview:helpText];
 }
 

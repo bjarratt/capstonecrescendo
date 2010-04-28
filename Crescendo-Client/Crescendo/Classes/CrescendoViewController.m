@@ -10,6 +10,7 @@
 #import "AppConfig.h"
 
 #import "ConnectionRequest.h"
+#import "GameStateRequest.h"
 #import "GameTypeRequest.h"
 #import "PlayNoteRequest.h"
 
@@ -20,10 +21,9 @@
 @synthesize client;
 @synthesize clientConnected;
 @synthesize playerId;
-@synthesize gamemodeViewController;
 @synthesize composeViewController;
 @synthesize helpViewController;
-@synthesize gameModes;
+@synthesize start;
 @synthesize connect;
 @synthesize disconnect;
 @synthesize ipText;
@@ -48,11 +48,8 @@
 		return;
 	}
 	self.clientConnected = YES;
-	if (self.gamemodeViewController) {
-		[self.gamemodeViewController setClientConnected: YES];
-		if (self.gamemodeViewController.composeViewController) {
-			[self.gamemodeViewController.composeViewController setClientConnected: YES];
-		}
+	if (self.composeViewController) {
+		[self.composeViewController setClientConnected: YES];
 	}
 	[self drawMain];
 }
@@ -128,19 +125,19 @@
 
 #pragma mark Interface Methods
 
-//TODO: Go from Start to Free Compose (skip over the gamemodeViewController)
-- (IBAction) freeCompose {
+- (IBAction) goStart {
 	composeViewController.client = self.client;
 	composeViewController.clientConnected = self.clientConnected;
 	composeViewController.playerId = self.playerId;
+	
 	/*
 	 *	Send game type selected to public display
 	 */
-	NSString* inputText = [NSString stringWithFormat: @"%@_%@", playerId, @"notetraining"];
+	NSString* inputText = [NSString stringWithFormat: @"%@_%@", playerId, @"gameoptions"];
 	
     // Initialize PlayNoteRequest and set message to content's of the text field.
-	GameTypeRequest* request = [[GameTypeRequest alloc] init];
-    [request setGameType:inputText];
+	GameStateRequest* request = [[GameStateRequest alloc] init];
+    [request setGameState:inputText];
     
     // Setup the client to send the message a little later in the run loop.
     [client performSelector:@selector(sendMessage:) withObject: request];
@@ -148,14 +145,6 @@
     [request release];
 	
 	[self presentModalViewController:composeViewController animated:YES];
-}
-
-
-- (IBAction) goToGamemodeView {
-	gamemodeViewController.client = self.client;
-	gamemodeViewController.clientConnected = self.clientConnected;
-	gamemodeViewController.playerId = self.playerId;
-	[self presentModalViewController:gamemodeViewController animated:YES];
 }
 
 - (IBAction) goConnect {
@@ -208,7 +197,7 @@
 
 - (IBAction) goToHelpView {
 	[self presentModalViewController:helpViewController	animated:YES];
-	helpViewController.showMainHelp;
+	[helpViewController showMainHelp];
 }
 
 #pragma mark Draw Methods
@@ -218,7 +207,7 @@
 	disconnect.hidden = YES;
 	ipText.hidden = NO;
 	ipLabel.hidden = NO;
-	gameModes.hidden = YES;
+	start.hidden = YES;
 	//ipText.text = @"192.168.1.105";
 	//ipText.text = @"128.194.132.140";
 	ipText.text = @"128.194.143.165";
@@ -229,22 +218,7 @@
 	disconnect.hidden = NO;
 	ipText.hidden = YES;
 	ipLabel.hidden = YES;
-	gameModes.hidden = NO;
-	if (![playerId isEqualToString:@"player1"]) {
-		[self drawGamemodesQuick];
-	}
-}
-
-- (void) drawGamemodesQuick {
-	gamemodeViewController.client = self.client;
-	gamemodeViewController.clientConnected = self.clientConnected;
-	gamemodeViewController.playerId = self.playerId;
-	[self presentModalViewController:gamemodeViewController animated:NO];
-	[self performSelector:@selector(drawComposeQuick) withObject:nil];
-}
-
-- (void) drawComposeQuick {
-	[gamemodeViewController goToCompose];
+	start.hidden = NO;
 }
 
 #pragma mark Initialize View Methods
@@ -264,8 +238,6 @@
  - (void)loadView {
  }
  */
-
-#pragma mark Initialize View Methods
 
 - (void) viewWillAppear:(BOOL) animated {
 	[super viewDidAppear:animated];
@@ -322,7 +294,6 @@
 
 
 - (void) dealloc {
-	[gamemodeViewController release];
 	[helpViewController release];
 	[dataController release];
     [super dealloc];
@@ -334,11 +305,8 @@
 {
 	NSLog(@"The connection terminated!\n");
 	self.clientConnected = NO;
-	if (self.gamemodeViewController) {
-		[self.gamemodeViewController setClientConnected: NO];
-		if (self.gamemodeViewController.composeViewController) {
-			[self.gamemodeViewController.composeViewController setClientConnected: NO];
-		}
+	if (self.composeViewController) {
+		[self.composeViewController setClientConnected: NO];
 	}
 }
 
@@ -346,11 +314,8 @@
 {
 	NSLog(@"The connection failed to connect!\n");
 	self.clientConnected = NO;
-	if (self.gamemodeViewController) {
-		[self.gamemodeViewController setClientConnected: NO];
-		if (self.gamemodeViewController.composeViewController) {
-			[self.gamemodeViewController.composeViewController setClientConnected: NO];
-		}
+	if (self.composeViewController) {
+		[self.composeViewController setClientConnected: NO];
 	}
 	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Unable to connect" message:(@"Unable to connect to %@.", validatedIp) delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
 	[alert show];

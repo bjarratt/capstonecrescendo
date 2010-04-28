@@ -103,7 +103,7 @@
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
 					20,
-					1346,
+					1296,
 					20,
 					48,
 					43,
@@ -1430,9 +1430,9 @@
 	};
 	3E2A2A50117BD47A001A4136 /* ComposeViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1236, 21546}}";
-			sepNavSelRange = "{9249, 38}";
-			sepNavVisRange = "{51587, 1899}";
+			sepNavIntBoundsRect = "{{0, 0}, {1498, 23646}}";
+			sepNavSelRange = "{18215, 0}";
+			sepNavVisRange = "{17252, 1712}";
 			sepNavWindowFrame = "{{-1665, 308}, {952, 887}}";
 		};
 	};
@@ -1497,14 +1497,26 @@
 		};
 	};
 	3E2A2A5C117BD47A001A4136 /* GamemodeViewController.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = GamemodeViewController.h;
+		path = "/Users/seniorcapstone/Documents/XCode Workspace/SVN/Crescendo/Classes/GamemodeViewController.h";
+		sourceTree = "<absolute>";
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {893, 759}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1498, 558}}";
 			sepNavSelRange = "{707, 0}";
 			sepNavVisRange = "{0, 813}";
 			sepNavWindowFrame = "{{-1504, 161}, {952, 887}}";
 		};
 	};
 	3E2A2A5D117BD47A001A4136 /* GamemodeViewController.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = GamemodeViewController.m;
+		path = "/Users/seniorcapstone/Documents/XCode Workspace/SVN/Crescendo/Classes/GamemodeViewController.m";
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {984, 2744}}";
 			sepNavSelRange = "{4819, 0}";
@@ -1689,7 +1701,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {847, 5292}}";
 			sepNavSelRange = "{12914, 30}";
-			sepNavVisRange = "{12613, 419}";
+			sepNavVisRange = "{12613, 401}";
 			sepNavWindowFrame = "{{-998, 182}, {952, 887}}";
 		};
 	};

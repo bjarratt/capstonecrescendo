@@ -11,7 +11,9 @@
 
 @interface GameStateRequest : RequestMessage
 {
-	/* playerX_play (opposite of pause)
+	/* player1_splashscreen
+	 * player1_gameoptions
+	 * playerX_play (opposite of pause)
 	 * playerX_pause (opposite of play)
 	 * playerX_play_song
 	 */
