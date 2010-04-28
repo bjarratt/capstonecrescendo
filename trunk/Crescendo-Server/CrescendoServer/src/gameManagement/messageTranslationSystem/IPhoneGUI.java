@@ -21,17 +21,7 @@ public class IPhoneGUI extends JPanel implements ActionListener
 	private JButton disconnect;
 	private JButton playNote;
 	private JButton splashScreen;
-	private JButton gameTypes;
-	private JButton lengthTraining;
-	private JButton pitchTraining;
-	private JButton noteTraining;
-	private JButton concertMaster;
-	private JButton musicalIphones;
-	private JButton notesAroundTheRoom;
-	private JButton compTime;
-	private JButton compose;
-	private JButton keyMaster;
-	private JButton gameInfo;
+	private JButton gameOptions;
 	private JButton setTempo;
 	private JButton setKey;
 	private JButton setTimeSignature;
@@ -66,49 +56,9 @@ public class IPhoneGUI extends JPanel implements ActionListener
 		splashScreen.addActionListener(this);
 		this.add(splashScreen);
 
-		gameTypes = new JButton("Got to Game Modes State");
-		gameTypes.addActionListener(this);
-		this.add(gameTypes);
-		
-//		lengthTraining = new JButton("Length Training");
-//		lengthTraining.addActionListener(this);
-//		this.add(lengthTraining);
-//
-//		pitchTraining = new JButton("Pitch Training");
-//		pitchTraining.addActionListener(this);
-//		this.add(pitchTraining);
-//
-//		noteTraining = new JButton("Note Training");
-//		noteTraining.addActionListener(this);
-//		this.add(noteTraining);
-//
-//		concertMaster = new JButton("Concert Master");
-//		concertMaster.addActionListener(this);
-//		this.add(concertMaster);
-//
-//		musicalIphones = new JButton("Musical iPhones");
-//		musicalIphones.addActionListener(this);
-//		this.add(musicalIphones);
-//
-//		notesAroundTheRoom = new JButton("Notes Around the Room");
-//		notesAroundTheRoom.addActionListener(this);
-//		this.add(notesAroundTheRoom);
-//
-//		compTime = new JButton("Comp Time");
-//		compTime.addActionListener(this);
-//		this.add(compTime);
-//
-//		compose = new JButton("Compose");
-//		compose.addActionListener(this);
-//		this.add(compose);
-
-		keyMaster = new JButton("Key Master");
-		keyMaster.addActionListener(this);
-		this.add(keyMaster);
-
-//		gameInfo = new JButton("Go to Game Info State");
-//		gameInfo.addActionListener(this);
-//		this.add(gameInfo);
+		gameOptions = new JButton("Got to Game Options State");
+		gameOptions.addActionListener(this);
+		this.add(gameOptions);
 
 		setTempo = new JButton("Set Tempo (Random)");
 		setTempo.addActionListener(this);
@@ -158,28 +108,8 @@ public class IPhoneGUI extends JPanel implements ActionListener
 			myCM.sendMessage(player + "_" + generatePitch() + "_" + generateLength());
 		if(e.getSource() == splashScreen)
 			myCM.sendMessage(player + "_" + GameState.SPLASH_SCREEN);
-		if(e.getSource() == gameTypes)
-			myCM.sendMessage(player + "_" + GameState.GAME_MODES);
-		if(e.getSource() == pitchTraining)
-			myCM.sendMessage(player + "_" + GameState.PITCH_TRAINING);
-		if(e.getSource() == lengthTraining)
-			myCM.sendMessage(player + "_" + GameState.LENGTH_TRAINING);
-		if(e.getSource() == noteTraining)
-			myCM.sendMessage(player + "_" + GameState.NOTE_TRAINING);
-		if(e.getSource() == concertMaster)
-			myCM.sendMessage(player + "_" + GameState.CONCERT_MASTER);
-		if(e.getSource() == musicalIphones)
-			myCM.sendMessage(player + "_" + GameState.MUSICAL_IPHONES);
-		if(e.getSource() == notesAroundTheRoom)
-			myCM.sendMessage(player + "_" + GameState.NOTES_AROUND_THE_ROOM);
-		if(e.getSource() == compTime)
-			myCM.sendMessage(player + "_" + GameState.COMP_TIME);
-		if(e.getSource() == compose)
-			myCM.sendMessage(player + "_" + GameState.COMPOSE);
-		if(e.getSource() == keyMaster)
-			myCM.sendMessage(player + "_" + GameState.KEY_MASTER);
-		if(e.getSource() == gameInfo)
-			myCM.sendMessage(player + "_" + GameState.GAME_INFO);
+		if(e.getSource() == gameOptions)
+			myCM.sendMessage(player + "_" + GameState.GAME_OPTIONS);
 		if(e.getSource() == setTempo)
 			myCM.sendMessage(player + "_" + GameState.SET_TEMPO + "_" + generateTempo());
 		if(e.getSource() == setKey)
@@ -193,7 +123,7 @@ public class IPhoneGUI extends JPanel implements ActionListener
 		if(e.getSource() == pause)
 			myCM.sendMessage(player + "_" + GameState.PAUSE);
 		if(e.getSource() == review)
-			myCM.sendMessage(player + "_" + GameState.REVIEW);
+			myCM.sendMessage(player + "_" + GameState.PLAY_SONG);
 	}
 
 	/**
@@ -203,7 +133,7 @@ public class IPhoneGUI extends JPanel implements ActionListener
 	 */
 	private String generatePitch()
 	{
-		switch(rand.nextInt(15))
+		switch(rand.nextInt(16))
 		{
 			case 0:
 				return "E5";
@@ -233,8 +163,10 @@ public class IPhoneGUI extends JPanel implements ActionListener
 				return "E6";
 			case 13:
 				return "F6";
-			default:
+			case 14:
 				return "FSharp6";
+			default:
+				return "rest";
 		}
 	}
 

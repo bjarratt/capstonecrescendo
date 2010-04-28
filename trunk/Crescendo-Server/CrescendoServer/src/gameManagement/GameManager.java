@@ -128,10 +128,10 @@ public class GameManager implements ActionListener
 		currentPlayerId = Players.PLAYER_ONE;
 		pausedPlayerId = new String();
 
-		player1Score = 1000;
-		player2Score = 1000;
-		player3Score = 1000;
-		player4Score = 1000;
+		player1Score = 1337;
+		player2Score = 1337;
+		player3Score = 1337;
+		player4Score = 1337;
 		
 		gameBeats = new ArrayList<Beat>();
 
@@ -356,7 +356,6 @@ public class GameManager implements ActionListener
 				if(m.getMessage().split("_")[1].equals("disconnect"))
 				{
 					at_splash_screen = true;
-					at_game_modes = false;
 					at_game_options = false;
 					at_play = false;
 					at_pause = false;
@@ -364,12 +363,7 @@ public class GameManager implements ActionListener
 					inGameTimer.stop();
 					sendMessageToDisplay(m.getMessage());
 					
-//					mySplashScreen.setConnected(1,false);
-//					mySplashScreen.setConnected(2,false);
-//					mySplashScreen.setConnected(3,false);
-//					mySplashScreen.setConnected(4,false);
-					
-					numberOfActivePlayers=0;
+					numberOfActivePlayers = 0;
 					
 					//clear other game state
 					gameBeats = new ArrayList<Beat>();
@@ -384,7 +378,14 @@ public class GameManager implements ActionListener
 
 					currentTick = 0;
 					currentInGameTick = 0;
+					additionalInGameTime = 0;
 
+					player1Score = 1337;
+					player2Score = 1337;
+					player3Score = 1337;
+					player4Score = 1337;
+					
+					currentPlayerId = Players.PLAYER_ONE;
 					pausedPlayerId = new String();
 
 					notesToSend = new ArrayList<Note>();
@@ -408,6 +409,11 @@ public class GameManager implements ActionListener
 //						
 //					}
 					
+//					mySplashScreen.setConnected(1,false);
+//					mySplashScreen.setConnected(2,false);
+//					mySplashScreen.setConnected(3,false);
+//					mySplashScreen.setConnected(4,false);
+					
 					System.out.println("All players have been disconnected");
 					System.out.println("*****\tAt the Splash Screen\t*****");
 				}
@@ -421,7 +427,7 @@ public class GameManager implements ActionListener
 					sendMessageToDisplay(m.getMessage());
 				}
 				//message is "player1_gamemodes"  (checking to make sure player 1 has sent the message)
-				else if(at_splash_screen && numberOfActivePlayers>0 && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.GAME_MODES))
+				else if(at_splash_screen && numberOfActivePlayers>0 && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.GAME_OPTIONS))
 				{
 //					try
 //					{
@@ -431,53 +437,17 @@ public class GameManager implements ActionListener
 //					{
 //						
 //					}
-					System.out.println("*****\tAt the Game Modes Screen\t*****");
+					System.out.println("*****\tAt the Game Options Screen\t*****");
 					
 					at_splash_screen = false;
-					at_game_modes = true;
-//					myGameWindow.setPlayerCount(numberOfActivePlayers);
-					sendMessageToDisplay(m.getMessage());
-				}
-				
-				//     GAME MODES     //
-				//message is "player1_splashscreen"  (checking to make sure player 1 has sent the message)
-				else if(at_game_modes && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.SPLASH_SCREEN))
-				{
-//					try
-//					{
-//						WindowManager.getInstance().previousWindow(GameState.SPLASH_SCREEN);
-//					}
-//					catch(InterruptedException e)
-//					{
-//						
-//					}
-					System.out.println("*****\tAt the Splash Screen\t*****");
-					at_game_modes = false;
-					at_splash_screen = true;
-					sendMessageToDisplay(m.getMessage());
-				}
-
-				//message is "player1_keymaster"  (checking to make sure player 1 has sent the message)
-				else if(at_game_modes && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.KEY_MASTER))
-				{
-//					try
-//					{
-//						WindowManager.getInstance().nextWindow(GameState.GAME_OPTIONS);
-//					}
-//					catch(InterruptedException e)
-//					{
-//						
-//					}
-					gameMode = GameState.KEY_MASTER;
-					System.out.println("*****\tAt the Game Options Screen\t*****");
-					at_game_modes = false;
 					at_game_options = true;
+//					myGameWindow.setPlayerCount(numberOfActivePlayers);
 					sendMessageToDisplay(m.getMessage());
 				}
 				
 				//     GAME OPTIONS     //
 				//message is "player1_gameinfo"  (checking to make sure player 1 has sent the message)
-				else if(at_game_options && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.GAME_MODES))
+				else if(at_game_options && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.SPLASH_SCREEN))
 				{
 //					try
 //					{
@@ -490,7 +460,7 @@ public class GameManager implements ActionListener
 					System.out.println("*****\tAt the Game Modes Screen\t*****");
 					//System.out.println("*****\tAt the Game Info Screen\t*****");
 					at_game_options = false;
-					at_game_modes = true;
+					at_splash_screen = true;
 					sendMessageToDisplay(m.getMessage());
 				}
 				//message is "player1_setkey_X"  (checking to make sure player 1 has sent the message)
@@ -601,6 +571,7 @@ public class GameManager implements ActionListener
 //						
 //					}
 					System.out.println("*****\tAt the Splash Screen\t*****");
+					
 					at_post_game = false;
 					at_splash_screen = true;
 					
@@ -617,14 +588,21 @@ public class GameManager implements ActionListener
 
 					currentTick = 0;
 					currentInGameTick = 0;
+					additionalInGameTime = 0;
 
+					player1Score = 1337;
+					player2Score = 1337;
+					player3Score = 1337;
+					player4Score = 1337;
+					
+					currentPlayerId = Players.PLAYER_ONE;
 					pausedPlayerId = new String();
+					
+					notesToSend = new ArrayList<Note>();
 					
 					int oldNumberOfPlayers = numberOfActivePlayers;
 					numberOfActivePlayers = 0;
 
-					notesToSend = new ArrayList<Note>();
-					
 					for(int i = 0; i < oldNumberOfPlayers; i++)
 					{
 						addMessageToPool("player" + (i+1) + "_" + GameState.CONNECT);
@@ -679,7 +657,6 @@ public class GameManager implements ActionListener
 				}
 				else
 				{
-
 					lastNoteBeats = new ArrayList<Beat>();
 					firstNoteBeats = new ArrayList<Beat>();
 						

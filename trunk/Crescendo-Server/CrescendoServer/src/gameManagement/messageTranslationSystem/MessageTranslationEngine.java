@@ -31,6 +31,7 @@ public class MessageTranslationEngine
 		pitches.put("E6", "E6");
 		pitches.put("F6", "F6");
 		pitches.put("FSharp6", "F#6");
+		pitches.put("rest", "R");
 
 		//set up the available note lengths
 		lengths.put("eighth", "i");
@@ -61,22 +62,11 @@ public class MessageTranslationEngine
 			if(	one.equals(GameState.CONNECT) ||
 				one.equals(GameState.DISCONNECT) ||
 				one.equals(GameState.SPLASH_SCREEN) ||
-				one.equals(GameState.GAME_MODES) ||
-				one.equals(GameState.GAME_INFO) ||
 				one.equals(GameState.GAME_OPTIONS) ||
 				one.equals(GameState.PLAY) ||
 				one.equals(GameState.PAUSE) ||
-				one.equals(GameState.LENGTH_TRAINING) ||
-				one.equals(GameState.PITCH_TRAINING) ||
-				one.equals(GameState.NOTE_TRAINING) ||
-				one.equals(GameState.CONCERT_MASTER) ||
-				one.equals(GameState.MUSICAL_IPHONES) ||
-				one.equals(GameState.NOTES_AROUND_THE_ROOM) ||
-				one.equals(GameState.COMP_TIME) ||
-				one.equals(GameState.COMPOSE) ||
-				one.equals(GameState.KEY_MASTER) ||
 				one.equals(GameState.POST_GAME) ||
-				one.equals(GameState.REVIEW) ||
+				one.equals(GameState.PLAY_SONG) ||
 				one.equals(GameState.EXIT))
 			{
 				//all good!  :)

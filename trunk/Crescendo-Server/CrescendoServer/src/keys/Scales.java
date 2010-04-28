@@ -209,7 +209,7 @@ public class Scales
 	 */
 	public static boolean isNoteInKey(Note note, String key)
 	{
-		if(allKeys.containsKey(key) && allKeys.get(key).contains(note.getPitch()))
+		if((allKeys.containsKey(key) && allKeys.get(key).contains(note.getPitch())) || (note.getPitch().equals(Pitches.Rest)))
 			return true;
 		return false;
 	}
