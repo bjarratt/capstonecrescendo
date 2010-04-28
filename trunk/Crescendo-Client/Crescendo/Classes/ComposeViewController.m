@@ -21,6 +21,7 @@
 @synthesize myLengthScrollView;
 @synthesize myPitchScrollView;
 @synthesize buildButton;
+@synthesize volumeButton;
 @synthesize buildLabel;
 @synthesize gameLabel;
 @synthesize backgroundImage;
@@ -602,7 +603,6 @@
     
 	[inputText release];
     [request release];
-	[self playNote];
 }
 
 #pragma mark Draw Methods
@@ -710,7 +710,7 @@
 	/*
 	 * Build Button
 	 */
-	buildButton = [UIButton buttonWithType: UIButtonTypeRoundedRect];
+	buildButton = [UIButton buttonWithType: UIButtonTypeCustom];
 	buildButton.frame = CGRectMake(190, 110, 100, 100);
 	[buildButton addTarget:self	action:@selector(sendNoteToServer:) forControlEvents:UIControlEventTouchUpInside];
 	[self.view addSubview:buildButton];
@@ -718,9 +718,11 @@
 	/*
 	 * Volume Button
 	 */
-	volumeButton = [UIButton buttonWithType: UIButtonTypeRoundedRect];
+	volumeButton = [UIButton buttonWithType: UIButtonTypeCustom];
 	volumeButton.frame = CGRectMake(205, 235, 70, 70);
-	[volumeButton addTarget:self action:@selector(playNote:) forControlEvents:UIControlEventTouchUpInside];
+	[volumeButton addTarget:self action:@selector(playNote:) forControlEvents:UIControlEventTouchDown];
+	UIImage *volumeImage = [UIImage imageNamed:@"volume_icon.png"];
+	[volumeButton setImage:volumeImage forState:UIControlStateNormal];
 	[self.view addSubview:volumeButton];
 	
 	/*
