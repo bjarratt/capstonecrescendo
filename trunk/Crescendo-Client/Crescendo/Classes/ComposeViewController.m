@@ -289,6 +289,7 @@
     
     [request release];
 	self.inGame = NO;
+	
 	[self dismissModalViewControllerAnimated:YES];
 }
 
@@ -395,32 +396,19 @@
 	}
 	else {
 		if ([playerId isEqualToString:@"player1"]) {
-			if (startButton)
-				[startButton removeFromSuperview];
-			if (keySlider)
-				[keySlider removeFromSuperview];
-			if (timeSlider)
-				[timeSlider removeFromSuperview];
-			if (tempoSlider)
-				[tempoSlider removeFromSuperview];
-			if (barsSlider)
-				[barsSlider removeFromSuperview];
-			if (keyText)
-				[keyText removeFromSuperview];
-			if (timeText)
-				[timeText removeFromSuperview];
-			if (tempoText)
-				[tempoText removeFromSuperview];
-			if (barsText)
-				[barsText removeFromSuperview];
-			if (keyLabel)
-				[keyLabel removeFromSuperview];
-			if (timeLabel)
-				[timeLabel removeFromSuperview];
-			if (tempoLabel)
-				[tempoLabel removeFromSuperview];
-			if (barsLabel)
-				[barsLabel removeFromSuperview];
+			[startButton removeFromSuperview];
+			[keySlider removeFromSuperview];
+			[timeSlider removeFromSuperview];
+			[tempoSlider removeFromSuperview];
+			[barsSlider removeFromSuperview];
+			[keyText removeFromSuperview];
+			[timeText removeFromSuperview];
+			[tempoText removeFromSuperview];
+			[barsText removeFromSuperview];
+			[keyLabel removeFromSuperview];
+			[timeLabel removeFromSuperview];
+			[tempoLabel removeFromSuperview];
+			[barsLabel removeFromSuperview];
 		}
 		else {
 			[pauseButton removeFromSuperview];
@@ -1422,9 +1410,6 @@
 	pauseButton.frame = CGRectMake(50, 190, 220, 50);
 	[pauseButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 	[pauseButton setTitle: @"pause" forState:UIControlStateNormal];
-	//[pauseButton setTitle: @"pause" forState:UIControlStateHighlighted];
-	//[pauseButton setTitle: @"pause" forState:UIControlStateDisabled];
-	//[pauseButton setTitle: @"pause" forState:UIControlStateSelected];
 	[pauseButton setBackgroundImage:[UIImage imageNamed:@"menu_button_up.png"] forState:UIControlStateNormal];
 	[pauseButton addTarget:self	action:@selector(pausePlay:) forControlEvents:UIControlEventTouchUpInside];
 	[self.view addSubview:pauseButton];
@@ -1433,9 +1418,6 @@
 	playButton.frame = CGRectMake(50, 255, 220, 50);
 	[playButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 	[playButton setTitle: @"play song" forState:UIControlStateNormal];
-	//[pauseButton setTitle: @"pause" forState:UIControlStateHighlighted];
-	//[pauseButton setTitle: @"pause" forState:UIControlStateDisabled];
-	//[pauseButton setTitle: @"pause" forState:UIControlStateSelected];
 	[playButton setBackgroundImage:[UIImage imageNamed:@"menu_button_up.png"] forState:UIControlStateNormal];
 	[playButton addTarget:self	action:@selector(playSong:) forControlEvents:UIControlEventTouchUpInside];
 	[self.view addSubview:playButton];
@@ -1447,9 +1429,6 @@
 	disconnectButton.frame = CGRectMake(50, 320, 220, 50);
 	[disconnectButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 	[disconnectButton setTitle: @"disconnect" forState:UIControlStateNormal];
-	//[disconnectButton setTitle: @"disconnect" forState:UIControlStateHighlighted];
-	//[disconnectButton setTitle: @"disconnect" forState:UIControlStateDisabled];
-	//[disconnectButton setTitle: @"disconnect" forState:UIControlStateSelected];
 	[disconnectButton setBackgroundImage:[UIImage imageNamed:@"menu_button_up.png"] forState:UIControlStateNormal];
 	[disconnectButton addTarget:self action:@selector(disconnect:) forControlEvents:UIControlEventTouchUpInside];
 	[self.view addSubview:disconnectButton];
@@ -1467,13 +1446,9 @@
 	 * Start button
 	 */
 	if (!startButton) {
-		startButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-		startButton.frame = CGRectMake(50, 400, 220, 50);
+		startButton = [[UIButton alloc] initWithFrame:CGRectMake(50, 400, 220, 50) ];
 		[startButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 		[startButton setTitle: @"play" forState:UIControlStateNormal];
-		//[startButton setTitle: @"disconnect" forState:UIControlStateHighlighted];
-		//[startButton setTitle: @"disconnect" forState:UIControlStateDisabled];
-		//[startButton setTitle: @"disconnect" forState:UIControlStateSelected];
 		[startButton setBackgroundImage:[UIImage imageNamed:@"menu_button_up.png"] forState:UIControlStateNormal];
 		[startButton addTarget:self action:@selector(start:) forControlEvents:UIControlEventTouchUpInside];
 	}
