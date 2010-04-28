@@ -585,7 +585,7 @@
 - (void) updateBuildLabel {
 	buildLabel.text = [NSString stringWithFormat:@"%@_%@", notePitch, noteLength];
 	// Allows for the buildButton to reflect the currently selected note
-	[buildButton setBackgroundImage:[UIImage imageNamed: [[NSString alloc] initWithFormat:@"%@_%@.png", notePitch, [noteLength substringToIndex: [noteLength length] - 4]]] forState: UIControlStateNormal];
+	[buildButton setBackgroundImage:[UIImage imageNamed: [[NSString alloc] initWithFormat:@"%@_%@_selected.png", notePitch, [noteLength substringToIndex: [noteLength length] - 4]]] forState: UIControlStateNormal];
 }
 
 - (void) sendNoteToServer: (id) sender {
