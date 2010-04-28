@@ -26,6 +26,7 @@
 	UIScrollView *myLengthScrollView;
 	UIScrollView *myPitchScrollView;
 	UIButton *buildButton;
+	UIButton *volumeButton;
 	IBOutlet UILabel *buildLabel;
 	IBOutlet UIButton *backButton;
 	IBOutlet UILabel *gameLabel;
@@ -65,6 +66,7 @@
 @property (nonatomic, retain) UIScrollView *myLengthScrollView;
 @property (nonatomic, retain) UIScrollView *myPitchScrollView;
 @property (nonatomic, retain) UIButton *buildButton;
+@property (nonatomic, retain) UIButton *volumeButton;
 @property (nonatomic, retain) IBOutlet UILabel *buildLabel;
 @property (nonatomic, retain) IBOutlet UIButton *backButton;
 @property (nonatomic, retain) IBOutlet UILabel *gameLabel;
@@ -121,7 +123,7 @@
 - (void) drawEighthnotePitches;
 - (void) drawGameOptions;
 - (void) drawGamePlayOptions;
-- (void) playNote;
+- (void) playNote: (id) sender;
 
 @end
 
