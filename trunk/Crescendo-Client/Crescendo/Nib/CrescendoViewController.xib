@@ -110,6 +110,7 @@
 							<int key="NSfFlags">16</int>
 						</object>
 						<int key="IBUIButtonType">1</int>
+						<string key="IBUIDisabledTitle">connect</string>
 						<string key="IBUINormalTitle">connect</string>
 						<object class="NSColor" key="IBUIHighlightedTitleColor" id="248968066">
 							<int key="NSColorSpace">3</int>
@@ -120,10 +121,11 @@
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MCAwIDAAA</bytes>
 						</object>
-						<object class="NSCustomResource" key="IBUINormalBackgroundImage" id="121912276">
+						<object class="NSCustomResource" key="IBUIDisabledBackgroundImage" id="514363833">
 							<string key="NSClassName">NSImage</string>
 							<string key="NSResourceName">menu_button_up.png</string>
 						</object>
+						<reference key="IBUINormalBackgroundImage" ref="514363833"/>
 					</object>
 					<object class="IBUIButton" id="855116857">
 						<reference key="NSNextResponder" ref="774585933"/>
@@ -140,7 +142,7 @@
 						<reference key="IBUIHighlightedTitleColor" ref="248968066"/>
 						<reference key="IBUINormalTitleColor" ref="872876610"/>
 						<reference key="IBUINormalTitleShadowColor" ref="329507570"/>
-						<reference key="IBUINormalBackgroundImage" ref="121912276"/>
+						<reference key="IBUINormalBackgroundImage" ref="514363833"/>
 					</object>
 					<object class="IBUIButton" id="200680749">
 						<reference key="NSNextResponder" ref="774585933"/>
@@ -157,7 +159,7 @@
 						<reference key="IBUIHighlightedTitleColor" ref="248968066"/>
 						<reference key="IBUINormalTitleColor" ref="872876610"/>
 						<reference key="IBUINormalTitleShadowColor" ref="329507570"/>
-						<reference key="IBUINormalBackgroundImage" ref="121912276"/>
+						<reference key="IBUINormalBackgroundImage" ref="514363833"/>
 					</object>
 					<object class="IBUIButton" id="925771002">
 						<reference key="NSNextResponder" ref="774585933"/>

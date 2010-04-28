@@ -36,6 +36,7 @@
 
 - (void) recievedConnectionUpdate: (ConnectionUpdate*) update {
 	self.playerId = [NSString stringWithString: update.playerNumber];
+	connect.enabled = YES;
 	if ([playerId isEqualToString:@""]) {
 		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Max players" message:(@"Maximum number of players have connected to %@.", validatedIp) delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
 		[alert show];
@@ -159,6 +160,8 @@
 }
 
 - (IBAction) goConnect {
+	connect.enabled = NO;
+	
 	/*
 	 * Setup Client
 	 */
@@ -215,6 +218,7 @@
 	//ipText.text = @"192.168.1.105";
 	//ipText.text = @"128.194.132.140";
 	ipText.text = @"128.194.143.165";
+	ipTableView.hidden = NO;
 }
 
 - (void) drawMain {
@@ -222,6 +226,7 @@
 	disconnect.hidden = NO;
 	ipText.hidden = YES;
 	ipLabel.hidden = YES;
+	ipTableView.hidden = YES;
 	start.hidden = NO;
 }
 
