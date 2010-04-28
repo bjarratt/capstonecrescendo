@@ -74,12 +74,15 @@
 								 duration:(NSTimeInterval) duration {
 	
 	if (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || toInterfaceOrientation == UIInterfaceOrientationLandscapeRight) {
+		[[UIApplication sharedApplication] setStatusBarHidden: YES animated: YES];
 		[self drawPortraitLandscapeSideView];
 	}
 	else {
+		[[UIApplication sharedApplication] setStatusBarHidden: NO animated: YES];
 		[myLengthScrollView removeFromSuperview];
 		[myPitchScrollView removeFromSuperview];
 		[buildButton removeFromSuperview];
+		[volumeButton removeFromSuperview];
 		[self drawPortraitView];
 	}
 }
@@ -711,6 +714,14 @@
 	buildButton.frame = CGRectMake(190, 110, 100, 100);
 	[buildButton addTarget:self	action:@selector(sendNoteToServer:) forControlEvents:UIControlEventTouchUpInside];
 	[self.view addSubview:buildButton];
+	
+	/*
+	 * Volume Button
+	 */
+	volumeButton = [UIButton buttonWithType: UIButtonTypeRoundedRect];
+	volumeButton.frame = CGRectMake(205, 235, 70, 70);
+	[volumeButton addTarget:self action:@selector(playNote:) forControlEvents:UIControlEventTouchUpInside];
+	[self.view addSubview:volumeButton];
 	
 	/*
 	 * Note Pitch Scrollview
@@ -1580,7 +1591,7 @@
 
 #pragma mark Sound
 
-- (void) playNote {
+- (void) playNote: (id) sender {
 	NSString *inputText = [NSString stringWithFormat: @"/%@.wav", notePitch];
 	NSString *path = [NSString stringWithFormat:@"%@%@", [[NSBundle mainBundle] resourcePath], inputText];
 	SystemSoundID soundID;
@@ -1626,6 +1637,7 @@
 #pragma mark Unload Controller
 
 - (void) viewWillDisappear: (BOOL) animated {
+	[[UIApplication sharedApplication] setStatusBarHidden: NO animated: YES];
 }
 
 - (void) didReceiveMemoryWarning {
@@ -1646,6 +1658,7 @@
 	[myLengthScrollView release];
 	[myPitchScrollView release];
 	[buildButton release];
+	[volumeButton release];
 	[buildLabel release];
 	[backButton release];
 	[gameLabel release];
