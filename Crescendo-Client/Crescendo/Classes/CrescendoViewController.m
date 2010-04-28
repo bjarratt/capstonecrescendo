@@ -32,11 +32,6 @@
 @synthesize dataController;
 @synthesize ipTableView;
 
-#pragma mark PlayNoteUpdateDelegate Method
-
-- (void) recievedPlayNoteUpdate: (PlayNoteUpdate*) update {
-}
-
 #pragma mark ConnectionUpdateDelegate Method
 
 - (void) recievedConnectionUpdate: (ConnectionUpdate*) update {
@@ -52,11 +47,27 @@
 		[self.composeViewController setClientConnected: YES];
 	}
 	[self drawMain];
+	/*
+	 * Advance players (other than player 1) to compose screen
+	 */
+	if(![self.playerId isEqualToString: @"player1"]) {
+		[self goStart];
+	}
 }
 
 #pragma mark GameTypeUpdateDelegate Method
 
 - (void) recievedGameTypeUpdate: (GameTypeUpdate*) update {
+}
+
+#pragma mark GameStateUpdateDelegate Method
+
+- (void) recievedGameStateUpdate: (GameStateUpdate*) update {
+}
+
+#pragma mark PlayNoteUpdateDelegate Method
+
+- (void) recievedPlayNoteUpdate: (PlayNoteUpdate*) update {
 }
 
 #pragma mark UITextFieldDelegate Method
@@ -155,16 +166,9 @@
 	TranslationScope* scope = [ServerTranslations get];
 	
 	//TODO: Validate IP Address
-	
-	//UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"IP Invalid" message:(@"%@ is an incorrect IP Address.", validatedIp) delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-	//[alert show];
-	//[alert release];
-	
 	validatedIp = [ipText.text copy];
     
 	// Initialize the client with the ChatTranslations scope.
-	// 192.168.1.105
-	// 128.194.143.165
 	self.client = [[XMLClient alloc] initWithHostAddress:validatedIp andPort:2108 
 									 andTranslationScope:scope];
 	

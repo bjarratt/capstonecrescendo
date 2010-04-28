@@ -77,12 +77,16 @@
 		[self drawPortraitLandscapeSideView];
 	}
 	else {
+		[myLengthScrollView removeFromSuperview];
+		[myPitchScrollView removeFromSuperview];
+		[buildButton removeFromSuperview];
 		[self drawPortraitView];
 	}
 }
 
 - (BOOL) shouldAutorotateToInterfaceOrientation: (UIInterfaceOrientation) interfaceOrientation {
-	return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (interfaceOrientation == UIInterfaceOrientationLandscapeRight) || (interfaceOrientation == UIInterfaceOrientationPortrait);
+	return (interfaceOrientation == UIInterfaceOrientationLandscapeRight) || (interfaceOrientation == UIInterfaceOrientationPortrait);
+	//(interfaceOrientation == UIInterfaceOrientationLandscapeLeft) || 
 }
 
 #pragma mark ScrollView 
@@ -278,7 +282,7 @@
 	
     // Initialize PlayNoteRequest and set message to content's of the text field.
 	GameStateRequest* request = [[GameStateRequest alloc] init];
-    [request GameStateRequest:inputText];
+    [request setGameState:inputText];
     
     // Setup the client to send the message a little later in the run loop.
     [client performSelector:@selector(sendMessage:) withObject: request];
@@ -383,16 +387,47 @@
 }
 
 - (void) disconnect:(UIButton *)sender {
-	self.inGame = NO;
-	if ([playerId isEqualToString:@"player1"]) {
+	if (self.inGame == YES) {
 		[pauseButton removeFromSuperview];
 		[playButton removeFromSuperview];
 		[disconnectButton removeFromSuperview];
-		[self drawGameOptions];
 	}
 	else {
-		[self drawGamePlayOptions];
+		if ([playerId isEqualToString:@"player1"]) {
+			if (startButton)
+				[startButton removeFromSuperview];
+			if (keySlider)
+				[keySlider removeFromSuperview];
+			if (timeSlider)
+				[timeSlider removeFromSuperview];
+			if (tempoSlider)
+				[tempoSlider removeFromSuperview];
+			if (barsSlider)
+				[barsSlider removeFromSuperview];
+			if (keyText)
+				[keyText removeFromSuperview];
+			if (timeText)
+				[timeText removeFromSuperview];
+			if (tempoText)
+				[tempoText removeFromSuperview];
+			if (barsText)
+				[barsText removeFromSuperview];
+			if (keyLabel)
+				[keyLabel removeFromSuperview];
+			if (timeLabel)
+				[timeLabel removeFromSuperview];
+			if (tempoLabel)
+				[tempoLabel removeFromSuperview];
+			if (barsLabel)
+				[barsLabel removeFromSuperview];
+		}
+		else {
+			[pauseButton removeFromSuperview];
+			[playButton removeFromSuperview];
+			[disconnectButton removeFromSuperview];
+		}
 	}
+	self.inGame = NO;
 	[client disconnect];
 	[self dismissModalViewControllerAnimated: YES];
 }
@@ -583,9 +618,6 @@
 	/*
 	 * Properties
 	 */
-	[myLengthScrollView removeFromSuperview];
-	[myPitchScrollView removeFromSuperview];
-	[buildButton removeFromSuperview];
 	backButton.hidden = NO;
 	buildLabel.hidden = YES;
 	
@@ -628,25 +660,32 @@
 	 */
 	[myLengthScrollView removeFromSuperview];
 	[myPitchScrollView removeFromSuperview];
-	if (self.inGame == YES || ![playerId isEqualToString:@"player1"]) {
+	if (self.inGame == YES) {
 		[pauseButton removeFromSuperview];
 		[playButton removeFromSuperview];
 		[disconnectButton removeFromSuperview];
 	}
 	else {
-		[startButton removeFromSuperview];
-		[keySlider removeFromSuperview];
-		[timeSlider removeFromSuperview];
-		[tempoSlider removeFromSuperview];
-		[barsSlider removeFromSuperview];
-		[keyText removeFromSuperview];
-		[timeText removeFromSuperview];
-		[tempoText removeFromSuperview];
-		[barsText removeFromSuperview];
-		[keyLabel removeFromSuperview];
-		[timeLabel removeFromSuperview];
-		[tempoLabel removeFromSuperview];
-		[barsLabel removeFromSuperview];
+		if ([playerId isEqualToString:@"player1"]) {
+			[startButton removeFromSuperview];
+			[keySlider removeFromSuperview];
+			[timeSlider removeFromSuperview];
+			[tempoSlider removeFromSuperview];
+			[barsSlider removeFromSuperview];
+			[keyText removeFromSuperview];
+			[timeText removeFromSuperview];
+			[tempoText removeFromSuperview];
+			[barsText removeFromSuperview];
+			[keyLabel removeFromSuperview];
+			[timeLabel removeFromSuperview];
+			[tempoLabel removeFromSuperview];
+			[barsLabel removeFromSuperview];
+		}
+		else {
+			[pauseButton removeFromSuperview];
+			[playButton removeFromSuperview];
+			[disconnectButton removeFromSuperview];
+		}
 	}
 	[gameLabel removeFromSuperview];
 	[backgroundImage removeFromSuperview];
@@ -679,7 +718,7 @@
 	 * Build Button
 	 */
 	buildButton = [UIButton buttonWithType: UIButtonTypeRoundedRect];
-	buildButton.frame = CGRectMake(190, 135, 100, 100);
+	buildButton.frame = CGRectMake(190, 110, 100, 100);
 	[buildButton addTarget:self	action:@selector(sendNoteToServer:) forControlEvents:UIControlEventTouchUpInside];
 	[self.view addSubview:buildButton];
 	
@@ -1369,20 +1408,6 @@
 
 - (void) drawGamePlayOptions {
 	backButton.hidden = YES;
-	if (self.inGame == NO) {
-		[keySlider removeFromSuperview];
-		[timeSlider removeFromSuperview];
-		[tempoSlider removeFromSuperview];
-		[barsSlider removeFromSuperview];
-		[keyText removeFromSuperview];
-		[timeText removeFromSuperview];
-		[tempoText removeFromSuperview];
-		[barsText removeFromSuperview];
-		[keyLabel removeFromSuperview];
-		[tempoLabel removeFromSuperview];
-		[barsLabel removeFromSuperview];
-		[startButton removeFromSuperview];
-	}
 	/*
 	 * Label
 	 */
@@ -1579,14 +1604,16 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-	/******************
-	 * User Interface *
-	 ******************/
-	[self drawPortraitView];
 }
 
 -(void) viewWillAppear: (BOOL) animated {
-	self.inGame = NO;
+	if ([playerId isEqualToString:@"player1"]) {
+		self.inGame = NO;
+	}
+	else {
+		self.inGame = YES;
+	}
+	[self drawPortraitView];
 }
 
 /*
@@ -1606,7 +1633,6 @@
 #pragma mark Unload Controller
 
 - (void) viewWillDisappear: (BOOL) animated {
-	self.inGame = NO;
 }
 
 - (void) didReceiveMemoryWarning {
