@@ -666,7 +666,7 @@
 	 * Build Button
 	 */
 	buildButton = [UIButton buttonWithType: UIButtonTypeRoundedRect];
-	buildButton.frame = CGRectMake(190, 105, 100, 100);
+	buildButton.frame = CGRectMake(190, 135, 100, 100);
 	[buildButton addTarget:self	action:@selector(sendNoteToServer:) forControlEvents:UIControlEventTouchUpInside];
 	[self.view addSubview:buildButton];
 	
