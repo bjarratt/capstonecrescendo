@@ -18,6 +18,5 @@
 
 - (IBAction) goBack;
 -(void) showMainHelp;
--(void) showGameHelp;
 
 @end

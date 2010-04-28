@@ -17,7 +17,6 @@
 		3E2A2A73117BD47A001A4136 /* ConnectionUpdateDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2A2A56117BD47A001A4136 /* ConnectionUpdateDelegate.m */; };
 		3E2A2A74117BD47A001A4136 /* CrescendoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2A2A59117BD47A001A4136 /* CrescendoAppDelegate.m */; };
 		3E2A2A75117BD47A001A4136 /* CrescendoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2A2A5B117BD47A001A4136 /* CrescendoViewController.m */; };
-		3E2A2A76117BD47A001A4136 /* GamemodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2A2A5D117BD47A001A4136 /* GamemodeViewController.m */; };
 		3E2A2A77117BD47A001A4136 /* GameTypeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2A2A5F117BD47A001A4136 /* GameTypeRequest.m */; };
 		3E2A2A78117BD47A001A4136 /* GameTypeUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2A2A61117BD47A001A4136 /* GameTypeUpdate.m */; };
 		3E2A2A79117BD47A001A4136 /* GameTypeUpdateDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2A2A63117BD47A001A4136 /* GameTypeUpdateDelegate.m */; };
@@ -320,8 +319,6 @@
 		3E2A2A59117BD47A001A4136 /* CrescendoAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrescendoAppDelegate.m; sourceTree = "<group>"; };
 		3E2A2A5A117BD47A001A4136 /* CrescendoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrescendoViewController.h; sourceTree = "<group>"; };
 		3E2A2A5B117BD47A001A4136 /* CrescendoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrescendoViewController.m; sourceTree = "<group>"; };
-		3E2A2A5C117BD47A001A4136 /* GamemodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamemodeViewController.h; sourceTree = "<group>"; };
-		3E2A2A5D117BD47A001A4136 /* GamemodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamemodeViewController.m; sourceTree = "<group>"; };
 		3E2A2A5E117BD47A001A4136 /* GameTypeRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameTypeRequest.h; sourceTree = "<group>"; };
 		3E2A2A5F117BD47A001A4136 /* GameTypeRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameTypeRequest.m; sourceTree = "<group>"; };
 		3E2A2A60117BD47A001A4136 /* GameTypeUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameTypeUpdate.h; sourceTree = "<group>"; };
@@ -710,7 +707,6 @@
 				3EFC26081183D87D0083B74E /* DataController.h */,
 				3EFC26091183D87D0083B74E /* DataController.m */,
 				3E2A2A83117BD4B5001A4136 /* Compose */,
-				3E2A2A82117BD4AE001A4136 /* Gamemode */,
 				3E2A2A81117BD4A5001A4136 /* Help */,
 			);
 			name = "Crescendo Controllers";
@@ -723,15 +719,6 @@
 				3E2A2A65117BD47A001A4136 /* HelpViewController.m */,
 			);
 			name = Help;
-			sourceTree = "<group>";
-		};
-		3E2A2A82117BD4AE001A4136 /* Gamemode */ = {
-			isa = PBXGroup;
-			children = (
-				3E2A2A5C117BD47A001A4136 /* GamemodeViewController.h */,
-				3E2A2A5D117BD47A001A4136 /* GamemodeViewController.m */,
-			);
-			name = Gamemode;
 			sourceTree = "<group>";
 		};
 		3E2A2A83117BD4B5001A4136 /* Compose */ = {
@@ -1439,7 +1426,6 @@
 				3E2A2A73117BD47A001A4136 /* ConnectionUpdateDelegate.m in Sources */,
 				3E2A2A74117BD47A001A4136 /* CrescendoAppDelegate.m in Sources */,
 				3E2A2A75117BD47A001A4136 /* CrescendoViewController.m in Sources */,
-				3E2A2A76117BD47A001A4136 /* GamemodeViewController.m in Sources */,
 				3E2A2A77117BD47A001A4136 /* GameTypeRequest.m in Sources */,
 				3E2A2A78117BD47A001A4136 /* GameTypeUpdate.m in Sources */,
 				3E2A2A79117BD47A001A4136 /* GameTypeUpdateDelegate.m in Sources */,

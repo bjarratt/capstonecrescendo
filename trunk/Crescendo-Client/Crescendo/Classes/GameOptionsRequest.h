@@ -11,9 +11,7 @@
 
 @interface GameOptionsRequest : RequestMessage
 {
-	/* player1_play (start button)
-	 * --- Update on slider movement ---
-	 * player1_settempo_X
+	/* player1_settempo_X
 	 * player1_setkey_PITCH
 	 * player1_settimesignature_X_Y
 	 * player1_setnumberofbars_X

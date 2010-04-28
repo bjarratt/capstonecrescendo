@@ -271,6 +271,19 @@
 #pragma mark Interface Methods
 
 - (IBAction) goBack {
+	/*
+	 *	Send game type selected to public display
+	 */
+	NSString* inputText = [NSString stringWithFormat: @"%@_%@", playerId, @"splashscreen"];
+	
+    // Initialize PlayNoteRequest and set message to content's of the text field.
+	GameStateRequest* request = [[GameStateRequest alloc] init];
+    [request GameStateRequest:inputText];
+    
+    // Setup the client to send the message a little later in the run loop.
+    [client performSelector:@selector(sendMessage:) withObject: request];
+    
+    [request release];
 	[self dismissModalViewControllerAnimated:YES];
 }
 
@@ -381,7 +394,7 @@
 		[self drawGamePlayOptions];
 	}
 	[client disconnect];
-	[self dismissModalViewControllerAnimated:NO];
+	[self dismissModalViewControllerAnimated: YES];
 }
 
 - (void) keySliderValueSet:(UISlider *)sender {
@@ -656,9 +669,9 @@
 	if ([playerId isEqualToString:@"player1"])
 		self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"compose_background_red.png"]];
 	else if ([playerId isEqualToString:@"player2"])
-		self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"compose_background_blue.png"]];
-	else if ([playerId isEqualToString:@"player3"])
 		self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"compose_background_green.png"]];
+	else if ([playerId isEqualToString:@"player3"])
+		self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"compose_background_blue.png"]];
 	else if ([playerId isEqualToString:@"player4"])
 		self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"compose_background_orange.png"]];
 
