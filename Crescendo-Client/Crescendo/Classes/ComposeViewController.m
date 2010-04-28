@@ -1581,11 +1581,15 @@
 #pragma mark Sound
 
 - (void) playNote {
-	NSString *path = [NSString stringWithFormat:@"%@%@", [[NSBundle mainBundle] resourcePath], @"/GSharp5.wav"];
+	NSString *inputText = [NSString stringWithFormat: @"/%@.wav", notePitch];
+	NSString *path = [NSString stringWithFormat:@"%@%@", [[NSBundle mainBundle] resourcePath], inputText];
 	SystemSoundID soundID;
 	NSURL *filePath = [NSURL fileURLWithPath:path isDirectory:NO];
 	AudioServicesCreateSystemSoundID((CFURLRef) filePath, &soundID);
 	AudioServicesPlaySystemSound(soundID);
+	//[inputText release];
+	//[path release];
+	//[filePath release];
 }
 
 #pragma mark Initialize View Methods
