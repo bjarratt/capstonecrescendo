@@ -19,7 +19,7 @@
 
 @class DataController;
 
-@interface CrescendoViewController : UIViewController <ConnectionUpdateDelegate, GameTypeUpdateDelegate, PlayNoteUpdateDelegate, XMLClientDelegate, UITextFieldDelegate, UIAlertViewDelegate, UITableViewDelegate, UITableViewDataSource> {
+@interface CrescendoViewController : UIViewController <ConnectionUpdateDelegate, GameTypeUpdateDelegate, GameStateUpdateDelegate, PlayNoteUpdateDelegate, XMLClientDelegate, UITextFieldDelegate, UIAlertViewDelegate, UITableViewDelegate, UITableViewDataSource> {
 	XMLClient *client;
 	BOOL clientConnected;
 	NSString *playerId;
