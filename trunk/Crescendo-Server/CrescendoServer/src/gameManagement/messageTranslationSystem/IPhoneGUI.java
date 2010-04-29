@@ -115,7 +115,7 @@ public class IPhoneGUI extends JPanel implements ActionListener
 		if(e.getSource() == setKey)
 			myCM.sendMessage(player + "_" + GameState.SET_KEY + "_" + generateKey());
 		if(e.getSource() == setTimeSignature)
-			myCM.sendMessage(player + "_" + GameState.SET_TIME_SIGNATURE + "_" + generateTimeSignatureNumerator()+ "_4");
+			myCM.sendMessage(player + "_" + GameState.SET_TIME_SIGNATURE + "_" + generateTimeSignatureNumerator()+ "/4");
 		if(e.getSource() == setNumberOfBars)
 			myCM.sendMessage(player + "_" + GameState.SET_NUMBER_OF_BARS + "_" + generateNumberOfBars());
 		if(e.getSource() == play)
@@ -200,29 +200,29 @@ public class IPhoneGUI extends JPanel implements ActionListener
 		switch(rand.nextInt(12))
 		{
 			case 0:
-				return keys.KeySignatures.FMajor;
+				return "F";
 			case 1:
-				return keys.KeySignatures.CMajor;
+				return "C";
 			case 2:
-				return keys.KeySignatures.GMajor;
+				return "G";
 			case 3:
-				return keys.KeySignatures.DMajor;
+				return "D";
 			case 4:
-				return keys.KeySignatures.AMajor;
+				return "A";
 			case 5:
-				return keys.KeySignatures.EMajor;
+				return "E";
 			case 6:
-				return keys.KeySignatures.BMajor;
+				return "B";
 			case 7:
-				return keys.KeySignatures.FSharpMajor;
+				return "FSharp";
 			case 8:
-				return keys.KeySignatures.BFlatMajor;
+				return "BFlat";
 			case 9:
-				return keys.KeySignatures.EFlatMajor;
+				return "EFlat";
 			case 10:
-				return keys.KeySignatures.AFlatMajor;
+				return "AFlat";
 			default:
-				return keys.KeySignatures.DFlatMajor;
+				return "DFlat";
 		}
 	}
 	

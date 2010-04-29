@@ -47,6 +47,7 @@ public class GameManager implements ActionListener
 	private boolean at_pause;
 	private boolean at_post_game;
 
+	private boolean gameStart;
 	private boolean gameIsDone;
 	
 	KeyMaster keyMaster;
@@ -57,6 +58,8 @@ public class GameManager implements ActionListener
 	
 	private String currentPlayerId;
 	private String pausedPlayerId;
+	
+	Note previousNotePlayed;
 	
 	private int player1Score;
 	private int player2Score;
@@ -117,6 +120,7 @@ public class GameManager implements ActionListener
 		at_pause = false;
 		at_post_game = false;
 
+		gameStart = true;
 		gameIsDone = false;
 		
 		notesToSend = new ArrayList<Note>();
@@ -125,6 +129,8 @@ public class GameManager implements ActionListener
 
 		currentPlayerId = Players.PLAYER_ONE;
 		pausedPlayerId = new String();
+		
+		previousNotePlayed = null;
 
 		player1Score = 1337;
 		player2Score = 1337;
@@ -213,12 +219,48 @@ public class GameManager implements ActionListener
 				this.translateMessagePool();
 	
 				if(at_play)
-				{
-					this.constructMeasures();
-					this.checkNotesForCorrectness();
-					this.scoreNotes();
-					this.sendScoresToDisplay();
-					this.sendNotesToDisplay();
+				{				
+					if(gameStart)
+					{
+						if(currentTick < 5)
+						{
+							try
+							{
+								sendTimeToDisplay(5 - currentTick);
+								Thread.sleep(1000);
+								currentTick++;
+								sendTimeToDisplay(5 - currentTick);
+								Thread.sleep(1000);
+								currentTick++;
+								sendTimeToDisplay(5 - currentTick);
+								Thread.sleep(1000);
+								currentTick++;
+								sendTimeToDisplay(5 - currentTick);
+								Thread.sleep(1000);
+								currentTick++;
+								sendTimeToDisplay(5 - currentTick);
+								Thread.sleep(1000);
+								currentTick++;
+							}
+							catch(InterruptedException e)
+							{
+								e.printStackTrace();
+							}
+						}
+						if(5 - currentTick <= 0)
+						{
+							gameStart = false;
+							currentInGameTick = 0;
+						}
+					}
+					else
+					{
+						this.constructMeasures();
+						this.checkNotesForCorrectness();
+						this.scoreNotes();
+						this.sendScoresToDisplay();
+						this.sendNotesToDisplay();
+					}
 					
 					if(!gameIsDone && (gameMeasures.size()>numberOfBars || (gameMeasures.size()==numberOfBars && gameMeasures.get(gameMeasures.size()-1).getNumberOfAvailableBeats()==0)))
 						gameIsDone = true;
@@ -236,14 +278,17 @@ public class GameManager implements ActionListener
 		}
 		else if(event.getSource() == inGameTimer)
 		{
-			if((initialInGameTime-currentInGameTick+additionalInGameTime)<=0)
+			if(!gameStart)
 			{
-				System.out.println("*****\tAt the Post Game Screen\t*****");
-				at_play = false;
-				at_post_game = true;
-				inGameTimer.stop();
+				if((initialInGameTime-currentInGameTick+additionalInGameTime)<=0)
+				{
+					System.out.println("*****\tAt the Post Game Screen\t*****");
+					at_play = false;
+					at_post_game = true;
+					inGameTimer.stop();
+				}
+				sendTimeToDisplay(initialInGameTime-currentInGameTick+additionalInGameTime);
 			}
-			sendTimeToDisplay(initialInGameTime-currentInGameTick+additionalInGameTime);
 			currentInGameTick++;
 		}
 	}
@@ -369,6 +414,7 @@ public class GameManager implements ActionListener
 					gameMeasures = new ArrayList<Measure>();
 					gameCurrentNote = 0;
 					
+					gameStart = true;
 					gameIsDone = false;
 					
 					messagePool = new ArrayList<String>();
@@ -499,7 +545,7 @@ public class GameManager implements ActionListener
 					gameMeasures.add(new Measure(numberOfBeatsPerMeasure));
 					setGameMode(gameMode);
 					System.out.println("*****\tAt the Play Screen\t*****");
-
+					
 					at_game_options = false;
 					at_play = true;
 										
@@ -548,6 +594,16 @@ public class GameManager implements ActionListener
 				
 				//     POST GAME     //
 				//message is "player1_splashscreen"  (checking to make sure player 1 has sent the message)
+				else if(at_post_game && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.PLAY_SONG))
+				{
+					org.jfugue.Player jfuguePlayer = new org.jfugue.Player();
+					org.jfugue.Pattern s = new org.jfugue.Pattern();
+					for(Note note : gameNotes)
+						s.add(note.getJFuguePattern());
+					jfuguePlayer.play(s);
+					sendMessageToDisplay(m.getMessage());
+				}
+				//message is "player1_splashscreen"  (checking to make sure player 1 has sent the message)
 				else if(at_post_game && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.SPLASH_SCREEN))
 				{
 //					try
@@ -579,6 +635,7 @@ public class GameManager implements ActionListener
 					gameMeasures = new ArrayList<Measure>();
 					gameCurrentNote = 0;
 					
+					gameStart = true;
 					gameIsDone = false;
 					
 					messagePool = new ArrayList<String>();
@@ -971,6 +1028,24 @@ public class GameManager implements ActionListener
 						score += Math.PI * 50;
 						additionalInGameTime += 3;
 					}
+				if(previousNotePlayed != null)
+				{
+					if(!(note.getPitch().equals(previousNotePlayed.getPitch())))
+					{
+						score += Math.PI * 25;
+						additionalInGameTime += 1;
+					}
+					if(!(note.getLength().equals(previousNotePlayed.getLength())))
+					{
+						score += Math.PI * 25;
+						additionalInGameTime += 1;
+					}
+					if((!(note.getLength().equals(previousNotePlayed.getLength())))&&(!(note.getPitch().equals(previousNotePlayed.getPitch()))))
+					{
+						score += Math.PI * 50;
+						additionalInGameTime += 3;
+					}
+				}
 			}
 			else
 			{
@@ -990,6 +1065,8 @@ public class GameManager implements ActionListener
 				player3Score = new Double(score).intValue();
 			else if(note.getPlayer().equals(Players.PLAYER_FOUR))
 				player4Score = new Double(score).intValue();
+			
+			previousNotePlayed = note;
 		}
 	}
 	
