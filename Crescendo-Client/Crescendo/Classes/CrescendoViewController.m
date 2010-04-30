@@ -47,6 +47,7 @@
 	if (self.composeViewController) {
 		[self.composeViewController setClientConnected: YES];
 	}
+	[ipText setText: validatedIp];
 	[self drawMain];
 	/*
 	 * Advance players (other than player 1) to compose screen
@@ -312,6 +313,7 @@
 
 - (void) connectionTerminated:(XMLClient*)client
 {
+	connect.enabled = YES;
 	NSLog(@"The connection terminated!\n");
 	self.clientConnected = NO;
 	if (self.composeViewController) {
@@ -321,6 +323,7 @@
 
 - (void) connectionAttemptFailed:(XMLClient*) connection
 {
+	connect.enabled = YES;
 	NSLog(@"The connection failed to connect!\n");
 	self.clientConnected = NO;
 	if (self.composeViewController) {
