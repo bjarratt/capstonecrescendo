@@ -216,9 +216,7 @@
 	ipText.hidden = NO;
 	ipLabel.hidden = NO;
 	start.hidden = YES;
-	//ipText.text = @"192.168.1.105";
-	//ipText.text = @"128.194.132.140";
-	ipText.text = @"128.194.143.165";
+	ipText.text = [dataController objectInListAtIndex:0];
 	ipTableView.hidden = NO;
 }
 
