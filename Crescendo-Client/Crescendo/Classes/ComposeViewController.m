@@ -181,72 +181,77 @@
 	}
 	else if (scrollView == myPitchScrollView)
 	{
-		if (page >= 0.8469)
+		if (page >= 0.85598)
+		{
+			notePitch = @"Rest";
+			notePitchPage = 15;
+		}
+		else if (page >= 0.79753)
 		{
 			notePitch = @"E5";
 			notePitchPage = 14;
 		}
-		else if (page >= 0.7840)
+		else if (page >= 0.73908)
 		{
 			notePitch = @"F5";
 			notePitchPage = 13;
 		}
-		else if (page >= 0.7211)
+		else if (page >= 0.68063)
 		{
 			notePitch = @"FSharp5";
 			notePitchPage = 12;
 		}
-		else if (page >= 0.6583)
+		else if (page >= 0.62007)
 		{
 			notePitch = @"G5";
 			notePitchPage = 11;
 		}
-		else if (page >= 0.5954)
+		else if (page >= 0.56126)
 		{
 			notePitch = @"GSharp5";
 			notePitchPage = 10;
 		}
-		else if (page >= 0.5325)
+		else if (page >= 0.50176)
 		{
 			notePitch = @"A5";
 			notePitchPage = 9;
 		}
-		else if (page >= 0.4696)
+		else if (page >= 0.44260)
 		{
 			notePitch = @"ASharp5";
 			notePitchPage = 8;
 		}
-		else if (page >= 0.4068)
+		else if (page >= 0.38380)
 		{
 			notePitch = @"B5";
 			notePitchPage = 7;
 		}
-		else if (page >= 0.3439)
+		else if (page >= 0.32605)
 		{
 			notePitch = @"C6";
 			notePitchPage = 6;
 		}
-		else if (page >= 0.2810)
+		else if (page >= 0.26584)
 		{
 			notePitch = @"CSharp6";
 			notePitchPage = 5;
 		}
-		else if (page >= 0.2181)
+		else if (page >= 0.20598)
 		{
 			notePitch = @"D6";
 			notePitchPage = 4;
 		}
-		else if (page >= 0.1553)
+		else if (page >= 0.14788)
 		{
 			notePitch = @"DSharp6";
 			notePitchPage = 3;
 		}
-		else if (page >= 0.0924)
+		else if (page >= 0.08873)
 		{
 			notePitch = @"E6";
 			notePitchPage = 2;
 		}
-		else if (page >= 0.0295)
+		else if (page >= 0.03309)
 		{
 			notePitch = @"F6";
 			notePitchPage = 1;
@@ -732,7 +737,7 @@
 	if (!myPitchScrollView) {
 		myPitchScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(300, 0, 200, 320)];
 		myPitchScrollView.delegate = self;
-		myPitchScrollView.contentSize = CGSizeMake(200, yCoord + 168*15 + yCoord);
+		myPitchScrollView.contentSize = CGSizeMake(200, yCoord + 168*16 + yCoord);
 		myPitchScrollView.scrollEnabled = YES;
 		myPitchScrollView.canCancelContentTouches = NO;
 		myPitchScrollView.showsVerticalScrollIndicator = NO;
@@ -921,6 +926,13 @@
 	pitWholeE5.opaque = YES;
 	[myPitchScrollView addSubview:pitWholeE5];
 	
+	yCoord += 168;
+	UIImageView *pitWholeRest = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
+	[pitWholeRest setImage:[UIImage imageNamed: @"rest_whole.png"]];
+	[pitWholeRest setHighlightedImage:[UIImage imageNamed:@"rest_whole_selected.png"]];
+	pitWholeRest.opaque = YES;
+	[myPitchScrollView addSubview:pitWholeRest];
+	
 	/*
 	 * Note Pitch Array
 	 */
@@ -938,7 +950,8 @@
 									 pitWholeG5,
 									 pitWholeFSharp5,
 									 pitWholeF5,
-									 pitWholeE5, nil];
+									 pitWholeE5,
+									 pitWholeRest, nil];
 	/*
 	[pitWholeF6 release];
 	[pitWholeFSharp6 release];
@@ -1063,7 +1076,6 @@
 	[pitHalfF5 setHighlightedImage:[UIImage imageNamed:@"F5_half_selected.png"]];
 	pitHalfF5.opaque = YES;
 	[myPitchScrollView addSubview:pitHalfF5];
-	
 
 	yCoord += 168;
 	UIImageView *pitHalfE5 = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
@@ -1071,6 +1083,13 @@
 	[pitHalfE5 setHighlightedImage:[UIImage imageNamed:@"E5_half_selected.png"]];
 	pitHalfE5.opaque = YES;
 	[myPitchScrollView addSubview:pitHalfE5];
+	
+	yCoord += 168;
+	UIImageView *pitHalfRest = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
+	[pitHalfRest setImage:[UIImage imageNamed: @"rest_half.png"]];
+	[pitHalfRest setHighlightedImage:[UIImage imageNamed:@"rest_half_selected.png"]];
+	pitHalfRest.opaque = YES;
+	[myPitchScrollView addSubview:pitHalfRest];
 	
 	/*
 	 * Note Pitch Array
@@ -1089,7 +1108,8 @@
 									pitHalfG5,
 									pitHalfFSharp5,
 									pitHalfF5,
-									pitHalfE5, nil];
+									pitHalfE5,
+									pitHalfRest, nil];
 	/*
 	[pitHalfF6 release];
 	[pitHalfFSharp6 release];
@@ -1221,6 +1241,13 @@
 	pitQuarterE5.opaque = YES;
 	[myPitchScrollView addSubview:pitQuarterE5];
 	
+	yCoord += 168;
+	UIImageView *pitQuarterRest = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
+	[pitQuarterRest setImage:[UIImage imageNamed: @"rest_quarter.png"]];
+	[pitQuarterRest setHighlightedImage:[UIImage imageNamed:@"rest_quarter_selected.png"]];
+	pitQuarterRest.opaque = YES;
+	[myPitchScrollView addSubview:pitQuarterRest];
+	
 	/*
 	 * Note Pitch Array
 	 */
@@ -1238,7 +1265,8 @@
 									   pitQuarterG5,
 									   pitQuarterFSharp5,
 									   pitQuarterF5,
-									   pitQuarterE5, nil];
+									   pitQuarterE5,
+									   pitQuarterRest, nil];
 	/*
 	[pitQuarterF6 release];
 	[pitQuarterFSharp6 release];
@@ -1370,6 +1398,13 @@
 	pitEighthE5.opaque = YES;
 	[myPitchScrollView addSubview:pitEighthE5];
 	
+	yCoord += 168;
+	UIImageView *pitEighthRest = [[UIImageView alloc] initWithFrame: CGRectMake(0, yCoord, 160, 160)];
+	[pitEighthRest setImage:[UIImage imageNamed: @"rest_eighth.png"]];
+	[pitEighthRest setHighlightedImage:[UIImage imageNamed:@"rest_eighth_selected.png"]];
+	pitEighthRest.opaque = YES;
+	[myPitchScrollView addSubview:pitEighthRest];
+	
 	/*
 	 * Note Pitch Array
 	 */
@@ -1387,7 +1422,8 @@
 									  pitEighthG5,
 									  pitEighthFSharp5,
 									  pitEighthF5,
-									  pitEighthE5, nil];
+									  pitEighthE5,
+									  pitEighthRest, nil];
 	/*
 	[pitEighthF6 release];
 	[pitEighthFSharp6 release];
