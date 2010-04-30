@@ -33,9 +33,11 @@ public class Player implements Runnable
 		playerFrame.setLocation(220*num, 100);
 		playerFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		playerFrame.setVisible(true);
+		playerFrame.setResizable(false);
 		playerFrame.setBackground(Color.DARK_GRAY);
 		
-		playerFrame.add(new IPhoneGUI(player, myCM));
+		playerFrame.add(new CHIPhoneGUI(player, myCM));
+//		playerFrame.add(new IPhoneGUI(player, myCM));
 		
 		playerFrame.pack();
 	}
