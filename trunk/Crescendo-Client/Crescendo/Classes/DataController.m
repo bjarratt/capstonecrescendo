@@ -29,13 +29,19 @@
 	BOOL found;
 	found = NO;
 	int size = [list count];
-	for(int i = 0; i < size; i++){
+	for (int i = 0; i < size; i++) {
 		NSString *ip = (NSString *) [list objectAtIndex:i];
-		if([ip isEqualToString: data])
+		if([ip isEqualToString: data]) {
 			found = YES;
+			// Move object to the top of the list
+			NSString *obj = [[NSString alloc] initWithString:[[list objectAtIndex:i] copy]];
+			[list removeObjectAtIndex:i];
+			[list insertObject:obj atIndex:0];
+		}
 	}
-	if(!found){
-		[list addObject:data];
+	if (!found) {
+		// Add object to the top of the list
+		[list insertObject:data atIndex:0];
 	}
 }
 
