@@ -1,8 +1,11 @@
 package gameManagement.windowManagement;
 
+import gameManagement.windowManagement.publicDisplay.GameOptionsWindow;
+import gameManagement.windowManagement.publicDisplay.GameWindow;
+import gameManagement.windowManagement.publicDisplay.PauseWindow;
 import gameManagement.windowManagement.publicDisplay.SplashWindow;
 
-import java.awt.GridLayout;
+import java.awt.Color;
 import java.util.HashMap;
 
 import javax.swing.JFrame;
@@ -39,17 +42,17 @@ public class WindowManager
 		return w;
 	}
 	
-	public void nextWindow(String key) throws InterruptedException
+	public void goToWindow(String key)
 	{
 		if (windows.containsKey(key))
 		{
-		}
-	}
-	
-	public void previousWindow(String key) throws InterruptedException
-	{
-		if (windows.containsKey(key))
-		{
+			if (currentWindowKey != null)
+			{
+				mainFrame.getContentPane().remove(windows.get(currentWindowKey));
+			}
+			mainFrame.getContentPane().add(windows.get(key));
+			currentWindowKey = key;
+			windows.get(key).revalidate();
 		}
 	}
 	
@@ -62,21 +65,17 @@ public class WindowManager
 		return instance;
 	}
 	
-	private HashMap<String, JPanel> windows = new HashMap<String, JPanel>();
-	private JFrame mainFrame = new JFrame();
-	
 	private void initFrame()
 	{
 		// Set layout manager
-		GridLayout manager = new GridLayout(1,1);
-		mainFrame.setLayout(manager);
+//		GridLayout manager = new GridLayout(1,1);
+		mainFrame.setLayout(null);
 		
 		// Set full-screen mode
 		mainFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		mainFrame.setUndecorated(true);
-		
-		// Setup display
-//		mainFrame.getContentPane().add(mainWindow);
+		mainFrame.setSize(1366, 768/*Toolkit.getDefaultToolkit().getScreenSize()*/);
+		mainFrame.getContentPane().setBackground(Color.BLACK);
 		
 		// Set default close operation
 		mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -89,11 +88,36 @@ public class WindowManager
 	}
 	
 	private static WindowManager instance = new WindowManager();
+
+	private HashMap<String, JPanel> windows = new HashMap<String, JPanel>();
+	private JFrame mainFrame = new JFrame();
+	private String currentWindowKey = null;
+	
 	
 	public static void main(String[] args)
 	{
 		WindowManager.getInstance().addWindow(GameState.SPLASH_SCREEN, new SplashWindow());
-//		WindowManager.getInstance().addWindow(GameState.GAME_OPTIONS, new GameOptionsWindow());
+		WindowManager.getInstance().addWindow(GameState.GAME_OPTIONS, new GameOptionsWindow());
+		WindowManager.getInstance().addWindow(GameState.PLAY, new GameWindow());
+		WindowManager.getInstance().addWindow(GameState.PAUSE, new PauseWindow());
+		WindowManager.getInstance().addWindow(GameState.POST_GAME, new JPanel());
 		WindowManager.getInstance().run();
+		
+		try 
+		{
+//			WindowManager.getInstance().goToWindow(GameState.SPLASH_SCREEN);
+//			Thread.sleep(1000);
+			WindowManager.getInstance().goToWindow(GameState.GAME_OPTIONS);
+			Thread.sleep(1000);
+			WindowManager.getInstance().goToWindow(GameState.PLAY);
+			Thread.sleep(1000);
+//			WindowManager.getInstance().goToWindow(GameState.PAUSE);
+//			Thread.sleep(1000);
+//			WindowManager.getInstance().goToWindow(GameState.POST_GAME);
+//			Thread.sleep(100);
+		} 
+		catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 }

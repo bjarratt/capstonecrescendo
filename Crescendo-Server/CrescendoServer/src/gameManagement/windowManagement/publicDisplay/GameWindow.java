@@ -33,6 +33,7 @@ public class GameWindow extends JPanel
 	 */
 	public GameWindow()
 	{
+		staff = new AnimatedStaff();
 	}
 	
 	/**
@@ -46,6 +47,16 @@ public class GameWindow extends JPanel
 	public GameWindow(String player, String key, List<String> chords, int beats, int subdivision)
 	{
 		staff = new AnimatedStaff(player, key, chords, beats, subdivision);
+	}
+	
+	@Override
+	public void revalidate()
+	{
+		if (staff != null)
+		{
+			staff.revalidate();
+		}
+		super.revalidate();
 	}
 	
 	@Override
@@ -86,7 +97,7 @@ public class GameWindow extends JPanel
 		}
 	}
 	
-	private AnimatedStaff staff = new AnimatedStaff();
+	private AnimatedStaff staff = null;
 	private BufferedImage background = null;
 	private Timer timer = new Timer();
 	private ScoreFields scores = new ScoreFields();
