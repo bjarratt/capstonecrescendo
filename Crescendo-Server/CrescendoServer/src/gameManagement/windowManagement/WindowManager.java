@@ -1,5 +1,7 @@
 package gameManagement.windowManagement;
 
+import gameManagement.windowManagement.publicDisplay.SplashWindow;
+
 import java.awt.GridLayout;
 import java.util.HashMap;
 
@@ -90,7 +92,8 @@ public class WindowManager
 	
 	public static void main(String[] args)
 	{
-//		WindowManager.getInstance().addWindow(GameState.SPLASH_SCREEN, window)
+		WindowManager.getInstance().addWindow(GameState.SPLASH_SCREEN, new SplashWindow());
+//		WindowManager.getInstance().addWindow(GameState.GAME_OPTIONS, new GameOptionsWindow());
 		WindowManager.getInstance().run();
 	}
 }
