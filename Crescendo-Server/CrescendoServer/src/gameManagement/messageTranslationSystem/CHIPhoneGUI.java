@@ -216,7 +216,7 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 				
 				if(background_y < 480)
 				{
-					background_y += 0.5;
+					background_y += 20;
 					repaint();
 				}
 				else
@@ -245,7 +245,7 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 				
 				if(background_y < 480)
 				{
-					background_y += 0.5;
+					background_y += 20;
 					repaint();
 				}
 				else
@@ -274,7 +274,7 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 
 				if(background_y > 0)
 				{
-					background_y -= 0.5;
+					background_y -= 20;
 					repaint();
 				}
 				else
@@ -318,7 +318,7 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 				
 				if(background_y > 0)
 				{
-					background_y -= 0.5;
+					background_y -= 20;
 					repaint();
 				}
 				else
@@ -329,6 +329,8 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 			else
 			{
 				backBox = new Rectangle2D.Double(25,background_y + 25,51,31);
+				startBox = new Rectangle2D.Double(50,background_y + 210,220,50);	
+				disconnectBox = new Rectangle2D.Double(50,background_y + 275,220,50);
 				previousState = "at_splash_screen";
 			}
 			

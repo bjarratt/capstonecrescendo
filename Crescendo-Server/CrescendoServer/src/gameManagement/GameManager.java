@@ -593,11 +593,12 @@ public class GameManager implements ActionListener
 				}
 				
 				//     POST GAME     //
-				//message is "player1_splashscreen"  (checking to make sure player 1 has sent the message)
-				else if(at_post_game && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.PLAY_SONG))
+				//message is "player1_playsong"
+				else if(at_post_game && m.getMessage().split("_")[1].equals(GameState.PLAY_SONG))
 				{
 					org.jfugue.Player jfuguePlayer = new org.jfugue.Player();
 					org.jfugue.Pattern s = new org.jfugue.Pattern();
+					s.add("T"+tempo+" ");
 					for(Note note : gameNotes)
 						s.add(note.getJFuguePattern());
 					jfuguePlayer.play(s);
