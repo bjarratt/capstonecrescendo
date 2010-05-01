@@ -36,7 +36,6 @@
 
 - (void) recievedConnectionUpdate: (ConnectionUpdate*) update {
 	self.playerId = [NSString stringWithString: update.playerNumber];
-	connect.enabled = YES;
 	if ([playerId isEqualToString:@""]) {
 		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Max players" message:(@"Maximum number of players have connected to %@.", validatedIp) delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
 		[alert show];
@@ -161,8 +160,6 @@
 }
 
 - (IBAction) goConnect {
-	connect.enabled = NO;
-	
 	/*
 	 * Setup Client
 	 */
@@ -200,6 +197,10 @@
 
 - (IBAction) goDisconnect {
 	[client disconnect];
+	if (self.composeViewController) {
+		[self.composeViewController resetSliderValues];
+	}
+	
 	[self drawIP];
 }
 
@@ -311,7 +312,6 @@
 
 - (void) connectionTerminated:(XMLClient*)client
 {
-	connect.enabled = YES;
 	NSLog(@"The connection terminated!\n");
 	self.clientConnected = NO;
 	if (self.composeViewController) {
@@ -321,7 +321,6 @@
 
 - (void) connectionAttemptFailed:(XMLClient*) connection
 {
-	connect.enabled = YES;
 	NSLog(@"The connection failed to connect!\n");
 	self.clientConnected = NO;
 	if (self.composeViewController) {

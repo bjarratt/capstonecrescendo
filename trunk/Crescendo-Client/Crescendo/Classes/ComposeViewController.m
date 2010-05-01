@@ -425,9 +425,22 @@
 			[disconnectButton removeFromSuperview];
 		}
 	}
+	[self resetSliderValues];
+	
 	self.inGame = NO;
 	[client disconnect];
 	[self dismissModalViewControllerAnimated: YES];
+}
+
+- (void) resetSliderValues {
+	keySlider.value = 12;
+	timeSlider.value = 3;
+	tempoSlider.value = 6.5;
+	barsSlider.value = 1;
+	keyText.text = [NSString stringWithFormat: @"C"];
+	timeText.text = [NSString stringWithFormat: @"4/4"];
+	tempoText.text = [NSString stringWithFormat: @"120"];
+	barsText.text = [NSString stringWithFormat: @"16"];
 }
 
 - (void) keySliderValueSet:(UISlider *)sender {
@@ -493,7 +506,6 @@
 }
 
 - (void) tempoSliderValueChanged:(UISlider *)sender {  
-	//TODO: Send GameOptionsRequest message
 	float val = sender.value;
 	if(val <= 12 && val > 11)
 		tempoText.text = @"240";
@@ -539,7 +551,6 @@
 }
 
 - (void) timeSliderValueChanged:(UISlider *)sender {  
-	//TODO: Send GameOptionsRequest message
 	float val = sender.value;
 	if(val <= 3 && val > 2)
 		timeText.text = @"4/4";
@@ -567,7 +578,6 @@
 }
 
 - (void) barsSliderValueChanged:(UISlider *)sender { 
-	//TODO: Send GameOptionsRequest message
 	float val = sender.value;
 	if(val <= 8 && val > 7)
 		barsText.text = @"128";
@@ -1645,7 +1655,7 @@
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-    [super viewDidLoad];
+    [super viewDidLoad];	
 }
 
 -(void) viewWillAppear: (BOOL) animated {

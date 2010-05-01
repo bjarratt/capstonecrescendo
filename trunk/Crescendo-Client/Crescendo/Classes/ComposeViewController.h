@@ -104,6 +104,7 @@
 - (void) pausePlay:(UIButton *)sender;
 - (void) playSong:(UIButton *)sender;
 - (void) disconnect:(UIButton *)sender;
+- (void) resetSliderValues;
 - (void) keySliderValueSet:(id)sender;
 - (void) keySliderValueChanged:(id)sender;
 - (void) timeSliderValueSet:(id)sender;
