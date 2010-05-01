@@ -4,21 +4,16 @@ import java.awt.GridLayout;
 import java.util.HashMap;
 
 import javax.swing.JFrame;
-
-import gameManagement.windowManagement.base.WindowDisplay;
-import gameManagement.windowManagement.base.Wrapper;
+import javax.swing.JPanel;
 
 public class WindowManager 
 {
 	public void run()
 	{
 		this.mainFrame.setVisible(true);
-		// DO NOT MOVE THIS!  This is here because you will get sync errors otherwise.
-		mainWindow.init();
-		mainWindow.start();
 	}
 	
-	public void addWindow(final String key, final Wrapper window)
+	public void addWindow(final String key, JPanel window)
 	{
 		if (key != null && window != null)
 		{
@@ -30,9 +25,9 @@ public class WindowManager
 		}
 	}
 	
-	public Wrapper getWindow(String key)
+	public JPanel getWindow(String key)
 	{
-		Wrapper w = null;
+		JPanel w = null;
 		if (windows.containsKey(key))
 		{
 			w = windows.get(key);
@@ -44,7 +39,6 @@ public class WindowManager
 	{
 		if (windows.containsKey(key))
 		{
-			mainWindow.nextPanel(windows.get(key));
 		}
 	}
 	
@@ -52,7 +46,6 @@ public class WindowManager
 	{
 		if (windows.containsKey(key))
 		{
-			mainWindow.previousPanel(windows.get(key));
 		}
 	}
 	
@@ -65,9 +58,8 @@ public class WindowManager
 		return instance;
 	}
 	
-	private HashMap<String, Wrapper> windows = new HashMap<String, Wrapper>();
+	private HashMap<String, JPanel> windows = new HashMap<String, JPanel>();
 	private JFrame mainFrame = new JFrame();
-	private WindowDisplay mainWindow = new WindowDisplay();
 	
 	private void initFrame()
 	{
