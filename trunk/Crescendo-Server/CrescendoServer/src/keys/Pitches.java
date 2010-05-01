@@ -1,11 +1,13 @@
 package keys;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Pitches 
 {
 	private static ArrayList<String> notes = new ArrayList<String>();
+	private static HashMap<String, Float> positions = new HashMap<String, Float>();
 	
 	public static final String E5 = "E5";
 	public static final String ESharp5 = "ESharp5";
@@ -66,6 +68,29 @@ public class Pitches
 		notes.add(FFlat5);
 		notes.add(ESharp5);
 		notes.add(E5);
+		
+		float position = 0.5f;
+		for (int i = 0; i < notes.size(); ++i)
+		{
+			if (i % 3 == 0)
+			{
+				position += 0.5f;
+			}
+			
+			positions.put(notes.get(i), position);
+		}
+	}
+	
+	public static float getStaffPosition(String pitch)
+	{
+		float position = -1f;
+		
+		if (positions.containsKey(pitch))
+		{
+			position = positions.get(pitch);
+		}
+		
+		return position;
 	}
 	
 	public static List<String> getAllNotes()
