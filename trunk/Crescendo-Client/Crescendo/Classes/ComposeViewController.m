@@ -183,7 +183,7 @@
 	{
 		if (page >= 0.85598)
 		{
-			notePitch = @"Rest";
+			notePitch = @"rest";
 			notePitchPage = 15;
 		}
 		else if (page >= 0.79753)
@@ -382,7 +382,7 @@
 	/*
 	 *	Send playerX_play_song
 	 */
-	NSString *state = @"play_song";
+	NSString *state = @"playsong";
 	NSString *inputText = [NSString stringWithFormat: @"%@_%@", playerId, state];
 	
     // Initialize GameStateRequest and set game state to content's of the text field.
