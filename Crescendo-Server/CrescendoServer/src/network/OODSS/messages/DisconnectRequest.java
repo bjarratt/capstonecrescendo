@@ -33,6 +33,8 @@ public class DisconnectRequest extends ecologylab.services.messages.DisconnectRe
 		
 		GameManager manager = (GameManager)clientSessionScope.get(OODSS.GAME_MANAGER);
 		
+		manager.addMessageToPool("player1_disconnect");
+		/*
 		for (String player : all)
 		{
 			if (!connected.contains(player))
@@ -40,6 +42,7 @@ public class DisconnectRequest extends ecologylab.services.messages.DisconnectRe
 				manager.addMessageToPool(player + "_disconnect");
 			}
 		}
+		*/
 		
 		return OkResponse.reusableInstance;
 	}
