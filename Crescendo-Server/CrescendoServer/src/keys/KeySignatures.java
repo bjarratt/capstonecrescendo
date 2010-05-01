@@ -1,6 +1,7 @@
 package keys;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 
@@ -54,5 +55,34 @@ public class KeySignatures
 		}
 		
 		return keySig;
+	}
+	
+	/**
+	 * Checks to see whether the suggested key is actually valid
+	 * @param key - <code>String</code> representing a key signature being stored
+	 * @return - true if the suggested key is actually being stored, else false
+	 */
+	public static boolean hasKeySignature(String key)
+	{
+		return keys.containsKey(key);
+	}
+	
+	public static boolean hasKeySignatures(Collection<? extends String> keys)
+	{
+		boolean areValid = false;
+		
+		if (keys != null && !keys.isEmpty())
+		{
+			for (String key : keys)
+			{
+				if (!hasKeySignature(key))
+				{
+					areValid = false;
+					break;
+				}
+			}
+		}
+		
+		return areValid;
 	}
 }
