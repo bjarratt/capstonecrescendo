@@ -33,9 +33,9 @@ public class GameManager implements ActionListener
 	private Timer inGameTimer;
 
 	//game options
-	private static int tempo = 1000;
+	private static int tempo = 120;
 	private static String key = "CMajor";
-	private static int numberOfBars = 4;
+	private static int numberOfBars = 16;
 	private static int timeSignatureNumerator = 4;
 	private static int timeSignatureDenominator = 4;
 	private static int numberOfBeatsPerMeasure;
@@ -300,6 +300,7 @@ public class GameManager implements ActionListener
 	 */
 	public void addMessageToPool(String message)
 	{
+		System.out.println(message);
 		messagePool.add(message);
 	}
 
@@ -408,6 +409,12 @@ public class GameManager implements ActionListener
 					
 					numberOfActivePlayers = 0;
 					
+					tempo = 120;
+					key = "CMajor";
+					numberOfBars = 16;
+					timeSignatureNumerator = 4;
+					timeSignatureDenominator = 4;
+					
 					//clear other game state
 					gameBeats = new ArrayList<Beat>();
 					gameNotes = new ArrayList<Note>();
@@ -501,7 +508,7 @@ public class GameManager implements ActionListener
 //					{
 //						
 //					}
-					System.out.println("*****\tAt the Game Modes Screen\t*****");
+					System.out.println("*****\tAt the Splash Screen\t*****");
 					//System.out.println("*****\tAt the Game Info Screen\t*****");
 					at_game_options = false;
 					at_splash_screen = true;
