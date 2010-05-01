@@ -6,6 +6,8 @@ import java.util.HashMap;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import keys.GameState;
+
 public class WindowManager 
 {
 	public void run()
@@ -85,4 +87,10 @@ public class WindowManager
 	}
 	
 	private static WindowManager instance = new WindowManager();
+	
+	public static void main(String[] args)
+	{
+//		WindowManager.getInstance().addWindow(GameState.SPLASH_SCREEN, window)
+		WindowManager.getInstance().run();
+	}
 }
