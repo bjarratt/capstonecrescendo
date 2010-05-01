@@ -1027,32 +1027,49 @@ public class GameManager implements ActionListener
 			
 			if(note.isCorrect())
 			{
-				//add points and time
-				score += Math.PI * 100;
-				additionalInGameTime += 6;
-				if(gameMeasures.size()<=keyProgression.size())
-					if(Scales.isNoteInArpeggio(note, keyProgression.get(gameMeasures.size()-1)))
-					{
-						score += Math.PI * 50;
-						additionalInGameTime += 3;
-					}
-				if(previousNotePlayed != null)
+				if(note.getPitch().equals("rest"))
 				{
-					if(!(note.getPitch().equals(previousNotePlayed.getPitch())))
+					score += Math.PI * 10;
+					additionalInGameTime += 3;
+				}
+				else
+				{
+					//add points and time
+					if(previousNotePlayed != null)
 					{
-						score += Math.PI * 25;
-						additionalInGameTime += 1;
+						if(!(note.getPitch().equals(previousNotePlayed.getPitch())))
+						{
+							score += Math.PI * 25;
+							additionalInGameTime += 1;
+						}
+						if(!(note.getLength().equals(previousNotePlayed.getLength())))
+						{
+							score += Math.PI * 25;
+							additionalInGameTime += 1;
+						}
+						if((!(note.getLength().equals(previousNotePlayed.getLength())))&&(!(note.getPitch().equals(previousNotePlayed.getPitch()))))
+						{
+							score += Math.PI * 50;
+							additionalInGameTime += 3;
+						}
+						if(!note.equals(previousNotePlayed))
+						{
+							score += Math.PI * 100;
+							additionalInGameTime += 6;
+						}
 					}
-					if(!(note.getLength().equals(previousNotePlayed.getLength())))
+					else
 					{
-						score += Math.PI * 25;
-						additionalInGameTime += 1;
+						score += Math.PI * 100;
+						additionalInGameTime += 6;
 					}
-					if((!(note.getLength().equals(previousNotePlayed.getLength())))&&(!(note.getPitch().equals(previousNotePlayed.getPitch()))))
-					{
-						score += Math.PI * 50;
-						additionalInGameTime += 3;
-					}
+					
+					if(gameMeasures.size()<=keyProgression.size())
+						if(Scales.isNoteInArpeggio(note, keyProgression.get(gameMeasures.size()-1)))
+						{
+							score += Math.PI * 50;
+							additionalInGameTime += 3;
+						}
 				}
 			}
 			else
@@ -1185,7 +1202,12 @@ public class GameManager implements ActionListener
 		System.out.println();
 		System.out.println();
 		
-		//TODO send notesToSend to display
+		for(Note note : notesToSend)
+		{
+			note.playNote();
+			//TODO send notesToSend to display
+		}
+		
 		
 		notesToSend = new ArrayList<Note>();
 
