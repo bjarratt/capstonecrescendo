@@ -39,7 +39,7 @@ public class PlayNoteRequest extends RequestMessage {
 		String[] info = jfuguePattern.split("_");
 		String player = info[0];
 		String note = keys.Actions.PLAYED_NOTE + ":: " + info[1] + "_" + info[2];
-		LogManager.getInstance().writeLogEntry(player, note);
+	//	LogManager.getInstance().writeLogEntry(player, note);
 		
 		
 		return OkResponse.reusableInstance;
