@@ -1,21 +1,20 @@
 package gameManagement.windowManagement.publicDisplay.staff;
 
+import gameManagement.messageTranslationSystem.Note;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.GridLayout;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
 import keys.KeySignatures;
 import keys.Players;
-import gameManagement.messageTranslationSystem.Note;
 
 // TODO Make note scrolling happen here
 // TODO Fix the measure scaling
@@ -189,14 +188,4 @@ public class AnimatedStaff extends JPanel
 	private JScrollPane scroller = null;
 	
 	private static final long serialVersionUID = 1L;
-	
-	public static void main(String[] args)
-	{
-		JFrame frame = new JFrame("Test");
-		frame.setLayout(new GridLayout(1,1));
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setPreferredSize(new Dimension(900, 225));
-		frame.add(new AnimatedStaff());
-		frame.setVisible(true);
-	}
 }
