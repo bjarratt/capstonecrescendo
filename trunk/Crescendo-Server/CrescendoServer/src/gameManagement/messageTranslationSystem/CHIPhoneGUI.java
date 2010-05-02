@@ -18,6 +18,8 @@ import java.util.Random;
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import javax.swing.JSlider;
+import javax.swing.SwingConstants;
 
 import keys.GameState;
 
@@ -27,18 +29,6 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 	
 	private String player;
 	private gameManagement.messageTranslationSystem.ConnectionManager myCM;
-//	private JButton connect;
-//	private JButton disconnect;
-//	private JButton playNote;
-//	private JButton splashScreen;
-//	private JButton gameOptions;
-//	private JButton setTempo;
-//	private JButton setKey;
-//	private JButton setTimeSignature;
-//	private JButton setNumberOfBars;
-//	private JButton play;
-//	private JButton pause;
-//	private JButton review;
 	
 	private Random rand;
 
@@ -83,12 +73,23 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 	
 	private String previousState;
 	
+	private JSlider keySlider;
+	private JSlider timeSlider;
+	private JSlider tempoSlider;
+	private JSlider barsSlider;
+	
+	private String key;
+	private String time;
+	private String tempo;
+	private String bars;
+	
 	public CHIPhoneGUI(String player, gameManagement.messageTranslationSystem.ConnectionManager myCM)
 	{
 		super(true);
 		
         this.setPreferredSize(new Dimension(320,480));
 		this.setVisible(true);
+		this.setLayout(null);
 	
 		this.player = player;
 		this.myCM = myCM;
@@ -125,6 +126,22 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 		}
 		
 		this.addMouseListener(this);
+		
+		keySlider = new JSlider(SwingConstants.VERTICAL);
+		timeSlider = new JSlider(SwingConstants.VERTICAL);
+		tempoSlider = new JSlider(SwingConstants.VERTICAL);
+		barsSlider = new JSlider(SwingConstants.VERTICAL);
+		
+		key = new String("C");
+		time = new String("4/4");
+		tempo = new String("120");
+		bars = new String("16");
+		
+		this.add(keySlider);
+		this.add(timeSlider);
+		this.add(tempoSlider);
+		this.add(barsSlider);
+		
 //		disconnect = new JButton("Disconnect");
 //		disconnect.addActionListener(this);
 //		this.add(disconnect);
@@ -172,8 +189,6 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 //		review = new JButton("Review Game");
 //		review.addActionListener(this);
 //		this.add(review);
-		
-
 	}
 
 	public void paintComponent(Graphics graphics)
@@ -214,9 +229,9 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 				g.drawImage(background_vertical, null, 0, (int)background_y);
 				
 				//draw back button
-				g.drawImage(back, null, 25, (int)(background_y + 25));
+				g.drawImage(back, null, 20, (int)(background_y + 20));
 				g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 13));
-				g.drawString("back", 39, (int)(background_y + 44));
+				g.drawString("back", 34, (int)(background_y + 39));
 				g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 16));
 				
 				if(background_y < 480)
@@ -235,9 +250,9 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 				g.drawImage(background_vertical, null, 0, (int)background_y);
 				
 				//draw back button
-				g.drawImage(back, null, 25, (int)(background_y + 25));
+				g.drawImage(back, null, 20, (int)(background_y + 20));
 				g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 13));
-				g.drawString("back", 39, (int)(background_y + 44));
+				g.drawString("back", 34, (int)(background_y + 39));
 				g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 16));
 
 				//draw start button
@@ -302,9 +317,9 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 			g.drawImage(background_vertical, null, 0, (int)background_y);
 			
 			//draw back button
-			g.drawImage(back, null, 25, (int)(background_y + 25));
+			g.drawImage(back, null, 20, (int)(background_y + 20));
 			g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 13));
-			g.drawString("back", 39, (int)(background_y + 44));
+			g.drawString("back", 34, (int)(background_y + 39));
 			g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 16));
 		}
 		if(at_splash_screen)
@@ -356,9 +371,9 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 			g.drawImage(background_vertical, null, 0, (int)background_y);
 			
 			//draw back button
-			g.drawImage(back, null, 25, (int)(background_y + 25));
+			g.drawImage(back, null, 20, (int)(background_y + 20));
 			g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 13));
-			g.drawString("back", 39, (int)(background_y + 44));
+			g.drawString("back", 34, (int)(background_y + 39));
 			g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 16));
 
 			//draw start button
@@ -385,14 +400,38 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 			g.drawImage(background_vertical, null, 0, (int)background_y);
 			
 			//draw back button
-			g.drawImage(back, null, 25, (int)(background_y + 25));
+			g.drawImage(back, null, 20, (int)(background_y + 20));
 			g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 13));
-			g.drawString("back", 39, (int)(background_y + 44));
+			g.drawString("back", 34, (int)(background_y + 39));
 			g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 16));
 
+			//draw "game play options" text
+			g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 10));
+			g.drawString("game play options", 110, (int)(background_y + 178));
+			g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 16));
+			
+			//game option labels
+			g.drawString("Key", 25, (int)(background_y + 200));
+			g.drawString("Time", 95, (int)(background_y + 200));
+			g.drawString("Tempo", 170, (int)(background_y + 200));
+			g.drawString("Bars", 260, (int)(background_y + 200));
+			
+			//game option labels
+			g.drawString(key, 25, (int)(background_y + 225));
+			g.drawString(time, 95, (int)(background_y + 225));
+			g.drawString(tempo, 170, (int)(background_y + 225));
+			g.drawString(bars, 260, (int)(background_y + 225));
+			
+			//game option sliders
+			//keySlider.setBounds(x, y, width, height);
+			keySlider.setBounds(20, 250, 40, 135);
+			timeSlider.setBounds(100, 250, 40, 135);
+			tempoSlider.setBounds(180, 250, 40, 135);
+			barsSlider.setBounds(260, 250, 40, 135);
+			
 			//draw play button
-			g.drawImage(play, null, 50, (int)background_y + 415);
-			g.drawString("play", 142, (int)background_y + 445);
+			g.drawImage(play, null, 50, (int)background_y + 400);
+			g.drawString("play", 142, (int)background_y + 430);
 			
 		}
 	}
