@@ -127,6 +127,7 @@ public class AnimatedStaff extends JPanel
 	
 	private void initComponents(String player, String headerKey, List<String> measureKeys, int beatsPerBar, int subdivision)
 	{
+		setBorder(null);
 		setPreferredSize(new Dimension(1300, 250));
 		
 		// Do initial setup for the header and staff

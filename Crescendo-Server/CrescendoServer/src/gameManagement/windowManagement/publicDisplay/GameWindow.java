@@ -1,5 +1,6 @@
 package gameManagement.windowManagement.publicDisplay;
 
+import gameManagement.messageTranslationSystem.Note;
 import gameManagement.windowManagement.publicDisplay.gameWindow.GameTimer;
 import gameManagement.windowManagement.publicDisplay.gameWindow.ScoreBoard;
 import gameManagement.windowManagement.publicDisplay.staff.AnimatedStaff;
@@ -12,7 +13,10 @@ import java.awt.Point;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.Collection;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
@@ -65,6 +69,62 @@ public class GameWindow extends JPanel
 		timer.decrement();
 	}
 	
+	public void addNote(Note note)
+	{
+		if (note != null)
+		{
+			staff.addNote(note);
+		}
+	}
+	
+	public void addNotes(Collection<? extends Note> notes)
+	{
+		if (notes != null && !notes.isEmpty())
+		{
+			for (Note n : notes)
+			{
+				addNote(n);
+			}
+		}
+	}
+	
+	public void setChords(List<String> changes)
+	{
+		staff.setKeyChanges(changes);
+	}
+	
+	public void setKeySignature(String key)
+	{
+		staff.setKey(key);
+	}
+	
+	public void setScore(String player, int score)
+	{
+		scores.setScore(player, score);
+	}
+	
+	public void setScores(Map<String, Integer> scores)
+	{
+		if (scores != null && !scores.isEmpty())
+		{
+			Set<String> keys = scores.keySet();
+			for (String key : keys)
+			{
+				setScore(key, scores.get(key));
+			}
+		}
+	}
+	
+	public void setPlayerCount(int count)
+	{
+		scores.setPlayerCount(count);
+	}
+	
+	public void getScore(String player)
+	{
+		scores.getScore(player);
+	}
+	
 	@Override
 	protected void paintComponent(Graphics g)
 	{
@@ -98,20 +158,26 @@ public class GameWindow extends JPanel
 					setLayout(null);
 					Dimension size = getSize();
 					
-					// Calculate size and placement for staff
-					staffDimension.setSize((int)(size.width*0.8), (int)(size.height*0.28));
-					staffPoint.setLocation((getWidth() - staffDimension.width)/2, (getHeight() - staffDimension.height)/2);
-					
 					// Create the staff, add it to the window, and tell the staff to repaint itself
+					Dimension staffDimension = new Dimension((int)(size.width*0.8), (int)(size.height*0.28));
+					Point staffPoint = new Point((getWidth() - staffDimension.width)/2, (getHeight() - staffDimension.height)/2);
 					staff.setBounds(staffPoint.x, staffPoint.y, staffDimension.width, staffDimension.height);
 					add(staff);
 					staff.validate();
 					
+					// Set up bounds for timer, add it to the window, and tell it to validate
 					Dimension timerDimension = new Dimension((int)(size.width*0.125), (int)(size.height*0.11));
 					Point timerPoint = new Point((getWidth() - timerDimension.width)/2, (int)(getHeight()*0.15));
 					timer.setBounds(timerPoint.x, timerPoint.y, timerDimension.width, timerDimension.height);
 					add(timer);
 					timer.validate();
+					
+					// Set up bounds for timer, add it to the window, and tell it to validate
+					Dimension sbDimension = new Dimension((int)(getWidth()*0.6), (int)(getHeight()*0.2));
+					Point sbPoint = new Point((getWidth() - sbDimension.width)/2, (int)(getHeight()*0.7));
+					scores.setBounds(sbPoint.x, sbPoint.y, sbDimension.width, sbDimension.height);
+					add(scores);
+					scores.validate();
 				} 
 				catch (IOException e) 
 				{
@@ -125,8 +191,6 @@ public class GameWindow extends JPanel
 	private BufferedImage background = null;
 	private GameTimer timer = new GameTimer();
 	private ScoreBoard scores = new ScoreBoard();
-	private Point staffPoint = new Point();
-	private Dimension staffDimension = new Dimension();
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -143,7 +207,10 @@ public class GameWindow extends JPanel
 		
 		frame.setVisible(true);
 		
-		for (int i = 0; i < 60; ++i)
+		window.setTime(12);
+		window.setPlayerCount(4);
+		
+		for (int i = 0; i < 12; ++i)
 		{
 			try 
 			{

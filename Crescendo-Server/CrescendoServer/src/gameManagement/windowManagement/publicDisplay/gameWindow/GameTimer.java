@@ -57,6 +57,7 @@ public class GameTimer extends JTextField
 		setEditable(false);
 		setBackground(Color.darkGray);
 		setForeground(Color.white);
+		setBorder(null);
 		setFont(new Font("Courier New", Font.PLAIN, 40));
 		setHorizontalAlignment(JTextField.CENTER);
 	}
