@@ -11,10 +11,10 @@ public class ColorMap
 	
 	static
 	{
-		colors.put(Players.PLAYER_ONE, Color.getHSBColor(0f, 0.9f, 0.6f));
-		colors.put(Players.PLAYER_TWO, Color.getHSBColor(0.36f, 0.9f, 0.4f));
-		colors.put(Players.PLAYER_THREE, Color.BLUE);
-		colors.put(Players.PLAYER_FOUR, Color.ORANGE);
+		colors.put(Players.PLAYER_ONE, Color.getHSBColor(0f, 1f, 0.8f));
+		colors.put(Players.PLAYER_TWO, Color.getHSBColor(0.36f, 0.9f, 0.6f));
+		colors.put(Players.PLAYER_THREE, Color.getHSBColor(0.68f, 1f, 0.6f));
+		colors.put(Players.PLAYER_FOUR, Color.getHSBColor(0f, 0.6f, 0.9f));
 	}
 	
 	public static Color getPlayerColor(String key)

@@ -40,6 +40,11 @@ public class GameTimer extends JTextField
 		}
 	}
 	
+	public void reset()
+	{
+		setTime(defaultInitialTime);
+	}
+	
 	public String toTimeString()
 	{
 		Integer min = currentTime / 60;
@@ -72,6 +77,7 @@ public class GameTimer extends JTextField
 	
 	private int initialTime = 0;
 	private int currentTime = 0;
+	private int defaultInitialTime = 0;
 	
 	private static final long serialVersionUID = 1L;
 }

@@ -37,6 +37,7 @@ import keys.Players;
  *
  */
 // TODO Fix the sizing on measures in this class.  3/4 time still fits 4 quarter notes into a measure.
+// TODO add rests
 public class Staff extends JPanel 
 {
 	/**

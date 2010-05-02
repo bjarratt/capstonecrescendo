@@ -91,11 +91,11 @@ public class ScoreBoard extends JPanel
 	 * @param count
 	 * @param score
 	 */
-	public void reset(int count, int score)
+	public void reset()
 	{
 		removeAll();
-		setPlayerCount(count);
-		startScore = score;
+		setPlayerCount(defaultPlayerCount);
+		startScore = defaultStartScore;
 		
 		Set<String> players = playerScores.keySet();
 		for (String player : players)
@@ -150,6 +150,8 @@ public class ScoreBoard extends JPanel
 	// class members
 	private int playerCount = 1;
 	private int startScore = 200;
+	private int defaultPlayerCount = 1;
+	private int defaultStartScore = 200;
 	private HashMap<String, ScoreField> playerScores = new HashMap<String, ScoreField>();
 	
 	private static final long serialVersionUID = 1L;
@@ -171,7 +173,7 @@ public class ScoreBoard extends JPanel
 		try 
 		{
 			Thread.sleep(1000);
-			b.reset(2, 1000);
+			b.reset();
 		}
 		catch (InterruptedException e) 
 		{

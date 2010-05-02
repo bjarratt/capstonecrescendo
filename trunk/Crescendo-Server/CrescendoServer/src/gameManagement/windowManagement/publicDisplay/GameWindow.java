@@ -24,6 +24,8 @@ import javax.swing.JPanel;
 import javax.swing.event.AncestorEvent;
 import javax.swing.event.AncestorListener;
 
+import keys.Players;
+
 /**
  * This class encapsulates the primary screen for gameplay.  It displays the following information
  * <ul>
@@ -57,6 +59,11 @@ public class GameWindow extends JPanel
 	{
 		staff = new AnimatedStaff(player, key, chords, beats, subdivision);
 		initComponents();
+	}
+	
+	public void setInitTime(int seconds)
+	{
+//		timer
 	}
 	
 	public void setTime(int seconds)
@@ -123,6 +130,18 @@ public class GameWindow extends JPanel
 	public void getScore(String player)
 	{
 		scores.getScore(player);
+	}
+	
+	public void setCurrentPlayer(String player)
+	{
+		staff.setPlayer(player);
+	}
+	
+	public void reset()
+	{
+		timer.reset();
+		staff.reset();
+		scores.reset();
 	}
 	
 	@Override
@@ -210,6 +229,7 @@ public class GameWindow extends JPanel
 		window.setTime(12);
 		window.setPlayerCount(4);
 		
+		List<String> players = Players.getPlayers();
 		for (int i = 0; i < 12; ++i)
 		{
 			try 
