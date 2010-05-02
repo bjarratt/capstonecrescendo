@@ -153,7 +153,7 @@ public class GameManager implements ActionListener
 		WindowManager.getInstance().addWindow(GameState.PLAY, gameWindow);
 		WindowManager.getInstance().addWindow(GameState.PAUSE, pauseWindow);
 		WindowManager.getInstance().addWindow(GameState.POST_GAME, new JPanel());
-//		WindowManager.getInstance().run();
+		WindowManager.getInstance().run();
 	}
 
 	/**
@@ -388,6 +388,9 @@ public class GameManager implements ActionListener
 					splashWindow.disconnectPlayer(3);
 					splashWindow.disconnectPlayer(4);
 					
+					gameWindow.reset();
+					System.out.println("GameWindow has been reset");
+					
 					System.out.println("All players have been disconnected");
 					System.out.println("*****\tAt the Splash Screen\t*****");
 					WindowManager.getInstance().goToWindow(GameState.SPLASH_SCREEN);
@@ -532,6 +535,9 @@ public class GameManager implements ActionListener
 					pausedPlayerId = new String();
 					
 					notesToSend = new ArrayList<Note>();
+					
+					gameWindow.reset();
+					System.out.println("GameWindow has been reset");
 					
 					int oldNumberOfPlayers = numberOfActivePlayers;
 					numberOfActivePlayers = 0;

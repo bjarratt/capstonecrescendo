@@ -141,6 +141,7 @@ public class GameWindow extends JPanel
 		timer.reset();
 		staff.reset();
 		scores.reset();
+		validate();
 	}
 	
 	@Override
