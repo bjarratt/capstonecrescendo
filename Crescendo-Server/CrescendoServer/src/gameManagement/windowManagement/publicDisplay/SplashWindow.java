@@ -47,7 +47,7 @@ public class SplashWindow extends JPanel
 	{
 		if (0 < player && player < 5)
 		{
-			connections.set(player, false);
+			connections.set(player - 1, false);
 			this.repaint();
 		}
 	}
