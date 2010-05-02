@@ -29,16 +29,16 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 	private gameManagement.messageTranslationSystem.ConnectionManager myCM;
 //	private JButton connect;
 //	private JButton disconnect;
-	private JButton playNote;
-	private JButton splashScreen;
-	private JButton gameOptions;
-	private JButton setTempo;
-	private JButton setKey;
-	private JButton setTimeSignature;
-	private JButton setNumberOfBars;
-	private JButton play;
-	private JButton pause;
-	private JButton review;
+//	private JButton playNote;
+//	private JButton splashScreen;
+//	private JButton gameOptions;
+//	private JButton setTempo;
+//	private JButton setKey;
+//	private JButton setTimeSignature;
+//	private JButton setNumberOfBars;
+//	private JButton play;
+//	private JButton pause;
+//	private JButton review;
 	
 	private Random rand;
 
@@ -381,26 +381,26 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 //			myCM.sendMessage(player + "_" + GameState.CONNECT);
 //		if(e.getSource() == disconnect)
 //			myCM.sendMessage(player + "_" + GameState.DISCONNECT);
-		if(e.getSource() == playNote)
-			myCM.sendMessage(player + "_" + generatePitch() + "_" + generateLength());
-		if(e.getSource() == splashScreen)
-			myCM.sendMessage(player + "_" + GameState.SPLASH_SCREEN);
-		if(e.getSource() == gameOptions)
-			myCM.sendMessage(player + "_" + GameState.GAME_OPTIONS);
-		if(e.getSource() == setTempo)
-			myCM.sendMessage(player + "_" + GameState.SET_TEMPO + "_" + generateTempo());
-		if(e.getSource() == setKey)
-			myCM.sendMessage(player + "_" + GameState.SET_KEY + "_" + generateKey());
-		if(e.getSource() == setTimeSignature)
-			myCM.sendMessage(player + "_" + GameState.SET_TIME_SIGNATURE + "_" + generateTimeSignatureNumerator()+ "/4");
-		if(e.getSource() == setNumberOfBars)
-			myCM.sendMessage(player + "_" + GameState.SET_NUMBER_OF_BARS + "_" + generateNumberOfBars());
-		if(e.getSource() == play)
-			myCM.sendMessage(player + "_" + GameState.PLAY);
-		if(e.getSource() == pause)
-			myCM.sendMessage(player + "_" + GameState.PAUSE);
-		if(e.getSource() == review)
-			myCM.sendMessage(player + "_" + GameState.PLAY_SONG);
+//		if(e.getSource() == playNote)
+//			myCM.sendMessage(player + "_" + generatePitch() + "_" + generateLength());
+//		if(e.getSource() == splashScreen)
+//			myCM.sendMessage(player + "_" + GameState.SPLASH_SCREEN);
+//		if(e.getSource() == gameOptions)
+//			myCM.sendMessage(player + "_" + GameState.GAME_OPTIONS);
+//		if(e.getSource() == setTempo)
+//			myCM.sendMessage(player + "_" + GameState.SET_TEMPO + "_" + generateTempo());
+//		if(e.getSource() == setKey)
+//			myCM.sendMessage(player + "_" + GameState.SET_KEY + "_" + generateKey());
+//		if(e.getSource() == setTimeSignature)
+//			myCM.sendMessage(player + "_" + GameState.SET_TIME_SIGNATURE + "_" + generateTimeSignatureNumerator()+ "/4");
+//		if(e.getSource() == setNumberOfBars)
+//			myCM.sendMessage(player + "_" + GameState.SET_NUMBER_OF_BARS + "_" + generateNumberOfBars());
+//		if(e.getSource() == play)
+//			myCM.sendMessage(player + "_" + GameState.PLAY);
+//		if(e.getSource() == pause)
+//			myCM.sendMessage(player + "_" + GameState.PAUSE);
+//		if(e.getSource() == review)
+//			myCM.sendMessage(player + "_" + GameState.PLAY_SONG);
 	}
 
 	/**
