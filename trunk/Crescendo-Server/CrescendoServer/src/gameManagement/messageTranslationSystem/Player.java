@@ -36,8 +36,8 @@ public class Player implements Runnable
 		playerFrame.setResizable(false);
 		playerFrame.setBackground(Color.DARK_GRAY);
 		
-//		playerFrame.add(new CHIPhoneGUI(player, myCM));
-		playerFrame.add(new IPhoneGUI(player, myCM));
+		playerFrame.add(new CHIPhoneGUI(player, myCM));
+//		playerFrame.add(new IPhoneGUI(player, myCM));
 		
 		playerFrame.pack();
 	}
