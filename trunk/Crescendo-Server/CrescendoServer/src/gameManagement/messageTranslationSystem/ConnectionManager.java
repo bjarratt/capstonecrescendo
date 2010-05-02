@@ -14,14 +14,14 @@ public class ConnectionManager
 
 	/*****iPhone Emulators*****/
 	Player player1;
-//	Player player2;
-//	Player player3;
-//	Player player4;
+	Player player2;
+	Player player3;
+	Player player4;
 
 	Thread p1;
-//	Thread p2;
-//	Thread p3;
-//	Thread p4;
+	Thread p2;
+	Thread p3;
+	Thread p4;
 	/**************************/
 
 	public ConnectionManager()
@@ -33,20 +33,19 @@ public class ConnectionManager
 		//This section emulates four connected iPhones sending random messages
 
 		player1 = new Player("player1",this);
-//		player2 = new Player("player2",this);
-//		player3 = new Player("player3",this);
-//		player4 = new Player("player4",this);
+		player2 = new Player("player2",this);
+		player3 = new Player("player3",this);
+		player4 = new Player("player4",this);
 
 		p1 = new Thread(player1);
-//		p2 = new Thread(player2);
-//		p3 = new Thread(player3);
-//		p4 = new Thread(player4);
-
+		p2 = new Thread(player2);
+		p3 = new Thread(player3);
+		p4 = new Thread(player4);
 
 		p1.start();
-//		p2.start();
-//		p3.start();
-//		p4.start();
+		p2.start();
+		p3.start();
+		p4.start();
 		/**********************End of test code***********************/
 
 		gameManager.run();
