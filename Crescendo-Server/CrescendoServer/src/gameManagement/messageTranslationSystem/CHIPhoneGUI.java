@@ -66,6 +66,9 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 
 	private BufferedImage back = null;
 	private Rectangle2D backBox = null;
+
+	private BufferedImage play = null;
+	private Rectangle2D playBox = null;
 	
 	private BufferedImage help = null;
 	private Rectangle2D helpBox = null;
@@ -74,6 +77,7 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 	private boolean at_help_screen;
 	private boolean at_splash_screen;
 	private boolean at_game_options_screen;
+	private boolean at_play_screen;
 	
 	private double background_y;
 	
@@ -94,6 +98,7 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 		at_help_screen = false;
 		at_splash_screen = false;
 		at_game_options_screen = false;
+		at_play_screen = false;
 		
 		background_y = 500;
 		
@@ -101,18 +106,18 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 		
 		try
 		{
-			background_vertical = ImageIO.read(new File("src/background_vertical.png"));
-			menu_button_up = ImageIO.read(new File("src/menu_button_up.png"));
-			menu_button_down = ImageIO.read(new File("src/menu_button_down.png"));
-			back_button_up = ImageIO.read(new File("src/back_button_up.png"));
-			back_button_down = ImageIO.read(new File("src/back_button_down.png"));
-			help_button_up = ImageIO.read(new File("src/help_button_up.png"));
-			help_button_down = ImageIO.read(new File("src/help_button_down.png"));
-			volume_icon = ImageIO.read(new File("src/volume_icon.png"));
-			compose_background_red = ImageIO.read(new File("src/compose_background_red.png"));
-			compose_background_green = ImageIO.read(new File("src/compose_background_green.png"));
-			compose_background_blue = ImageIO.read(new File("src/compose_background_blue.png"));
-			compose_background_orange = ImageIO.read(new File("src/compose_background_orange.png"));
+			background_vertical = ImageIO.read(new File("background_vertical.png"));
+			menu_button_up = ImageIO.read(new File("menu_button_up.png"));
+			menu_button_down = ImageIO.read(new File("menu_button_down.png"));
+			back_button_up = ImageIO.read(new File("back_button_up.png"));
+			back_button_down = ImageIO.read(new File("back_button_down.png"));
+			help_button_up = ImageIO.read(new File("help_button_up.png"));
+			help_button_down = ImageIO.read(new File("help_button_down.png"));
+			volume_icon = ImageIO.read(new File("volume_icon.png"));
+			compose_background_red = ImageIO.read(new File("compose_background_red.png"));
+			compose_background_green = ImageIO.read(new File("compose_background_green.png"));
+			compose_background_blue = ImageIO.read(new File("compose_background_blue.png"));
+			compose_background_orange = ImageIO.read(new File("compose_background_orange.png"));
 		}
 		catch(IOException e)
 		{
@@ -364,6 +369,32 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 			g.drawImage(disconnect, null, 50, (int)background_y + 275);
 			g.drawString("disconnect", 116, (int)background_y + 305);
 		}
+		if(at_game_options_screen)
+		{
+			
+			if(back == null)
+				back = back_button_up;
+			if(backBox == null)
+				backBox = new Rectangle2D.Double(25,background_y + 25,51,31);	
+			if(play == null)
+				play = menu_button_up;
+			if(playBox == null)
+				playBox = new Rectangle2D.Double(50,background_y + 415,220,50);	
+			
+			//this is a vertical screen
+			g.drawImage(background_vertical, null, 0, (int)background_y);
+			
+			//draw back button
+			g.drawImage(back, null, 25, (int)(background_y + 25));
+			g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 13));
+			g.drawString("back", 39, (int)(background_y + 44));
+			g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 16));
+
+			//draw play button
+			g.drawImage(play, null, 50, (int)background_y + 415);
+			g.drawString("play", 142, (int)background_y + 445);
+			
+		}
 	}
 	
 	private void clearAllBoundingBoxes()
@@ -373,6 +404,7 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 		backBox = null;
 		startBox = null;
 		disconnectBox = null;
+		playBox = null;
 	}
 	
 	public void actionPerformed(ActionEvent e)
@@ -602,6 +634,14 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 			at_splash_screen = false;
 			at_connect_screen = true;
 		}
+		else if((playBox != null) && (playBox.contains(e.getX(),e.getY())))
+		{
+			System.out.println("play " + rand.nextInt());
+			clearAllBoundingBoxes();
+			
+			at_game_options_screen = false;
+			at_play_screen = true;
+		}
 	}
 
 	public void mouseEntered(MouseEvent e)
@@ -628,6 +668,8 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 			disconnect = menu_button_down;
 		if((startBox != null) && (startBox.contains(e.getX(),e.getY())))
 			start = menu_button_down;
+		if((playBox != null) && (playBox.contains(e.getX(),e.getY())))
+			play = menu_button_down;
 		
 		this.repaint();
 	}
@@ -639,6 +681,7 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 		back = back_button_up;
 		start = menu_button_up;
 		disconnect = menu_button_up;
+		play = menu_button_up;
 		this.repaint();
 	}
 	
