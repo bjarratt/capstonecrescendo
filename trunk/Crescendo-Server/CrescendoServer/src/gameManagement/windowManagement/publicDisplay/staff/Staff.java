@@ -177,6 +177,11 @@ public class Staff extends JPanel
 		repaint();
 	}
 	
+	public void clearNotes()
+	{
+		playedNotes.removeAllElements();
+	}
+	
 	// The meat of this class.  This function draws everything.
 	@Override
 	protected void paintComponent(Graphics g)

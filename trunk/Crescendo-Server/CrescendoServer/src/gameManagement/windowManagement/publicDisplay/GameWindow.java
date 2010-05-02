@@ -24,8 +24,6 @@ import javax.swing.JPanel;
 import javax.swing.event.AncestorEvent;
 import javax.swing.event.AncestorListener;
 
-import keys.Players;
-
 /**
  * This class encapsulates the primary screen for gameplay.  It displays the following information
  * <ul>
@@ -36,6 +34,7 @@ import keys.Players;
  * 
  * @author Zach
  */
+// TODO Make this window a little bit prettier
 public class GameWindow extends JPanel 
 {
 	/**
@@ -226,21 +225,20 @@ public class GameWindow extends JPanel
 		
 		frame.setVisible(true);
 		
-		window.setTime(12);
+//		window.setTime(12);
 		window.setPlayerCount(4);
-		
-		List<String> players = Players.getPlayers();
-		for (int i = 0; i < 12; ++i)
-		{
-			try 
-			{
-				Thread.sleep(1000);
-				window.decrementTime();
-			} 
-			catch (InterruptedException e) 
-			{
-				e.printStackTrace();
-			}
-		}
+//		
+//		for (int i = 0; i < 12; ++i)
+//		{
+//			try 
+//			{
+//				Thread.sleep(1000);
+//				window.decrementTime();
+//			} 
+//			catch (InterruptedException e) 
+//			{
+//				e.printStackTrace();
+//			}
+//		}
 	}
 }
