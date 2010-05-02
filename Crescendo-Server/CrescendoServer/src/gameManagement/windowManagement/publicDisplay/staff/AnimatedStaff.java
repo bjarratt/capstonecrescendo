@@ -119,6 +119,13 @@ public class AnimatedStaff extends JPanel
 		}
 	}
 	
+	public void reset()
+	{
+		header.setKeySignature(KeySignatures.CMajor);
+		header.setTimeSignature(4, 4);
+		staff.setMeasureKeys(null);
+	}
+	
 	@Override
 	protected void paintComponent(Graphics g)
 	{
@@ -135,10 +142,12 @@ public class AnimatedStaff extends JPanel
 		staff = new Staff();
 		
 		noScroll = new JScrollPane(header);
+		noScroll.setBorder(null);
 		noScroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_NEVER);
 		noScroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);		
 		
 		scroller = new JScrollPane(staff);
+		scroller.setBorder(null);
 		scroller.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_NEVER);
 		scroller.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 		
