@@ -1,7 +1,6 @@
 package gameManagement.windowManagement.publicDisplay;
 
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -12,12 +11,22 @@ import java.io.IOException;
 import java.util.List;
 
 import javax.imageio.ImageIO;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import keys.GameOptions;
 import keys.KeySignatures;
 
+/**
+ * For displaying game options selected by player one.  Currently, it only shows four game options:
+ * <ul>
+ *     <li>Playback Tempo</li>
+ *     <li>Initial Key Signature</li>
+ *     <li>Number of measures to complete the song</li>
+ *     <li>Time Signature</li>
+ * </ul>
+ * 
+ * @author Zach
+ */
 public class GameOptionsWindow extends JPanel 
 {
 	/**
@@ -30,7 +39,7 @@ public class GameOptionsWindow extends JPanel
 	}
 	
 	/**
-	 * Createa  game options window with the given presets
+	 * Create a game options window with the given presets
 	 * @param key - <code>String</code> representing the key signature
 	 * @param beats
 	 * @param subdivision
@@ -48,6 +57,10 @@ public class GameOptionsWindow extends JPanel
 		setMeasureCount(measureCount);
 	}
 	
+	/**
+	 * Set the tempo at which the song will be played back at the end of the game.
+	 * @param tempo - <code>int</code> in beats per minute
+	 */
 	public void setTempo(int tempo)
 	{
 		if (tempo > 0)
@@ -57,6 +70,10 @@ public class GameOptionsWindow extends JPanel
 		}
 	}
 	
+	/**
+	 * Sets the key signature at the beginning of the staff.
+	 * @param key - <code>String</code> key from <code>keys.KeySignatures</code>
+	 */
 	public void setKey(String key)
 	{
 		if (key != null && KeySignatures.hasKeySignature(key))
@@ -66,6 +83,16 @@ public class GameOptionsWindow extends JPanel
 		}
 	}
 	
+	/**
+	 * Set's the time signature at which the notes are drawn.  Currently, it only supports time signatures
+	 * <ul>
+	 *     <li>2/4</li>
+	 *     <li>3/4</li>
+	 *     <li>4/4</li>
+	 * </ul>
+	 * @param beats - how many beats in a measure
+	 * @param subdivision - which note gets the downbeat in a measure
+	 */
 	public void setTime(int beats, int subdivision)
 	{
 		if ((1 < beats && beats < 5) && subdivision == 4)
@@ -76,6 +103,10 @@ public class GameOptionsWindow extends JPanel
 		}
 	}
 	
+	/**
+	 * Sets the number of measures required for players to win the game
+	 * @param count - <code>int</code> representing the number of measures
+	 */
 	public void setMeasureCount(int count)
 	{
 		if (count > 0)
@@ -156,6 +187,7 @@ public class GameOptionsWindow extends JPanel
 		}
 	}
 	
+	// Called from the constructors, this function loads the game options logo and the background.
 	private void initImages()
 	{
 		try 
@@ -170,6 +202,7 @@ public class GameOptionsWindow extends JPanel
 		}
 	}
 	
+	// member variables and their defaults
 	private String keySignature = KeySignatures.CMajor;
 	private int playbackTempo = 120;
 	private int beatsPerBar = 4;
@@ -180,17 +213,4 @@ public class GameOptionsWindow extends JPanel
 	private BufferedImage logo = null;
 	
 	private static final long serialVersionUID = 1L;
-	
-	public static void main(String[] args)
-	{
-		JFrame frame = new JFrame("Test");
-		frame.setMinimumSize(new Dimension(800, 600));
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-		GameOptionsWindow options = new GameOptionsWindow();
-		
-		frame.getContentPane().add(options);
-		
-		frame.setVisible(true);
-	}
 }

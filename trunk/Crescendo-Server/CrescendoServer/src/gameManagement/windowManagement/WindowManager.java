@@ -1,58 +1,64 @@
 package gameManagement.windowManagement;
 
-import gameManagement.windowManagement.publicDisplay.GameOptionsWindow;
-import gameManagement.windowManagement.publicDisplay.GameWindow;
-import gameManagement.windowManagement.publicDisplay.PauseWindow;
-import gameManagement.windowManagement.publicDisplay.SplashWindow;
-
 import java.awt.Color;
-import java.util.HashMap;
+import java.awt.GridLayout;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import keys.GameState;
-
+/**
+ * Manages all windows in the game.  It will display whatever you tell it to.  It's like a dog in that 
+ * sense.  But what you need to know is that it keeps a collection of windows (i.e. jpanels) that it can
+ * display to the user via a fancy transition, idea courtesy of Travis Kosarek.
+ * 
+ * @author Zach
+ */
 public class WindowManager 
 {
+	/**
+	 * Tells the window manager to show the start up frame.
+	 */
 	public void run()
 	{
 		this.mainFrame.setVisible(true);
 	}
 	
+	/**
+	 * Add a window to the Manager's collection.
+	 * @param key - <code>String</code> key with which to reference the specified window
+	 * @param window - <code>JPanel</code> that is associated with the given key and to be shown
+	 * 				   when the key is fed into the method <code>goToWindow()</code>.
+	 */
 	public void addWindow(final String key, JPanel window)
 	{
-		if (key != null && window != null)
-		{
-			if (windows.containsKey(key))
-			{
-				windows.remove(key);
-			}
-			windows.put(key, window);
-		}
+		aniWin.addWindow(key, window);
 	}
 	
+	/**
+	 * Get a reference to the window that the key references
+	 * @param key - <code>String</code> that is associated with the desired reference.
+	 * @return - a JPanel object if the key is being used, else it returns null
+	 */
 	public JPanel getWindow(String key)
 	{
-		JPanel w = null;
-		if (windows.containsKey(key))
-		{
-			w = windows.get(key);
-		}
-		return w;
+		return aniWin.getWindow(key);
 	}
 	
-	public void goToWindow(String key)
+	/**
+	 * Tells the window manager to slide the specified screen into view.  It does nothing if the key
+	 * is not associated with a window.
+	 * @param key - <code>String</code> key indicating to which window to transition
+	 */
+	public synchronized void goToWindow(String key)
 	{
-		if (windows.containsKey(key))
+		try
 		{
-			if (currentWindowKey != null)
-			{
-				mainFrame.getContentPane().remove(windows.get(currentWindowKey));
-			}
-			mainFrame.getContentPane().add(windows.get(key));
-			currentWindowKey = key;
-			windows.get(key).revalidate();
+			Thread.sleep(1000);
+			aniWin.goToWindow(key);
+		}
+		catch (InterruptedException e)
+		{
+			e.printStackTrace();
 		}
 	}
 	
@@ -65,20 +71,23 @@ public class WindowManager
 		return instance;
 	}
 	
+	// setup the JFrame
 	private void initFrame()
 	{
 		// Set layout manager
-//		GridLayout manager = new GridLayout(1,1);
-		mainFrame.setLayout(null);
+		GridLayout manager = new GridLayout(1,1);
+		mainFrame.setLayout(manager);
 		
 		// Set full-screen mode
 		mainFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		mainFrame.setUndecorated(true);
-		mainFrame.setSize(1366, 768/*Toolkit.getDefaultToolkit().getScreenSize()*/);
-		mainFrame.getContentPane().setBackground(Color.BLACK);
+		mainFrame.getContentPane().setBackground(Color.red);
 		
 		// Set default close operation
 		mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		// Add animation window
+		mainFrame.getContentPane().add(aniWin);
 	}
 	
 	// Part of the singleton setup
@@ -89,35 +98,6 @@ public class WindowManager
 	
 	private static WindowManager instance = new WindowManager();
 
-	private HashMap<String, JPanel> windows = new HashMap<String, JPanel>();
 	private JFrame mainFrame = new JFrame();
-	private String currentWindowKey = null;
-	
-	
-	public static void main(String[] args)
-	{
-		WindowManager.getInstance().addWindow(GameState.SPLASH_SCREEN, new SplashWindow());
-		WindowManager.getInstance().addWindow(GameState.GAME_OPTIONS, new GameOptionsWindow());
-		WindowManager.getInstance().addWindow(GameState.PLAY, new GameWindow());
-		WindowManager.getInstance().addWindow(GameState.PAUSE, new PauseWindow());
-		WindowManager.getInstance().addWindow(GameState.POST_GAME, new JPanel());
-		WindowManager.getInstance().run();
-		
-		try 
-		{
-//			WindowManager.getInstance().goToWindow(GameState.SPLASH_SCREEN);
-//			Thread.sleep(1000);
-			WindowManager.getInstance().goToWindow(GameState.GAME_OPTIONS);
-			Thread.sleep(1000);
-			WindowManager.getInstance().goToWindow(GameState.PLAY);
-			Thread.sleep(1000);
-//			WindowManager.getInstance().goToWindow(GameState.PAUSE);
-//			Thread.sleep(1000);
-//			WindowManager.getInstance().goToWindow(GameState.POST_GAME);
-//			Thread.sleep(100);
-		} 
-		catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-	}
+	private AnimationWindow aniWin = new AnimationWindow();
 }
