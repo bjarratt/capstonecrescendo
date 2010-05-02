@@ -1038,6 +1038,7 @@ public class GameManager implements ActionListener
 		System.out.println("player 3 Score: " + player3Score);
 		System.out.println("player 4 Score: " + player4Score);
 		System.out.println();
+		//TODO send to Display
 	}
 	
 	private void sendTimeToDisplay(int time)
