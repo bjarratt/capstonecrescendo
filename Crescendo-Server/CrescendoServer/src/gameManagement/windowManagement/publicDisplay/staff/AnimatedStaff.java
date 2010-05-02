@@ -121,9 +121,11 @@ public class AnimatedStaff extends JPanel
 	
 	public void reset()
 	{
-		header.setKeySignature(KeySignatures.CMajor);
-		header.setTimeSignature(4, 4);
-		staff.setMeasureKeys(null);
+		setKey(KeySignatures.CMajor);
+		setTime(4, 4);
+		setKeyChanges(null);
+		staff.clearNotes();
+		// TODO Be sure to set the JViewport back to its initial position
 	}
 	
 	@Override
