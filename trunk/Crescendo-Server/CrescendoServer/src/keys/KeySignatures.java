@@ -69,7 +69,7 @@ public class KeySignatures
 	
 	public static boolean hasKeySignatures(Collection<? extends String> keys)
 	{
-		boolean areValid = false;
+		boolean areValid = true;
 		
 		if (keys != null && !keys.isEmpty())
 		{
