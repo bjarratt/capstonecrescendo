@@ -1,7 +1,17 @@
 package gameManagement.windowManagement.publicDisplay.gameWindow;
 
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.GridLayout;
+import java.awt.Point;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Set;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.event.AncestorEvent;
+import javax.swing.event.AncestorListener;
 
 import keys.Players;
 
@@ -11,14 +21,15 @@ import keys.Players;
  * 
  * @author Zach
  */
-public class ScoreBoard
+public class ScoreBoard extends JPanel
 {
 	/**
 	 * Default Constructor
 	 */
 	public ScoreBoard()
 	{
-		initScores(playerCount, startScore);
+		super();
+		initComponents();
 	}
 	
 	/**
@@ -28,93 +39,143 @@ public class ScoreBoard
 	 */
 	public ScoreBoard(int playerCount, int startScore)
 	{
-		initScores(playerCount, startScore);
+		super();
+		setPlayerCount(playerCount);
+		this.startScore = startScore;
+		initComponents();
 	}
 	
+	/**
+	 * Sets a player's score to the specified value.  Updates only if there is an entry for the player.
+	 * @param player - player
+	 * @param score - new score
+	 */
+	public void setScore(String player, int score)
+	{
+		if (player != null && playerScores.containsKey(player))
+		{
+			ScoreField field = playerScores.get(player);
+			field.setScore(score);
+		}
+	}
+	
+	/**
+	 * Get the score of the specified player
+	 * @param player - specified player
+	 * @return - integer value of player's score
+	 */
 	public int getScore(String player)
 	{
 		Integer score = 0;
 		
 		if (player != null && playerScores.containsKey(player))
 		{
-			score = playerScores.get(player);
+			ScoreField field = playerScores.get(player);
+			score = field.getScore();
 		}
 		
 		return score.intValue();
 	}
 	
-	/**
-	 * Use this function to either increment or decrement a player's score
-	 * @param player - player who's score needs updating
-	 * @param pointsEarned - the points earned (can be either positive or negative)
-	 */
-	public void updateScore(String player, int pointsEarned)
-	{
-		if (player != null && playerScores.containsKey(player))
-		{
-			playerScores.put(player, getScore(player) + pointsEarned);
-		}
-	}
-	
-	/**
-	 * Sets the number of players for a given game. It does nothing if the count is a bad number.
-	 * <br/>Warning!  This function will reset any data prior prior to the call of setPlayerCount() 
-	 * and set each player's score to the initial score.
-	 * @param count
-	 */
 	public void setPlayerCount(int count)
 	{
-		if (count > 0)
+		if (0 < count && count < 5)
 		{
-			List<String> players = Players.getPlayers();
-			playerScores = new HashMap<String, Integer>();
-			for (int i = 0; i < players.size(); ++i)
-			{
-				playerScores.put(players.get(i), startScore);
-			}
+			playerCount = count;
+			updateDisplay();
 		}
-	}
-	
-	public void setInitialScore(int score)
-	{
-		startScore = score;
-	}
-	
-	public int getInitialScore()
-	{
-		return startScore;
 	}
 	
 	/**
-	 * Resets all scores to the initial score
+	 * Reset the state of the score board.  
+	 * @param count
+	 * @param score
 	 */
-	public void resetScores()
+	public void reset(int count, int score)
 	{
-		List<String> players = Players.getPlayers();
-		for (int i = 0; i < playerCount; ++i)
+		removeAll();
+		setPlayerCount(count);
+		startScore = score;
+		
+		Set<String> players = playerScores.keySet();
+		for (String player : players)
 		{
-			playerScores.put(players.get(i), startScore);
+			ScoreField playerScore = playerScores.get(player);
+			playerScore.setScore(startScore);
 		}
+		updateDisplay();
 	}
 	
-	// to be used in the constructor(s) to initialize the scores
-	private void initScores(int count, int score)
+	private void updateDisplay()
 	{
-		if (count > 0)
+		this.setVisible(false);
+		this.setVisible(true);
+	}
+	
+	// Initializes each player field.
+	private void initComponents()
+	{
+		this.setOpaque(false);
+		this.setLayout(null);
+		
+		List<String> players = Players.getPlayers();
+		for (String player : players)
 		{
-			playerCount = count;
+			playerScores.put(player, new ScoreField(player, startScore));
 		}
 		
-		startScore = score;
-		List<String> players = Players.getPlayers();
-		for (int i = 0; i < playerCount; ++i)
-		{
-			playerScores.put(players.get(i), startScore);
-		}
+		this.addAncestorListener(new AncestorListener() {
+			
+			@Override public void ancestorRemoved(AncestorEvent event) {}
+			@Override public void ancestorMoved(AncestorEvent event) {}
+			
+			@Override 
+			public void ancestorAdded(AncestorEvent event) 
+			{
+				List<String> players = Players.getPlayers();
+				for (int i = 0; i < playerCount; ++i)
+				{
+					ScoreField field = playerScores.get(players.get(i));
+					Dimension d = new Dimension((int)(getWidth()*0.2), getHeight()/2);
+					int regionWidth = getWidth()/playerCount;
+					Point p = new Point(i*regionWidth + (regionWidth - d.width)/2, (getHeight() - d.height)/2);
+					field.setBounds(p.x, p.y, d.width, d.height);
+					add(field);
+					field.validate();
+				}
+			}
+		});
 	}
 	
 	// class members
 	private int playerCount = 1;
 	private int startScore = 200;
-	private HashMap<String, Integer> playerScores = new HashMap<String, Integer>();
+	private HashMap<String, ScoreField> playerScores = new HashMap<String, ScoreField>();
+	
+	private static final long serialVersionUID = 1L;
+	
+	public static void main(String[] args)
+	{
+		JFrame frame = new JFrame("ScoreBoard test");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setResizable(false);
+		frame.setSize(new Dimension(1000, 200));
+		frame.setLayout(new GridLayout(1,1));
+		frame.getContentPane().setBackground(Color.gray);
+		
+		ScoreBoard b = new ScoreBoard(4, 200);
+		frame.getContentPane().add(b);
+		
+		frame.setVisible(true);
+		
+		try 
+		{
+			Thread.sleep(1000);
+			b.reset(2, 1000);
+		}
+		catch (InterruptedException e) 
+		{
+			e.printStackTrace();
+		}
+	}
 }

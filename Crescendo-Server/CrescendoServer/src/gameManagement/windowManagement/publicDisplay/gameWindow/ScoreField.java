@@ -1,12 +1,15 @@
 package gameManagement.windowManagement.publicDisplay.gameWindow;
 
-import java.awt.Color;
-import java.awt.Font;
-
 import gameManagement.windowManagement.publicDisplay.ColorMap;
 
-import javax.swing.JFrame;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ComponentEvent;
+import java.awt.event.ComponentListener;
+
 import javax.swing.JTextField;
+import javax.swing.event.AncestorEvent;
+import javax.swing.event.AncestorListener;
 
 import keys.Players;
 
@@ -26,7 +29,7 @@ public class ScoreField extends JTextField
 	 * @param startScore - the score displayed whenever the field first becomes visible
 	 * @param player - the player associated with this score field, visually indicated by background color
 	 */
-	public ScoreField(int startScore, String player)
+	public ScoreField(String player, int startScore)
 	{
 		setScore(startScore);
 		setPlayer(player);
@@ -57,14 +60,29 @@ public class ScoreField extends JTextField
 		updateDisplay();
 	}
 	
+	public int getScore()
+	{
+		return score;
+	}
+	
 	// Sets up font, editability, fore- and background colors, and text alignment
 	private void initComponents()
 	{
-		setEditable(false);
-		setBorder(null);
-		setForeground(Color.white);
-		setFont(new Font("Courier New", Font.PLAIN, 40));
-		setHorizontalAlignment(JTextField.CENTER);
+		this.addAncestorListener(new AncestorListener() {
+			
+			@Override public void ancestorRemoved(AncestorEvent event) {}
+			@Override public void ancestorMoved(AncestorEvent event) {}
+			
+			@Override
+			public void ancestorAdded(AncestorEvent event) 
+			{
+				setEditable(false);
+				setBorder(null);
+				setForeground(Color.white);
+				setFont(new Font("Courier New", Font.PLAIN, getHeight()/2));
+				setHorizontalAlignment(JTextField.CENTER);
+			}
+		});
 	}
 	
 	// used to visually update the background color and the score
@@ -82,35 +100,4 @@ public class ScoreField extends JTextField
 	private int score = 200;
 	
 	private static final long serialVersionUID = 1L;
-	
-	public static void main(String[] args)
-	{
-		JFrame frame = new JFrame("ScoreField Test");
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setResizable(false);
-		frame.setSize(800, 600);
-		frame.setLayout(null);
-		frame.getContentPane().setBackground(Color.black);
-		
-		int height = 50;
-		int width = 150;
-		ScoreField score = new ScoreField(0, Players.PLAYER_THREE);
-		score.setBounds((frame.getWidth() - width)/2, (frame.getHeight() - height)/2, width, height);
-		frame.add(score);
-		
-		frame.setVisible(true);
-		
-		for (int i = 7; i <= 10; ++i)
-		{
-			try
-			{
-				Thread.sleep(500);
-				score.setScore(i);
-			}
-			catch(InterruptedException e)
-			{
-				e.printStackTrace();
-			}
-		}
-	}
 }
