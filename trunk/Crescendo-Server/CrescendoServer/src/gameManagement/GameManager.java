@@ -409,7 +409,7 @@ public class GameManager implements ActionListener
 					
 					at_splash_screen = false;
 					at_game_options = true;
-//					myGameWindow.setPlayerCount(numberOfActivePlayers);
+					sendNumberOfPlayersToDisplay();
 					sendMessageToDisplay(m.getMessage());
 				}
 				
@@ -449,6 +449,8 @@ public class GameManager implements ActionListener
 					setNumberOfBeatsPerMeasure();
 					gameMeasures.add(new Measure(numberOfBeatsPerMeasure));
 					setGameMode(gameMode);
+					gameWindow.setTime(5);
+					
 					System.out.println("*****\tAt the Play Screen\t*****");
 					WindowManager.getInstance().goToWindow(GameState.PLAY);
 					
@@ -983,6 +985,7 @@ public class GameManager implements ActionListener
 		{
 			keyMaster = new gameManagement.gameModes.KeyMaster(key,numberOfBars,2);
 			keyProgression = keyMaster.getKeyProgression();
+			gameWindow.setChords(keyProgression);
 		}
 		else
 		{
@@ -1002,6 +1005,7 @@ public class GameManager implements ActionListener
 		key = k;
 		System.out.println("Key set at: " + k);
 		gameOptionsWindow.setKey(key);
+		gameWindow.setKeySignature(key);
 	}
 	
 	private void setNumberOfBars(int n)
@@ -1038,13 +1042,21 @@ public class GameManager implements ActionListener
 		System.out.println("player 3 Score: " + player3Score);
 		System.out.println("player 4 Score: " + player4Score);
 		System.out.println();
-		//TODO send to Display
+		gameWindow.setScore(Players.PLAYER_ONE, player1Score);
+		gameWindow.setScore(Players.PLAYER_TWO, player2Score);
+		gameWindow.setScore(Players.PLAYER_THREE, player3Score);
+		gameWindow.setScore(Players.PLAYER_FOUR, player4Score);
 	}
 	
+	private void sendNumberOfPlayersToDisplay()
+	{
+		gameWindow.setPlayerCount(numberOfActivePlayers);
+	}
+		
 	private void sendTimeToDisplay(int time)
 	{
 		System.out.println(time + " seconds left in the game");
-		//TODO send message to Display
+		gameWindow.setTime(time);
 	}
 	
 	/**
@@ -1060,9 +1072,7 @@ public class GameManager implements ActionListener
 		System.out.println();
 		
 		for(Note note : notesToSend)
-		{
-			//TODO send notesToSend to display
-		}
+			gameWindow.addNote(note);
 		
 		notesToSend = new ArrayList<Note>();
 	}
