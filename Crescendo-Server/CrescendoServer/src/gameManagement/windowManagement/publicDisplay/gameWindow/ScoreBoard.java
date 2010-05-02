@@ -11,12 +11,12 @@ import keys.Players;
  * 
  * @author Zach
  */
-public class ScoreFields
+public class ScoreBoard
 {
 	/**
 	 * Default Constructor
 	 */
-	public ScoreFields()
+	public ScoreBoard()
 	{
 		initScores(playerCount, startScore);
 	}
@@ -26,7 +26,7 @@ public class ScoreFields
 	 * @param playerCount - how many players
 	 * @param startScore - starting score for each player
 	 */
-	public ScoreFields(int playerCount, int startScore)
+	public ScoreBoard(int playerCount, int startScore)
 	{
 		initScores(playerCount, startScore);
 	}
