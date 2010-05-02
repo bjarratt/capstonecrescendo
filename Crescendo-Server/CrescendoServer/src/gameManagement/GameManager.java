@@ -5,15 +5,19 @@ import gameManagement.messageTranslationSystem.MessageTranslationEngine;
 import gameManagement.messageTranslationSystem.Beat;
 import gameManagement.messageTranslationSystem.Note;
 import gameManagement.messageTranslationSystem.Measure;
-//import gameManagement.windowManagement.WindowManager;
-//import gameManagement.windowManagement.base.Wrapper;
-//import gameManagement.windowManagement.windows.*;
+import gameManagement.windowManagement.WindowManager;
+import gameManagement.windowManagement.publicDisplay.GameOptionsWindow;
+import gameManagement.windowManagement.publicDisplay.GameWindow;
+import gameManagement.windowManagement.publicDisplay.PauseWindow;
+import gameManagement.windowManagement.publicDisplay.SplashWindow;
 import keys.GameState;
 import keys.Lengths;
 import keys.Players;
 import keys.Scales;
 
 import java.util.ArrayList;
+
+import javax.swing.JPanel;
 import javax.swing.Timer;
 
 import java.awt.event.ActionListener;
@@ -82,17 +86,10 @@ public class GameManager implements ActionListener
 
 	ArrayList<Note> notesToSend; 
 	
-//	Wrapper display;
-//	GameWindow myGameWindow;
-//	
-//	Wrapper modes;
-//	GameModesWindow myGameModesWindow;
-//	
-//	Wrapper pause;
-//	PauseScreen myPauseScreen;
-//	
-//	Wrapper splash;
-//	SplashScreen mySplashScreen;
+	private SplashWindow splashWindow;
+	private GameOptionsWindow gameOptionsWindow;
+	private GameWindow gameWindow;
+	private PauseWindow pauseWindow;
 
 	/**
 	 *	Constructs a GameManager object with up to 4 players
@@ -145,38 +142,18 @@ public class GameManager implements ActionListener
 
 		gameMeasures = new ArrayList<Measure>();
 
+		splashWindow = new SplashWindow();
+		gameOptionsWindow = new GameOptionsWindow();
+		gameWindow = new GameWindow();
+		pauseWindow = new PauseWindow();
 
 		//create a new splash screen
-//		mySplashScreen = new SplashScreen();
-//		splash = new Wrapper(mySplashScreen);
-//		splash.setBackground(Color.BLACK);
-//		splash.setSize(800, 600);
-//		WindowManager.getInstance().addWindow(keys.GameState.SPLASH_SCREEN, splash);
-//		
-//		//create a new game modes screen
-//		myGameModesWindow = new GameModesWindow();
-//		//myGameModesWindow.addGameType(GameState.LENGTH_TRAINING);
-//		//myGameModesWindow.addGameType(GameState.PITCH_TRAINING);
-//		//myGameModesWindow.addGameType(GameState.NOTE_TRAINING);
-//		modes = new Wrapper(myGameModesWindow);
-//		modes.setBackground(Color.BLACK);
-//		modes.setSize(800, 600);
-//		WindowManager.getInstance().addWindow(keys.GameState.GAME_MODES, modes);
-//
-//		//create a new pause screen
-//		myPauseScreen = new PauseScreen();
-//		pause = new Wrapper(myPauseScreen);
-//		pause.setBackground(Color.BLACK);
-//		pause.setSize(800, 600);
-//		WindowManager.getInstance().addWindow(keys.GameState.PAUSE, pause);
-//		
-//		myGameWindow = new GameWindow();
-//		display = new Wrapper(myGameWindow);
-//		display.setBackground(Color.BLACK);
-//		display.setSize(800, 600);
-//		WindowManager.getInstance().addWindow(keys.GameState.PLAY, display);
-//		
-//		WindowManager.getInstance().run();
+		WindowManager.getInstance().addWindow(GameState.SPLASH_SCREEN, splashWindow);
+		WindowManager.getInstance().addWindow(GameState.GAME_OPTIONS, gameOptionsWindow);
+		WindowManager.getInstance().addWindow(GameState.PLAY, gameWindow);
+		WindowManager.getInstance().addWindow(GameState.PAUSE, pauseWindow);
+		WindowManager.getInstance().addWindow(GameState.POST_GAME, new JPanel());
+		WindowManager.getInstance().run();
 	}
 
 	/**
@@ -184,18 +161,8 @@ public class GameManager implements ActionListener
 	 */
 	public void run()
 	{
-		
 		System.out.println("*****\tAt the Splash Screen\t*****");
-//		try
-//		{
-//			WindowManager.getInstance().nextWindow(GameState.SPLASH_SCREEN);
-//			//myGameWindow.init();
-//			//myGameWindow.start();
-//		}
-//		catch(InterruptedException e)
-//		{
-//			
-//		}
+		WindowManager.getInstance().goToWindow(GameState.SPLASH_SCREEN);
 		timer.start();
 	}
 
@@ -208,7 +175,6 @@ public class GameManager implements ActionListener
 		{
 			if(messagePool.size() != 0)
 			{
-				
 				//constrict message pool size every tick
 				messages = new ArrayList<String>(messagePool);
 				messagePool = new ArrayList<String>();
@@ -219,48 +185,12 @@ public class GameManager implements ActionListener
 				this.translateMessagePool();
 	
 				if(at_play)
-				{				
-					if(gameStart)
-					{
-						if(currentTick < 5)
-						{
-							try
-							{
-								sendTimeToDisplay(5 - currentTick);
-								Thread.sleep(1000);
-								currentTick++;
-								sendTimeToDisplay(5 - currentTick);
-								Thread.sleep(1000);
-								currentTick++;
-								sendTimeToDisplay(5 - currentTick);
-								Thread.sleep(1000);
-								currentTick++;
-								sendTimeToDisplay(5 - currentTick);
-								Thread.sleep(1000);
-								currentTick++;
-								sendTimeToDisplay(5 - currentTick);
-								Thread.sleep(1000);
-								currentTick++;
-							}
-							catch(InterruptedException e)
-							{
-								e.printStackTrace();
-							}
-						}
-						if(5 - currentTick <= 0)
-						{
-							gameStart = false;
-							currentInGameTick = 0;
-						}
-					}
-					else
-					{
-						this.constructMeasures();
-						this.checkNotesForCorrectness();
-						this.scoreNotes();
-						this.sendScoresToDisplay();
-						this.sendNotesToDisplay();
-					}
+				{
+					this.constructMeasures();
+					this.checkNotesForCorrectness();
+					this.scoreNotes();
+					this.sendScoresToDisplay();
+					this.sendNotesToDisplay();
 					
 					if(!gameIsDone && (gameMeasures.size()>numberOfBars || (gameMeasures.size()==numberOfBars && gameMeasures.get(gameMeasures.size()-1).getNumberOfAvailableBeats()==0)))
 						gameIsDone = true;
@@ -268,6 +198,7 @@ public class GameManager implements ActionListener
 					if(gameIsDone)
 					{
 						System.out.println("*****\tAt the Post Game Screen\t*****");
+						WindowManager.getInstance().goToWindow(GameState.POST_GAME);
 						at_play = false;
 						at_post_game = true;
 						inGameTimer.stop();
@@ -283,11 +214,24 @@ public class GameManager implements ActionListener
 				if((initialInGameTime-currentInGameTick+additionalInGameTime)<=0)
 				{
 					System.out.println("*****\tAt the Post Game Screen\t*****");
+					WindowManager.getInstance().goToWindow(GameState.POST_GAME);
 					at_play = false;
 					at_post_game = true;
 					inGameTimer.stop();
 				}
 				sendTimeToDisplay(initialInGameTime-currentInGameTick+additionalInGameTime);
+			}
+			else
+			{
+				if(currentInGameTick < 5)
+				{
+					sendTimeToDisplay(5 - currentInGameTick);
+				}
+				if(5 - currentInGameTick <= 0)
+				{
+					gameStart = false;
+					currentInGameTick = -1;
+				}
 			}
 			currentInGameTick++;
 		}
@@ -300,7 +244,6 @@ public class GameManager implements ActionListener
 	 */
 	public void addMessageToPool(String message)
 	{
-		System.out.println(message);
 		messagePool.add(message);
 	}
 
@@ -354,7 +297,7 @@ public class GameManager implements ActionListener
 		{
 			m = MessageTranslationEngine.translateMessage(message);
 			
-			if(at_play && m.isNote())
+			if(at_play && !gameStart && m.isNote())
 			{
 				Note n = m.getNote();
 				
@@ -441,32 +384,14 @@ public class GameManager implements ActionListener
 
 					notesToSend = new ArrayList<Note>();
 					
-//					try
-//					{
-//						myGameWindow.stop();
-//						myGameWindow.destroy();
-//						myGameWindow = new GameWindow();
-//						display = new Wrapper(myGameWindow);
-//						display.setBackground(Color.BLACK);
-//						display.setSize(800, 600);
-//						WindowManager.getInstance().addWindow(keys.GameState.PLAY, display);
-//						myGameWindow.init();
-//						myGameWindow.start();
-//						
-//						WindowManager.getInstance().nextWindow(GameState.SPLASH_SCREEN);
-//					}
-//					catch(InterruptedException e)
-//					{
-//						
-//					}
-					
-//					mySplashScreen.setConnected(1,false);
-//					mySplashScreen.setConnected(2,false);
-//					mySplashScreen.setConnected(3,false);
-//					mySplashScreen.setConnected(4,false);
+					splashWindow.disconnectPlayer(1);
+					splashWindow.disconnectPlayer(2);
+					splashWindow.disconnectPlayer(3);
+					splashWindow.disconnectPlayer(4);
 					
 					System.out.println("All players have been disconnected");
 					System.out.println("*****\tAt the Splash Screen\t*****");
+					WindowManager.getInstance().goToWindow(GameState.SPLASH_SCREEN);
 				}
 				
 				//     SPLASH SCREEN     //
@@ -474,21 +399,14 @@ public class GameManager implements ActionListener
 				else if(at_splash_screen && m.getMessage().split("_")[1].equals("connect"))
 				{
 					numberOfActivePlayers++;
-//					mySplashScreen.setConnected(m.getMessage().split("_")[0].charAt(m.getMessage().split("_")[0].length()-1)-48,true);
+					splashWindow.connectPlayer(m.getMessage().split("_")[0].charAt(m.getMessage().split("_")[0].length()-1)-48);
 					sendMessageToDisplay(m.getMessage());
 				}
 				//message is "player1_gamemodes"  (checking to make sure player 1 has sent the message)
 				else if(at_splash_screen && numberOfActivePlayers>0 && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.GAME_OPTIONS))
 				{
-//					try
-//					{
-//						WindowManager.getInstance().nextWindow(GameState.GAME_MODES);
-//					}
-//					catch(InterruptedException e)
-//					{
-//						
-//					}
 					System.out.println("*****\tAt the Game Options Screen\t*****");
+					WindowManager.getInstance().goToWindow(GameState.GAME_OPTIONS);
 					
 					at_splash_screen = false;
 					at_game_options = true;
@@ -497,19 +415,11 @@ public class GameManager implements ActionListener
 				}
 				
 				//     GAME OPTIONS     //
-				//message is "player1_gameinfo"  (checking to make sure player 1 has sent the message)
+				//message is "player1_splashscreen"  (checking to make sure player 1 has sent the message)
 				else if(at_game_options && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.SPLASH_SCREEN))
 				{
-//					try
-//					{
-//						WindowManager.getInstance().previousWindow(GameState.GAME_MODES);
-//					}
-//					catch(InterruptedException e)
-//					{
-//						
-//					}
 					System.out.println("*****\tAt the Splash Screen\t*****");
-					//System.out.println("*****\tAt the Game Info Screen\t*****");
+					WindowManager.getInstance().goToWindow(GameState.SPLASH_SCREEN);
 					at_game_options = false;
 					at_splash_screen = true;
 					sendMessageToDisplay(m.getMessage());
@@ -537,21 +447,12 @@ public class GameManager implements ActionListener
 				//message is "player1_play"  (checking to make sure player 1 has sent the message)
 				else if(at_game_options && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.PLAY))
 				{
-//					try
-//					{	
-//						myGameWindow.init();
-//						myGameWindow.start();			
-//						WindowManager.getInstance().nextWindow(GameState.PLAY);
-//					}
-//					catch(InterruptedException e)
-//					{
-//						
-//					}
 					sendNumberOfActivePlayers();
 					setNumberOfBeatsPerMeasure();
 					gameMeasures.add(new Measure(numberOfBeatsPerMeasure));
 					setGameMode(gameMode);
 					System.out.println("*****\tAt the Play Screen\t*****");
+					WindowManager.getInstance().goToWindow(GameState.PLAY);
 					
 					at_game_options = false;
 					at_play = true;
@@ -564,15 +465,8 @@ public class GameManager implements ActionListener
 				//message is "playerX_pause"
 				else if(at_play && m.getMessage().split("_")[1].equals(GameState.PAUSE))
 				{
-//					try
-//					{
-//						WindowManager.getInstance().nextWindow(GameState.PAUSE);
-//					}
-//					catch(InterruptedException e)
-//					{
-//						
-//					}
 					System.out.println("*****\tAt the Pause Screen\t*****");
+					WindowManager.getInstance().goToWindow(GameState.PAUSE);
 					at_play = false;
 					at_pause = true;
 					inGameTimer.stop();
@@ -584,15 +478,8 @@ public class GameManager implements ActionListener
 				//message is "playerX_play"  (checking to make sure player 1 has sent the message)
 				else if(at_pause && m.getMessage().split("_")[1].equals(GameState.PLAY) && m.getMessage().split("_")[0].equals(pausedPlayerId))
 				{
-//					try
-//					{
-//						WindowManager.getInstance().previousWindow(GameState.PLAY);
-//					}
-//					catch(InterruptedException e)
-//					{
-//						
-//					}
 					System.out.println("*****\tAt the Play Screen\t*****");
+					WindowManager.getInstance().goToWindow(GameState.PLAY);
 					at_pause = false;
 					at_play = true;
 					sendMessageToDisplay(m.getMessage());
@@ -614,25 +501,8 @@ public class GameManager implements ActionListener
 				//message is "player1_splashscreen"  (checking to make sure player 1 has sent the message)
 				else if(at_post_game && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.SPLASH_SCREEN))
 				{
-//					try
-//					{
-//						myGameWindow.stop();
-//						myGameWindow.destroy();
-//						myGameWindow = new GameWindow();
-//						display = new Wrapper(myGameWindow);
-//						display.setBackground(Color.BLACK);
-//						display.setSize(800, 600);
-//						WindowManager.getInstance().addWindow(keys.GameState.PLAY, display);
-//						myGameWindow.init();
-//						myGameWindow.start();
-//						
-//						WindowManager.getInstance().nextWindow(GameState.SPLASH_SCREEN);
-//					}
-//					catch(InterruptedException e)
-//					{
-//						
-//					}
 					System.out.println("*****\tAt the Splash Screen\t*****");
+					WindowManager.getInstance().goToWindow(GameState.SPLASH_SCREEN);
 					
 					at_post_game = false;
 					at_splash_screen = true;
@@ -1126,21 +996,21 @@ public class GameManager implements ActionListener
 	{
 		tempo = t;
 		System.out.println("Tempo set at: " + tempo);
-		//TODO send message to Display
+		gameOptionsWindow.setTempo(tempo);
 	}
 	
 	private void setKey(String k)
 	{
 		key = k;
 		System.out.println("Key set at: " + k);
-		//TODO send message to Display
+		gameOptionsWindow.setKey(key);
 	}
 	
 	private void setNumberOfBars(int n)
 	{
 		numberOfBars = n;
 		System.out.println("Number of Bars set at: " + n);
-		//TODO send message to Display
+		gameOptionsWindow.setMeasureCount(numberOfBars);
 	}
 	
 	private void setTimeSignature(int n, int d)
@@ -1149,7 +1019,7 @@ public class GameManager implements ActionListener
 		timeSignatureDenominator = d;
 		setNumberOfBeatsPerMeasure();
 		System.out.println("Time signature set at: " + n + "/" + d);
-		//TODO send message to Display
+		gameOptionsWindow.setTime(timeSignatureNumerator, timeSignatureDenominator);
 	}
 	
 	/**
