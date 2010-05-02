@@ -153,7 +153,7 @@ public class GameManager implements ActionListener
 		WindowManager.getInstance().addWindow(GameState.PLAY, gameWindow);
 		WindowManager.getInstance().addWindow(GameState.PAUSE, pauseWindow);
 		WindowManager.getInstance().addWindow(GameState.POST_GAME, new JPanel());
-		WindowManager.getInstance().run();
+//		WindowManager.getInstance().run();
 	}
 
 	/**
@@ -303,7 +303,6 @@ public class GameManager implements ActionListener
 				
 				if(gameMode.equals(GameState.KEY_MASTER))
 				{
-					//TODO add in current player's turn
 					if(n.getPlayer().equals(Players.PLAYER_ONE) && (gameMeasures.size()<=numberOfBars) && (currentPlayerId.equals(Players.PLAYER_ONE)))
 					{
 						gameBeats.addAll(n.getBeats());
@@ -447,7 +446,6 @@ public class GameManager implements ActionListener
 				//message is "player1_play"  (checking to make sure player 1 has sent the message)
 				else if(at_game_options && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.PLAY))
 				{
-					sendNumberOfActivePlayers();
 					setNumberOfBeatsPerMeasure();
 					gameMeasures.add(new Measure(numberOfBeatsPerMeasure));
 					setGameMode(gameMode);
@@ -1023,15 +1021,6 @@ public class GameManager implements ActionListener
 	}
 	
 	/**
-	 * Sends the number of active players to the public display
-	 */
-	private void sendNumberOfActivePlayers()
-	{
-		System.out.println("Number of players set at: " + numberOfActivePlayers);
-		//TODO send message to Display
-	}
-	
-	/**
 	 *	Sends a message to the GUI
 	 *
 	 *	@param message the message to be sent to the GUI
@@ -1039,7 +1028,6 @@ public class GameManager implements ActionListener
 	private void sendMessageToDisplay(String message)
 	{
 		System.out.println("GameManager sending message to GUI:\t" + message);
-		// TODO This method still needs to be somewhere
 		//displayGUI.receiveMessage(message);
 	}
 
@@ -1056,7 +1044,6 @@ public class GameManager implements ActionListener
 	{
 		System.out.println(time + " seconds left in the game");
 		//TODO send message to Display
-		
 	}
 	
 	/**
@@ -1066,7 +1053,6 @@ public class GameManager implements ActionListener
 	 */
 	private void sendNotesToDisplay()
 	{
-				
 		for(Measure m : gameMeasures)
 			System.out.print(m + " | ");
 		System.out.println();
@@ -1074,13 +1060,10 @@ public class GameManager implements ActionListener
 		
 		for(Note note : notesToSend)
 		{
-			note.playNote();
 			//TODO send notesToSend to display
 		}
 		
-		
 		notesToSend = new ArrayList<Note>();
-
 	}
 	
 }
