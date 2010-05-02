@@ -25,7 +25,7 @@ public class AnimatedStaff extends JPanel
 	 */
 	public AnimatedStaff()
 	{
-		initComponents(Players.PLAYER_ONE, KeySignatures.FSharpMajor, new ArrayList<String>(), 4, 4);
+		initComponents(Players.PLAYER_ONE, KeySignatures.CMajor, new ArrayList<String>(), 4, 4);
 	}
 	
 	/**
@@ -52,11 +52,6 @@ public class AnimatedStaff extends JPanel
 		{
 			header.setPlayer(player);
 			staff.setPlayer(player);
-		}
-		else
-		{
-			header.setPlayer(Players.PLAYER_ONE);
-			staff.setPlayer(Players.PLAYER_ONE);
 		}
 	}
 	
