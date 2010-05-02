@@ -97,8 +97,8 @@ public class GameOptionsWindow extends JPanel
 	{
 		if ((1 < beats && beats < 5) && subdivision == 4)
 		{
-			this.beatsPerBar = 4;
-			this.subdivision = 4;
+			this.beatsPerBar = beats;
+			this.subdivision = subdivision;
 			repaint();
 		}
 	}

@@ -33,11 +33,7 @@ public class GameWindow extends JPanel
 	/**
 	 * Make a game window using default member values
 	 */
-	public GameWindow()
-	{
-		if (staff != null)
-			staff = new AnimatedStaff();
-	}
+	public GameWindow() {}
 	
 	/**
 	 * Make a new game window set to the given parameters
@@ -62,6 +58,7 @@ public class GameWindow extends JPanel
 		g2d.drawImage(background, 0, 0, getWidth(), getHeight(), null);
 	}
 	
+	// set up to where it is only called once from paintComponent
 	private void initComponents()
 	{
 		if (notInitialized)
