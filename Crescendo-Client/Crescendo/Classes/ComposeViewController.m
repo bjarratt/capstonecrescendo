@@ -17,7 +17,9 @@
 @synthesize client;
 @synthesize clientConnected;
 @synthesize playerId;
+@synthesize IN;
 @synthesize inGame;
+@synthesize inCompose;
 @synthesize myLengthScrollView;
 @synthesize myPitchScrollView;
 @synthesize buildButton;
@@ -297,7 +299,9 @@
     [client performSelector:@selector(sendMessage:) withObject: request];
     
     [request release];
+	self.IN = NO;
 	self.inGame = NO;
+	self.inCompose = NO;
 	
 	[self dismissModalViewControllerAnimated:YES];
 }
@@ -398,26 +402,23 @@
 }
 
 - (void) disconnect:(UIButton *)sender {
+	[self removeAll];
+	[self resetSliderValues];
+	
+	self.IN = NO;
+	self.inGame = NO;
+	self.inCompose = NO;
+	[client disconnect];
+	[self dismissModalViewControllerAnimated: YES];
+}
+
+- (void) removeAll {
 	if (self.inGame == YES) {
-		[pauseButton removeFromSuperview];
-		[playButton removeFromSuperview];
-		[disconnectButton removeFromSuperview];
-	}
-	else {
-		if ([playerId isEqualToString:@"player1"]) {
-			[startButton removeFromSuperview];
-			[keySlider removeFromSuperview];
-			[timeSlider removeFromSuperview];
-			[tempoSlider removeFromSuperview];
-			[barsSlider removeFromSuperview];
-			[keyText removeFromSuperview];
-			[timeText removeFromSuperview];
-			[tempoText removeFromSuperview];
-			[barsText removeFromSuperview];
-			[keyLabel removeFromSuperview];
-			[timeLabel removeFromSuperview];
-			[tempoLabel removeFromSuperview];
-			[barsLabel removeFromSuperview];
+		if (self.inCompose == YES) {
+			[myLengthScrollView removeFromSuperview];
+			[myPitchScrollView removeFromSuperview];
+			[buildButton removeFromSuperview];
+			[volumeButton removeFromSuperview];
 		}
 		else {
 			[pauseButton removeFromSuperview];
@@ -425,11 +426,44 @@
 			[disconnectButton removeFromSuperview];
 		}
 	}
-	[self resetSliderValues];
-	
-	self.inGame = NO;
-	[client disconnect];
-	[self dismissModalViewControllerAnimated: YES];
+	else {
+		if ([playerId isEqualToString:@"player1"]) {
+			if (self.inCompose == YES) {
+				[myLengthScrollView removeFromSuperview];
+				[myPitchScrollView removeFromSuperview];
+				[buildButton removeFromSuperview];
+				[volumeButton removeFromSuperview];
+			}
+			else {
+				[startButton removeFromSuperview];
+				[keySlider removeFromSuperview];
+				[timeSlider removeFromSuperview];
+				[tempoSlider removeFromSuperview];
+				[barsSlider removeFromSuperview];
+				[keyText removeFromSuperview];
+				[timeText removeFromSuperview];
+				[tempoText removeFromSuperview];
+				[barsText removeFromSuperview];
+				[keyLabel removeFromSuperview];
+				[timeLabel removeFromSuperview];
+				[tempoLabel removeFromSuperview];
+				[barsLabel removeFromSuperview];
+			}
+		}
+		else {
+			if (self.inCompose == YES) {
+				[myLengthScrollView removeFromSuperview];
+				[myPitchScrollView removeFromSuperview];
+				[buildButton removeFromSuperview];
+				[volumeButton removeFromSuperview];
+			}
+			else {
+				[pauseButton removeFromSuperview];
+				[playButton removeFromSuperview];
+				[disconnectButton removeFromSuperview];
+			}
+		}
+	}
 }
 
 - (void) resetSliderValues {
@@ -623,6 +657,7 @@
 #pragma mark Draw Methods
 
 - (void) drawPortraitView {
+	self.inCompose = NO;
 	/*
 	 * Properties
 	 */
@@ -655,6 +690,7 @@
 }
 
 - (void) drawPortraitLandscapeSideView {
+	self.inCompose = YES;
 	/*
 	 * Initialize Variables
 	 */
@@ -1659,6 +1695,7 @@
 }
 
 -(void) viewWillAppear: (BOOL) animated {
+	self.IN = YES;
 	if ([playerId isEqualToString:@"player1"]) {
 		self.inGame = NO;
 	}

@@ -35,17 +35,33 @@
 #pragma mark ConnectionUpdateDelegate Method
 
 - (void) recievedConnectionUpdate: (ConnectionUpdate*) update {
-	self.playerId = [NSString stringWithString: update.playerNumber];
 	if ([playerId isEqualToString:@""]) {
 		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Max players" message:(@"Maximum number of players have connected to %@.", validatedIp) delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
 		[alert show];
 		[alert release];
 		return;
 	}
+	
 	self.clientConnected = YES;
 	if (self.composeViewController) {
+		if (![self.playerId isEqualToString: update.playerNumber] && [update.playerNumber isEqualToString:@"player1"]) {
+			
+			if (self.composeViewController.IN) {
+				if (self.composeViewController.inCompose) {
+					
+				}
+				[self.composeViewController removeAll];
+				[self.composeViewController goBack];
+			}
+			
+			
+		}
+		[self.composeViewController setPlayerId: update.playerNumber];
 		[self.composeViewController setClientConnected: YES];
 	}
+	
+	self.playerId = [NSString stringWithString: update.playerNumber];
+	
 	[ipText setText: validatedIp];
 	[self drawMain];
 	/*
