@@ -41,9 +41,11 @@ public class ConnectionManager
 		return playerID;
 	}
 	
-	public void cleanupPlayers()
+	@SuppressWarnings("finally")
+	public ArrayList<String> cleanupPlayers()
 	{
 		lock.lock();
+		ArrayList<String> playersDisconnected = new ArrayList<String>();
 		try
 		{
 			HashMap<String, Object> newMap = new HashMap<String, Object>(playerMap);
@@ -56,6 +58,7 @@ public class ConnectionManager
 				
 				if (sh != null && sh.getSessionManager().isInvalidating())
 				{
+					playersDisconnected.add(key);
 					playerMap.remove(key);
 					playerMap.put(key, null);
 				}
@@ -90,10 +93,11 @@ public class ConnectionManager
 				{
 					playerIDs.add(key);
 				}
-			}			
+			}	
 		}
 		finally {
 			lock.unlock();
+			return playersDisconnected;
 		}
 	}
 	

@@ -347,9 +347,9 @@ public class GameManager implements ActionListener
 					inGameTimer.stop();
 					sendMessageToDisplay(m.getMessage());
 					
-					numberOfActivePlayers--;
+					numberOfActivePlayers = ConnectionManager.getInstance().listPlayers().size();
 					
-					//if player 1 disconnects, reset game options
+					//reset values only when player 1 disconnects
 					if(m.getMessage().split("_")[0].equals(Players.PLAYER_ONE))
 					{
 						tempo = 120;
@@ -357,7 +357,12 @@ public class GameManager implements ActionListener
 						numberOfBars = 16;
 						timeSignatureNumerator = 4;
 						timeSignatureDenominator = 4;
+						this.setKey(key);
+						this.setNumberOfBars(numberOfBars);
+						this.setTempo(tempo);
+						this.setTimeSignature(timeSignatureNumerator, timeSignatureDenominator);
 					}
+					
 					
 					//clear other game state
 					gameBeats = new ArrayList<Beat>();
@@ -384,9 +389,16 @@ public class GameManager implements ActionListener
 					pausedPlayerId = new String();
 
 					notesToSend = new ArrayList<Note>();
+
+					//show all players disconnecting
+					splashWindow.disconnectPlayer(1);
+					splashWindow.disconnectPlayer(2);
+					splashWindow.disconnectPlayer(3);
+					splashWindow.disconnectPlayer(4);
 					
-					String playerThatDisconnected = m.getMessage().split("_")[0].substring(m.getMessage().split("_")[0].length()-1,m.getMessage().split("_")[0].length());
-					splashWindow.disconnectPlayer(Integer.parseInt(playerThatDisconnected));
+					//show all players that are still connected
+					for(String plyr : ConnectionManager.getInstance().listPlayers())
+						splashWindow.connectPlayer(Integer.parseInt(plyr.substring(plyr.length()-1,plyr.length())));
 					
 					gameWindow.reset();
 					System.out.println("GameWindow has been reset");
