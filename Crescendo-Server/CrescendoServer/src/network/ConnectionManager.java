@@ -60,6 +60,37 @@ public class ConnectionManager
 					playerMap.put(key, null);
 				}
 			}
+
+			newMap = new HashMap<String, Object>(playerMap);
+			
+			keys = newMap.keySet();
+			
+			ArrayList<String> playerIDs = new ArrayList<String>();
+			int playerID = 0;
+			
+			for (String key : keys)
+			{
+				if ((playerMap.get(key) != null) && (playerIDs.size() > 0))
+				{
+					// Get current Session
+					Object sessionHandle = playerMap.get(key);
+					
+					// Reset this player
+					playerMap.remove(key);
+					playerMap.put(key, null);
+					
+					// Place at first null position in the playerMap
+					if (playerIDs.size()-1 >= playerID)
+					{
+						playerMap.put(playerIDs.get(playerID), sessionHandle);
+						playerID++;
+					}
+				}
+				if (playerMap.get(key) == null)
+				{
+					playerIDs.add(key);
+				}
+			}			
 		}
 		finally {
 			lock.unlock();
@@ -85,6 +116,20 @@ public class ConnectionManager
 		}
 		
 		return currentPlayers;
+	}
+	
+	/**
+	 * Utility method for seeing the playerMap.
+	 * @return - a <code>String</code> with all the player keys that have filled slots
+	 */
+	public HashMap<String, SessionHandle> listPlayersMap()
+	{		
+		HashMap<String, SessionHandle> newMap = new HashMap<String, SessionHandle>();
+		for (String key : playerMap.keySet())
+		{
+			newMap.put(key, (SessionHandle) playerMap.get(key));
+		}
+		return newMap;
 	}
 	
 	/**
