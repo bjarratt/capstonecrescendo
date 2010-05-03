@@ -30,24 +30,21 @@ public class DisconnectRequest extends ecologylab.services.messages.DisconnectRe
 		
 		super.performService(clientSessionScope);
 		
-		List<String> wasConnected = ConnectionManager.getInstance().listPlayers();
-		ConnectionManager.getInstance().cleanupPlayers();
-		List<String> connected = ConnectionManager.getInstance().listPlayers();
+		//List<String> wasConnected = ConnectionManager.getInstance().listPlayers();
+		List<String> disconnectedPlayers = ConnectionManager.getInstance().cleanupPlayers();
+		//List<String> connected = ConnectionManager.getInstance().listPlayers();
 		List<String> all = Players.getPlayers();
 		
 		GameManager manager = (GameManager)clientSessionScope.get(OODSS.GAME_MANAGER);
 		
 		// Disconnect the user that sent request
-		for (String was : wasConnected)
+		for (String disc : disconnectedPlayers)
 		{
-			if (!connected.contains(was))
+			for (String player : all)
 			{
-				for (String player : all)
+				if (disc.contains(player))
 				{
-					if (was.contains(player))
-					{
-						manager.addMessageToPool(player + "_disconnect");
-					}
+					manager.addMessageToPool(player + "_disconnect");
 				}
 			}
 		}
