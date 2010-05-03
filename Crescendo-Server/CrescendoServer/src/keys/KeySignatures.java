@@ -85,4 +85,9 @@ public class KeySignatures
 		
 		return areValid;
 	}
+	
+	public static List<String> getAllKeys()
+	{
+		return new ArrayList<String>(keys.keySet());
+	}
 }

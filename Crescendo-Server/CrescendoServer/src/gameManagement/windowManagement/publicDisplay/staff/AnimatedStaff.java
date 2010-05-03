@@ -7,17 +7,21 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.GridLayout;
+import java.awt.Point;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JViewport;
 
 import keys.KeySignatures;
+import keys.Lengths;
+import keys.Pitches;
 import keys.Players;
 
-// TODO Make note scrolling happen here
-// TODO Fix the measure scaling
 public class AnimatedStaff extends JPanel 
 {
 	/**
@@ -91,9 +95,24 @@ public class AnimatedStaff extends JPanel
 	 */
 	public void addNote(Note n)
 	{
-		if (n != null)
+		try 
 		{
-			staff.addNote(n.getLength(), n.size(), n.getPitch(), n.isCorrect(), n.isTied());
+			Thread.sleep(1000);
+			if (n != null)
+			{
+				scrollLength = staff.addNote(n.getLength(), n.size(), n.getPitch(), n.isCorrect(), n.isTied());
+				totalScrollLength += scrollLength;
+				if (totalScrollLength > scroller.getWidth())
+				{
+					totalScrollLength -= scrollLength;
+					doScrolling = true;
+					repaint();
+				}
+			}
+		}
+		catch (InterruptedException e) 
+		{
+			e.printStackTrace();
 		}
 	}
 	
@@ -125,13 +144,43 @@ public class AnimatedStaff extends JPanel
 		setTime(4, 4);
 		setKeyChanges(null);
 		staff.clearNotes();
-		// TODO Be sure to set the JViewport back to its initial position
+		
+		// Reset the scrolling staff!
+		scroller.getViewport().setViewPosition(new Point());
+		doScrolling = false;
+		scrollLength = 0;
+		scrollProgress = 0;
+		totalScrollLength = 0;
 	}
 	
 	@Override
 	protected void paintComponent(Graphics g)
 	{
 		super.paintComponent(g);
+		scrollStaff();
+	}
+	
+	private void scrollStaff()
+	{
+		if (doScrolling)
+		{
+			JViewport viewPort = scroller.getViewport();
+			if (scrollProgress < scrollLength)
+			{
+				double increment = scrollLength*scrollIncrementPercentage;
+				double newX = viewPort.getViewPosition().getX() + increment;
+				double newY = viewPort.getViewPosition().getY();
+				Point moveTo = new Point((int)newX, (int)newY);
+				viewPort.setViewPosition(moveTo);
+				scrollProgress += increment;
+				repaint();
+			}
+			else
+			{
+				doScrolling = false;
+				scrollProgress = 0;
+			}
+		}
 	}
 	
 	private void initComponents(String player, String headerKey, List<String> measureKeys, int beatsPerBar, int subdivision)
@@ -194,5 +243,40 @@ public class AnimatedStaff extends JPanel
 	private JScrollPane noScroll = null;
 	private JScrollPane scroller = null;
 	
+	// stuff for scrolling staff
+	private boolean doScrolling = false;
+	private float scrollLength = 0;
+	private float scrollProgress = 0;
+	private float totalScrollLength = 0;
+	private final float scrollIncrementPercentage = 0.05f;
+	
 	private static final long serialVersionUID = 1L;
+	
+	public static void main(String[] args)
+	{
+		JFrame frame = new JFrame("Animated Staff Test");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setLayout(new GridLayout(1,1));
+//		frame.setResizable(false);
+		frame.setSize(new Dimension(800, 200));
+		AnimatedStaff staff = new AnimatedStaff(Players.PLAYER_THREE, 
+												KeySignatures.FSharpMajor,
+												KeySignatures.getAllKeys(),
+												4, 4);
+		frame.add(staff);
+		frame.setVisible(true);
+		
+		for (int i = 0; i < 16; ++i)
+		{
+//			try
+//			{
+//				Thread.sleep(1000);
+				staff.addNote(new Note(Pitches.B5, Lengths.QUARTER, Players.PLAYER_THREE));
+//			}
+//			catch (InterruptedException e)
+//			{
+//				e.printStackTrace();
+//			}
+		}
+	}
 }

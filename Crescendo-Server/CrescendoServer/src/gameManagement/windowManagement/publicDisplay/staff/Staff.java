@@ -36,8 +36,8 @@ import keys.Players;
  * @author Zach
  *
  */
-// TODO Fix the sizing on measures in this class.  3/4 time still fits 4 quarter notes into a measure.
 // TODO add rests
+// TODO Fix drawing positions of notes and ties
 public class Staff extends JPanel 
 {
 	/**
@@ -101,7 +101,7 @@ public class Staff extends JPanel
 	 * @param correct - a <code>boolean</code> flag indicating whether the note was in the correct key.
 	 * @param hasTie - whether the note should be tied to the following note
 	 */
-	public void addNote(String length, int size, String pitch, boolean correct, boolean hasTie)
+	public int addNote(String length, int size, String pitch, boolean correct, boolean hasTie)
 	{
 		// If the pitch is an actual pitch
 		if (Pitches.getStaffPosition(pitch) != -1)
@@ -142,6 +142,8 @@ public class Staff extends JPanel
 				repaint();
 			}
 		}
+		int numericalLength = Lengths.getNumericalLength(subdivision);
+		return (int)(size*measurePixelLength/(beatsPerBar*numericalLength) + 3);
 	}
 	
 	/**
@@ -239,7 +241,7 @@ public class Staff extends JPanel
 		
 		// draw notes
 		nextX = 3;
-		for (DisplayNote note : playedNotes)
+		for (final DisplayNote note : playedNotes)
 		{
 			int staffLine = (int)calculatStaffLine(yCoord, (float)height, note.getStaffPosition());
 			float verticalImageShift = note.isInverted() ? height*0.35f : height*0.585f;
@@ -260,7 +262,8 @@ public class Staff extends JPanel
 					g2d.drawArc((int)nextX + 2*((int)(imageWidth*0.95))/5, (int)(staffLine - verticalImageShift*0.4f), (int)(imageWidth*note.getNumericalLength()*1.1), 60, -30, -120);
 				}
 			}			
-			nextX += note.getNumericalLength()*measurePixelLength/8 + 3;
+			int numericalLength = Lengths.getNumericalLength(subdivision);
+			nextX += note.getNumericalLength()*measurePixelLength/(beatsPerBar*numericalLength) + 3;
 		}
 	}
 	
@@ -301,7 +304,7 @@ public class Staff extends JPanel
 			
 			Graphics2D g2d = (Graphics2D)wrapper.getGraphics();
 			g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-			g2d.setStroke(new BasicStroke(2));
+			g2d.setStroke(new BasicStroke(6));
 			g2d.setColor(Color.RED);
 			
 			g2d.drawImage(b, null, 0, 0);
@@ -387,11 +390,12 @@ public class Staff extends JPanel
 		Staff staff = new Staff();
 		staff.setPlayer("player1");
 		ArrayList<String> keys = new ArrayList<String>();
-		for (int i = 0; i < 1; ++i)
+		for (int i = 0; i < 16; ++i)
 		{
 			keys.add(KeySignatures.CMajor);
 		}
 		staff.setMeasureKeys(keys);
+		staff.setTimeSignature(3, 4);
 		
 		JScrollPane scrollPane = new JScrollPane(staff);
 		
@@ -404,13 +408,13 @@ public class Staff extends JPanel
 		
 		frame.setVisible(true);
 
-//		staff.addNote(Lengths.EIGHTH, 4, Pitches.A5, true, true);
-//		staff.addNote(Lengths.EIGHTH, 1, Pitches.A5, false, true);
-//		staff.addNote(Lengths.EIGHTH, 1, Pitches.A5, true, true);
-//		staff.addNote(Lengths.EIGHTH, 1, Pitches.A5, false, false);
+//		staff.addNote(Lengths.WHOLE, 8, Pitches.A5, false, true);
+		staff.addNote(Lengths.QUARTER, 2, Pitches.A5, true, true);
+		staff.addNote(Lengths.QUARTER, 2, Pitches.A5, true, false);
+		staff.addNote(Lengths.EIGHTH, 1, Pitches.A5, true, false);
 //
-//		staff.addNote(Lengths.EIGHTH, 1, Pitches.FFlat6, true, true);
-//		staff.addNote(Lengths.QUARTER, 1, Pitches.FFlat6, true, false);
+		staff.addNote(Lengths.EIGHTH, 1, Pitches.FFlat6, true, false);
+//		staff.addNote(Lengths.EIGHTH, 1, Pitches.FFlat6, true, false);
 //		staff.addNote(Lengths.HALF, 1, Pitches.FFlat6, true, false);
 //		staff.addNote(Lengths.WHOLE, 1, Pitches.BFlat5, true, false);
 //		
