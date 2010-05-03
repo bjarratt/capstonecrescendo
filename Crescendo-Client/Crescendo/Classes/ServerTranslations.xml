@@ -1,21 +1,9 @@
 <translation_scope name="ServerTranslations">
 	<class_descriptor described_class="class network.OODSS.ConnectionRequest"
 		tag_name="connection_request">
-		<field_descriptor
-			field="timeStamp"
-			tag_name="time_stamp" type="1" scalar_type="LongType"></field_descriptor>
-		<field_descriptor
-			field="uid"
-			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
 	</class_descriptor>
 	<class_descriptor described_class="class network.OODSS.ConnectionUpdate"
 		tag_name="connection_update">
-		<field_descriptor
-			field="timeStamp"
-			tag_name="time_stamp" type="1" scalar_type="LongType"></field_descriptor>
-		<field_descriptor
-			field="uid"
-			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
 		<field_descriptor
 			field="playerNumber"
 			tag_name="player_number" type="1" scalar_type="StringType"></field_descriptor>
@@ -23,74 +11,32 @@
 	<class_descriptor described_class="class network.OODSS.DisconnectionRequest"
 		tag_name="disconnection_request">
 		<field_descriptor
-			field="timeStamp"
-			tag_name="time_stamp" type="1" scalar_type="LongType"></field_descriptor>
-		<field_descriptor
-			field="uid"
-			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
-		<field_descriptor
 			field="playerNumber"
 			tag_name="player_number" type="1" scalar_type="StringType"></field_descriptor>
 	</class_descriptor>
 	<class_descriptor described_class="class network.OODSS.DisconnectionUpdate"
 		tag_name="disconnection_update">
-		<field_descriptor
-			field="timeStamp"
-			tag_name="time_stamp" type="1" scalar_type="LongType"></field_descriptor>
-		<field_descriptor
-			field="uid"
-			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
 	</class_descriptor>
 	<class_descriptor described_class="class network.OODSS.GameOptionsRequest"
 		tag_name="game_options_request">
-		<field_descriptor
-			field="timeStamp"
-			tag_name="time_stamp" type="1" scalar_type="LongType"></field_descriptor>
-		<field_descriptor
-			field="uid"
-			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
 		<field_descriptor
 			field="gameOption"
 			tag_name="game_option" type="1" scalar_type="StringType"></field_descriptor>
 	</class_descriptor>
 	<class_descriptor described_class="class network.OODSS.GameOptionUpdate"
 		tag_name="game_option_update">
-		<field_descriptor
-			field="timeStamp"
-			tag_name="time_stamp" type="1" scalar_type="LongType"></field_descriptor>
-		<field_descriptor
-			field="uid"
-			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
 	</class_descriptor>
 	<class_descriptor described_class="class network.OODSS.GameStateRequest"
 		tag_name="game_state_request">
-		<field_descriptor
-			field="timeStamp"
-			tag_name="time_stamp" type="1" scalar_type="LongType"></field_descriptor>
-		<field_descriptor
-			field="uid"
-			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
 		<field_descriptor
 			field="gameState"
 			tag_name="game_state" type="1" scalar_type="StringType"></field_descriptor>
 	</class_descriptor>
 	<class_descriptor described_class="class network.OODSS.GameStateUpdate"
 		tag_name="game_state_update">
-		<field_descriptor
-			field="timeStamp"
-			tag_name="time_stamp" type="1" scalar_type="LongType"></field_descriptor>
-		<field_descriptor
-			field="uid"
-			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
 	</class_descriptor>
 	<class_descriptor described_class="class network.OODSS.GameTypeRequest"
 		tag_name="game_type_request">
-		<field_descriptor
-			field="timeStamp"
-			tag_name="time_stamp" type="1" scalar_type="LongType"></field_descriptor>
-		<field_descriptor
-			field="uid"
-			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
 		<field_descriptor
 			field="gameType"
 			tag_name="game_type" type="1" scalar_type="StringType"></field_descriptor>
@@ -98,115 +44,49 @@
 	<class_descriptor described_class="class network.OODSS.GameTypeUpdate"
 		tag_name="game_type_update">
 		<field_descriptor
-			field="timeStamp"
-			tag_name="time_stamp" type="1" scalar_type="LongType"></field_descriptor>
-		<field_descriptor
-			field="uid"
-			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
-		<field_descriptor
 			field="currentType"
 			tag_name="current_type" type="1" scalar_type="StringType"></field_descriptor>
 	</class_descriptor>
 	<class_descriptor described_class="class network.OODSS.PlayNoteRequest"
 		tag_name="play_note_request">
 		<field_descriptor
-			field="timeStamp"
-			tag_name="time_stamp" type="1" scalar_type="LongType"></field_descriptor>
-		<field_descriptor
-			field="uid"
-			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
-		<field_descriptor
 			field="jfuguePattern"
 			tag_name="jfugue_pattern" type="1" scalar_type="StringType"></field_descriptor>
 	</class_descriptor>
 	<class_descriptor described_class="class network.OODSS.PlayNoteUpdate"
 		tag_name="play_note_update">
-		<field_descriptor
-			field="timeStamp"
-			tag_name="time_stamp" type="1" scalar_type="LongType"></field_descriptor>
-		<field_descriptor
-			field="uid"
-			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
 	</class_descriptor>
 	<class_descriptor
 		described_class="class network.OODSS.messages.DisconnectRequest"
 		tag_name="disconnect_request">
-		<field_descriptor
-			field="timeStamp"
-			tag_name="time_stamp" type="1" scalar_type="LongType"></field_descriptor>
-		<field_descriptor
-			field="uid"
-			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
 	</class_descriptor>
 	<class_descriptor described_class="class ecologylab.services.messages.ServiceMessage"
 		tag_name="service_message">
-		<field_descriptor
-			field="timeStamp"
-			tag_name="time_stamp" type="1" scalar_type="LongType"></field_descriptor>
-		<field_descriptor
-			field="uid"
-			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
 	</class_descriptor>
 	<class_descriptor described_class="class ecologylab.services.messages.ResponseMessage"
 		tag_name="response_message">
-		<field_descriptor
-			field="timeStamp"
-			tag_name="time_stamp" type="1" scalar_type="LongType"></field_descriptor>
-		<field_descriptor
-			field="uid"
-			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
 	</class_descriptor>
 	<class_descriptor
 		described_class="class ecologylab.services.messages.InitConnectionResponse"
 		tag_name="init_connection_response">
-		<field_descriptor
-			field="timeStamp"
-			tag_name="time_stamp" type="1" scalar_type="LongType"></field_descriptor>
-		<field_descriptor
-			field="uid"
-			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
 		<field_descriptor
 			field="sessionId"
 			tag_name="session_id" type="1" scalar_type="StringType"></field_descriptor>
 	</class_descriptor>
 	<class_descriptor described_class="class ecologylab.services.messages.OkResponse"
 		tag_name="ok_response">
-		<field_descriptor
-			field="timeStamp"
-			tag_name="time_stamp" type="1" scalar_type="LongType"></field_descriptor>
-		<field_descriptor
-			field="uid"
-			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
 	</class_descriptor>
 	<class_descriptor described_class="class ecologylab.services.messages.UpdateMessage"
 		tag_name="update_message">
-		<field_descriptor
-			field="timeStamp"
-			tag_name="time_stamp" type="1" scalar_type="LongType"></field_descriptor>
-		<field_descriptor
-			field="uid"
-			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
 	</class_descriptor>
 	<class_descriptor
 		described_class="class ecologylab.services.messages.InitConnectionRequest"
 		tag_name="init_connection_request">
-		<field_descriptor
-			field="timeStamp"
-			tag_name="time_stamp" type="1" scalar_type="LongType"></field_descriptor>
-		<field_descriptor
-			field="uid"
-			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
 		<field_descriptor
 			field="sessionId"
 			tag_name="session_id" type="1" scalar_type="StringType"></field_descriptor>
 	</class_descriptor>
 	<class_descriptor described_class="class ecologylab.services.messages.RequestMessage"
 		tag_name="request_message">
-		<field_descriptor
-			field="timeStamp"
-			tag_name="time_stamp" type="1" scalar_type="LongType"></field_descriptor>
-		<field_descriptor
-			field="uid"
-			tag_name="uid" type="1" scalar_type="LongType"></field_descriptor>
 	</class_descriptor>
 </translation_scope>
