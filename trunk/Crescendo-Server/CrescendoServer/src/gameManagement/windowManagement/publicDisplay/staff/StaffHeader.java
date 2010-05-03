@@ -1,11 +1,6 @@
 package gameManagement.windowManagement.publicDisplay.staff;
 
-import javax.imageio.ImageIO;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-
 import gameManagement.windowManagement.publicDisplay.ColorMap;
-
 
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -19,6 +14,10 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+
+import javax.imageio.ImageIO;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 import keys.KeySignatures;
 import keys.Pitches;
@@ -63,8 +62,10 @@ public class StaffHeader extends JPanel
 	@Override
 	protected void paintComponent(Graphics g)
 	{
+		// call base implementation
 		super.paintComponent(g);
 		
+		// Calculate the staff background dimensions and starting point
 		Graphics2D g2d = (Graphics2D)g;
 		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 		Dimension size = this.getSize();
@@ -74,23 +75,35 @@ public class StaffHeader extends JPanel
 		int xCoord = this.getX() + Math.abs(size.width - width)/2;
 		int yCoord = this.getY() + Math.abs(size.height - height)/2;
 
+		// draw white background
 		g2d.fillRect(xCoord, yCoord, width, height);
 		
+		// Set up for drawing staff
 		BasicStroke stroke = new BasicStroke(0.005f*size.height);
 		g2d.setColor(Color.BLACK);
 		g2d.setStroke(stroke);
 		
+		// Draw staff lines
 		for (int i = 0; i < 5; ++i)
 		{
 			int y = (int)calculatStaffLine(yCoord, (float)height, (float)i);
 			g2d.drawLine(0, y, width, y);
 		}
 		
+		// Scaling for drawing clef, key, and time signature
 		float scale = height*0.00233f;
 		float displacement = 1.4f;
 		int nextX = drawClef(g2d, clef, xCoord, (int)(yCoord*displacement), scale);
+		
+		// Draw
 		nextX = drawKeySignature(g2d, nextX, yCoord, height);
 		nextX = drawTimeSignature(g2d, nextX, yCoord, height);
+		
+		// Draw a bar line at the end for good effect
+		g2d.drawLine((int)(width*0.99), 
+					 (int)calculatStaffLine(yCoord, height, 0), 
+					 (int)(width*0.99), 
+					 (int)calculatStaffLine(yCoord, height, 4));
 	}
 	
 	private void initImages()
@@ -100,6 +113,7 @@ public class StaffHeader extends JPanel
 			clef = ImageIO.read(new File("Treble_clef.png"));
 			flat = ImageIO.read(new File("flat.png"));
 			sharp = ImageIO.read(new File("sharp.png"));
+//			setBorder(BorderFactory.createLineBorder(Color.black, 1));
 		}
 		catch (IOException e)
 		{
@@ -125,8 +139,8 @@ public class StaffHeader extends JPanel
 			BufferedImage symbol = isSharp(accidental) ? sharp : flat;
 			
 			// Calculate positioning stuff
-			float verticalShift = isSharp(accidental) ? regionHeight * 0.095f : 7;
-			float scale = isSharp(accidental) ? regionHeight * 0.002f : 5;
+			float verticalShift = isSharp(accidental) ? regionHeight * 0.095f : regionHeight * 0.215f;
+			float scale = isSharp(accidental) ? regionHeight * 0.002f : regionHeight * 0.0029f;
 			
 			// draw it on the staff
 			g2d.drawImage(symbol, startX, (int)(y - verticalShift), (int)(symbol.getWidth()*scale), (int)(symbol.getHeight()*scale), null);
@@ -179,9 +193,11 @@ public class StaffHeader extends JPanel
 		JFrame frame = new JFrame("Test");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(new Dimension(800, 600));
-		frame.setResizable(false);
+		frame.setResizable(true);
 		frame.setLayout(new GridLayout(1,1));
-		frame.getContentPane().add(new StaffHeader());
+		StaffHeader header = new StaffHeader();
+		header.setKeySignature(KeySignatures.BFlatMajor);
+		frame.getContentPane().add(header);
 		frame.setVisible(true);
 
 	}

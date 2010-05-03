@@ -24,6 +24,9 @@ import javax.swing.JPanel;
 import javax.swing.event.AncestorEvent;
 import javax.swing.event.AncestorListener;
 
+import keys.KeySignatures;
+import keys.Players;
+
 /**
  * This class encapsulates the primary screen for gameplay.  It displays the following information
  * <ul>
@@ -58,11 +61,6 @@ public class GameWindow extends JPanel
 	{
 		staff = new AnimatedStaff(player, key, chords, beats, subdivision);
 		initComponents();
-	}
-	
-	public void setInitTime(int seconds)
-	{
-//		timer
 	}
 	
 	public void setTime(int seconds)
@@ -197,6 +195,7 @@ public class GameWindow extends JPanel
 					scores.setBounds(sbPoint.x, sbPoint.y, sbDimension.width, sbDimension.height);
 					add(scores);
 					scores.validate();
+					
 				} 
 				catch (IOException e) 
 				{
@@ -221,25 +220,23 @@ public class GameWindow extends JPanel
 		frame.setUndecorated(true);
 		
 		frame.setLayout(new GridLayout(1,1));
-		GameWindow window = new GameWindow();
+		GameWindow window = new GameWindow(Players.PLAYER_ONE, KeySignatures.BFlatMajor, KeySignatures.getAllKeys(), 4, 4);
 		frame.getContentPane().add(window);
-		
 		frame.setVisible(true);
 		
-//		window.setTime(12);
 		window.setPlayerCount(4);
-//		
-//		for (int i = 0; i < 12; ++i)
-//		{
-//			try 
-//			{
-//				Thread.sleep(1000);
-//				window.decrementTime();
-//			} 
-//			catch (InterruptedException e) 
-//			{
-//				e.printStackTrace();
-//			}
-//		}
+		
+		for (int i = 0; i < 12; ++i)
+		{
+			try 
+			{
+				Thread.sleep(1000);
+				window.decrementTime();
+			} 
+			catch (InterruptedException e) 
+			{
+				e.printStackTrace();
+			}
+		}
 	}
 }
