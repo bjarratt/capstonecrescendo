@@ -79,9 +79,9 @@ public class WindowManager
 		mainFrame.setLayout(manager);
 		
 		// Set full-screen mode
-		mainFrame.setMinimumSize(new java.awt.Dimension(800,600));
-//		mainFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-//		mainFrame.setUndecorated(true);
+//		mainFrame.setMinimumSize(new java.awt.Dimension(800,600));
+		mainFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+		mainFrame.setUndecorated(true);
 		mainFrame.getContentPane().setBackground(Color.red);
 		
 		// Set default close operation
