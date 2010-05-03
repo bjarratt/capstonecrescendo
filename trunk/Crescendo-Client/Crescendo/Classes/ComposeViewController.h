@@ -21,7 +21,9 @@
 	BOOL clientConnected;
 	NSString *playerId;
 	
+	BOOL IN;
 	BOOL inGame;
+	BOOL inCompose;
 	
 	UIScrollView *myLengthScrollView;
 	UIScrollView *myPitchScrollView;
@@ -62,7 +64,9 @@
 @property (nonatomic, retain) XMLClient *client;
 @property (nonatomic, readwrite, assign) BOOL clientConnected;
 @property (nonatomic, retain) NSString *playerId;
+@property (readwrite, assign) BOOL IN;
 @property (readwrite, assign) BOOL inGame;
+@property (readwrite, assign) BOOL inCompose;
 @property (nonatomic, retain) UIScrollView *myLengthScrollView;
 @property (nonatomic, retain) UIScrollView *myPitchScrollView;
 @property (nonatomic, retain) UIButton *buildButton;
@@ -104,6 +108,7 @@
 - (void) pausePlay:(UIButton *)sender;
 - (void) playSong:(UIButton *)sender;
 - (void) disconnect:(UIButton *)sender;
+- (void) removeAll;
 - (void) resetSliderValues;
 - (void) keySliderValueSet:(id)sender;
 - (void) keySliderValueChanged:(id)sender;
