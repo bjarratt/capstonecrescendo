@@ -349,11 +349,15 @@ public class GameManager implements ActionListener
 					
 					numberOfActivePlayers--;
 					
-					tempo = 120;
-					key = "CMajor";
-					numberOfBars = 16;
-					timeSignatureNumerator = 4;
-					timeSignatureDenominator = 4;
+					//if player 1 disconnects, reset game options
+					if(m.getMessage().split("_")[0].equals(Players.PLAYER_ONE))
+					{
+						tempo = 120;
+						key = "CMajor";
+						numberOfBars = 16;
+						timeSignatureNumerator = 4;
+						timeSignatureDenominator = 4;
+					}
 					
 					//clear other game state
 					gameBeats = new ArrayList<Beat>();
