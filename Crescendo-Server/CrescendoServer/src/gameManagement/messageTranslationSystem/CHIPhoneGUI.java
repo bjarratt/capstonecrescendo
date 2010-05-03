@@ -964,9 +964,9 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 	 *
 	 *	@return a random Note pitch to be used in a message sent to the server
 	 */
-	private String generatePitch()
+	private String getPitch(int p)
 	{
-		switch(rand.nextInt(16))
+		switch(p%16)
 		{
 			case 0:
 				return "E5";
