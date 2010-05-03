@@ -153,7 +153,7 @@ public class GameManager implements ActionListener
 		WindowManager.getInstance().addWindow(GameState.PLAY, gameWindow);
 		WindowManager.getInstance().addWindow(GameState.PAUSE, pauseWindow);
 		WindowManager.getInstance().addWindow(GameState.POST_GAME, new JPanel());
-//		WindowManager.getInstance().run();
+		WindowManager.getInstance().run();
 	}
 
 	/**
@@ -180,7 +180,7 @@ public class GameManager implements ActionListener
 				messagePool = new ArrayList<String>();
 	
 				//constrict one message per user per tick
-				this.condenseMessagePool();
+				//this.condenseMessagePool();
 				//translate the messages
 				this.translateMessagePool();
 	
