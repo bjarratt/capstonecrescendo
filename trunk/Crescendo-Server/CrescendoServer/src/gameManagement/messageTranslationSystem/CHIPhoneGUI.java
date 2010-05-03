@@ -66,7 +66,13 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 	
 	private BufferedImage help = null;
 	private Rectangle2D helpBox = null;
+	
+	private BufferedImage pause = null;
+	private Rectangle2D pauseBox = null;
 
+	private BufferedImage playSong = null;
+	private Rectangle2D playSongBox = null;
+	
 	private boolean at_connect_screen;
 	private boolean at_help_screen;
 	private boolean at_splash_screen;
@@ -305,6 +311,68 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 					//draw connect button
 					g.drawImage(disconnect, null, 50, (int)background_y + 275);
 					g.drawString("disconnect", 116, (int)background_y + 305);
+					
+					if(background_y < 480)
+					{
+						background_y += .5;
+						repaint();
+					}
+					else
+					{
+						background_y = 480;
+					}	
+				////////////////////////////////////
+			}
+			else if(previousState.equals("at_pause_screen") && background_y < 480)
+			{
+				/* This is the back command from the splash screen*/
+				///// Draw static current screen /////
+					//this is a vertical screen
+					g.drawImage(background_vertical, null, 0, 0);
+					
+					//draw connect button
+					if(connect == null)
+						connect = menu_button_up;
+					connectBox = new Rectangle2D.Double(50,210,220,50);
+					g.drawImage(connect, null, 50, 210);
+					g.drawString("connect", 128, 240);
+					
+					//draw help button
+					if(help == null)
+						help = help_button_up;
+					helpBox = new Rectangle2D.Double(260,10,50,50);
+					g.drawImage(help, null, 260, 10);
+				//////////////////////////////////////
+				
+				///// Draw dynamic previous screen /////
+					//this is a vertical screen
+					g.drawImage(background_vertical, null, 0, (int)background_y + 0);
+
+					//draw "game options" text
+					g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 10));
+					g.drawString("game options", 125, (int)background_y + 178);
+					g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 16));
+		
+					//draw start button
+					if(pause == null)
+						pause = menu_button_up;
+					pauseBox = new Rectangle2D.Double(50,(int)background_y + 210,220,50);	
+					g.drawImage(pause, null, 50, (int)background_y + 210);
+					g.drawString("pause", 135, (int)background_y + 240);
+					
+					//draw play song button
+					if(playSong == null)
+						playSong = menu_button_up;
+					playSongBox = new Rectangle2D.Double(50,(int)background_y + 275,220,50);	
+					g.drawImage(playSong, null, 50, (int)background_y + 275);
+					g.drawString("play song", 121, (int)background_y + 305);
+					
+					//draw disconnect button
+					if(disconnect == null)
+						disconnect = menu_button_up;
+					disconnectBox = new Rectangle2D.Double(50,(int)background_y + 340,220,50);	
+					g.drawImage(disconnect, null, 50, (int)background_y + 340);
+					g.drawString("disconnect", 116, (int)background_y + 370);
 					
 					if(background_y < 480)
 					{
@@ -719,63 +787,132 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 			}
 		}
 		else if(at_pause_screen)
-		{				
+		{	
 			if(previousState.equals("at_game_options_screen") && background_y > 0)
-			{				
-				//this is a vertical screen
-				g.drawImage(background_vertical, null, 0, (int)background_y);
-				
-				if(background_y > 0)
-				{
-					background_y -= .5;
-					repaint();
-				}
-				else
-				{
-					background_y = 0;
-				}	
-			}
-			else if(!previousState.equals("at_play_screen"))
 			{
-				backBox = new Rectangle2D.Double(20,20,51,31);
-				playBox = new Rectangle2D.Double(50,415,220,50);	
-				previousState = "at_pause_screen";
-				System.out.println(previousState);
-			}
-			
-			if(play == null)
-				play = menu_button_up;
-			if(playBox == null)
-				playBox = new Rectangle2D.Double(50,background_y + 415,220,50);	
-			
-			//this is a vertical screen
-			g.drawImage(background_vertical, null, 0, (int)background_y);
-			
-			//draw play button
-			g.drawImage(play, null, 50, (int)background_y + 400);
-			g.drawString("play", 142, (int)background_y + 430);
+				/* This is the next command from the game options screen */	
+				///// Draw static previous screen /////
+					//this is a vertical screen
+					g.drawImage(background_vertical, null, 0, 0);
+					
+					//draw back button
+					if(back == null)
+						back = back_button_up;
+					backBox = new Rectangle2D.Double(20,20,51,31);	
+					g.drawImage(back, null, 20, 20);
+					g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 13));
+					g.drawString("back", 34, 39);
+					g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 16));
+	
+					//draw "game play options" text
+					g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 10));
+					g.drawString("game play options", 110, 178);
+					g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 16));
+					
+					//game option labels
+					g.drawString("Key", 25, 200);
+					g.drawString("Time", 95, 200);
+					g.drawString("Tempo", 170, 200);
+					g.drawString("Bars", 260, 200);
+					
+					//game option labels
+					g.drawString(key, 25, 225);
+					g.drawString(time, 95, 225);
+					g.drawString(tempo, 170, 225);
+					g.drawString(bars, 260, 225);
+					
+					//game option sliders
+					//JSlider.setBounds(x, y, width, height);
+					keySlider.setBounds(20, 250, 40, 135);
+					timeSlider.setBounds(100, 250, 40, 135);
+					tempoSlider.setBounds(180, 250, 40, 135);
+					barsSlider.setBounds(260, 250, 40, 135);
+					
+					//draw play button
+					if(play == null)
+						play = menu_button_up;
+					playBox = new Rectangle2D.Double(50,415,220,50);	
+					g.drawImage(play, null, 50, 400);
+					g.drawString("play", 142, 430);
+				///////////////////////////////////////
+				
+				///// Draw dynamic current screen /////	
+					//this is a vertical screen
+					g.drawImage(background_vertical, null, 0, (int)background_y);
 
-			if(previousState.equals("at_play_screen") && background_y < 480)
-			{			
-				//this is a vertical screen
-				g.drawImage(background_vertical, null, 0, (int)background_y);
-				
-				if(background_y < 480)
-				{
-					background_y += .5;
-					repaint();
-				}
-				else
-				{
-					background_y = 480;
-				}	
+					//draw "game options" text
+					g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 10));
+					g.drawString("game options", 125, (int)background_y + 178);
+					g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 16));
+					
+					//draw start button
+					if(pause == null)
+						pause = menu_button_up;
+					pauseBox = new Rectangle2D.Double(50,(int)background_y + 210,220,50);	
+					g.drawImage(pause, null, 50, (int)background_y + 210);
+					g.drawString("pause", 135, (int)background_y + 240);
+					
+					//draw play song button
+					if(playSong == null)
+						playSong = menu_button_up;
+					playSongBox = new Rectangle2D.Double(50,(int)background_y + 275,220,50);	
+					g.drawImage(playSong, null, 50, (int)background_y + 275);
+					g.drawString("play song", 121, (int)background_y + 305);
+					
+					//draw disconnect button
+					if(disconnect == null)
+						disconnect = menu_button_up;
+					disconnectBox = new Rectangle2D.Double(50,(int)background_y + 340,220,50);	
+					g.drawImage(disconnect, null, 50, (int)background_y + 340);
+					g.drawString("disconnect", 116, (int)background_y + 370);
+					
+					if(background_y > 0)
+					{
+						background_y -= .5;
+						repaint();
+					}
+					else
+					{
+						background_y = 0;
+					}	
+				///////////////////////////////////////
 			}
-			else if(!previousState.equals("at_game_options_screen"))
+			else
 			{
-				backBox = new Rectangle2D.Double(20,20,51,31);
-				playBox = new Rectangle2D.Double(50,415,220,50);	
-				previousState = "at_game_options_screen";
-				System.out.println(previousState);
+				/* This is the current screen */
+				///// Draw static current screen /////		
+					//this is a vertical screen
+					g.drawImage(background_vertical, null, 0, 0);
+
+					//draw "game options" text
+					g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 10));
+					g.drawString("game options", 125, 178);
+					g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 16));
+		
+					//draw start button
+					if(pause == null)
+						pause = menu_button_up;
+					pauseBox = new Rectangle2D.Double(50,210,220,50);	
+					g.drawImage(pause, null, 50, 210);
+					g.drawString("pause", 135, 240);
+					
+					//draw play song button
+					if(playSong == null)
+						playSong = menu_button_up;
+					playSongBox = new Rectangle2D.Double(50,275,220,50);	
+					g.drawImage(playSong, null, 50, 275);
+					g.drawString("play song", 121, 305);
+					
+					//draw disconnect button
+					if(disconnect == null)
+						disconnect = menu_button_up;
+					disconnectBox = new Rectangle2D.Double(50,340,220,50);	
+					g.drawImage(disconnect, null, 50, 340);
+					g.drawString("disconnect", 116, 370);
+					
+					previousState = "at_pause_screen";
+					System.out.println(previousState);
+				//////////////////////////////////////
 			}
 		}
 		else if(at_play_screen)
@@ -1024,6 +1161,11 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 			
 			background_y = 480;
 			
+			keySlider.setVisible(true);
+			timeSlider.setVisible(true);
+			tempoSlider.setVisible(true);
+			barsSlider.setVisible(true);
+			
 			at_splash_screen = false;
 			at_game_options_screen = true;
 		}
@@ -1042,7 +1184,7 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 			System.out.println("play " + rand.nextInt());
 			clearAllBoundingBoxes();
 			
-			background_y = 0;
+			background_y = 480;
 			
 			keySlider.setVisible(false);
 			timeSlider.setVisible(false);
