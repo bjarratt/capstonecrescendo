@@ -20,6 +20,8 @@ import java.util.ArrayList;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
+import network.ConnectionManager;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -341,15 +343,10 @@ public class GameManager implements ActionListener
 				//     DISCONNECT     //
 				if(m.getMessage().split("_")[1].equals("disconnect"))
 				{
-					at_splash_screen = true;
-					at_game_options = false;
-					at_play = false;
-					at_pause = false;
-					at_post_game = false;
 					inGameTimer.stop();
 					sendMessageToDisplay(m.getMessage());
 					
-					numberOfActivePlayers = 0;
+					numberOfActivePlayers--;
 					
 					tempo = 120;
 					key = "CMajor";
@@ -383,17 +380,23 @@ public class GameManager implements ActionListener
 
 					notesToSend = new ArrayList<Note>();
 					
-					splashWindow.disconnectPlayer(1);
-					splashWindow.disconnectPlayer(2);
-					splashWindow.disconnectPlayer(3);
-					splashWindow.disconnectPlayer(4);
+					String playerThatDisconnected = m.getMessage().split("_")[0].substring(m.getMessage().split("_")[0].length()-1,m.getMessage().split("_")[0].length());
+					splashWindow.disconnectPlayer(Integer.parseInt(playerThatDisconnected));
 					
 					gameWindow.reset();
 					System.out.println("GameWindow has been reset");
 					
-					System.out.println("All players have been disconnected");
-					System.out.println("*****\tAt the Splash Screen\t*****");
-					WindowManager.getInstance().goToWindow(GameState.SPLASH_SCREEN);
+					if(!at_splash_screen)
+					{
+						at_splash_screen = true;
+						at_game_options = false;
+						at_play = false;
+						at_pause = false;
+						at_post_game = false;
+						
+						System.out.println("*****\tAt the Splash Screen\t*****");
+						WindowManager.getInstance().goToWindow(GameState.SPLASH_SCREEN);
+					}
 				}
 				
 				//     SPLASH SCREEN     //
@@ -487,6 +490,17 @@ public class GameManager implements ActionListener
 					at_play = true;
 					sendMessageToDisplay(m.getMessage());
 					inGameTimer.start();
+				}
+				//message is "player1_playsong"
+				else if(at_pause && m.getMessage().split("_")[1].equals(GameState.PLAY_SONG))
+				{
+					org.jfugue.Player jfuguePlayer = new org.jfugue.Player();
+					org.jfugue.Pattern s = new org.jfugue.Pattern();
+					s.add("T"+tempo+" ");
+					for(Note note : gameNotes)
+						s.add(note.getJFuguePattern());
+					jfuguePlayer.play(s);
+					sendMessageToDisplay(m.getMessage());
 				}
 				
 				//     POST GAME     //
