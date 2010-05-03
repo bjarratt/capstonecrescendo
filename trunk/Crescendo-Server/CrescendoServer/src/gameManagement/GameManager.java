@@ -337,6 +337,7 @@ public class GameManager implements ActionListener
 						currentPlayerId = new String(Players.PLAYER_ONE);
 					}
 				}
+				sendCurrentPlayerToDisplay();
 			}
 			else
 			{	
@@ -1077,6 +1078,11 @@ public class GameManager implements ActionListener
 	{
 		System.out.println(time + " seconds left in the game");
 		gameWindow.setTime(time);
+	}
+	
+	private void sendCurrentPlayerToDisplay()
+	{
+		gameWindow.setCurrentPlayer(currentPlayerId);
 	}
 	
 	/**
