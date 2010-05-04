@@ -37,17 +37,18 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 	private Random rand;
 
 	private BufferedImage background_vertical = null;
+	private BufferedImage compose_background = null;
+	private BufferedImage compose_overlay = null;
 	private BufferedImage menu_button_up = null;
 	private BufferedImage menu_button_down = null;
 	private BufferedImage back_button_up = null;
 	private BufferedImage back_button_down = null;
 	private BufferedImage help_button_up = null;
 	private BufferedImage help_button_down = null;
-	private BufferedImage volume_icon = null;
-	private BufferedImage compose_background_red = null;
-	private BufferedImage compose_background_green = null;
-	private BufferedImage compose_background_blue = null;
-	private BufferedImage compose_background_orange = null;
+	private BufferedImage volume_icon_up = null;
+	private BufferedImage volume_icon_down = null;
+	private BufferedImage arrow_up = null;
+	private BufferedImage arrow_down = null;
 
 	private BufferedImage connect = null;
 	private Rectangle2D connectBox = null;
@@ -72,6 +73,23 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 
 	private BufferedImage playSong = null;
 	private Rectangle2D playSongBox = null;
+	
+	private BufferedImage arrow = null;
+	private Rectangle2D arrowBox = null;
+	
+	private BufferedImage volume = null;
+	private Rectangle2D volumeBox = null;
+
+	private int pitch;
+	private int length;
+	
+	private Rectangle2D centerCardBox = null;
+	private Rectangle2D northCardBox = null;
+	private Rectangle2D eastCardBox = null;
+	private Rectangle2D southCardBox = null;
+	private Rectangle2D westCardBox = null;
+	
+	private BufferedImage[][] cards;
 	
 	private boolean at_connect_screen;
 	private boolean at_help_screen;
@@ -104,7 +122,11 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 	
 		this.player = player;
 		this.myCM = myCM;
+		
 		rand = new Random();
+		
+		pitch = 0;
+		length = 0;
 		
 		at_connect_screen = true;
 		at_help_screen = false;
@@ -119,17 +141,18 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 		try
 		{
 			background_vertical = ImageIO.read(new File("background_vertical.png"));
+			compose_background = ImageIO.read(new File("compose_background.png"));
+			compose_overlay = ImageIO.read(new File("compose_overlay.png"));
 			menu_button_up = ImageIO.read(new File("menu_button_up.png"));
 			menu_button_down = ImageIO.read(new File("menu_button_down.png"));
 			back_button_up = ImageIO.read(new File("back_button_up.png"));
 			back_button_down = ImageIO.read(new File("back_button_down.png"));
 			help_button_up = ImageIO.read(new File("help_button_up.png"));
 			help_button_down = ImageIO.read(new File("help_button_down.png"));
-			volume_icon = ImageIO.read(new File("volume_icon.png"));
-			compose_background_red = ImageIO.read(new File("compose_background_red.png"));
-			compose_background_green = ImageIO.read(new File("compose_background_green.png"));
-			compose_background_blue = ImageIO.read(new File("compose_background_blue.png"));
-			compose_background_orange = ImageIO.read(new File("compose_background_orange.png"));
+			volume_icon_up = ImageIO.read(new File("volume_icon_up.png"));
+			volume_icon_down = ImageIO.read(new File("volume_icon_down.png"));
+			arrow_up = ImageIO.read(new File("arrow_up.png"));
+			arrow_down = ImageIO.read(new File("arrow_down.png"));
 		}
 		catch(IOException e)
 		{
@@ -259,7 +282,7 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 					//draw back button
 					g.drawImage(back, null, 20, (int)(background_y + 20));
 					g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 13));
-					g.drawString("back", 34, (int)(background_y + 39));
+					g.drawString("back", 30, (int)(background_y + 39));
 					g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 16));
 					
 					if(background_y < 480)
@@ -301,7 +324,7 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 					//draw back button
 					g.drawImage(back, null, 20, (int)(background_y + 20));
 					g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 13));
-					g.drawString("back", 34, (int)(background_y + 39));
+					g.drawString("back", 30, (int)(background_y + 39));
 					g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 16));
 	
 					//draw start button
@@ -373,6 +396,12 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 					disconnectBox = new Rectangle2D.Double(50,(int)background_y + 340,220,50);	
 					g.drawImage(disconnect, null, 50, (int)background_y + 340);
 					g.drawString("disconnect", 116, (int)background_y + 370);
+
+					//draw arrow button
+					if(arrow == null)
+						arrow = arrow_up;
+					arrowBox = new Rectangle2D.Double(125,(int)background_y + 400,70,70);	
+					g.drawImage(arrow, null, 125, (int)background_y + 400);
 					
 					if(background_y < 480)
 					{
@@ -443,7 +472,7 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 					//draw back button
 					g.drawImage(back, null, 20, (int)background_y + 20);
 					g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 13));
-					g.drawString("back", 34, (int)background_y + 39);
+					g.drawString("back", 30, (int)background_y + 39);
 					g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 16));
 	
 					if(background_y > 0)
@@ -470,7 +499,7 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 					backBox = new Rectangle2D.Double(20,20,51,31);	
 					g.drawImage(back, null, 20, 20);
 					g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 13));
-					g.drawString("back", 34, 39);
+					g.drawString("back", 30, 39);
 					g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 16));
 					
 					previousState = "at_help_screen";
@@ -493,7 +522,7 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 					backBox = new Rectangle2D.Double(20,20,51,31);
 					g.drawImage(back, null, 20, 20);
 					g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 13));
-					g.drawString("back", 34, 39);
+					g.drawString("back", 30, 39);
 					g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 16));
 		
 					//draw start button
@@ -518,7 +547,7 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 					//draw back button
 					g.drawImage(back, null, 20, (int)background_y + 20);
 					g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 13));
-					g.drawString("back", 34, (int)background_y + 39);
+					g.drawString("back", 30, (int)background_y + 39);
 					g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 16));
 
 					//draw "game play options" text
@@ -591,7 +620,7 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 					backBox = new Rectangle2D.Double(20,20,51,(int)background_y + 31);
 					g.drawImage(back, null, 20, (int)background_y + 20);
 					g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 13));
-					g.drawString("back", 34, (int)background_y + 39);
+					g.drawString("back", 30, (int)background_y + 39);
 					g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 16));
 		
 					//draw start button
@@ -632,7 +661,7 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 					backBox = new Rectangle2D.Double(20,20,51,31);
 					g.drawImage(back, null, 20, 20);
 					g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 13));
-					g.drawString("back", 34, 39);
+					g.drawString("back", 30, 39);
 					g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 16));
 		
 					//draw start button
@@ -668,7 +697,7 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 					backBox = new Rectangle2D.Double(20,20,51,31);
 					g.drawImage(back, null, 20, 20);
 					g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 13));
-					g.drawString("back", 34, 39);
+					g.drawString("back", 30, 39);
 					g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 16));
 		
 					//draw start button
@@ -693,7 +722,7 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 					//draw back button
 					g.drawImage(back, null, 20, (int)background_y + 20);
 					g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 13));
-					g.drawString("back", 34, (int)background_y + 39);
+					g.drawString("back", 30, (int)background_y + 39);
 					g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 16));
 
 					//draw "game play options" text
@@ -748,7 +777,7 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 					backBox = new Rectangle2D.Double(20,20,51,31);	
 					g.drawImage(back, null, 20, 20);
 					g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 13));
-					g.drawString("back", 34, 39);
+					g.drawString("back", 30, 39);
 					g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 16));
 	
 					//draw "game play options" text
@@ -801,7 +830,7 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 					backBox = new Rectangle2D.Double(20,20,51,31);	
 					g.drawImage(back, null, 20, 20);
 					g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 13));
-					g.drawString("back", 34, 39);
+					g.drawString("back", 30, 39);
 					g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 16));
 	
 					//draw "game play options" text
@@ -865,6 +894,12 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 					disconnectBox = new Rectangle2D.Double(50,(int)background_y + 340,220,50);	
 					g.drawImage(disconnect, null, 50, (int)background_y + 340);
 					g.drawString("disconnect", 116, (int)background_y + 370);
+
+					//draw arrow button
+					if(arrow == null)
+						arrow = arrow_up;
+					arrowBox = new Rectangle2D.Double(125,(int)background_y + 400,70,70);	
+					g.drawImage(arrow, null, 125, (int)background_y + 400);
 					
 					if(background_y > 0)
 					{
@@ -909,6 +944,12 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 					disconnectBox = new Rectangle2D.Double(50,340,220,50);	
 					g.drawImage(disconnect, null, 50, 340);
 					g.drawString("disconnect", 116, 370);
+
+					//draw arrow button
+					if(arrow == null)
+						arrow = arrow_up;
+					arrowBox = new Rectangle2D.Double(125,400,70,70);	
+					g.drawImage(arrow, null, 125, 400);
 					
 					previousState = "at_pause_screen";
 					System.out.println(previousState);
@@ -916,8 +957,50 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 			}
 		}
 		else if(at_play_screen)
-		{				
+		{	
+			/* This is the current screen */
+			///// Draw static current screen /////			
+				//this is a vertical screen
+				g.drawImage(compose_background, null, 0, 0);
 
+				//this draws the cards on the screen
+				try
+				{
+					g.drawImage(ImageIO.read(new File("src/Cards/Length/" + getLength(length-1) + ".png")), null, -100, 80);
+					g.drawImage(ImageIO.read(new File("src/Cards/Length/" + getLength(length+1) + ".png")), null, 260, 80);
+					g.drawImage(ImageIO.read(new File("src/Cards/Pitch/" + getLength(length) + "/" + getPitch(pitch+1) + "_" + getLength(length) + ".png")), null, 80, -100);
+					g.drawImage(ImageIO.read(new File("src/Cards/Pitch/" + getLength(length) + "/" + getPitch(pitch-1) + "_" + getLength(length) + ".png")), null, 80, 260);
+					g.drawImage(ImageIO.read(new File("src/Cards/Pitch/" + getLength(length) + "/" + getPitch(pitch) + "_" + getLength(length) + "_selected.png")), null, 80, 80);
+				}
+				catch(IOException e)
+				{
+					e.printStackTrace();
+				}
+				 //new Rectangle2D.Double(x, y, w, h)
+				centerCardBox = new Rectangle2D.Double(80,80,160,160);
+				northCardBox = new Rectangle2D.Double(80,0,160,60);
+				eastCardBox = new Rectangle2D.Double(260,80,60,160);
+				southCardBox = new Rectangle2D.Double(80,260,160,60);
+				westCardBox = new Rectangle2D.Double(0,80,60,160);
+				
+				//this is the bottom overlay
+				g.drawImage(compose_overlay, null, 0, 320);
+
+				//draw arrow button
+				if(arrow == null)
+					arrow = arrow_up;
+				arrowBox = new Rectangle2D.Double(30,365,70,70);	
+				g.drawImage(arrow, null, 30, 365);	
+				
+				//draw volume button
+				if(volume == null)
+					volume = volume_icon_up;
+				volumeBox = new Rectangle2D.Double(220,365,70,70);	
+				g.drawImage(volume, null, 220, 365);	
+				
+				previousState = "at_play_screen";
+				System.out.println(previousState);
+			//////////////////////////////////////
 		}
 	}
 	
@@ -929,6 +1012,10 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 		startBox = null;
 		disconnectBox = null;
 		playBox = null;
+		playSongBox = null;
+		pauseBox = null;
+		volumeBox = null;
+		arrowBox = null;
 	}
 	
 	public void actionPerformed(ActionEvent e)
@@ -959,11 +1046,6 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 //			myCM.sendMessage(player + "_" + GameState.PLAY_SONG);
 	}
 
-	/**
-	 *	Generates a random Note pitch to be used in a message sent to the server
-	 *
-	 *	@return a random Note pitch to be used in a message sent to the server
-	 */
 	private String getPitch(int p)
 	{
 		switch(p%16)
@@ -1003,23 +1085,18 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 		}
 	}
 
-	/**
-	 *	Generates a random Note length to be used in a message sent to the server
-	 *
-	 *	@return a random Note length to be used in a message sent to the server
-	 */
-	private String generateLength()
+	private String getLength(int l)
 	{
-		switch(rand.nextInt(4))
+		switch(l%4)
 		{
 			case 0:
-				return "eighthnote";
+				return "eighth";
 			case 1:
-				return "quarternote";
+				return "quarter";
 			case 2:
-				return "halfnote";
+				return "half";
 			default:
-				return "wholenote";
+				return "whole";
 		}
 	}
 	
@@ -1194,6 +1271,71 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 			at_game_options_screen = false;
 			at_pause_screen = true;
 		}
+		else if((arrowBox != null) && (arrowBox.contains(e.getX(),e.getY())))
+		{
+			System.out.println("arrow " + rand.nextInt());
+			clearAllBoundingBoxes();
+
+			background_y = 480;
+			
+			if(previousState.equals("at_pause_screen"))
+			{
+				at_pause_screen = false;
+				at_play_screen = true;
+			}
+			else if(previousState.equals("at_play_screen"))
+			{
+				at_play_screen = false;
+				at_pause_screen = true;
+			}
+		}
+		else if((volumeBox != null) && (volumeBox.contains(e.getX(),e.getY())))
+		{
+			System.out.println("volume " + rand.nextInt());
+			clearAllBoundingBoxes();
+	
+			//TODO play sound
+		}
+		else if((centerCardBox != null) && (centerCardBox.contains(e.getX(),e.getY())))
+		{
+			System.out.println("centerCardBox " + rand.nextInt());
+			clearAllBoundingBoxes();
+	
+		}
+		else if((northCardBox != null) && (northCardBox.contains(e.getX(),e.getY())))
+		{
+			System.out.println("northCardBox " + rand.nextInt());
+			clearAllBoundingBoxes();
+	
+			pitch++;
+		}
+		else if((eastCardBox != null) && (eastCardBox.contains(e.getX(),e.getY())))
+		{
+			System.out.println("eastCardBox " + rand.nextInt());
+			clearAllBoundingBoxes();
+	
+			length++;
+		}
+		else if((southCardBox != null) && (southCardBox.contains(e.getX(),e.getY())))
+		{
+			System.out.println("southCardBox " + rand.nextInt());
+			clearAllBoundingBoxes();
+			
+			pitch--;
+			
+			if(pitch<0)
+				pitch+=16;
+		}
+		else if((westCardBox != null) && (westCardBox.contains(e.getX(),e.getY())))
+		{
+			System.out.println("westCardBox " + rand.nextInt());
+			clearAllBoundingBoxes();
+	
+			length--;
+			
+			if(length<0)
+				length+=4;
+		}
 	}
 
 	public void mouseEntered(MouseEvent e)
@@ -1222,6 +1364,14 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 			start = menu_button_down;
 		if((playBox != null) && (playBox.contains(e.getX(),e.getY())))
 			play = menu_button_down;
+		if((pauseBox != null) && (pauseBox.contains(e.getX(),e.getY())))
+			pause = menu_button_down;
+		if((playSongBox != null) && (playSongBox.contains(e.getX(),e.getY())))
+			playSong = menu_button_down;
+		if((arrowBox != null) && (arrowBox.contains(e.getX(),e.getY())))
+			arrow = arrow_down;
+		if((volumeBox != null) && (volumeBox.contains(e.getX(),e.getY())))
+			volume = volume_icon_down;
 		
 		this.repaint();
 	}
@@ -1234,6 +1384,10 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 		start = menu_button_up;
 		disconnect = menu_button_up;
 		play = menu_button_up;
+		pause = menu_button_up;
+		playSong = menu_button_up;
+		arrow = arrow_up;
+		volume = volume_icon_up;
 		this.repaint();
 	}
 
