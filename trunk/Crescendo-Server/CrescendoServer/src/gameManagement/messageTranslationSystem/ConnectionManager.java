@@ -24,24 +24,24 @@ public class ConnectionManager
 		player1 = new Player("player1",this);
 		p1 = new Thread(player1);
 		p1.start();
-		
-		Player player2;
-		Thread p2;
-		player2 = new Player("player2",this);
-		p2 = new Thread(player2);
-		p2.start();
-		
-		Player player3;
-		Thread p3;
-		player3 = new Player("player3",this);
-		p3 = new Thread(player3);
-		p3.start();
-		
-		Player player4;
-		Thread p4;
-		player4 = new Player("player4",this);
-		p4 = new Thread(player4);
-		p4.start();
+//		
+//		Player player2;
+//		Thread p2;
+//		player2 = new Player("player2",this);
+//		p2 = new Thread(player2);
+//		p2.start();
+//		
+//		Player player3;
+//		Thread p3;
+//		player3 = new Player("player3",this);
+//		p3 = new Thread(player3);
+//		p3.start();
+//		
+//		Player player4;
+//		Thread p4;
+//		player4 = new Player("player4",this);
+//		p4 = new Thread(player4);
+//		p4.start();
 		/****************************************************/
 
 		gameManager.run();
