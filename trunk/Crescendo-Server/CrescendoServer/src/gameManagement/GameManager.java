@@ -188,8 +188,6 @@ public class GameManager implements ActionListener
 	 */
 	public synchronized void run()
 	{
-		//start at the splash screen
-		System.out.println("*****\tAt the Splash Screen\t*****");
 		//tell the WindowManager to go to the splash screen
 		WindowManager.getInstance().goToWindow(GameState.SPLASH_SCREEN);
 	}
@@ -208,7 +206,6 @@ public class GameManager implements ActionListener
 				//if the in game timer equals zero or goes below zero
 				if((initialInGameTime-currentInGameTick+additionalInGameTime)<=0)
 				{
-					System.out.println("*****\tAt the Post Game Screen\t*****");
 					//end the game and go to the post game screen
 					WindowManager.getInstance().goToWindow(GameState.POST_GAME);
 					
@@ -298,7 +295,6 @@ public class GameManager implements ActionListener
 				//if the game is done
 				if(gameIsDone)
 				{
-					System.out.println("*****\tAt the Post Game Screen\t*****");
 					//tell WindowManager to go to the post game screen
 					WindowManager.getInstance().goToWindow(GameState.POST_GAME);
 					
@@ -344,7 +340,6 @@ public class GameManager implements ActionListener
 				{
 					if(n.getPlayer().equals(Players.PLAYER_ONE) && (gameMeasures.size()<=numberOfBars) && (currentPlayerId.equals(Players.PLAYER_ONE)))
 					{
-						System.out.println("turn: player 1");
 						gameBeats.addAll(n.getBeats());
 						gameNotes.add(n);
 						if(numberOfActivePlayers>1)
@@ -352,7 +347,6 @@ public class GameManager implements ActionListener
 					}
 					else if(n.getPlayer().equals(Players.PLAYER_TWO) && (gameMeasures.size()<=numberOfBars) && (currentPlayerId.equals(Players.PLAYER_TWO)))
 					{
-						System.out.println("turn: player 2");
 						gameBeats.addAll(n.getBeats());
 						gameNotes.add(n);
 						if(numberOfActivePlayers>2)
@@ -439,7 +433,6 @@ public class GameManager implements ActionListener
 						splashWindow.connectPlayer(Integer.parseInt(plyr.substring(plyr.length()-1,plyr.length())));
 					
 					gameWindow.reset();
-					System.out.println("GameWindow has been reset");
 					
 					if(!at_splash_screen)
 					{
@@ -449,7 +442,6 @@ public class GameManager implements ActionListener
 						at_pause = false;
 						at_post_game = false;
 						
-						System.out.println("*****\tAt the Splash Screen\t*****");
 						WindowManager.getInstance().goToWindow(GameState.SPLASH_SCREEN);
 					}
 				}
@@ -464,7 +456,6 @@ public class GameManager implements ActionListener
 				//message is "player1_gamemodes"  (checking to make sure player 1 has sent the message)
 				else if(at_splash_screen && numberOfActivePlayers>0 && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.GAME_OPTIONS))
 				{
-					System.out.println("*****\tAt the Game Options Screen\t*****");
 					WindowManager.getInstance().goToWindow(GameState.GAME_OPTIONS);
 					
 					at_splash_screen = false;
@@ -476,7 +467,6 @@ public class GameManager implements ActionListener
 				//message is "player1_splashscreen"  (checking to make sure player 1 has sent the message)
 				else if(at_game_options && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.SPLASH_SCREEN))
 				{
-					System.out.println("*****\tAt the Splash Screen\t*****");
 					WindowManager.getInstance().goToWindow(GameState.SPLASH_SCREEN);
 					at_game_options = false;
 					at_splash_screen = true;
@@ -509,7 +499,6 @@ public class GameManager implements ActionListener
 					setGameMode(gameMode);
 					gameWindow.setTime(5);
 					
-					System.out.println("*****\tAt the Play Screen\t*****");
 					WindowManager.getInstance().goToWindow(GameState.PLAY);
 					
 					at_game_options = false;
@@ -522,7 +511,6 @@ public class GameManager implements ActionListener
 				//message is "playerX_pause"
 				else if(at_play && m.getMessage().split("_")[1].equals(GameState.PAUSE))
 				{
-					System.out.println("*****\tAt the Pause Screen\t*****");
 					WindowManager.getInstance().goToWindow(GameState.PAUSE);
 					at_play = false;
 					at_pause = true;
@@ -534,7 +522,6 @@ public class GameManager implements ActionListener
 				//message is "playerX_play"  (checking to make sure player 1 has sent the message)
 				else if(at_pause && m.getMessage().split("_")[1].equals(GameState.PLAY) && m.getMessage().split("_")[0].equals(pausedPlayerId))
 				{
-					System.out.println("*****\tAt the Play Screen\t*****");
 					WindowManager.getInstance().goToWindow(GameState.PLAY);
 					at_pause = false;
 					at_play = true;
@@ -567,7 +554,6 @@ public class GameManager implements ActionListener
 				//message is "player1_splashscreen"  (checking to make sure player 1 has sent the message)
 				else if(at_post_game && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.SPLASH_SCREEN))
 				{
-					System.out.println("*****\tAt the Splash Screen\t*****");
 					WindowManager.getInstance().goToWindow(GameState.SPLASH_SCREEN);
 					
 					at_post_game = false;
@@ -600,7 +586,6 @@ public class GameManager implements ActionListener
 					notesToSend = new ArrayList<Note>();
 					
 					gameWindow.reset();
-					System.out.println("GameWindow has been reset");
 					
 					int oldNumberOfPlayers = numberOfActivePlayers;
 					numberOfActivePlayers = 0;
