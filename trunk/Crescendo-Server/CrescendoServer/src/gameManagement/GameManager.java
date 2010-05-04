@@ -38,9 +38,7 @@ public class GameManager implements ActionListener
 	//every 200 milliseconds the messages get released from the pool to be translated
 	private ArrayList<String> messages;
 	
-	//the main timer for receiving any type of message 
-	private Timer timer;
-	//the countdown timer in the game
+	//the count down timer in the game
 	private Timer inGameTimer;
 
 	//game options
@@ -51,7 +49,7 @@ public class GameManager implements ActionListener
 	private static int timeSignatureDenominator = 4;
 	private static int numberOfBeatsPerMeasure;
 	
-	//gamestate options
+	//game state options
 	private boolean at_splash_screen;
 	private boolean at_game_options;
 	private boolean at_play;
@@ -70,7 +68,7 @@ public class GameManager implements ActionListener
 	//a list of each measure's keys
 	private ArrayList<String> keyProgression;
 	
-	//ids that are used for certain gamestate functions
+	//IDs that are used for certain gamestate functions
 	private String currentPlayerId;
 	private String pausedPlayerId;
 	
@@ -129,7 +127,6 @@ public class GameManager implements ActionListener
 		messagePool = new ArrayList<String>();
 		messages = new ArrayList<String>();
 		
-		timer = new Timer(200,this);
 		inGameTimer = new Timer(1000,this);
 
 		gameCurrentNote = 0;
@@ -189,90 +186,23 @@ public class GameManager implements ActionListener
 	/**
 	 *	Allows users to start sending messages to the game and brings up the splash screen
 	 */
-	public void run()
+	public synchronized void run()
 	{
 		//start at the splash screen
 		System.out.println("*****\tAt the Splash Screen\t*****");
 		//tell the WindowManager to go to the splash screen
 		WindowManager.getInstance().goToWindow(GameState.SPLASH_SCREEN);
 		//start allowing messages to be received
-		timer.start();
+	//	timer.start();
 	}
 
 	/**
 	 *	When a Timer ticks, this method is called and performs some action
 	 */
-	public void actionPerformed(ActionEvent event)
+	public synchronized void actionPerformed(ActionEvent event)
 	{
-		//if the main timer ticks, this section is called
-		if(event.getSource() == timer)
-		{
-			//if a message was received
-			if(messagePool.size() > 0)
-			{
-				//constrict message pool size every tick
-				messages = new ArrayList<String>(messagePool);
-				messagePool = new ArrayList<String>();
-	
-				//allow only one message per user per tick
-				//this needs to be here, because the iPhone allows users to "double click" buttons
-				//for instance, during game play, the user can send two notes and play two notes sequentially in one turn
-				this.condenseMessagePool();
-				
-				//check messages for correct format (initially create a Note if message is a Note)
-				this.translateMessagePool();
-	
-				//if the game has started
-				if(at_play)
-				{
-					//take the Note played and put it into a measure and split it up accordingly
-					this.constructMeasures();
-					
-					//make sure the note is in the correct key for the measure
-					this.checkNotesForCorrectness();
-					
-					//award the player for playing correct notes
-					this.scoreNotes();
-					
-					//send the player's scores to the display
-					this.sendScoresToDisplay();
-					
-					//send the notes played to the display
-					this.sendNotesToDisplay();
-					
-					//if the game is not done
-					if(!gameIsDone)
-					{
-						//if the number of bars allowed is exceeded or if the the number of bars is reached and the last measure is filled with notes
-						if(gameMeasures.size()>numberOfBars || (gameMeasures.size()==numberOfBars && gameMeasures.get(gameMeasures.size()-1).getNumberOfAvailableBeats()==0))
-						{
-							//set the game to true
-							gameIsDone = true;
-						}
-					}
-					
-					//if the game is done
-					if(gameIsDone)
-					{
-						System.out.println("*****\tAt the Post Game Screen\t*****");
-						//tell WindowManager to go to the post game screen
-						WindowManager.getInstance().goToWindow(GameState.POST_GAME);
-						
-						//TODO send post game screen values it needs here
-						//perhaps modify sendScoresToDisplay to send values to the post game screen too?
-						
-						//change game state from play to post game
-						at_play = false;
-						at_post_game = true;
-						
-						//stop the in game timer from counting
-						inGameTimer.stop();
-					}		
-				}
-			}
-		}
 		//if the inGameTimer ticks, this method is called
-		else if(event.getSource() == inGameTimer)
+		if(event.getSource() == inGameTimer)
 		{
 			//if the game is passed the 5 second countdown timer
 			if(!gameStart)
@@ -323,65 +253,69 @@ public class GameManager implements ActionListener
 	 *
 	 *	@param message the message to be translated
 	 */
-	public void addMessageToPool(String message)
+	public synchronized void addMessageToPool(String message)
 	{
-		//all messages received within 200 milliseconds are briefly stored here before trying to parse through them
 		//this helps with synchronization issues
 		messagePool.add(message);
-	}
-
-	/**
-	 *	Limit the number of messages to be translated to one per player per tick
-	 */
-	private void condenseMessagePool()
-	{
-		//flags for if a message has already been received this tick
-		boolean p1 = false;
-		boolean p2 = false;
-		boolean p3 = false;
-		boolean p4 = false;
-
-		ArrayList<String> newMessages = new ArrayList<String>();
-
-		//for all messages received
-		for(String message : messages)
+		
+		//if a message was received
+		if(messagePool.size() > 0)
 		{
-			//if the message is from player 1 and player 1 hasn't sent a message this tick
-			if(message.split("_")[0].equals(Players.PLAYER_ONE) && !p1)
+			//constrict message pool size every tick
+			messages = new ArrayList<String>(messagePool);
+			messagePool = new ArrayList<String>();
+			
+			//check messages for correct format (initially create a Note if message is a Note)
+			this.translateMessagePool();
+
+			//if the game has started
+			if(at_play)
 			{
-				//set the flag
-				p1 = true;
-				//add the message to be sent down the pipeline
-				newMessages.add(message);
-			}
-			//if the message is from player 2 and player 2 hasn't sent a message this tick
-			else if(message.split("_")[0].equals(Players.PLAYER_TWO) && !p2)
-			{
-				//set the flag
-				p2 = true;
-				//add the message to be sent down the pipeline
-				newMessages.add(message);
-			}
-			//if the message is from player 3 and player 3 hasn't sent a message this tick
-			else if(message.split("_")[0].equals(Players.PLAYER_THREE) && !p3)
-			{
-				//set the flag
-				p3 = true;
-				//add the message to be sent down the pipeline
-				newMessages.add(message);
-			}
-			//if the message is from player 4 and player 4 hasn't sent a message this tick
-			else if(message.split("_")[0].equals(Players.PLAYER_FOUR) && !p4)
-			{
-				//set the flag
-				p4 = true;
-				//add the message to be sent down the pipeline
-				newMessages.add(message);
+				//take the Note played and put it into a measure and split it up accordingly
+				this.constructMeasures();
+				
+				//make sure the note is in the correct key for the measure
+				this.checkNotesForCorrectness();
+				
+				//award the player for playing correct notes
+				this.scoreNotes();
+				
+				//send the player's scores to the display
+				this.sendScoresToDisplay();
+				
+				//send the notes played to the display
+				this.sendNotesToDisplay();
+				
+				//if the game is not done
+				if(!gameIsDone)
+				{
+					//if the number of bars allowed is exceeded or if the the number of bars is reached and the last measure is filled with notes
+					if(gameMeasures.size()>numberOfBars || (gameMeasures.size()==numberOfBars && gameMeasures.get(gameMeasures.size()-1).getNumberOfAvailableBeats()==0))
+					{
+						//set the game to true
+						gameIsDone = true;
+					}
+				}
+				
+				//if the game is done
+				if(gameIsDone)
+				{
+					System.out.println("*****\tAt the Post Game Screen\t*****");
+					//tell WindowManager to go to the post game screen
+					WindowManager.getInstance().goToWindow(GameState.POST_GAME);
+					
+					//TODO send post game screen values it needs here
+					//perhaps modify sendScoresToDisplay to send values to the post game screen too?
+					
+					//change game state from play to post game
+					at_play = false;
+					at_post_game = true;
+					
+					//stop the in game timer from counting
+					inGameTimer.stop();
+				}		
 			}
 		}
-
-		//reset the limited messages to the class variable messages
-		messages = newMessages;
 	}
 
 	/**
@@ -389,7 +323,7 @@ public class GameManager implements ActionListener
 	 *
 	 *	All of the game state changes in this method
 	 */
-	private void translateMessagePool()
+	private synchronized void translateMessagePool()
 	{
 		//the Message object, either holds a Note or a message to be further translated
 		//whatever this holds is guaranteed to be correctly formatted
@@ -412,6 +346,7 @@ public class GameManager implements ActionListener
 				{
 					if(n.getPlayer().equals(Players.PLAYER_ONE) && (gameMeasures.size()<=numberOfBars) && (currentPlayerId.equals(Players.PLAYER_ONE)))
 					{
+						System.out.println("turn: player 1");
 						gameBeats.addAll(n.getBeats());
 						gameNotes.add(n);
 						if(numberOfActivePlayers>1)
@@ -419,6 +354,7 @@ public class GameManager implements ActionListener
 					}
 					else if(n.getPlayer().equals(Players.PLAYER_TWO) && (gameMeasures.size()<=numberOfBars) && (currentPlayerId.equals(Players.PLAYER_TWO)))
 					{
+						System.out.println("turn: player 2");
 						gameBeats.addAll(n.getBeats());
 						gameNotes.add(n);
 						if(numberOfActivePlayers>2)
@@ -489,6 +425,7 @@ public class GameManager implements ActionListener
 					player4Score = 1337;
 					
 					currentPlayerId = Players.PLAYER_ONE;
+					sendCurrentPlayerToDisplay();
 					pausedPlayerId = new String();
 
 					notesToSend = new ArrayList<Note>();
@@ -659,6 +596,7 @@ public class GameManager implements ActionListener
 					player4Score = 1337;
 					
 					currentPlayerId = Players.PLAYER_ONE;
+					sendCurrentPlayerToDisplay();
 					pausedPlayerId = new String();
 					
 					notesToSend = new ArrayList<Note>();
@@ -685,7 +623,7 @@ public class GameManager implements ActionListener
 	/**
 	 *	From the Note's played by each player, correctly formated Measures are created
 	 */
-	private void constructMeasures()
+	private synchronized void constructMeasures()
 	{
 		Note n;
 		Note lastNote;
@@ -962,7 +900,7 @@ public class GameManager implements ActionListener
 	/**
 	 * Sets notes to be sent to the display to correct or incorrect depending on what the current key is
 	 */
-	private void checkNotesForCorrectness()
+	private synchronized void checkNotesForCorrectness()
 	{
 		//for all notes recently played
 		for(Note note : notesToSend)
@@ -1000,7 +938,7 @@ public class GameManager implements ActionListener
 	 * Scores and available play time increases if the note is in the current key
 	 * TODO change score increases and time increases for better game play, just needs to be played
 	 */
-	private void scoreNotes()
+	private synchronized void scoreNotes()
 	{
 		double score;
 		Note previousNotePlayed = null;
@@ -1070,7 +1008,7 @@ public class GameManager implements ActionListener
 							additionalInGameTime += 1;
 						}
 						//if the note being scored does not match the overall last note played
-						if(!note.equals(previousNotePlayed))
+						if(!note.equals(previousNote))
 						{
 							//reward a large bonus
 							score += Math.PI * 100;
@@ -1170,7 +1108,7 @@ public class GameManager implements ActionListener
 		}
 	}
 	
-	private void setNumberOfBeatsPerMeasure()
+	private synchronized void setNumberOfBeatsPerMeasure()
 	{
 		if(timeSignatureDenominator == 2)
 			numberOfBeatsPerMeasure = timeSignatureNumerator*4;
@@ -1182,7 +1120,7 @@ public class GameManager implements ActionListener
 			numberOfBeatsPerMeasure = 8;
 	}
 	
-	private void setGameMode(String game)
+	private synchronized void setGameMode(String game)
 	{
 		gameMode = new String(game);
 		
@@ -1198,26 +1136,26 @@ public class GameManager implements ActionListener
 		}
 	}
 	
-	private void setTempo(int t)
+	private synchronized void setTempo(int t)
 	{
 		tempo = t;
 		gameOptionsWindow.setTempo(tempo);
 	}
 	
-	private void setKey(String k)
+	private synchronized void setKey(String k)
 	{
 		key = k;
 		gameOptionsWindow.setKey(key);
 		gameWindow.setKeySignature(key);
 	}
 	
-	private void setNumberOfBars(int n)
+	private synchronized void setNumberOfBars(int n)
 	{
 		numberOfBars = n;
 		gameOptionsWindow.setMeasureCount(numberOfBars);
 	}
 	
-	private void setTimeSignature(int n, int d)
+	private synchronized void setTimeSignature(int n, int d)
 	{
 		timeSignatureNumerator = n;
 		timeSignatureDenominator = d;
@@ -1225,7 +1163,7 @@ public class GameManager implements ActionListener
 		gameOptionsWindow.setTime(timeSignatureNumerator, timeSignatureDenominator);
 	}
 
-	private void sendScoresToDisplay()
+	private synchronized void sendScoresToDisplay()
 	{
 		gameWindow.setScore(Players.PLAYER_ONE, player1Score);
 		gameWindow.setScore(Players.PLAYER_TWO, player2Score);
@@ -1233,17 +1171,17 @@ public class GameManager implements ActionListener
 		gameWindow.setScore(Players.PLAYER_FOUR, player4Score);
 	}
 	
-	private void sendNumberOfPlayersToDisplay()
+	private synchronized void sendNumberOfPlayersToDisplay()
 	{
 		gameWindow.setPlayerCount(numberOfActivePlayers);
 	}
 		
-	private void sendTimeToDisplay(int time)
+	private synchronized void sendTimeToDisplay(int time)
 	{
 		gameWindow.setTime(time);
 	}
 	
-	private void sendCurrentPlayerToDisplay()
+	private synchronized void sendCurrentPlayerToDisplay()
 	{
 		gameWindow.setCurrentPlayer(currentPlayerId);
 	}
@@ -1253,13 +1191,8 @@ public class GameManager implements ActionListener
 	 *
 	 *	@param note the Note to be sent to the GUI
 	 */
-	private void sendNotesToDisplay()
-	{
-		for(Measure m : gameMeasures)
-			System.out.print(m + " | ");
-		System.out.println();
-		System.out.println();
-		
+	private synchronized void sendNotesToDisplay()
+	{		
 		for(Note note : notesToSend)
 		{
 			//gameWindow.addNote(note);
