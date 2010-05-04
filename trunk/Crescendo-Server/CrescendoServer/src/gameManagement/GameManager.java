@@ -192,8 +192,6 @@ public class GameManager implements ActionListener
 		System.out.println("*****\tAt the Splash Screen\t*****");
 		//tell the WindowManager to go to the splash screen
 		WindowManager.getInstance().goToWindow(GameState.SPLASH_SCREEN);
-		//start allowing messages to be received
-	//	timer.start();
 	}
 
 	/**
