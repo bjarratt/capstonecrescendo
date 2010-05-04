@@ -14,6 +14,7 @@ import keys.GameState;
 import keys.Lengths;
 import keys.Players;
 import keys.Scales;
+import logging.LogManager;
 
 import java.util.ArrayList;
 
@@ -65,7 +66,13 @@ public class GameManager implements ActionListener
 	private String currentPlayerId;
 	private String pausedPlayerId;
 	
-	Note previousNotePlayed;
+	//global previous note
+	Note previousNote;
+	
+	Note previousNotePlayed1;
+	Note previousNotePlayed2;
+	Note previousNotePlayed3;
+	Note previousNotePlayed4;
 	
 	private int player1Score;
 	private int player2Score;
@@ -128,8 +135,13 @@ public class GameManager implements ActionListener
 
 		currentPlayerId = Players.PLAYER_ONE;
 		pausedPlayerId = new String();
+
+		previousNote = null;
 		
-		previousNotePlayed = null;
+		previousNotePlayed1 = null;
+		previousNotePlayed2 = null;
+		previousNotePlayed3 = null;
+		previousNotePlayed4 = null;
 
 		player1Score = 1337;
 		player2Score = 1337;
@@ -182,7 +194,7 @@ public class GameManager implements ActionListener
 				messagePool = new ArrayList<String>();
 	
 				//constrict one message per user per tick
-				//this.condenseMessagePool();
+				this.condenseMessagePool();
 				//translate the messages
 				this.translateMessagePool();
 	
@@ -246,6 +258,7 @@ public class GameManager implements ActionListener
 	 */
 	public void addMessageToPool(String message)
 	{
+		System.out.println(message);
 		messagePool.add(message);
 	}
 
@@ -527,8 +540,9 @@ public class GameManager implements ActionListener
 					org.jfugue.Player jfuguePlayer = new org.jfugue.Player();
 					org.jfugue.Pattern s = new org.jfugue.Pattern();
 					s.add("T"+tempo+" ");
-					for(Note note : gameNotes)
-						s.add(note.getJFuguePattern());
+					for(Measure measure : gameMeasures)
+						for(Note note : measure.getNotes())
+							s.add(note.getJFuguePattern());
 					jfuguePlayer.play(s);
 					sendMessageToDisplay(m.getMessage());
 				}
@@ -919,21 +933,36 @@ public class GameManager implements ActionListener
 	private void scoreNotes()
 	{
 		double score;
+		Note previousNotePlayed = null;
+		
 		for(Note note : notesToSend)
 		{
 			score = 0;
 			//convert score from an integer to a double
 			if(note.getPlayer().equals(Players.PLAYER_ONE))
-				score = player1Score;
-			else if(note.getPlayer().equals(Players.PLAYER_TWO))
-				score = player2Score;
-			else if(note.getPlayer().equals(Players.PLAYER_THREE))
-				score = player3Score;
-			else if(note.getPlayer().equals(Players.PLAYER_FOUR))
-				score = player4Score;
-			
-			if(note.isCorrect())
 			{
+				score = player1Score;
+				previousNotePlayed = previousNotePlayed1;
+			}
+			else if(note.getPlayer().equals(Players.PLAYER_TWO))
+			{
+				score = player2Score;
+				previousNotePlayed = previousNotePlayed2;
+			}
+			else if(note.getPlayer().equals(Players.PLAYER_THREE))
+			{
+				score = player3Score;
+				previousNotePlayed = previousNotePlayed3;
+			}
+			else if(note.getPlayer().equals(Players.PLAYER_FOUR))
+			{
+				score = player4Score;
+				previousNotePlayed = previousNotePlayed4;
+			}
+			
+			if(note.isCorrect() && previousNote != null && !note.equals(previousNote))
+			{
+				//TODO fix rest to not be a "wrong" note
 				if(note.getPitch().equals("rest"))
 				{
 					score += Math.PI * 10;
@@ -979,26 +1008,37 @@ public class GameManager implements ActionListener
 						}
 				}
 			}
-			else
+			else if(previousNote != null && !note.equals(previousNote))
 			{
 				//subtract points and time
 				score -= Math.E * 100;
-				additionalInGameTime -= 3;
 				if(score<0)
 					score = 0;
 			}
 			
 			//convert score back to an integer
 			if(note.getPlayer().equals(Players.PLAYER_ONE))
+			{
 				player1Score = new Double(score).intValue();
+				previousNotePlayed1 = new Note(note.getPitch(),note.getLength(),note.getPlayer());
+			}
 			else if(note.getPlayer().equals(Players.PLAYER_TWO))
+			{
 				player2Score = new Double(score).intValue();
+				previousNotePlayed2 = new Note(note.getPitch(),note.getLength(),note.getPlayer());
+			}
 			else if(note.getPlayer().equals(Players.PLAYER_THREE))
+			{
 				player3Score = new Double(score).intValue();
+				previousNotePlayed3 = new Note(note.getPitch(),note.getLength(),note.getPlayer());
+			}
 			else if(note.getPlayer().equals(Players.PLAYER_FOUR))
+			{
 				player4Score = new Double(score).intValue();
+				previousNotePlayed4 = new Note(note.getPitch(),note.getLength(),note.getPlayer());
+			}
 			
-			previousNotePlayed = note;
+			previousNote = note;
 		}
 	}
 	
@@ -1114,8 +1154,10 @@ public class GameManager implements ActionListener
 		System.out.println();
 		
 		for(Note note : notesToSend)
+		{
 			gameWindow.addNote(note);
-		
+			LogManager.getInstance().writeLogEntry(note.getPlayer(), note.toString());
+		}
 		notesToSend = new ArrayList<Note>();
 	}
 	
