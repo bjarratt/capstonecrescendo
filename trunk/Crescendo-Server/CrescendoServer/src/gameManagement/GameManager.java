@@ -1263,6 +1263,7 @@ public class GameManager implements ActionListener
 		for(Note note : notesToSend)
 		{
 			//gameWindow.addNote(note);
+			//TODO add this back in
 		}
 		notesToSend = new ArrayList<Note>();
 	}
