@@ -70,6 +70,7 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 	
 	private BufferedImage pause = null;
 	private Rectangle2D pauseBox = null;
+	private String pauseString = null;
 
 	private BufferedImage playSong = null;
 	private Rectangle2D playSongBox = null;
@@ -137,6 +138,7 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 		background_y = 500;
 		
 		previousState = "at_connect_screen";
+		pauseString = new String("pause");
 		
 		try
 		{
@@ -160,6 +162,8 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 		}
 		
 		this.addMouseListener(this);
+		this.setFocusable(true);
+		this.addKeyListener(this);
 		
 		keySlider = new JSlider(SwingConstants.VERTICAL, 0, 11, 4);
 		timeSlider = new JSlider(SwingConstants.VERTICAL, 2, 4, 4);
@@ -191,6 +195,7 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 		this.add(timeSlider);
 		this.add(tempoSlider);
 		this.add(barsSlider);
+		
 		
 //		disconnect = new JButton("Disconnect");
 //		disconnect.addActionListener(this);
@@ -245,6 +250,9 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 	{
 		super.paintComponent(graphics);
 		Graphics2D g = (Graphics2D) graphics;
+		
+		//allows the window to gain focus for the key listener
+		this.requestFocus();
 		
 		g.setColor(Color.WHITE);
 		g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 16));
@@ -381,7 +389,10 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 						pause = menu_button_up;
 					pauseBox = new Rectangle2D.Double(50,(int)background_y + 210,220,50);	
 					g.drawImage(pause, null, 50, (int)background_y + 210);
-					g.drawString("pause", 135, (int)background_y + 240);
+					if(pauseString.equals("pause"))
+						g.drawString(pauseString, 135, (int)background_y + 240);
+					else
+						g.drawString(pauseString, 142, (int)background_y + 240);
 					
 					//draw play song button
 					if(playSong == null)
@@ -879,7 +890,11 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 						pause = menu_button_up;
 					pauseBox = new Rectangle2D.Double(50,(int)background_y + 210,220,50);	
 					g.drawImage(pause, null, 50, (int)background_y + 210);
-					g.drawString("pause", 135, (int)background_y + 240);
+					if(pauseString.equals("pause"))
+						g.drawString(pauseString, 135, (int)background_y + 240);
+					else
+						g.drawString(pauseString, 142, (int)background_y + 240);
+						
 					
 					//draw play song button
 					if(playSong == null)
@@ -929,7 +944,10 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 						pause = menu_button_up;
 					pauseBox = new Rectangle2D.Double(50,210,220,50);	
 					g.drawImage(pause, null, 50, 210);
-					g.drawString("pause", 135, 240);
+					if(pauseString.equals("pause"))
+						g.drawString(pauseString, 135, 240);
+					else
+						g.drawString(pauseString, 142, 240);
 					
 					//draw play song button
 					if(playSong == null)
@@ -1271,6 +1289,16 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 			at_game_options_screen = false;
 			at_pause_screen = true;
 		}
+		else if((pauseBox != null) && (pauseBox.contains(e.getX(),e.getY())))
+		{
+			System.out.println("pause/play " + rand.nextInt());
+			clearAllBoundingBoxes();
+
+			if(pauseString.equals("pause"))
+				pauseString = new String("play");
+			else if(pauseString.equals("play"))
+				pauseString = new String("pause");
+		}
 		else if((arrowBox != null) && (arrowBox.contains(e.getX(),e.getY())))
 		{
 			System.out.println("arrow " + rand.nextInt());
@@ -1415,21 +1443,69 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 		}
 	}
 
-	@Override
-	public void keyPressed(KeyEvent e) {
-		// TODO Auto-generated method stub
+	public void keyPressed(KeyEvent e) 
+	{
+		if(at_play_screen)
+		{
+			if(e.getKeyCode() == KeyEvent.VK_ENTER)
+			{
+				System.out.println("volume " + rand.nextInt());
+		
+				//TODO play sound
+			}
+			else if(e.getKeyCode() == KeyEvent.VK_SPACE)
+			{
+				System.out.println("centerCardBox " + rand.nextInt());
+		
+			}
+			else if(e.getKeyCode() == KeyEvent.VK_UP)
+			{
+				System.out.println("northCardBox " + rand.nextInt());
+		
+				pitch++;
+				
+				this.repaint();
+			}
+			else if(e.getKeyCode() == KeyEvent.VK_RIGHT)
+			{
+				System.out.println("eastCardBox " + rand.nextInt());
+		
+				length++;
+				
+				this.repaint();
+			}
+			else if(e.getKeyCode() == KeyEvent.VK_DOWN)
+			{
+				System.out.println("southCardBox " + rand.nextInt());
+				
+				pitch--;
+				
+				if(pitch<0)
+					pitch+=16;
+				
+				this.repaint();
+			}
+			else if(e.getKeyCode() == KeyEvent.VK_LEFT)
+			{
+				System.out.println("westCardBox " + rand.nextInt());
+		
+				length--;
+				
+				if(length<0)
+					length+=4;
+				
+				this.repaint();
+			}		
+		}
+	}
+
+	public void keyReleased(KeyEvent e) 
+	{
 		
 	}
 
-	@Override
-	public void keyReleased(KeyEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void keyTyped(KeyEvent e) {
-		// TODO Auto-generated method stub
+	public void keyTyped(KeyEvent e) 
+	{
 		
 	}
 	
