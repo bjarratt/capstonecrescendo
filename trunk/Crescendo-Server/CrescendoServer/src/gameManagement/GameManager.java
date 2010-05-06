@@ -33,6 +33,8 @@ import java.awt.event.ActionEvent;
  */
 public class GameManager implements ActionListener
 {
+	private static final boolean DEBUG = true;
+	
 	//messages arrive and sit in the pool
 	private ArrayList<String> messagePool;
 	//every 200 milliseconds the messages get released from the pool to be translated
@@ -180,7 +182,7 @@ public class GameManager implements ActionListener
 		WindowManager.getInstance().addWindow(GameState.PLAY, gameWindow);
 		WindowManager.getInstance().addWindow(GameState.PAUSE, pauseWindow);
 		WindowManager.getInstance().addWindow(GameState.POST_GAME, new JPanel());
-		WindowManager.getInstance().run();
+//		WindowManager.getInstance().run();
 	}
 
 	/**
@@ -380,6 +382,11 @@ public class GameManager implements ActionListener
 					inGameTimer.stop();
 					
 					numberOfActivePlayers = ConnectionManager.getInstance().listPlayers().size();
+
+					if(DEBUG)	
+						numberOfActivePlayers--;
+					else
+						numberOfActivePlayers = ConnectionManager.getInstance().listPlayers().size();
 					
 					//reset values only when player 1 disconnects
 					if(m.getMessage().split("_")[0].equals(Players.PLAYER_ONE))
@@ -450,10 +457,14 @@ public class GameManager implements ActionListener
 				//message is "playerX_connect"
 				else if(at_splash_screen && m.getMessage().split("_")[1].equals("connect"))
 				{
-					numberOfActivePlayers++;
+					if(DEBUG)
+						numberOfActivePlayers++;
+					else
+						numberOfActivePlayers = ConnectionManager.getInstance().listPlayers().size();
+					
 					splashWindow.connectPlayer(m.getMessage().split("_")[0].charAt(m.getMessage().split("_")[0].length()-1)-48);
 				}
-				//message is "player1_gamemodes"  (checking to make sure player 1 has sent the message)
+				//message is "player1_gameoptions"  (checking to make sure player 1 has sent the message)
 				else if(at_splash_screen && numberOfActivePlayers>0 && m.getMessage().split("_")[0].equals(keys.Players.PLAYER_ONE) && m.getMessage().split("_")[1].equals(GameState.GAME_OPTIONS))
 				{
 					WindowManager.getInstance().goToWindow(GameState.GAME_OPTIONS);
@@ -586,11 +597,21 @@ public class GameManager implements ActionListener
 					notesToSend = new ArrayList<Note>();
 					
 					gameWindow.reset();
-					
-					int oldNumberOfPlayers = numberOfActivePlayers;
-					numberOfActivePlayers = 0;
 
-					for(int i = 0; i < oldNumberOfPlayers; i++)
+					int oldNumberOfActivePlayers;
+
+					if(DEBUG)	
+					{
+						oldNumberOfActivePlayers = numberOfActivePlayers;
+						numberOfActivePlayers = 0;
+					}
+					else
+					{
+						numberOfActivePlayers = ConnectionManager.getInstance().listPlayers().size();
+						oldNumberOfActivePlayers = numberOfActivePlayers;
+					}
+						
+					for(int i = 0; i < oldNumberOfActivePlayers; i++)
 					{
 						addMessageToPool("player" + (i+1) + "_" + GameState.CONNECT);
 					}
@@ -1178,8 +1199,7 @@ public class GameManager implements ActionListener
 	{		
 		for(Note note : notesToSend)
 		{
-			gameWindow.addNote(note);
-			//TODO add this back in
+//			gameWindow.addNote(note);
 		}
 		notesToSend = new ArrayList<Note>();
 	}

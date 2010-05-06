@@ -5,8 +5,6 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
@@ -29,7 +27,7 @@ import javax.swing.event.ChangeListener;
 
 import keys.GameState;
 
-public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener, ChangeListener, KeyListener
+public class CHIPhoneGUI extends JPanel implements MouseListener, ChangeListener, KeyListener
 {
 	private static final long serialVersionUID = -3339327851854047338L;
 	
@@ -133,7 +131,7 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 		at_game_options_screen = false;
 		at_play_screen = false;
 		
-		background_y = 500;
+		background_y = 480;
 		
 		previousState = "at_connect_screen";
 		pauseString = new String("pause");
@@ -210,6 +208,7 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 		
 		if(at_connect_screen)
 		{				
+			this.clearAllBoundingBoxes();
 			if(previousState.equals("at_help_screen") && background_y < 480)
 			{
 				/* This is the back command from the help screen */
@@ -243,7 +242,7 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 					
 					if(background_y < 480)
 					{
-						background_y += .5;
+						background_y += 20;
 						repaint();
 					}
 					else
@@ -293,7 +292,7 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 					
 					if(background_y < 480)
 					{
-						background_y += .5;
+						background_y += 20;
 						repaint();
 					}
 					else
@@ -364,7 +363,7 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 					
 					if(background_y < 480)
 					{
-						background_y += .5;
+						background_y += 20;
 						repaint();
 					}
 					else
@@ -398,6 +397,7 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 		}
 		else if(at_help_screen)
 		{		
+			this.clearAllBoundingBoxes();
 			if(previousState.equals("at_connect_screen") && background_y > 0)
 			{	
 				/* This is the next command from the connect screen */	
@@ -435,7 +435,7 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 	
 					if(background_y > 0)
 					{
-						background_y -= .5;
+						background_y -= 20;
 						repaint();
 					}
 					else
@@ -466,6 +466,7 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 		}
 		else if(at_splash_screen)
 		{	
+			this.clearAllBoundingBoxes();
 			if(previousState.equals("at_game_options_screen") && background_y < 480)
 			{
 				/* This is the back command from the game options screen*/
@@ -537,7 +538,7 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 					
 					if(background_y < 480)
 					{
-						background_y += .5;
+						background_y += 20;
 						repaint();
 					}
 					else
@@ -596,7 +597,7 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 
 					if(background_y > 0)
 					{
-						background_y -= .5;
+						background_y -= 20;
 						repaint();
 					}
 					else
@@ -640,6 +641,7 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 		}
 		else if(at_game_options_screen)
 		{	
+			this.clearAllBoundingBoxes();
 			if(previousState.equals("at_splash_screen") && background_y > 0)
 			{
 				/* This is the next command from the splash screen */	
@@ -711,7 +713,7 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 					
 					if(background_y > 0)
 					{
-						background_y -= .5;
+						background_y -= 20;
 						repaint();
 					}
 					else
@@ -772,6 +774,7 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 		}
 		else if(at_pause_screen)
 		{	
+			this.clearAllBoundingBoxes();
 			if(previousState.equals("at_game_options_screen") && background_y > 0)
 			{
 				/* This is the next command from the game options screen */	
@@ -862,7 +865,7 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 					
 					if(background_y > 0)
 					{
-						background_y -= .5;
+						background_y -= 20;
 						repaint();
 					}
 					else
@@ -919,6 +922,7 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 		}
 		else if(at_play_screen)
 		{	
+			this.clearAllBoundingBoxes();
 			/* This is the current screen */
 			///// Draw static current screen /////			
 				//this is a vertical screen
@@ -965,45 +969,22 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 	}
 	
 	private void clearAllBoundingBoxes()
-	{
+	{	
 		connectBox = null;
-		helpBox = null;
-		backBox = null;
-		startBox = null;
 		disconnectBox = null;
+		startBox = null;
+		backBox = null;
 		playBox = null;
-		playSongBox = null;
+		helpBox = null;
 		pauseBox = null;
-		volumeBox = null;
+		playSongBox = null;
 		arrowBox = null;
-	}
-	
-	public void actionPerformed(ActionEvent e)
-	{
-//		if(e.getSource() == connect)
-//			myCM.sendMessage(player + "_" + GameState.CONNECT);
-//		if(e.getSource() == disconnect)
-//			myCM.sendMessage(player + "_" + GameState.DISCONNECT);
-//		if(e.getSource() == playNote)
-//			myCM.sendMessage(player + "_" + generatePitch() + "_" + generateLength());
-//		if(e.getSource() == splashScreen)
-//			myCM.sendMessage(player + "_" + GameState.SPLASH_SCREEN);
-//		if(e.getSource() == gameOptions)
-//			myCM.sendMessage(player + "_" + GameState.GAME_OPTIONS);
-//		if(e.getSource() == setTempo)
-//			myCM.sendMessage(player + "_" + GameState.SET_TEMPO + "_" + generateTempo());
-//		if(e.getSource() == setKey)
-//			myCM.sendMessage(player + "_" + GameState.SET_KEY + "_" + generateKey());
-//		if(e.getSource() == setTimeSignature)
-//			myCM.sendMessage(player + "_" + GameState.SET_TIME_SIGNATURE + "_" + generateTimeSignatureNumerator()+ "/4");
-//		if(e.getSource() == setNumberOfBars)
-//			myCM.sendMessage(player + "_" + GameState.SET_NUMBER_OF_BARS + "_" + generateNumberOfBars());
-//		if(e.getSource() == play)
-//			myCM.sendMessage(player + "_" + GameState.PLAY);
-//		if(e.getSource() == pause)
-//			myCM.sendMessage(player + "_" + GameState.PAUSE);
-//		if(e.getSource() == review)
-//			myCM.sendMessage(player + "_" + GameState.PLAY_SONG);
+		volumeBox = null;
+		centerCardBox = null;
+		northCardBox = null;
+		eastCardBox = null;
+		southCardBox = null;
+		westCardBox = null;
 	}
 
 	private String getPitch(int p)
