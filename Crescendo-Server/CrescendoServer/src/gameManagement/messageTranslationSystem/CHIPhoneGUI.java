@@ -1,5 +1,6 @@
 package gameManagement.messageTranslationSystem;
 
+import java.applet.AudioClip;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -18,7 +19,11 @@ import java.io.IOException;
 import java.util.Random;
 
 import javax.imageio.ImageIO;
-import javax.swing.JButton;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
 import javax.swing.SwingConstants;
@@ -90,7 +95,7 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 	private Rectangle2D southCardBox = null;
 	private Rectangle2D westCardBox = null;
 	
-	private BufferedImage[][] cards;
+	Clip clip;
 	
 	private boolean at_connect_screen;
 	private boolean at_help_screen;
@@ -167,9 +172,8 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 		
 		keySlider = new JSlider(SwingConstants.VERTICAL, 0, 11, 4);
 		timeSlider = new JSlider(SwingConstants.VERTICAL, 2, 4, 4);
-		tempoSlider = new JSlider(SwingConstants.VERTICAL);
-		barsSlider = new JSlider(SwingConstants.VERTICAL);
-		//TODO add tempo and bars stuff
+		tempoSlider = new JSlider(SwingConstants.VERTICAL, 1, 12, 6);
+		barsSlider = new JSlider(SwingConstants.VERTICAL, 1, 8, 1);
 		
 		keySlider.setOpaque(false);
 		timeSlider.setOpaque(false);
@@ -195,55 +199,6 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 		this.add(timeSlider);
 		this.add(tempoSlider);
 		this.add(barsSlider);
-		
-		
-//		disconnect = new JButton("Disconnect");
-//		disconnect.addActionListener(this);
-//		this.add(disconnect);
-//		
-//		connect = new JButton("Connect");
-//		connect.addActionListener(this);
-//		this.add(connect);
-//				
-//		splashScreen = new JButton("Go to Splash Screen State");
-//		splashScreen.addActionListener(this);
-//		this.add(splashScreen);
-//
-//		gameOptions = new JButton("Got to Game Options State");
-//		gameOptions.addActionListener(this);
-//		this.add(gameOptions);
-//
-//		setTempo = new JButton("Set Tempo (Random)");
-//		setTempo.addActionListener(this);
-//		this.add(setTempo);
-//
-//		setKey = new JButton("Set Key (Random)");
-//		setKey.addActionListener(this);
-//		this.add(setKey);
-//
-//		setTimeSignature = new JButton("Set Time Signature (Random)");
-//		setTimeSignature.addActionListener(this);
-//		this.add(setTimeSignature);
-//		
-//		setNumberOfBars = new JButton("Set Number of Bars (Random)");
-//		setNumberOfBars.addActionListener(this);
-//		this.add(setNumberOfBars);
-//
-//		play = new JButton("Go to Play State");
-//		play.addActionListener(this);
-//		this.add(play);
-//
-//		pause = new JButton("Go to Pause State");
-//		pause.addActionListener(this);
-//		this.add(pause);
-//		
-//		playNote = new JButton("Play a Random Note");
-//		playNote.addActionListener(this);
-//		this.add(playNote);
-//
-//		review = new JButton("Review Game");
-//		review.addActionListener(this);
-//		this.add(review);
 	}
 
 	public void paintComponent(Graphics graphics)
@@ -445,7 +400,6 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 					helpBox = new Rectangle2D.Double(260,10,50,50);
 					g.drawImage(help, null, 260, 10);
 					previousState = "at_connect_screen";
-					System.out.println(previousState);
 				//////////////////////////////////////
 			}
 		}
@@ -514,7 +468,6 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 					g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 16));
 					
 					previousState = "at_help_screen";
-					System.out.println(previousState);
 				//////////////////////////////////////
 			}
 		}
@@ -689,7 +642,6 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 					g.drawImage(disconnect, null, 50, 275);
 					g.drawString("disconnect", 116, 305);
 					previousState = "at_splash_screen";
-					System.out.println(previousState);
 				//////////////////////////////////////
 			}
 		}
@@ -822,7 +774,6 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 					g.drawImage(play, null, 50, 400);
 					g.drawString("play", 142, 430);
 					previousState = "at_game_options_screen";
-					System.out.println(previousState);
 				//////////////////////////////////////
 			}
 		}
@@ -970,7 +921,6 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 					g.drawImage(arrow, null, 125, 400);
 					
 					previousState = "at_pause_screen";
-					System.out.println(previousState);
 				//////////////////////////////////////
 			}
 		}
@@ -1017,7 +967,6 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 				g.drawImage(volume, null, 220, 365);	
 				
 				previousState = "at_play_screen";
-				System.out.println(previousState);
 			//////////////////////////////////////
 		}
 	}
@@ -1153,230 +1102,12 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 				return "A";
 		}
 	}
-	
-	/**
-	 *	Generates a random tempo from 60(Adagio) - 180(Presto)
-	 *
-	 *	@return a random tempo from 
-	 */
-	private int generateTempo()
-	{
-		switch(rand.nextInt(9))
-		{
-			case 0:
-				return 60;
-			case 1:
-				return 65;
-			case 2:
-				return 70;
-			case 3:
-				return 80;
-			case 4:
-				return 95;
-			case 5:
-				return 110;
-			case 6:
-				return 120;
-			case 7:
-				return 145;
-			default:
-				return 180;
-		}
-	}
-	
-	/**
-	 *	Generates a random tempo from 60(Adagio) - 180(Presto)
-	 *
-	 *	@return a random tempo from 
-	 */
-	private int generateNumberOfBars()
-	{
-		return rand.nextInt(13)+4;
-	}
-	
-	/**
-	 *	Generates a random tempo from 60(Adagio) - 180(Presto)
-	 *
-	 *	@return a random tempo from 
-	 */
-	private int generateTimeSignatureNumerator()
-	{
-		return rand.nextInt(3)+2;
-	}
 
-	public void mouseClicked(MouseEvent e)
-	{
-		if((helpBox != null) && (helpBox.contains(e.getX(),e.getY())))
-		{
-			System.out.println("help " + rand.nextInt());
-			clearAllBoundingBoxes();
-			
-			background_y = 480;
-			
-			at_connect_screen = false;
-			at_help_screen = true;
-		}
-		else if((connectBox != null) && (connectBox.contains(e.getX(),e.getY())))
-		{
-			System.out.println("connect " + rand.nextInt());
-			clearAllBoundingBoxes();
-			
-			background_y = 480;
-			
-			at_connect_screen = false;
-			at_splash_screen = true;
-		}
-		else if((backBox != null) && (backBox.contains(e.getX(),e.getY())))
-		{
-			System.out.println("back " + rand.nextInt());
-			clearAllBoundingBoxes();
+	public void mouseClicked(MouseEvent e){}
 
-			background_y = 0;
-			
-			if(previousState.equals("at_help_screen"))
-			{
-				at_help_screen = false;
-				at_connect_screen = true;
-			}
-			else if(previousState.equals("at_splash_screen"))
-			{
-				at_splash_screen = false;
-				at_connect_screen = true;
-			}
-			else if(previousState.equals("at_game_options_screen"))
-			{
-				at_game_options_screen = false;
-				at_splash_screen = true;
-			}
-		}
-		else if((startBox != null) && (startBox.contains(e.getX(),e.getY())))
-		{
-			System.out.println("start " + rand.nextInt());
-			clearAllBoundingBoxes();
-			
-			background_y = 480;
-			
-			keySlider.setVisible(true);
-			timeSlider.setVisible(true);
-			tempoSlider.setVisible(true);
-			barsSlider.setVisible(true);
-			
-			at_splash_screen = false;
-			at_game_options_screen = true;
-		}
-		else if((disconnectBox != null) && (disconnectBox.contains(e.getX(),e.getY())))
-		{
-			System.out.println("disconnect " + rand.nextInt());
-			clearAllBoundingBoxes();
+	public void mouseEntered(MouseEvent e){}
 
-			background_y = 0;
-			
-			at_splash_screen = false;
-			at_connect_screen = true;
-		}
-		else if((playBox != null) && (playBox.contains(e.getX(),e.getY())))
-		{
-			System.out.println("play " + rand.nextInt());
-			clearAllBoundingBoxes();
-			
-			background_y = 480;
-			
-			keySlider.setVisible(false);
-			timeSlider.setVisible(false);
-			tempoSlider.setVisible(false);
-			barsSlider.setVisible(false);
-			
-			at_game_options_screen = false;
-			at_pause_screen = true;
-		}
-		else if((pauseBox != null) && (pauseBox.contains(e.getX(),e.getY())))
-		{
-			System.out.println("pause/play " + rand.nextInt());
-			clearAllBoundingBoxes();
-
-			if(pauseString.equals("pause"))
-				pauseString = new String("play");
-			else if(pauseString.equals("play"))
-				pauseString = new String("pause");
-		}
-		else if((arrowBox != null) && (arrowBox.contains(e.getX(),e.getY())))
-		{
-			System.out.println("arrow " + rand.nextInt());
-			clearAllBoundingBoxes();
-
-			background_y = 480;
-			
-			if(previousState.equals("at_pause_screen"))
-			{
-				at_pause_screen = false;
-				at_play_screen = true;
-			}
-			else if(previousState.equals("at_play_screen"))
-			{
-				at_play_screen = false;
-				at_pause_screen = true;
-			}
-		}
-		else if((volumeBox != null) && (volumeBox.contains(e.getX(),e.getY())))
-		{
-			System.out.println("volume " + rand.nextInt());
-			clearAllBoundingBoxes();
-	
-			//TODO play sound
-		}
-		else if((centerCardBox != null) && (centerCardBox.contains(e.getX(),e.getY())))
-		{
-			System.out.println("centerCardBox " + rand.nextInt());
-			clearAllBoundingBoxes();
-	
-		}
-		else if((northCardBox != null) && (northCardBox.contains(e.getX(),e.getY())))
-		{
-			System.out.println("northCardBox " + rand.nextInt());
-			clearAllBoundingBoxes();
-	
-			pitch++;
-		}
-		else if((eastCardBox != null) && (eastCardBox.contains(e.getX(),e.getY())))
-		{
-			System.out.println("eastCardBox " + rand.nextInt());
-			clearAllBoundingBoxes();
-	
-			length++;
-		}
-		else if((southCardBox != null) && (southCardBox.contains(e.getX(),e.getY())))
-		{
-			System.out.println("southCardBox " + rand.nextInt());
-			clearAllBoundingBoxes();
-			
-			pitch--;
-			
-			if(pitch<0)
-				pitch+=16;
-		}
-		else if((westCardBox != null) && (westCardBox.contains(e.getX(),e.getY())))
-		{
-			System.out.println("westCardBox " + rand.nextInt());
-			clearAllBoundingBoxes();
-	
-			length--;
-			
-			if(length<0)
-				length+=4;
-		}
-	}
-
-	public void mouseEntered(MouseEvent e)
-	{
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void mouseExited(MouseEvent e)
-	{
-		// TODO Auto-generated method stub
-		
-	}
+	public void mouseExited(MouseEvent e){}
 
 	public void mousePressed(MouseEvent e)
 	{
@@ -1406,6 +1137,180 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 
 	public void mouseReleased(MouseEvent e)
 	{
+		if((helpBox != null) && (helpBox.contains(e.getX(),e.getY())))
+		{
+			clearAllBoundingBoxes();
+			
+			background_y = 480;
+
+			at_connect_screen = false;
+			at_help_screen = true;
+		}
+		else if((connectBox != null) && (connectBox.contains(e.getX(),e.getY())))
+		{
+			clearAllBoundingBoxes();
+			
+			background_y = 480;
+
+			myCM.sendMessage(player + "_" + GameState.CONNECT);
+			at_connect_screen = false;
+			at_splash_screen = true;
+		}
+		else if((backBox != null) && (backBox.contains(e.getX(),e.getY())))
+		{
+			clearAllBoundingBoxes();
+
+			background_y = 0;
+			
+			if(previousState.equals("at_help_screen"))
+			{
+				at_help_screen = false;
+				at_connect_screen = true;
+			}
+			else if(previousState.equals("at_splash_screen"))
+			{
+				myCM.sendMessage(player + "_" + GameState.DISCONNECT);
+				at_splash_screen = false;
+				at_connect_screen = true;
+			}
+			else if(previousState.equals("at_game_options_screen"))
+			{
+				myCM.sendMessage(player + "_" + GameState.SPLASH_SCREEN);
+				at_game_options_screen = false;
+				at_splash_screen = true;
+			}
+		}
+		else if((startBox != null) && (startBox.contains(e.getX(),e.getY())))
+		{
+			clearAllBoundingBoxes();
+			
+			background_y = 480;
+			
+			keySlider.setVisible(true);
+			timeSlider.setVisible(true);
+			tempoSlider.setVisible(true);
+			barsSlider.setVisible(true);
+
+			myCM.sendMessage(player + "_" + GameState.GAME_OPTIONS);
+			at_splash_screen = false;
+			at_game_options_screen = true;
+		}
+		else if((disconnectBox != null) && (disconnectBox.contains(e.getX(),e.getY())))
+		{
+			clearAllBoundingBoxes();
+
+			background_y = 0;
+			
+			myCM.sendMessage(player + "_" + GameState.DISCONNECT);
+			at_splash_screen = false;
+			at_connect_screen = true;
+		}
+		else if((playBox != null) && (playBox.contains(e.getX(),e.getY())))
+		{
+			clearAllBoundingBoxes();
+			
+			background_y = 480;
+			
+			keySlider.setVisible(false);
+			timeSlider.setVisible(false);
+			tempoSlider.setVisible(false);
+			barsSlider.setVisible(false);
+
+			myCM.sendMessage(player + "_" + GameState.PLAY);
+			at_game_options_screen = false;
+			at_pause_screen = true;
+		}
+		else if((pauseBox != null) && (pauseBox.contains(e.getX(),e.getY())))
+		{
+			clearAllBoundingBoxes();
+
+			if(pauseString.equals("pause"))
+			{
+				myCM.sendMessage(player + "_" + GameState.PAUSE);
+				pauseString = new String("play");
+			}
+			else if(pauseString.equals("play"))
+			{
+				myCM.sendMessage(player + "_" + GameState.PLAY);
+				pauseString = new String("pause");
+			}
+		}
+		else if((arrowBox != null) && (arrowBox.contains(e.getX(),e.getY())))
+		{
+			clearAllBoundingBoxes();
+
+			background_y = 480;
+			
+			if(previousState.equals("at_pause_screen"))
+			{
+				at_pause_screen = false;
+				at_play_screen = true;
+			}
+			else if(previousState.equals("at_play_screen"))
+			{
+				at_play_screen = false;
+				at_pause_screen = true;
+			}
+		}
+		else if((volumeBox != null) && (volumeBox.contains(e.getX(),e.getY())))
+		{
+			clearAllBoundingBoxes();
+			if(!getPitch(pitch).equals("rest"))
+			{
+				try
+				{	
+					clip = AudioSystem.getClip();
+					clip.open(AudioSystem.getAudioInputStream(new File("src/Audio/" + getPitch(pitch) + ".wav")));
+					clip.start();
+				}
+				catch (LineUnavailableException e1)
+				{
+					e1.printStackTrace();
+				}
+				catch (UnsupportedAudioFileException e3)
+				{
+					e3.printStackTrace();
+				}
+				catch (IOException e4)
+				{
+					e4.printStackTrace();
+				}
+			}
+		}
+		else if((centerCardBox != null) && (centerCardBox.contains(e.getX(),e.getY())))
+		{
+			clearAllBoundingBoxes();
+			myCM.sendMessage(player + "_" + getPitch(pitch) + "_" + getLength(length) + "note");
+		}
+		else if((northCardBox != null) && (northCardBox.contains(e.getX(),e.getY())))
+		{
+			clearAllBoundingBoxes();
+			pitch++;
+		}
+		else if((eastCardBox != null) && (eastCardBox.contains(e.getX(),e.getY())))
+		{
+			clearAllBoundingBoxes();
+			length++;
+		}
+		else if((southCardBox != null) && (southCardBox.contains(e.getX(),e.getY())))
+		{
+			clearAllBoundingBoxes();
+			pitch--;
+			if(pitch<0)
+				pitch+=16;
+		}
+		else if((westCardBox != null) && (westCardBox.contains(e.getX(),e.getY())))
+		{
+			clearAllBoundingBoxes();
+			length--;
+			if(length<0)
+				length+=4;
+		}
+		else if((playSongBox != null) && (playSongBox.contains(e.getX(),e.getY())))
+		{
+			myCM.sendMessage(player + "_" + GameState.PLAY_SONG);
+		}
+		
 		connect = menu_button_up;
 		help = help_button_up;
 		back = back_button_up;
@@ -1424,21 +1329,25 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 		if(e.getSource() == keySlider)
 		{
 			key = getKey(keySlider.getValue());
+			myCM.sendMessage(player + "_" + GameState.SET_KEY + "_" + key);
 			this.repaint();
 		}
 		else if(e.getSource() == timeSlider)
 		{
 			time = timeSlider.getValue() + "/4";
+			myCM.sendMessage(player + "_" + GameState.SET_TIME_SIGNATURE + "_" + time + "/4");
 			this.repaint();
 		}
 		else if(e.getSource() == tempoSlider)
 		{
-			//TODO add tempo stuff
+			tempo = new String(tempoSlider.getValue() * 20 + "");
+			myCM.sendMessage(player + "_" + GameState.SET_TEMPO + "_" + tempo);
 			this.repaint();
 		}
 		else if(e.getSource() == barsSlider)
 		{
-			//TODO add bars stuff
+			bars = new String(barsSlider.getValue() * 16 + "");
+			myCM.sendMessage(player + "_" + GameState.SET_NUMBER_OF_BARS + "_" + bars);
 			this.repaint();
 		}
 	}
@@ -1449,65 +1358,60 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 		{
 			if(e.getKeyCode() == KeyEvent.VK_ENTER)
 			{
-				System.out.println("volume " + rand.nextInt());
-		
-				//TODO play sound
+				if(!getPitch(pitch).equals("rest"))
+				{
+					try
+					{	
+						clip = AudioSystem.getClip();
+						clip.open(AudioSystem.getAudioInputStream(new File("src/Audio/" + getPitch(pitch) + ".wav")));
+						clip.start();
+					}
+					catch (LineUnavailableException e1)
+					{
+						e1.printStackTrace();
+					}
+					catch (UnsupportedAudioFileException e3)
+					{
+						e3.printStackTrace();
+					}
+					catch (IOException e4)
+					{
+						e4.printStackTrace();
+					}
+				}
 			}
 			else if(e.getKeyCode() == KeyEvent.VK_SPACE)
 			{
-				System.out.println("centerCardBox " + rand.nextInt());
-		
+				myCM.sendMessage(player + "_" + getPitch(pitch) + "_" + getLength(length) + "note");
 			}
 			else if(e.getKeyCode() == KeyEvent.VK_UP)
 			{
-				System.out.println("northCardBox " + rand.nextInt());
-		
 				pitch++;
-				
 				this.repaint();
 			}
 			else if(e.getKeyCode() == KeyEvent.VK_RIGHT)
 			{
-				System.out.println("eastCardBox " + rand.nextInt());
-		
 				length++;
-				
 				this.repaint();
 			}
 			else if(e.getKeyCode() == KeyEvent.VK_DOWN)
 			{
-				System.out.println("southCardBox " + rand.nextInt());
-				
 				pitch--;
-				
 				if(pitch<0)
 					pitch+=16;
-				
 				this.repaint();
 			}
 			else if(e.getKeyCode() == KeyEvent.VK_LEFT)
 			{
-				System.out.println("westCardBox " + rand.nextInt());
-		
 				length--;
-				
 				if(length<0)
 					length+=4;
-				
 				this.repaint();
 			}		
 		}
 	}
 
-	public void keyReleased(KeyEvent e) 
-	{
-		
-	}
+	public void keyReleased(KeyEvent e){}
 
-	public void keyTyped(KeyEvent e) 
-	{
-		
-	}
-	
-	
+	public void keyTyped(KeyEvent e){}
 }
