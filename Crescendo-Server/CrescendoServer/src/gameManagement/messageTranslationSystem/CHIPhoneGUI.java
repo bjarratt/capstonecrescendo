@@ -1,6 +1,5 @@
 package gameManagement.messageTranslationSystem;
 
-import java.applet.AudioClip;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -16,10 +15,8 @@ import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.Random;
 
 import javax.imageio.ImageIO;
-import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.sound.sampled.LineUnavailableException;
@@ -39,8 +36,6 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 	private String player;
 	private gameManagement.messageTranslationSystem.ConnectionManager myCM;
 	
-	private Random rand;
-
 	private BufferedImage background_vertical = null;
 	private BufferedImage compose_background = null;
 	private BufferedImage compose_overlay = null;
@@ -128,9 +123,7 @@ public class CHIPhoneGUI extends JPanel implements ActionListener, MouseListener
 	
 		this.player = player;
 		this.myCM = myCM;
-		
-		rand = new Random();
-		
+	
 		pitch = 0;
 		length = 0;
 		
