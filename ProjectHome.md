@@ -1,0 +1,1 @@
+Allows a group of people to learn musical notations while interacting in a competitive musical atmosphere.
